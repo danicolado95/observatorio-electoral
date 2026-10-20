@@ -1,0 +1,4140 @@
+{
+  "eleccion": "Elecciones generales al Congreso de los Diputados, 23 julio 2023",
+  "fecha": "2023-07-23",
+  "fuente": "Ministerio del Interior - Elecciones-Congreso.xlsx, hoja Congreso, filas de 2023",
+  "nota": "Candidaturas conservadas tal cual aparecen en fuente; porcentajes sobre votos válidos. Los escaños corresponden a 2023, NO al reparto de 2026.",
+  "circunscripciones": [
+    {
+      "codigo": "01",
+      "nombre": "Araba/Álava",
+      "electores": 260214,
+      "votantes": 170538,
+      "votos_validos": 169107,
+      "votos_nulos": 1431,
+      "votos_blancos": 722,
+      "votos_candidaturas": 168385,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA (PSOE) - PSE-EE (PSOE)",
+          "votos": 46775,
+          "porcentaje_validos": 27.66,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "EUSKAL HERRIA BILDU - EH Bildu",
+          "votos": 32987,
+          "porcentaje_validos": 19.507,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 30212,
+          "porcentaje_validos": 17.866,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO - EAJ-PNV",
+          "votos": 28075,
+          "porcentaje_validos": 16.602,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 21561,
+          "porcentaje_validos": 12.75,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 6573,
+          "porcentaje_validos": 3.887,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 773,
+          "porcentaje_validos": 0.457,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ESCAÑOS EN BLANCO PARA DEJAR ESCAÑOS VACÍOS - ESCAÑOS EN BLANCO",
+          "votos": 619,
+          "porcentaje_validos": 0.366,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 354,
+          "porcentaje_validos": 0.209,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 185,
+          "porcentaje_validos": 0.109,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 165,
+          "porcentaje_validos": 0.098,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "BIDEZKO MUNDURANTZ - PUM+J",
+          "votos": 106,
+          "porcentaje_validos": 0.063,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 4,
+      "participacion_porcentaje": 65.538,
+      "abstencion_porcentaje": 34.462,
+      "control_votos": 0
+    },
+    {
+      "codigo": "02",
+      "nombre": "Albacete",
+      "electores": 307988,
+      "votantes": 223917,
+      "votos_validos": 221191,
+      "votos_nulos": 2726,
+      "votos_blancos": 1834,
+      "votos_candidaturas": 219357,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 88299,
+          "porcentaje_validos": 39.92,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 76322,
+          "porcentaje_validos": 34.505,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 36750,
+          "porcentaje_validos": 16.615,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 15834,
+          "porcentaje_validos": 7.159,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 1261,
+          "porcentaje_validos": 0.57,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 381,
+          "porcentaje_validos": 0.172,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 325,
+          "porcentaje_validos": 0.147,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 185,
+          "porcentaje_validos": 0.084,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 4,
+      "participacion_porcentaje": 72.703,
+      "abstencion_porcentaje": 27.297,
+      "control_votos": 0
+    },
+    {
+      "codigo": "03",
+      "nombre": "Alicante/Alacant",
+      "electores": 1306311,
+      "votantes": 908842,
+      "votos_validos": 899192,
+      "votos_nulos": 9650,
+      "votos_blancos": 6575,
+      "votos_candidaturas": 892617,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 330293,
+          "porcentaje_validos": 36.732,
+          "escanos": 5
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 287737,
+          "porcentaje_validos": 32.0,
+          "escanos": 4
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 146133,
+          "porcentaje_validos": 16.252,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "COMPROMÍS - SUMAR: SUMEM PER GUANYAR - SUMAR - COMPROMÍS",
+          "votos": 115787,
+          "porcentaje_validos": 12.877,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 7335,
+          "porcentaje_validos": 0.816,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 1724,
+          "porcentaje_validos": 0.192,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO AUTÓNOMOS - PARTIDO AUTÓNOMOS",
+          "votos": 1446,
+          "porcentaje_validos": 0.161,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 1135,
+          "porcentaje_validos": 0.126,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "CAMINANDO JUNTOS - CJ",
+          "votos": 1027,
+          "porcentaje_validos": 0.114,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 12,
+      "participacion_porcentaje": 69.573,
+      "abstencion_porcentaje": 30.427,
+      "control_votos": 0
+    },
+    {
+      "codigo": "04",
+      "nombre": "Almería",
+      "electores": 516114,
+      "votantes": 324405,
+      "votos_validos": 321242,
+      "votos_nulos": 3163,
+      "votos_blancos": 2464,
+      "votos_candidaturas": 318778,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 131524,
+          "porcentaje_validos": 40.942,
+          "escanos": 3
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 93282,
+          "porcentaje_validos": 29.038,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 68364,
+          "porcentaje_validos": 21.281,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "SUMAR ANDALUCÍA - SUMAR",
+          "votos": 21485,
+          "porcentaje_validos": 6.688,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 1962,
+          "porcentaje_validos": 0.611,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ALMERIENSES - REGIONALISTAS PRO ALMERÍA - ALM",
+          "votos": 874,
+          "porcentaje_validos": 0.272,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 500,
+          "porcentaje_validos": 0.156,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 371,
+          "porcentaje_validos": 0.115,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "LIBRES - LB",
+          "votos": 210,
+          "porcentaje_validos": 0.065,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 206,
+          "porcentaje_validos": 0.064,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 6,
+      "participacion_porcentaje": 62.855,
+      "abstencion_porcentaje": 37.145,
+      "control_votos": 0
+    },
+    {
+      "codigo": "05",
+      "nombre": "Ávila",
+      "electores": 136669,
+      "votantes": 99120,
+      "votos_validos": 97956,
+      "votos_nulos": 1164,
+      "votos_blancos": 632,
+      "votos_candidaturas": 97324,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 42369,
+          "porcentaje_validos": 43.253,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 26828,
+          "porcentaje_validos": 27.388,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 15068,
+          "porcentaje_validos": 15.382,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR ÁVILA - XAV",
+          "votos": 7362,
+          "porcentaje_validos": 7.516,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 5027,
+          "porcentaje_validos": 5.132,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 275,
+          "porcentaje_validos": 0.281,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 100,
+          "porcentaje_validos": 0.102,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 91,
+          "porcentaje_validos": 0.093,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 85,
+          "porcentaje_validos": 0.087,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FALANGE ESPAÑOLA DE LAS J.O.N.S. - FE de las JONS",
+          "votos": 77,
+          "porcentaje_validos": 0.079,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 42,
+          "porcentaje_validos": 0.043,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 3,
+      "participacion_porcentaje": 72.526,
+      "abstencion_porcentaje": 27.474,
+      "control_votos": 0
+    },
+    {
+      "codigo": "06",
+      "nombre": "Badajoz",
+      "electores": 550702,
+      "votantes": 398233,
+      "votos_validos": 391461,
+      "votos_nulos": 6772,
+      "votos_blancos": 3225,
+      "votos_candidaturas": 388236,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 153473,
+          "porcentaje_validos": 39.205,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 148068,
+          "porcentaje_validos": 37.824,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 53492,
+          "porcentaje_validos": 13.665,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 26778,
+          "porcentaje_validos": 6.841,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "BLOQUE EXTREMEÑO - BQEX",
+          "votos": 3885,
+          "porcentaje_validos": 0.992,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 1395,
+          "porcentaje_validos": 0.356,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 477,
+          "porcentaje_validos": 0.122,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 464,
+          "porcentaje_validos": 0.119,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 204,
+          "porcentaje_validos": 0.052,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 5,
+      "participacion_porcentaje": 72.314,
+      "abstencion_porcentaje": 27.686,
+      "control_votos": 0
+    },
+    {
+      "codigo": "07",
+      "nombre": "Balears, Illes",
+      "electores": 828755,
+      "votantes": 508233,
+      "votos_validos": 503280,
+      "votos_nulos": 4953,
+      "votos_blancos": 4704,
+      "votos_candidaturas": 498576,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 179303,
+          "porcentaje_validos": 35.627,
+          "escanos": 3
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA DE ISLAS BALEARES-PSOE - PSIB-PSOE",
+          "votos": 151786,
+          "porcentaje_validos": 30.159,
+          "escanos": 3
+        },
+        {
+          "nombre_original": "SUMAR MÉS - MÉS PER MALLORCA-MÉS PER MENORCA-SUMAR",
+          "votos": 83487,
+          "porcentaje_validos": 16.589,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 76547,
+          "porcentaje_validos": 15.21,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 4969,
+          "porcentaje_validos": 0.987,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 1039,
+          "porcentaje_validos": 0.206,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 726,
+          "porcentaje_validos": 0.144,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 719,
+          "porcentaje_validos": 0.143,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 8,
+      "participacion_porcentaje": 61.325,
+      "abstencion_porcentaje": 38.675,
+      "control_votos": 0
+    },
+    {
+      "codigo": "08",
+      "nombre": "Barcelona",
+      "electores": 4243500,
+      "votantes": 2688720,
+      "votos_validos": 2667478,
+      "votos_nulos": 21242,
+      "votos_blancos": 21059,
+      "votos_candidaturas": 2646419,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIT DELS SOCIALISTES DE CATALUNYA (PSC-PSOE) - PSC",
+          "votos": 952347,
+          "porcentaje_validos": 35.702,
+          "escanos": 13
+        },
+        {
+          "nombre_original": "SUMAR - EN COMÚ PODEM - SUMAR - ECP",
+          "votos": 405993,
+          "porcentaje_validos": 15.22,
+          "escanos": 5
+        },
+        {
+          "nombre_original": "PARTIDO POPULAR / PARTIT POPULAR - PP",
+          "votos": 367519,
+          "porcentaje_validos": 13.778,
+          "escanos": 5
+        },
+        {
+          "nombre_original": "ESQUERRA REPUBLICANA DE CATALUNYA - ERC",
+          "votos": 328697,
+          "porcentaje_validos": 12.322,
+          "escanos": 4
+        },
+        {
+          "nombre_original": "JUNTS PER CATALUNYA - JUNTS - JxCAT - JUNTS",
+          "votos": 258159,
+          "porcentaje_validos": 9.678,
+          "escanos": 3
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 201775,
+          "porcentaje_validos": 7.564,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "CANDIDATURA D'UNITAT POPULAR-PER LA RUPTURA - CUP-PR",
+          "votos": 67266,
+          "porcentaje_validos": 2.522,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIT ANIMALISTA AMB EL MEDI AMBIENT - PACMA",
+          "votos": 28201,
+          "porcentaje_validos": 1.057,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIT DEMÒCRATA EUROPEU CATALÀ-ESPAI CIU - PDeCAT-E-CiU",
+          "votos": 24452,
+          "porcentaje_validos": 0.917,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 6048,
+          "porcentaje_validos": 0.227,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 3104,
+          "porcentaje_validos": 0.116,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIT COMUNISTA DELS TREBALLADORS DE CATALUNYA - PCTC",
+          "votos": 2858,
+          "porcentaje_validos": 0.107,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 32,
+      "participacion_porcentaje": 63.361,
+      "abstencion_porcentaje": 36.639,
+      "control_votos": 0
+    },
+    {
+      "codigo": "09",
+      "nombre": "Burgos",
+      "electores": 296401,
+      "votantes": 204886,
+      "votos_validos": 202569,
+      "votos_nulos": 2317,
+      "votos_blancos": 1851,
+      "votos_candidaturas": 200718,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 82329,
+          "porcentaje_validos": 40.642,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 69775,
+          "porcentaje_validos": 34.445,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 25858,
+          "porcentaje_validos": 12.765,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 17508,
+          "porcentaje_validos": 8.643,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "VÍA BURGALESA - VB",
+          "votos": 1774,
+          "porcentaje_validos": 0.876,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ESPAÑA VACIADA-PARTIDO CASTELLANO-TIERRA COMUNERA - EV-PCAS-TC",
+          "votos": 1184,
+          "porcentaje_validos": 0.584,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 943,
+          "porcentaje_validos": 0.466,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 490,
+          "porcentaje_validos": 0.242,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 354,
+          "porcentaje_validos": 0.175,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 349,
+          "porcentaje_validos": 0.172,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 154,
+          "porcentaje_validos": 0.076,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 4,
+      "participacion_porcentaje": 69.125,
+      "abstencion_porcentaje": 30.875,
+      "control_votos": 0
+    },
+    {
+      "codigo": "10",
+      "nombre": "Cáceres",
+      "electores": 339491,
+      "votantes": 239747,
+      "votos_validos": 235851,
+      "votos_nulos": 3896,
+      "votos_blancos": 1721,
+      "votos_candidaturas": 234130,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 91692,
+          "porcentaje_validos": 38.877,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 89633,
+          "porcentaje_validos": 38.004,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 32076,
+          "porcentaje_validos": 13.6,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 16354,
+          "porcentaje_validos": 6.934,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "BLOQUE EXTREMEÑO - BQEX",
+          "votos": 1922,
+          "porcentaje_validos": 0.815,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "SOMOS CÁCERES - Somos Cc",
+          "votos": 963,
+          "porcentaje_validos": 0.408,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 814,
+          "porcentaje_validos": 0.345,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 316,
+          "porcentaje_validos": 0.134,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 249,
+          "porcentaje_validos": 0.106,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 111,
+          "porcentaje_validos": 0.047,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 4,
+      "participacion_porcentaje": 70.62,
+      "abstencion_porcentaje": 29.38,
+      "control_votos": 0
+    },
+    {
+      "codigo": "11",
+      "nombre": "Cádiz",
+      "electores": 1017958,
+      "votantes": 644801,
+      "votos_validos": 637098,
+      "votos_nulos": 7703,
+      "votos_blancos": 7103,
+      "votos_candidaturas": 629995,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 221703,
+          "porcentaje_validos": 34.799,
+          "escanos": 4
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 211200,
+          "porcentaje_validos": 33.15,
+          "escanos": 3
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 96720,
+          "porcentaje_validos": 15.181,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "SUMAR ANDALUCÍA - SUMAR",
+          "votos": 82115,
+          "porcentaje_validos": 12.889,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "ADELANTE ANDALUCÍA - ADELANTE ANDALUCÍA",
+          "votos": 9191,
+          "porcentaje_validos": 1.443,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 5937,
+          "porcentaje_validos": 0.932,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 1225,
+          "porcentaje_validos": 0.192,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "CAMINANDO JUNTOS - CJ",
+          "votos": 745,
+          "porcentaje_validos": 0.117,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 673,
+          "porcentaje_validos": 0.106,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 486,
+          "porcentaje_validos": 0.076,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 9,
+      "participacion_porcentaje": 63.343,
+      "abstencion_porcentaje": 36.657,
+      "control_votos": 0
+    },
+    {
+      "codigo": "12",
+      "nombre": "Castellón/Castelló",
+      "electores": 430830,
+      "votantes": 311581,
+      "votos_validos": 307930,
+      "votos_nulos": 3651,
+      "votos_blancos": 2655,
+      "votos_candidaturas": 305275,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 108302,
+          "porcentaje_validos": 35.171,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 100530,
+          "porcentaje_validos": 32.647,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 48913,
+          "porcentaje_validos": 15.884,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "COMPROMÍS - SUMAR: SUMEM PER GUANYAR - SUMAR - COMPROMÍS",
+          "votos": 44187,
+          "porcentaje_validos": 14.35,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 1968,
+          "porcentaje_validos": 0.639,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 721,
+          "porcentaje_validos": 0.234,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 493,
+          "porcentaje_validos": 0.16,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FALANGE ESPAÑOLA DE LAS J.O.N.S. - FE de las JONS",
+          "votos": 161,
+          "porcentaje_validos": 0.052,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 5,
+      "participacion_porcentaje": 72.321,
+      "abstencion_porcentaje": 27.679,
+      "control_votos": 0
+    },
+    {
+      "codigo": "13",
+      "nombre": "Ciudad Real",
+      "electores": 391495,
+      "votantes": 286895,
+      "votos_validos": 282979,
+      "votos_nulos": 3916,
+      "votos_blancos": 2353,
+      "votos_candidaturas": 280626,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 114709,
+          "porcentaje_validos": 40.536,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 100102,
+          "porcentaje_validos": 35.374,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 46046,
+          "porcentaje_validos": 16.272,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 17405,
+          "porcentaje_validos": 6.151,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 1319,
+          "porcentaje_validos": 0.466,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 447,
+          "porcentaje_validos": 0.158,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 365,
+          "porcentaje_validos": 0.129,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 233,
+          "porcentaje_validos": 0.082,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 5,
+      "participacion_porcentaje": 73.282,
+      "abstencion_porcentaje": 26.718,
+      "control_votos": 0
+    },
+    {
+      "codigo": "14",
+      "nombre": "Córdoba",
+      "electores": 645288,
+      "votantes": 455564,
+      "votos_validos": 448602,
+      "votos_nulos": 6962,
+      "votos_blancos": 4348,
+      "votos_candidaturas": 444254,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 169976,
+          "porcentaje_validos": 37.89,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 144080,
+          "porcentaje_validos": 32.118,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 62526,
+          "porcentaje_validos": 13.938,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "SUMAR ANDALUCÍA - SUMAR",
+          "votos": 61594,
+          "porcentaje_validos": 13.73,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 2699,
+          "porcentaje_validos": 0.602,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ESCAÑOS EN BLANCO PARA DEJAR ESCAÑOS VACÍOS - ESCAÑOS EN BLANCO",
+          "votos": 942,
+          "porcentaje_validos": 0.21,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 746,
+          "porcentaje_validos": 0.166,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 701,
+          "porcentaje_validos": 0.156,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 598,
+          "porcentaje_validos": 0.133,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 392,
+          "porcentaje_validos": 0.087,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 6,
+      "participacion_porcentaje": 70.599,
+      "abstencion_porcentaje": 29.401,
+      "control_votos": 0
+    },
+    {
+      "codigo": "15",
+      "nombre": "A Coruña",
+      "electores": 1085673,
+      "votantes": 683187,
+      "votos_validos": 677702,
+      "votos_nulos": 5485,
+      "votos_blancos": 5197,
+      "votos_candidaturas": 672505,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 292272,
+          "porcentaje_validos": 43.127,
+          "escanos": 4
+        },
+        {
+          "nombre_original": "PARTIDO DOS SOCIALISTAS DE GALICIA-PSOE - PSdeG-PSOE",
+          "votos": 190897,
+          "porcentaje_validos": 28.168,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "SUMAR GALICIA - SUMAR",
+          "votos": 82618,
+          "porcentaje_validos": 12.191,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "BLOQUE NACIONALISTA GALEGO - B.N.G.",
+          "votos": 67653,
+          "porcentaje_validos": 9.983,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 34410,
+          "porcentaje_validos": 5.077,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 3096,
+          "porcentaje_validos": 0.457,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 1011,
+          "porcentaje_validos": 0.149,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 548,
+          "porcentaje_validos": 0.081,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 8,
+      "participacion_porcentaje": 62.928,
+      "abstencion_porcentaje": 37.072,
+      "control_votos": 0
+    },
+    {
+      "codigo": "16",
+      "nombre": "Cuenca",
+      "electores": 152694,
+      "votantes": 115280,
+      "votos_validos": 113808,
+      "votos_nulos": 1472,
+      "votos_blancos": 969,
+      "votos_candidaturas": 112839,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 45255,
+          "porcentaje_validos": 39.764,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 42528,
+          "porcentaje_validos": 37.368,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 17700,
+          "porcentaje_validos": 15.553,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 6325,
+          "porcentaje_validos": 5.558,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 387,
+          "porcentaje_validos": 0.34,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 207,
+          "porcentaje_validos": 0.182,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ESCAÑOS EN BLANCO PARA DEJAR ESCAÑOS VACÍOS - ESCAÑOS EN BLANCO",
+          "votos": 168,
+          "porcentaje_validos": 0.148,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 111,
+          "porcentaje_validos": 0.098,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 100,
+          "porcentaje_validos": 0.088,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 58,
+          "porcentaje_validos": 0.051,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 3,
+      "participacion_porcentaje": 75.497,
+      "abstencion_porcentaje": 24.503,
+      "control_votos": 0
+    },
+    {
+      "codigo": "17",
+      "nombre": "Girona",
+      "electores": 546370,
+      "votantes": 327159,
+      "votos_validos": 322988,
+      "votos_nulos": 4171,
+      "votos_blancos": 2981,
+      "votos_candidaturas": 320007,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIT DELS SOCIALISTES DE CATALUNYA (PSC-PSOE) - PSC",
+          "votos": 93448,
+          "porcentaje_validos": 28.932,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "JUNTS PER CATALUNYA - JUNTS - JxCAT - JUNTS",
+          "votos": 63251,
+          "porcentaje_validos": 19.583,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "ESQUERRA REPUBLICANA DE CATALUNYA - ERC",
+          "votos": 47531,
+          "porcentaje_validos": 14.716,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "SUMAR - EN COMÚ PODEM - SUMAR - ECP",
+          "votos": 35344,
+          "porcentaje_validos": 10.943,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "PARTIT POPULAR / PARTIDO POPULAR - PP",
+          "votos": 31341,
+          "porcentaje_validos": 9.703,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 22706,
+          "porcentaje_validos": 7.03,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "CANDIDATURA D'UNITAT POPULAR-PER LA RUPTURA - CUP-PR",
+          "votos": 18229,
+          "porcentaje_validos": 5.644,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIT ANIMALISTA AMB EL MEDI AMBIENT - PACMA",
+          "votos": 3531,
+          "porcentaje_validos": 1.093,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIT DEMÒCRATA EUROPEU CATALÀ-ESPAI CIU - PDeCAT-E-CiU",
+          "votos": 3388,
+          "porcentaje_validos": 1.049,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 570,
+          "porcentaje_validos": 0.176,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIT COMUNISTA DELS TREBALLADORS DE CATALUNYA - PCTC",
+          "votos": 420,
+          "porcentaje_validos": 0.13,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 248,
+          "porcentaje_validos": 0.077,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 6,
+      "participacion_porcentaje": 59.879,
+      "abstencion_porcentaje": 40.121,
+      "control_votos": 0
+    },
+    {
+      "codigo": "18",
+      "nombre": "Granada",
+      "electores": 765478,
+      "votantes": 509486,
+      "votos_validos": 502845,
+      "votos_nulos": 6641,
+      "votos_blancos": 4057,
+      "votos_candidaturas": 498788,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 185996,
+          "porcentaje_validos": 36.989,
+          "escanos": 3
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 165862,
+          "porcentaje_validos": 32.985,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 81080,
+          "porcentaje_validos": 16.124,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 58567,
+          "porcentaje_validos": 11.647,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 3143,
+          "porcentaje_validos": 0.625,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "JUNTOS POR GRANADA - JxG",
+          "votos": 1218,
+          "porcentaje_validos": 0.242,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 765,
+          "porcentaje_validos": 0.152,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 695,
+          "porcentaje_validos": 0.138,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 658,
+          "porcentaje_validos": 0.131,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "CAMINANDO JUNTOS - CJ",
+          "votos": 461,
+          "porcentaje_validos": 0.092,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 343,
+          "porcentaje_validos": 0.068,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 7,
+      "participacion_porcentaje": 66.558,
+      "abstencion_porcentaje": 33.442,
+      "control_votos": 0
+    },
+    {
+      "codigo": "19",
+      "nombre": "Guadalajara",
+      "electores": 196983,
+      "votantes": 142744,
+      "votos_validos": 140913,
+      "votos_nulos": 1831,
+      "votos_blancos": 1143,
+      "votos_candidaturas": 139770,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 51195,
+          "porcentaje_validos": 36.331,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 46479,
+          "porcentaje_validos": 32.984,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 27126,
+          "porcentaje_validos": 19.25,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 12907,
+          "porcentaje_validos": 9.16,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 1039,
+          "porcentaje_validos": 0.737,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 304,
+          "porcentaje_validos": 0.216,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 249,
+          "porcentaje_validos": 0.177,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 191,
+          "porcentaje_validos": 0.136,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 162,
+          "porcentaje_validos": 0.115,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FALANGE ESPAÑOLA DE LAS J.O.N.S. - FE de las JONS",
+          "votos": 118,
+          "porcentaje_validos": 0.084,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 3,
+      "participacion_porcentaje": 72.465,
+      "abstencion_porcentaje": 27.535,
+      "control_votos": 0
+    },
+    {
+      "codigo": "20",
+      "nombre": "Gipuzkoa",
+      "electores": 585873,
+      "votantes": 378965,
+      "votos_validos": 376621,
+      "votos_nulos": 2344,
+      "votos_blancos": 2005,
+      "votos_candidaturas": 374616,
+      "candidaturas": [
+        {
+          "nombre_original": "EUSKAL HERRIA BILDU - EH Bildu",
+          "votos": 117321,
+          "porcentaje_validos": 31.151,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA (PSOE) - PSE-EE (PSOE)",
+          "votos": 87709,
+          "porcentaje_validos": 23.288,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO - EAJ-PNV",
+          "votos": 85026,
+          "porcentaje_validos": 22.576,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 40081,
+          "porcentaje_validos": 10.642,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 32721,
+          "porcentaje_validos": 8.688,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 7877,
+          "porcentaje_validos": 2.091,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 1568,
+          "porcentaje_validos": 0.416,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ESCAÑOS EN BLANCO PARA DEJAR ESCAÑOS VACÍOS - ESCAÑOS EN BLANCO",
+          "votos": 933,
+          "porcentaje_validos": 0.248,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 530,
+          "porcentaje_validos": 0.141,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 442,
+          "porcentaje_validos": 0.117,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE EUSKADI/EUSKADIKO LANGILEEN ALDERDI KOMUNISTA - PCTE/ELAK",
+          "votos": 259,
+          "porcentaje_validos": 0.069,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "BIDEZKO MUNDURANTZ - PUM+J",
+          "votos": 149,
+          "porcentaje_validos": 0.04,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 6,
+      "participacion_porcentaje": 64.684,
+      "abstencion_porcentaje": 35.316,
+      "control_votos": 0
+    },
+    {
+      "codigo": "21",
+      "nombre": "Huelva",
+      "electores": 402504,
+      "votantes": 260861,
+      "votos_validos": 256804,
+      "votos_nulos": 4057,
+      "votos_blancos": 2410,
+      "votos_candidaturas": 254394,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 93565,
+          "porcentaje_validos": 36.434,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 92326,
+          "porcentaje_validos": 35.952,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 37572,
+          "porcentaje_validos": 14.631,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "SUMAR ANDALUCÍA - SUMAR",
+          "votos": 26752,
+          "porcentaje_validos": 10.417,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR HUELVA - XH",
+          "votos": 1931,
+          "porcentaje_validos": 0.752,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 1663,
+          "porcentaje_validos": 0.648,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 368,
+          "porcentaje_validos": 0.143,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 217,
+          "porcentaje_validos": 0.085,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 5,
+      "participacion_porcentaje": 64.81,
+      "abstencion_porcentaje": 35.19,
+      "control_votos": 0
+    },
+    {
+      "codigo": "22",
+      "nombre": "Huesca",
+      "electores": 173391,
+      "votantes": 121148,
+      "votos_validos": 119895,
+      "votos_nulos": 1253,
+      "votos_blancos": 1217,
+      "votos_candidaturas": 118678,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 45783,
+          "porcentaje_validos": 38.186,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 40307,
+          "porcentaje_validos": 33.619,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 15155,
+          "porcentaje_validos": 12.64,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "SUMAR ARAGÓN - SUMAR ARAGÓN",
+          "votos": 13774,
+          "porcentaje_validos": 11.488,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ARAGÓN EXISTE - COALICIÓN EXISTE - EXISTE",
+          "votos": 1312,
+          "porcentaje_validos": 1.094,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ARAGONÉS - PAR",
+          "votos": 717,
+          "porcentaje_validos": 0.598,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 498,
+          "porcentaje_validos": 0.415,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ESCAÑOS EN BLANCO PARA DEJAR ESCAÑOS VACÍOS - ESCAÑOS EN BLANCO",
+          "votos": 475,
+          "porcentaje_validos": 0.396,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 258,
+          "porcentaje_validos": 0.215,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 137,
+          "porcentaje_validos": 0.114,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 114,
+          "porcentaje_validos": 0.095,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FEDERACIÓN DE LOS INDEPENDIENTES DE ARAGÓN - F.I.A.",
+          "votos": 84,
+          "porcentaje_validos": 0.07,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 64,
+          "porcentaje_validos": 0.053,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 3,
+      "participacion_porcentaje": 69.87,
+      "abstencion_porcentaje": 30.13,
+      "control_votos": 0
+    },
+    {
+      "codigo": "23",
+      "nombre": "Jaén",
+      "electores": 518371,
+      "votantes": 373657,
+      "votos_validos": 368731,
+      "votos_nulos": 4926,
+      "votos_blancos": 2497,
+      "votos_candidaturas": 366234,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 137617,
+          "porcentaje_validos": 37.322,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 133819,
+          "porcentaje_validos": 36.292,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 54400,
+          "porcentaje_validos": 14.753,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "SUMAR ANDALUCÍA - SUMAR",
+          "votos": 29461,
+          "porcentaje_validos": 7.99,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "JAÉN MERECE MÁS - JM+",
+          "votos": 8293,
+          "porcentaje_validos": 2.249,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 1671,
+          "porcentaje_validos": 0.453,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 410,
+          "porcentaje_validos": 0.111,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 360,
+          "porcentaje_validos": 0.098,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 203,
+          "porcentaje_validos": 0.055,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 5,
+      "participacion_porcentaje": 72.083,
+      "abstencion_porcentaje": 27.917,
+      "control_votos": 0
+    },
+    {
+      "codigo": "24",
+      "nombre": "León",
+      "electores": 422917,
+      "votantes": 277726,
+      "votos_validos": 275240,
+      "votos_nulos": 2486,
+      "votos_blancos": 1577,
+      "votos_candidaturas": 273663,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 101605,
+          "porcentaje_validos": 36.915,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 92578,
+          "porcentaje_validos": 33.635,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 35451,
+          "porcentaje_validos": 12.88,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "UNIÓN DEL PUEBLO LEONÉS - U.P.L.",
+          "votos": 22675,
+          "porcentaje_validos": 8.238,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 18577,
+          "porcentaje_validos": 6.749,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 895,
+          "porcentaje_validos": 0.325,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 541,
+          "porcentaje_validos": 0.197,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ESPAÑA VACIADA - ESPAÑA VACIADA",
+          "votos": 486,
+          "porcentaje_validos": 0.177,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 319,
+          "porcentaje_validos": 0.116,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO REGIONALISTA DEL PAÍS LEONÉS - PREPAL",
+          "votos": 309,
+          "porcentaje_validos": 0.112,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 155,
+          "porcentaje_validos": 0.056,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 72,
+          "porcentaje_validos": 0.026,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 4,
+      "participacion_porcentaje": 65.669,
+      "abstencion_porcentaje": 34.331,
+      "control_votos": 0
+    },
+    {
+      "codigo": "25",
+      "nombre": "Lleida",
+      "electores": 317225,
+      "votantes": 186929,
+      "votos_validos": 184539,
+      "votos_nulos": 2390,
+      "votos_blancos": 2059,
+      "votos_candidaturas": 182480,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIT DELS SOCIALISTES DE CATALUNYA (PSC-PSOE) - PSC",
+          "votos": 54414,
+          "porcentaje_validos": 29.486,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "ESQUERRA REPUBLICANA DE CATALUNYA - ERC",
+          "votos": 34331,
+          "porcentaje_validos": 18.604,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "JUNTS PER CATALUNYA - JUNTS - JxCAT - JUNTS",
+          "votos": 33228,
+          "porcentaje_validos": 18.006,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "PARTIDO POPULAR / PARTIT POPULAR - PP",
+          "votos": 23699,
+          "porcentaje_validos": 12.842,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "SUMAR - EN COMÚ PODEM - SUMAR - ECP",
+          "votos": 14561,
+          "porcentaje_validos": 7.89,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 12560,
+          "porcentaje_validos": 6.806,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "CANDIDATURA D'UNITAT POPULAR-PER LA RUPTURA - CUP-PR",
+          "votos": 5449,
+          "porcentaje_validos": 2.953,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIT DEMÒCRATA EUROPEU CATALÀ-ESPAI CIU - PDeCAT-E-CiU",
+          "votos": 1865,
+          "porcentaje_validos": 1.011,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIT ANIMALISTA AMB EL MEDI AMBIENT - PACMA",
+          "votos": 1352,
+          "porcentaje_validos": 0.733,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ESCONS EN BLANC - ESCONS EN BLANC",
+          "votos": 462,
+          "porcentaje_validos": 0.25,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 247,
+          "porcentaje_validos": 0.134,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIT COMUNISTA DELS TREBALLADORS DE CATALUNYA - PCTC",
+          "votos": 192,
+          "porcentaje_validos": 0.104,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 120,
+          "porcentaje_validos": 0.065,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 4,
+      "participacion_porcentaje": 58.926,
+      "abstencion_porcentaje": 41.074,
+      "control_votos": 0
+    },
+    {
+      "codigo": "26",
+      "nombre": "La Rioja",
+      "electores": 252091,
+      "votantes": 176945,
+      "votos_validos": 174663,
+      "votos_nulos": 2282,
+      "votos_blancos": 1608,
+      "votos_candidaturas": 173055,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 79715,
+          "porcentaje_validos": 45.639,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 62322,
+          "porcentaje_validos": 35.681,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 17056,
+          "porcentaje_validos": 9.765,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 11470,
+          "porcentaje_validos": 6.567,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 723,
+          "porcentaje_validos": 0.414,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ESCAÑOS EN BLANCO PARA DEJAR ESCAÑOS VACÍOS - ESCAÑOS EN BLANCO",
+          "votos": 608,
+          "porcentaje_validos": 0.348,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 295,
+          "porcentaje_validos": 0.169,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "TERCERA EDAD EN ACCIÓN - 3e",
+          "votos": 286,
+          "porcentaje_validos": 0.164,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 232,
+          "porcentaje_validos": 0.133,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 224,
+          "porcentaje_validos": 0.128,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 124,
+          "porcentaje_validos": 0.071,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 4,
+      "participacion_porcentaje": 70.191,
+      "abstencion_porcentaje": 29.809,
+      "control_votos": 0
+    },
+    {
+      "codigo": "27",
+      "nombre": "Lugo",
+      "electores": 337755,
+      "votantes": 200709,
+      "votos_validos": 198566,
+      "votos_nulos": 2143,
+      "votos_blancos": 1251,
+      "votos_candidaturas": 197315,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 99769,
+          "porcentaje_validos": 50.245,
+          "escanos": 3
+        },
+        {
+          "nombre_original": "PARTIDO DOS SOCIALISTAS DE GALICIA-PSOE - PSdeG-PSOE",
+          "votos": 60163,
+          "porcentaje_validos": 30.299,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "BLOQUE NACIONALISTA GALEGO - B.N.G.",
+          "votos": 17197,
+          "porcentaje_validos": 8.661,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "SUMAR GALICIA - SUMAR",
+          "votos": 10287,
+          "porcentaje_validos": 5.181,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 8643,
+          "porcentaje_validos": 4.353,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 645,
+          "porcentaje_validos": 0.325,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 233,
+          "porcentaje_validos": 0.117,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MAIS XUSTO - PUM+J",
+          "votos": 149,
+          "porcentaje_validos": 0.075,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DOS TRABALLADORES DE GALIZA - PCTG",
+          "votos": 116,
+          "porcentaje_validos": 0.058,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 113,
+          "porcentaje_validos": 0.057,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 4,
+      "participacion_porcentaje": 59.424,
+      "abstencion_porcentaje": 40.576,
+      "control_votos": 0
+    },
+    {
+      "codigo": "28",
+      "nombre": "Madrid",
+      "electores": 5224561,
+      "votantes": 3639500,
+      "votos_validos": 3608673,
+      "votos_nulos": 30827,
+      "votos_blancos": 28960,
+      "votos_candidaturas": 3579713,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 1463183,
+          "porcentaje_validos": 40.546,
+          "escanos": 16
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 1004599,
+          "porcentaje_validos": 27.838,
+          "escanos": 10
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 557780,
+          "porcentaje_validos": 15.457,
+          "escanos": 6
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 506164,
+          "porcentaje_validos": 14.026,
+          "escanos": 5
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 21742,
+          "porcentaje_validos": 0.602,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 7652,
+          "porcentaje_validos": 0.212,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 6749,
+          "porcentaje_validos": 0.187,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 3784,
+          "porcentaje_validos": 0.105,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 3407,
+          "porcentaje_validos": 0.094,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO HUMANISTA - PH",
+          "votos": 2902,
+          "porcentaje_validos": 0.08,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FALANGE ESPAÑOLA DE LAS J.O.N.S. - FE de las JONS",
+          "votos": 1751,
+          "porcentaje_validos": 0.049,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 37,
+      "participacion_porcentaje": 69.661,
+      "abstencion_porcentaje": 30.339,
+      "control_votos": 0
+    },
+    {
+      "codigo": "29",
+      "nombre": "Málaga",
+      "electores": 1239846,
+      "votantes": 798557,
+      "votos_validos": 788338,
+      "votos_nulos": 10219,
+      "votos_blancos": 7509,
+      "votos_candidaturas": 780829,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 302000,
+          "porcentaje_validos": 38.308,
+          "escanos": 5
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 239172,
+          "porcentaje_validos": 30.339,
+          "escanos": 3
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 129758,
+          "porcentaje_validos": 16.46,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "SUMAR ANDALUCÍA - SUMAR",
+          "votos": 96652,
+          "porcentaje_validos": 12.26,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 8487,
+          "porcentaje_validos": 1.077,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 1662,
+          "porcentaje_validos": 0.211,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 1519,
+          "porcentaje_validos": 0.193,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 888,
+          "porcentaje_validos": 0.113,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "CAMINANDO JUNTOS - CJ",
+          "votos": 691,
+          "porcentaje_validos": 0.088,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 11,
+      "participacion_porcentaje": 64.408,
+      "abstencion_porcentaje": 35.592,
+      "control_votos": 0
+    },
+    {
+      "codigo": "30",
+      "nombre": "Murcia",
+      "electores": 1099703,
+      "votantes": 755255,
+      "votos_validos": 747797,
+      "votos_nulos": 7458,
+      "votos_blancos": 5034,
+      "votos_candidaturas": 742763,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 307972,
+          "porcentaje_validos": 41.184,
+          "escanos": 4
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 189210,
+          "porcentaje_validos": 25.302,
+          "escanos": 3
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 163124,
+          "porcentaje_validos": 21.814,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 71578,
+          "porcentaje_validos": 9.572,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 5063,
+          "porcentaje_validos": 0.677,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR MI REGIÓN - POR MI REGIÓN",
+          "votos": 1698,
+          "porcentaje_validos": 0.227,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ESCAÑOS EN BLANCO PARA DEJAR ESCAÑOS VACÍOS - ESCAÑOS EN BLANCO",
+          "votos": 1377,
+          "porcentaje_validos": 0.184,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 1201,
+          "porcentaje_validos": 0.161,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 546,
+          "porcentaje_validos": 0.073,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "CAMINANDO JUNTOS - CJ",
+          "votos": 453,
+          "porcentaje_validos": 0.061,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FALANGE ESPAÑOLA DE LAS J.O.N.S. - FE de las JONS",
+          "votos": 376,
+          "porcentaje_validos": 0.05,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "REFERÉNDUM SISTEMA DINERO - +RDS+",
+          "votos": 165,
+          "porcentaje_validos": 0.022,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 10,
+      "participacion_porcentaje": 68.678,
+      "abstencion_porcentaje": 31.322,
+      "control_votos": 0
+    },
+    {
+      "codigo": "31",
+      "nombre": "Navarra",
+      "electores": 519918,
+      "votantes": 345095,
+      "votos_validos": 341844,
+      "votos_nulos": 3251,
+      "votos_blancos": 2890,
+      "votos_candidaturas": 338954,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO SOCIALISTA DE NAVARRA-PSOE - PSN-PSOE",
+          "votos": 93553,
+          "porcentaje_validos": 27.367,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "EUSKAL HERRIA BILDU - EH Bildu",
+          "votos": 58954,
+          "porcentaje_validos": 17.246,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 57134,
+          "porcentaje_validos": 16.713,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "UNION DEL PUEBLO NAVARRO - U.P.N.",
+          "votos": 52188,
+          "porcentaje_validos": 15.267,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 43922,
+          "porcentaje_validos": 12.849,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 19491,
+          "porcentaje_validos": 5.702,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "GEROA BAI - GBAI",
+          "votos": 9938,
+          "porcentaje_validos": 2.907,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 1530,
+          "porcentaje_validos": 0.448,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 1002,
+          "porcentaje_validos": 0.293,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 679,
+          "porcentaje_validos": 0.199,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 311,
+          "porcentaje_validos": 0.091,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 252,
+          "porcentaje_validos": 0.074,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 5,
+      "participacion_porcentaje": 66.375,
+      "abstencion_porcentaje": 33.625,
+      "control_votos": 0
+    },
+    {
+      "codigo": "32",
+      "nombre": "Ourense",
+      "electores": 355765,
+      "votantes": 188065,
+      "votos_validos": 186271,
+      "votos_nulos": 1794,
+      "votos_blancos": 1109,
+      "votos_candidaturas": 185162,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 93182,
+          "porcentaje_validos": 50.025,
+          "escanos": 3
+        },
+        {
+          "nombre_original": "PARTIDO DOS SOCIALISTAS DE GALICIA-PSOE - PSdeG-PSOE",
+          "votos": 56035,
+          "porcentaje_validos": 30.083,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "BLOQUE NACIONALISTA GALEGO - B.N.G.",
+          "votos": 15317,
+          "porcentaje_validos": 8.223,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "SUMAR GALICIA - SUMAR",
+          "votos": 10171,
+          "porcentaje_validos": 5.46,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 9080,
+          "porcentaje_validos": 4.875,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 700,
+          "porcentaje_validos": 0.376,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 182,
+          "porcentaje_validos": 0.098,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "COALICIÓN DE CENTRO DEMOCRÁTICO - CCD",
+          "votos": 153,
+          "porcentaje_validos": 0.082,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MAIS XUSTO - PUM+J",
+          "votos": 144,
+          "porcentaje_validos": 0.077,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DOS TRABALLADORES DE GALIZA - PCTG",
+          "votos": 101,
+          "porcentaje_validos": 0.054,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 97,
+          "porcentaje_validos": 0.052,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 4,
+      "participacion_porcentaje": 52.862,
+      "abstencion_porcentaje": 47.138,
+      "control_votos": 0
+    },
+    {
+      "codigo": "33",
+      "nombre": "Asturias",
+      "electores": 959023,
+      "votantes": 603183,
+      "votos_validos": 597032,
+      "votos_nulos": 6151,
+      "votos_blancos": 6079,
+      "votos_candidaturas": 590953,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 212816,
+          "porcentaje_validos": 35.646,
+          "escanos": 3
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 205049,
+          "porcentaje_validos": 34.345,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 88630,
+          "porcentaje_validos": 14.845,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 74571,
+          "porcentaje_validos": 12.49,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 3167,
+          "porcentaje_validos": 0.53,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ASTURIAS EXISTE-ESPAÑA VACIADA - ASTURIAS EXISTE EV",
+          "votos": 2314,
+          "porcentaje_validos": 0.388,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 1598,
+          "porcentaje_validos": 0.268,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 1176,
+          "porcentaje_validos": 0.197,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 773,
+          "porcentaje_validos": 0.129,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 590,
+          "porcentaje_validos": 0.099,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO UNIONISTA ESTADO DE ESPAÑA - PUEDE",
+          "votos": 269,
+          "porcentaje_validos": 0.045,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 7,
+      "participacion_porcentaje": 62.896,
+      "abstencion_porcentaje": 37.104,
+      "control_votos": 0
+    },
+    {
+      "codigo": "34",
+      "nombre": "Palencia",
+      "electores": 137642,
+      "votantes": 98079,
+      "votos_validos": 96962,
+      "votos_nulos": 1117,
+      "votos_blancos": 833,
+      "votos_candidaturas": 96129,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 40709,
+          "porcentaje_validos": 41.984,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 33613,
+          "porcentaje_validos": 34.666,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 12504,
+          "porcentaje_validos": 12.896,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 5877,
+          "porcentaje_validos": 6.061,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "VAMOS PALENCIA - VP",
+          "votos": 1917,
+          "porcentaje_validos": 1.977,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ESPAÑA VACIADA - ESPAÑA VACIADA",
+          "votos": 384,
+          "porcentaje_validos": 0.396,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "GRUPO INDEPENDIENTE PALENCIA TIERRA VIVA - GITV",
+          "votos": 366,
+          "porcentaje_validos": 0.377,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 295,
+          "porcentaje_validos": 0.304,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 139,
+          "porcentaje_validos": 0.143,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 99,
+          "porcentaje_validos": 0.102,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 80,
+          "porcentaje_validos": 0.083,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FALANGE ESPAÑOLA DE LAS J.O.N.S. - FE de las JONS",
+          "votos": 71,
+          "porcentaje_validos": 0.073,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 42,
+          "porcentaje_validos": 0.043,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "CAMINANDO JUNTOS - CJ",
+          "votos": 33,
+          "porcentaje_validos": 0.034,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 3,
+      "participacion_porcentaje": 71.257,
+      "abstencion_porcentaje": 28.743,
+      "control_votos": 0
+    },
+    {
+      "codigo": "35",
+      "nombre": "Las Palmas",
+      "electores": 898882,
+      "votantes": 534912,
+      "votos_validos": 529337,
+      "votos_nulos": 5575,
+      "votos_blancos": 3062,
+      "votos_candidaturas": 526275,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 175671,
+          "porcentaje_validos": 33.187,
+          "escanos": 3
+        },
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 136857,
+          "porcentaje_validos": 25.854,
+          "escanos": 3
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 77343,
+          "porcentaje_validos": 14.611,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "SUMAR CANARIAS - SUMAR",
+          "votos": 54369,
+          "porcentaje_validos": 10.271,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "NUEVA CANARIAS - BLOQUE CANARISTA - NC-bc",
+          "votos": 42430,
+          "porcentaje_validos": 8.016,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "COALICIÓN CANARIA - CCa",
+          "votos": 33558,
+          "porcentaje_validos": 6.34,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 3570,
+          "porcentaje_validos": 0.674,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "AHORA CANARIAS-PARTIDO COMUNISTA DEL PUEBLO CANARIO - AHORA CANARIAS-PCPC",
+          "votos": 883,
+          "porcentaje_validos": 0.167,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 635,
+          "porcentaje_validos": 0.12,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 563,
+          "porcentaje_validos": 0.106,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 396,
+          "porcentaje_validos": 0.075,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 8,
+      "participacion_porcentaje": 59.509,
+      "abstencion_porcentaje": 40.491,
+      "control_votos": 0
+    },
+    {
+      "codigo": "36",
+      "nombre": "Pontevedra",
+      "electores": 909434,
+      "votantes": 579125,
+      "votos_validos": 573124,
+      "votos_nulos": 6001,
+      "votos_blancos": 3865,
+      "votos_candidaturas": 569259,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 227658,
+          "porcentaje_validos": 39.722,
+          "escanos": 3
+        },
+        {
+          "nombre_original": "PARTIDO DOS SOCIALISTAS DE GALICIA-PSOE - PSdeG-PSOE",
+          "votos": 179737,
+          "porcentaje_validos": 31.361,
+          "escanos": 3
+        },
+        {
+          "nombre_original": "SUMAR GALICIA - SUMAR",
+          "votos": 75615,
+          "porcentaje_validos": 13.193,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "BLOQUE NACIONALISTA GALEGO - B.N.G.",
+          "votos": 53828,
+          "porcentaje_validos": 9.392,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 27539,
+          "porcentaje_validos": 4.805,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 3003,
+          "porcentaje_validos": 0.524,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 884,
+          "porcentaje_validos": 0.154,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 510,
+          "porcentaje_validos": 0.089,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DOS TRABALLADORES DE GALIZA - PCTG",
+          "votos": 485,
+          "porcentaje_validos": 0.085,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 7,
+      "participacion_porcentaje": 63.68,
+      "abstencion_porcentaje": 36.32,
+      "control_votos": 0
+    },
+    {
+      "codigo": "37",
+      "nombre": "Salamanca",
+      "electores": 300506,
+      "votantes": 201419,
+      "votos_validos": 199110,
+      "votos_nulos": 2309,
+      "votos_blancos": 1649,
+      "votos_candidaturas": 197461,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 93318,
+          "porcentaje_validos": 46.868,
+          "escanos": 3
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 60718,
+          "porcentaje_validos": 30.495,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 29203,
+          "porcentaje_validos": 14.667,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 11012,
+          "porcentaje_validos": 5.531,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ESPAÑA VACIADA - ESPAÑA VACIADA",
+          "votos": 1062,
+          "porcentaje_validos": 0.533,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 631,
+          "porcentaje_validos": 0.317,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO REGIONALISTA DEL PAÍS LEONÉS - PREPAL",
+          "votos": 489,
+          "porcentaje_validos": 0.246,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 325,
+          "porcentaje_validos": 0.163,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 278,
+          "porcentaje_validos": 0.14,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 205,
+          "porcentaje_validos": 0.103,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "CAMINANDO JUNTOS - CJ",
+          "votos": 140,
+          "porcentaje_validos": 0.07,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 80,
+          "porcentaje_validos": 0.04,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 4,
+      "participacion_porcentaje": 67.027,
+      "abstencion_porcentaje": 32.973,
+      "control_votos": 0
+    },
+    {
+      "codigo": "38",
+      "nombre": "Santa Cruz de Tenerife",
+      "electores": 881217,
+      "votantes": 500777,
+      "votos_validos": 494373,
+      "votos_nulos": 6404,
+      "votos_blancos": 5088,
+      "votos_candidaturas": 489285,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 174770,
+          "porcentaje_validos": 35.352,
+          "escanos": 3
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 165590,
+          "porcentaje_validos": 33.495,
+          "escanos": 3
+        },
+        {
+          "nombre_original": "COALICIÓN CANARIA - CCa",
+          "votos": 82805,
+          "porcentaje_validos": 16.749,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "SUMAR CANARIAS - SUMAR",
+          "votos": 53632,
+          "porcentaje_validos": 10.848,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 6147,
+          "porcentaje_validos": 1.243,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "NUEVA CANARIAS - BLOQUE CANARISTA - NC-bc",
+          "votos": 3165,
+          "porcentaje_validos": 0.64,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 1619,
+          "porcentaje_validos": 0.327,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "AHORA CANARIAS-PARTIDO COMUNISTA DEL PUEBLO CANARIO - AHORA CANARIAS-PCPC",
+          "votos": 791,
+          "porcentaje_validos": 0.16,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 766,
+          "porcentaje_validos": 0.155,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 7,
+      "participacion_porcentaje": 56.828,
+      "abstencion_porcentaje": 43.172,
+      "control_votos": 0
+    },
+    {
+      "codigo": "39",
+      "nombre": "Cantabria",
+      "electores": 507818,
+      "votantes": 355145,
+      "votos_validos": 350150,
+      "votos_nulos": 4995,
+      "votos_blancos": 3262,
+      "votos_candidaturas": 346888,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 147326,
+          "porcentaje_validos": 42.075,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 116596,
+          "porcentaje_validos": 33.299,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 49243,
+          "porcentaje_validos": 14.063,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 29713,
+          "porcentaje_validos": 8.486,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 2089,
+          "porcentaje_validos": 0.597,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 790,
+          "porcentaje_validos": 0.226,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 598,
+          "porcentaje_validos": 0.171,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 533,
+          "porcentaje_validos": 0.152,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 5,
+      "participacion_porcentaje": 69.935,
+      "abstencion_porcentaje": 30.065,
+      "control_votos": 0
+    },
+    {
+      "codigo": "40",
+      "nombre": "Segovia",
+      "electores": 119454,
+      "votantes": 89945,
+      "votos_validos": 88613,
+      "votos_nulos": 1332,
+      "votos_blancos": 875,
+      "votos_candidaturas": 87738,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 39894,
+          "porcentaje_validos": 45.02,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 27113,
+          "porcentaje_validos": 30.597,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 12510,
+          "porcentaje_validos": 14.118,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 7137,
+          "porcentaje_validos": 8.054,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 307,
+          "porcentaje_validos": 0.346,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "TERCERA EDAD EN ACCIÓN - 3e",
+          "votos": 198,
+          "porcentaje_validos": 0.223,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 183,
+          "porcentaje_validos": 0.207,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 136,
+          "porcentaje_validos": 0.153,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "CAMINANDO JUNTOS - CJ",
+          "votos": 102,
+          "porcentaje_validos": 0.115,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 94,
+          "porcentaje_validos": 0.106,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 64,
+          "porcentaje_validos": 0.072,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 3,
+      "participacion_porcentaje": 75.297,
+      "abstencion_porcentaje": 24.703,
+      "control_votos": 0
+    },
+    {
+      "codigo": "41",
+      "nombre": "Sevilla",
+      "electores": 1564082,
+      "votantes": 1075133,
+      "votos_validos": 1059358,
+      "votos_nulos": 15775,
+      "votos_blancos": 10951,
+      "votos_candidaturas": 1048407,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 387760,
+          "porcentaje_validos": 36.603,
+          "escanos": 5
+        },
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 353663,
+          "porcentaje_validos": 33.385,
+          "escanos": 4
+        },
+        {
+          "nombre_original": "SUMAR ANDALUCÍA - SUMAR",
+          "votos": 148745,
+          "porcentaje_validos": 14.041,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 141087,
+          "porcentaje_validos": 13.318,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 9288,
+          "porcentaje_validos": 0.877,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 1950,
+          "porcentaje_validos": 0.184,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 1765,
+          "porcentaje_validos": 0.167,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 1522,
+          "porcentaje_validos": 0.144,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 1034,
+          "porcentaje_validos": 0.098,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "CAMINANDO JUNTOS - CJ",
+          "votos": 912,
+          "porcentaje_validos": 0.086,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FALANGE ESPAÑOLA DE LAS J.O.N.S. - FE de las JONS",
+          "votos": 681,
+          "porcentaje_validos": 0.064,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 12,
+      "participacion_porcentaje": 68.739,
+      "abstencion_porcentaje": 31.261,
+      "control_votos": 0
+    },
+    {
+      "codigo": "42",
+      "nombre": "Soria",
+      "electores": 75768,
+      "votantes": 51157,
+      "votos_validos": 50769,
+      "votos_nulos": 388,
+      "votos_blancos": 285,
+      "votos_candidaturas": 50484,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 18895,
+          "porcentaje_validos": 37.218,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 14966,
+          "porcentaje_validos": 29.479,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "SORIA ¡YA! - SY",
+          "votos": 9697,
+          "porcentaje_validos": 19.1,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 4978,
+          "porcentaje_validos": 9.805,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 1711,
+          "porcentaje_validos": 3.37,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 94,
+          "porcentaje_validos": 0.185,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 68,
+          "porcentaje_validos": 0.134,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 43,
+          "porcentaje_validos": 0.085,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 23,
+          "porcentaje_validos": 0.045,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 9,
+          "porcentaje_validos": 0.018,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 2,
+      "participacion_porcentaje": 67.518,
+      "abstencion_porcentaje": 32.482,
+      "control_votos": 0
+    },
+    {
+      "codigo": "43",
+      "nombre": "Tarragona",
+      "electores": 596689,
+      "votantes": 372426,
+      "votos_validos": 368024,
+      "votos_nulos": 4402,
+      "votos_blancos": 3168,
+      "votos_candidaturas": 364856,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIT DELS SOCIALISTES DE CATALUNYA (PSC-PSOE) - PSC",
+          "votos": 121126,
+          "porcentaje_validos": 32.913,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "ESQUERRA REPUBLICANA DE CATALUNYA - ERC",
+          "votos": 55461,
+          "porcentaje_validos": 15.07,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "PARTIT POPULAR / PARTIDO POPULAR - PP",
+          "votos": 51061,
+          "porcentaje_validos": 13.874,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "SUMAR - EN COMÚ PODEM - SUMAR - ECP",
+          "votos": 41719,
+          "porcentaje_validos": 11.336,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "JUNTS PER CATALUNYA - JUNTS - JxCAT - JUNTS",
+          "votos": 40791,
+          "porcentaje_validos": 11.084,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 38039,
+          "porcentaje_validos": 10.336,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "CANDIDATURA D'UNITAT POPULAR-PER LA RUPTURA - CUP-PR",
+          "votos": 8700,
+          "porcentaje_validos": 2.364,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIT ANIMALISTA AMB EL MEDI AMBIENT - PACMA",
+          "votos": 3797,
+          "porcentaje_validos": 1.032,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIT DEMÒCRATA EUROPEU CATALÀ-ESPAI CIU - PDeCAT-E-CiU",
+          "votos": 2311,
+          "porcentaje_validos": 0.628,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 661,
+          "porcentaje_validos": 0.18,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIT COMUNISTA DELS TREBALLADORS DE CATALUNYA - PCTC",
+          "votos": 405,
+          "porcentaje_validos": 0.11,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 267,
+          "porcentaje_validos": 0.073,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ENTRE VEÏNS CATALUNYA - EVC",
+          "votos": 265,
+          "porcentaje_validos": 0.072,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "UNIDOS POR LA SOLIDARIDAD INTERNACIONAL - UNIDOS SI",
+          "votos": 253,
+          "porcentaje_validos": 0.069,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 6,
+      "participacion_porcentaje": 62.415,
+      "abstencion_porcentaje": 37.585,
+      "control_votos": 0
+    },
+    {
+      "codigo": "44",
+      "nombre": "Teruel",
+      "electores": 106352,
+      "votantes": 76561,
+      "votos_validos": 75913,
+      "votos_nulos": 648,
+      "votos_blancos": 410,
+      "votos_candidaturas": 75503,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 26586,
+          "porcentaje_validos": 35.022,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 22226,
+          "porcentaje_validos": 29.278,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "TERUEL EXISTE - COALICIÓN EXISTE - EXISTE",
+          "votos": 11348,
+          "porcentaje_validos": 14.949,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 9932,
+          "porcentaje_validos": 13.083,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 4126,
+          "porcentaje_validos": 5.435,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ARAGONÉS - PAR",
+          "votos": 711,
+          "porcentaje_validos": 0.937,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 172,
+          "porcentaje_validos": 0.227,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ESCAÑOS EN BLANCO PARA DEJAR ESCAÑOS VACÍOS - ESCAÑOS EN BLANCO",
+          "votos": 135,
+          "porcentaje_validos": 0.178,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 94,
+          "porcentaje_validos": 0.124,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 60,
+          "porcentaje_validos": 0.079,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 49,
+          "porcentaje_validos": 0.065,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 36,
+          "porcentaje_validos": 0.047,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FEDERACIÓN DE LOS INDEPENDIENTES DE ARAGÓN - F.I.A.",
+          "votos": 28,
+          "porcentaje_validos": 0.037,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 3,
+      "participacion_porcentaje": 71.988,
+      "abstencion_porcentaje": 28.012,
+      "control_votos": 0
+    },
+    {
+      "codigo": "45",
+      "nombre": "Toledo",
+      "electores": 542567,
+      "votantes": 392988,
+      "votos_validos": 387200,
+      "votos_nulos": 5788,
+      "votos_blancos": 2611,
+      "votos_candidaturas": 384589,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 146533,
+          "porcentaje_validos": 37.844,
+          "escanos": 3
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 126072,
+          "porcentaje_validos": 32.56,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 76044,
+          "porcentaje_validos": 19.639,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 31876,
+          "porcentaje_validos": 8.232,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 2024,
+          "porcentaje_validos": 0.523,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 985,
+          "porcentaje_validos": 0.254,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 499,
+          "porcentaje_validos": 0.129,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FALANGE ESPAÑOLA DE LAS J.O.N.S. - FE de las JONS",
+          "votos": 281,
+          "porcentaje_validos": 0.073,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 275,
+          "porcentaje_validos": 0.071,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 6,
+      "participacion_porcentaje": 72.431,
+      "abstencion_porcentaje": 27.569,
+      "control_votos": 0
+    },
+    {
+      "codigo": "46",
+      "nombre": "Valencia/València",
+      "electores": 1999340,
+      "votantes": 1451187,
+      "votos_validos": 1437161,
+      "votos_nulos": 14026,
+      "votos_blancos": 10810,
+      "votos_candidaturas": 1426351,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 483469,
+          "porcentaje_validos": 33.641,
+          "escanos": 6
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 461353,
+          "porcentaje_validos": 32.102,
+          "escanos": 5
+        },
+        {
+          "nombre_original": "COMPROMÍS - SUMAR: SUMEM PER GUANYAR - SUMAR - COMPROMÍS",
+          "votos": 242839,
+          "porcentaje_validos": 16.897,
+          "escanos": 3
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 218657,
+          "porcentaje_validos": 15.215,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 10334,
+          "porcentaje_validos": 0.719,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 2919,
+          "porcentaje_validos": 0.203,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 1778,
+          "porcentaje_validos": 0.124,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 1773,
+          "porcentaje_validos": 0.123,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ESTAT VALENCIÀ DEL BENESTAR - EVB",
+          "votos": 1442,
+          "porcentaje_validos": 0.1,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "CAMINANDO JUNTOS - CJ",
+          "votos": 1056,
+          "porcentaje_validos": 0.073,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FALANGE ESPAÑOLA DE LAS J.O.N.S. - FE de las JONS",
+          "votos": 731,
+          "porcentaje_validos": 0.051,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 16,
+      "participacion_porcentaje": 72.583,
+      "abstencion_porcentaje": 27.417,
+      "control_votos": 0
+    },
+    {
+      "codigo": "47",
+      "nombre": "Valladolid",
+      "electores": 431381,
+      "votantes": 319312,
+      "votos_validos": 316309,
+      "votos_nulos": 3003,
+      "votos_blancos": 2419,
+      "votos_candidaturas": 313890,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 129170,
+          "porcentaje_validos": 40.837,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 103596,
+          "porcentaje_validos": 32.752,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 47948,
+          "porcentaje_validos": 15.159,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 28049,
+          "porcentaje_validos": 8.868,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ESPAÑA VACIADA - ESPAÑA VACIADA",
+          "votos": 1226,
+          "porcentaje_validos": 0.388,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 1105,
+          "porcentaje_validos": 0.349,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 601,
+          "porcentaje_validos": 0.19,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ESCAÑOS EN BLANCO PARA DEJAR ESCAÑOS VACÍOS - ESCAÑOS EN BLANCO",
+          "votos": 583,
+          "porcentaje_validos": 0.184,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "UNIDAD CASTELLANA - Ud.Ca",
+          "votos": 463,
+          "porcentaje_validos": 0.146,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 376,
+          "porcentaje_validos": 0.119,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 335,
+          "porcentaje_validos": 0.106,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FALANGE ESPAÑOLA DE LAS J.O.N.S. - FE de las JONS",
+          "votos": 164,
+          "porcentaje_validos": 0.052,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 159,
+          "porcentaje_validos": 0.05,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FUERZA CÍVICA - FUERZA CÍVICA",
+          "votos": 115,
+          "porcentaje_validos": 0.036,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 5,
+      "participacion_porcentaje": 74.021,
+      "abstencion_porcentaje": 25.979,
+      "control_votos": 0
+    },
+    {
+      "codigo": "48",
+      "nombre": "Bizkaia",
+      "electores": 942983,
+      "votantes": 614944,
+      "votos_validos": 609693,
+      "votos_nulos": 5251,
+      "votos_blancos": 3391,
+      "votos_candidaturas": 606302,
+      "candidaturas": [
+        {
+          "nombre_original": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO - EAJ-PNV",
+          "votos": 164188,
+          "porcentaje_validos": 26.93,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA (PSOE) - PSE-EE (PSOE)",
+          "votos": 157448,
+          "porcentaje_validos": 25.824,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "EUSKAL HERRIA BILDU - EH Bildu",
+          "votos": 125867,
+          "porcentaje_validos": 20.644,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 70533,
+          "porcentaje_validos": 11.569,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 66592,
+          "porcentaje_validos": 10.922,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 16069,
+          "porcentaje_validos": 2.636,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 2729,
+          "porcentaje_validos": 0.448,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 929,
+          "porcentaje_validos": 0.152,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 804,
+          "porcentaje_validos": 0.132,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 618,
+          "porcentaje_validos": 0.101,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 525,
+          "porcentaje_validos": 0.086,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 8,
+      "participacion_porcentaje": 65.213,
+      "abstencion_porcentaje": 34.787,
+      "control_votos": 0
+    },
+    {
+      "codigo": "49",
+      "nombre": "Zamora",
+      "electores": 162998,
+      "votantes": 104671,
+      "votos_validos": 103410,
+      "votos_nulos": 1261,
+      "votos_blancos": 922,
+      "votos_candidaturas": 102488,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 46196,
+          "porcentaje_validos": 44.673,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 33601,
+          "porcentaje_validos": 32.493,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 13652,
+          "porcentaje_validos": 13.202,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 5839,
+          "porcentaje_validos": 5.646,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ZAMORA SÍ - Zsi",
+          "votos": 1843,
+          "porcentaje_validos": 1.782,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "UNIÓN DEL PUEBLO LEONÉS - U.P.L.",
+          "votos": 526,
+          "porcentaje_validos": 0.509,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 313,
+          "porcentaje_validos": 0.303,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO REGIONALISTA DEL PAÍS LEONÉS - PREPAL",
+          "votos": 166,
+          "porcentaje_validos": 0.161,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 121,
+          "porcentaje_validos": 0.117,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 100,
+          "porcentaje_validos": 0.097,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 81,
+          "porcentaje_validos": 0.078,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 50,
+          "porcentaje_validos": 0.048,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 3,
+      "participacion_porcentaje": 64.216,
+      "abstencion_porcentaje": 35.784,
+      "control_votos": 0
+    },
+    {
+      "codigo": "50",
+      "nombre": "Zaragoza",
+      "electores": 740060,
+      "votantes": 523410,
+      "votos_validos": 518705,
+      "votos_nulos": 4705,
+      "votos_blancos": 4693,
+      "votos_candidaturas": 514012,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 186776,
+          "porcentaje_validos": 36.008,
+          "escanos": 3
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 159858,
+          "porcentaje_validos": 30.819,
+          "escanos": 2
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 79376,
+          "porcentaje_validos": 15.303,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "SUMAR ARAGÓN - SUMAR ARAGÓN",
+          "votos": 69925,
+          "porcentaje_validos": 13.481,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "ARAGÓN EXISTE - COALICIÓN EXISTE - EXISTE",
+          "votos": 7780,
+          "porcentaje_validos": 1.5,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ARAGONÉS - PAR",
+          "votos": 2745,
+          "porcentaje_validos": 0.529,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 2428,
+          "porcentaje_validos": 0.468,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "ESCAÑOS EN BLANCO PARA DEJAR ESCAÑOS VACÍOS - ESCAÑOS EN BLANCO",
+          "votos": 2146,
+          "porcentaje_validos": 0.414,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 1026,
+          "porcentaje_validos": 0.198,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA - PCTE",
+          "votos": 561,
+          "porcentaje_validos": 0.108,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 419,
+          "porcentaje_validos": 0.081,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FEDERACIÓN DE LOS INDEPENDIENTES DE ARAGÓN - F.I.A.",
+          "votos": 394,
+          "porcentaje_validos": 0.076,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 306,
+          "porcentaje_validos": 0.059,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FALANGE ESPAÑOLA DE LAS J.O.N.S. - FE de las JONS",
+          "votos": 272,
+          "porcentaje_validos": 0.052,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 7,
+      "participacion_porcentaje": 70.725,
+      "abstencion_porcentaje": 29.275,
+      "control_votos": 0
+    },
+    {
+      "codigo": "51",
+      "nombre": "Ceuta",
+      "electores": 63310,
+      "votantes": 33674,
+      "votos_validos": 33321,
+      "votos_nulos": 353,
+      "votos_blancos": 328,
+      "votos_candidaturas": 32993,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 12918,
+          "porcentaje_validos": 38.768,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 11332,
+          "porcentaje_validos": 34.009,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 7752,
+          "porcentaje_validos": 23.265,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 821,
+          "porcentaje_validos": 2.464,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "FRENTE OBRERO - FO",
+          "votos": 53,
+          "porcentaje_validos": 0.159,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "LIBRES - LB",
+          "votos": 53,
+          "porcentaje_validos": 0.159,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 33,
+          "porcentaje_validos": 0.099,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 31,
+          "porcentaje_validos": 0.093,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 1,
+      "participacion_porcentaje": 53.189,
+      "abstencion_porcentaje": 46.811,
+      "control_votos": 0
+    },
+    {
+      "codigo": "52",
+      "nombre": "Melilla",
+      "electores": 61118,
+      "votantes": 27649,
+      "votos_validos": 27349,
+      "votos_nulos": 300,
+      "votos_blancos": 253,
+      "votos_candidaturas": 27096,
+      "candidaturas": [
+        {
+          "nombre_original": "PARTIDO POPULAR - PP",
+          "votos": 13446,
+          "porcentaje_validos": 49.165,
+          "escanos": 1
+        },
+        {
+          "nombre_original": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE",
+          "votos": 6943,
+          "porcentaje_validos": 25.387,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "VOX - VOX",
+          "votos": 4359,
+          "porcentaje_validos": 15.938,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "COALICIÓN POR MELILLA - CpM",
+          "votos": 1298,
+          "porcentaje_validos": 4.746,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "SUMAR - SUMAR",
+          "votos": 827,
+          "porcentaje_validos": 3.024,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE - PACMA",
+          "votos": 160,
+          "porcentaje_validos": 0.585,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "POR UN MUNDO MÁS JUSTO - PUM+J",
+          "votos": 40,
+          "porcentaje_validos": 0.146,
+          "escanos": 0
+        },
+        {
+          "nombre_original": "RECORTES CERO - RECORTES CERO",
+          "votos": 23,
+          "porcentaje_validos": 0.084,
+          "escanos": 0
+        }
+      ],
+      "escanos_2023": 1,
+      "participacion_porcentaje": 45.239,
+      "abstencion_porcentaje": 54.761,
+      "control_votos": 0
+    }
+  ]
+}
