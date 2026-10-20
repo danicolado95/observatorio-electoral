@@ -1,0 +1,218 @@
+{
+  "eleccion": "Congreso de los Diputados, 29 de noviembre de 2026",
+  "fecha_referencia": "2026-10-20",
+  "fuente": "BOE-A-2026-20742, anexo",
+  "url_fuente": "https://www.boe.es/buscar/doc.php?id=BOE-A-2026-20742",
+  "total_circunscripciones": 52,
+  "total_diputados": 350,
+  "circunscripciones": [
+    {
+      "circunscripcion": "Albacete",
+      "diputados": 4
+    },
+    {
+      "circunscripcion": "Alicante",
+      "diputados": 12
+    },
+    {
+      "circunscripcion": "Almería",
+      "diputados": 6
+    },
+    {
+      "circunscripcion": "Araba/Álava",
+      "diputados": 4
+    },
+    {
+      "circunscripcion": "Asturias",
+      "diputados": 7
+    },
+    {
+      "circunscripcion": "Ávila",
+      "diputados": 3
+    },
+    {
+      "circunscripcion": "Badajoz",
+      "diputados": 5
+    },
+    {
+      "circunscripcion": "Illes Balears",
+      "diputados": 8
+    },
+    {
+      "circunscripcion": "Barcelona",
+      "diputados": 32
+    },
+    {
+      "circunscripcion": "Bizkaia",
+      "diputados": 8
+    },
+    {
+      "circunscripcion": "Burgos",
+      "diputados": 4
+    },
+    {
+      "circunscripcion": "Cáceres",
+      "diputados": 4
+    },
+    {
+      "circunscripcion": "Cádiz",
+      "diputados": 8
+    },
+    {
+      "circunscripcion": "Cantabria",
+      "diputados": 5
+    },
+    {
+      "circunscripcion": "Castellón",
+      "diputados": 5
+    },
+    {
+      "circunscripcion": "Ciudad Real",
+      "diputados": 5
+    },
+    {
+      "circunscripcion": "Córdoba",
+      "diputados": 6
+    },
+    {
+      "circunscripcion": "A Coruña",
+      "diputados": 8
+    },
+    {
+      "circunscripcion": "Cuenca",
+      "diputados": 3
+    },
+    {
+      "circunscripcion": "Gipuzkoa",
+      "diputados": 6
+    },
+    {
+      "circunscripcion": "Girona",
+      "diputados": 6
+    },
+    {
+      "circunscripcion": "Granada",
+      "diputados": 7
+    },
+    {
+      "circunscripcion": "Guadalajara",
+      "diputados": 3
+    },
+    {
+      "circunscripcion": "Huelva",
+      "diputados": 5
+    },
+    {
+      "circunscripcion": "Huesca",
+      "diputados": 3
+    },
+    {
+      "circunscripcion": "Jaén",
+      "diputados": 5
+    },
+    {
+      "circunscripcion": "León",
+      "diputados": 4
+    },
+    {
+      "circunscripcion": "Lleida",
+      "diputados": 4
+    },
+    {
+      "circunscripcion": "Lugo",
+      "diputados": 4
+    },
+    {
+      "circunscripcion": "Madrid",
+      "diputados": 38
+    },
+    {
+      "circunscripcion": "Málaga",
+      "diputados": 11
+    },
+    {
+      "circunscripcion": "Murcia",
+      "diputados": 10
+    },
+    {
+      "circunscripcion": "Navarra",
+      "diputados": 5
+    },
+    {
+      "circunscripcion": "Ourense",
+      "diputados": 4
+    },
+    {
+      "circunscripcion": "Palencia",
+      "diputados": 3
+    },
+    {
+      "circunscripcion": "Las Palmas",
+      "diputados": 8
+    },
+    {
+      "circunscripcion": "Pontevedra",
+      "diputados": 7
+    },
+    {
+      "circunscripcion": "La Rioja",
+      "diputados": 4
+    },
+    {
+      "circunscripcion": "Salamanca",
+      "diputados": 4
+    },
+    {
+      "circunscripcion": "Santa Cruz de Tenerife",
+      "diputados": 7
+    },
+    {
+      "circunscripcion": "Segovia",
+      "diputados": 3
+    },
+    {
+      "circunscripcion": "Sevilla",
+      "diputados": 12
+    },
+    {
+      "circunscripcion": "Soria",
+      "diputados": 2
+    },
+    {
+      "circunscripcion": "Tarragona",
+      "diputados": 6
+    },
+    {
+      "circunscripcion": "Teruel",
+      "diputados": 3
+    },
+    {
+      "circunscripcion": "Toledo",
+      "diputados": 6
+    },
+    {
+      "circunscripcion": "Valencia",
+      "diputados": 16
+    },
+    {
+      "circunscripcion": "Valladolid",
+      "diputados": 5
+    },
+    {
+      "circunscripcion": "Zamora",
+      "diputados": 3
+    },
+    {
+      "circunscripcion": "Zaragoza",
+      "diputados": 7
+    },
+    {
+      "circunscripcion": "Ceuta",
+      "diputados": 1
+    },
+    {
+      "circunscripcion": "Melilla",
+      "diputados": 1
+    }
+  ]
+}
