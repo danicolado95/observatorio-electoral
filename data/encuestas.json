@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "periodo_inicio": "2026-01-01",
+  "ambito": "Elecciones generales de España",
+  "encuestas": [
+    {
+      "id": "cis-enero-2026",
+      "numero_estudio": "3540",
+      "tamano_muestra": 4006,
+      "instituto": "CIS",
+      "mes": "2026-01",
+      "fecha_publicacion": "2026-01-16",
+      "trabajo_campo_inicio": "2026-01-05",
+      "trabajo_campo_fin": "2026-01-10",
+      "tipo": "estimacion_voto",
+      "resultados": {
+        "PSOE": 31.7,
+        "PP": 23.0,
+        "VOX": 17.7,
+        "SUMAR": 7.2,
+        "PODEMOS": 3.5
+      },
+      "fuente": "https://www.cis.es/es/estudios/barometro-de-enero-2026"
+    }
+  ]
+}
