@@ -70,18 +70,68 @@ function mostrarEncuestaReal(datos) {
 
   const encuesta = datos.encuestas[0];
 
+  const colores = {
+    PSOE: '#e54440',
+    PP: '#347cbd',
+    VOX: '#69a554',
+    SUMAR: '#d36a9d',
+    PODEMOS: '#8541b5'
+  };
+
   const titulo = document.createElement('h3');
   titulo.textContent = `${encuesta.instituto} · Enero de 2026`;
 
-  const lista = document.createElement('ul');
+  const subtitulo = document.createElement('p');
+  subtitulo.textContent =
+    'Estimación de voto · Encuesta individual, no promedio';
+
+  const lista = document.createElement('div');
 
   for (const [partido, porcentaje] of Object.entries(encuesta.resultados)) {
-    const elemento = document.createElement('li');
-    elemento.textContent = `${partido}: ${porcentaje.toLocaleString('es-ES')} %`;
-    lista.appendChild(elemento);
+    const fila = document.createElement('div');
+    fila.style.margin = '16px 0';
+
+    const etiqueta = document.createElement('div');
+    etiqueta.style.display = 'flex';
+    etiqueta.style.justifyContent = 'space-between';
+
+    const nombre = document.createElement('strong');
+    nombre.textContent = partido;
+
+    const valor = document.createElement('strong');
+    valor.textContent = `${porcentaje.toLocaleString('es-ES')} %`;
+
+    etiqueta.append(nombre, valor);
+
+    const fondo = document.createElement('div');
+    fondo.style.background = '#e9eee9';
+    fondo.style.height = '10px';
+    fondo.style.borderRadius = '8px';
+    fondo.style.marginTop = '7px';
+
+    const barra = document.createElement('div');
+    barra.style.width = `${Math.min(100, porcentaje / 40 * 100)}%`;
+    barra.style.height = '100%';
+    barra.style.borderRadius = '8px';
+    barra.style.background = colores[partido] || '#888888';
+
+    fondo.appendChild(barra);
+    fila.append(etiqueta, fondo);
+    lista.appendChild(fila);
   }
 
-  contenedor.replaceChildren(titulo, lista);
+  const fuente = document.createElement('a');
+  fuente.href = encuesta.fuente;
+  fuente.textContent = 'Consultar encuesta original ↗';
+  fuente.target = '_blank';
+  fuente.rel = 'noopener noreferrer';
+
+  contenedor.replaceChildren(titulo, subtitulo, lista, fuente);
+  contenedor.style.padding = '24px';
+  contenedor.style.background = '#ffffff';
+  contenedor.style.border = '1px solid #e3e8e2';
+  contenedor.style.borderRadius = '18px';
+  contenedor.style.marginBottom = '24px';
 }
 }cargarEncuestas();function renderPolls(){let cis=document.getElementById('with-cis').checked,short=document.getElementById('poll-period').value==='short';const d={PP:cis?-1:0,PSOE:cis?1.1:0,Vox:cis?-.7:0,Sumar:cis?.3:0,Podemos:cis?.3:0,Otros:cis?0:0};document.getElementById('poll-stats').innerHTML=parties.slice(0,4).map(p=>`<div class="panel"><div class="mini-label" style="display:flex;justify-content:space-between"><span>${p.id}</span><span style="background:${p.c};width:9px;height:9px;border-radius:50%"></span></div><div class="stat">${(basePoll[p.id]+d[p.id]).toFixed(1).replace('.',',')}<span style="font-size:19px">%</span></div><div class="sub">Media ilustrativa</div></div>`).join('');document.getElementById('poll-bars').innerHTML=parties.map(p=>`<div class="bar-row"><span class="name">${p.id}</span><div class="track"><div class="bar" style="--c:${p.c};width:${(basePoll[p.id]+d[p.id])*2.4}%"></div></div><span class="value">${(basePoll[p.id]+d[p.id]).toFixed(1)} %</span></div>`).join('');document.getElementById('poll-insight').innerHTML=`Al ${cis?'incluir':'excluir'} el CIS en esta <b>simulación</b>, cambian algunos porcentajes. El control ilustra por qué importa conocer las reglas del promedio; no presenta cifras de encuestas reales.`;const select=document.getElementById('poll-select');select.innerHTML=parties.slice(0,5).map(p=>`<button class="seg ${visiblePolls.includes(p.id)?'active':''}" onclick="togglePoll('${p.id}')" style="${visiblePolls.includes(p.id)?'border-bottom:3px solid '+p.c:''}">${p.id}</button>`).join('');document.getElementById('trend-legend').innerHTML=visiblePolls.map(p=>`<span style="--c:${color(p)}">${p}</span>`).join('');const width=700,height=300,margin={l:39,r:12,t:20,b:28};let svg='';for(let y=10;y<=40;y+=10){let yy=height-margin.b-(y-5)/40*(height-margin.t-margin.b);svg+=`<line x1="${margin.l}" x2="${width-margin.r}" y1="${yy}" y2="${yy}" stroke="#e4e9e1"/><text x="7" y="${yy+4}" fill="#839086" font-size="11">${y}%</text>`}let count=short?7:13;['Abr','May','Jun','Jul','Ago','Sep','Oct'].slice(short?3:0).forEach((label,i,a)=>svg+=`<text x="${margin.l+i*(width-margin.l-margin.r)/(a.length-1)}" y="294" text-anchor="middle" font-size="11" fill="#89968f">${label}</text>`);for(let p of visiblePolls){let base=basePoll[p]+d[p], phase=parties.findIndex(v=>v.id===p);let arr=Array.from({length:count},(_,i)=>Math.max(5,base+(i-(count-1))*({PP:.18,PSOE:-.16,Vox:.3,Sumar:-.12,Podemos:.05}[p]||0)+Math.sin(i*1.2+phase*1.6)*.65));let pts=arr.map((v,i)=>[margin.l+i*(width-margin.l-margin.r)/(count-1),height-margin.b-(v-5)/40*(height-margin.t-margin.b)]);svg+=`<polyline points="${pts.map(x=>x.join(',')).join(' ')}" fill="none" stroke="${color(p)}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>`;pts.forEach(([x,y],i)=>{if(i===count-1)svg+=`<circle cx="${x}" cy="${y}" r="5" fill="${color(p)}" stroke="white" stroke-width="2"/>`})}document.getElementById('trend').innerHTML=svg}function togglePoll(p){visiblePolls=visiblePolls.includes(p)?visiblePolls.length===1?visiblePolls:visiblePolls.filter(x=>x!==p):[...visiblePolls,p];renderPolls()}
 const provinceNames=['A Coruña','Lugo','Asturias','Cantabria','Bizkaia','Gipuzkoa','Navarra','Huesca','Girona','Pontevedra','Ourense','León','Palencia','Burgos','Álava','La Rioja','Zaragoza','Lleida','Barcelona','Zamora','Valladolid','Segovia','Soria','Guadalajara','Teruel','Tarragona','Salamanca','Ávila','Madrid','Cuenca','Castellón','Cáceres','Toledo','Albacete','Valencia','Badajoz','Ciudad Real','Jaén','Alicante','Córdoba','Sevilla','Granada','Murcia','Huelva','Cádiz','Málaga','Almería','Illes Balears','Las Palmas','Santa Cruz de Tenerife','Ceuta','Melilla'];const seatOverrides={'Madrid':38,'Barcelona':32,'Valencia':16,'Sevilla':12,'Alicante':12,'Málaga':11,'Murcia':10,'Cádiz':9,'Bizkaia':8,'A Coruña':8,'Asturias':7,'Zaragoza':7,'Pontevedra':7,'Illes Balears':8,'Las Palmas':8,'Santa Cruz de Tenerife':7,'Granada':7,'Córdoba':6,'Toledo':6,'Tarragona':6,'Girona':6,'Navarra':5,'Cantabria':5,'Castellón':5,'Valladolid':5,'Ciudad Real':5,'Badajoz':5,'Almería':6,'Jaén':5,'Gipuzkoa':6,'Huelva':5,'Lleida':4,'La Rioja':4,'Álava':4,'Burgos':4,'Cáceres':4,'León':4,'Lugo':4,'Ourense':4,'Salamanca':4,'Albacete':4,'Ávila':3,'Cuenca':3,'Guadalajara':3,'Huesca':3,'Palencia':3,'Segovia':3,'Teruel':3,'Zamora':3,'Soria':2,'Ceuta':1,'Melilla':1};const abbreviations={'A Coruña':'CO','Pontevedra':'PO','Ourense':'OU','Lugo':'LU','Asturias':'AS','Cantabria':'CB','Bizkaia':'BI','Gipuzkoa':'GI','Navarra':'NA','Álava':'AL','La Rioja':'LR','Illes Balears':'IB','Las Palmas':'LP','Santa Cruz de Tenerife':'TF','Ciudad Real':'CR','Guadalajara':'GU','Castellón':'CS','Alicante':'AC','Valladolid':'VA','Salamanca':'SA','Zaragoza':'ZA','Barcelona':'BC','Madrid':'MD','Valencia':'VL','Murcia':'MU','Sevilla':'SE','Málaga':'MA','Cádiz':'CA','Granada':'GR','Ceuta':'CE','Melilla':'ME'};const tileLocations=[[0,0],[0,1],[0,3],[0,4],[0,6],[0,7],[0,8],[0,9],[0,11],[1,0],[1,1],[1,3],[1,4],[1,5],[1,6],[1,7],[1,8],[1,9],[1,11],[2,1],[2,3],[2,4],[2,5],[2,6],[2,8],[2,10],[3,1],[3,3],[3,5],[3,7],[3,10],[4,1],[4,4],[4,6],[4,9],[5,1],[5,4],[5,6],[5,9],[6,3],[6,5],[6,6],[6,9],[7,1],[7,3],[7,5],[7,8],[5,11],[8,0],[8,1],[8,10],[8,11]];let mapLayer='seats',selectedProvince='Guadalajara';
