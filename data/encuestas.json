@@ -21,6 +21,26 @@
         "PODEMOS": 3.5
       },
       "fuente": "https://www.cis.es/es/estudios/barometro-de-enero-2026"
-    }
+    },
+{
+  "id": "40db-enero-2026",
+  "instituto": "40dB",
+  "medio": "El País / Cadena SER",
+  "mes": "2026-01",
+  "fecha_publicacion": "2026-01-12",
+  "trabajo_campo_inicio": "2025-12-29",
+  "trabajo_campo_fin": "2026-01-05",
+  "tamano_muestra": 2000,
+  "tipo": "estimacion_voto",
+  "resultados": {
+    "PP": 31.5,
+    "PSOE": 27.1,
+    "VOX": 17.9,
+    "SUMAR": 5.9,
+    "PODEMOS": 3.5,
+    "SALF": 2.1
+  },
+  "fuente": "https://elpais.com/espana/2026-01-12/consulte-todos-los-datos-internos-de-la-encuesta-de-el-pais-cuestionarios-cruces-y-respuestas-individuales.html"
+}
   ]
 }

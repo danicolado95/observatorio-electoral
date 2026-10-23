@@ -26,7 +26,10 @@
 </style><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous">
 </head><body><header class="top"><div class="wrap top-inner"><div class="brand"><span class="brand-mark">✳</span>atlas <em>electoral</em></div><nav id="nav" class="nav" aria-label="Secciones"></nav><div class="status">ESPAÑA · 2026</div></div></header><div class="demo"><div class="wrap"><span class="dot"></span><span><b>Prototipo visual:</b> cifras electorales, perfiles y estimaciones simuladas. No son encuestas ni pronósticos reales.</span></div></div><main class="wrap">
 <section class="page active" id="inicio"><div class="hero"><div><div class="eyebrow">UN LABORATORIO ABIERTO SOBRE LAS ELECCIONES</div><h1>Los números cuentan.<br><span style="color:var(--sage)">Las personas también.</span></h1><p class="lead">Un lugar para explorar cómo votamos, cómo cambian nuestras preferencias y cómo se convierten los votos en representación.</p><div class="action-row"><button class="btn" onclick="show('mapa')">Explorar el mapa <span>↗</span></button><button class="btn light" onclick="show('encuestas')">Ver encuestas →</button></div></div><div class="hero-art"><div class="hero-over"><small>RADAR DEMOSCÓPICO · DEMO</small><h3>Un país, muchas tendencias.</h3><div class="tiny-bars" id="hero-bars"></div><p style="margin:13px 0 0;color:#667a70;font-size:11px">Desliza, compara, cuestiona. La fotografía nunca es toda la historia.</p></div></div></div><div class="section-head"><div><div class="eyebrow">PANORAMA GENERAL</div><h3>Una primera mirada</h3></div><span class="source">CIFRAS SIMULADAS SALVO DATOS ESTRUCTURALES</span></div><div class="grid four" style="margin-bottom:35px"><div class="panel"><div class="mini-label">Circunscripciones</div><div class="stat">52</div><div class="sub">50 provincias, Ceuta y Melilla</div></div><div class="panel"><div class="mini-label">Diputados en el Congreso</div><div class="stat">350</div><div class="sub">Repartidos territorialmente</div></div><div class="panel"><div class="mini-label">Participación · demo</div><div class="stat">70,8<span style="font-size:18px">%</span></div><div class="sub">Ejemplo, no dato actual</div></div><div class="panel"><div class="mini-label">Tu próximo descubrimiento</div><div class="stat">6<span style="font-size:18px"> →</span></div><div class="sub">Formas de explorar las elecciones</div></div></div><div class="section-head"><div><div class="eyebrow">EXPLORA EL ATLAS</div><h3>Seis puertas de entrada</h3></div><div class="sub">Selecciona un tema para interactuar</div></div><div class="grid three" id="features"></div><div class="grid two" style="margin-top:24px"><div class="panel alt"><div class="eyebrow">LA PREGUNTA DEL MOMENTO</div><h3 style="font-family:Fraunces,serif;font-size:27px;margin-top:10px">¿Qué partido se disputa el último escaño en tu provincia?</h3><p class="sub">Un mismo porcentaje de voto puede producir repartos muy distintos según la circunscripción.</p><button class="btn" onclick="show('mapa')">Entrar al mapa →</button></div><div class="panel"><div class="eyebrow">APRENDE A LEER LOS DATOS</div><h3 style="font-family:Fraunces,serif;font-size:27px;margin-top:10px">No es lo mismo una estimación que un resultado.</h3><p class="sub">Cada visualización distingue datos observados, modelos y ejercicios hipotéticos. El cómo importa tanto como el cuánto.</p><button class="link" onclick="show('encuestas')">Ver un ejemplo →</button></div></div></section>
-<section class="page" id="encuestas"><div id="encuesta-real"></div><div class="section-intro"><div class="eyebrow">01 / RADAR DEMOSCÓPICO</div><h2>¿Cómo va la cosa?</h2><p>La fotografía de las encuestas es móvil. Compara partidos, explora tendencias y descubre cómo cambian las conclusiones según la selección de sondeos.</p></div><div class="grid four" id="poll-stats"></div><div class="split" style="margin-top:18px"><div class="panel"><div class="panel-heading"><div><h3>La tendencia del voto</h3><div class="sub">Evolución simulada de la estimación, en %</div></div><span class="tag gold">Datos ficticios</span></div><div class="controls" id="poll-select"></div><svg id="trend" class="chart-svg" viewBox="0 0 700 300" role="img" aria-label="Gráfico de tendencias simuladas"></svg><div class="legend" id="trend-legend"></div></div><div class="panel"><h3>Lo que hay detrás</h3><label for="poll-period">Periodo</label><select id="poll-period" onchange="renderPolls()"><option value="full">Últimos seis meses</option><option value="short">Últimos tres meses</option></select><div style="height:14px"></div><label class="toggle"><input type="checkbox" id="with-cis" onchange="renderPolls()"> Incluir CIS en la media ilustrativa</label><div class="divider"></div><div class="insight" id="poll-insight"></div><p class="note">La media ilustrativa reacciona al selector, pero no aplica aún una metodología real. La web definitiva conservará muestra, trabajo de campo, pesos y efectos de encuestadora.</p></div></div><div class="panel" style="margin-top:17px"><div class="panel-heading"><h3>La foto de hoy, comparada</h3><span class="tag">SIMULACIÓN</span></div><div id="poll-bars"></div></div></section>
+<section class="page" id="encuestas">
+  <label for="selector-encuesta">Seleccionar encuesta:</label>
+<select id="selector-encuesta"></select>
+  <div id="encuesta-real"></div><div class="section-intro"><div class="eyebrow">01 / RADAR DEMOSCÓPICO</div><h2>¿Cómo va la cosa?</h2><p>La fotografía de las encuestas es móvil. Compara partidos, explora tendencias y descubre cómo cambian las conclusiones según la selección de sondeos.</p></div><div class="grid four" id="poll-stats"></div><div class="split" style="margin-top:18px"><div class="panel"><div class="panel-heading"><div><h3>La tendencia del voto</h3><div class="sub">Evolución simulada de la estimación, en %</div></div><span class="tag gold">Datos ficticios</span></div><div class="controls" id="poll-select"></div><svg id="trend" class="chart-svg" viewBox="0 0 700 300" role="img" aria-label="Gráfico de tendencias simuladas"></svg><div class="legend" id="trend-legend"></div></div><div class="panel"><h3>Lo que hay detrás</h3><label for="poll-period">Periodo</label><select id="poll-period" onchange="renderPolls()"><option value="full">Últimos seis meses</option><option value="short">Últimos tres meses</option></select><div style="height:14px"></div><label class="toggle"><input type="checkbox" id="with-cis" onchange="renderPolls()"> Incluir CIS en la media ilustrativa</label><div class="divider"></div><div class="insight" id="poll-insight"></div><p class="note">La media ilustrativa reacciona al selector, pero no aplica aún una metodología real. La web definitiva conservará muestra, trabajo de campo, pesos y efectos de encuestadora.</p></div></div><div class="panel" style="margin-top:17px"><div class="panel-heading"><h3>La foto de hoy, comparada</h3><span class="tag">SIMULACIÓN</span></div><div id="poll-bars"></div></div></section>
 <section class="page" id="mapa"><div class="section-intro"><div class="eyebrow">02 / GEOGRAFÍA DEL VOTO</div><h2>Cada escaño tiene su territorio.</h2><p>52 circunscripciones, un Congreso. Explora su tamaño, un reparto de ejemplo y qué partidos pueden disputarse un diputado marginal.</p></div><div id="official-data-status" role="status" style="margin:0 0 14px;font-size:12px;color:#94653f">Cargando reparto oficial del BOE…</div><div id="history-status" role="status" style="margin:0 0 14px;font-size:12px;color:#94653f">Cargando resultados históricos de 2023…</div><div class="controls" id="map-layers"></div><div class="map-select-wrap"><label for="province-select">Circunscripción</label><div class="select-shell"><select id="province-select"></select><svg class="province-caret" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="m5 9 7 7 7-7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="map-layout"><div class="panel"><div class="panel-heading"><div><h3>Atlas de circunscripciones</h3><div class="sub">Mapa geográfico de provincias y ciudades autónomas</div></div><span class="tag gold" id="geography-status" hidden aria-hidden="true" style="display:none!important">Cargando mapa</span></div><div class="atlas-map-frame" aria-label="Mapa electoral de España">
 <div id="geographic-map" role="group" aria-label="Provincias de la Península y Baleares"></div>
 <div class="atlas-bottom-row">
@@ -68,7 +71,30 @@ function mostrarEncuestaReal(datos) {
 
   if (!contenedor || !datos?.encuestas?.length) return;
 
-  const encuesta = datos.encuestas[0];
+  const selector = document.getElementById('selector-encuesta');
+
+if (selector) {
+  const seleccionAnterior = selector.value;
+  selector.replaceChildren();
+
+  datos.encuestas.forEach((sondeo, indice) => {
+    if (!sondeo.resultados || Object.keys(sondeo.resultados).length === 0) {
+      return;
+    }
+
+    const opcion = document.createElement('option');
+    opcion.value = indice;
+    opcion.textContent = `${sondeo.instituto} · ${sondeo.mes}`;
+    selector.appendChild(opcion);
+  });if (seleccionAnterior !== '') {
+  selector.value = seleccionAnterior;
+}
+}
+  const indiceSeleccionado = Number(selector.value);
+const encuesta = datos.encuestas[indiceSeleccionado] || datos.encuestas[0];
+selector.onchange = () => {
+  mostrarEncuestaReal(datos);
+};
 
   const colores = {
     PSOE: '#e54440',
@@ -79,7 +105,14 @@ function mostrarEncuestaReal(datos) {
   };
 
   const titulo = document.createElement('h3');
-  titulo.textContent = `${encuesta.instituto} · Enero de 2026`;
+ const fechaEncuesta = new Date(`${encuesta.fecha_publicacion}T12:00:00`);
+
+const mesEncuesta = fechaEncuesta.toLocaleDateString('es-ES', {
+  month: 'long',
+  year: 'numeric'
+});
+
+titulo.textContent = `${encuesta.instituto} · ${mesEncuesta}`;
 
   const subtitulo = document.createElement('p');
   subtitulo.textContent =
