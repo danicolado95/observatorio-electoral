@@ -342,5 +342,7 @@ async function initAtlasGeo(){
 }
 
 setupProfiles();renderPolls();renderMap();loadOfficialSeats();loadHistory();renderTransfer();renderAbstention();renderHorizontal('population-ages',profileDemo.edad.map((k,i)=>[k,demoProfile.TOTAL.edad[i]]),40);renderHorizontal('worries',profileDemo.temas.map((k,i)=>[k,demoProfile.TOTAL.temas[i]]),70);let initial=location.hash.slice(1);if(sectionData.some(([id])=>id===initial))show(initial);else show('inicio');window.addEventListener('hashchange',()=>{let id=location.hash.slice(1);if(sectionData.some(([key])=>key===id))show(id)});
-
-</script></body></html>
+</script>
+<script src="./js/radar.js"></script>
+</body>
+</html>
