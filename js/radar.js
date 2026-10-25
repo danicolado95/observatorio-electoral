@@ -87,6 +87,43 @@ function dibujarRadarInicial() {
     'font-size': 13
   }, '23J · 2023'));
 
+  // Fechas del eje horizontal
+  const inicio = new Date('2023-07-23T12:00:00');
+  const fin = new Date('2026-10-25T12:00:00');
+
+  const posicionFecha = (fecha) => {
+    const momento = new Date(`${fecha}T12:00:00`);
+    return x23J +
+      ((momento - inicio) / (fin - inicio)) * (derecha - x23J);
+  };
+
+  const marcasTiempo = [
+    ['2024-01-01', '2024'],
+    ['2025-01-01', '2025'],
+    ['2026-01-01', '2026'],
+    ['2026-10-25', 'Hoy']
+  ];
+
+  marcasTiempo.forEach(([fecha, etiqueta]) => {
+    const x = posicionFecha(fecha);
+
+    svg.appendChild(crear('line', {
+      x1: x,
+      y1: abajo,
+      x2: x,
+      y2: abajo + 6,
+      stroke: '#82998f'
+    }));
+
+    svg.appendChild(crear('text', {
+      x: x,
+      y: abajo + 25,
+      'text-anchor': 'middle',
+      fill: '#70857c',
+      'font-size': 13
+    }, etiqueta));
+  });
+
   // Resultados oficiales como puntos
   Object.entries(resultados23J.partidos).forEach(([partido, valor]) => {
     const y = abajo - (valor / 40) * (abajo - arriba);
