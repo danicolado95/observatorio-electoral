@@ -1,0 +1,12 @@
+# Dependencias de Node.js
+node_modules/
+
+# Archivos de prueba locales
+data/cis-prueba.json
+data/radar-prueba.json
+
+# Documentos descargados para pruebas
+scripts/*.pdf
+
+# Archivos temporales
+*.log

@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "encuestas": [],
+  "status": {
+    "state": "unconfigured",
+    "lastAttempt": "2026-10-26T07:51:57.169Z",
+    "lastSuccess": null,
+    "lastDataChange": null,
+    "sources": [],
+    "message": "Sin fuentes autorizadas habilitadas; no se han buscado encuestas."
+  }
+}

@@ -1,176 +1,51 @@
+(async()=>{
+const box=document.getElementById('radar-grafico'),status=document.getElementById('radar-status');
+const create=(tag,attrs={},text='')=>{const n=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const [k,v]of Object.entries(attrs))n.setAttribute(k,v);n.textContent=text;return n;};
+try{
+const response=await fetch('./data/radar-prueba.json',{cache:'no-store'});
+if(!response.ok)throw Error('HTTP '+response.status);
+const data=await response.json(),state=data.status;
+if(!state)throw Error('Radar sin estado integrado; ejecutar scripts/update.mjs');
+function draw(){
+const today=new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Madrid'}).format(new Date());
+const polls=RadarCore.select(data.encuestas,document.getElementById('radar-cis').checked);
+const colors={PP:'#347cbd',PSOE:'#e54440',VOX:'#69a554',SUMAR:'#d36a9d',PODEMOS:'#8541b5'};
+const parties=[...new Set([...Object.keys(colors),...polls.flatMap(p=>Object.keys(p.resultados))])];
+const svg=create('svg',{viewBox:'0 0 800 370',width:'100%',role:'img','aria-label':'Radar descriptivo desde el 23J'});
+const start=Date.parse('2023-07-23'),end=Math.max(start+86400000,Date.parse(today));
+const x=d=>55+(Date.parse(d)-start)/(end-start)*690;
+const ceiling=Math.ceil(Math.max(40,...polls.flatMap(p=>Object.values(p.resultados)))/10)*10,y=v=>300-v/ceiling*270;
+for(let v=0;v<=ceiling;v+=10)svg.append(create('line',{x1:55,x2:745,y1:y(v),y2:y(v),stroke:'#dce5df'}),create('text',{x:5,y:y(v)+4,'font-size':12},v+'%'));
+svg.append(create('text',{x:55,y:330,'font-size':12},'23J 2023'),create('text',{x:710,y:330,'font-size':12},today));
+for(let year=2024;year<Number(today.slice(0,4))+1;year++)if(year+'-01-01'<today)svg.append(create('text',{x:x(year+'-01-01'),y:350,'font-size':12},String(year)));
+for(const [p,v]of Object.entries({PP:33.1,PSOE:31.7,VOX:12.4,SUMAR:12.3})){const mark=create('rect',{x:51,y:y(v)-4,width:8,height:8,fill:colors[p]});mark.append(create('title',{},`${p}: ${v}% · referencia redondeada heredada del prototipo; contraste nacional pendiente`));svg.append(mark);}
+for(const party of parties){const color=colors[party]||'#68786c';let segment=[];const flush=()=>{if(segment.length>1)svg.append(create('polyline',{points:segment.join(' '),fill:'none',stroke:color,'stroke-width':2}));segment=[];};
+const observaciones = polls
+  .filter(p => Number.isFinite(p.resultados[party]))
+  .sort((a, b) =>
+    a.trabajo_campo_fin.localeCompare(b.trabajo_campo_fin)
+  );
 
-console.log('Radar Demoscópico de Atlas Electoral conectado');
+const puntos = observaciones.map(p =>
+  `${x(p.trabajo_campo_fin)},${y(p.resultados[party])}`
+);
 
-const resultados23J = {
-  fecha: '2023-07-23',
-  partidos: {
-    PP: 33.1,
-    PSOE: 31.7,
-    VOX: 12.4,
-    SUMAR: 12.3
-  }
-};
-
-const coloresRadar = {
-  PP: '#347cbd',
-  PSOE: '#e54440',
-  VOX: '#69a554',
-  SUMAR: '#d36a9d'
-};
-
-function dibujarRadarInicial() {
-  const contenedor = document.getElementById('radar-grafico');
-  if (!contenedor) return;
-
-  const ns = 'http://www.w3.org/2000/svg';
-  const crear = (tipo, atributos = {}, texto = '') => {
-    const elemento = document.createElementNS(ns, tipo);
-    Object.entries(atributos).forEach(([k, v]) =>
-      elemento.setAttribute(k, String(v))
-    );
-    if (texto) elemento.textContent = texto;
-    return elemento;
-  };
-
-  const ancho = 800;
-  const alto = 360;
-  const izquierda = 55;
-  const derecha = 770;
-  const arriba = 25;
-  const abajo = 305;
-
-  const svg = crear('svg', {
-    viewBox: `0 0 ${ancho} ${alto}`,
-    width: '100%',
-    role: 'img',
-    'aria-label': 'Resultados electorales del 23J'
-  });
-
-  // Eje vertical y líneas horizontales
-  for (let porcentaje = 0; porcentaje <= 40; porcentaje += 10) {
-    const y = abajo - (porcentaje / 40) * (abajo - arriba);
-
-    svg.appendChild(crear('line', {
-      x1: izquierda,
-      y1: y,
-      x2: derecha,
-      y2: y,
-      stroke: '#dce5df'
-    }));
-
-    svg.appendChild(crear('text', {
-      x: izquierda - 12,
-      y: y + 4,
-      'text-anchor': 'end',
-      fill: '#70857c',
-      'font-size': 13
-    }, `${porcentaje}%`));
-  }
-
-  // Marca de las elecciones del 23J
-  const x23J = 95;
-
-  svg.appendChild(crear('line', {
-    x1: x23J,
-    y1: arriba,
-    x2: x23J,
-    y2: abajo,
-    stroke: '#82998f',
-    'stroke-dasharray': '5 5'
+if (puntos.length > 1) {
+  svg.append(create('polyline', {
+    points: puntos.join(' '),
+    fill: 'none',
+    stroke: color,
+    'stroke-width': 2,
+    'stroke-linejoin': 'round',
+    'stroke-linecap': 'round'
   }));
-
-  svg.appendChild(crear('text', {
-    x: x23J,
-    y: abajo + 25,
-    'text-anchor': 'middle',
-    fill: '#29463f',
-    'font-size': 13
-  }, '23J · 2023'));
-
-  // Fechas del eje horizontal
-  const inicio = new Date('2023-07-23T12:00:00');
-  const fin = new Date('2026-10-25T12:00:00');
-
-  const posicionFecha = (fecha) => {
-    const momento = new Date(`${fecha}T12:00:00`);
-    return x23J +
-      ((momento - inicio) / (fin - inicio)) * (derecha - x23J);
-  };
-
-  const marcasTiempo = [
-    ['2024-01-01', '2024'],
-    ['2025-01-01', '2025'],
-    ['2026-01-01', '2026'],
-    ['2026-10-25', 'Hoy']
-  ];
-
-  marcasTiempo.forEach(([fecha, etiqueta]) => {
-    const x = posicionFecha(fecha);
-
-    svg.appendChild(crear('line', {
-      x1: x,
-      y1: abajo,
-      x2: x,
-      y2: abajo + 6,
-      stroke: '#82998f'
-    }));
-
-    svg.appendChild(crear('text', {
-      x: x,
-      y: abajo + 25,
-      'text-anchor': 'middle',
-      fill: '#70857c',
-      'font-size': 13
-    }, etiqueta));
-  });
-
-  // Resultados oficiales como puntos
-  Object.entries(resultados23J.partidos).forEach(([partido, valor]) => {
-    const y = abajo - (valor / 40) * (abajo - arriba);
-
-    const punto = crear('circle', {
-      cx: x23J,
-      cy: y,
-      r: 6,
-      fill: coloresRadar[partido],
-      stroke: '#ffffff',
-      'stroke-width': 2
-    });
-
-    punto.appendChild(crear(
-      'title',
-      {},
-      `${partido}: ${valor.toLocaleString('es-ES')} % · 23J`
-    ));
-
-    svg.appendChild(punto);
-  });
-
-  // Leyenda independiente
-  const leyenda = document.createElement('div');
-  leyenda.style.display = 'flex';
-  leyenda.style.flexWrap = 'wrap';
-  leyenda.style.gap = '18px';
-  leyenda.style.marginTop = '10px';
-
-  Object.entries(coloresRadar).forEach(([partido, color]) => {
-    const elemento = document.createElement('span');
-    elemento.style.display = 'inline-flex';
-    elemento.style.alignItems = 'center';
-    elemento.style.gap = '7px';
-
-    const muestra = document.createElement('span');
-    muestra.style.width = '10px';
-    muestra.style.height = '10px';
-    muestra.style.borderRadius = '50%';
-    muestra.style.background = color;
-
-    elemento.append(muestra, partido);
-    leyenda.appendChild(elemento);
-  });
-
-  contenedor.replaceChildren(svg, leyenda);
 }
-
-dibujarRadarInicial();
-
+for(const p of polls.filter(p=>Number.isFinite(p.resultados[party]))){const dot=create('circle',{cx:x(p.trabajo_campo_fin),cy:y(p.resultados[party]),r:4,fill:color,tabindex:0});dot.append(create('title',{},`${party}: ${p.resultados[party]}% · ${p.instituto} · campo ${p.trabajo_campo_inicio}–${p.trabajo_campo_fin} · publicación ${p.fecha_publicacion} · n=${p.tamano_muestra} · ${p.fuente}`));svg.append(dot);}}
+const legend=document.createElement('p');legend.textContent=parties.join(' · ')+' | Cuadrados: referencia 23J redondeada del prototipo, pendiente de contraste nacional. Círculos: sondeos al fin del trabajo de campo.';box.replaceChildren(svg,legend);
+status.textContent=`Estado: ${state.state}. Intento: ${state.lastAttempt||'ninguno'}. Éxito: ${state.lastSuccess||'ninguno'}. Cambio de datos: ${state.lastDataChange||'ninguno'}. ${polls.length} sondeos visibles. ${state.message}`;
+if(state.lastSuccess&&Date.now()-Date.parse(state.lastSuccess)>48*3600000)status.textContent+=' Atención: más de 48 horas sin comprobación satisfactoria.';
+const sources=document.getElementById('radar-sources');sources.replaceChildren();for(const p of polls){const row=document.createElement('p'),link=document.createElement('a');link.href=p.fuente;link.textContent=`${p.instituto} · ${p.fecha_publicacion} · ${p.estudio_id}`;link.target='_blank';link.rel='noopener noreferrer';row.append(link);sources.append(row);}
+}
+document.getElementById('radar-cis').addEventListener('change',draw);draw();
+}catch(e){status.textContent='Error de carga del radar: '+e.message;}
+})();

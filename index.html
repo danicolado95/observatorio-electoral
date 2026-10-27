@@ -33,6 +33,18 @@
     Resultados oficiales de 2023 y evolución de las encuestas.
   </p>
   <div id="radar-grafico"></div>
+  <div style="margin-top: 14px;">
+  <label>
+    <input type="checkbox" id="radar-cis">
+    Incluir encuestas del CIS
+  </label>
+</div>
+
+<p id="radar-status" class="sub">
+  Cargando estado del radar...
+</p>
+
+<div id="radar-sources"></div>
 </div>
   <label for="selector-encuesta">Seleccionar encuesta:</label>
 <select id="selector-encuesta"></select>
@@ -350,6 +362,7 @@ async function initAtlasGeo(){
 
 setupProfiles();renderPolls();renderMap();loadOfficialSeats();loadHistory();renderTransfer();renderAbstention();renderHorizontal('population-ages',profileDemo.edad.map((k,i)=>[k,demoProfile.TOTAL.edad[i]]),40);renderHorizontal('worries',profileDemo.temas.map((k,i)=>[k,demoProfile.TOTAL.temas[i]]),70);let initial=location.hash.slice(1);if(sectionData.some(([id])=>id===initial))show(initial);else show('inicio');window.addEventListener('hashchange',()=>{let id=location.hash.slice(1);if(sectionData.some(([key])=>key===id))show(id)});
 </script>
+<script src="./js/radar-core.js"></script>
 <script src="./js/radar.js"></script>
 </body>
 </html>
