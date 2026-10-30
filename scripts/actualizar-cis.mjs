@@ -2,15 +2,22 @@ import { readFile, writeFile, rename, unlink, open } from 'node:fs/promises';
 import { procesarBarometro } from './cis-historico.mjs';
 import { fusionar } from './fusionar-cis.mjs';
 
-const MODO_TEST = process.argv.includes('--test');
+const PIPELINE_TEST = process.argv.includes('--pipeline-test');
+const MODO_TEST = process.argv.includes('--test') || PIPELINE_TEST;
 
-if (MODO_TEST && process.argv.includes('--guardar')) {
-  console.log('MODO TEST: escritura limitada a la copia de pruebas');
+if (PIPELINE_TEST && process.argv.includes('--test')) {
+  throw new Error('Utiliza solamente uno de los dos modos de prueba');
 }
 
-const RUTA = MODO_TEST
-  ? 'data/cis-actualizacion-test.json'
-  : 'data/cis-historico.json';
+const RUTA = PIPELINE_TEST
+  ? 'data/pipeline-test/data/cis-historico.json'
+  : MODO_TEST
+    ? 'data/cis-actualizacion-test.json'
+    : 'data/cis-historico.json';
+
+if (MODO_TEST) {
+  console.log('MODO TEST: histórico de producción protegido.');
+}
 
 const RUTA_BLOQUEO = `${RUTA}.lock`;
 

@@ -1,11 +1,21 @@
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile, writeFile, rename, unlink } from 'node:fs/promises';
+
+const PIPELINE_TEST = process.argv.includes('--pipeline-test');
+
+const rutaCIS = PIPELINE_TEST
+  ? 'data/pipeline-test/data/cis-historico.json'
+  : 'data/cis-historico.json';
+
+const rutaRadar = PIPELINE_TEST
+  ? 'data/pipeline-test/data/radar.json'
+  : 'data/radar.json';
 
 const cis = JSON.parse(
-  await readFile('data/cis-historico.json', 'utf8')
+  await readFile(rutaCIS, 'utf8')
 );
 
 const radar = JSON.parse(
-  await readFile('data/radar.json', 'utf8')
+  await readFile(rutaRadar, 'utf8')
 );
 
 if (!Array.isArray(cis.encuestas) || cis.encuestas.length === 0) {
@@ -77,18 +87,31 @@ if (new Set(claves).size !== claves.length) {
 const resultado = {
   ...radar,
   encuestas,
-  status: {
-    ...radar.status,
-    state: 'unconfigured',
-    message: 'Histórico del CIS incorporado. Actualización general pendiente de configurar.'
-  }
+  status: radar.status
 };
 
-await writeFile(
-  'data/radar-sincronizado-prueba.json',
-  JSON.stringify(resultado, null, 2) + '\n',
-  'utf8'
-);
+const guardar = process.argv.includes('--guardar');
+
+const destino = PIPELINE_TEST
+  ? 'data/pipeline-test/data/radar-sincronizado.json'
+  : guardar
+    ? 'data/radar.json'
+    : 'data/radar-sincronizado-prueba.json';
+
+const temporal = `${destino}.tmp`;
+
+try {
+  await writeFile(
+    temporal,
+    JSON.stringify(resultado, null, 2) + '\n',
+    { encoding: 'utf8', flag: 'wx' }
+  );
+
+  await rename(temporal, destino);
+} catch (error) {
+  await unlink(temporal).catch(() => {});
+  throw error;
+}
 
 console.log('Encuestas CIS:', cis.encuestas.length);
 console.log('Otras encuestadoras conservadas:', otrosInstitutos.length);

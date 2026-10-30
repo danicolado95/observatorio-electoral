@@ -10,3 +10,18 @@ scripts/*.pdf
 
 # Archivos temporales
 *.log
+
+# Pruebas locales del radar electoral
+/data/pipeline-test/
+/data/cis-actualizacion-test.json
+/data/cis-fusion-prueba.json
+/data/cis-historico-prueba.json
+/data/radar-backup.json
+/data/radar-sincronizado-prueba.json
+
+# Scripts experimentales locales
+/scripts/probar-3423.mjs
+/scripts/probar-catalogo.mjs
+/scripts/probar-importacion-cis.mjs
+/scripts/probar-pdfs.mjs
+/scripts/probar-pipeline-cis.mjs
