@@ -1,0 +1,666 @@
+{
+  "version": 1,
+  "encuestas": [
+    {
+      "instituto": "CIS",
+      "estudio_id": "3420",
+      "fecha_publicacion": "2023-11-07",
+      "fecha_avance": "2023-09-21",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2023-09-01",
+      "trabajo_campo_fin": "2023-09-12",
+      "tamano_muestra": 10101,
+      "resultados": {
+        "PSOE": 33.5,
+        "PP": 31.7,
+        "VOX": 11.1,
+        "SUMAR": 11.9
+      },
+      "fuente": "https://www.cis.es/documents/20117/1558341/3420_Estimacion.pdf/5b63f09f-ef93-77c9-7b10-6832793838e1?version=1.0&t=1699970220309"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3423",
+      "fecha_publicacion": "2023-11-08",
+      "fecha_avance": "2023-10-18",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2023-10-02",
+      "trabajo_campo_fin": "2023-10-06",
+      "tamano_muestra": 4029,
+      "resultados": {
+        "PSOE": 32.6,
+        "PP": 32.2,
+        "VOX": 10.1,
+        "SUMAR": 12.7
+      },
+      "fuente": "https://www.cis.es/documents/20117/1558256/3423_Estimacion.pdf/b277f047-9033-d3e6-3c45-b6455989ba08?version=1.0&t=1700052819144"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3427",
+      "fecha_publicacion": "2023-11-29",
+      "fecha_avance": "2023-11-10",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2023-10-31",
+      "trabajo_campo_fin": "2023-11-06",
+      "tamano_muestra": 4090,
+      "resultados": {
+        "PSOE": 31.3,
+        "PP": 33.9,
+        "VOX": 10,
+        "SUMAR": 11.8
+      },
+      "fuente": "https://www.cis.es/documents/20117/1558411/3427_Estimacion.pdf/7de8f8cd-2c9c-7e7d-ebc1-e9cfc12cac20?version=1.0&t=1701249755038"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3431",
+      "fecha_publicacion": "2024-01-09",
+      "fecha_avance": "2023-12-21",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2023-12-01",
+      "trabajo_campo_fin": "2023-12-07",
+      "tamano_muestra": 4613,
+      "resultados": {
+        "PSOE": 31.8,
+        "PP": 33.2,
+        "VOX": 8.5,
+        "SUMAR": 11.8
+      },
+      "fuente": "https://www.cis.es/documents/20117/1558576/3431_Estimacion.pdf/09fcd4f8-9036-2f60-1cba-71c0b940a83a?version=1.0&t=1704804190446"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3435",
+      "fecha_publicacion": "2024-02-02",
+      "fecha_avance": "2024-01-17",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2024-01-02",
+      "trabajo_campo_fin": "2024-01-05",
+      "tamano_muestra": 4015,
+      "resultados": {
+        "PSOE": 34,
+        "PP": 32.1,
+        "VOX": 8.3,
+        "SUMAR": 9.7,
+        "PODEMOS": 2.7
+      },
+      "fuente": "https://www.cis.es/documents/20117/1559026/3435_Estimacion.pdf/5d587949-9ef5-014a-2544-fea3c2f8b5a0?version=1.0&t=1718960097695"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3441",
+      "fecha_publicacion": "2024-02-21",
+      "fecha_avance": "2024-02-12",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2024-02-01",
+      "trabajo_campo_fin": "2024-02-06",
+      "tamano_muestra": 3926,
+      "resultados": {
+        "PSOE": 33,
+        "PP": 33.2,
+        "VOX": 7.9,
+        "SUMAR": 10.2,
+        "PODEMOS": 2.9
+      },
+      "fuente": "https://www.cis.es/documents/20117/1559296/3441_Estimacion.pdf/7d263a84-9dd8-f7d1-6ec2-d25299be9ea0?version=1.0&t=1718960404822"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3445",
+      "fecha_publicacion": "2024-03-22",
+      "fecha_avance": "2024-03-13",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2024-03-01",
+      "trabajo_campo_fin": "2024-03-05",
+      "tamano_muestra": 3931,
+      "resultados": {
+        "PSOE": 31.3,
+        "PP": 34,
+        "VOX": 9.9,
+        "SUMAR": 9.2,
+        "PODEMOS": 2.2
+      },
+      "fuente": "https://www.cis.es/documents/20117/1559371/3445_Estimacion.pdf/318a9a1c-8e10-564f-7c3d-587f9a34a032?version=1.0&t=1718960304662"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3450",
+      "fecha_publicacion": "2024-04-26",
+      "fecha_avance": "2024-04-11",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2024-04-01",
+      "trabajo_campo_fin": "2024-04-04",
+      "tamano_muestra": 4032,
+      "resultados": {
+        "PSOE": 32.5,
+        "PP": 33.5,
+        "VOX": 10.1,
+        "SUMAR": 8.2,
+        "PODEMOS": 3.1
+      },
+      "fuente": "https://www.cis.es/documents/20117/1559576/3450_Estimacion.pdf/2ccb3f5c-e356-2bd9-60c1-7519cd865db0?version=1.0&t=1718960272746"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3457",
+      "fecha_publicacion": "2024-05-27",
+      "fecha_avance": "2024-05-14",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2024-05-03",
+      "trabajo_campo_fin": "2024-05-08",
+      "tamano_muestra": 4013,
+      "resultados": {
+        "PSOE": 35.5,
+        "PP": 30.4,
+        "VOX": 10.2,
+        "SUMAR": 8,
+        "PODEMOS": 2.2
+      },
+      "fuente": "https://www.cis.es/documents/20117/1559681/3457_Estimacion.pdf/d2627fe6-2e04-69ad-a412-e99ad5c4fa7e?version=1.0&t=1718960234732"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3463",
+      "fecha_publicacion": "2024-07-04",
+      "fecha_avance": "2024-06-20",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2024-05-31",
+      "trabajo_campo_fin": "2024-06-06",
+      "tamano_muestra": 4011,
+      "resultados": {
+        "PSOE": 31.7,
+        "PP": 30.7,
+        "VOX": 12.1,
+        "SUMAR": 8.8,
+        "PODEMOS": 3.6
+      },
+      "fuente": "https://www.cis.es/documents/20117/1559881/3463_Estimacion.pdf/93121d50-bdff-0a72-bad1-97002a89f474?version=1.0&t=1720081369407"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3468",
+      "fecha_publicacion": "2024-07-30",
+      "fecha_avance": "2024-07-12",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2024-07-01",
+      "trabajo_campo_fin": "2024-07-04",
+      "tamano_muestra": 4007,
+      "resultados": {
+        "PSOE": 32.9,
+        "PP": 30.2,
+        "VOX": 12.2,
+        "SUMAR": 6.6,
+        "PODEMOS": 4
+      },
+      "fuente": "https://www.cis.es/documents/20117/1559956/3468_Estimacion.pdf/2d57bc36-15f1-157a-dcde-07e6a8f5eefa?version=1.0&t=1721982305927"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3474",
+      "fecha_publicacion": "2024-09-27",
+      "fecha_avance": "2024-09-18",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2024-09-02",
+      "trabajo_campo_fin": "2024-09-06",
+      "tamano_muestra": 4027,
+      "resultados": {
+        "PSOE": 33,
+        "PP": 28.5,
+        "VOX": 13.1,
+        "SUMAR": 7.8,
+        "PODEMOS": 3.6
+      },
+      "fuente": "https://www.cis.es/documents/20117/13449888/3474_estimacion.pdf/f4e848a1-52a3-38c3-4e73-4452d76ca3b0?version=1.1&t=1759834464725"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3478",
+      "fecha_publicacion": "2024-11-07",
+      "fecha_avance": "2024-10-21",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2024-10-01",
+      "trabajo_campo_fin": "2024-10-11",
+      "tamano_muestra": 4005,
+      "resultados": {
+        "PSOE": 34,
+        "PP": 31.5,
+        "VOX": 11.8,
+        "SUMAR": 6.3,
+        "PODEMOS": 3.3
+      },
+      "fuente": "https://www.cis.es/documents/20117/13450664/3478_Estimacion.pdf/f55d2bc6-0e1b-c3af-aa91-bc33ee0b3f18?version=1.1&t=1759840449277"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3485",
+      "fecha_publicacion": "2024-12-02",
+      "fecha_avance": "2024-11-18",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2024-11-02",
+      "trabajo_campo_fin": "2024-11-07",
+      "tamano_muestra": 4009,
+      "resultados": {
+        "PSOE": 34.2,
+        "PP": 29.3,
+        "VOX": 11.8,
+        "SUMAR": 7,
+        "PODEMOS": 3.4
+      },
+      "fuente": "https://www.cis.es/documents/20117/13448540/3485_Estimacion.pdf/fe6e20e6-31fd-9f60-3daf-f72bb8ecb265?version=1.1&t=1759923914721"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3489",
+      "fecha_publicacion": "2025-01-20",
+      "fecha_avance": "2024-12-19",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2024-12-02",
+      "trabajo_campo_fin": "2024-12-09",
+      "tamano_muestra": 4621,
+      "resultados": {
+        "PSOE": 32.2,
+        "PP": 28.4,
+        "VOX": 12.2,
+        "SUMAR": 7,
+        "PODEMOS": 4.1
+      },
+      "fuente": "https://www.cis.es/documents/20117/13447156/3489_Estimacion.pdf/9224f3b9-e9c8-1840-3425-0d54eef0ae38?version=1.1&t=1759929250198"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3492",
+      "fecha_publicacion": "2025-02-04",
+      "fecha_avance": "2025-01-17",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2025-01-02",
+      "trabajo_campo_fin": "2025-01-09",
+      "tamano_muestra": 4024,
+      "resultados": {
+        "PSOE": 31.8,
+        "PP": 29.7,
+        "VOX": 12.4,
+        "SUMAR": 6.5,
+        "PODEMOS": 3.9
+      },
+      "fuente": "https://www.cis.es/documents/20117/13446740/3492_Estimacion.pdf/5f58150d-4553-f59b-5a3b-b1925a61a235?version=1.1&t=1759850146822"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3496",
+      "fecha_publicacion": "2025-03-06",
+      "fecha_avance": "2025-02-13",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2025-01-31",
+      "trabajo_campo_fin": "2025-02-06",
+      "tamano_muestra": 4042,
+      "resultados": {
+        "PSOE": 33.4,
+        "PP": 28.1,
+        "VOX": 13.3,
+        "SUMAR": 6.4,
+        "PODEMOS": 4.4
+      },
+      "fuente": "https://www.cis.es/documents/20117/13446192/3496_Estimacion.pdf/1ae53b1c-b6d5-7625-eab3-44dbced3ca14?version=1.1&t=1759849732132"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3502",
+      "fecha_publicacion": "2025-03-25",
+      "fecha_avance": "2025-03-17",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2025-02-28",
+      "trabajo_campo_fin": "2025-03-07",
+      "tamano_muestra": 4018,
+      "resultados": {
+        "PSOE": 34.5,
+        "PP": 29.2,
+        "VOX": 11.7,
+        "SUMAR": 7.6,
+        "PODEMOS": 3.8
+      },
+      "fuente": "https://www.cis.es/documents/20117/13445560/3502_Estimacion.pdf/f2baf10f-592b-04c6-4852-6310ac84adaf?version=1.0&t=1766500206314"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3505",
+      "fecha_publicacion": "2025-05-06",
+      "fecha_avance": "2025-04-15",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2025-04-01",
+      "trabajo_campo_fin": "2025-04-08",
+      "tamano_muestra": 4008,
+      "resultados": {
+        "PSOE": 32.6,
+        "PP": 26.1,
+        "VOX": 15.2,
+        "SUMAR": 6.2,
+        "PODEMOS": 4
+      },
+      "fuente": "https://www.cis.es/documents/20117/13445319/3505_Estimacion.pdf/3f10ad40-f58c-e50b-45f0-16393f98046d?version=1.1&t=1759848528692"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3510",
+      "fecha_publicacion": "2025-06-06",
+      "fecha_avance": "2025-05-14",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2025-05-05",
+      "trabajo_campo_fin": "2025-05-08",
+      "tamano_muestra": 4018,
+      "resultados": {
+        "PSOE": 32,
+        "PP": 29.3,
+        "VOX": 13.7,
+        "SUMAR": 6.1,
+        "PODEMOS": 4.3
+      },
+      "fuente": "https://www.cis.es/documents/20117/13444969/3510_Estimacion.pdf/aa6cb41e-d22c-e962-2dac-f482660c9faa?version=1.1&t=1759845865267"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3514",
+      "fecha_publicacion": "2025-06-20",
+      "fecha_avance": "2025-06-12",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2025-06-02",
+      "trabajo_campo_fin": "2025-06-07",
+      "tamano_muestra": 4013,
+      "resultados": {
+        "PSOE": 34.3,
+        "PP": 27.3,
+        "VOX": 13.2,
+        "SUMAR": 7,
+        "PODEMOS": 4.2
+      },
+      "fuente": "https://www.cis.es/documents/20117/13444783/3514_Estimacion.pdf/dd5c4756-5835-c6c7-739b-b8fcecceeb63?version=1.2&t=1759845390871"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3517",
+      "fecha_publicacion": "2025-07-22",
+      "fecha_avance": "2025-07-11",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2025-07-01",
+      "trabajo_campo_fin": "2025-07-07",
+      "tamano_muestra": 4018,
+      "resultados": {
+        "PSOE": 27,
+        "PP": 26.5,
+        "VOX": 18.9,
+        "SUMAR": 7.8,
+        "PODEMOS": 4.4
+      },
+      "fuente": "https://www.cis.es/documents/20117/13444014/3517_Estimacion.pdf/3fdd93af-3df0-260a-52d9-7cffac6a62bc?version=1.1&t=1759844478174"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3524",
+      "fecha_publicacion": "2025-09-25",
+      "fecha_avance": "2025-09-11",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2025-09-01",
+      "trabajo_campo_fin": "2025-09-06",
+      "tamano_muestra": 4122,
+      "resultados": {
+        "PSOE": 32.7,
+        "PP": 23.7,
+        "VOX": 17.3,
+        "SUMAR": 7.9,
+        "PODEMOS": 4.3
+      },
+      "fuente": "https://www.cis.es/documents/20117/13443627/3524_Estimacion.pdf/7e661f57-5cdc-7e33-ae0d-65b80d85aeac?version=1.0&t=1766499535601"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3528",
+      "fecha_publicacion": "2025-10-27",
+      "fecha_avance": "2025-10-13",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2025-10-01",
+      "trabajo_campo_fin": "2025-10-07",
+      "tamano_muestra": 4029,
+      "resultados": {
+        "PSOE": 34.8,
+        "PP": 19.8,
+        "VOX": 17.7,
+        "SUMAR": 7.7,
+        "PODEMOS": 4.9
+      },
+      "fuente": "https://www.cis.es/documents/20117/13636162/3528_Estimacion.pdf/d572bc99-f423-da0c-fcfe-495aa91cf4d2?version=1.3&t=1762443207046"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3530",
+      "fecha_publicacion": "2025-12-01",
+      "fecha_avance": "2025-11-19",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2025-11-03",
+      "trabajo_campo_fin": "2025-11-12",
+      "tamano_muestra": 4027,
+      "resultados": {
+        "PSOE": 32.6,
+        "PP": 22.4,
+        "VOX": 18.8,
+        "SUMAR": 7.1,
+        "PODEMOS": 4
+      },
+      "fuente": "https://www.cis.es/documents/20117/13661534/3530_Estimacion.pdf/43f2ad69-29c2-94a6-1aa0-8c7c8ae5779c?version=1.1&t=1763553047117"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3536",
+      "fecha_publicacion": "2025-12-17",
+      "fecha_avance": "2025-12-12",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2025-12-01",
+      "trabajo_campo_fin": "2025-12-05",
+      "tamano_muestra": 4017,
+      "resultados": {
+        "PSOE": 31.4,
+        "PP": 22.4,
+        "VOX": 17.6,
+        "SUMAR": 7.8,
+        "PODEMOS": 4.1
+      },
+      "fuente": "https://www.cis.es/documents/20117/13695327/3536_Estimacion.pdf/16c985af-78b9-e832-4c65-aed5bbda078e?version=1.0&t=1768462787698"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3540",
+      "fecha_publicacion": "2026-01-28",
+      "fecha_avance": "2026-01-16",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2026-01-05",
+      "trabajo_campo_fin": "2026-01-10",
+      "tamano_muestra": 4006,
+      "resultados": {
+        "PSOE": 31.7,
+        "PP": 23,
+        "VOX": 17.7,
+        "SUMAR": 7.2,
+        "PODEMOS": 3.5
+      },
+      "fuente": "https://www.cis.es/documents/20117/13725027/3540_Estimacion.pdf/e07a98d3-df6b-4cb5-14a4-fa2be4f192c4?version=1.0&t=1768562675705"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3544",
+      "fecha_publicacion": "2026-03-02",
+      "fecha_avance": "2026-02-16",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2026-02-02",
+      "trabajo_campo_fin": "2026-02-06",
+      "tamano_muestra": 4027,
+      "resultados": {
+        "PSOE": 32.6,
+        "PP": 22.9,
+        "VOX": 18.9,
+        "SUMAR": 7,
+        "PODEMOS": 3.9
+      },
+      "fuente": "https://www.cis.es/documents/20117/13760224/3544_Estimacion.pdf/32c18ca0-df6c-5bd4-e128-060028a15bda?version=1.0&t=1771240016129"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3546",
+      "fecha_publicacion": "2026-03-27",
+      "fecha_avance": "2026-03-18",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2026-03-02",
+      "trabajo_campo_fin": "2026-03-06",
+      "tamano_muestra": 4016,
+      "resultados": {
+        "PSOE": 31.8,
+        "PP": 23.3,
+        "VOX": 16.6,
+        "SUMAR": 7.1,
+        "PODEMOS": 2.9
+      },
+      "fuente": "https://www.cis.es/documents/20117/13805127/3546_Estimacion.pdf/084be0e0-fda9-9a3f-e56e-9781a7151df5?version=1.0&t=1773833381164"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3557",
+      "fecha_publicacion": "2026-05-07",
+      "fecha_avance": "2026-04-20",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2026-04-06",
+      "trabajo_campo_fin": "2026-04-10",
+      "tamano_muestra": 4020,
+      "resultados": {
+        "PSOE": 36.4,
+        "PP": 23.6,
+        "VOX": 14.7,
+        "SUMAR": 5.8,
+        "PODEMOS": 2.2
+      },
+      "fuente": "https://www.cis.es/documents/20117/13932083/3557_Estimacion.pdf/d2af0770-e21c-63ce-6810-dde6ea4e4911?version=1.0&t=1777535089509"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3562",
+      "fecha_publicacion": "2026-06-26",
+      "fecha_avance": "2026-05-29",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2026-05-04",
+      "trabajo_campo_fin": "2026-05-18",
+      "tamano_muestra": 4015,
+      "resultados": {
+        "PSOE": 36.2,
+        "PP": 24.9,
+        "VOX": 16.2,
+        "SUMAR": 5.7,
+        "PODEMOS": 2.5
+      },
+      "fuente": "https://www.cis.es/documents/20117/14112471/3562_Estimacion.pdf/cbed45f7-8b5d-1fac-cd5a-0fcdc052cf09?version=1.0&t=1780050519292"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3567",
+      "fecha_publicacion": "2026-06-26",
+      "fecha_avance": "2026-06-11",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2026-06-01",
+      "trabajo_campo_fin": "2026-06-04",
+      "tamano_muestra": 4024,
+      "resultados": {
+        "PSOE": 31.3,
+        "PP": 27.1,
+        "VOX": 15.8,
+        "SUMAR": 6.4,
+        "PODEMOS": 2.8
+      },
+      "fuente": "https://www.cis.es/documents/20117/14139753/3567_Estimacion.pdf/2436a414-e66b-2fa6-f7c1-a14626ab4ca2?version=1.0&t=1781173938426"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3571",
+      "fecha_publicacion": "2026-09-07",
+      "fecha_avance": "2026-07-15",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2026-07-01",
+      "trabajo_campo_fin": "2026-07-06",
+      "tamano_muestra": 4020,
+      "resultados": {
+        "PSOE": 33,
+        "PP": 25.1,
+        "VOX": 15.3,
+        "SUMAR": 6.1,
+        "PODEMOS": 2.5
+      },
+      "fuente": "https://www.cis.es/documents/20117/14189298/3571_Estimacion.pdf/0c8a00f5-349a-e1a7-e4e5-20f6bd3984c8?version=1.0&t=1784111493524"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3577",
+      "fecha_publicacion": "2026-09-23",
+      "fecha_avance": "2026-09-14",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2026-09-01",
+      "trabajo_campo_fin": "2026-09-04",
+      "tamano_muestra": 4042,
+      "resultados": {
+        "PSOE": 31,
+        "PP": 25.5,
+        "VOX": 16.6,
+        "SUMAR": 5.7,
+        "PODEMOS": 3.7
+      },
+      "fuente": "https://www.cis.es/documents/20117/14250083/3577_Estimacion.pdf/02190cd6-3dc7-57ef-0b80-7fefdf365677?version=1.0&t=1789376167045"
+    },
+    {
+      "instituto": "CIS",
+      "estudio_id": "3582",
+      "fecha_publicacion": "2026-10-20",
+      "fecha_avance": "2026-10-14",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "trabajo_campo_inicio": "2026-10-01",
+      "trabajo_campo_fin": "2026-10-06",
+      "tamano_muestra": 5024,
+      "resultados": {
+        "PSOE": 34,
+        "PP": 22.2,
+        "VOX": 17.1,
+        "SUMAR": 6.1,
+        "PODEMOS": 3.1
+      },
+      "fuente": "https://www.cis.es/documents/20117/14396821/3582_Estimacion.pdf/2bcc5f28-7a97-d5be-6b29-fd3fa778c60a?version=1.0&t=1791970151290"
+    }
+  ]
+}

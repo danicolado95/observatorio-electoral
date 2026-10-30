@@ -72,7 +72,21 @@ export async function update(root = new URL('../',import.meta.url), fetcher = fe
       for(const poll of payload.encuestas) polls.push({...validate(poll,s,now.toISOString().slice(0,10)),provenance:{url:s.url,sha256:digest,rights:s.rights}});
       status.sources.push({id:s.id,url:s.url,sha256:digest,count:payload.encuestas.length,checkedAt:status.lastAttempt});
     }
-    const encuestas = deduplicate(polls);
+    const institutosActualizados = new Set(
+  polls.map(p => normalizeInstitute(p.instituto).toUpperCase())
+);
+
+const encuestasConservadas = old.encuestas.filter(
+  encuesta =>
+    !institutosActualizados.has(
+      normalizeInstitute(encuesta.instituto).toUpperCase()
+    )
+);
+
+const encuestas = deduplicate([
+  ...encuestasConservadas,
+  ...polls
+]);
     const changed = JSON.stringify(old.encuestas)!==JSON.stringify(encuestas);
     result = {encuestas,status:{...status,state:'ok',lastSuccess:status.lastAttempt,lastDataChange:changed?status.lastAttempt:previous.lastDataChange,message:changed?'Datos actualizados':'Sin cambios en las fuentes habilitadas'}};
     }

@@ -82,3 +82,39 @@ test('sin fuentes conserva datos y éxito en el mismo documento',async t=>{
  const actual=await f.read();assert.deepEqual(actual.encuestas,f.old.encuestas);
  assert.equal(actual.status.state,'unconfigured');assert.equal(actual.status.lastSuccess,f.old.status.lastSuccess);
 });
+test('actualizar otro instituto conserva el histórico del CIS', async t => {
+  const f = await fixture(t);
+
+  const otro = {
+    ...poll,
+    instituto: 'OTRO',
+    estudio_id: 'encuesta-externa',
+    resultados: { PP: 28 }
+  };
+
+  await update(
+    f.root,
+    fetcher([otro]),
+    now
+  );
+
+  const actual = await f.read();
+
+  assert.equal(actual.status.state, 'ok');
+
+  assert.ok(
+    actual.encuestas.some(
+      e => e.instituto === 'CIS' &&
+           e.estudio_id === poll.estudio_id
+    ),
+    'La encuesta anterior del CIS debe conservarse'
+  );
+
+  assert.ok(
+    actual.encuestas.some(
+      e => e.instituto === 'OTRO' &&
+           e.estudio_id === 'encuesta-externa'
+    ),
+    'La nueva encuesta debe incorporarse'
+  );
+});

@@ -2,7 +2,7 @@
 const box=document.getElementById('radar-grafico'),status=document.getElementById('radar-status');
 const create=(tag,attrs={},text='')=>{const n=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const [k,v]of Object.entries(attrs))n.setAttribute(k,v);n.textContent=text;return n;};
 try{
-const response=await fetch('./data/radar-prueba.json',{cache:'no-store'});
+const response=await fetch('./data/radar.json',{cache:'no-store'});
 if(!response.ok)throw Error('HTTP '+response.status);
 const data=await response.json(),state=data.status;
 if(!state)throw Error('Radar sin estado integrado; ejecutar scripts/update.mjs');
