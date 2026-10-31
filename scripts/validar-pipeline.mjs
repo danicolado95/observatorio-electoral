@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 
-const carpeta = 'data/pipeline-test/data';
+const carpeta = process.env.ATLAS_VALIDATION_DIR
+  || 'data/pipeline-test/data';
 
 const radar = JSON.parse(
   readFileSync(`${carpeta}/radar-sincronizado.json`, 'utf8')
