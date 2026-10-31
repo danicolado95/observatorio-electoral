@@ -24,7 +24,7 @@ jobs:
       - name: Instalar dependencias
         run: npm ci
       - name: Ejecutar pruebas automatizadas
-        run: node --test
+        run: node --test test/*.test.mjs
       - name: Preparar entorno aislado
         run: node scripts/preparar-pipeline-test.mjs
 
