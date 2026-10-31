@@ -15,6 +15,11 @@ const pasos = [
     nombre: 'Sincronizar radar',
     archivo: 'scripts/sincronizar-radar-cis.mjs',
     argumentos: ['--pipeline-test']
+  },
+{
+    nombre: 'Validar resultados del pipeline',
+    archivo: 'scripts/validar-pipeline.mjs',
+    argumentos: []
   }
 ];
 
