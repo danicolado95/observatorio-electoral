@@ -40,12 +40,3 @@ jobs:
             data/pipeline-test/publicacion/cis-historico.json
           if-no-files-found: error
           retention-days: 30
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        if: success()
-        with:
-          name: radar-pipeline-prueba
-          path: |
-            data/pipeline-test/data/radar-sincronizado.json
-            data/pipeline-test/data/cis-historico.json
-          if-no-files-found: error
-          retention-days: 30
