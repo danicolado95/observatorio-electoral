@@ -4,7 +4,8 @@ on:
     branches: [desarrollo]
   workflow_dispatch:
   schedule:
-    - cron: '17 6 * * *'
+    - cron: '17 19 * * *'
+      timezone: 'Europe/Madrid'
 permissions:
   contents: read
 concurrency:
