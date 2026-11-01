@@ -48,24 +48,79 @@ test('normaliza alias CIS para validar, deduplicar, puntos y tendencia',()=>{
  for(const bad of ['', '   ', null,123])assert.throws(()=>validate({...poll,estudio_id:bad},source,'2026-10-26'));
  assert.equal(validate({...poll,estudio_id:' fixture '},source,'2026-10-26').estudio_id,'fixture');
 });
-test('éxito guarda datos y estado en una sola sustitución; ignora estado antiguo',async t=>{
- const f=await fixture(t);let commits=0;
- await writeFile(join(f.dir,'data/update-status.json'),'JSON antiguo inválido');
- await update(f.root,fetcher([{...poll,resultados:{PP:35}}]),now,{
-   writeFile,
-   rename:async(from,to)=>{
-     assert.deepEqual(await f.read(),f.old);
-     const pending=JSON.parse(await readFile(from,'utf8'));
-     assert.equal(pending.encuestas[0].resultados.PP,35);
-     assert.equal(pending.status.lastSuccess,now.toISOString());
-     commits++;await rename(from,to);
-   }
- });
- assert.equal(commits,1);
- const actual=await f.read();assert.equal(actual.encuestas[0].resultados.PP,35);assert.equal(actual.status.state,'ok');
- assert.equal(actual.status.lastDataChange,now.toISOString());
- assert.equal(await readFile(join(f.dir,'data/update-status.json'),'utf8'),'JSON antiguo inválido');
+
+test('añadir un estudio conserva el histórico y guarda el estado', async t => {
+  const f = await fixture(t);
+  let commits = 0;
+
+  await writeFile(
+    join(f.dir, 'data/update-status.json'),
+    'JSON antiguo inválido'
+  );
+
+  const nuevo = {
+    ...poll,
+    estudio_id: 'fixture-nuevo',
+    resultados: { PP: 35 }
+  };
+
+  await update(f.root, fetcher([nuevo]), now, {
+    writeFile,
+    rename: async (from, to) => {
+      assert.deepEqual(await f.read(), f.old);
+
+      const pending = JSON.parse(await readFile(from, 'utf8'));
+
+      assert.equal(pending.encuestas.length, 2);
+      assert.equal(pending.encuestas[0].resultados.PP, 30);
+      assert.equal(pending.encuestas[1].resultados.PP, 35);
+      assert.equal(pending.status.lastSuccess, now.toISOString());
+
+      commits++;
+      await rename(from, to);
+    }
+  });
+
+  assert.equal(commits, 1);
+
+  const actual = await f.read();
+
+  assert.equal(actual.encuestas.length, 2);
+  assert.equal(actual.encuestas[0].resultados.PP, 30);
+  assert.equal(actual.encuestas[1].resultados.PP, 35);
+  assert.equal(actual.status.state, 'ok');
+  assert.equal(actual.status.lastDataChange, now.toISOString());
+
+  assert.equal(
+    await readFile(join(f.dir, 'data/update-status.json'), 'utf8'),
+    'JSON antiguo inválido'
+  );
 });
+
+test('un estudio contradictorio no sobrescribe el histórico', async t => {
+  const f = await fixture(t);
+
+  const contradictorio = {
+    ...poll,
+    resultados: { PP: 35 }
+  };
+
+  await assert.rejects(
+    update(f.root, fetcher([contradictorio]), now),
+    /Revisión o duplicado contradictorio/
+  );
+
+  const actual = await f.read();
+
+  assert.deepEqual(actual.encuestas, f.old.encuestas);
+  assert.equal(actual.status.state, 'error');
+  assert.equal(actual.status.lastSuccess, f.old.status.lastSuccess);
+  assert.equal(
+    actual.status.lastDataChange,
+    f.old.status.lastDataChange
+  );
+});
+
 for(const stage of ['write','rename'])test('fallo de '+stage+' conserva instantánea completa y limpia temporal',async t=>{
  const f=await fixture(t);
  const bytes=await readFile(join(f.dir,'data/radar.json'),'utf8');
