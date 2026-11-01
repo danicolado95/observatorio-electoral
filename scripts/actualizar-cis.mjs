@@ -171,15 +171,22 @@ async function guardarHistoricoSeguro(encuestas) {
     encuestas
   }, null, 2) + '\n';
 
+ let temporalCreado = false;
+
   try {
     await writeFile(temporal, contenido, {
       encoding: 'utf8',
       flag: 'wx'
     });
 
+    temporalCreado = true;
+
     await rename(temporal, RUTA);
   } catch (error) {
-    await unlink(temporal).catch(() => {});
+    if (temporalCreado) {
+      await unlink(temporal).catch(() => {});
+    }
+
     throw error;
   }
 }
