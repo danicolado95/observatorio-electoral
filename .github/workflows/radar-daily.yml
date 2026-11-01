@@ -1,0 +1,43 @@
+name: Comprobar radar diario
+on:
+  push:
+    branches: [desarrollo]
+  workflow_dispatch:
+  schedule:
+    - cron: '17 19 * * *'
+      timezone: 'Europe/Madrid'
+permissions:
+  contents: read
+concurrency:
+  group: radar-desarrollo
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: desarrollo
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Instalar dependencias
+        run: npm ci
+      - name: Ejecutar pruebas automatizadas
+        run: node --test test/*.test.mjs
+      - name: Preparar entorno aislado
+        run: node scripts/preparar-pipeline-test.mjs
+
+      - name: Ejecutar pipeline CIS en entorno aislado
+        run: node scripts/pipeline-cis.mjs
+      - name: Guardar archivos validados para publicación
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: success()
+        with:
+          name: atlas-publicacion-prueba
+          path: |
+            data/pipeline-test/publicacion/radar.json
+            data/pipeline-test/publicacion/cis-historico.json
+          if-no-files-found: error
+          retention-days: 30
