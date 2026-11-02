@@ -124,3 +124,36 @@ test('Hamalgama: reproduce ambas fechas del fallo sin modificar los datos', () =
   assert.equal(verificar(data).validado, true);
   assert.deepEqual(data, before);
 });
+
+function fixtureComplementaria() {
+  const d = fixtureAlias();
+  for (const key of ['FA', 'CC', 'UPN']) delete d.wikipedia.encuestas[35].resultados[key];
+  return d;
+}
+test('Hamalgama conserva FA5.4 CC0 UPN0.2, sin mutación ni duplicados', () => {
+  const d = fixtureComplementaria(), before = structuredClone(d);
+  assert.equal(verificar(d).validado, true);
+  assert.equal(verificar(d).validado, true);
+  assert.deepEqual(d, before);
+  assert.equal(d.combinado.encuestas[35].resultados.FA, 5.4);
+  assert.equal(d.combinado.encuestas[35].resultados.CC, 0);
+  assert.equal(d.combinado.encuestas[35].resultados.UPN, 0.2);
+});
+test('complementarios rechaza conflicto en cualquier partido, cero perdido y extras sin origen', () => {
+  for (const mutate of [
+    d => d.wikipedia.encuestas[35].resultados.BNG = 0.9,
+    d => d.wikipedia.encuestas[35].resultados.CC = 0.1,
+    d => delete d.combinado.encuestas[35].resultados.CC,
+    d => d.combinado.encuestas[35].resultados.SUMAR = 5.4,
+    d => {delete d.combinado.encuestas[35].resultados.FA; d.combinado.encuestas[35].resultados.SUMAR = 5.4;},
+    d => d.wikipedia.encuestas[35].fuente = 'https://example.org/otro',
+    d => d.auditoria[0].decision = 'alta',
+    d => d.auditoria.push(structuredClone(d.auditoria[0])),
+  ]) {const d = fixtureComplementaria(); mutate(d); assert.throws(() => verificar(d));}
+});
+test('FA y SUMAR complementarios conservan valores independientes', () => {
+  const d = fixtureComplementaria();
+  d.wikipedia.encuestas[35].resultados.SUMAR = 3;
+  d.combinado.encuestas[35].resultados.SUMAR = 3;
+  assert.equal(verificar(d).validado, true);
+});

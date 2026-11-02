@@ -53,3 +53,28 @@ test('cruce con Wikipedia conserva sus bytes y añade trazabilidad solo en la fu
  const rows=read(dir,'electografica/radar.json').encuestas;assert.equal(rows.length,1);assert.equal(rows[0].fuentes_adicionales.length,1);assert.deepEqual(fs.readFileSync(file(dir,'wikipedia/radar.json')),original);
  ok(run(dir,'scripts/importar-electografica.mjs',['--as-of','2024-01-03']));assert.deepEqual(read(dir,'electografica/radar.json').encuestas,rows);
 });
+
+for (const mode of ['complementarios','conflicto','cero','ambiguo','identidad']) test('enriquecimiento auditado: '+mode,t=>{
+ const dir=fixture(t), e=entry('extras','2024-01-02');
+ e.content.$t += '<!-- FA --><span class="dato_encuesta">5.4</span><!-- CC --><span class="dato_encuesta">0</span><!-- UPN --><span class="dato_encuesta">0.2</span>';
+ snapshot(dir,[e]);ok(run(dir,'scripts/importar-electografica.mjs',['--as-of','2024-01-03']));
+ const poll=read(dir,'electografica/radar.json').encuestas[0];
+ delete poll.url_electografica;delete poll.ingestion;poll.estudio_id='wiki-extras';
+ for(const k of ['FA','CC','UPN'])delete poll.resultados[k];
+ poll.resultados.SUMAR=3;
+ if(mode==='conflicto')poll.resultados.PSOE=26;
+ if(mode==='cero')poll.resultados.CC=0.1;
+ if(mode==='identidad')poll.fuente='https://example.org/otro';
+ const polls=[poll];if(mode==='ambiguo')polls.push({...structuredClone(poll),estudio_id:'otro'});
+ put(dir,'wikipedia/radar.json',{version:1,encuestas:polls});put(dir,'electografica/radar.json',{version:1,encuestas:[]});
+ const original=fs.readFileSync(file(dir,'wikipedia/radar.json'));
+ ok(run(dir,'scripts/importar-electografica.mjs',['--as-of','2024-01-03']));
+ const rows=read(dir,'electografica/radar.json').encuestas;
+ assert.equal(rows.length,polls.length);
+ if(mode==='complementarios'){
+  assert.deepEqual(rows[0].resultados,{PP:30,PSOE:25,VOX:15,SUMAR:3,FA:5.4,CC:0,UPN:0.2});
+  assert.equal(read(dir,'electografica/audit.json')[0].decision,'cruzada');assert(rows[0].fuentes_adicionales[0].sha256);
+  ok(run(dir,'scripts/importar-electografica.mjs',['--as-of','2024-01-03']));assert.deepEqual(read(dir,'electografica/radar.json').encuestas,rows);
+ }else{assert.equal(read(dir,'electografica/quarantine.json').length,1);assert.deepEqual(rows,polls);}
+ assert.deepEqual(fs.readFileSync(file(dir,'wikipedia/radar.json')),original);
+});

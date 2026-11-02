@@ -72,6 +72,27 @@ export function verificar({original, desarrollo, cis, wikipedia, combinado, repo
         if (!mismoId && ['estudio_id', 'ingestion', 'source_id', 'url_electografica', 'medio'].includes(key)) continue;
         if (key === 'fuentes_adicionales') {
           for (const ref of value) assert(q[key]?.some(r => isDeepStrictEqual(r, ref)), `${label}: referencia perdida`);
+         } else if (key === 'resultados' && !isDeepStrictEqual(q[key], value)) {
+          // Ausencia no equivale a cero; todo valor previo debe conservarse.
+          for (const [party, percent] of Object.entries(value)) {
+            assert(Object.hasOwn(q.resultados, party) && q.resultados[party] === percent,
+              label + ': cambió resultados.' + party);
+          }
+          const proofs = auditoria.filter(a => a.decision === 'cruzada' && a.estudio_id === q.estudio_id && a.extracted?.estudio_id !== q.estudio_id);
+          assert.equal(proofs.length, 1, label + ': enriquecimiento sin auditoría única');
+          const e = proofs[0].extracted;
+          assert.equal(resolverAlias(e, ids, auditoria, label), q);
+          for (const field of ['instituto', 'trabajo_campo_inicio', 'trabajo_campo_fin', 'fecha_publicacion', 'fuente', 'tamano_muestra']) {
+            assert.deepEqual(q[field], e[field], label + ': identidad no homologada en ' + field);
+          }
+          for (const [party, percent] of Object.entries(e.resultados)) {
+            assert(Object.hasOwn(q.resultados, party) && q.resultados[party] === percent, label + ': conflicto auditado en ' + party);
+          }
+          for (const party of Object.keys(q.resultados)) {
+            const bases = wikipedia.encuestas.filter(w => w.estudio_id === q.estudio_id);
+            const fromWiki = bases.length === 1 && Object.hasOwn(bases[0].resultados, party) && bases[0].resultados[party] === q.resultados[party];
+            assert(Object.hasOwn(value, party) || Object.hasOwn(e.resultados, party) || fromWiki, label + ': extra sin origen en ' + party);
+          }
         } else assert.deepEqual(q[key], value, `${label}: cambió ${p.estudio_id}.${key}`);
       }
     }
