@@ -1,3 +1,4 @@
+import {conservarReferencias} from './referencias-historicas.mjs';
 // Construcción local: una marca no transmite aprobación a nuevas oleadas.
 import {readFile,writeFile,rename,mkdir} from 'node:fs/promises';
 import {validate,deduplicate} from './update.mjs';
@@ -36,6 +37,7 @@ const rows=new Map([...original.encuestas,...previous].filter(p=>!blocked.has(p.
 for(const p of accepted){
  const old=rows.get(p.estudio_id);
  if(old && JSON.stringify(old.resultados)!==JSON.stringify(p.resultados))throw Error('Conflicto histórico: '+p.estudio_id);
+ if(old?.fuentes_adicionales?.length)conservarReferencias([p],[old]);
  rows.set(p.estudio_id,p);
 }
 const fields=new Map();
