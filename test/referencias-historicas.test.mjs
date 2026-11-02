@@ -36,7 +36,7 @@ test('importador desde cero: GAD3 en cuarentena conserva su referencia y todo el
  let r=run();assert.equal(r.status,0,r.stderr);
  const read=n=>JSON.parse(fs.readFileSync(path.join(data,'pipeline-test/electografica',n)));
  const output=read('radar.json');assert.deepEqual(output.encuestas,history.encuestas);
- assert.match(read('quarantine.json')[0].reason,/Identidad no homologada/);
+ assert.match(read('quarantine.json')[0].reason,/Discrepancia de publicación/);
  assert.equal(read('report.json').after.private,480);assert.equal(read('report.json').after.cis,35);
  r=run();assert.equal(r.status,0,r.stderr);assert.deepEqual(read('radar.json'),output);
 });

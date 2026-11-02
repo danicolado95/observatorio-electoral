@@ -170,10 +170,16 @@ def main():
  ap=argparse.ArgumentParser(); ap.add_argument('--html',required=True); ap.add_argument('--today',required=True); args=ap.parse_args()
  dt.date.fromisoformat(args.today)
  raw=Path(args.html).read_bytes(); result=parse(raw,args.today)
- root=Path(__file__).resolve().parents[1]/'data/pipeline-test/wikipedia'; archive=root/'archive'/result['attribution']['original_sha256']; archive.mkdir(parents=True,exist_ok=True)
+ root=Path(os.environ.get('ELECTOGRAFICA_TEST_ROOT',Path(__file__).resolve().parents[1]))/'data/pipeline-test/wikipedia'; archive=root/'archive'/result['attribution']['original_sha256']; archive.mkdir(parents=True,exist_ok=True)
  original=archive/'original.html'
  if original.exists() and original.read_bytes()!=raw: raise ValueError('Original archivado distinto')
  if not original.exists(): original.write_bytes(raw)
  save(archive/'attribution.json',result['attribution']); save(root/'staging.json',result); save(root/'report.json',result['report'])
+ save(root/'diagnostico-extraccion.json',{'validado':True,'etapa':'extraccion-wikipedia','sha256':result['attribution']['original_sha256'],'report':result['report'],'incidencias':[{'tipo':'cuarentena','estudio_id':p['estudio_id'],'evidencia':p['quarantine_reasons']} for p in result['quarantine']]})
  print(json.dumps(result['report'],ensure_ascii=False,indent=2))
-if __name__=='__main__': main()
+if __name__=='__main__':
+ try: main()
+ except Exception as error:
+  root=Path(os.environ.get('ELECTOGRAFICA_TEST_ROOT',Path(__file__).resolve().parents[1]))/'data/pipeline-test/wikipedia'
+  save(root/'diagnostico-extraccion.json',{'validado':False,'incidencias':[{'tipo':'error','etapa':'extraccion','fuente':'wikipedia','codigo':'EXTRACCION_INVALIDA','evidencia':str(error)},{'tipo':'no_evaluable','codigo':'STAGING_NO_PROMOVIDO','evidencia':'No se sustituye el staging anterior'}]})
+  raise

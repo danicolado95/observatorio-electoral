@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {verificar} from '../scripts/validar-integracion-manual.mjs';
+import {verificar, auditar} from '../scripts/validar-integracion-manual.mjs';
 function fixture(extra = 0) {
   const encuestas = Array.from({length: 515 + extra}, (_, i) => ({estudio_id: String(i), instituto: i < 35 ? 'CIS' : 'Casa', resultados: {PP: 30}}));
   return {original: {encuestas: structuredClone(encuestas.slice(0, 35))}, desarrollo: {encuestas: structuredClone(encuestas)}, cis: {encuestas: structuredClone(encuestas.slice(0, 35))},
@@ -100,11 +100,13 @@ for (const key of ['blogger_published', 'blogger_updated']) {
     data.auditoria[0].extracted.ingestion[key] = 'malformado';
     assert.throws(() => verificar(data), /fecha de auditoría inválida/);
   });
-  test('conserva comparación estricta para el mismo ID en ' + key, () => {
+  test('acepta instante equivalente para el mismo ID en ' + key, () => {
     const data = fixture();
     data.desarrollo.encuestas[35].ingestion = {[key]: '2026-11-02T07:47:51.594+00:00'};
     data.combinado.encuestas[35].ingestion = {[key]: '2026-11-02T08:47:51.594+01:00'};
-    assert.throws(() => verificar(data), /cambió/);
+    const before = structuredClone(data);
+    assert.equal(verificar(data).validado, true);
+    assert.deepEqual(data, before);
   });
 }
 for (const key of ['content_sha256', 'entry_id', 'source', 'otro_campo']) {
@@ -157,3 +159,51 @@ test('FA y SUMAR complementarios conservan valores independientes', () => {
   d.combinado.encuestas[35].resultados.SUMAR = 3;
   assert.equal(verificar(d).validado, true);
 });
+
+
+test('acumula campos, partidos, referencias y registros independientes sin mutar', () => {
+  const d = fixture();
+  d.desarrollo.encuestas[35].fuentes_adicionales = [{url: 'https://example.org/1'}, {url: 'https://example.org/2'}];
+  d.combinado.encuestas[35].instituto = 'Distinto';
+  d.combinado.encuestas[35].resultados = {PP: 0, FA: 2};
+  d.desarrollo.encuestas[35].resultados.FA = 0;
+  d.combinado.encuestas.splice(36, 1);
+  const before = structuredClone(d), informe = auditar(d);
+  assert.equal(informe.validado, false);
+  for (const campo of ['instituto', 'resultados.PP', 'resultados.FA', 'fuentes_adicionales']) {
+    assert(informe.incidencias.some(i => i.estudio_id === '35' && i.campo === campo), campo);
+  }
+  assert.equal(informe.incidencias.filter(i => i.estudio_id === '35' && i.codigo === 'REFERENCIA_PERDIDA').length, 2);
+  assert(informe.incidencias.some(i => i.estudio_id === '36' && i.severidad === 'no-evaluable'));
+  assert.equal(informe.cobertura.desarrollo.registros.length, 515);
+  assert.deepEqual(d, before);
+  assert.deepEqual(auditar(d), informe);
+  assert.throws(() => verificar(d), e => e instanceof AggregateError && e.informe.incidencias.length === informe.incidencias.length);
+});
+
+for (const key of ['blogger_published', 'blogger_updated']) {
+  test('ID exacto: precisión decimal y zona equivalentes en ' + key, () => {
+    const d = fixture();
+    d.desarrollo.encuestas[35].ingestion = {[key]: '2026-11-02T08:20:07.630+01:00'};
+    d.combinado.encuestas[35].ingestion = {[key]: '2026-11-02T07:20:07.63+00:00'};
+    const before = structuredClone(d);
+    assert.equal(verificar(d).validado, true);
+    assert.deepEqual(d, before);
+  });
+  for (const value of ['2026-11-02T07:20:07.631Z', '2026-02-30T07:20:07.630Z', null]) {
+    test('ID exacto rechaza instante distinto o inválido: ' + key + ' ' + value, () => {
+      const d = fixture();
+      d.desarrollo.encuestas[35].ingestion = {[key]: '2026-11-02T08:20:07.630+01:00'};
+      d.combinado.encuestas[35].ingestion = {[key]: value};
+      assert.equal(auditar(d).validado, false);
+    });
+  }
+}
+for (const key of ['content_sha256', 'entry_id', 'source']) {
+  test('ID exacto: sigue siendo estricto en ' + key, () => {
+    const d = fixture();
+    d.desarrollo.encuestas[35].ingestion = {[key]: 'original'};
+    d.combinado.encuestas[35].ingestion = {[key]: 'distinto'};
+    assert.equal(auditar(d).validado, false);
+  });
+}

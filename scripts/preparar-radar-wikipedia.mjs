@@ -1,53 +1,80 @@
+import {createHash} from 'node:crypto';
 import {conservarReferencias} from './referencias-historicas.mjs';
 // Construcción local: una marca no transmite aprobación a nuevas oleadas.
 import {readFile,writeFile,rename,mkdir} from 'node:fs/promises';
 import {validate,deduplicate} from './update.mjs';
-const root=new URL('../',import.meta.url);
-const read=async p=>JSON.parse(await readFile(new URL(p,root),'utf8'));
-const staging=await read('data/pipeline-test/wikipedia/staging.json');
-const original=await read('data/radar.json');
+const root=process.env.ELECTOGRAFICA_TEST_ROOT?new URL('file:///'+process.env.ELECTOGRAFICA_TEST_ROOT.replaceAll('\\','/')+'/'):new URL('../',import.meta.url);
+const incidencias=[],fuentes=[];
+const issue=(tipo,codigo,evidencia,estudio_id=null)=>incidencias.push({tipo,codigo,evidencia,estudio_id,etapa:'preparacion',fuente:'wikipedia'});
+const read=async(p,fallback)=>{try{const raw=await readFile(new URL(p,root),'utf8'),v=JSON.parse(raw);fuentes.push({archivo:p,estado:'legible',sha256:createHash('sha256').update(raw).digest('hex'),registros:v.encuestas?.length??v.approved?.length??null});
+for(const [k,value] of Object.entries(fallback))if(Array.isArray(value)&&!Array.isArray(v?.[k]))throw Error('Estructura inválida: '+k);
+return v;}catch(e){fuentes.push({archivo:p,estado:'no_disponible'});if(!(e.code==='ENOENT'&&p==='data/pipeline-test/wikipedia/radar.json'))issue('error','LECTURA_INVALIDA',p+': '+e.message);return fallback;}};
+async function preparar(){try {
+const staging=await read('data/pipeline-test/wikipedia/staging.json',{encuestas:[],quarantine:[],report:{}});
+const original=await read('data/radar.json',{encuestas:[]});
 let review={approved:[],audit:[]};
-try{review=await read('data/historico-revisado.json');}catch(e){if(e.code!=='ENOENT')throw e;}
+try{review=await read('data/historico-revisado.json',{approved:[],audit:[]});}catch(e){if(e.code!=='ENOENT')throw e;}
+const checked=(rows,fuente)=>{const seen=new Set();return rows.filter(p=>{
+ if(!p||typeof p.estudio_id!=='string'||!p.resultados||typeof p.resultados!=='object'){issue('error','REGISTRO_INVALIDO',fuente+': identidad/resultados inválidos',p?.estudio_id);return false;}
+ if(seen.has(p.estudio_id))issue('error','ID_DUPLICADO',fuente+': '+p.estudio_id,p.estudio_id);
+ seen.add(p.estudio_id);return true;
+});};
+staging.encuestas=checked(staging.encuestas,'staging');staging.quarantine=checked(staging.quarantine,'cuarentena');
+review.approved=checked(review.approved,'revisados');original.encuestas=checked(original.encuestas,'original');
+const originals=await read('data/originales-huecos.json',{encuestas:[]});
 const blocked=new Set(review.audit.filter(a=>a.decision==='cuarentena').map(a=>a.estudio_id));
 const approved=new Map(review.approved.map(p=>[p.estudio_id,p]));
 for(const p of [...staging.encuestas,...staging.quarantine]){
  const a=approved.get(p.estudio_id);
- if(a && (JSON.stringify(p.resultados)!==JSON.stringify(a.resultados)||p.trabajo_campo_fin!==a.trabajo_campo_fin||p.instituto!==a.instituto||p.fuente!==a.fuente||p.fecha_publicacion!==(Object.hasOwn(a,'fecha_publicacion_tabla_original')?a.fecha_publicacion_tabla_original:a.fecha_publicacion)||p.tamano_muestra!==(Object.hasOwn(a,'muestra_tabla_original')?a.muestra_tabla_original:a.tamano_muestra)))throw Error('Revisión de registro auditado: '+p.estudio_id);
+ if(a && (JSON.stringify(p.resultados)!==JSON.stringify(a.resultados)||p.trabajo_campo_fin!==a.trabajo_campo_fin||p.instituto!==a.instituto||p.fuente!==a.fuente||p.fecha_publicacion!==(Object.hasOwn(a,'fecha_publicacion_tabla_original')?a.fecha_publicacion_tabla_original:a.fecha_publicacion)||p.tamano_muestra!==(Object.hasOwn(a,'muestra_tabla_original')?a.muestra_tabla_original:a.tamano_muestra)))issue('error','REVISION_MODIFICADA','Revisión de registro auditado: '+p.estudio_id,p.estudio_id);
 }
 const candidates=new Map(staging.encuestas.filter(p=>!blocked.has(p.estudio_id)).map(p=>[p.estudio_id,p]));
 for(const p of approved.values())candidates.set(p.estudio_id,p);
 // Revisiones manuales de originales: un escenario por estudio, sin heredar
 // porcentajes de tablas secundarias ni habilitar ninguna descarga automática.
-const originals=await read('data/originales-huecos.json');
-for(const p of originals.encuestas){
- if(p.verificacion?.estado!=='verificado-original' || !p.evidencia_publica?.length || /electografica|electograph/.test(new URL(p.fuente).hostname))throw Error('Original sin verificar: '+p.estudio_id);
+for(const p of originals.encuestas){try{
+ if(p.verificacion?.estado!=='verificado-original' || !p.evidencia_publica?.length || /electografica|electograph/.test(new URL(p.fuente).hostname)){issue('error','ORIGINAL_NO_VERIFICADO','Original sin verificar: '+p.estudio_id,p.estudio_id);continue;}
  blocked.delete(p.estudio_id);
  candidates.set(p.estudio_id,p);
+}catch(e){issue('error','ORIGINAL_INVALIDO',e.message,p?.estudio_id);}
 }
 const accepted=[],rejected=[];
 for(const raw of candidates.values()){
  const p={...raw,fecha_fin_campo:raw.trabajo_campo_fin,tipo_fecha:raw.fecha_publicacion?'publicacion':'fin_campo'};
  try{accepted.push(validate(p,{id:'wikipedia-staging',allowedHosts:[new URL(p.fuente).hostname],allowHistoricalMetadata:true},staging.report.today));}
- catch(e){rejected.push({estudio_id:p.estudio_id,instituto:p.instituto,reason:e.message});}
+ catch(e){issue('error','CANDIDATO_INVALIDO',e.message,p.estudio_id);rejected.push({estudio_id:p.estudio_id,instituto:p.instituto,reason:e.message});}
 }
-if(!accepted.length)throw Error('Staging vacío');
+if(!accepted.length)issue('error','STAGING_VACIO','Staging vacío');
+for(const p of staging.quarantine)issue('cuarentena','STAGING_CUARENTENA',JSON.stringify(p.quarantine_reasons),p.estudio_id);
 const target=new URL('data/pipeline-test/wikipedia/radar.json',root);
-let previous=[];try{previous=(await read('data/pipeline-test/wikipedia/radar.json')).encuestas;}catch(e){if(e.code!=='ENOENT')throw e;}
+let previous=[];try{previous=(await read('data/pipeline-test/wikipedia/radar.json',{encuestas:[]})).encuestas;}catch(e){if(e.code!=='ENOENT')throw e;}
 const rows=new Map([...original.encuestas,...previous].filter(p=>!blocked.has(p.estudio_id)).map(p=>[p.estudio_id,p]));
 for(const p of accepted){
  const old=rows.get(p.estudio_id);
- if(old && JSON.stringify(old.resultados)!==JSON.stringify(p.resultados))throw Error('Conflicto histórico: '+p.estudio_id);
- if(old?.fuentes_adicionales?.length)conservarReferencias([p],[old]);
+ let conflict=false;
+ if(old)for(const key of ['instituto','ambito','tipo','fecha_publicacion','trabajo_campo_inicio','trabajo_campo_fin','tamano_muestra','fuente'])if(old[key]!==p[key]){issue('error','METADATO_HISTORICO_MODIFICADO','Conflicto histórico: '+p.estudio_id+'.'+key,p.estudio_id);conflict=true;}
+ if(conflict)continue;
+ if(old && JSON.stringify(old.resultados)!==JSON.stringify(p.resultados)){issue('error','CONFLICTO_HISTORICO','Conflicto histórico: '+p.estudio_id,p.estudio_id);continue;}
+ if(old?.fuentes_adicionales?.length)try{conservarReferencias([p],[old]);}catch(e){for(const i of e.informe?.incidencias||[])issue('error',i.codigo,i.evidencia,p.estudio_id);continue;}
  rows.set(p.estudio_id,p);
 }
 const fields=new Map();
 for(const p of rows.values()){
+ if(typeof p.instituto!=='string'){issue('error','INSTITUTO_INVALIDO','Instituto ausente',p.estudio_id);continue;}
  const key=[p.instituto.toUpperCase(),p.trabajo_campo_inicio,p.trabajo_campo_fin].join('|');
- if(fields.has(key)&&fields.get(key)!==p.estudio_id)throw Error('Posible republicación: '+key);
+ if(fields.has(key)&&fields.get(key)!==p.estudio_id)issue('error','REPUBLICACION','Posible republicación: '+key,p.estudio_id);
  fields.set(key,p.estudio_id);
 }
 const encuestas=deduplicate([...rows.values()].map(p=>({...p,fecha_fin_campo:p.trabajo_campo_fin,tipo_fecha:p.fecha_publicacion?'publicacion':'fin_campo'})));
 const result={version:1,encuestas,attribution:staging.attribution,status:{state:'staging',message:'Histórico ampliado y auditado por registro. Vista local; cobertura parcial.',lastAttempt:null,lastSuccess:null,lastDataChange:null},import_report:{...staging.report,strict_accepted:accepted.length,strict_rejected:rejected,reviewed:review.audit.length,em_accepted:accepted.filter(p=>p.instituto==='EM-Analytics').length,existing:original.encuestas.length}};
 await mkdir(new URL('data/pipeline-test/wikipedia/',root),{recursive:true});
+if(incidencias.some(i=>i.tipo==='error')){issue('no_evaluable','RADAR_NO_PROMOVIDO','Lote bloqueado');return;}
 await writeFile(new URL(target.href+'.tmp'),JSON.stringify(result,null,2)+'\n');await rename(new URL(target.href+'.tmp'),target);
 console.log(JSON.stringify({accepted:accepted.length,rejected:rejected.length,total:encuestas.length,institutes:new Set(accepted.map(p=>p.instituto)).size}));
+
+}catch(e){issue('error','ESTRUCTURA_INVALIDA',e.message);}finally{
+await mkdir(new URL('data/pipeline-test/wikipedia/',root),{recursive:true});
+await writeFile(new URL('data/pipeline-test/wikipedia/diagnostico.json',root),JSON.stringify({etapa:'preparacion-wikipedia',validado:!incidencias.some(i=>i.tipo==='error'),incidencias,fuentes},null,2)+'\n');
+if(incidencias.some(i=>i.tipo==='error'))process.exitCode=1;
+}}
+await preparar();
