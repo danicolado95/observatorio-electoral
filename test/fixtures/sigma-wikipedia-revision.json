@@ -1,0 +1,71 @@
+{
+  "instituto": "Sigma Dos",
+  "estudio_id": "wiki-76e5efb3454a452aac3f",
+  "tipo": "estimacion_voto",
+  "ambito": "España",
+  "fecha_publicacion": "2026-11-01",
+  "trabajo_campo_inicio": "2026-10-29",
+  "trabajo_campo_fin": "2026-10-30",
+  "tamano_muestra": 2505,
+  "resultados": {
+    "PP": 31.1,
+    "PSOE": 24.6,
+    "VOX": 19.3,
+    "FA": 7.5,
+    "FV": 0.9,
+    "ERC": 3,
+    "JUNTS": 1.1,
+    "EH_BILDU": 1.3,
+    "PNV": 0.9,
+    "BNG": 1,
+    "CC": 0.4,
+    "ADELANTE_ANDALUCIA": 1.4,
+    "PODEMOS": 1.9
+  },
+  "fuente": "https://www.elmundo.es/espana/encuestas/2026/11/01/6ae77446e4d4d8f3698b458a.html",
+  "referencias": [
+    {
+      "url": "https://www.elmundo.es/espana/encuestas/2026/11/01/6ae77446e4d4d8f3698b458a.html",
+      "fecha_publicacion": "2026-11-01",
+      "texto": "\"El PSOE pierde 450.000 votos y cae por debajo de 100 escaños en la primera encuesta tras la tragedia de Urda\". El Mundo (in Spanish). 1 November 2026.",
+      "reference": "cite_note-2"
+    }
+  ],
+  "ingestion": {
+    "source": "wikipedia",
+    "revision": "https://en.wikipedia.org/w/index.php?title=Opinion_polling_for_the_2026_Spanish_general_election&oldid=1383412906",
+    "sha256": "40aacb2b7392ee1c0468df06ea3e425114e49aaf784d2920081091375e4f57d5",
+    "table": 1,
+    "row": 3,
+    "row_id": "mwsA",
+    "raw_cells": [
+      "Sigma Dos/El Mundo",
+      "29–30 Oct",
+      "2,505",
+      "?",
+      "31.1",
+      "24.6",
+      "19.3",
+      "7.5",
+      "0.9",
+      "3.0",
+      "1.1",
+      "1.3",
+      "0.9",
+      "1.0",
+      "0.4",
+      "1.4",
+      "1.9",
+      "–",
+      "6.5"
+    ],
+    "publication_basis": "fecha bibliográfica explícita de la referencia; no inferida del campo",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "quarantine_reasons": [],
+  "missing": [],
+  "duplicates": [],
+  "fecha_fin_campo": "2026-10-30",
+  "tipo_fecha": "publicacion",
+  "source_id": "wikipedia-staging"
+}

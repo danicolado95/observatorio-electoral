@@ -54,7 +54,15 @@ export function resolverElectografica(h,w,p,entrada) {
     const extracted=extraerEntrada(entrada,p.fecha_publicacion);
     if(!isDeepStrictEqual(normalizar(extracted),normalizar(p))) return null;
     // Enlaces distintos necesitan un puente documental explícito, nunca fechas solas.
-    const puente=w.fuente!==p.fuente ? resolverSigma(h,w,p) : null;
+    // El puente acredita dos originales del mismo estudio, no una captura
+    // concreta de Wikipedia. Una revisión de la página cambia su hash aunque
+    // no cambien ni la encuesta ni los originales. Conservamos la captura
+    // actual íntegra en la reconciliación y verificamos el puente cerrado con
+    // sus versiones Electográfica y hashes documentales exactos.
+    const puente=w.fuente!==p.fuente &&
+      mismaIdentidad(w,decision.wikipedia) &&
+      w.estudio_id===decision.wikipedia.estudio_id && w.fuente===decision.wikipedia.fuente
+      ? resolverSigma(h,decision.wikipedia,p) : null;
     if(w.fuente!==p.fuente && !puente) return null;
     if(h && (!mismaIdentidad(h,p) || h.estudio_id!==p.estudio_id ||
       h.ingestion?.entry_id!==p.ingestion.entry_id || h.url_electografica!==p.url_electografica ||
