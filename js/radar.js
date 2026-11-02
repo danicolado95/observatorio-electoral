@@ -2,49 +2,105 @@
 const box=document.getElementById('radar-grafico'),status=document.getElementById('radar-status');
 const create=(tag,attrs={},text='')=>{const n=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const [k,v]of Object.entries(attrs))n.setAttribute(k,v);n.textContent=text;return n;};
 try{
-const response=await fetch('./data/radar.json',{cache:'no-store'});
+const staging=new URLSearchParams(location.search).get('radar')==='staging' && ['localhost','127.0.0.1','[::1]'].includes(location.hostname);
+const response=await fetch(staging?'./data/radar-desarrollo.json':'./data/radar.json',{cache:'no-store'});
 if(!response.ok)throw Error('HTTP '+response.status);
 const data=await response.json(),state=data.status;
-if(!state)throw Error('Radar sin estado integrado; ejecutar scripts/update.mjs');
+if(!state)throw Error('Radar sin estado integrado');
+const colors={PP:'#347cbd',PSOE:'#e54440',VOX:'#69a554',SUMAR:'#d36a9d',PODEMOS:'#8541b5',ERC:'#cf9d14',JUNTS:'#00a992',EH_BILDU:'#438d74',PNV:'#65894a',BNG:'#7a9cc7',CC:'#b89d00',UPN:'#65738a',SALF:'#785a46',ALIANCA_CAT:'#164c81',ADELANTE_ANDALUCIA:'#24a77e',FA:'#f07901',FV:'#e84d00'};
+const parties=[...new Set(data.encuestas.flatMap(p=>Object.keys(p.resultados)))];
+const enabled=new Set(['PP','PSOE','VOX','SUMAR','PODEMOS','FA','SALF']);
+if(staging){const style=document.createElement('style');style.textContent='#encuestas > :not(#radar-principal){display:none}';document.head.append(style);document.querySelector('.demo .wrap').textContent='Desarrollo local · Radar con encuestas reales de Wikipedia. Las demás secciones conservan ejemplos simulados.';}
+if(staging)document.querySelector('footer > div > div:last-child').textContent='Desarrollo · Noviembre de 2026. Radar con datos reales; otras secciones en prototipo.';
+const sheet=document.createElement('style');sheet.textContent=`
+#radar-principal .radar-controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:20px 0 12px}
+#radar-principal .radar-controls label{display:inline-flex;align-items:center;gap:5px;min-height:36px;padding:2px 9px;border:1px solid #e0e6e1;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;background:#fff}
+#radar-principal select{min-height:40px;border:1px solid #cad5cd;border-radius:6px;background:#fff;color:#24362d;padding:0 10px;font:inherit;font-size:13px}
+#radar-principal input{accent-color:#3e6551}#radar-principal :focus-visible{outline:2px solid #315e48;outline-offset:3px}
+#radar-grafico svg{display:block;min-width:700px;width:100%;font-family:inherit}#radar-grafico{overflow-x:auto}
+#radar-principal .radar-help{font-size:12px;color:#647469;margin:8px 0 14px;line-height:1.6}
+#radar-principal details{margin-top:14px;font-size:12px;color:#647469}#radar-principal summary{cursor:pointer;padding:8px 0}
+#radar-status{padding-top:12px;border-top:1px solid #e4e9e5;font-size:12px}
+@media(max-width:640px){#radar-principal{padding:16px}#radar-principal .radar-controls{gap:6px}#radar-principal .radar-controls label{min-height:40px}#radar-grafico{scrollbar-width:thin}}
+`;document.head.append(sheet);
+const controls=document.createElement('div');controls.className='radar-controls';controls.setAttribute('role','group');controls.setAttribute('aria-label','Periodo, CIS y partidos');
+const extra=document.createElement('details'),extraTitle=document.createElement('summary'),extraControls=document.createElement('div');extraTitle.textContent='Más partidos';extraControls.className='radar-controls';extra.append(extraTitle,extraControls);
+for(const party of parties){const label=document.createElement('label'),input=document.createElement('input');input.type='checkbox';input.checked=enabled.has(party);input.setAttribute('aria-label',party);input.addEventListener('change',()=>{input.checked?enabled.add(party):enabled.delete(party);draw();});label.style.color=colors[party]||'#68786c';label.append(input,document.createTextNode(' '+party));(enabled.has(party)?controls:extraControls).append(label);}
+box.before(controls,extra);
+const range=document.createElement('select');range.id='radar-range';range.setAttribute('aria-label','Periodo del gráfico');
+for(const [value,text] of [['year','Último año'],['all','Desde 23J']]){const option=document.createElement('option');option.value=value;option.textContent=text;range.append(option);}controls.prepend(range);range.addEventListener('change',draw);
+const cis=document.getElementById('radar-cis');cis.checked=false;
+const cisLabel=cis.closest?.('label');if(cisLabel){const old=cisLabel.parentElement;controls.append(cisLabel);if(old&&old!==controls)old.hidden=true;}
+status.setAttribute('role','status');status.setAttribute('aria-live','polite');
+const tip=document.createElement('div');tip.id='radar-tooltip';tip.setAttribute('role','tooltip');tip.hidden=true;
+tip.style.cssText='position:fixed;z-index:1000;pointer-events:none;max-width:310px;padding:12px 15px;background:#fff;color:#24362d;border:1px solid #dce5df;border-radius:8px;box-shadow:0 5px 24px #18302720;font-size:13px;white-space:pre-line;line-height:1.55;overflow-wrap:anywhere';document.body.append(tip);
+function showTip(event,text){tip.textContent=text;tip.hidden=false;tip.style.left=Math.max(8,Math.min(event.clientX+14,innerWidth-tip.offsetWidth-12))+'px';tip.style.top=Math.max(8,Math.min(event.clientY+14,innerHeight-tip.offsetHeight-12))+'px';}
+
+const note=document.createElement('p');note.className='sub';note.textContent='Puntos por fin de trabajo de campo. * Publicación sin fecha conocida; se conserva el fin de campo verificado. Mediana no ponderada por muestra: 21 días naturales (día actual y 20 anteriores), última encuesta por instituto, mínimo 3 por partido. Con fecha de publicación conocida, el estudio entra en la mediana desde ese día. Las líneas unen medianas válidas, incluso entre fechas sin base suficiente; esos segmentos no añaden medianas diarias. CIS excluido por defecto.';const method=document.createElement('details'),methodTitle=document.createElement('summary');methodTitle.textContent='Cómo se calcula y qué significan los huecos';method.append(methodTitle,note);box.before(method);
+const help=document.createElement('p');help.className='radar-help';help.textContent='Líneas: mediana de 21 días · Puntos: encuestas individuales. Explora con el cursor o el teclado. En móvil, desliza el gráfico horizontalmente.';box.before(help);
+const sourceBox=document.getElementById('radar-sources'),details=document.createElement('details'),summary=document.createElement('summary'),sourceRows=document.createElement('div');details.append(summary,sourceRows);sourceBox.replaceChildren(details);
+if(data.attribution){const attribution=document.createElement('p');attribution.className='sub';attribution.append(document.createTextNode('Datos derivados de Wikipedia contributors · '));for(const [title,url] of [['revisión original',data.attribution.revision],['historial',data.attribution.history],['CC BY-SA 4.0',data.attribution.license]]){const a=document.createElement('a');a.href=url;a.textContent=title;a.target='_blank';a.rel='noopener noreferrer';attribution.append(a,document.createTextNode(' · '));}attribution.append(document.createTextNode('Tablas convertidas a JSON, normalizadas y filtradas. Fuentes originales en cada registro.'));sourceBox.before(attribution);}
 function draw(){
 const today=new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Madrid'}).format(new Date());
 const polls=RadarCore.select(data.encuestas,document.getElementById('radar-cis').checked);
-const colors={PP:'#347cbd',PSOE:'#e54440',VOX:'#69a554',SUMAR:'#d36a9d',PODEMOS:'#8541b5'};
-const parties=[...new Set([...Object.keys(colors),...polls.flatMap(p=>Object.keys(p.resultados))])];
-const svg=create('svg',{viewBox:'0 0 800 370',width:'100%',role:'img','aria-label':'Radar descriptivo desde el 23J'});
-const start=Date.parse('2023-07-23'),end=Math.max(start+86400000,Date.parse(today));
+const svg=create('svg',{viewBox:'0 0 860 370',width:'100%',role:'group','aria-label':'Mediana móvil de 21 días · '+(range.value==='all'?'Desde 23J':'Último año')});
+const end=Date.parse(today),start=RadarCore.chartStart(today,range.value);
 const x=d=>55+(Date.parse(d)-start)/(end-start)*690;
-const ceiling=Math.ceil(Math.max(40,...polls.flatMap(p=>Object.values(p.resultados)))/10)*10,y=v=>300-v/ceiling*270;
-for(let v=0;v<=ceiling;v+=10)svg.append(create('line',{x1:55,x2:745,y1:y(v),y2:y(v),stroke:'#dce5df'}),create('text',{x:5,y:y(v)+4,'font-size':12},v+'%'));
-svg.append(create('text',{x:55,y:330,'font-size':12},'23J 2023'),create('text',{x:710,y:330,'font-size':12},today));
-for(let year=2024;year<Number(today.slice(0,4))+1;year++)if(year+'-01-01'<today)svg.append(create('text',{x:x(year+'-01-01'),y:350,'font-size':12},String(year)));
-for(const [p,v]of Object.entries({PP:33.1,PSOE:31.7,VOX:12.4,SUMAR:12.3})){const mark=create('rect',{x:51,y:y(v)-4,width:8,height:8,fill:colors[p]});mark.append(create('title',{},`${p}: ${v}% · referencia redondeada heredada del prototipo; contraste nacional pendiente`));svg.append(mark);}
-for(const party of parties){const color=colors[party]||'#68786c';let segment=[];const flush=()=>{if(segment.length>1)svg.append(create('polyline',{points:segment.join(' '),fill:'none',stroke:color,'stroke-width':2}));segment=[];};
-const observaciones = polls
-  .filter(p => Number.isFinite(p.resultados[party]))
-  .sort((a, b) =>
-    a.trabajo_campo_fin.localeCompare(b.trabajo_campo_fin)
-  );
-
-const puntos = observaciones.map(p =>
-  `${x(p.trabajo_campo_fin)},${y(p.resultados[party])}`
-);
-
-if (puntos.length > 1) {
-  svg.append(create('polyline', {
-    points: puntos.join(' '),
-    fill: 'none',
-    stroke: color,
-    'stroke-width': 2,
-    'stroke-linejoin': 'round',
-    'stroke-linecap': 'round'
-  }));
+const visibleParties=parties.filter(p=>enabled.has(p));
+const trends=new Map(visibleParties.map(p=>[p,RadarCore.medianTrend(polls,p,today)]));
+const visiblePolls=polls.filter(p=>Date.parse(RadarCore.fieldDate(p))>=start&&RadarCore.fieldDate(p)<=today&&RadarCore.availableDate(p)<=today);
+const maxima=[...visiblePolls.flatMap(p=>visibleParties.map(k=>p.resultados[k])),...[...trends.values()].flatMap(rows=>rows.filter(p=>Date.parse(p.date)>=start).map(p=>p.value))].filter(Number.isFinite);
+const ceiling=Math.max(10,Math.ceil(((maxima.length?Math.max(...maxima):0)+2)/5)*5),y=v=>300-v/ceiling*270;
+svg.setAttribute('data-ceiling',ceiling);
+for(let v=0;v<=ceiling;v+=ceiling>50?10:5)svg.append(create('line',{x1:55,x2:745,y1:y(v),y2:y(v),stroke:'#e8ede9','stroke-width':1}),create('text',{x:42,y:y(v)+4,'text-anchor':'end',fill:'#748078','font-size':11},v+'%'));
+const firstMonth=new Date(start);firstMonth.setUTCDate(1);firstMonth.setUTCMonth(firstMonth.getUTCMonth()+1);
+for(let d=firstMonth;d.getTime()<=end;d.setUTCMonth(d.getUTCMonth()+1)){
+ if(range.value==='all'&&d.getUTCMonth()%3!==0)continue;
+ const date=d.toISOString().slice(0,10),label=new Intl.DateTimeFormat('es',{month:'short',timeZone:'UTC'}).format(d).replace('.','')+(d.getUTCMonth()===0||range.value==='all'?' '+d.getUTCFullYear():'');
+ svg.append(create('text',{x:x(date),y:326,'text-anchor':'middle',fill:'#748078','font-size':11},label));
 }
-for(const p of polls.filter(p=>Number.isFinite(p.resultados[party]))){const dot=create('circle',{cx:x(p.trabajo_campo_fin),cy:y(p.resultados[party]),r:4,fill:color,tabindex:0});dot.append(create('title',{},`${party}: ${p.resultados[party]}% · ${p.instituto} · campo ${p.trabajo_campo_inicio}–${p.trabajo_campo_fin} · publicación ${p.fecha_publicacion} · n=${p.tamano_muestra} · ${p.fuente}`));svg.append(dot);}}
-const legend=document.createElement('p');legend.textContent=parties.join(' · ')+' | Cuadrados: referencia 23J redondeada del prototipo, pendiente de contraste nacional. Círculos: sondeos al fin del trabajo de campo.';box.replaceChildren(svg,legend);
-status.textContent=`Estado: ${state.state}. Intento: ${state.lastAttempt||'ninguno'}. Éxito: ${state.lastSuccess||'ninguno'}. Cambio de datos: ${state.lastDataChange||'ninguno'}. ${polls.length} sondeos visibles. ${state.message}`;
-if(state.lastSuccess&&Date.now()-Date.parse(state.lastSuccess)>48*3600000)status.textContent+=' Atención: más de 48 horas sin comprobación satisfactoria.';
-const sources=document.getElementById('radar-sources');sources.replaceChildren();for(const p of polls){const row=document.createElement('p'),link=document.createElement('a');link.href=p.fuente;link.textContent=`${p.instituto} · ${p.fecha_publicacion} · ${p.estudio_id}`;link.target='_blank';link.rel='noopener noreferrer';row.append(link);sources.append(row);}
+const seriesByParty=new Map();
+const latest=document.createElement('p');latest.className='radar-help';let meaningful=0;const endLabels=[];
+for(const party of parties.filter(p=>enabled.has(p))){
+ const color=colors[party]||'#68786c';let segment=[];
+ const flush=()=>{if(segment.length>1){const line=create('polyline',{points:segment.join(' '),fill:'none',stroke:color,'stroke-width':2.6,'stroke-linejoin':'round','stroke-linecap':'round','data-party':party});line.append(create('title',{},party+' · mediana móvil de 21 días'));svg.append(line);}segment=[];};
+ const series=trends.get(party);seriesByParty.set(party,new Map(series.map(p=>[p.date,p])));
+ // Join only observed valid medians; keep daily nulls in seriesByParty for hover.
+ for(const point of series){if(Date.parse(point.date)<start)continue;if(point.value===null)continue;meaningful++;segment.push(`${x(point.date)},${y(point.value)}`);}flush();
+ const last=series.filter(p=>Date.parse(p.date)>=start&&p.value!==null).at(-1);
+ if(last)endLabels.push({party,color,last,target:y(last.value)});
+
+}
+endLabels.sort((a,b)=>a.target-b.target);
+for(let i=0;i<endLabels.length;i++)endLabels[i].labelY=Math.max(endLabels[i].target,i?endLabels[i-1].labelY+16:36);
+if(endLabels.length&&endLabels.at(-1).labelY>295){endLabels.at(-1).labelY=295;for(let i=endLabels.length-2;i>=0;i--)endLabels[i].labelY=Math.min(endLabels[i].labelY,endLabels[i+1].labelY-16);}
+for(const item of endLabels){const {party,color,last,labelY}=item;svg.append(create('line',{x1:x(last.date),y1:y(last.value),x2:750,y2:labelY,stroke:color,'stroke-opacity':.45}),create('text',{x:754,y:labelY+4,fill:color,'font-size':10,'font-weight':600,'data-end-label':party},party+' '+last.value.toFixed(1)+'%'));}
+latest.textContent='Última mediana válida al extremo derecho (porcentaje de voto). Puede corresponder a una fecha anterior a hoy; consulta la fecha al explorar.';
+if(!meaningful)svg.append(create('text',{x:120,y:160,'font-size':16},'Sin base suficiente: se necesitan al menos 3 institutos.'));
+// Transparent date surface sits below individual point targets.
+const surface=create('rect',{x:55,y:30,width:690,height:270,fill:'transparent','data-hover':'median',tabindex:0,role:'slider','aria-label':'Explorar medianas por fecha','aria-valuemin':0,'aria-valuemax':Math.round((end-start)/86400000),'aria-valuenow':Math.round((end-start)/86400000)});let keyboardDate=end;
+surface.addEventListener('pointermove',event=>{
+ const rect=svg.getBoundingClientRect(),sx=(event.clientX-rect.left)*860/rect.width;
+ const stamp=Math.max(start,Math.min(end,start+Math.round((sx-55)/690*(end-start)/86400000)*86400000));
+ const date=new Date(stamp).toISOString().slice(0,10);
+ const values=[...seriesByParty].map(([party,series])=>{const p=series.get(date);return party+': '+(p?.value==null?'sin base suficiente':p.value.toFixed(1)+'%')+(p?' · n='+p.n+' institutos':' · sin serie en esta fecha');});
+ showTip(event,date+' · mediana de 21 días\n'+values.join('\n'));
+});
+surface.addEventListener('keydown',event=>{if(event.key==='Escape'){tip.hidden=true;return;}if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();keyboardDate=event.key==='Home'?start:event.key==='End'?end:Math.max(start,Math.min(end,keyboardDate+(event.key==='ArrowLeft'?-86400000:86400000)));surface.setAttribute('aria-valuenow',Math.round((keyboardDate-start)/86400000));const date=new Date(keyboardDate).toISOString().slice(0,10);surface.setAttribute('aria-valuetext',date);const r=svg.getBoundingClientRect();showTip({clientX:r.left+55,clientY:r.top+40},date+' · mediana de 21 días\n'+[...seriesByParty].map(([party,rows])=>party+': '+(rows.get(date)?.value==null?'sin base suficiente':rows.get(date).value.toFixed(1)+'%')).join('\n'));});
+surface.addEventListener('blur',()=>tip.hidden=true);svg.append(surface);
+for(const p of polls.filter(p=>Date.parse(RadarCore.fieldDate(p))>=start && RadarCore.fieldDate(p)<=today && RadarCore.availableDate(p)<=today))for(const party of parties.filter(p=>enabled.has(p))){
+ const value=p.resultados[party];if(!Number.isFinite(value))continue;
+ const dot=create('circle',{cx:x(RadarCore.fieldDate(p)),cy:y(value),r:2.2,stroke:'transparent','stroke-width':7,fill:colors[party]||'#68786c','fill-opacity':.22,'data-poll':p.estudio_id,'data-party':party,tabindex:0,'aria-label':RadarCore.pollTooltip(p,party)});
+ const hover=event=>{event.stopPropagation();showTip(event,RadarCore.pollTooltip(p,party));};dot.addEventListener('pointerenter',hover);dot.addEventListener('pointermove',hover);
+ dot.addEventListener('focus',()=>{const r=dot.getBoundingClientRect();showTip({clientX:r.x,clientY:r.y},RadarCore.pollTooltip(p,party));});dot.addEventListener('blur',()=>tip.hidden=true);svg.append(dot);
+}
+svg.addEventListener('keydown',event=>{if(event.key==='Escape')tip.hidden=true;});svg.addEventListener('pointerleave',()=>tip.hidden=true);tip.hidden=true;
+box.replaceChildren(svg,latest);
+const privateCount=polls.filter(p=>RadarCore.normalizeInstitute(p.instituto)!=='CIS').length;
+status.textContent=`${polls.length} encuestas disponibles · ${privateCount} privadas${cis.checked?' + '+(polls.length-privateCount)+' CIS':' · CIS excluido'} · ${new Set(polls.map(p=>p.instituto)).size} institutos`;
+
+summary.textContent=`Fuentes y fichas de las ${polls.length} encuestas visibles`;
+sourceRows.replaceChildren();for(const p of polls){const row=document.createElement('p'),link=document.createElement('a');link.href=p.fuente;link.textContent=`${p.instituto} · ${RadarCore.fieldDate(p)}${p.fecha_publicacion?'':'*'} · publicación ${p.fecha_publicacion??'no consta'} · campo ${p.trabajo_campo_inicio}–${p.trabajo_campo_fin} · n=${p.tamano_muestra??'no disponible'} · ${p.estudio_id}`;link.target='_blank';link.rel='noopener noreferrer';row.append(link);for(const url of [...new Set([p.url_electografica,...(p.fuentes_adicionales||[]).filter(f=>f.source==='electografica').map(f=>f.url)].filter(Boolean))]){const extra=document.createElement('a');extra.href=url;extra.textContent=' · Electográfica';extra.target='_blank';extra.rel='noopener noreferrer';row.append(extra);}sourceRows.append(row);}
 }
 document.getElementById('radar-cis').addEventListener('change',draw);draw();
 }catch(e){status.textContent='Error de carga del radar: '+e.message;}

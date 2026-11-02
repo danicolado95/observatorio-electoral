@@ -25,3 +25,11 @@ scripts/*.pdf
 /scripts/probar-importacion-cis.mjs
 /scripts/probar-pdfs.mjs
 /scripts/probar-pipeline-cis.mjs
+
+# Local evidence, probes and caches (never development deliverables)
+__pycache__/
+*.pyc
+*.zip
+/data/probe.html
+/data/electografica-probe.json
+/.github/workflows/wikipedia-staging-daily.yml

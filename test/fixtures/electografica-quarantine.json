@@ -1,0 +1,3528 @@
+[
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-1017629390311859314",
+    "title": "[G] MELILLA · Encuesta GAD3 (interna PP) 11/05/2026: PP 47,6% (1) · PSOE 27,0% · VOX 16,4% · CPM 3,5% · SALF 2,0% · PODEMOS 1,1% · SUMAR 0,7%",
+    "url": "https://www.electografica.com/2026/05/melilla-generales-encuesta-gad3-260511.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-1032071054521304972",
+    "title": "ESPAÑA · Elecciones generales · Encuesta NC Report 07/09/2026",
+    "url": "https://www.electografica.com/2026/09/encuesta-nc-report-260907.html",
+    "extracted": {
+      "instituto": "NC Report",
+      "estudio_id": "electografica-e4fd72fe983213f97b50",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-09-07",
+      "trabajo_campo_inicio": "2026-09-01",
+      "trabajo_campo_fin": "2026-09-03",
+      "fecha_fin_campo": "2026-09-03",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1000,
+      "resultados": {
+        "PP": 34.4,
+        "PSOE": 24.9,
+        "VOX": 18.3,
+        "SUMAR": 5.7,
+        "PODEMOS": 3.4,
+        "SALF": 0,
+        "ERC": 2,
+        "JUNTS": 1.6,
+        "EH_BILDU": 1.4,
+        "PNV": 1,
+        "BNG": 0.8,
+        "CC": 0.4,
+        "UPN": 0.2
+      },
+      "fuente": "https://www.larazon.es/espana/sanchez-lleva-psoe-suelo-electoral-vox-podrian-reformar-constitucion_202609076a9d3ff03bfe5d1eff4557b2.html",
+      "medio": "La Razón",
+      "url_electografica": "https://www.electografica.com/2026/09/encuesta-nc-report-260907.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-1032071054521304972",
+        "content_sha256": "66bb990e942faca17bfe6fd26756d0328847cfaeaf44a52d8855689386d3e75d",
+        "blogger_published": "2026-09-07T07:01:10.188+02:00",
+        "blogger_updated": "2026-10-23T20:38:24.526+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-1f64a30c4548d1f5d982",
+    "candidate": {
+      "instituto": "NC Report",
+      "estudio_id": "electografica-e4fd72fe983213f97b50",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-09-07",
+      "trabajo_campo_inicio": "2026-09-01",
+      "trabajo_campo_fin": "2026-09-03",
+      "fecha_fin_campo": "2026-09-03",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1000,
+      "resultados": {
+        "PP": 34.4,
+        "PSOE": 24.9,
+        "VOX": 18.3,
+        "SUMAR": 5.7,
+        "PODEMOS": 3.4,
+        "SALF": 0,
+        "ERC": 2,
+        "JUNTS": 1.6,
+        "EH_BILDU": 1.4,
+        "PNV": 1,
+        "BNG": 0.8,
+        "CC": 0.4,
+        "UPN": 0.2
+      },
+      "fuente": "https://www.larazon.es/espana/sanchez-lleva-psoe-suelo-electoral-vox-podrian-reformar-constitucion_202609076a9d3ff03bfe5d1eff4557b2.html",
+      "medio": "La Razón",
+      "url_electografica": "https://www.electografica.com/2026/09/encuesta-nc-report-260907.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-1032071054521304972",
+        "content_sha256": "66bb990e942faca17bfe6fd26756d0328847cfaeaf44a52d8855689386d3e75d",
+        "blogger_published": "2026-09-07T07:01:10.188+02:00",
+        "blogger_updated": "2026-10-23T20:38:24.526+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-1f64a30c4548d1f5d982",
+        "trabajo_campo_inicio": "2026-09-01",
+        "trabajo_campo_fin": "2026-09-03",
+        "fecha_publicacion": "2026-09-07",
+        "resultados": {
+          "PP": 34.5,
+          "PSOE": 24.9,
+          "VOX": 18.3,
+          "SUMAR": 5.7,
+          "ERC": 2,
+          "JUNTS": 1.6,
+          "EH_BILDU": 1.4,
+          "PNV": 1,
+          "BNG": 0.8,
+          "CC": 0.4,
+          "UPN": 0.2,
+          "PODEMOS": 3.4
+        },
+        "fuente": "https://www.larazon.es/espana/sanchez-lleva-psoe-suelo-electoral-vox-podrian-reformar-constitucion_202609076a9d3ff03bfe5d1eff4557b2.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-1072636932600314028",
+    "title": "[G] ESPAÑA · Encuesta InvyMark 21/01/2024: PP 37,5% · PSOE 32,3% · VOX 9,8% · SUMAR 9,6%",
+    "url": "https://www.electografica.com/2024/01/encuesta-invymark-240121.html",
+    "extracted": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-360d155178b149b7f727",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2024-01-21",
+      "trabajo_campo_inicio": "2024-01-15",
+      "trabajo_campo_fin": "2024-01-15",
+      "fecha_fin_campo": "2024-01-15",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 37.5,
+        "PSOE": 32.3,
+        "VOX": 9.8,
+        "SUMAR": 9.6
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-ganaria-elecciones-generales-375-voto-decidido_2024012165ad1873014c8a0001da42be.html",
+      "medio": "Barómetro laSexta | El PP ganaría las elecciones generales con un 37,5% del voto decidido (laSexta)",
+      "url_electografica": "https://www.electografica.com/2024/01/encuesta-invymark-240121.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-1072636932600314028",
+        "content_sha256": "976d79038df6afef722b7a6878f5134049ac67074ea08d8d7d5bac7c449843d9",
+        "blogger_published": "2024-01-21T14:02:00.004+01:00",
+        "blogger_updated": "2024-01-21T18:44:48.67+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-e596ab15c298b0cf6051",
+    "candidate": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-360d155178b149b7f727",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2024-01-21",
+      "trabajo_campo_inicio": "2024-01-15",
+      "trabajo_campo_fin": "2024-01-15",
+      "fecha_fin_campo": "2024-01-15",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 37.5,
+        "PSOE": 32.3,
+        "VOX": 9.8,
+        "SUMAR": 9.6
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-ganaria-elecciones-generales-375-voto-decidido_2024012165ad1873014c8a0001da42be.html",
+      "medio": "Barómetro laSexta | El PP ganaría las elecciones generales con un 37,5% del voto decidido (laSexta)",
+      "url_electografica": "https://www.electografica.com/2024/01/encuesta-invymark-240121.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-1072636932600314028",
+        "content_sha256": "976d79038df6afef722b7a6878f5134049ac67074ea08d8d7d5bac7c449843d9",
+        "blogger_published": "2024-01-21T14:02:00.004+01:00",
+        "blogger_updated": "2024-01-21T18:44:48.67+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-e596ab15c298b0cf6051",
+        "trabajo_campo_inicio": "2024-01-15",
+        "trabajo_campo_fin": "2024-01-19",
+        "fecha_publicacion": "2024-01-21",
+        "resultados": {
+          "PP": 37.5,
+          "PSOE": 32.3,
+          "VOX": 9.8,
+          "SUMAR": 9.6
+        },
+        "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-ganaria-elecciones-generales-375-voto-decidido_2024012165ad1873014c8a0001da42be.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-1101155702848963084",
+    "title": "ESPAÑA · Elecciones generales · Encuesta InvyMark 31/05/2026",
+    "url": "https://www.electografica.com/2026/05/encuesta-invymark-260531.html",
+    "extracted": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-1c312cb4e2780b7ea011",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-05-31",
+      "trabajo_campo_inicio": "2026-05-25",
+      "trabajo_campo_fin": "2026-05-25",
+      "fecha_fin_campo": "2026-05-25",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1200,
+      "resultados": {
+        "PP": 33.1,
+        "PSOE": 27.8,
+        "VOX": 17.6,
+        "SUMAR": 5.5,
+        "PODEMOS": 3.6,
+        "SALF": 1.7
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-548-encuestados-prefiere-que-proximo-presidente-gobierno-sea-feijoo_202605316a1c255d7d8b1d3812630bbf.html",
+      "medio": "laSexta",
+      "url_electografica": "https://www.electografica.com/2026/05/encuesta-invymark-260531.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-1101155702848963084",
+        "content_sha256": "770cc229d9d1ccc96872feaa07d014d45822bfc0d761b523cff996d1dad82d51",
+        "blogger_published": "2026-05-31T18:50:55.958+02:00",
+        "blogger_updated": "2026-06-23T17:56:50.878+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-0403df67b243d691d74f",
+    "candidate": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-1c312cb4e2780b7ea011",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-05-31",
+      "trabajo_campo_inicio": "2026-05-25",
+      "trabajo_campo_fin": "2026-05-25",
+      "fecha_fin_campo": "2026-05-25",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1200,
+      "resultados": {
+        "PP": 33.1,
+        "PSOE": 27.8,
+        "VOX": 17.6,
+        "SUMAR": 5.5,
+        "PODEMOS": 3.6,
+        "SALF": 1.7
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-548-encuestados-prefiere-que-proximo-presidente-gobierno-sea-feijoo_202605316a1c255d7d8b1d3812630bbf.html",
+      "medio": "laSexta",
+      "url_electografica": "https://www.electografica.com/2026/05/encuesta-invymark-260531.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-1101155702848963084",
+        "content_sha256": "770cc229d9d1ccc96872feaa07d014d45822bfc0d761b523cff996d1dad82d51",
+        "blogger_published": "2026-05-31T18:50:55.958+02:00",
+        "blogger_updated": "2026-06-23T17:56:50.878+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-0403df67b243d691d74f",
+        "trabajo_campo_inicio": "2026-05-25",
+        "trabajo_campo_fin": "2026-05-29",
+        "fecha_publicacion": "2026-05-31",
+        "resultados": {
+          "PP": 33.1,
+          "PSOE": 27.8,
+          "VOX": 17.6,
+          "SUMAR": 5.5,
+          "PODEMOS": 3.6,
+          "SALF": 1.7
+        },
+        "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-548-encuestados-prefiere-que-proximo-presidente-gobierno-sea-feijoo_202605316a1c255d7d8b1d3812630bbf.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-1139062198903041321",
+    "title": "[G] ESPAÑA · Encuesta CIS 17/01/2024: PSOE 34,0% · PP 32,1% · SUMAR 9,7% · VOX 8,3% · PODEMOS 2,7%",
+    "url": "https://www.electografica.com/2024/01/encuesta-cis-240117.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-1148006191902372429",
+    "title": "[GEN] CANARIAS · Encuesta Ágora Integral 23/07/2023: SUMAR 1/2 | NC-BC 0/1 | PSOE 4/5 | CCa 1/2 | PP 6 | VOX 1",
+    "url": "https://www.electografica.com/2023/08/canarias-encuesta-agora-integral-230723.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-1192772286284031976",
+    "title": "[G] CATALUÑA · Encuesta CEO 27/11/2024: PSC 34,6% (18/21) · PP 13,6% (5/8) · SUMAR-ECP 12,2% (4/6) · JUNTS 11,7% (5/8) · ERC 11,5% (5/7) · VOX 8,2% (2/4) · CUP-PR 4,0% (0/2)",
+    "url": "https://www.electografica.com/2024/11/catalunya-encuesta-ceo-generales-241127.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-1365726577091564030",
+    "title": "[G] REGIÓN DE MURCIA · Encuesta OBEDE-UCAM 22/05/2025: PP 45,5% (5) · PSOE 24,0% (3) · VOX 19,9% (2) · SUMAR 4,8% · PODEMOS 4,8%",
+    "url": "https://www.electografica.com/2025/05/region-de-murcia-encuesta-obede-ucam-250522.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-1447507177532518695",
+    "title": "ESPAÑA · Elecciones generales · Encuesta InvyMark 13/09/2026",
+    "url": "https://www.electografica.com/2026/09/encuesta-invymark-260913.html",
+    "extracted": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-8ad87b13cf1ac42bc202",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-09-13",
+      "trabajo_campo_inicio": "2026-09-07",
+      "trabajo_campo_fin": "2026-09-07",
+      "fecha_fin_campo": "2026-09-07",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1200,
+      "resultados": {
+        "PP": 33.7,
+        "PSOE": 26.8,
+        "VOX": 18.6,
+        "SUMAR": 6.1,
+        "PODEMOS": 3.3,
+        "SALF": 1.9
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-intencion-voto-situa-como-primera-fuerza-feijoo-como-politico-mejor-valorado_202609136aa6943d7486a40f2c9c4e90.html",
+      "medio": "laSexta",
+      "url_electografica": "https://www.electografica.com/2026/09/encuesta-invymark-260913.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-1447507177532518695",
+        "content_sha256": "621eda48132cd0cac33b8dcd11746bafd0826a9ab8d68cec10e96e6be4647540",
+        "blogger_published": "2026-09-13T16:31:23.679+02:00",
+        "blogger_updated": "2026-09-14T17:19:55.252+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-2d145d2657a92cf9512e",
+    "candidate": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-8ad87b13cf1ac42bc202",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-09-13",
+      "trabajo_campo_inicio": "2026-09-07",
+      "trabajo_campo_fin": "2026-09-07",
+      "fecha_fin_campo": "2026-09-07",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1200,
+      "resultados": {
+        "PP": 33.7,
+        "PSOE": 26.8,
+        "VOX": 18.6,
+        "SUMAR": 6.1,
+        "PODEMOS": 3.3,
+        "SALF": 1.9
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-intencion-voto-situa-como-primera-fuerza-feijoo-como-politico-mejor-valorado_202609136aa6943d7486a40f2c9c4e90.html",
+      "medio": "laSexta",
+      "url_electografica": "https://www.electografica.com/2026/09/encuesta-invymark-260913.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-1447507177532518695",
+        "content_sha256": "621eda48132cd0cac33b8dcd11746bafd0826a9ab8d68cec10e96e6be4647540",
+        "blogger_published": "2026-09-13T16:31:23.679+02:00",
+        "blogger_updated": "2026-09-14T17:19:55.252+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-2d145d2657a92cf9512e",
+        "trabajo_campo_inicio": "2026-09-07",
+        "trabajo_campo_fin": "2026-09-11",
+        "fecha_publicacion": "2026-09-13",
+        "resultados": {
+          "PP": 33.7,
+          "PSOE": 26.8,
+          "VOX": 18.6,
+          "SUMAR": 6.1,
+          "PODEMOS": 3.3,
+          "SALF": 1.8
+        },
+        "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-intencion-voto-situa-como-primera-fuerza-feijoo-como-politico-mejor-valorado_202609136aa6943d7486a40f2c9c4e90.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-1901773650433306684",
+    "title": "[G] ANDALUCÍA · Encuesta GAD3 19/04/2026: PP 38,9% (29) · PSOE 29,7% (20) · VOX 16,8% (10) · SUMAR 7,5% (1)",
+    "url": "https://www.electografica.com/2026/04/andalucia-generales-encuesta-gad3-260419.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-1982670374940792471",
+    "title": "GALICIA · Elecciones generales · Encuesta Sondaxe 27/09/2026",
+    "url": "https://www.electografica.com/2026/09/galicia-generales-encuesta-sondaxe-260927.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-2101800552245924170",
+    "title": "[GEN] ESPAÑA · Encuesta GESOP 20/07/2023 (🇦🇺 3): SUMAR 14,0% (36/40) | PSOE 28,5% (107/111) | PP 31,5% (129/133) | VOX 13,5% (36/40)",
+    "url": "https://www.electografica.com/2023/07/encuesta-gesop-230720.html",
+    "reason": "Fuera del periodo",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-2126099609077430273",
+    "title": "ESPAÑA · Elecciones generales · Encuesta DYM 09/10/2026",
+    "url": "https://www.electografica.com/2026/10/encuesta-dym-261009.html",
+    "extracted": {
+      "instituto": "DYM",
+      "estudio_id": "electografica-ea342ca8b015fab38eda",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-10-09",
+      "trabajo_campo_inicio": "2026-10-05",
+      "trabajo_campo_fin": "2026-10-07",
+      "fecha_fin_campo": "2026-10-07",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1011,
+      "resultados": {
+        "PP": 34,
+        "PSOE": 28.2,
+        "VOX": 18.2,
+        "SUMAR": 3.6,
+        "PODEMOS": 2.6,
+        "SALF": 0.5
+      },
+      "fuente": "https://www.20minutos.es/nacional/psoe-absorbe-intencion-votos-sumar-podemos-mientras-pp-vox-consolidan-su-mayoria_7046598_0.html",
+      "medio": "20 Minutos",
+      "url_electografica": "https://www.electografica.com/2026/10/encuesta-dym-261009.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-2126099609077430273",
+        "content_sha256": "3fa08e2d1e0dd3e89ec17c5f56a69413072bb5e16ffa3471a1e00d81cdeffa51",
+        "blogger_published": "2026-10-09T07:39:24.173+02:00",
+        "blogger_updated": "2026-10-09T07:42:32.22+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-e4a9f95ecbcebc03e494",
+    "candidate": {
+      "instituto": "DYM",
+      "estudio_id": "electografica-ea342ca8b015fab38eda",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-10-09",
+      "trabajo_campo_inicio": "2026-10-05",
+      "trabajo_campo_fin": "2026-10-07",
+      "fecha_fin_campo": "2026-10-07",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1011,
+      "resultados": {
+        "PP": 34,
+        "PSOE": 28.2,
+        "VOX": 18.2,
+        "SUMAR": 3.6,
+        "PODEMOS": 2.6,
+        "SALF": 0.5
+      },
+      "fuente": "https://www.20minutos.es/nacional/psoe-absorbe-intencion-votos-sumar-podemos-mientras-pp-vox-consolidan-su-mayoria_7046598_0.html",
+      "medio": "20 Minutos",
+      "url_electografica": "https://www.electografica.com/2026/10/encuesta-dym-261009.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-2126099609077430273",
+        "content_sha256": "3fa08e2d1e0dd3e89ec17c5f56a69413072bb5e16ffa3471a1e00d81cdeffa51",
+        "blogger_published": "2026-10-09T07:39:24.173+02:00",
+        "blogger_updated": "2026-10-09T07:42:32.22+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-e4a9f95ecbcebc03e494",
+        "trabajo_campo_inicio": "2026-10-05",
+        "trabajo_campo_fin": "2026-10-07",
+        "fecha_publicacion": "2026-10-09",
+        "resultados": {
+          "PP": 34,
+          "PSOE": 28.2,
+          "VOX": 18.2,
+          "SUMAR": 3.6,
+          "PODEMOS": 3.6,
+          "SALF": 0.5
+        },
+        "fuente": "https://www.20minutos.es/nacional/psoe-absorbe-intencion-votos-sumar-podemos-mientras-pp-vox-consolidan-su-mayoria_7046598_0.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-2130458839177429119",
+    "title": "[G] GALICIA · Encuesta Sondaxe 01/03/2026: PP 40,8% (14) · PSdeG-PSOE 25,4% (7) · BNG 14,7% (2) · VOX 8,1% · SUMAR 6,3%",
+    "url": "https://www.electografica.com/2026/03/galicia-generales-encuesta-sondaxe-260301.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-2223233748072544604",
+    "title": "[G] ESPAÑA · Encuesta InvyMark 21/09/2025: PP 36,1% · PSOE 28,3% · VOX 16,3% · SUMAR 4,7% · PODEMOS 4,0% · SALF 1,5%",
+    "url": "https://www.electografica.com/2025/09/encuesta-invymark-250921.html",
+    "extracted": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-2b84d18c1ece182e8ed9",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-09-21",
+      "trabajo_campo_inicio": "2025-09-15",
+      "trabajo_campo_fin": "2025-09-15",
+      "fecha_fin_campo": "2025-09-15",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 36.1,
+        "PSOE": 28.3,
+        "VOX": 16.3,
+        "SUMAR": 4.7,
+        "PODEMOS": 4,
+        "SALF": 1.5
+      },
+      "fuente": "https://www.lasexta.com/noticias/sociedad/barometro-lasexta-361-encuestados-cree-que-partido-popular-ganaria-elecciones-celebraran-hoy_2025092168cff548394a81387394d26c.html",
+      "medio": "Barómetro laSexta | Un 36,1% de los encuestados cree que el Partido Popular ganaría las elecciones si se celebraran hoy (laSexta)",
+      "url_electografica": "https://www.electografica.com/2025/09/encuesta-invymark-250921.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-2223233748072544604",
+        "content_sha256": "0cdef0e606f54a97b633d765d4642966b9751dc49b673964927379dc717b5a49",
+        "blogger_published": "2025-09-21T15:26:00.006+02:00",
+        "blogger_updated": "2025-12-08T21:59:15.748+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-eeba55eda0b406f315bc",
+    "candidate": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-2b84d18c1ece182e8ed9",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-09-21",
+      "trabajo_campo_inicio": "2025-09-15",
+      "trabajo_campo_fin": "2025-09-15",
+      "fecha_fin_campo": "2025-09-15",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 36.1,
+        "PSOE": 28.3,
+        "VOX": 16.3,
+        "SUMAR": 4.7,
+        "PODEMOS": 4,
+        "SALF": 1.5
+      },
+      "fuente": "https://www.lasexta.com/noticias/sociedad/barometro-lasexta-361-encuestados-cree-que-partido-popular-ganaria-elecciones-celebraran-hoy_2025092168cff548394a81387394d26c.html",
+      "medio": "Barómetro laSexta | Un 36,1% de los encuestados cree que el Partido Popular ganaría las elecciones si se celebraran hoy (laSexta)",
+      "url_electografica": "https://www.electografica.com/2025/09/encuesta-invymark-250921.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-2223233748072544604",
+        "content_sha256": "0cdef0e606f54a97b633d765d4642966b9751dc49b673964927379dc717b5a49",
+        "blogger_published": "2025-09-21T15:26:00.006+02:00",
+        "blogger_updated": "2025-12-08T21:59:15.748+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-eeba55eda0b406f315bc",
+        "trabajo_campo_inicio": "2025-09-15",
+        "trabajo_campo_fin": "2025-09-19",
+        "fecha_publicacion": "2025-09-21",
+        "resultados": {
+          "PP": 36.1,
+          "PSOE": 28.3,
+          "VOX": 16.3,
+          "SUMAR": 4.7,
+          "PODEMOS": 4,
+          "SALF": 1.5
+        },
+        "fuente": "https://www.lasexta.com/noticias/sociedad/barometro-lasexta-361-encuestados-cree-que-partido-popular-ganaria-elecciones-celebraran-hoy_2025092168cff548394a81387394d26c.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-2273927123274011576",
+    "title": "[G] ESPAÑA · Encuesta CIS 14/05/2024: PSOE 35,5% · PP 30,4% · VOX 10,2% · SUMAR 8,0% · PODEMOS 2,2%",
+    "url": "https://www.electografica.com/2024/05/encuesta-cis-240514.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-2293523792457881158",
+    "title": "[G] CATALUÑA · Encuesta CEO 16/07/2025: PSC 31,9% (18/19) · ERC 14,5% (7/8) · PP 12,2% (5/6) · JUNTS 11,0% (6/7) · VOX 10,4% (4/5) · SUMAR-ECP 8,7% (3/4) · PODEMOS 3,5% (0/1) · CUP-PR 3,1%",
+    "url": "https://www.electografica.com/2025/07/catalunya-encuesta-ceo-generales-250716.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-2374825812961171803",
+    "title": "[G] ESPAÑA · Encuesta CIS 13/02/2025: PSOE 33,4% · PP 28,1% · VOX 13,3% · SUMAR 6,4% · PODEMOS 4,4% · SALF 1,6%",
+    "url": "https://www.electografica.com/2025/02/encuesta-cis-250213.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-243885184925988957",
+    "title": "ESPAÑA · Elecciones generales · Encuesta CIS 15/07/2026",
+    "url": "https://www.electografica.com/2026/07/encuesta-cis-260715.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-2462971856662281165",
+    "title": "[G] ESPAÑA · Encuesta CIS 10/11/2023: PP 33,9% · PSOE 31,3% · SUMAR 11,8% · VOX 10,0%",
+    "url": "https://www.electografica.com/2023/11/encuesta-cis-231110.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-2481804395904072315",
+    "title": "[G] ESPAÑA · Encuesta InvyMark 22/09/2024: PP 37,1% · PSOE 30,1% · VOX 10,9% · SUMAR 6,0%",
+    "url": "https://www.electografica.com/2024/09/encuesta-invymark-240922.html",
+    "extracted": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-48a443480355287a211e",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2024-09-22",
+      "trabajo_campo_inicio": "2024-09-16",
+      "trabajo_campo_fin": "2024-09-16",
+      "fecha_fin_campo": "2024-09-16",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 37.1,
+        "PSOE": 30.1,
+        "VOX": 10.9,
+        "SUMAR": 6
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-573-encuestados-cree-que-gobierno-debe-convocar-elecciones-anticipadas_2024092266f01b35fcf7b300013d396d.html",
+      "medio": "Barómetro laSexta | El PP sería la fuerza más votada (37,1%) en las próximas elecciones, siete puntos por encima del PSOE (30,1%) (laSexta)",
+      "url_electografica": "https://www.electografica.com/2024/09/encuesta-invymark-240922.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-2481804395904072315",
+        "content_sha256": "26aea888e6a4effe6eeaf68b5edc062169e4548a5f9a6044587e553fca79f282",
+        "blogger_published": "2024-09-22T20:23:00+02:00",
+        "blogger_updated": "2024-09-22T20:23:26.491+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-3e22788a86a59c8bc8d0",
+    "candidate": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-48a443480355287a211e",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2024-09-22",
+      "trabajo_campo_inicio": "2024-09-16",
+      "trabajo_campo_fin": "2024-09-16",
+      "fecha_fin_campo": "2024-09-16",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 37.1,
+        "PSOE": 30.1,
+        "VOX": 10.9,
+        "SUMAR": 6
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-573-encuestados-cree-que-gobierno-debe-convocar-elecciones-anticipadas_2024092266f01b35fcf7b300013d396d.html",
+      "medio": "Barómetro laSexta | El PP sería la fuerza más votada (37,1%) en las próximas elecciones, siete puntos por encima del PSOE (30,1%) (laSexta)",
+      "url_electografica": "https://www.electografica.com/2024/09/encuesta-invymark-240922.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-2481804395904072315",
+        "content_sha256": "26aea888e6a4effe6eeaf68b5edc062169e4548a5f9a6044587e553fca79f282",
+        "blogger_published": "2024-09-22T20:23:00+02:00",
+        "blogger_updated": "2024-09-22T20:23:26.491+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-3e22788a86a59c8bc8d0",
+        "trabajo_campo_inicio": "2024-09-16",
+        "trabajo_campo_fin": "2024-09-20",
+        "fecha_publicacion": "2024-09-22",
+        "resultados": {
+          "PP": 37.1,
+          "PSOE": 30.1,
+          "VOX": 10.9,
+          "SUMAR": 6
+        },
+        "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-573-encuestados-cree-que-gobierno-debe-convocar-elecciones-anticipadas_2024092266f01b35fcf7b300013d396d.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-2516209325196622795",
+    "title": "[G] ESPAÑA · Encuesta CIS 12/06/2025: PSOE 34,3% · PP 27,3% · VOX 13,2% · SUMAR 7,0% · PODEMOS 4,2% · SALF 1,5%",
+    "url": "https://www.electografica.com/2025/06/encuesta-cis-250612.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-2602786479108609699",
+    "title": "[GEN] ESPAÑA · Encuesta Ipsos 23/07/2023: SUMAR 13,5% (36) | PSOE 28,6% (106) | PP 34,4% (144) | VOX 11,8% (31)",
+    "url": "https://www.electografica.com/2023/07/encuesta-ipsos-230723.html",
+    "reason": "Orden temporal inválido",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-2670493726780469257",
+    "title": "[G] ESPAÑA · Encuesta CIS 13/03/2024: PP 34,0% · PSOE 31,3% · VOX 9,9% · SUMAR 9,2% · PODEMOS 2,2%",
+    "url": "https://www.electografica.com/2024/03/encuesta-cis-240313.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-268419838858753275",
+    "title": "[G] ESPAÑA · Encuesta SocioMétrica 07/01/2025: PP 33,5% (146) · PSOE 28,3% (116) · VOX 14,1% (42) · SUMAR 5,4% (7) · PODEMOS 4,2% (3) · SALF 2,5%",
+    "url": "https://www.electografica.com/2025/01/encuesta-sociometrica-250107.html",
+    "extracted": {
+      "instituto": "SocioMétrica",
+      "estudio_id": "electografica-00efe97c329642507fa1",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-01-07",
+      "trabajo_campo_inicio": "2024-12-26",
+      "trabajo_campo_fin": "2024-12-30",
+      "fecha_fin_campo": "2024-12-30",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 2953,
+      "resultados": {
+        "PP": 33.5,
+        "PSOE": 28.3,
+        "VOX": 14.1,
+        "SUMAR": 5.4,
+        "PODEMOS": 4.2,
+        "SALF": 2.5,
+        "ERC": 1.9,
+        "JUNTS": 1.5,
+        "EH_BILDU": 1.4,
+        "PNV": 1.1,
+        "BNG": 0.7,
+        "CC": 0.4,
+        "UPN": 0.2
+      },
+      "fuente": "https://www.elespanol.com/espana/politica/20250107/hundimiento-sumar-dejaria-gobierno-coalicion-solo-escanos-adelantaran-elecciones/913659011_0.html",
+      "medio": "El hundimiento de Sumar dejaría al Gobierno de coalición con sólo 123 escaños si se adelantaran las elecciones (El Español)",
+      "url_electografica": "https://www.electografica.com/2025/01/encuesta-sociometrica-250107.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-268419838858753275",
+        "content_sha256": "9199d7aac97c4f426e7eae1eeefe33599d3eaf9272ba9c44915c4aca6347d6f8",
+        "blogger_published": "2025-01-07T07:20:00.005+01:00",
+        "blogger_updated": "2025-01-07T11:59:18.42+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-ae04f5526ee3316ea804",
+    "candidate": {
+      "instituto": "SocioMétrica",
+      "estudio_id": "electografica-00efe97c329642507fa1",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-01-07",
+      "trabajo_campo_inicio": "2024-12-26",
+      "trabajo_campo_fin": "2024-12-30",
+      "fecha_fin_campo": "2024-12-30",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 2953,
+      "resultados": {
+        "PP": 33.5,
+        "PSOE": 28.3,
+        "VOX": 14.1,
+        "SUMAR": 5.4,
+        "PODEMOS": 4.2,
+        "SALF": 2.5,
+        "ERC": 1.9,
+        "JUNTS": 1.5,
+        "EH_BILDU": 1.4,
+        "PNV": 1.1,
+        "BNG": 0.7,
+        "CC": 0.4,
+        "UPN": 0.2
+      },
+      "fuente": "https://www.elespanol.com/espana/politica/20250107/hundimiento-sumar-dejaria-gobierno-coalicion-solo-escanos-adelantaran-elecciones/913659011_0.html",
+      "medio": "El hundimiento de Sumar dejaría al Gobierno de coalición con sólo 123 escaños si se adelantaran las elecciones (El Español)",
+      "url_electografica": "https://www.electografica.com/2025/01/encuesta-sociometrica-250107.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-268419838858753275",
+        "content_sha256": "9199d7aac97c4f426e7eae1eeefe33599d3eaf9272ba9c44915c4aca6347d6f8",
+        "blogger_published": "2025-01-07T07:20:00.005+01:00",
+        "blogger_updated": "2025-01-07T11:59:18.42+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-ae04f5526ee3316ea804",
+        "trabajo_campo_inicio": "2024-12-26",
+        "trabajo_campo_fin": "2024-12-30",
+        "fecha_publicacion": "2025-01-07",
+        "resultados": {
+          "PP": 33.5,
+          "PSOE": 28.3,
+          "VOX": 14.1,
+          "SUMAR": 7.1,
+          "ERC": 1.9,
+          "JUNTS": 1.5,
+          "EH_BILDU": 1.4,
+          "PNV": 1.1,
+          "BNG": 0.7,
+          "CC": 0.4,
+          "UPN": 0.2,
+          "PODEMOS": 4.2,
+          "SALF": 2.5
+        },
+        "fuente": "https://www.elespanol.com/espana/politica/20250107/hundimiento-sumar-dejaria-gobierno-coalicion-solo-escanos-adelantaran-elecciones/913659011_0.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-2721365633526737781",
+    "title": "[G] ESPAÑA · Encuesta InvyMark 06/11/2023: PP 37,2% · PSOE 31,1% · SUMAR 9,9% · VOX 9,5%",
+    "url": "https://www.electografica.com/2023/11/encuesta-invymark-231106.html",
+    "extracted": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-922d8208fcb411c9bc4d",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2023-11-06",
+      "trabajo_campo_inicio": "2023-10-30",
+      "trabajo_campo_fin": "2023-10-30",
+      "fecha_fin_campo": "2023-10-30",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 37.2,
+        "PSOE": 31.1,
+        "SUMAR": 9.9,
+        "VOX": 9.5
+      },
+      "fuente": "https://www.lasexta.com/elecciones/generales/mantiene-cabeza-ganaria-elecciones-372-segun-barometro-lasexta_202311066548e8e232499c0001080c0d.html",
+      "medio": "El PP se mantiene en cabeza y ganaría las elecciones con un 37,2%, según el barómetro de laSexta (laSexta)",
+      "url_electografica": "https://www.electografica.com/2023/11/encuesta-invymark-231106.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-2721365633526737781",
+        "content_sha256": "b7c2a0fbe2c63ac63f2c2f409c28818b23d2529a02dc028f16e83de5b57c88db",
+        "blogger_published": "2023-11-06T15:49:00.002+01:00",
+        "blogger_updated": "2023-11-06T15:49:20.372+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-bf6debafe43c7cf32b8c",
+    "candidate": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-922d8208fcb411c9bc4d",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2023-11-06",
+      "trabajo_campo_inicio": "2023-10-30",
+      "trabajo_campo_fin": "2023-10-30",
+      "fecha_fin_campo": "2023-10-30",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 37.2,
+        "PSOE": 31.1,
+        "SUMAR": 9.9,
+        "VOX": 9.5
+      },
+      "fuente": "https://www.lasexta.com/elecciones/generales/mantiene-cabeza-ganaria-elecciones-372-segun-barometro-lasexta_202311066548e8e232499c0001080c0d.html",
+      "medio": "El PP se mantiene en cabeza y ganaría las elecciones con un 37,2%, según el barómetro de laSexta (laSexta)",
+      "url_electografica": "https://www.electografica.com/2023/11/encuesta-invymark-231106.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-2721365633526737781",
+        "content_sha256": "b7c2a0fbe2c63ac63f2c2f409c28818b23d2529a02dc028f16e83de5b57c88db",
+        "blogger_published": "2023-11-06T15:49:00.002+01:00",
+        "blogger_updated": "2023-11-06T15:49:20.372+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-bf6debafe43c7cf32b8c",
+        "trabajo_campo_inicio": "2023-10-30",
+        "trabajo_campo_fin": "2023-11-03",
+        "fecha_publicacion": "2023-11-06",
+        "resultados": {
+          "PP": 37.2,
+          "PSOE": 31.1,
+          "VOX": 9.5,
+          "SUMAR": 9.9
+        },
+        "fuente": "https://www.lasexta.com/elecciones/generales/mantiene-cabeza-ganaria-elecciones-372-segun-barometro-lasexta_202311066548e8e232499c0001080c0d.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-2762456905180852870",
+    "title": "[GEN] ESPAÑA · Encuesta GESOP 22/07/2023 (🇦🇺 5): SUMAR 14,0% (36/40) | PSOE 28,5% (106/110) | PP 32,7% (134/138) | VOX 13,0% (35/39)",
+    "url": "https://www.electografica.com/2023/07/encuesta-gesop-230722.html",
+    "reason": "Fuera del periodo",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-2920096961951264093",
+    "title": "[GEN] ESPAÑA · Encuesta GESOP 18/07/2023 (🇦🇺 1): SUMAR 14,4% (37/40) | PSOE 28,0% (106/110) | PP 30,3% (124/128) | VOX 14,6% (41/45)",
+    "url": "https://www.electografica.com/2023/07/encuesta-gesop-230718.html",
+    "reason": "Fuera del periodo",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-3005661852294926546",
+    "title": "[GEN] ESPAÑA · Encuesta Target Point 23/07/2023: SUMAR 12,3% (26/30) | PSOE 27,9% (109/113) | PP 37,5% (153/158) | VOX 11,1% (25/28)",
+    "url": "https://www.electografica.com/2023/07/encuesta-target-point-230723.html",
+    "reason": "Campo incompleto: no se imputa",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-3012643780795745671",
+    "title": "[G] ESPAÑA · Encuesta CIS 19/11/2025: PSOE 32,6% · PP 22,4% · VOX 18,8% · SUMAR 7,1% · PODEMOS 4,0% · SALF 0,6%",
+    "url": "https://www.electografica.com/2025/11/encuesta-cis-251119.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-3012982284469434534",
+    "title": "[GEN] ESPAÑA · Encuesta 40dB. 23/07/2023: SUMAR 13,8% (37) | PSOE 29,4% (117) | PP 31,7% (125) | VOX 13,8% (41)",
+    "url": "https://www.electografica.com/2023/07/encuesta-40db-230723.html",
+    "reason": "Falta enlace original",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-3222494937926267089",
+    "title": "[G] ESPAÑA · Encuesta CIS 14/05/2025: PSOE 32,0% · PP 29,3% · VOX 13,7% · SUMAR 6,1% · PODEMOS 4,3% · SALF 1,5%",
+    "url": "https://www.electografica.com/2025/05/encuesta-cis-250514.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-3271106362538788553",
+    "title": "[G] ESPAÑA · Encuesta SigmaDos 28/11/2023: PP 37,3% (150/152) · PSOE (115/117) · VOX 11,4% (24/26) · SUMAR 11,3% (28/30)",
+    "url": "https://www.electografica.com/2023/11/encuesta-sigmados-231128.html",
+    "reason": "Formato de porcentajes no reconocido",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-3462741289019392448",
+    "title": "[G] ESPAÑA · Encuesta InvyMark 15/06/2024: PP 38,5% · PSOE 31,7% · VOX 11,1% · SUMAR 8,4%",
+    "url": "https://www.electografica.com/2024/06/encuesta-invymark-240615.html",
+    "extracted": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-edef9ed8a3bc33951577",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2024-06-15",
+      "trabajo_campo_inicio": "2024-06-10",
+      "trabajo_campo_fin": "2024-06-10",
+      "fecha_fin_campo": "2024-06-10",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1200,
+      "resultados": {
+        "PP": 38.5,
+        "PSOE": 31.7,
+        "VOX": 11.1,
+        "SUMAR": 8.4
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-lidera-intencion-voto-delante-psoe-385_20240615666d8fc76a0d13000112a0c6.html",
+      "medio": "Barómetro laSexta | El PP lidera la intención de voto por delante del PSOE con un 38,5% (laSexta)",
+      "url_electografica": "https://www.electografica.com/2024/06/encuesta-invymark-240615.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-3462741289019392448",
+        "content_sha256": "9037763ea5f5c1021a7775d154d31d0ad49ce123f92a4cbca110e4d5d9d2ce3a",
+        "blogger_published": "2024-06-15T14:13:00.005+02:00",
+        "blogger_updated": "2024-06-15T22:29:05.151+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-c11080e66441f4da16e5",
+    "candidate": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-edef9ed8a3bc33951577",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2024-06-15",
+      "trabajo_campo_inicio": "2024-06-10",
+      "trabajo_campo_fin": "2024-06-10",
+      "fecha_fin_campo": "2024-06-10",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1200,
+      "resultados": {
+        "PP": 38.5,
+        "PSOE": 31.7,
+        "VOX": 11.1,
+        "SUMAR": 8.4
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-lidera-intencion-voto-delante-psoe-385_20240615666d8fc76a0d13000112a0c6.html",
+      "medio": "Barómetro laSexta | El PP lidera la intención de voto por delante del PSOE con un 38,5% (laSexta)",
+      "url_electografica": "https://www.electografica.com/2024/06/encuesta-invymark-240615.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-3462741289019392448",
+        "content_sha256": "9037763ea5f5c1021a7775d154d31d0ad49ce123f92a4cbca110e4d5d9d2ce3a",
+        "blogger_published": "2024-06-15T14:13:00.005+02:00",
+        "blogger_updated": "2024-06-15T22:29:05.151+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-c11080e66441f4da16e5",
+        "trabajo_campo_inicio": "2024-06-10",
+        "trabajo_campo_fin": "2024-06-14",
+        "fecha_publicacion": "2024-06-15",
+        "resultados": {
+          "PP": 38.5,
+          "PSOE": 31.7,
+          "VOX": 11.1,
+          "SUMAR": 8.4
+        },
+        "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-lidera-intencion-voto-delante-psoe-385_20240615666d8fc76a0d13000112a0c6.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-3488281981057751054",
+    "title": "[G] ESPAÑA · Encuesta GAD3 26/01/2025: PP 34,9% (151) · PSOE 27,3% (109) · VOX 14,2% (44) · SUMAR 6,9% (11) · PODEMOS 4,0% (4) · SALF 2,1%",
+    "url": "https://www.electografica.com/2025/01/encuesta-gad3-250126.html",
+    "extracted": {
+      "instituto": "GAD3",
+      "estudio_id": "electografica-8c25afed982712201d39",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-01-26",
+      "trabajo_campo_inicio": "2025-01-16",
+      "trabajo_campo_fin": "2025-01-23",
+      "fecha_fin_campo": "2025-01-23",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1035,
+      "resultados": {
+        "PP": 34.9,
+        "PSOE": 27.3,
+        "VOX": 14.2,
+        "SUMAR": 6.9,
+        "PODEMOS": 4,
+        "SALF": 2.1,
+        "JUNTS": 1.7,
+        "ERC": 1.6,
+        "EH_BILDU": 1.4,
+        "PNV": 1.1,
+        "BNG": 0.6,
+        "CC": 0.4,
+        "UPN": 0.1
+      },
+      "fuente": "https://www.gad3.com/barometro-abc-elecciones-generales/",
+      "medio": "Barómetro ABC | Elecciones generales (GAD3)",
+      "url_electografica": "https://www.electografica.com/2025/01/encuesta-gad3-250126.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-3488281981057751054",
+        "content_sha256": "a01bc1f7fca2bf55c7396a92969e7b58f21fb2fc17cada0baa1a9ff3b19491ed",
+        "blogger_published": "2025-01-27T02:42:00.005+01:00",
+        "blogger_updated": "2025-06-02T13:21:05.301+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-c85b46bd94c90e10d0d3",
+    "candidate": {
+      "instituto": "GAD3",
+      "estudio_id": "electografica-8c25afed982712201d39",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-01-26",
+      "trabajo_campo_inicio": "2025-01-16",
+      "trabajo_campo_fin": "2025-01-23",
+      "fecha_fin_campo": "2025-01-23",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1035,
+      "resultados": {
+        "PP": 34.9,
+        "PSOE": 27.3,
+        "VOX": 14.2,
+        "SUMAR": 6.9,
+        "PODEMOS": 4,
+        "SALF": 2.1,
+        "JUNTS": 1.7,
+        "ERC": 1.6,
+        "EH_BILDU": 1.4,
+        "PNV": 1.1,
+        "BNG": 0.6,
+        "CC": 0.4,
+        "UPN": 0.1
+      },
+      "fuente": "https://www.gad3.com/barometro-abc-elecciones-generales/",
+      "medio": "Barómetro ABC | Elecciones generales (GAD3)",
+      "url_electografica": "https://www.electografica.com/2025/01/encuesta-gad3-250126.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-3488281981057751054",
+        "content_sha256": "a01bc1f7fca2bf55c7396a92969e7b58f21fb2fc17cada0baa1a9ff3b19491ed",
+        "blogger_published": "2025-01-27T02:42:00.005+01:00",
+        "blogger_updated": "2025-06-02T13:21:05.301+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-c85b46bd94c90e10d0d3",
+        "trabajo_campo_inicio": "2025-01-16",
+        "trabajo_campo_fin": "2025-01-23",
+        "fecha_publicacion": "2025-01-27",
+        "resultados": {
+          "PP": 34.9,
+          "PSOE": 27.3,
+          "VOX": 14.2,
+          "SUMAR": 6.9,
+          "ERC": 1.9,
+          "JUNTS": 1.7,
+          "EH_BILDU": 1.4,
+          "PNV": 1.1,
+          "BNG": 0.6,
+          "CC": 0.4,
+          "PODEMOS": 4,
+          "SALF": 2.1
+        },
+        "fuente": "https://www.abc.es/espana/pp-vox-abren-brecha-sumarian-juntos-195-20250127225740-nt.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-3597896915587216538",
+    "title": "[G] ESPAÑA · Encuesta CIS 15/04/2025: PSOE 32,6% · PP 26,1% · VOX 15,2% · SUMAR 6,2% · PODEMOS 4,0% · SALF 1,9%",
+    "url": "https://www.electografica.com/2025/04/encuesta-cis-250415.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-3608659897849573829",
+    "title": "ESPAÑA · Elecciones generales · Encuesta CIS 14/10/2026",
+    "url": "https://www.electografica.com/2026/10/encuesta-cis-261014.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-3661806932912089200",
+    "title": "[G] ESPAÑA · Encuesta CIS 16/02/2026: PSOE 32,6% · PP 22,9% · VOX 18,9% · SUMAR 7,0% · PODEMOS 3,9% · SALF 2,4%",
+    "url": "https://www.electografica.com/2026/02/encuesta-cis-260216.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-3670455326647533869",
+    "title": "[G] ANDALUCÍA · Encuesta GAD3 10/05/2026: PP 37,6% (29) · PSOE 29,0% (20) · VOX 18,0% (10) · SUMAR ?% (1)",
+    "url": "https://www.electografica.com/2026/05/andalucia-generales-encuesta-gad3-260510.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-3684047484569975831",
+    "title": "[G] ESPAÑA · Encuesta InvyMark 21/06/2025: PP 36,6% · PSOE 29,3% · VOX 14,1% · SUMAR 4,5% · PODEMOS 3,9% · SALF 2,0%",
+    "url": "https://www.electografica.com/2025/06/encuesta-invymark-250621.html",
+    "extracted": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-59e381e00a5e05a5191a",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-06-21",
+      "trabajo_campo_inicio": "2025-06-16",
+      "trabajo_campo_fin": "2025-06-16",
+      "fecha_fin_campo": "2025-06-16",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 36.6,
+        "PSOE": 29.3,
+        "VOX": 14.1,
+        "SUMAR": 4.5,
+        "PODEMOS": 3.9,
+        "SALF": 2
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-psoe-baja-punto-caso-koldo-marca-peor-dato-intencion-voto-2025_202506216856a39e1014e71bbb30aee8.html",
+      "medio": "Barómetro laSexta | El PSOE baja un punto tras el caso Koldo y marca su peor dato en intención de voto en 2025 (laSexta)",
+      "url_electografica": "https://www.electografica.com/2025/06/encuesta-invymark-250621.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-3684047484569975831",
+        "content_sha256": "b430d37071a0662bc3b6dbd35ad7847dd18c6dca262246fccde9d4dafa6f4852",
+        "blogger_published": "2025-06-21T16:06:00+02:00",
+        "blogger_updated": "2025-06-21T16:06:16.473+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-6285199c5e5fd9354334",
+    "candidate": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-59e381e00a5e05a5191a",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-06-21",
+      "trabajo_campo_inicio": "2025-06-16",
+      "trabajo_campo_fin": "2025-06-16",
+      "fecha_fin_campo": "2025-06-16",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 36.6,
+        "PSOE": 29.3,
+        "VOX": 14.1,
+        "SUMAR": 4.5,
+        "PODEMOS": 3.9,
+        "SALF": 2
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-psoe-baja-punto-caso-koldo-marca-peor-dato-intencion-voto-2025_202506216856a39e1014e71bbb30aee8.html",
+      "medio": "Barómetro laSexta | El PSOE baja un punto tras el caso Koldo y marca su peor dato en intención de voto en 2025 (laSexta)",
+      "url_electografica": "https://www.electografica.com/2025/06/encuesta-invymark-250621.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-3684047484569975831",
+        "content_sha256": "b430d37071a0662bc3b6dbd35ad7847dd18c6dca262246fccde9d4dafa6f4852",
+        "blogger_published": "2025-06-21T16:06:00+02:00",
+        "blogger_updated": "2025-06-21T16:06:16.473+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-6285199c5e5fd9354334",
+        "trabajo_campo_inicio": "2025-06-16",
+        "trabajo_campo_fin": "2025-06-20",
+        "fecha_publicacion": "2025-06-21",
+        "resultados": {
+          "PP": 36.6,
+          "PSOE": 29.3,
+          "VOX": 14.1,
+          "SUMAR": 4.5,
+          "PODEMOS": 3.9,
+          "SALF": 2
+        },
+        "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-psoe-baja-punto-caso-koldo-marca-peor-dato-intencion-voto-2025_202506216856a39e1014e71bbb30aee8.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-3687730437268802482",
+    "title": "[GEN] ESPAÑA · Encuesta GESOP 21/07/2023 (🇦🇺 4): SUMAR 14,0% (36/40) | PSOE 29,0% (109/114) | PP 32,0% (130/134) | VOX 13,0% (36/40)",
+    "url": "https://www.electografica.com/2023/07/encuesta-gesop-230721.html",
+    "reason": "Fuera del periodo",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-3722436505446411329",
+    "title": "CATALUÑA · Elecciones generales · Encuesta CEO 14/10/2026",
+    "url": "https://www.electografica.com/2026/10/cataluna-generales-encuesta-ceo-261014.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-3753486042083227468",
+    "title": "[G] ESPAÑA · Encuesta InvyMark 19/11/2023: PP 36,0% · PSOE 32,9% · SUMAR 9,9% · VOX 9,7%",
+    "url": "https://www.electografica.com/2023/11/encuesta-invymark-231119.html",
+    "extracted": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-5126ab2b5247635124e4",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2023-11-19",
+      "trabajo_campo_inicio": "2023-11-13",
+      "trabajo_campo_fin": "2023-11-13",
+      "fecha_fin_campo": "2023-11-13",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 36,
+        "PSOE": 32.9,
+        "SUMAR": 9.9,
+        "VOX": 9.7
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-ganaria-elecciones-36-votos-tres-puntos-mas-que-23j_20231119655a16d132499c00014cf947.html",
+      "medio": "Barómetro laSexta | El PP ganaría las elecciones con un 36% de los votos, tres puntos más que el 23J (laSexta)",
+      "url_electografica": "https://www.electografica.com/2023/11/encuesta-invymark-231119.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-3753486042083227468",
+        "content_sha256": "0ce516d199dd07e122a7ecb26727fcfd99f977a55a2b9cfcdad763519e246a12",
+        "blogger_published": "2023-11-19T13:59:00.003+01:00",
+        "blogger_updated": "2023-11-21T09:36:52.016+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-badd87b663b2b4dccfd5",
+    "candidate": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-5126ab2b5247635124e4",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2023-11-19",
+      "trabajo_campo_inicio": "2023-11-13",
+      "trabajo_campo_fin": "2023-11-13",
+      "fecha_fin_campo": "2023-11-13",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 36,
+        "PSOE": 32.9,
+        "SUMAR": 9.9,
+        "VOX": 9.7
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-ganaria-elecciones-36-votos-tres-puntos-mas-que-23j_20231119655a16d132499c00014cf947.html",
+      "medio": "Barómetro laSexta | El PP ganaría las elecciones con un 36% de los votos, tres puntos más que el 23J (laSexta)",
+      "url_electografica": "https://www.electografica.com/2023/11/encuesta-invymark-231119.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-3753486042083227468",
+        "content_sha256": "0ce516d199dd07e122a7ecb26727fcfd99f977a55a2b9cfcdad763519e246a12",
+        "blogger_published": "2023-11-19T13:59:00.003+01:00",
+        "blogger_updated": "2023-11-21T09:36:52.016+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-badd87b663b2b4dccfd5",
+        "trabajo_campo_inicio": "2023-11-13",
+        "trabajo_campo_fin": "2023-11-17",
+        "fecha_publicacion": "2023-11-19",
+        "resultados": {
+          "PP": 36,
+          "PSOE": 32.9,
+          "VOX": 9.7,
+          "SUMAR": 9.9
+        },
+        "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-ganaria-elecciones-36-votos-tres-puntos-mas-que-23j_20231119655a16d132499c00014cf947.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-3795625823354636683",
+    "title": "ESPAÑA · Elecciones generales · Encuesta CIS 14/09/2026",
+    "url": "https://www.electografica.com/2026/07/encuesta-cis-2608.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-3889870352690519044",
+    "title": "[G] ESPAÑA · Encuesta CIS 21/12/2023: PP 33,2% · PSOE 31,8% · SUMAR 11,8% · VOX 8,5%",
+    "url": "https://www.electografica.com/2023/12/encuesta-cis-231221.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-3905047493960605248",
+    "title": "[G] CATALUÑA · Encuesta CEO 27/03/2025: PSC 33,0% (19/21) · ERC 13,6% (7/8) · PP 12,6% (5/7) · JUNTS 11,3% (6/8) · VOX 8,5% (2/3) · SUMAR-ECP 7,8% (2/3) · PODEMOS 4,8% (1) · CUP-PR 3,9% (0/1)",
+    "url": "https://www.electografica.com/2025/03/catalunya-encuesta-ceo-generales-250327.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-3994456242550180754",
+    "title": "ESPAÑA · Elecciones generales · Encuesta InvyMark 27/06/2026",
+    "url": "https://www.electografica.com/2026/06/encuesta-invymark-260627.html",
+    "extracted": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-1837a0102aed824093a8",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-06-27",
+      "trabajo_campo_inicio": "2026-06-22",
+      "trabajo_campo_fin": "2026-06-22",
+      "fecha_fin_campo": "2026-06-22",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 33.5,
+        "PSOE": 27.3,
+        "VOX": 17.5,
+        "SUMAR": 5.7,
+        "PODEMOS": 3.5,
+        "SALF": 1.7
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-seria-fuerza-mas-votada-mas-medio-punto-respecto-anteriores-elecciones_202606276a3fc0a495cc61359ce002d3.html",
+      "medio": "laSexta",
+      "url_electografica": "https://www.electografica.com/2026/06/encuesta-invymark-260627.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-3994456242550180754",
+        "content_sha256": "15e9775d084cf1d37a8fd67d0138616574433f510aa6df1289d1f5a0cb98c322",
+        "blogger_published": "2026-06-27T14:45:07.592+02:00",
+        "blogger_updated": "2026-06-27T14:45:07.592+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-f5eb1fa2bee76c9c7641",
+    "candidate": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-1837a0102aed824093a8",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-06-27",
+      "trabajo_campo_inicio": "2026-06-22",
+      "trabajo_campo_fin": "2026-06-22",
+      "fecha_fin_campo": "2026-06-22",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 33.5,
+        "PSOE": 27.3,
+        "VOX": 17.5,
+        "SUMAR": 5.7,
+        "PODEMOS": 3.5,
+        "SALF": 1.7
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-seria-fuerza-mas-votada-mas-medio-punto-respecto-anteriores-elecciones_202606276a3fc0a495cc61359ce002d3.html",
+      "medio": "laSexta",
+      "url_electografica": "https://www.electografica.com/2026/06/encuesta-invymark-260627.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-3994456242550180754",
+        "content_sha256": "15e9775d084cf1d37a8fd67d0138616574433f510aa6df1289d1f5a0cb98c322",
+        "blogger_published": "2026-06-27T14:45:07.592+02:00",
+        "blogger_updated": "2026-06-27T14:45:07.592+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-f5eb1fa2bee76c9c7641",
+        "trabajo_campo_inicio": "2026-06-22",
+        "trabajo_campo_fin": "2026-06-26",
+        "fecha_publicacion": "2026-06-27",
+        "resultados": {
+          "PP": 33.5,
+          "PSOE": 27.3,
+          "VOX": 17.5,
+          "SUMAR": 5.7,
+          "PODEMOS": 3.5,
+          "SALF": 1.7
+        },
+        "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-seria-fuerza-mas-votada-mas-medio-punto-respecto-anteriores-elecciones_202606276a3fc0a495cc61359ce002d3.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-4131973721282349547",
+    "title": "[G] REGIÓN DE MURCIA · Encuesta SigmaDos 24/09/2024: PP 44,2% (5/6) · PSOE 21,6% (2/3) · VOX 18,5% (2) · SUMAR 4,7% · PODEMOS 4,1% · SALF 4,1%",
+    "url": "https://www.electografica.com/2024/09/region-de-murcia-encuesta-sigmados-generales-240924.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-4133199856772075932",
+    "title": "[G] ESPAÑA · Encuesta Celeste-Tel 21/02/2025: PP 34,3% (147) · PSOE 27,9% (115) · VOX 14,2% (42) · SUMAR 6,5% (11) · PODEMOS 5,2% (6) · SALF 2,0%",
+    "url": "https://www.electografica.com/2025/02/encuesta-celeste-tel-250221.html",
+    "extracted": {
+      "instituto": "Celeste-Tel",
+      "estudio_id": "electografica-69ffb298d65fb43f4f75",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-02-21",
+      "trabajo_campo_inicio": "2025-02-12",
+      "trabajo_campo_fin": "2025-02-17",
+      "fecha_fin_campo": "2025-02-17",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1100,
+      "resultados": {
+        "PP": 34.3,
+        "PSOE": 27.9,
+        "VOX": 14.2,
+        "SUMAR": 6.5,
+        "PODEMOS": 5.2,
+        "SALF": 2,
+        "JUNTS": 1.9,
+        "ERC": 1.7,
+        "EH_BILDU": 1.2,
+        "PNV": 1.1,
+        "PACMA": 1,
+        "BNG": 0.8,
+        "CC": 0.5,
+        "UPN": 0.2
+      },
+      "fuente": "https://www.celeste-tel.es/wp-content/uploads/2025/02/Bar%C3%B3metro-Electoral-MensualFEB25.pdf",
+      "medio": "Estudio electoral de expectiva de voto al Congreso de los Diputados. Ámbito nacional. 18 de febrero de 2025 (Celeste-Tel) 📄PDF",
+      "url_electografica": "https://www.electografica.com/2025/02/encuesta-celeste-tel-250221.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-4133199856772075932",
+        "content_sha256": "f4c6a3dcb1f7fe6ec6b67ccb07ced9fdd87a5cf001f0a6af42e24e1922b99628",
+        "blogger_published": "2025-02-21T17:40:00.004+01:00",
+        "blogger_updated": "2025-02-22T08:15:04.711+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-a963f5e47552195af48f",
+    "candidate": {
+      "instituto": "Celeste-Tel",
+      "estudio_id": "electografica-69ffb298d65fb43f4f75",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-02-21",
+      "trabajo_campo_inicio": "2025-02-12",
+      "trabajo_campo_fin": "2025-02-17",
+      "fecha_fin_campo": "2025-02-17",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1100,
+      "resultados": {
+        "PP": 34.3,
+        "PSOE": 27.9,
+        "VOX": 14.2,
+        "SUMAR": 6.5,
+        "PODEMOS": 5.2,
+        "SALF": 2,
+        "JUNTS": 1.9,
+        "ERC": 1.7,
+        "EH_BILDU": 1.2,
+        "PNV": 1.1,
+        "PACMA": 1,
+        "BNG": 0.8,
+        "CC": 0.5,
+        "UPN": 0.2
+      },
+      "fuente": "https://www.celeste-tel.es/wp-content/uploads/2025/02/Bar%C3%B3metro-Electoral-MensualFEB25.pdf",
+      "medio": "Estudio electoral de expectiva de voto al Congreso de los Diputados. Ámbito nacional. 18 de febrero de 2025 (Celeste-Tel) 📄PDF",
+      "url_electografica": "https://www.electografica.com/2025/02/encuesta-celeste-tel-250221.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-4133199856772075932",
+        "content_sha256": "f4c6a3dcb1f7fe6ec6b67ccb07ced9fdd87a5cf001f0a6af42e24e1922b99628",
+        "blogger_published": "2025-02-21T17:40:00.004+01:00",
+        "blogger_updated": "2025-02-22T08:15:04.711+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-a963f5e47552195af48f",
+        "trabajo_campo_inicio": "2025-02-12",
+        "trabajo_campo_fin": "2025-02-17",
+        "fecha_publicacion": "2025-02-21",
+        "resultados": {
+          "PP": 34.3,
+          "PSOE": 27.9,
+          "VOX": 14.2,
+          "SUMAR": 6.5,
+          "ERC": 1.7,
+          "JUNTS": 1.9,
+          "EH_BILDU": 1.2,
+          "PNV": 1.1,
+          "BNG": 0.8,
+          "CC": 0.5,
+          "UPN": 0.2,
+          "PODEMOS": 5.4,
+          "SALF": 2
+        },
+        "fuente": "https://www.ondacero.es/noticias/espana/aumenta-64-puntos-distancia-psoe-sanchez_2025022167b866e7b1a8db0001d01317.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-4239615361708093118",
+    "title": "[G] ESPAÑA · Encuesta CIS 17/01/2025: PSOE 31,8% · PP 29,7% · VOX 12,4% · SUMAR 6,5% · PODEMOS 3,9% · SALF 2,4%",
+    "url": "https://www.electografica.com/2025/01/encuesta-cis-250117.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-4275289545474418932",
+    "title": "[G] ESPAÑA · Encuesta CIS 21/09/2023: PSOE 33,5% · PP 31,7% · SUMAR 11,9% · VOX 11,1%",
+    "url": "https://www.electografica.com/2023/09/encuesta-cis-230921.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-4318270415963621901",
+    "title": "[GEN] ESPAÑA · Encuesta SigmaDos 23/07/2023: SUMAR 13,3% (28/31) | PSOE 28,9% (113/118) | PP 34,2% (145/150) | VOX 11,2% (24/27)",
+    "url": "https://www.electografica.com/2023/07/encuesta-sigmados-230723.html",
+    "reason": "Orden temporal inválido",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-4326041250777350995",
+    "title": "[GEN] ESPAÑA · Encuesta GESOP 23/07/2023: SUMAR 14,2% (36/40) | PSOE 28,8% (109/113) | PP 31,9% (133/137) | VOX 13,1% (34/38)",
+    "url": "https://www.electografica.com/2023/07/encuesta-gesop-230723.html",
+    "reason": "Orden temporal inválido",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-4389338428079501717",
+    "title": "[G] GALICIA · Encuesta Sondaxe 15/02/2025: PP 42,4% (14) · PSdeG-PSOE 27,0% (7) · BNG 14,0% (2) · SUMAR 6,6% · VOX 6,0%",
+    "url": "https://www.electografica.com/2025/02/galicia-encuesta-sondaxe-generales-250215.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-452456449260371242",
+    "title": "[G] ESPAÑA · Encuesta DYM 27/01/2026: PP 34,4% (143/147) · PSOE 27,0% (105/109) · VOX 16,6% (56/59) · PODEMOS 5,1% (3/5) · SUMAR 5,0% (6/8) · SALF 0,5%",
+    "url": "https://www.electografica.com/2026/01/encuesta-dym-260127.html",
+    "extracted": {
+      "instituto": "DYM",
+      "estudio_id": "electografica-9ecc7d8d32271f14213b",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-01-27",
+      "trabajo_campo_inicio": "2026-01-23",
+      "trabajo_campo_fin": "2026-01-24",
+      "fecha_fin_campo": "2026-01-24",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1003,
+      "resultados": {
+        "PP": 34.4,
+        "PSOE": 27,
+        "VOX": 16.6,
+        "PODEMOS": 5.1,
+        "SUMAR": 5,
+        "SALF": 0.5
+      },
+      "fuente": "https://www.diariodeleon.es/nacional/260128/2073770/accidente-adamuz-podria-haber-evitado-cree-65-3-espanoles.html",
+      "medio": "El accidente de Adamuz se podría haber evitado: lo cree el 65,3 % de los españoles (Diario de León)",
+      "url_electografica": "https://www.electografica.com/2026/01/encuesta-dym-260127.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-452456449260371242",
+        "content_sha256": "846f1fb408a0a5a2bae9f52d0d1b5ae208e3e509c0ea2b739253c3aa209dd034",
+        "blogger_published": "2026-01-27T08:22:00.007+01:00",
+        "blogger_updated": "2026-01-28T08:32:18.358+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-92359acc29f77b30255f,wiki-d45d372ebab5629440e8",
+    "candidate": {
+      "instituto": "DYM",
+      "estudio_id": "electografica-9ecc7d8d32271f14213b",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-01-27",
+      "trabajo_campo_inicio": "2026-01-23",
+      "trabajo_campo_fin": "2026-01-24",
+      "fecha_fin_campo": "2026-01-24",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1003,
+      "resultados": {
+        "PP": 34.4,
+        "PSOE": 27,
+        "VOX": 16.6,
+        "PODEMOS": 5.1,
+        "SUMAR": 5,
+        "SALF": 0.5
+      },
+      "fuente": "https://www.diariodeleon.es/nacional/260128/2073770/accidente-adamuz-podria-haber-evitado-cree-65-3-espanoles.html",
+      "medio": "El accidente de Adamuz se podría haber evitado: lo cree el 65,3 % de los españoles (Diario de León)",
+      "url_electografica": "https://www.electografica.com/2026/01/encuesta-dym-260127.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-452456449260371242",
+        "content_sha256": "846f1fb408a0a5a2bae9f52d0d1b5ae208e3e509c0ea2b739253c3aa209dd034",
+        "blogger_published": "2026-01-27T08:22:00.007+01:00",
+        "blogger_updated": "2026-01-28T08:32:18.358+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-92359acc29f77b30255f",
+        "trabajo_campo_inicio": "2026-01-22",
+        "trabajo_campo_fin": "2026-01-25",
+        "fecha_publicacion": "2026-01-28",
+        "resultados": {
+          "PP": 34.4,
+          "PSOE": 27,
+          "VOX": 16.6,
+          "SUMAR": 5,
+          "PODEMOS": 5.1,
+          "SALF": 0.5
+        },
+        "fuente": "https://www.diariodeleon.es/nacional/260128/2073770/accidente-adamuz-podria-haber-evitado-cree-65-3-espanoles.html"
+      },
+      {
+        "estudio_id": "wiki-d45d372ebab5629440e8",
+        "trabajo_campo_inicio": "2026-01-14",
+        "trabajo_campo_fin": "2026-01-18",
+        "fecha_publicacion": "2026-01-28",
+        "resultados": {
+          "PP": 33.7,
+          "PSOE": 27.1,
+          "VOX": 16.9,
+          "SUMAR": 5.2,
+          "PODEMOS": 4.9,
+          "SALF": 0.7
+        },
+        "fuente": "https://www.diariodeleon.es/nacional/260128/2073770/accidente-adamuz-podria-haber-evitado-cree-65-3-espanoles.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-4596952041878128364",
+    "title": "ESPAÑA · Elecciones generales · Encuesta CIS 11/06/2026",
+    "url": "https://www.electografica.com/2026/06/encuesta-cis-260611.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-4621623488996452895",
+    "title": "[G] COMUNITAT VALENCIANA · Encuesta GAD3 28/10/2025: PP 30,7% (12) · PSOE 28,5% (11) · VOX 21,7% (8) · COMPROMÍS 6,4% (1) · SUMAR 6,1% (1) · PODEMOS 2,9% · PACMA 0,9%",
+    "url": "https://www.electografica.com/2025/10/comunitat-valenciana-generales-encuesta-gad3-251028.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-4641176794763755534",
+    "title": "[GEN] ESPAÑA · Encuesta GAD3 23/07/2023: SUMAR 11,9% (25/29) | PSOE 28,6% (109/115) | PP 35,5% (147/153) | VOX 12,7% (29/33)",
+    "url": "https://www.electografica.com/2023/07/encuesta-gad3-230723.html",
+    "reason": "Orden temporal inválido",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-4767934332932385211",
+    "title": "[G] ESPAÑA · Encuesta CIS 11/04/2024: PP 33,5% · PSOE 32,5% · VOX 10,1% · SUMAR 8,2% · PODEMOS 3,1%",
+    "url": "https://www.electografica.com/2024/04/encuesta-cis-240411.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-4814965024163401935",
+    "title": "ESPAÑA · Elecciones generales · Encuesta CIS 29/05/2026",
+    "url": "https://www.electografica.com/2026/05/encuesta-cis-260529.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-4817790004149437895",
+    "title": "[GEN] ESPAÑA · Encuesta Metroscopia 23/07/2023: SUMAR 11,9% (23/32) | PSOE 28,4% (99/112) | PP 35,3% (141/153) | VOX 13,1% (31/39)",
+    "url": "https://www.electografica.com/2023/07/encuesta-metroscopia-230723.html",
+    "reason": "Falta enlace original",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-4842037504025968782",
+    "title": "[G] ESPAÑA · Encuesta 40dB. 09/12/2024: PP 33,3% · PSOE 29,9% · VOX 13,1% · SUMAR 5,0% · SALF 3,1% · PODEMOS 2,8%",
+    "url": "https://www.electografica.com/2024/12/encuesta-40db-241209.html",
+    "extracted": {
+      "instituto": "40dB",
+      "estudio_id": "electografica-a2fed9e65b81015f4388",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2024-12-09",
+      "trabajo_campo_inicio": "2024-11-22",
+      "trabajo_campo_fin": "2024-12-03",
+      "fecha_fin_campo": "2024-12-03",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 2500,
+      "resultados": {
+        "PP": 33.3,
+        "PSOE": 29.9,
+        "VOX": 13.1,
+        "SUMAR": 5,
+        "SALF": 3.1,
+        "PODEMOS": 2.8
+      },
+      "fuente": "https://ep00.epimg.net/infografias/encuestas40db/2024/12-barometro/2024_12_barometro_voto_nacional.pdf",
+      "medio": "Barómetro Mensual. Diciembre 2024 (El País) 📄PDF",
+      "url_electografica": "https://www.electografica.com/2024/12/encuesta-40db-241209.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-4842037504025968782",
+        "content_sha256": "77baa24e6873a6bfe3275be52464781a7861a4e20416cf4b6ea6c33ae9f4ba55",
+        "blogger_published": "2024-12-09T09:30:00.004+01:00",
+        "blogger_updated": "2024-12-20T11:15:22.09+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-5a18c014ea303b3b2edc",
+    "candidate": {
+      "instituto": "40dB",
+      "estudio_id": "electografica-a2fed9e65b81015f4388",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2024-12-09",
+      "trabajo_campo_inicio": "2024-11-22",
+      "trabajo_campo_fin": "2024-12-03",
+      "fecha_fin_campo": "2024-12-03",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 2500,
+      "resultados": {
+        "PP": 33.3,
+        "PSOE": 29.9,
+        "VOX": 13.1,
+        "SUMAR": 5,
+        "SALF": 3.1,
+        "PODEMOS": 2.8
+      },
+      "fuente": "https://ep00.epimg.net/infografias/encuestas40db/2024/12-barometro/2024_12_barometro_voto_nacional.pdf",
+      "medio": "Barómetro Mensual. Diciembre 2024 (El País) 📄PDF",
+      "url_electografica": "https://www.electografica.com/2024/12/encuesta-40db-241209.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-4842037504025968782",
+        "content_sha256": "77baa24e6873a6bfe3275be52464781a7861a4e20416cf4b6ea6c33ae9f4ba55",
+        "blogger_published": "2024-12-09T09:30:00.004+01:00",
+        "blogger_updated": "2024-12-20T11:15:22.09+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-5a18c014ea303b3b2edc",
+        "trabajo_campo_inicio": "2024-11-25",
+        "trabajo_campo_fin": "2024-11-27",
+        "fecha_publicacion": "2024-12-09",
+        "resultados": {
+          "PP": 33.3,
+          "PSOE": 29.9,
+          "VOX": 13.1,
+          "SUMAR": 5,
+          "PODEMOS": 2.8,
+          "SALF": 3.1
+        },
+        "fuente": "https://elpais.com/espana/2024-12-09/vox-es-el-partido-que-mas-sube-despues-de-la-dana.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-4848209915638817521",
+    "title": "[G] COMUNITAT VALENCIANA · Encuesta Demoscopia y Servicios 29/07/2025: PP 32,4% (12) · PSOE 27,6% (10) · VOX 20,4% (8) · COMPROMÍS-SUMAR 13,7% (3)",
+    "url": "https://www.electografica.com/2025/07/comunitat-valenciana-generales-encuesta-demoscopia-y-servicios-250729.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-4956177253294174399",
+    "title": "[G] ESPAÑA · Encuesta SigmaDos 15/10/2023: PP 144/146 · PSOE 117/119 · SUMAR 29/31 · VOX 26/27",
+    "url": "https://www.electografica.com/2023/10/encuesta-sigmados-231015.html",
+    "reason": "Formato de porcentajes no reconocido",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-502745413558382374",
+    "title": "[G] NAVARRA · Encuesta Gizaker 01/10/2025: PSOE 23,6% (2) · EH BILDU 19,6% (1) · PP 17,7% (1) · UPN 14,7% (1) · SUMAR 11,6% · VOX 7,0% · GBAI 3,3%",
+    "url": "https://www.electografica.com/2025/10/navarra-generales-encuesta-gizaker-251001.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-5054570422776421955",
+    "title": "[G] ESPAÑA · Encuesta CIS 16/01/2026: PSOE 31,7% · PP 23,0% · VOX 17,7% · SUMAR 7,2% · PODEMOS 3,5% · SALF 1,8%",
+    "url": "https://www.electografica.com/2026/01/encuesta-cis-260116.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-5375753772341299420",
+    "title": "[G] ESPAÑA · Encuesta SocioMétrica 25/11/2024: PP 34,8% (152) · PSOE 26,7% (109) · VOX 13,5% (40) · SUMAR 6,9% (13) · PODEMOS 3,6% (3) · SALF 2,7%",
+    "url": "https://www.electografica.com/2024/11/encuesta-sociometrica-241125.html",
+    "extracted": {
+      "instituto": "SocioMétrica",
+      "estudio_id": "electografica-9b2ee07258ba787b7dc2",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2024-11-25",
+      "trabajo_campo_inicio": "2024-11-22",
+      "trabajo_campo_fin": "2024-11-24",
+      "fecha_fin_campo": "2024-11-24",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1227,
+      "resultados": {
+        "PP": 34.8,
+        "PSOE": 26.7,
+        "VOX": 13.5,
+        "SUMAR": 6.9,
+        "PODEMOS": 3.6,
+        "SALF": 2.7,
+        "JUNTS": 1.8,
+        "ERC": 1.8,
+        "EH_BILDU": 1.3,
+        "PNV": 1.1,
+        "BNG": 0.9,
+        "CC": 0.7,
+        "UPN": 0.5
+      },
+      "fuente": "https://www.elespanol.com/espana/politica/20241125/primer-sondeo-confesion-aldama-corrupcion-pasa-factura-sanchez-deja-psoe-puntos-pp/903659739_0.html",
+      "medio": "Primer sondeo tras la confesión de Aldama: la corrupción pasa factura a Sánchez y deja al PSOE a 8 puntos del PP (El Español)",
+      "url_electografica": "https://www.electografica.com/2024/11/encuesta-sociometrica-241125.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-5375753772341299420",
+        "content_sha256": "6be83fe04a5229ae232d688e75d9bd051218c4e76c8d37ff54f9d7b7c729200e",
+        "blogger_published": "2024-11-25T08:14:00.005+01:00",
+        "blogger_updated": "2024-12-20T11:16:32.873+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-29257853bea897f1a00e",
+    "candidate": {
+      "instituto": "SocioMétrica",
+      "estudio_id": "electografica-9b2ee07258ba787b7dc2",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2024-11-25",
+      "trabajo_campo_inicio": "2024-11-22",
+      "trabajo_campo_fin": "2024-11-24",
+      "fecha_fin_campo": "2024-11-24",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1227,
+      "resultados": {
+        "PP": 34.8,
+        "PSOE": 26.7,
+        "VOX": 13.5,
+        "SUMAR": 6.9,
+        "PODEMOS": 3.6,
+        "SALF": 2.7,
+        "JUNTS": 1.8,
+        "ERC": 1.8,
+        "EH_BILDU": 1.3,
+        "PNV": 1.1,
+        "BNG": 0.9,
+        "CC": 0.7,
+        "UPN": 0.5
+      },
+      "fuente": "https://www.elespanol.com/espana/politica/20241125/primer-sondeo-confesion-aldama-corrupcion-pasa-factura-sanchez-deja-psoe-puntos-pp/903659739_0.html",
+      "medio": "Primer sondeo tras la confesión de Aldama: la corrupción pasa factura a Sánchez y deja al PSOE a 8 puntos del PP (El Español)",
+      "url_electografica": "https://www.electografica.com/2024/11/encuesta-sociometrica-241125.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-5375753772341299420",
+        "content_sha256": "6be83fe04a5229ae232d688e75d9bd051218c4e76c8d37ff54f9d7b7c729200e",
+        "blogger_published": "2024-11-25T08:14:00.005+01:00",
+        "blogger_updated": "2024-12-20T11:16:32.873+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-29257853bea897f1a00e",
+        "trabajo_campo_inicio": "2024-11-22",
+        "trabajo_campo_fin": "2024-11-24",
+        "fecha_publicacion": "2024-11-25",
+        "resultados": {
+          "PP": 34.8,
+          "PSOE": 26.7,
+          "VOX": 13.5,
+          "SUMAR": 6.9,
+          "ERC": 1.8,
+          "JUNTS": 1.8,
+          "EH_BILDU": 1.3,
+          "PNV": 1.1,
+          "BNG": 0.9,
+          "CC": 0.7,
+          "UPN": 0.3,
+          "PODEMOS": 3.6,
+          "SALF": 2.7
+        },
+        "fuente": "https://www.elespanol.com/espana/politica/20241125/primer-sondeo-confesion-aldama-corrupcion-pasa-factura-sanchez-deja-psoe-puntos-pp/903659739_0.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-5516096050672000219",
+    "title": "[G] ESPAÑA · Encuesta CIS 12/02/2024: PP 33,2% · PSOE 33,0% · SUMAR 10,2% · VOX 7,9% · PODEMOS 2,9%",
+    "url": "https://www.electografica.com/2024/02/encuesta-cis-240212.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-5533788320221799965",
+    "title": "[G] GALICIA · Encuesta Sondaxe 15/12/2025: PP 39,2% (13) · PSdeG-PSOE 24,9% (6) · BNG 15,2% (3) · SUMAR 8,2% (1)",
+    "url": "https://www.electografica.com/2025/12/galicia-generales-encuesta-sondaxe-251215.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-5544131113149866540",
+    "title": "[G] GALICIA · Encuesta Sondaxe 06/10/2024: PP 44,8% (13) · PSdeG-PSOE 25,1% (6) · BNG 13,4% (2) · SUMAR 9,0% (2)",
+    "url": "https://www.electografica.com/2024/10/galicia-encuesta-sondaxe-generales-241006.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-5620143971988177406",
+    "title": "[G] ESPAÑA · Encuesta CIS 11/07/2025: PSOE 27,0% · PP 26,5% · VOX 18,9% · SUMAR 7,8% · PODEMOS 4,4% · SALF 1,7%",
+    "url": "https://www.electografica.com/2025/07/encuesta-cis-250711.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-5663287677908119474",
+    "title": "[G] PAÍS VASCO · Encuesta Gizaker 01/10/2025: EH BILDU 27,1% (6) · EAJ-PNV 24,3% (6) · PSE-EE 22,3% (4) · PP 10,1% (2) · SUMAR 8,2% · VOX 4,9%",
+    "url": "https://www.electografica.com/2025/10/pais-vasco-encuesta-gizaker-251001.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-570410868710939971",
+    "title": "REGIÓN DE MURCIA · Elecciones generales · Encuesta SigmaDos 30/05/2026",
+    "url": "https://www.electografica.com/2026/05/region-de-murcia-generales-encuesta-sigmados-260530.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-5760812710604344373",
+    "title": "[G] ESPAÑA · Encuesta InvyMark 17/12/2023: PP 36,1% · PSOE 33,2% · VOX 10,0% · SUMAR 9,8%",
+    "url": "https://www.electografica.com/2023/12/encuesta-invymark-231217.html",
+    "extracted": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-1a5566f9eed1ff3d1152",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2023-12-17",
+      "trabajo_campo_inicio": "2023-12-11",
+      "trabajo_campo_fin": "2023-12-11",
+      "fecha_fin_campo": "2023-12-11",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 36.1,
+        "PSOE": 33.2,
+        "VOX": 10,
+        "SUMAR": 9.8
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-ganaria-elecciones-361-voto-decidido_20231217657eec0829f31800017e105f.html",
+      "medio": "Barómetro laSexta | El PP ganaría las elecciones con un 36,1% del voto decidido (laSexta)",
+      "url_electografica": "https://www.electografica.com/2023/12/encuesta-invymark-231217.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-5760812710604344373",
+        "content_sha256": "7752e425416734eb61c1a84aafb5acaee46f290c20b7df6dc4d69b2a70c00961",
+        "blogger_published": "2023-12-17T13:59:00.005+01:00",
+        "blogger_updated": "2023-12-17T14:08:06.138+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-cfdc9ac827bc186a3e53",
+    "candidate": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-1a5566f9eed1ff3d1152",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2023-12-17",
+      "trabajo_campo_inicio": "2023-12-11",
+      "trabajo_campo_fin": "2023-12-11",
+      "fecha_fin_campo": "2023-12-11",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 36.1,
+        "PSOE": 33.2,
+        "VOX": 10,
+        "SUMAR": 9.8
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-ganaria-elecciones-361-voto-decidido_20231217657eec0829f31800017e105f.html",
+      "medio": "Barómetro laSexta | El PP ganaría las elecciones con un 36,1% del voto decidido (laSexta)",
+      "url_electografica": "https://www.electografica.com/2023/12/encuesta-invymark-231217.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-5760812710604344373",
+        "content_sha256": "7752e425416734eb61c1a84aafb5acaee46f290c20b7df6dc4d69b2a70c00961",
+        "blogger_published": "2023-12-17T13:59:00.005+01:00",
+        "blogger_updated": "2023-12-17T14:08:06.138+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-cfdc9ac827bc186a3e53",
+        "trabajo_campo_inicio": "2023-12-11",
+        "trabajo_campo_fin": "2023-12-15",
+        "fecha_publicacion": "2023-12-17",
+        "resultados": {
+          "PP": 36.1,
+          "PSOE": 33.2,
+          "VOX": 10,
+          "SUMAR": 9.8
+        },
+        "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-ganaria-elecciones-361-voto-decidido_20231217657eec0829f31800017e105f.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-5920939790261152987",
+    "title": "[G] ESPAÑA · Encuesta CIS 19/12/2024: PSOE 32,2% · PP 28,4% · VOX 12,2% · SUMAR 7,0% · PODEMOS 4,1% · SALF 2,8%",
+    "url": "https://www.electografica.com/2024/12/encuesta-cis-241219.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-5925684533306709666",
+    "title": "[G] ESPAÑA · Encuesta Target Point 22/07/2024: PP 34,0% (148/150) · PSOE 30,8% (126/128) · VOX 10,8% (26/28) · SUMAR 5,8% (8/9) · PODEMOS 4,9% (4/5) · SALF 4,1% (3/4)",
+    "url": "https://www.electografica.com/2024/07/encuesta-target-point-240722.html",
+    "reason": "Campo incompleto: no se imputa",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-5949328404583413061",
+    "title": "[G] ESPAÑA · Encuesta CIS 29/04/2024: PSOE 38,6% · PP 29,2% · VOX 11,0% · SUMAR 7,2% · PODEMOS 2,6%",
+    "url": "https://www.electografica.com/2024/04/encuesta-cis--240429.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-5992624041923510971",
+    "title": "[G] CATALUÑA · Encuesta SigmaDos 13/09/2023: PSC 33,6% (18) · SUMAR-ECP 14,5% (7) · PP 14,4% (6) · JUNTS 12,5% (8) · ERC 12,4% (7) · VOX 7,0% (2)",
+    "url": "https://www.electografica.com/2023/09/catalunya-generales-encuesta-sigmados-230913.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-6034578823026602688",
+    "title": "[G] ESPAÑA · Encuesta CIS 13/10/2025: PSOE 34,8% · PP 19,8% · VOX 17,7% · SUMAR 7,7% · PODEMOS 4,9% · SALF 1,3%",
+    "url": "https://www.electografica.com/2025/10/encuesta-cis-251013.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-6035427904168349021",
+    "title": "[G] ESPAÑA · Encuesta SigmaDos 18/03/2024: PP 164/165 · PSOE 116/117 · VOX 19/20 · SUMAR 18/19 · PODEMOS 1/2",
+    "url": "https://www.electografica.com/2024/03/encuesta-sigmados-240318.html",
+    "reason": "Formato de porcentajes no reconocido",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-6074116226554099531",
+    "title": "[G] CATALUÑA · Encuesta CEO 24/11/2025: PSC 31,3% (19/20) · ERC 17,7% (9/10) · VOX 11,4% (5/6) · PP 11,1% (5/6) · JUNTS 10,6% (5/6) · SUMAR-ECP 7,8% (3) · PODEMOS 3,6% (0/1) · CUP-PR 2,6%",
+    "url": "https://www.electografica.com/2025/11/cataluna-generales-encuesta-ceo-251124.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-6210343560034775398",
+    "title": "[GEN] ESPAÑA · Encuesta GESOP 19/07/2023 (🇦🇺 2): SUMAR 14,2% (36/40) | PSOE 27,5% (105/109) | PP 31,0% (128/132) | VOX 14,3% (38/42)",
+    "url": "https://www.electografica.com/2023/07/encuesta-gesop-230719.html",
+    "reason": "Fuera del periodo",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-6428416664102827663",
+    "title": "COMUNITAT VALENCIANA · Elecciones generales · Encuesta SyM Consulting 30/10/2026",
+    "url": "https://www.electografica.com/2026/10/comunitat-valenciana-generales-encuesta-sym-consulting-261030.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-6525484070961531091",
+    "title": "[G] CATALUÑA · Encuesta CEO 21/03/2024: PSC 31/35% (17/20) · PP 13/16% (6/9) · ERC 13/16% (7/8) · JUNTS 10/13% (5/8) · SUMAR-ECP 10/13% (4/6) · VOX 6/8% (2/4) · CUP-PR 3/4% (0/1)",
+    "url": "https://www.electografica.com/2024/03/cataluna-generales-encuesta-ceo-240321.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-6538011536857578899",
+    "title": "[G] REGIÓN DE MURCIA · Encuesta OBEDE-UCAM 20/12/2023: PP 44,4% (5) · PSOE 23,8% (2) · VOX 21,9% (2) · SUMAR 8,1% (1)",
+    "url": "https://www.electografica.com/2023/12/region-de-murcia-encuesta-generales-obede-ucam-231220.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-6560329478060186937",
+    "title": "[G] GALICIA · Encuesta Sondaxe 28/09/2025: PP 41,3% (14) · PSdeG-PSOE 25,5% (7) · BNG 13,8% (2) · VOX 7,7% · SUMAR 7,1%",
+    "url": "https://www.electografica.com/2025/09/galicia-generales--encuesta-sondaxe-250928.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-6576891528924828244",
+    "title": "[G] ESPAÑA · Encuesta CIS 11/09/2025: PSOE 32,7% · PP 23,7% · VOX 17,3% · SUMAR 7,9% · PODEMOS 4,3% · SALF 1,6%",
+    "url": "https://www.electografica.com/2025/09/encuesta-cis-250911.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-6583638292405022922",
+    "title": "[G] PAÍS VASCO · Encuesta SigmaDos 18/09/2023: PSE-EE 25,1% (5) · EH BILDU 24,2% (5) · EAJ-PNV 23,1% (5) · PP 12,3% (2) · SUMAR 11,2% (1) · VOX 2,9%",
+    "url": "https://www.electografica.com/2023/09/pais-vasco-generales-encuesta-sigmados-230918.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-670005694863437703",
+    "title": "[G] GALICIA · Encuesta Sondaxe 28/10/2023: PP 44,5% (13) · PSdeG-PSOE 27,3% (6) · SUMAR 10,4% (2) · BNG 10,3% (2) · VOX 4,9%",
+    "url": "https://www.electografica.com/2023/10/galicia-generales-encuesta-sondaxe-231028.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-6772599422290449310",
+    "title": "[G] ESPAÑA · Encuesta CIS 18/09/2024: PSOE 33,0% · PP 28,5% · VOX 13,1% · SUMAR 7,8% · PODEMOS 3,6% · SALF 2,9%",
+    "url": "https://www.electografica.com/2024/09/encuesta-cis-240918.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-6826078855456029204",
+    "title": "[G] ESPAÑA · Encuesta CIS 18/10/2023: PSOE 32,6% · PP 32,2% · SUMAR 12,7% · VOX 10,1%",
+    "url": "https://www.electografica.com/2023/10/encuesta-cis-231018.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-6988523696734034700",
+    "title": "[G] GALICIA · Encuesta Sondaxe 08/01/2024: PP 45,7% (13) · PSdeG-PSOE 25,0% (6) · BNG 12,7% (2) · SUMAR 10,4% (2)",
+    "url": "https://www.electografica.com/2024/01/galicia-generales-encuesta-sondaxe-240108.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-7008952849984237646",
+    "title": "COMUNITAT VALENCIANA · Elecciones generales · Encuesta SocioMétrica 08/10/2026",
+    "url": "https://www.electografica.com/2026/10/comunitat-valenciana-generales-encuesta-sociometrica-261008.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-7025672332623530836",
+    "title": "[G] CATALUÑA · Encuesta CEO 17/11/2023: PSC 29/33% (15/18) · PP 17/21% (9/11) · ERC 14/17% (7/10) · SUMAR-ECP 10/13% (3/6) · JUNTS 10/12% (5/8) · VOX 5/7% (1/2) · CUP-PR 2/3% (0/1)",
+    "url": "https://www.electografica.com/2023/11/catalunya-generales-encuesta-ceo-231117.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-7202996025199528973",
+    "title": "[G] ANDALUCÍA · Encuesta GAD3 16/06/2025: PP 37,4% (28) · PSOE 28,2% (20) · VOX 16,9% (10) · SUMAR 10,8% (3) · PODEMOS 2,0%",
+    "url": "https://www.electografica.com/2025/06/andalucia-generales-encuesta-gad3-250616.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-7204043120613037441",
+    "title": "ESPAÑA · Elecciones generales · Encuesta SocioMétrica 26/10/2026",
+    "url": "https://www.electografica.com/2026/10/encuesta-sociometrica-261026.html",
+    "extracted": {
+      "instituto": "SocioMétrica",
+      "estudio_id": "electografica-da3cad2be57afc06bf7a",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-10-26",
+      "trabajo_campo_inicio": "2026-09-01",
+      "trabajo_campo_fin": "2026-10-25",
+      "fecha_fin_campo": "2026-10-25",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 3223,
+      "resultados": {
+        "PP": 32.4,
+        "PSOE": 27,
+        "VOX": 18.6,
+        "FA": 4.9,
+        "ERC": 2.6,
+        "SALF": 2.4,
+        "PODEMOS": 1.8,
+        "JUNTS": 1.7,
+        "EH_BILDU": 1.3,
+        "ADELANTE_ANDALUCIA": 1.2,
+        "BNG": 0.9,
+        "FV": 0.9,
+        "PNV": 0.8,
+        "CC": 0.4,
+        "UPN": 0
+      },
+      "fuente": "https://www.elespanol.com/espana/politica/20261025/izquierda-no-remonta-sanchez-gana-escanos-costa-frente-podemos-sondeo-noche/1003744434105_0.html",
+      "medio": "El Español",
+      "url_electografica": "https://www.electografica.com/2026/10/encuesta-sociometrica-261026.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-7204043120613037441",
+        "content_sha256": "aff6a08cbdbe8847dcee5cf38c697896a10045104b0fcc3bbbd3897a3435a806",
+        "blogger_published": "2026-10-26T08:29:38.769+01:00",
+        "blogger_updated": "2026-11-01T22:41:57.343+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-8fb964f9154ec2d809b5",
+    "candidate": {
+      "instituto": "SocioMétrica",
+      "estudio_id": "electografica-da3cad2be57afc06bf7a",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-10-26",
+      "trabajo_campo_inicio": "2026-09-01",
+      "trabajo_campo_fin": "2026-10-25",
+      "fecha_fin_campo": "2026-10-25",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 3223,
+      "resultados": {
+        "PP": 32.4,
+        "PSOE": 27,
+        "VOX": 18.6,
+        "FA": 4.9,
+        "ERC": 2.6,
+        "SALF": 2.4,
+        "PODEMOS": 1.8,
+        "JUNTS": 1.7,
+        "EH_BILDU": 1.3,
+        "ADELANTE_ANDALUCIA": 1.2,
+        "BNG": 0.9,
+        "FV": 0.9,
+        "PNV": 0.8,
+        "CC": 0.4,
+        "UPN": 0
+      },
+      "fuente": "https://www.elespanol.com/espana/politica/20261025/izquierda-no-remonta-sanchez-gana-escanos-costa-frente-podemos-sondeo-noche/1003744434105_0.html",
+      "medio": "El Español",
+      "url_electografica": "https://www.electografica.com/2026/10/encuesta-sociometrica-261026.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-7204043120613037441",
+        "content_sha256": "aff6a08cbdbe8847dcee5cf38c697896a10045104b0fcc3bbbd3897a3435a806",
+        "blogger_published": "2026-10-26T08:29:38.769+01:00",
+        "blogger_updated": "2026-11-01T22:41:57.343+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-8fb964f9154ec2d809b5",
+        "trabajo_campo_inicio": "2026-09-01",
+        "trabajo_campo_fin": "2026-10-25",
+        "fecha_publicacion": "2026-10-26",
+        "resultados": {
+          "PP": 32.4,
+          "PSOE": 27,
+          "VOX": 18.6,
+          "FA": 5.2,
+          "FV": 0.9,
+          "ERC": 2.6,
+          "JUNTS": 1.7,
+          "EH_BILDU": 1.3,
+          "PNV": 0.8,
+          "BNG": 0.9,
+          "CC": 0.4,
+          "ADELANTE_ANDALUCIA": 1.2,
+          "PODEMOS": 1.8,
+          "SALF": 2.4
+        },
+        "fuente": "https://www.elespanol.com/espana/politica/20261025/izquierda-no-remonta-sanchez-gana-escanos-costa-frente-podemos-sondeo-noche/1003744434105_0.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-7211048497644047579",
+    "title": "[G] ANDALUCÍA · Encuesta GAD3 29/03/2026: PP 37,7% (27) · PSOE 29,9% (21/23) · VOX 17,3% (10) · SUMAR 7,6% (0/2) · SALF 2,4% · PODEMOS 2,3%",
+    "url": "https://www.electografica.com/2026/03/andalucia-congreso-encuesta-gad3-260329.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-7245833669999763220",
+    "title": "[GEN] ESPAÑA · Encuesta SocioMétrica 23/07/2023: SUMAR 13,0% (32/35) | PSOE 29,1% (109/115) | PP 32,4% (134/140) | VOX 13,8% (35/39)",
+    "url": "https://www.electografica.com/2023/07/encuesta-sociometrica-230723.html",
+    "reason": "Orden temporal inválido",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-7325306485912560466",
+    "title": "[G] ESPAÑA · Encuesta InvyMark 22/12/2025: PP 33,5% · PSOE 27,4% · VOX 18,6% · SUMAR 5,2% · PODEMOS 3,8% · SALF 1,5%",
+    "url": "https://www.electografica.com/2025/12/encuesta-invymark-251222.html",
+    "extracted": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-73f795b51ba5527aa255",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-12-22",
+      "trabajo_campo_inicio": "2025-12-15",
+      "trabajo_campo_fin": "2025-12-15",
+      "fecha_fin_campo": "2025-12-15",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 33.5,
+        "PSOE": 27.4,
+        "VOX": 18.6,
+        "SUMAR": 5.2,
+        "PODEMOS": 3.8,
+        "ERC": 1.8,
+        "EH_BILDU": 1.5,
+        "SALF": 1.5,
+        "JUNTS": 1.3,
+        "PNV": 1.1
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-ganaria-elecciones-generales-335-votos-superaria-psoe-seis-puntos_2025122269485dc6af09df5010901f26.html",
+      "medio": "Barómetro laSexta | El PP ganaría unas elecciones generales con el 33,5% de los votos y superaría al PSOE por seis puntos (laSexta)",
+      "url_electografica": "https://www.electografica.com/2025/12/encuesta-invymark-251222.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-7325306485912560466",
+        "content_sha256": "a53b8fba655057d22e7612e76f755816ddf0dabf11aea175fb9a9e8657d8722e",
+        "blogger_published": "2025-12-22T10:59:00.001+01:00",
+        "blogger_updated": "2025-12-22T22:09:12.361+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-1f3b1857ccc8bafae735",
+    "candidate": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-73f795b51ba5527aa255",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-12-22",
+      "trabajo_campo_inicio": "2025-12-15",
+      "trabajo_campo_fin": "2025-12-15",
+      "fecha_fin_campo": "2025-12-15",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 33.5,
+        "PSOE": 27.4,
+        "VOX": 18.6,
+        "SUMAR": 5.2,
+        "PODEMOS": 3.8,
+        "ERC": 1.8,
+        "EH_BILDU": 1.5,
+        "SALF": 1.5,
+        "JUNTS": 1.3,
+        "PNV": 1.1
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-ganaria-elecciones-generales-335-votos-superaria-psoe-seis-puntos_2025122269485dc6af09df5010901f26.html",
+      "medio": "Barómetro laSexta | El PP ganaría unas elecciones generales con el 33,5% de los votos y superaría al PSOE por seis puntos (laSexta)",
+      "url_electografica": "https://www.electografica.com/2025/12/encuesta-invymark-251222.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-7325306485912560466",
+        "content_sha256": "a53b8fba655057d22e7612e76f755816ddf0dabf11aea175fb9a9e8657d8722e",
+        "blogger_published": "2025-12-22T10:59:00.001+01:00",
+        "blogger_updated": "2025-12-22T22:09:12.361+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-1f3b1857ccc8bafae735",
+        "trabajo_campo_inicio": "2025-12-15",
+        "trabajo_campo_fin": "2025-12-19",
+        "fecha_publicacion": "2025-12-22",
+        "resultados": {
+          "PP": 33.5,
+          "PSOE": 27.4,
+          "VOX": 18.6,
+          "SUMAR": 5.2,
+          "ERC": 1.8,
+          "JUNTS": 1.3,
+          "EH_BILDU": 1.5,
+          "PNV": 1.1,
+          "PODEMOS": 3.8,
+          "SALF": 1.5
+        },
+        "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-ganaria-elecciones-generales-335-votos-superaria-psoe-seis-puntos_2025122269485dc6af09df5010901f26.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-7385014217828177073",
+    "title": "[G] ESPAÑA · Encuesta InvyMark 23/03/2024: PP 38,6% · PSOE 30,9% · VOX 9,6% · SUMAR 9,4%",
+    "url": "https://www.electografica.com/2024/03/encuesta-invymark-240323.html",
+    "extracted": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-a61a4c624a44e8f2eec6",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2024-03-23",
+      "trabajo_campo_inicio": "2024-03-18",
+      "trabajo_campo_fin": "2024-03-18",
+      "fecha_fin_campo": "2024-03-18",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 38.6,
+        "PSOE": 30.9,
+        "VOX": 9.6,
+        "SUMAR": 9.4
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-40-encuestados-votaria-proximas-elecciones-que-ganarian_2024032365feebc417c56e0001cd8f52.html",
+      "medio": "Barómetro de laSexta | El PP sube en intención de voto hasta el 38,6% (laSexta)",
+      "url_electografica": "https://www.electografica.com/2024/03/encuesta-invymark-240323.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-7385014217828177073",
+        "content_sha256": "8e1aa76a482d1bf239c137e05ad61780d857e338f661b7eb3d9f240a074a46ca",
+        "blogger_published": "2024-03-23T19:03:00.001+01:00",
+        "blogger_updated": "2024-03-23T19:03:33.821+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-61995fbb3c4a951d29f5",
+    "candidate": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-a61a4c624a44e8f2eec6",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2024-03-23",
+      "trabajo_campo_inicio": "2024-03-18",
+      "trabajo_campo_fin": "2024-03-18",
+      "fecha_fin_campo": "2024-03-18",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 38.6,
+        "PSOE": 30.9,
+        "VOX": 9.6,
+        "SUMAR": 9.4
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-40-encuestados-votaria-proximas-elecciones-que-ganarian_2024032365feebc417c56e0001cd8f52.html",
+      "medio": "Barómetro de laSexta | El PP sube en intención de voto hasta el 38,6% (laSexta)",
+      "url_electografica": "https://www.electografica.com/2024/03/encuesta-invymark-240323.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-7385014217828177073",
+        "content_sha256": "8e1aa76a482d1bf239c137e05ad61780d857e338f661b7eb3d9f240a074a46ca",
+        "blogger_published": "2024-03-23T19:03:00.001+01:00",
+        "blogger_updated": "2024-03-23T19:03:33.821+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-61995fbb3c4a951d29f5",
+        "trabajo_campo_inicio": "2024-03-18",
+        "trabajo_campo_fin": "2024-03-22",
+        "fecha_publicacion": "2024-03-23",
+        "resultados": {
+          "PP": 38.6,
+          "PSOE": 30.9,
+          "VOX": 9.6,
+          "SUMAR": 9.4
+        },
+        "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-40-encuestados-votaria-proximas-elecciones-que-ganarian_2024032365feebc417c56e0001cd8f52.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-7387913357749955021",
+    "title": "[G] ESPAÑA · Encuesta CIS 18/03/2026: PSOE 31,8% · PP 23,3% · VOX 16,6% · SUMAR 7,1% · PODEMOS 2,9% · SALF 2,1%",
+    "url": "https://www.electografica.com/2026/03/encuesta-cis-260318.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-7438389141763868784",
+    "title": "[G] ESPAÑA · Encuesta CIS 20/06/2024: PSOE 31,7% · PP 30,7% · VOX 12,1% · SUMAR 8,8% · PODEMOS 3,6% · SALF 1,5%",
+    "url": "https://www.electografica.com/2024/06/encuesta-cis-240620.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-7705392542059754401",
+    "title": "[G] ESPAÑA · Encuesta CIS 17/03/2025: PSOE 34,5% · PP 29,2% · VOX 11,7% · SUMAR 7,6% · PODEMOS 3,8% · SALF 1,9%",
+    "url": "https://www.electografica.com/2025/03/encuesta-cis-250317.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-7723536228415109352",
+    "title": "[G] ESPAÑA · Encuesta CIS 21/10/2024: PSOE 34,0% · PP 31,5% · VOX 11,8% · SUMAR 6,3% · PODEMOS 3,3% · SALF 1,7%",
+    "url": "https://www.electografica.com/2024/10/encuesta-cis-241021.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-7732728546410864756",
+    "title": "[GEN] ESPAÑA · Encuesta Sondaxe 23/07/2023: SUMAR 32/36 | PSOE 111/117 | PP 138/146 | VOX 27/31",
+    "url": "https://www.electografica.com/2023/07/encuesta-sondaxe-230723.html",
+    "reason": "Campo incompleto: no se imputa",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-7785863397341105807",
+    "title": "[G] ESPAÑA · Encuesta SocioMétrica 22/07/2024: PP 34,4% (150) · PSOE 29,3% (121) · VOX 11,2% (27) · SUMAR 7,4% (11) · SALF 4,1% (3) · PODEMOS 3,7% (9)",
+    "url": "https://www.electografica.com/2024/07/encuesta-sociometrica-240722.html",
+    "extracted": {
+      "instituto": "SocioMétrica",
+      "estudio_id": "electografica-a6dd633ca12fef914b3b",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2024-07-22",
+      "trabajo_campo_inicio": "2024-07-18",
+      "trabajo_campo_fin": "2024-07-20",
+      "fecha_fin_campo": "2024-07-20",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1200,
+      "resultados": {
+        "PP": 34.4,
+        "PSOE": 29.3,
+        "VOX": 11.2,
+        "SUMAR": 7.4,
+        "SALF": 4.1,
+        "PODEMOS": 3.7,
+        "JUNTS": 1.7,
+        "EH_BILDU": 1.5,
+        "ERC": 1.4,
+        "PNV": 1.2,
+        "BNG": 0.8,
+        "CC": 0.5,
+        "UPN": 0.2
+      },
+      "fuente": "https://www.elespanol.com/espana/politica/20240722/pp-ganaria-doble-no-podria-gobernar-sin-apoyo-vox-abstencion-psoe/872162945_0.html",
+      "medio": "El PP ganaría por el doble que el 23-J pero no podría gobernar sin apoyo de Vox o la abstención del PSOE (El Español)",
+      "url_electografica": "https://www.electografica.com/2024/07/encuesta-sociometrica-240722.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-7785863397341105807",
+        "content_sha256": "513ce2a7225a69cbc2f5c58b4ab37f67a181e0397d2640e4879a8260e6807c4a",
+        "blogger_published": "2024-07-22T12:13:00.005+02:00",
+        "blogger_updated": "2024-07-22T20:16:16.953+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-c9132cf201521758ece4",
+    "candidate": {
+      "instituto": "SocioMétrica",
+      "estudio_id": "electografica-a6dd633ca12fef914b3b",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2024-07-22",
+      "trabajo_campo_inicio": "2024-07-18",
+      "trabajo_campo_fin": "2024-07-20",
+      "fecha_fin_campo": "2024-07-20",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1200,
+      "resultados": {
+        "PP": 34.4,
+        "PSOE": 29.3,
+        "VOX": 11.2,
+        "SUMAR": 7.4,
+        "SALF": 4.1,
+        "PODEMOS": 3.7,
+        "JUNTS": 1.7,
+        "EH_BILDU": 1.5,
+        "ERC": 1.4,
+        "PNV": 1.2,
+        "BNG": 0.8,
+        "CC": 0.5,
+        "UPN": 0.2
+      },
+      "fuente": "https://www.elespanol.com/espana/politica/20240722/pp-ganaria-doble-no-podria-gobernar-sin-apoyo-vox-abstencion-psoe/872162945_0.html",
+      "medio": "El PP ganaría por el doble que el 23-J pero no podría gobernar sin apoyo de Vox o la abstención del PSOE (El Español)",
+      "url_electografica": "https://www.electografica.com/2024/07/encuesta-sociometrica-240722.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-7785863397341105807",
+        "content_sha256": "513ce2a7225a69cbc2f5c58b4ab37f67a181e0397d2640e4879a8260e6807c4a",
+        "blogger_published": "2024-07-22T12:13:00.005+02:00",
+        "blogger_updated": "2024-07-22T20:16:16.953+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-c9132cf201521758ece4",
+        "trabajo_campo_inicio": "2024-07-18",
+        "trabajo_campo_fin": "2024-07-20",
+        "fecha_publicacion": "2024-07-22",
+        "resultados": {
+          "PP": 34.4,
+          "PSOE": 29.3,
+          "VOX": 11.2,
+          "SUMAR": 7.4,
+          "ERC": 1.5,
+          "JUNTS": 1.7,
+          "EH_BILDU": 1.5,
+          "PNV": 1.2,
+          "BNG": 0.8,
+          "CC": 0.5,
+          "UPN": 0.2,
+          "PODEMOS": 3.7,
+          "SALF": 4.1
+        },
+        "fuente": "https://www.elespanol.com/espana/politica/20240722/pp-ganaria-doble-no-podria-gobernar-sin-apoyo-vox-abstencion-psoe/872162945_0.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-7960961640994910178",
+    "title": "ARAGÓN · Elecciones generales · Encuesta A+M 12/10/2026",
+    "url": "https://www.electografica.com/2026/10/aragon-generales-encuesta-am-261012.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-7998447091396966393",
+    "title": "[G] ESPAÑA · Encuesta CIS 12/12/2025: PSOE 31,4% · PP 22,4% · VOX 17,6% · SUMAR 7,8% · PODEMOS 4,1% · SALF 2,4%",
+    "url": "https://www.electografica.com/2025/12/encuesta-cis-251212.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-8067265007184138049",
+    "title": "ESPAÑA · Elecciones generales · Encuesta Mediaflows-UV/ODEC 09/07/2026",
+    "url": "https://www.electografica.com/2026/07/encuesta-mediaflows-uv-odec-260709.html",
+    "reason": "Campo incompleto: no se imputa",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-8106561172545040832",
+    "title": "[G] ESPAÑA · Encuesta Celeste-Tel 19/09/2025: PP 34,9% (153) · PSOE 26,1% (105) · VOX 15,2% (48) · SUMAR 5,6% (8) · PODEMOS 4,7% (4) · SALF 1,7%",
+    "url": "https://www.electografica.com/2025/09/encuesta-celeste-tel-250919.html",
+    "extracted": {
+      "instituto": "Celeste-Tel",
+      "estudio_id": "electografica-00fc113f22511b0eba3e",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-09-19",
+      "trabajo_campo_inicio": "2025-09-08",
+      "trabajo_campo_fin": "2025-09-12",
+      "fecha_fin_campo": "2025-09-12",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1100,
+      "resultados": {
+        "PP": 34.9,
+        "PSOE": 26.1,
+        "VOX": 15.2,
+        "SUMAR": 5.6,
+        "PODEMOS": 4.7,
+        "ERC": 1.7,
+        "SALF": 1.7,
+        "JUNTS": 1.6,
+        "EH_BILDU": 1.4,
+        "PNV": 1.2,
+        "PACMA": 1.2,
+        "BNG": 0.8,
+        "CC": 0.5,
+        "UPN": 0.2
+      },
+      "fuente": "https://www.celeste-tel.es/wp-content/uploads/2025/09/Bar%C3%B3metro-Electoral-MensualSEP2025.pdf",
+      "medio": "Estudio electoral de expectiva de voto al Congreso de los Diputados. Ámbito nacional. 15 de septiembre de 2025 (Celeste-Tel) 📄PDF",
+      "url_electografica": "https://www.electografica.com/2025/09/encuesta-celeste-tel-250919.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8106561172545040832",
+        "content_sha256": "4feb8d9bb5deed564da13a46fca8e5008346d995a0921e8f164aeb82c119cb9e",
+        "blogger_published": "2025-09-19T23:59:00.005+02:00",
+        "blogger_updated": "2025-09-20T23:08:03.783+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-799f363770b708ba8fb2",
+    "candidate": {
+      "instituto": "Celeste-Tel",
+      "estudio_id": "electografica-00fc113f22511b0eba3e",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-09-19",
+      "trabajo_campo_inicio": "2025-09-08",
+      "trabajo_campo_fin": "2025-09-12",
+      "fecha_fin_campo": "2025-09-12",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1100,
+      "resultados": {
+        "PP": 34.9,
+        "PSOE": 26.1,
+        "VOX": 15.2,
+        "SUMAR": 5.6,
+        "PODEMOS": 4.7,
+        "ERC": 1.7,
+        "SALF": 1.7,
+        "JUNTS": 1.6,
+        "EH_BILDU": 1.4,
+        "PNV": 1.2,
+        "PACMA": 1.2,
+        "BNG": 0.8,
+        "CC": 0.5,
+        "UPN": 0.2
+      },
+      "fuente": "https://www.celeste-tel.es/wp-content/uploads/2025/09/Bar%C3%B3metro-Electoral-MensualSEP2025.pdf",
+      "medio": "Estudio electoral de expectiva de voto al Congreso de los Diputados. Ámbito nacional. 15 de septiembre de 2025 (Celeste-Tel) 📄PDF",
+      "url_electografica": "https://www.electografica.com/2025/09/encuesta-celeste-tel-250919.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8106561172545040832",
+        "content_sha256": "4feb8d9bb5deed564da13a46fca8e5008346d995a0921e8f164aeb82c119cb9e",
+        "blogger_published": "2025-09-19T23:59:00.005+02:00",
+        "blogger_updated": "2025-09-20T23:08:03.783+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-799f363770b708ba8fb2",
+        "trabajo_campo_inicio": "2025-09-08",
+        "trabajo_campo_fin": "2025-09-12",
+        "fecha_publicacion": "2025-09-19",
+        "resultados": {
+          "PP": 34.9,
+          "PSOE": 26.1,
+          "VOX": 15.2,
+          "SUMAR": 6.9,
+          "ERC": 1.7,
+          "JUNTS": 1.6,
+          "EH_BILDU": 1.4,
+          "PNV": 1.2,
+          "BNG": 0.8,
+          "CC": 0.5,
+          "UPN": 0.2,
+          "PODEMOS": 4.7,
+          "SALF": 1.7
+        },
+        "fuente": "https://www.ondacero.es/noticias/espana/solitario-obtendria-cinco-diputados-mas-que-todo-bloque-investidura_2025091968cd4722394a8138738f7855.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-8131250155157451608",
+    "title": "ESPAÑA · Elecciones generales · Encuesta SocioMétrica 12/10/2026",
+    "url": "https://www.electografica.com/2026/10/encuesta-sociometrica-261012.html",
+    "extracted": {
+      "instituto": "SocioMétrica",
+      "estudio_id": "electografica-b8c35fe8aa53f99328b7",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-10-12",
+      "trabajo_campo_inicio": "2026-10-10",
+      "trabajo_campo_fin": "2026-10-11",
+      "fecha_fin_campo": "2026-10-11",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1000,
+      "resultados": {
+        "PP": 32.6,
+        "PSOE": 26.2,
+        "VOX": 18.8,
+        "SUMAR": 4.9,
+        "PODEMOS": 2.8,
+        "SALF": 2.1,
+        "ERC": 2,
+        "JUNTS": 1.5,
+        "EH_BILDU": 1.3,
+        "BNG": 0.9,
+        "PNV": 0.8,
+        "ADELANTE_ANDALUCIA": 0.9,
+        "CC": 0.5,
+        "UPN": 0.2
+      },
+      "fuente": "https://www.elespanol.com/espana/politica/20261011/sanchez-no-funciona-apropiarse-maricarmen-huelga-oposicion-cae-sondeo-noche/1003744416762_0.html",
+      "medio": "El Español",
+      "url_electografica": "https://www.electografica.com/2026/10/encuesta-sociometrica-261012.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8131250155157451608",
+        "content_sha256": "e880ad9bc291f1fa57b471396a5469a84adbd64248b2a433c1f6b6b72030f799",
+        "blogger_published": "2026-10-12T10:28:31.968+02:00",
+        "blogger_updated": "2026-10-23T20:34:11.615+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-3b1af5f24e20659dbfe4",
+    "candidate": {
+      "instituto": "SocioMétrica",
+      "estudio_id": "electografica-b8c35fe8aa53f99328b7",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-10-12",
+      "trabajo_campo_inicio": "2026-10-10",
+      "trabajo_campo_fin": "2026-10-11",
+      "fecha_fin_campo": "2026-10-11",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1000,
+      "resultados": {
+        "PP": 32.6,
+        "PSOE": 26.2,
+        "VOX": 18.8,
+        "SUMAR": 4.9,
+        "PODEMOS": 2.8,
+        "SALF": 2.1,
+        "ERC": 2,
+        "JUNTS": 1.5,
+        "EH_BILDU": 1.3,
+        "BNG": 0.9,
+        "PNV": 0.8,
+        "ADELANTE_ANDALUCIA": 0.9,
+        "CC": 0.5,
+        "UPN": 0.2
+      },
+      "fuente": "https://www.elespanol.com/espana/politica/20261011/sanchez-no-funciona-apropiarse-maricarmen-huelga-oposicion-cae-sondeo-noche/1003744416762_0.html",
+      "medio": "El Español",
+      "url_electografica": "https://www.electografica.com/2026/10/encuesta-sociometrica-261012.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8131250155157451608",
+        "content_sha256": "e880ad9bc291f1fa57b471396a5469a84adbd64248b2a433c1f6b6b72030f799",
+        "blogger_published": "2026-10-12T10:28:31.968+02:00",
+        "blogger_updated": "2026-10-23T20:34:11.615+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-3b1af5f24e20659dbfe4",
+        "trabajo_campo_inicio": "2026-10-10",
+        "trabajo_campo_fin": "2026-10-11",
+        "fecha_publicacion": "2026-10-11",
+        "resultados": {
+          "PP": 32.6,
+          "PSOE": 26.2,
+          "VOX": 18.8,
+          "SUMAR": 5.8,
+          "ERC": 2,
+          "JUNTS": 1.5,
+          "EH_BILDU": 1.3,
+          "PNV": 0.8,
+          "BNG": 0.9,
+          "CC": 0.5,
+          "UPN": 0.2,
+          "ADELANTE_ANDALUCIA": 0.9,
+          "PODEMOS": 2.8,
+          "SALF": 2.1
+        },
+        "fuente": "https://www.elespanol.com/espana/politica/20261011/sanchez-no-funciona-apropiarse-maricarmen-huelga-oposicion-cae-sondeo-noche/1003744416762_0.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-8240416508287192243",
+    "title": "CATALUÑA · Elecciones generales · Encuesta CEO 09/07/2026",
+    "url": "https://www.electografica.com/2026/07/cataluna-generales-encuesta-ceo-260709.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-8505372995116089576",
+    "title": "[G] ESPAÑA · Encuesta InvyMark 05/07/2025: PP 36,2% · PSOE 29,2% · VOX 14,2% · SUMAR 5,2% · PODEMOS 4,1% · SALF 1,9%",
+    "url": "https://www.electografica.com/2025/07/encuesta-invymark-250705.html",
+    "extracted": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-327b51d60a53041d52f1",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-07-05",
+      "trabajo_campo_inicio": "2025-06-30",
+      "trabajo_campo_fin": "2025-06-30",
+      "fecha_fin_campo": "2025-06-30",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 36.2,
+        "PSOE": 29.2,
+        "VOX": 14.2,
+        "SUMAR": 5.2,
+        "PODEMOS": 4.1,
+        "SALF": 1.9
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-49-cree-que-sanchez-tendria-que-dimitir-convocar-elecciones_20250705686930f829f2a108e97f12a5.html",
+      "medio": "Barómetro de laSexta: el 49% cree que Sánchez tendría que dimitir y convocar elecciones (laSexta)",
+      "url_electografica": "https://www.electografica.com/2025/07/encuesta-invymark-250705.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8505372995116089576",
+        "content_sha256": "792506799758f6626334f6c071266f37240981babc8bdb93e81e8044aacae8d1",
+        "blogger_published": "2025-07-05T16:10:00.001+02:00",
+        "blogger_updated": "2025-07-05T16:11:35.63+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-1a05346f79ac9b14123e",
+    "candidate": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-327b51d60a53041d52f1",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-07-05",
+      "trabajo_campo_inicio": "2025-06-30",
+      "trabajo_campo_fin": "2025-06-30",
+      "fecha_fin_campo": "2025-06-30",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 36.2,
+        "PSOE": 29.2,
+        "VOX": 14.2,
+        "SUMAR": 5.2,
+        "PODEMOS": 4.1,
+        "SALF": 1.9
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-49-cree-que-sanchez-tendria-que-dimitir-convocar-elecciones_20250705686930f829f2a108e97f12a5.html",
+      "medio": "Barómetro de laSexta: el 49% cree que Sánchez tendría que dimitir y convocar elecciones (laSexta)",
+      "url_electografica": "https://www.electografica.com/2025/07/encuesta-invymark-250705.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8505372995116089576",
+        "content_sha256": "792506799758f6626334f6c071266f37240981babc8bdb93e81e8044aacae8d1",
+        "blogger_published": "2025-07-05T16:10:00.001+02:00",
+        "blogger_updated": "2025-07-05T16:11:35.63+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-1a05346f79ac9b14123e",
+        "trabajo_campo_inicio": "2025-06-30",
+        "trabajo_campo_fin": "2025-07-04",
+        "fecha_publicacion": "2025-07-05",
+        "resultados": {
+          "PP": 36.2,
+          "PSOE": 29.2,
+          "VOX": 14.2,
+          "SUMAR": 5.2,
+          "PODEMOS": 4.1,
+          "SALF": 1.9
+        },
+        "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-49-cree-que-sanchez-tendria-que-dimitir-convocar-elecciones_20250705686930f829f2a108e97f12a5.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-8534272348588325323",
+    "title": "[G] ESPAÑA · Encuesta CIS 20/04/2026: PSOE 36,4% · PP 23,6% · VOX 14,7% · SUMAR 5,8% · PODEMOS 2,2% · SALF 1,7%",
+    "url": "https://www.electografica.com/2026/04/encuesta-cis-260420.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-8640487038937145162",
+    "title": "[G] ESPAÑA · Encuesta 40dB. 11/03/2024: PP 35,2% · PSOE 30,7% · SUMAR 11,1% · VOX 10,6%",
+    "url": "https://www.electografica.com/2024/03/encuesta-40db-240311.html",
+    "extracted": {
+      "instituto": "40dB",
+      "estudio_id": "electografica-5a717fb4c42cd9ae7e3c",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2024-03-11",
+      "trabajo_campo_inicio": "2024-03-01",
+      "trabajo_campo_fin": "2024-03-03",
+      "fecha_fin_campo": "2024-03-03",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 2000,
+      "resultados": {
+        "PP": 35.2,
+        "PSOE": 30.7,
+        "SUMAR": 11.1,
+        "VOX": 10.6
+      },
+      "fuente": "https://ep00.epimg.net/infografias/encuestas40db/2024/03-barometro/05_Informe_marzo_2024_voto.pdf",
+      "medio": "Barómetro mensual. Marzo 2024 (El País) [📄 PDF]",
+      "url_electografica": "https://www.electografica.com/2024/03/encuesta-40db-240311.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8640487038937145162",
+        "content_sha256": "918b0f25268a69246831ddb276d87459355194acf5e23f9d10e04e3fcc729b87",
+        "blogger_published": "2024-03-11T06:56:00+01:00",
+        "blogger_updated": "2024-03-11T06:56:38.885+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-d08fddca6a465bf712e2",
+    "candidate": {
+      "instituto": "40dB",
+      "estudio_id": "electografica-5a717fb4c42cd9ae7e3c",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2024-03-11",
+      "trabajo_campo_inicio": "2024-03-01",
+      "trabajo_campo_fin": "2024-03-03",
+      "fecha_fin_campo": "2024-03-03",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 2000,
+      "resultados": {
+        "PP": 35.2,
+        "PSOE": 30.7,
+        "SUMAR": 11.1,
+        "VOX": 10.6
+      },
+      "fuente": "https://ep00.epimg.net/infografias/encuestas40db/2024/03-barometro/05_Informe_marzo_2024_voto.pdf",
+      "medio": "Barómetro mensual. Marzo 2024 (El País) [📄 PDF]",
+      "url_electografica": "https://www.electografica.com/2024/03/encuesta-40db-240311.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8640487038937145162",
+        "content_sha256": "918b0f25268a69246831ddb276d87459355194acf5e23f9d10e04e3fcc729b87",
+        "blogger_published": "2024-03-11T06:56:00+01:00",
+        "blogger_updated": "2024-03-11T06:56:38.885+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-d08fddca6a465bf712e2",
+        "trabajo_campo_inicio": "2024-03-01",
+        "trabajo_campo_fin": "2024-03-03",
+        "fecha_publicacion": "2024-03-11",
+        "resultados": {
+          "PP": 35.2,
+          "PSOE": 30.7,
+          "VOX": 10.6,
+          "SUMAR": 11.7
+        },
+        "fuente": "https://elpais.com/espana/2024-03-11/el-pp-crece-a-costa-de-vox-frente-a-una-izquierda-estabilizada.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-8748342415948593036",
+    "title": "PAÍS VASCO · Elecciones generales · Encuesta Ikerfel/G. Vasco 30/10/2026",
+    "url": "https://www.electografica.com/2026/10/pais-vasco-generales-encuesta-ikerfel-261030.html",
+    "reason": "Ámbito regional",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-8910492193429292325",
+    "title": "[G] ESPAÑA · Encuesta Celeste-Tel 17/07/2025: PP 35,5% (158) · PSOE 25,6% (104) · VOX 14,3% (44) · SUMAR 5,5% (7) · PODEMOS 5,4% (5) · SALF 1,9%",
+    "url": "https://www.electografica.com/2025/07/encuesta-celeste-tel-250717.html",
+    "extracted": {
+      "instituto": "Celeste-Tel",
+      "estudio_id": "electografica-c39a85ad402014ec475c",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-07-17",
+      "trabajo_campo_inicio": "2025-07-10",
+      "trabajo_campo_fin": "2025-07-14",
+      "fecha_fin_campo": "2025-07-14",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1100,
+      "resultados": {
+        "PP": 35.5,
+        "PSOE": 25.6,
+        "VOX": 14.3,
+        "SUMAR": 5.5,
+        "PODEMOS": 5.4,
+        "SALF": 1.9,
+        "ERC": 1.8,
+        "JUNTS": 1.6,
+        "EH_BILDU": 1.4,
+        "PNV": 1.2,
+        "PACMA": 1.2,
+        "BNG": 0.8,
+        "CC": 0.5,
+        "UPN": 0.2
+      },
+      "fuente": "https://www.celeste-tel.es/wp-content/uploads/2025/07/Bar%C3%B3metro-Nacional-Julio-2025.pdf",
+      "medio": "Estudio electoral de expectiva de voto al Congreso de los Diputados. Ámbito nacional. 15 de julio de 2025 (Celeste-Tel) 📄PDF",
+      "url_electografica": "https://www.electografica.com/2025/07/encuesta-celeste-tel-250717.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8910492193429292325",
+        "content_sha256": "c4bd43ec4c900446614372b868f431910ad630a5aaa3f8f0fedfa7f5144cac65",
+        "blogger_published": "2025-07-17T12:00:00.005+02:00",
+        "blogger_updated": "2025-09-06T22:11:54.288+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-e2bfdd1dc272d1480539",
+    "candidate": {
+      "instituto": "Celeste-Tel",
+      "estudio_id": "electografica-c39a85ad402014ec475c",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-07-17",
+      "trabajo_campo_inicio": "2025-07-10",
+      "trabajo_campo_fin": "2025-07-14",
+      "fecha_fin_campo": "2025-07-14",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1100,
+      "resultados": {
+        "PP": 35.5,
+        "PSOE": 25.6,
+        "VOX": 14.3,
+        "SUMAR": 5.5,
+        "PODEMOS": 5.4,
+        "SALF": 1.9,
+        "ERC": 1.8,
+        "JUNTS": 1.6,
+        "EH_BILDU": 1.4,
+        "PNV": 1.2,
+        "PACMA": 1.2,
+        "BNG": 0.8,
+        "CC": 0.5,
+        "UPN": 0.2
+      },
+      "fuente": "https://www.celeste-tel.es/wp-content/uploads/2025/07/Bar%C3%B3metro-Nacional-Julio-2025.pdf",
+      "medio": "Estudio electoral de expectiva de voto al Congreso de los Diputados. Ámbito nacional. 15 de julio de 2025 (Celeste-Tel) 📄PDF",
+      "url_electografica": "https://www.electografica.com/2025/07/encuesta-celeste-tel-250717.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8910492193429292325",
+        "content_sha256": "c4bd43ec4c900446614372b868f431910ad630a5aaa3f8f0fedfa7f5144cac65",
+        "blogger_published": "2025-07-17T12:00:00.005+02:00",
+        "blogger_updated": "2025-09-06T22:11:54.288+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-e2bfdd1dc272d1480539",
+        "trabajo_campo_inicio": "2025-07-10",
+        "trabajo_campo_fin": "2025-07-14",
+        "fecha_publicacion": "2025-07-17",
+        "resultados": {
+          "PP": 35.5,
+          "PSOE": 25.6,
+          "VOX": 14.3,
+          "SUMAR": 6.9,
+          "ERC": 1.8,
+          "JUNTS": 1.6,
+          "EH_BILDU": 1.4,
+          "PNV": 1.2,
+          "BNG": 0.8,
+          "CC": 0.5,
+          "UPN": 0.2,
+          "PODEMOS": 5.4,
+          "SALF": 1.9
+        },
+        "fuente": "https://www.ondacero.es/noticias/espana/encuesta-celeste-tel-sumaria-mas-que-toda-izquierda-nacionalistas-juntos_202507176878c47a6e1ec26d31316e50.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-8920257773766024778",
+    "title": "ESPAÑA · Elecciones generales · Encuesta Celeste-Tel 24/09/2026",
+    "url": "https://www.electografica.com/2026/09/encuesta-celeste-tel-260924.html",
+    "extracted": {
+      "instituto": "Celeste-Tel",
+      "estudio_id": "electografica-5fd9d07bec589ca093da",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-09-24",
+      "trabajo_campo_inicio": "2026-09-16",
+      "trabajo_campo_fin": "2026-09-21",
+      "fecha_fin_campo": "2026-09-21",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1100,
+      "resultados": {
+        "PP": 33.9,
+        "PSOE": 25.4,
+        "VOX": 17.8,
+        "SUMAR": 5.1,
+        "PODEMOS": 3.3,
+        "ERC": 2,
+        "SALF": 1.7,
+        "JUNTS": 1.5,
+        "EH_BILDU": 1.4,
+        "PNV": 1.1,
+        "BNG": 0.8,
+        "CC": 0.5,
+        "UPN": 0.2
+      },
+      "fuente": "https://www.celeste-tel.es/wp-content/uploads/2026/09/Bar%C3%B3metro-Electoral-MensualSEP2026.pdf",
+      "medio": "Celeste-Tel",
+      "url_electografica": "https://www.electografica.com/2026/09/encuesta-celeste-tel-260924.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8920257773766024778",
+        "content_sha256": "91db135500453f1b023ead4c4e0abbdd49758990fd3e8b16dcd5ed3a93acfb05",
+        "blogger_published": "2026-09-24T23:48:44.634+02:00",
+        "blogger_updated": "2026-10-23T20:37:18.574+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-208256cce068fbf0f4b5",
+    "candidate": {
+      "instituto": "Celeste-Tel",
+      "estudio_id": "electografica-5fd9d07bec589ca093da",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-09-24",
+      "trabajo_campo_inicio": "2026-09-16",
+      "trabajo_campo_fin": "2026-09-21",
+      "fecha_fin_campo": "2026-09-21",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1100,
+      "resultados": {
+        "PP": 33.9,
+        "PSOE": 25.4,
+        "VOX": 17.8,
+        "SUMAR": 5.1,
+        "PODEMOS": 3.3,
+        "ERC": 2,
+        "SALF": 1.7,
+        "JUNTS": 1.5,
+        "EH_BILDU": 1.4,
+        "PNV": 1.1,
+        "BNG": 0.8,
+        "CC": 0.5,
+        "UPN": 0.2
+      },
+      "fuente": "https://www.celeste-tel.es/wp-content/uploads/2026/09/Bar%C3%B3metro-Electoral-MensualSEP2026.pdf",
+      "medio": "Celeste-Tel",
+      "url_electografica": "https://www.electografica.com/2026/09/encuesta-celeste-tel-260924.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8920257773766024778",
+        "content_sha256": "91db135500453f1b023ead4c4e0abbdd49758990fd3e8b16dcd5ed3a93acfb05",
+        "blogger_published": "2026-09-24T23:48:44.634+02:00",
+        "blogger_updated": "2026-10-23T20:37:18.574+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-208256cce068fbf0f4b5",
+        "trabajo_campo_inicio": "2026-09-16",
+        "trabajo_campo_fin": "2026-09-21",
+        "fecha_publicacion": "2026-09-25",
+        "resultados": {
+          "PP": 33.9,
+          "PSOE": 25.4,
+          "VOX": 17.8,
+          "SUMAR": 6.4,
+          "ERC": 2,
+          "JUNTS": 1.5,
+          "EH_BILDU": 1.4,
+          "PNV": 1.1,
+          "BNG": 0.8,
+          "CC": 0.5,
+          "UPN": 0.2,
+          "PODEMOS": 3.3,
+          "SALF": 1.7
+        },
+        "fuente": "https://www.ondacero.es/noticias/espana/gestion-crisis-ceuta-casos-corrupcion-siguen-desgastando-gobierno-sanchez_202609246ab530d7a520494aafd5d597.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-8971971402990319962",
+    "title": "[G] ESPAÑA · Encuesta InvyMark 08/12/2025: PP 33,2% · PSOE 27,6% · VOX 18,5% · SUMAR 5,0% · PODEMOS 3,8% · SALF 1,4%",
+    "url": "https://www.electografica.com/2025/12/encuesta-invymark-251208.html",
+    "extracted": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-b21af41e3e9ddd904dac",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-12-08",
+      "trabajo_campo_inicio": "2025-12-01",
+      "trabajo_campo_fin": "2025-12-01",
+      "fecha_fin_campo": "2025-12-01",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 33.2,
+        "PSOE": 27.6,
+        "VOX": 18.5,
+        "SUMAR": 5,
+        "PODEMOS": 3.8,
+        "ERC": 1.7,
+        "JUNTS": 1.4,
+        "EH_BILDU": 1.4,
+        "SALF": 1.4,
+        "PNV": 1.1
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-brecha-psoe-amplia-socialistas-desploman-punto-dos-semanas-terremoto-koldo-fallo-fiscal_202512086936cc8e55584d48fb6e8ecb.html",
+      "medio": "Barómetro laSexta | La brecha entre PP y PSOE se amplía: los socialistas se desploman un punto en dos semanas por el terremoto Koldo y el fallo contra el fiscal (laSexta)",
+      "url_electografica": "https://www.electografica.com/2025/12/encuesta-invymark-251208.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8971971402990319962",
+        "content_sha256": "997c3ce7ca554cc07b3193e406618d5c5e80021fd24f73b5f9d391c9951b9c95",
+        "blogger_published": "2025-12-08T14:53:00.004+01:00",
+        "blogger_updated": "2025-12-22T22:09:36.91+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-286d978466673578f3e2",
+    "candidate": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-b21af41e3e9ddd904dac",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-12-08",
+      "trabajo_campo_inicio": "2025-12-01",
+      "trabajo_campo_fin": "2025-12-01",
+      "fecha_fin_campo": "2025-12-01",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 33.2,
+        "PSOE": 27.6,
+        "VOX": 18.5,
+        "SUMAR": 5,
+        "PODEMOS": 3.8,
+        "ERC": 1.7,
+        "JUNTS": 1.4,
+        "EH_BILDU": 1.4,
+        "SALF": 1.4,
+        "PNV": 1.1
+      },
+      "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-brecha-psoe-amplia-socialistas-desploman-punto-dos-semanas-terremoto-koldo-fallo-fiscal_202512086936cc8e55584d48fb6e8ecb.html",
+      "medio": "Barómetro laSexta | La brecha entre PP y PSOE se amplía: los socialistas se desploman un punto en dos semanas por el terremoto Koldo y el fallo contra el fiscal (laSexta)",
+      "url_electografica": "https://www.electografica.com/2025/12/encuesta-invymark-251208.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8971971402990319962",
+        "content_sha256": "997c3ce7ca554cc07b3193e406618d5c5e80021fd24f73b5f9d391c9951b9c95",
+        "blogger_published": "2025-12-08T14:53:00.004+01:00",
+        "blogger_updated": "2025-12-22T22:09:36.91+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-286d978466673578f3e2",
+        "trabajo_campo_inicio": "2025-12-01",
+        "trabajo_campo_fin": "2025-12-05",
+        "fecha_publicacion": "2025-12-08",
+        "resultados": {
+          "PP": 33.2,
+          "PSOE": 27.6,
+          "VOX": 18.5,
+          "SUMAR": 5,
+          "ERC": 1.7,
+          "JUNTS": 1.4,
+          "EH_BILDU": 1.4,
+          "PNV": 1.1,
+          "PODEMOS": 3.8,
+          "SALF": 1.4
+        },
+        "fuente": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-brecha-psoe-amplia-socialistas-desploman-punto-dos-semanas-terremoto-koldo-fallo-fiscal_202512086936cc8e55584d48fb6e8ecb.html"
+      }
+    ]
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-9177935015666506210",
+    "title": "[G] ESPAÑA · Encuesta CIS 18/11/2024: PSOE 34,2% · PP 29,3% · VOX 11,8% · SUMAR 7,0% · PODEMOS 3,4% · SALF 2,0%",
+    "url": "https://www.electografica.com/2024/11/encuesta-cis-241118.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-9188439225698402127",
+    "title": "[G] ESPAÑA · Encuesta CIS 12/07/2024: PSOE 32,9% · PP 30,2% · VOX 12,2% · SUMAR 6,6% · PODEMOS 4,0% · SALF 2,7%",
+    "url": "https://www.electografica.com/2024/07/encuesta-cis-240712.html",
+    "reason": "CIS/modelo: se conserva canal CIS existente",
+    "matches": []
+  },
+  {
+    "id": "tag:blogger.com,1999:blog-1143014762904556765.post-949910780637220329",
+    "title": "ESPAÑA · Elecciones generales · Encuesta InvyMark 09/10/2026",
+    "url": "https://www.electografica.com/2026/10/encuesta-invymark-261009.html",
+    "extracted": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-a6b848e56fc81c3e2cdc",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-10-09",
+      "trabajo_campo_inicio": "2026-10-05",
+      "trabajo_campo_fin": "2026-10-05",
+      "fecha_fin_campo": "2026-10-05",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 32.8,
+        "PSOE": 28,
+        "VOX": 18.8,
+        "SUMAR": 6.3,
+        "PODEMOS": 3.2,
+        "ERC": 1.9,
+        "SALF": 1.8,
+        "EH_BILDU": 1.5,
+        "JUNTS": 1.2,
+        "PNV": 1.1,
+        "BNG": 0,
+        "ADELANTE_ANDALUCIA": 0,
+        "CC": 0,
+        "UPN": 0
+      },
+      "fuente": "https://www.lasexta.com/elecciones/generales/barometro-lasexta-protestas-vivienda-impactan-encuestas-que-hunden-bloque-izquierda-disparan-vox_202610096ac8ae9bb79b18452fc08907.html",
+      "medio": "laSexta",
+      "url_electografica": "https://www.electografica.com/2026/10/encuesta-invymark-261009.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-949910780637220329",
+        "content_sha256": "59c94bc111044e3b2d7f47795ed357832204d78329f102cf78624eeb9d9b7869",
+        "blogger_published": "2026-10-09T13:39:32.061+02:00",
+        "blogger_updated": "2026-10-23T20:35:07.461+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "reason": "Conflicto con registro existente: wiki-7c6887b69bc93d2930c3",
+    "candidate": {
+      "instituto": "InvyMark",
+      "estudio_id": "electografica-a6b848e56fc81c3e2cdc",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-10-09",
+      "trabajo_campo_inicio": "2026-10-05",
+      "trabajo_campo_fin": "2026-10-05",
+      "fecha_fin_campo": "2026-10-05",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": null,
+      "resultados": {
+        "PP": 32.8,
+        "PSOE": 28,
+        "VOX": 18.8,
+        "SUMAR": 6.3,
+        "PODEMOS": 3.2,
+        "ERC": 1.9,
+        "SALF": 1.8,
+        "EH_BILDU": 1.5,
+        "JUNTS": 1.2,
+        "PNV": 1.1,
+        "BNG": 0,
+        "ADELANTE_ANDALUCIA": 0,
+        "CC": 0,
+        "UPN": 0
+      },
+      "fuente": "https://www.lasexta.com/elecciones/generales/barometro-lasexta-protestas-vivienda-impactan-encuestas-que-hunden-bloque-izquierda-disparan-vox_202610096ac8ae9bb79b18452fc08907.html",
+      "medio": "laSexta",
+      "url_electografica": "https://www.electografica.com/2026/10/encuesta-invymark-261009.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-949910780637220329",
+        "content_sha256": "59c94bc111044e3b2d7f47795ed357832204d78329f102cf78624eeb9d9b7869",
+        "blogger_published": "2026-10-09T13:39:32.061+02:00",
+        "blogger_updated": "2026-10-23T20:35:07.461+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "matches": [
+      {
+        "estudio_id": "wiki-7c6887b69bc93d2930c3",
+        "trabajo_campo_inicio": "2026-10-05",
+        "trabajo_campo_fin": "2026-10-08",
+        "fecha_publicacion": "2026-10-09",
+        "resultados": {
+          "PP": 32.8,
+          "PSOE": 28,
+          "VOX": 18.8,
+          "SUMAR": 6.3,
+          "ERC": 1.9,
+          "JUNTS": 1.2,
+          "EH_BILDU": 1.5,
+          "PNV": 1.1,
+          "PODEMOS": 3.2,
+          "SALF": 1.8
+        },
+        "fuente": "https://www.lasexta.com/elecciones/generales/barometro-lasexta-protestas-vivienda-impactan-encuestas-que-hunden-bloque-izquierda-disparan-vox_202610096ac8ae9bb79b18452fc08907.html"
+      }
+    ]
+  }
+]

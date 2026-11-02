@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "encuestas": [
+    {
+      "instituto": "SocioMétrica",
+      "estudio_id": "wiki-d87e7607a2f453a3485c",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-12-08",
+      "trabajo_campo_inicio": "2025-12-05",
+      "trabajo_campo_fin": "2025-12-07",
+      "fecha_fin_campo": "2025-12-07",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1100,
+      "resultados": {"PP": 33.4, "PSOE": 26.2, "VOX": 17.4, "SUMAR": 7.5, "PODEMOS": 2.8},
+      "fuente": "https://www.elespanol.com/espana/politica/20251208/sanchez-vuelve-hundirse-escanos-feijoo-conserva-podria-gobernar-sin-vox-pese-crecimiento/1003744046660_0.html",
+      "publicacion_verificada": true,
+      "metodologia": {"tipo": "CAWI-Panel, cuotas; no probabilístico", "muestra_propia": true, "realiza": "SocioMétrica (Instituto de Estudios Sociales S.L.)", "encarga": "El Español"},
+      "verificacion": {"estado": "verificado-original", "fecha_revision": "2026-11-01", "escenario": "principal; sin Aliança Catalana", "independencia": "Recogida propia de SocioMétrica; no CIS reestimado. No acredita independencia estadística frente a otros paneles.", "resolucion": "Una sola oleada. Se recuperan exclusivamente cinco porcentajes explícitos del cuerpo del original y su ficha. No se incorpora la simulación alternativa con Aliança ni porcentajes restantes sin cotejo.", "uso": "Incorporación manual de hechos numéricos al staging local solicitada por el usuario; no implica licencia de reproducción masiva ni permiso de publicación del artículo."},
+      "evidencia_publica": [{"url": "https://www.elespanol.com/espana/politica/20251208/sanchez-vuelve-hundirse-escanos-feijoo-conserva-podria-gobernar-sin-vox-pese-crecimiento/1003744046660_0.html", "campo_verificado": true, "localizacion": "Texto: PP/PSOE al inicio; Sumar/Podemos en párrafos siguientes; Vox 59 escaños/17,4%; ficha técnica al final: 1.100 CAWI-Panel 5–7 diciembre, realizada por SocioMétrica.", "valores_verificados": ["PP", "PSOE", "VOX", "SUMAR", "PODEMOS"]}]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "asOf": "2026-11-02",
+  "method": "HTML primario descargado y texto estructurado; infografías originales leídas en navegador. Ningún valor histórico sobrescrito.",
+  "entries": [
+    {
+      "institute": "NC Report",
+      "publication": "2026-11-02",
+      "bloggerPublication": "2026-11-02T07:34:48.670+01:00",
+      "originalPublication": "2026-11-02T03:00:18+01:00",
+      "field": [
+        "2026-10-26",
+        "2026-10-29"
+      ],
+      "sample": 1000,
+      "sampleVerification": "Solo ficha Electográfica, no consta en el texto primario consultado",
+      "original": "https://www.larazon.es/espana/psoe-frena-efecto-remontada-derecha-consolida-mayoria-absoluta_202611026ae783220250123215703bb1.html",
+      "sha256": "958381c342cacbd42fd27c43bc05b9a9fe185c3b7e7dc0d3889027d4131bf05d",
+      "originalResults": {
+        "PP": 32.6,
+        "UPN": 0.4,
+        "PSOE": 25.6,
+        "VOX": 19.3,
+        "FA": 6.9,
+        "PODEMOS": 2.4,
+        "ERC": 2,
+        "JUNTS": 1.8,
+        "EH_BILDU": 1.4,
+        "PNV": 0.9,
+        "ADELANTE_ANDALUCIA": 1.2,
+        "BNG": 0.8,
+        "CC": 0.4
+      },
+      "electograficaResults": {
+        "PP": 33,
+        "UPN": 0,
+        "PSOE": 25.6,
+        "VOX": 19.3,
+        "FA": 6.9,
+        "PODEMOS": 2.4
+      },
+      "decision": "Diferencia de agrupación explícita: Electográfica rotula PP incl. UPN-PP. 32,6+0,4=33; 138/140+2=140/142 escaños. No confundir con PP solo. Fecha 30/10 en infografía es fecha del sondeo, no publicación de noticia."
+    },
+    {
+      "institute": "Target Point",
+      "publication": "2026-11-02",
+      "bloggerPublication": "2026-11-02T08:20:07.630+01:00",
+      "originalPublication": "2026-11-02T04:30:00+01:00",
+      "field": [
+        "2026-10-28",
+        "2026-10-30"
+      ],
+      "fieldDetail": "28 de octubre desde 18:00 hasta mañana de 30 de octubre",
+      "sample": 1024,
+      "original": "https://www.eldebate.com/espana/20261102/accidente-frena-psoe-amplia-apoyo-pp-mayoria-absolutisima-derecha_475640.html",
+      "sha256": "2e818f482e3a4f74a162a92b582019476937364371830c542ad9db84aedf5b6d",
+      "confirmedTextResults": {
+        "PP": 31.8,
+        "PSOE": 25.5,
+        "VOX": 19.9,
+        "FA": 6.6
+      },
+      "secondaryOnlyResults": {
+        "PODEMOS": 2.4,
+        "SALF": 2.6
+      },
+      "seatsConfirmed": {
+        "PP": "131/135",
+        "PSOE": "99/103",
+        "VOX": "68/72",
+        "FA": "9/11",
+        "PODEMOS": "1"
+      },
+      "decision": "Detectada y ya integrada. Principales valores, fechas y muestra concordantes. No se atribuye verificación primaria completa a PODEMOS/SALF; la infografía consultada solo muestra escaños."
+    },
+    {
+      "institute": "Target Point",
+      "publication": "2024-09-22",
+      "field": [
+        "2024-09-18",
+        "2024-09-19"
+      ],
+      "sample": 1001,
+      "original": "https://www.eldebate.com/espana/20240922/feijoo-sigue-creciendo-izquierda-pierde-25-puntos-casi-toda-opcion-gobernar_229220.html",
+      "sha256": "413dc90583d95c3b2ab38269df91310c5530212b7aefcbef69a4daab93df7493",
+      "decision": "Recuperada: enlace reutilizado en entrada de octubre causaba falso duplicado. Fecha, campo, muestra y Sumar/Podemos corroborados en texto original; resto de porcentajes atribuidos a Electográfica."
+    }
+  ]
+}

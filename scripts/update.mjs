@@ -11,9 +11,12 @@ const https = s => { const u = new URL(s); if(u.protocol !== 'https:' || u.usern
 export function validate(p, source, today) {
   const instituto = normalizeInstitute(p.instituto);
   if (typeof p.estudio_id !== 'string' || !p.estudio_id.trim() || p.tipo !== 'estimacion_voto' || p.ambito !== 'España') throw Error('Identidad, ámbito o tipo inválidos');
-  for (const k of ['fecha_publicacion','trabajo_campo_inicio','trabajo_campo_fin']) if (!day(p[k])) throw Error('Fecha inválida');
-  if (p.trabajo_campo_inicio > p.trabajo_campo_fin || p.trabajo_campo_fin > p.fecha_publicacion || p.fecha_publicacion > today || p.trabajo_campo_fin < '2023-07-23') throw Error('Orden temporal inválido');
-  if (!Number.isInteger(p.tamano_muestra) || p.tamano_muestra <= 0) throw Error('Muestra inválida');
+  const historical=source.allowHistoricalMetadata===true;
+  for (const k of ['trabajo_campo_inicio','trabajo_campo_fin']) if (!day(p[k])) throw Error('Fecha inválida');
+  if (!day(p.fecha_publicacion) && !(historical && p.fecha_publicacion===null && p.publicacion_verificada===true && p.evidencia_publica?.length)) throw Error('Fecha inválida');
+  if (p.trabajo_campo_inicio > p.trabajo_campo_fin || (p.fecha_publicacion && p.trabajo_campo_fin > p.fecha_publicacion) || p.fecha_publicacion > today || p.trabajo_campo_fin > today || p.trabajo_campo_fin < '2023-07-23') throw Error('Orden temporal inválido');
+  if ((!Number.isInteger(p.tamano_muestra) || p.tamano_muestra <= 0) && !(historical && p.tamano_muestra===null)) throw Error('Muestra inválida');
+  if(historical && (p.fecha_fin_campo!==p.trabajo_campo_fin || p.tipo_fecha!==(p.fecha_publicacion?'publicacion':'fin_campo'))) throw Error('Metadatos históricos inconsistentes');
   if (!p.resultados || !Object.keys(p.resultados).length || Object.entries(p.resultados).some(([k,v]) => !/^[A-Z0-9_-]+$/.test(k) || !Number.isFinite(v) || v < 0 || v > 100) || Object.values(p.resultados).reduce((a,b)=>a+b,0)>100.5) throw Error('Porcentajes inválidos');
   if (!source.allowedHosts.includes(https(p.fuente).hostname)) throw Error('Fuente fuera de lista');
   return {...p, instituto, estudio_id:p.estudio_id.trim(), source_id:source.id};
@@ -27,7 +30,7 @@ export function deduplicate(polls) {
     if(existing && ['trabajo_campo_inicio','trabajo_campo_fin','tamano_muestra'].some(k=>existing[k]!==p[k])) throw Error('Metadatos contradictorios: '+key);
     if(!existing) rows.set(key,p);
   }
-  return [...rows.values()].sort((a,b)=>a.fecha_publicacion.localeCompare(b.fecha_publicacion)||a.instituto.localeCompare(b.instituto)||a.estudio_id.localeCompare(b.estudio_id));
+  return [...rows.values()].sort((a,b)=>(a.fecha_publicacion||a.trabajo_campo_fin).localeCompare(b.fecha_publicacion||b.trabajo_campo_fin)||a.instituto.localeCompare(b.instituto)||a.estudio_id.localeCompare(b.estudio_id));
 }
 async function json(path) { return JSON.parse(await readFile(path,'utf8')); }
 async function atomic(path, value, io) {

@@ -1,0 +1,2 @@
+# Preserve the audited snapshot byte hash on Windows and other platforms.
+data/radar-desarrollo.json text eol=lf
