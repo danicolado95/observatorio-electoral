@@ -7,7 +7,7 @@ import {spawnSync} from 'node:child_process';
 const root=resolve('.');
 const put=(dir,p,v)=>{mkdirSync(join(dir,p,'..'),{recursive:true});writeFileSync(join(dir,p),JSON.stringify(v));};
 const get=(dir,p)=>JSON.parse(readFileSync(join(dir,p),'utf8'));
-function entry(id,date,value=30){return {id:{$t:id},title:{$t:`ESPAÑA: Encuesta NuevaCasa ${date.slice(8)}/${date.slice(5,7)}/${date.slice(0,4)}`},link:[{rel:'alternate',href:`https://www.electografica.com/${id}`}],published:{$t:date+'T09:00:00Z'},updated:{$t:date+'T09:00:00Z'},content:{$t:`Periodo de campo: ${date.slice(8)}/${date.slice(5,7)}/${date.slice(0,4)} · Método: web Fuente: <a href="https://example.org/${id}">Medio</a> <!-- PP --><span class="dato_encuesta">${value}</span><!-- PSOE --><span class="dato_encuesta">25</span><!-- VOX --><span class="dato_encuesta">15</span>`}};}
+function entry(id,date,value=30){return {id:{$t:id},title:{$t:`ESPAÑA: Encuesta NuevaCasa ${date.slice(8)}/${date.slice(5,7)}/${date.slice(0,4)}`},link:[{rel:'alternate',href:`https://www.electografica.com/${id}`}],published:{$t:date+'T09:00:00Z'},updated:{$t:date+'T09:00:00Z'},content:{$t:`Periodo de campo: ${date.slice(8)}/${date.slice(5,7)}/${date.slice(0,4)} · Muestra: 1000 · Método: web Fuente: <a href="https://example.org/${id}">Medio</a> <!-- PP --><span class="dato_encuesta">${value}</span><!-- PSOE --><span class="dato_encuesta">25</span><!-- VOX --><span class="dato_encuesta">15</span>`}};}
 function run(dir,script,args=[]){return spawnSync(process.execPath,[join(root,'scripts',script),...args],{cwd:dir,env:{...process.env,ELECTOGRAFICA_TEST_ROOT:dir},encoding:'utf8'});}
 const ok=r=>assert.equal(r.status,0,r.stderr+'\n'+r.stdout);
 for(const wikiConflict of [false,true]) test('día siguiente, alias Wikipedia y prioridad Electográfica (conflicto='+wikiConflict+'): conserva histórico, no duplica y bloquea fallos',()=>{
@@ -43,3 +43,4 @@ test('Wikipedia: una descarga nueva no reescribe la procedencia del mismo sondeo
  const before=readFileSync(join(dir,'data/pipeline-test/wikipedia/radar.json'));staging.encuestas[0].resultados={PP:31,PSOE:25,VOX:15};put(dir,'data/pipeline-test/wikipedia/staging.json',staging);
  assert.notEqual(run(dir,'preparar-radar-wikipedia.mjs').status,0);assert.deepEqual(readFileSync(join(dir,'data/pipeline-test/wikipedia/radar.json')),before);
 });
+
