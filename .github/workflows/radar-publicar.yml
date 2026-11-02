@@ -1,0 +1,99 @@
+name: Actualizar radar de pruebas
+on:
+  push:
+    branches: [radar-automatico]
+  workflow_dispatch:
+  schedule:
+    # UTC: noviembre Madrid 07:17, 08:17, ... 15:17 y 19:17.
+    - cron: '17 6-14,18 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: radar-pruebas-publicacion
+  cancel-in-progress: false
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    env:
+      WIKIPEDIA_USER_AGENT: 'AtlasElectoral/1.0 (https://github.com/danicolado95/observatorio-electoral)'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: 0c0219c722cd4093629bbb1a0ed79bd4786dd5c2
+          path: engine
+          persist-credentials: false
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: radar-pruebas
+          path: published
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13'
+      - name: Pruebas del motor
+        working-directory: engine
+        run: |
+          npm ci
+          node --test test/*.test.mjs
+          for f in test/*_test.py; do python3 "$f"; done
+      - name: Restaurar histórico del último commit validado
+        working-directory: engine
+        run: |
+          if test -f ../published/data/radar.json; then
+            node scripts/radar-persistente.mjs restore ../published/data/radar.json
+          fi
+          mkdir -p data/pipeline-test
+          TZ=Europe/Madrid date +%F > data/pipeline-test/as-of.txt
+      - name: Descargar y combinar fuentes reales
+        working-directory: engine
+        shell: pwsh
+        run: |
+          $asOf = (Get-Content data/pipeline-test/as-of.txt -Raw).Trim()
+          ./scripts/actualizar-historico.ps1 -Python python3 -AsOf $asOf
+          if ($LASTEXITCODE) { throw 'Falló la integración' }
+      - name: Validar y preparar el archivo que consume el gráfico
+        working-directory: engine
+        run: |
+          node scripts/validar-integracion-manual.mjs
+          node scripts/radar-persistente.mjs promote ../published/data/radar.json
+          git diff --exit-code
+          cat data/pipeline-test/integracion-resumen.md >> "$GITHUB_STEP_SUMMARY"
+          cat data/pipeline-test/publicacion-resumen.json >> "$GITHUB_STEP_SUMMARY"
+      - name: Commit atómico exclusivo de los datos en radar-pruebas
+        working-directory: published
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$(git branch --show-current)" = radar-pruebas
+          git add -- data/radar.json
+          test "$(git diff --cached --name-only)" = data/radar.json || exit 1
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Actualizar histórico validado del radar de pruebas'
+          # No force: si otra escritura mueve la rama, no se pisa el histórico.
+          auth=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $auth" push origin HEAD:refs/heads/radar-pruebas
+      - name: Diagnóstico
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: radar-diagnostico-${{ github.run_id }}-${{ github.run_attempt }}
+          retention-days: 14
+          path: |
+            engine/data/pipeline-test/as-of.txt
+            engine/data/pipeline-test/integracion-*.json
+            engine/data/pipeline-test/integracion-resumen.md
+            engine/data/pipeline-test/publicacion-resumen.json
+            engine/data/pipeline-test/wikipedia/diagnostico.json
+            engine/data/pipeline-test/electografica/diagnostico.json
+            engine/data/pipeline-test/electografica/quarantine.json
+
+
