@@ -71,8 +71,16 @@ export function verificar({original, desarrollo, cis, wikipedia, combinado, repo
         // Electográfica puede añadir referencias, pero no quitar las existentes.
         if (!mismoId && ['estudio_id', 'ingestion', 'source_id', 'url_electografica', 'medio'].includes(key)) continue;
         if (key === 'fuentes_adicionales') {
-          for (const ref of value) assert(q[key]?.some(r => isDeepStrictEqual(r, ref)), `${label}: referencia perdida`);
-         } else if (key === 'resultados' && !isDeepStrictEqual(q[key], value)) {
+  for (const ref of value) {
+    assert(
+      q[key]?.some(r => isDeepStrictEqual(r, ref)),
+      `${label}: referencia perdida en ${p.estudio_id}: ${JSON.stringify({
+        esperada: ref,
+        actuales: q[key] ?? []
+      })}`
+    );
+  }
+} else if (key === 'resultados' && !isDeepStrictEqual(q[key], value)) {
           // Ausencia no equivale a cero; todo valor previo debe conservarse.
           for (const [party, percent] of Object.entries(value)) {
             assert(Object.hasOwn(q.resultados, party) && q.resultados[party] === percent,
