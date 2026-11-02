@@ -76,3 +76,51 @@ test('rechaza alias sin evidencia, ambiguos, con datos distintos o con origen pe
     assert.throws(() => verificar(data));
   }
 });
+
+for (const key of ['blogger_published', 'blogger_updated']) {
+  test('Hamalgama: acepta zona equivalente en ' + key, () => {
+    const data = fixtureAlias();
+    data.desarrollo.encuestas[35].ingestion[key] = '2026-11-02T07:47:51.594+00:00';
+    data.auditoria[0].extracted.ingestion[key] = '2026-11-02T08:47:51.594+01:00';
+    assert.equal(verificar(data).validado, true);
+  });
+  for (const value of ['2026-11-02T08:47:51.595+01:00', 'malformado',
+    '2026-02-30T07:47:51.594Z', '2026-11-02T24:00:00.000Z',
+    '2026-11-02T07:47:51.594+24:00', null]) {
+    test('Hamalgama: rechaza fecha distinta o inválida en ' + key + ': ' + value, () => {
+      const data = fixtureAlias();
+      data.desarrollo.encuestas[35].ingestion[key] = '2026-11-02T07:47:51.594+00:00';
+      data.auditoria[0].extracted.ingestion[key] = value;
+      assert.throws(() => verificar(data), /auditoría/);
+    });
+  }
+  test('Hamalgama: rechaza fecha inválida idéntica en ' + key, () => {
+    const data = fixtureAlias();
+    data.desarrollo.encuestas[35].ingestion[key] = 'malformado';
+    data.auditoria[0].extracted.ingestion[key] = 'malformado';
+    assert.throws(() => verificar(data), /fecha de auditoría inválida/);
+  });
+  test('conserva comparación estricta para el mismo ID en ' + key, () => {
+    const data = fixture();
+    data.desarrollo.encuestas[35].ingestion = {[key]: '2026-11-02T07:47:51.594+00:00'};
+    data.combinado.encuestas[35].ingestion = {[key]: '2026-11-02T08:47:51.594+01:00'};
+    assert.throws(() => verificar(data), /cambió/);
+  });
+}
+for (const key of ['content_sha256', 'entry_id', 'source', 'otro_campo']) {
+  test('Hamalgama: conserva comparación estricta en ingestion.' + key, () => {
+    const data = fixtureAlias();
+    data.auditoria[0].extracted.ingestion[key] = 'distinto';
+    assert.throws(() => verificar(data), /auditoría distinta en ingestion/);
+  });
+}
+test('Hamalgama: reproduce ambas fechas del fallo sin modificar los datos', () => {
+  const data = fixtureAlias();
+  for (const key of ['blogger_published', 'blogger_updated']) {
+    data.desarrollo.encuestas[35].ingestion[key] = '2026-11-02T07:47:51.594+00:00';
+    data.auditoria[0].extracted.ingestion[key] = '2026-11-02T08:47:51.594+01:00';
+  }
+  const before = structuredClone(data);
+  assert.equal(verificar(data).validado, true);
+  assert.deepEqual(data, before);
+});

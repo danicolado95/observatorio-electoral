@@ -5,6 +5,28 @@ import {createRequire} from 'node:module';
 import {pathToFileURL} from 'node:url';
 const core = createRequire(import.meta.url)('../js/radar-core.js');
 
+// Solo las fechas Blogger de la auditoría del alias admiten otra zona horaria.
+function normalizarFechasAuditoria(ingestion, label) {
+  const normalizada = {...ingestion};
+  for (const key of ['blogger_published', 'blogger_updated']) {
+    if (!Object.hasOwn(normalizada, key)) continue;
+    const value = normalizada[key];
+    const match = typeof value === 'string' && value.match(
+      /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.\d{1,3})?(Z|[+-]\d{2}:\d{2})$/);
+    const instant = match ? Date.parse(value) : NaN;
+    const calendar = match && new Date(0);
+    if (match) calendar.setUTCFullYear(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+    assert(match && Number.isFinite(instant) &&
+      calendar.getUTCFullYear() === Number(match[1]) &&
+      calendar.getUTCMonth() === Number(match[2]) - 1 && calendar.getUTCDate() === Number(match[3]) &&
+      Number(match[4]) < 24 && Number(match[5]) < 60 && Number(match[6]) < 60 &&
+      (match[7] === 'Z' || (Number(match[7].slice(1, 3)) < 24 && Number(match[7].slice(4)) < 60)),
+      label + ': fecha de auditoría inválida en ingestion.' + key);
+    normalizada[key] = instant;
+  }
+  return normalizada;
+}
+
 // Solo una auditoría única puede autorizar el cambio de identidad.
 function resolverAlias(p, ids, auditoria, label) {
   const matches = auditoria.filter(a => a.extracted?.estudio_id === p.estudio_id);
@@ -22,7 +44,10 @@ function resolverAlias(p, ids, auditoria, label) {
     a.id === p.ingestion.entry_id && a.url === p.url_electografica,
     label + ': alias sin origen comprobable');
   for (const [key, value] of Object.entries(p)) {
-    if (key !== 'fuentes_adicionales') assert.deepEqual(e[key], value, label + ': auditoría distinta en ' + key);
+    if (key === 'ingestion') {
+      assert.deepEqual(normalizarFechasAuditoria(e[key], label), normalizarFechasAuditoria(value, label),
+        label + ': auditoría distinta en ingestion');
+    } else if (key !== 'fuentes_adicionales') assert.deepEqual(e[key], value, label + ': auditoría distinta en ' + key);
   }
   // La procedencia Electográfica pasa a una referencia del registro canónico.
   const ref = {source: 'electografica', url: p.url_electografica, original: p.fuente,
