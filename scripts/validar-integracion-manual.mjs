@@ -1,3 +1,4 @@
+import {comprobarCuarentena} from './reconciliaciones-documentadas.mjs';
 import assert from 'node:assert/strict';
 import {isDeepStrictEqual} from 'node:util';
 import {readFile, writeFile, mkdir} from 'node:fs/promises';
@@ -29,9 +30,13 @@ function normalizarFechasAuditoria(ingestion, label) {
 }
 
 // Solo una auditoría única puede autorizar el cambio de identidad.
-function resolverAlias(p, ids, auditoria, label) {
+function resolverAlias(p, ids, auditoria, label, cuarentena = []) {
   const matches = auditoria.filter(a => a.extracted?.estudio_id === p.estudio_id);
-  assert.equal(matches.length, 1, label + ': alias sin auditoría única para ' + p.estudio_id);
+  const rechazados = cuarentena.filter(a => a.candidate?.estudio_id === p.estudio_id);
+  const causa = rechazados.length ? '; candidatos en cuarentena: ' + JSON.stringify(rechazados.map(a => ({
+    motivo: a.reason, candidato: a.candidate, coincidencias: a.matches
+  }))) : '';
+  assert.equal(matches.length, 1, label + ': alias sin auditoría única para ' + p.estudio_id + causa);
   const a = matches[0], e = a.extracted, q = ids.get(a.estudio_id);
   assert(a.decision === 'cruzada' && q && q.estudio_id !== p.estudio_id,
     label + ': correspondencia de identidad inválida');
@@ -96,8 +101,19 @@ export function auditar({original, desarrollo, cis, wikipedia, combinado, report
   }
   const conservar = (polls, label) => {
     for (const p of polls) {
+      // La variante incompatible se conserva íntegra en la cuarentena del lote.
+      // Solo esta decisión documental exacta permite no usarla como canónica.
+      if(label === 'Wikipedia independiente') {
+        const proofs=[...cuarentena,...(combinado.reconciliaciones_anteriores||[])].filter(c=>c.reconciliacion?.wikipedia?.estudio_id===p.estudio_id);
+        if(proofs.length===1) {
+          const c=proofs[0],r=c.reconciliacion,q=ids.get(r.historico?.estudio_id);
+          let valido=false;
+          try {valido=comprobarCuarentena(c,p,q)&&!ids.has(p.estudio_id);} catch {}
+          if(valido) continue;
+        }
+      }
       const mismoId = ids.has(p.estudio_id);
-      const q = mismoId ? ids.get(p.estudio_id) : comprobar(() => resolverAlias(p, ids, auditoria, label), label, p.estudio_id, 'estudio_id', 'ALIAS_NO_RESUELTO', p.estudio_id, null);
+      const q = mismoId ? ids.get(p.estudio_id) : comprobar(() => resolverAlias(p, ids, auditoria, label, cuarentena), label, p.estudio_id, 'estudio_id', 'ALIAS_NO_RESUELTO', p.estudio_id, null);
       if (!q) {
         registrar(Error('Comparación no evaluable: identidad no resuelta'), label, p.estudio_id, '*', 'DEPENDENCIA_NO_EVALUABLE', p, null, 'no-evaluable');
         continue;
@@ -121,6 +137,28 @@ export function auditar({original, desarrollo, cis, wikipedia, combinado, report
           for (const [party, percent] of Object.entries(value)) {
             comprobar(() => assert(q.resultados && Object.hasOwn(q.resultados, party) && q.resultados[party] === percent,
               label + ': cambió resultados.' + party), label, p.estudio_id, 'resultados.' + party, 'RESULTADO_MODIFICADO', percent, q.resultados?.[party] ?? null);
+          }
+          const altas = auditoria.filter(a => a.decision === 'alta' && a.estudio_id === q.estudio_id && a.extracted?.estudio_id === q.estudio_id);
+          if (mismoId && altas.length) {
+            // Una alta reconstruida desde la misma entrada no es un alias.
+            // El hash histórico se sigue comparando fuera de esta rama: una
+            // revisión de contenido nunca autoriza por sí sola nuevos valores.
+            assert.equal(altas.length, 1, label + ': alta sin auditoría única');
+            const a = altas[0], e = a.extracted;
+            assert(e.ingestion?.source === 'electografica' && e.source_id === 'electografica' &&
+              e.ingestion.entry_id && /^[a-f0-9]{64}$/.test(e.ingestion.content_sha256) &&
+              a.id === e.ingestion.entry_id && a.url === e.url_electografica,
+              label + ': alta sin origen comprobable');
+            for (const [field, observed] of Object.entries(q)) {
+              if (field === 'fuentes_adicionales') continue;
+              assert.deepEqual(field === 'ingestion' ? normalizarFechasAuditoria(observed, label) : observed,
+                field === 'ingestion' ? normalizarFechasAuditoria(e[field], label) : e[field],
+                label + ': alta distinta en ' + field);
+            }
+            // Todos los complementos, incluidos ceros y FA/SUMAR, deben estar
+            // presentes literalmente en la extracción auditada.
+            assert.deepEqual(q.resultados, e.resultados, label + ': resultados del alta distintos');
+            return;
           }
           const proofs = auditoria.filter(a => a.decision === 'cruzada' && a.estudio_id === q.estudio_id && a.extracted?.estudio_id !== q.estudio_id);
           assert.equal(proofs.length, 1, label + ': enriquecimiento sin auditoría única');
@@ -157,7 +195,7 @@ export function auditar({original, desarrollo, cis, wikipedia, combinado, report
   comprobar(() => assert.equal(reporte.after?.private, privadas), 'cobertura', null, 'reporte', 'COBERTURA_INVALIDA');
   comprobar(() => assert.equal(reporte.after?.cis, cisCount), 'cobertura', null, 'reporte', 'COBERTURA_INVALIDA');
   const cobertura = inventario();
-  return {validado: !incidencias.some(i => i.severidad === 'critica'), incidencias, cobertura, privadas, cis: cisCount, wikipedia: wikipedia?.encuestas?.length ?? null,
+  return {reconciliaciones: [...cuarentena,...(combinado.reconciliaciones_anteriores||[])].filter(c=>c.reconciliacion).map(c=>c.reconciliacion), validado: !incidencias.some(i => i.severidad === 'critica'), incidencias, cobertura, privadas, cis: cisCount, wikipedia: wikipedia?.encuestas?.length ?? null,
     entradas: reporte.entries, auditadas: auditoria.length, cuarentena: cuarentena.length,
     periodo: reporte.period, preservacion: incidencias.length ? 'Auditoría bloqueada: consultar incidencias' : 'Radar versionado, CIS y Wikipedia comprobados por registro y campo'};
 }
@@ -192,7 +230,7 @@ async function main() {
   if (fallos.length || !result.validado) {result.validado = false; process.exitCode = 1;}
   await writeFile(dir+'integracion-validacion.json', JSON.stringify(result, null, 2)+'\n');
   await writeFile(dir+'integracion-resumen.md', result.validado
-    ? `Prueba de integración: validada.\n\nPrivadas: ${result.privadas}; CIS: ${result.cis}; Wikipedia: ${result.wikipedia}.\n\nEntradas Electográfica: ${result.entradas}; auditadas: ${result.auditadas}; cuarentena: ${result.cuarentena}.\n\n${result.preservacion}. Umbrales mínimos: 480 privadas y 35 CIS; se admiten nuevas encuestas.\n\nDatos solo de prueba. Revisar también el resultado de todos los pasos y la cuarentena antes de cualquier uso.\n`
+    ? `Prueba de integración: validada.\n\nPrivadas: ${result.privadas}; CIS: ${result.cis}; Wikipedia: ${result.wikipedia}.\n\nEntradas Electográfica: ${result.entradas}; auditadas: ${result.auditadas}; cuarentena: ${result.cuarentena}.\n\n${result.preservacion}. Reconciliaciones documentadas: ${result.reconciliaciones.length}.\n\n${result.reconciliaciones.map(r => `${r.candidato.instituto}: ${r.motivo} Diferencias: ${JSON.stringify(r.diferencias ?? [])}`).join("\n\n")}\n\nUmbrales mínimos: 480 privadas y 35 CIS; se admiten nuevas encuestas.\n\nDatos solo de prueba. Revisar también el resultado de todos los pasos y la cuarentena antes de cualquier uso.\n`
     : 'Prueba de integración NO validada. Consultar integracion-validacion.json y el paso fallido.\n');
   console.log(JSON.stringify(result));
 }

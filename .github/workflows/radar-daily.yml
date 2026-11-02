@@ -113,6 +113,8 @@ jobs:
             data/pipeline-test/as-of.txt
             data/pipeline-test/integracion-resumen.md
             data/pipeline-test/integracion-validacion.json
+            data/pipeline-test/wikipedia/diagnostico*.json
+            data/pipeline-test/electografica/diagnostico.json
             data/pipeline-test/wikipedia/report.json
             data/pipeline-test/wikipedia/runs/*.json
             data/pipeline-test/electografica/radar.json

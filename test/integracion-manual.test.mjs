@@ -9,6 +9,63 @@ function fixture(extra = 0) {
     reporte: {entries: 2, after: {private: 480 + extra, cis: 35}, period: ['2023-07-23', '2026-11-02']},
     auditoria: [{}], cuarentena: [{}]};
 }
+
+function fixtureAlta() {
+  const d = fixture();
+  const cases = JSON.parse(readFileSync(new URL('fixtures/altas-complementarias.json', import.meta.url)));
+  d.auditoria = cases.map(c => structuredClone(c.audit));
+  d.cuarentena = [];
+  d.reporte.entries = cases.length;
+  for (const [i, c] of cases.entries()) {
+    d.desarrollo.encuestas[35 + i] = structuredClone(c.historico);
+    d.combinado.encuestas[35 + i] = structuredClone(c.audit.extracted);
+    d.wikipedia.encuestas = d.wikipedia.encuestas.filter(p => p.estudio_id !== String(35 + i));
+  }
+  return d;
+}
+
+test('17 altas reales: complementos con misma identidad, hash e instantes, sin mutación', () => {
+  const d = fixtureAlta(), before = structuredClone(d);
+  assert.equal(verificar(d).validado, true);
+  assert.equal(verificar(d).validado, true);
+  assert.deepEqual(d, before);
+});
+
+test('conflictos reales FA: permanecen bloqueados con causa y variantes, sin resolver alias', () => {
+  const d = fixture();
+  const cases = JSON.parse(readFileSync(new URL('fixtures/conflictos-reales.json', import.meta.url)));
+  d.auditoria = [{}]; d.cuarentena = cases.map(c => c.rechazado); d.reporte.entries = 3;
+  for (const [i, c] of cases.entries()) {
+    d.desarrollo.encuestas[35+i] = c.historico;
+    d.combinado.encuestas[35+i] = c.wikipedia;
+    d.wikipedia.encuestas[35+i] = structuredClone(c.wikipedia);
+  }
+  const before = structuredClone(d), result = auditar(d);
+  assert.equal(result.validado, false);
+  assert.equal(result.incidencias.filter(i => i.codigo === 'ALIAS_NO_RESUELTO').length, 2);
+  assert.equal(result.incidencias.filter(i => i.codigo === 'DEPENDENCIA_NO_EVALUABLE').length, 2);
+  for (const i of result.incidencias.filter(i => i.codigo === 'ALIAS_NO_RESUELTO')) {
+    assert.match(i.evidencia, /candidatos en cuarentena/);
+    assert.match(i.evidencia, /FA/);
+  }
+  assert.deepEqual(d, before);
+});
+
+test('altas complementarias: rechaza origen ambiguo, revisiones, valores cambiados y extras inventados', () => {
+  for (const mutate of [
+    d => d.auditoria.push(structuredClone(d.auditoria[0])),
+    d => d.auditoria.shift(),
+    d => d.auditoria[0].id = 'otro',
+    d => d.auditoria[0].url = 'https://example.org/otro',
+    d => d.auditoria[0].extracted.ingestion.content_sha256 = 'f'.repeat(64),
+    d => {d.combinado.encuestas[35].ingestion.content_sha256 = 'f'.repeat(64); d.auditoria[0].extracted.ingestion.content_sha256 = 'f'.repeat(64);},
+    d => d.combinado.encuestas[35].resultados.PP = 0,
+    d => delete d.combinado.encuestas[35].resultados.PP,
+    d => d.combinado.encuestas[35].resultados.FA = 0,
+    d => d.combinado.encuestas[35].fuente = 'https://example.org/otro',
+    d => d.combinado.encuestas[35].ingestion.blogger_updated = '2026-11-02T00:00:00Z',
+  ]) {const d = fixtureAlta(); mutate(d); assert.equal(auditar(d).validado, false);}
+});
 test('admite nuevas encuestas y referencias añadidas sin exigir cifras exactas', () => {
   const data = fixture(3);
   data.combinado.encuestas[0].fuentes_adicionales = [{url: 'https://example.org'}];

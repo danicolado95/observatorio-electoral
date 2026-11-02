@@ -1,0 +1,2 @@
+# Evidence hashes refer to original bytes on every platform.
+*.html -text

@@ -14,12 +14,12 @@ const staging=await read('data/pipeline-test/wikipedia/staging.json',{encuestas:
 const original=await read('data/radar.json',{encuestas:[]});
 let review={approved:[],audit:[]};
 try{review=await read('data/historico-revisado.json',{approved:[],audit:[]});}catch(e){if(e.code!=='ENOENT')throw e;}
-const checked=(rows,fuente)=>{const seen=new Set();return rows.filter(p=>{
+const checked=(rows,fuente,{quarantine=false}={})=>{const seen=new Set();return rows.filter(p=>{
  if(!p||typeof p.estudio_id!=='string'||!p.resultados||typeof p.resultados!=='object'){issue('error','REGISTRO_INVALIDO',fuente+': identidad/resultados inválidos',p?.estudio_id);return false;}
- if(seen.has(p.estudio_id))issue('error','ID_DUPLICADO',fuente+': '+p.estudio_id,p.estudio_id);
+ if(seen.has(p.estudio_id))issue(quarantine?'cuarentena':'error','ID_DUPLICADO',fuente+': '+p.estudio_id,p.estudio_id);
  seen.add(p.estudio_id);return true;
 });};
-staging.encuestas=checked(staging.encuestas,'staging');staging.quarantine=checked(staging.quarantine,'cuarentena');
+staging.encuestas=checked(staging.encuestas,'staging');staging.quarantine=checked(staging.quarantine,'cuarentena',{quarantine:true});
 review.approved=checked(review.approved,'revisados');original.encuestas=checked(original.encuestas,'original');
 const originals=await read('data/originales-huecos.json',{encuestas:[]});
 const blocked=new Set(review.audit.filter(a=>a.decision==='cuarentena').map(a=>a.estudio_id));
@@ -73,6 +73,9 @@ await writeFile(new URL(target.href+'.tmp'),JSON.stringify(result,null,2)+'\n');
 console.log(JSON.stringify({accepted:accepted.length,rejected:rejected.length,total:encuestas.length,institutes:new Set(accepted.map(p=>p.instituto)).size}));
 
 }catch(e){issue('error','ESTRUCTURA_INVALIDA',e.message);}finally{
+// Imprimir antes de escribir: también queda evidencia si falla el disco.
+for(const i of incidencias.filter(i=>i.tipo==='error'))console.error(`[Wikipedia ${i.codigo}] ${i.evidencia}${i.estudio_id?' ('+i.estudio_id+')':''}`);
+if(incidencias.some(i=>i.tipo==='error'))console.error('Wikipedia: lote bloqueado; consultar data/pipeline-test/wikipedia/diagnostico.json');
 await mkdir(new URL('data/pipeline-test/wikipedia/',root),{recursive:true});
 await writeFile(new URL('data/pipeline-test/wikipedia/diagnostico.json',root),JSON.stringify({etapa:'preparacion-wikipedia',validado:!incidencias.some(i=>i.tipo==='error'),incidencias,fuentes},null,2)+'\n');
 if(incidencias.some(i=>i.tipo==='error'))process.exitCode=1;

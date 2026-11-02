@@ -1,0 +1,1206 @@
+[
+  {
+    "historico": {
+      "instituto": "Target Point",
+      "estudio_id": "electografica-69143168ddc7eb5c89c9",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-11-24",
+      "trabajo_campo_inicio": "2025-11-17",
+      "trabajo_campo_fin": "2025-11-19",
+      "fecha_fin_campo": "2025-11-19",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1200,
+      "resultados": {
+        "PP": 29.2,
+        "PSOE": 28.1,
+        "VOX": 19,
+        "SUMAR": 6.1,
+        "PODEMOS": 3.6
+      },
+      "fuente": "https://www.eldebate.com/espana/20251124/izquierda-sigue-minimos-ultimos-diez-anos-pp-vox-superando-190-escanos_357977.html",
+      "medio": "La izquierda sigue en mínimos de los últimos diez años con PP y Vox superando los 190 escaños (El Debate)",
+      "url_electografica": "https://www.electografica.com/2025/11/encuesta-target-point-251124.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-3391063364066569325",
+        "content_sha256": "8d34634a2e01d593d78fddb6d2f1c6ce80fda095a47e0213f11c343a6d0ce1c8",
+        "blogger_published": "2025-11-24T08:46:00.000+01:00",
+        "blogger_updated": "2025-11-24T08:46:01.625+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "audit": {
+      "id": "tag:blogger.com,1999:blog-1143014762904556765.post-3391063364066569325",
+      "title": "[G] ESPAÑA · Encuesta Target Point 24/11/2025: PP 29,2% (123/125) · PSOE 28,1% (114/116) · VOX 19,0% (67/69) · SUMAR 6,1% (9) · PODEMOS 3,6% (3/4) · SALF 2,0%",
+      "url": "https://www.electografica.com/2025/11/encuesta-target-point-251124.html",
+      "extracted": {
+        "instituto": "Target Point",
+        "estudio_id": "electografica-69143168ddc7eb5c89c9",
+        "tipo": "estimacion_voto",
+        "ambito": "España",
+        "fecha_publicacion": "2025-11-24",
+        "trabajo_campo_inicio": "2025-11-17",
+        "trabajo_campo_fin": "2025-11-19",
+        "fecha_fin_campo": "2025-11-19",
+        "tipo_fecha": "publicacion",
+        "tamano_muestra": 1200,
+        "resultados": {
+          "PP": 29.2,
+          "PSOE": 28.1,
+          "VOX": 19,
+          "SUMAR": 6.1,
+          "PODEMOS": 3.6,
+          "SALF": 2
+        },
+        "fuente": "https://www.eldebate.com/espana/20251124/izquierda-sigue-minimos-ultimos-diez-anos-pp-vox-superando-190-escanos_357977.html",
+        "medio": "La izquierda sigue en mínimos de los últimos diez años con PP y Vox superando los 190 escaños (El Debate)",
+        "url_electografica": "https://www.electografica.com/2025/11/encuesta-target-point-251124.html",
+        "ingestion": {
+          "source": "electografica",
+          "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-3391063364066569325",
+          "content_sha256": "8d34634a2e01d593d78fddb6d2f1c6ce80fda095a47e0213f11c343a6d0ce1c8",
+          "blogger_published": "2025-11-24T08:46:00+01:00",
+          "blogger_updated": "2025-11-24T08:46:01.625+01:00"
+        },
+        "source_id": "electografica"
+      },
+      "decision": "alta",
+      "estudio_id": "electografica-69143168ddc7eb5c89c9"
+    }
+  },
+  {
+    "historico": {
+      "instituto": "Target Point",
+      "estudio_id": "electografica-0d503d2ced7240d92a6a",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-09-14",
+      "trabajo_campo_inicio": "2025-09-10",
+      "trabajo_campo_fin": "2025-09-11",
+      "fecha_fin_campo": "2025-09-11",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1027,
+      "resultados": {
+        "PP": 31.6,
+        "PSOE": 27,
+        "VOX": 17.2,
+        "SUMAR": 7.4,
+        "PODEMOS": 4.1
+      },
+      "fuente": "https://www.eldebate.com/espana/20250914/vox-gana-terreno-pp-bloque-derecha-cifras-record-frente-izquierda-casi-plana_334013.html",
+      "medio": "Vox gana terreno al PP en el bloque de la derecha con cifras récord frente a una izquierda casi plana (El Debate)",
+      "url_electografica": "https://www.electografica.com/2025/09/encuesta-target-point-250914.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-5496279555005672040",
+        "content_sha256": "b112bb154dac864b3f07edb727fc1de141fa1d11aeec7d8bc53e294676275326",
+        "blogger_published": "2025-09-14T11:09:00.002+02:00",
+        "blogger_updated": "2025-09-20T23:07:11.439+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "audit": {
+      "id": "tag:blogger.com,1999:blog-1143014762904556765.post-5496279555005672040",
+      "title": "[G] ESPAÑA · Encuesta Target Point 14/09/2025: PP 31,6% (136/137) · PSOE 27,0% (110/112) · VOX 17,2% (57/59) · SUMAR 7,4% (11/12) · PODEMOS 4,1% (4/5) · SALF 1,9%",
+      "url": "https://www.electografica.com/2025/09/encuesta-target-point-250914.html",
+      "extracted": {
+        "instituto": "Target Point",
+        "estudio_id": "electografica-0d503d2ced7240d92a6a",
+        "tipo": "estimacion_voto",
+        "ambito": "España",
+        "fecha_publicacion": "2025-09-14",
+        "trabajo_campo_inicio": "2025-09-10",
+        "trabajo_campo_fin": "2025-09-11",
+        "fecha_fin_campo": "2025-09-11",
+        "tipo_fecha": "publicacion",
+        "tamano_muestra": 1027,
+        "resultados": {
+          "PP": 31.6,
+          "PSOE": 27,
+          "VOX": 17.2,
+          "SUMAR": 7.4,
+          "PODEMOS": 4.1,
+          "SALF": 1.9
+        },
+        "fuente": "https://www.eldebate.com/espana/20250914/vox-gana-terreno-pp-bloque-derecha-cifras-record-frente-izquierda-casi-plana_334013.html",
+        "medio": "Vox gana terreno al PP en el bloque de la derecha con cifras récord frente a una izquierda casi plana (El Debate)",
+        "url_electografica": "https://www.electografica.com/2025/09/encuesta-target-point-250914.html",
+        "ingestion": {
+          "source": "electografica",
+          "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-5496279555005672040",
+          "content_sha256": "b112bb154dac864b3f07edb727fc1de141fa1d11aeec7d8bc53e294676275326",
+          "blogger_published": "2025-09-14T11:09:00.002+02:00",
+          "blogger_updated": "2025-09-20T23:07:11.439+02:00"
+        },
+        "source_id": "electografica"
+      },
+      "decision": "alta",
+      "estudio_id": "electografica-0d503d2ced7240d92a6a"
+    }
+  },
+  {
+    "historico": {
+      "instituto": "Sigma Dos",
+      "estudio_id": "electografica-c12de1ba7e014ec792d8",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-07-14",
+      "trabajo_campo_inicio": "2025-07-08",
+      "trabajo_campo_fin": "2025-07-11",
+      "fecha_fin_campo": "2025-07-11",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1562,
+      "resultados": {
+        "PP": 35,
+        "PSOE": 27,
+        "VOX": 14.5,
+        "SUMAR": 7.9,
+        "PODEMOS": 4,
+        "ERC": 1.8,
+        "JUNTS": 1.3,
+        "EH_BILDU": 1.3,
+        "PNV": 1,
+        "BNG": 0.7,
+        "CC": 0.4,
+        "UPN": 0.2
+      },
+      "fuente": "https://www.elmundo.es/elmundo/2025/graficos/jul/s2/sigma_dos_20250711/sigma_dos_20250711_01_intencion_voto.html",
+      "medio": "Estimación de voto en las elecciones generales. Julio 2025 (El Mundo)",
+      "url_electografica": "https://www.electografica.com/2025/07/encuesta-sigmados-250714.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-7064567501489238050",
+        "content_sha256": "bdc45ef518e4f09c6e4fbdf885d5f5677ae5effcaf895ed304dfe1306e4f5ed3",
+        "blogger_published": "2025-07-14T00:30:00.002+02:00",
+        "blogger_updated": "2025-07-28T10:38:10.726+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "audit": {
+      "id": "tag:blogger.com,1999:blog-1143014762904556765.post-7064567501489238050",
+      "title": "[G] ESPAÑA · Encuesta SigmaDos 14/07/2025: PP 35,0% (152) · PSOE 27,0% (109) · VOX 14,5% (46) · SUMAR 7,9% (13) · PODEMOS 4,0% (2) · SALF 1,2%",
+      "url": "https://www.electografica.com/2025/07/encuesta-sigmados-250714.html",
+      "extracted": {
+        "instituto": "Sigma Dos",
+        "estudio_id": "electografica-c12de1ba7e014ec792d8",
+        "tipo": "estimacion_voto",
+        "ambito": "España",
+        "fecha_publicacion": "2025-07-14",
+        "trabajo_campo_inicio": "2025-07-08",
+        "trabajo_campo_fin": "2025-07-11",
+        "fecha_fin_campo": "2025-07-11",
+        "tipo_fecha": "publicacion",
+        "tamano_muestra": 1562,
+        "resultados": {
+          "PP": 35,
+          "PSOE": 27,
+          "VOX": 14.5,
+          "SUMAR": 7.9,
+          "PODEMOS": 4,
+          "ERC": 1.8,
+          "JUNTS": 1.3,
+          "EH_BILDU": 1.3,
+          "SALF": 1.2,
+          "PNV": 1,
+          "BNG": 0.7,
+          "CC": 0.4,
+          "UPN": 0.2
+        },
+        "fuente": "https://www.elmundo.es/elmundo/2025/graficos/jul/s2/sigma_dos_20250711/sigma_dos_20250711_01_intencion_voto.html",
+        "medio": "Estimación de voto en las elecciones generales. Julio 2025 (El Mundo)",
+        "url_electografica": "https://www.electografica.com/2025/07/encuesta-sigmados-250714.html",
+        "ingestion": {
+          "source": "electografica",
+          "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-7064567501489238050",
+          "content_sha256": "bdc45ef518e4f09c6e4fbdf885d5f5677ae5effcaf895ed304dfe1306e4f5ed3",
+          "blogger_published": "2025-07-14T00:30:00.002+02:00",
+          "blogger_updated": "2025-07-28T10:38:10.726+02:00"
+        },
+        "source_id": "electografica"
+      },
+      "decision": "alta",
+      "estudio_id": "electografica-c12de1ba7e014ec792d8"
+    }
+  },
+  {
+    "historico": {
+      "instituto": "Target Point",
+      "estudio_id": "electografica-8c61334fc04fe4647b9f",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-07-13",
+      "trabajo_campo_inicio": "2025-07-09",
+      "trabajo_campo_fin": "2025-07-10",
+      "fecha_fin_campo": "2025-07-10",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1002,
+      "resultados": {
+        "PP": 34.6,
+        "PSOE": 26,
+        "VOX": 15.6,
+        "SUMAR": 7,
+        "PODEMOS": 4.2
+      },
+      "fuente": "https://www.eldebate.com/espana/20250713/descalabro-record-psoe-mientras-pp-vox-tocan-primera-vez-200-escanos_316311.html",
+      "medio": "Descalabro récord del PSOE mientras PP y Vox tocan por primera vez los 200 escaños (El Debate)",
+      "url_electografica": "https://www.electografica.com/2025/07/encuesta-target-point-250713.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-5042788652652840504",
+        "content_sha256": "03e4e0508978be39bd0ee58f0fa78f95036148de7e98fe57d6e13edd590f1553",
+        "blogger_published": "2025-07-13T07:51:00.000+02:00",
+        "blogger_updated": "2025-07-13T07:51:11.630+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "audit": {
+      "id": "tag:blogger.com,1999:blog-1143014762904556765.post-5042788652652840504",
+      "title": "[G] ESPAÑA · Encuesta Target Point 13/07/2025: PP 34,6% (150/151) · PSOE 26,0% (106/108) · VOX 15,6% (48/49) · SUMAR 7,0% (10/11) · PODEMOS 4,2% (3/4) · SALF 1,9%",
+      "url": "https://www.electografica.com/2025/07/encuesta-target-point-250713.html",
+      "extracted": {
+        "instituto": "Target Point",
+        "estudio_id": "electografica-8c61334fc04fe4647b9f",
+        "tipo": "estimacion_voto",
+        "ambito": "España",
+        "fecha_publicacion": "2025-07-13",
+        "trabajo_campo_inicio": "2025-07-09",
+        "trabajo_campo_fin": "2025-07-10",
+        "fecha_fin_campo": "2025-07-10",
+        "tipo_fecha": "publicacion",
+        "tamano_muestra": 1002,
+        "resultados": {
+          "PP": 34.6,
+          "PSOE": 26,
+          "VOX": 15.6,
+          "SUMAR": 7,
+          "PODEMOS": 4.2,
+          "SALF": 1.9
+        },
+        "fuente": "https://www.eldebate.com/espana/20250713/descalabro-record-psoe-mientras-pp-vox-tocan-primera-vez-200-escanos_316311.html",
+        "medio": "Descalabro récord del PSOE mientras PP y Vox tocan por primera vez los 200 escaños (El Debate)",
+        "url_electografica": "https://www.electografica.com/2025/07/encuesta-target-point-250713.html",
+        "ingestion": {
+          "source": "electografica",
+          "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-5042788652652840504",
+          "content_sha256": "03e4e0508978be39bd0ee58f0fa78f95036148de7e98fe57d6e13edd590f1553",
+          "blogger_published": "2025-07-13T07:51:00+02:00",
+          "blogger_updated": "2025-07-13T07:51:11.63+02:00"
+        },
+        "source_id": "electografica"
+      },
+      "decision": "alta",
+      "estudio_id": "electografica-8c61334fc04fe4647b9f"
+    }
+  },
+  {
+    "historico": {
+      "instituto": "Target Point",
+      "estudio_id": "electografica-caa961069ecf59b00238",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-06-22",
+      "trabajo_campo_inicio": "2025-06-18",
+      "trabajo_campo_fin": "2025-06-20",
+      "fecha_fin_campo": "2025-06-20",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1000,
+      "resultados": {
+        "PP": 34,
+        "PSOE": 26.3,
+        "VOX": 15.8,
+        "SUMAR": 7.4,
+        "PODEMOS": 2.9
+      },
+      "fuente": "https://www.eldebate.com/espana/20250622/siniestro-total-psoe-sanchez-cae-minimo-siete-anos-feijoo-le-saca-40-escanos_309428.html",
+      "medio": "Siniestro total en el PSOE: Sánchez cae a su mínimo en siete años y Feijóo le saca 40 escaños (El Debate)",
+      "url_electografica": "https://www.electografica.com/2025/06/encuesta-target-point-250622.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-4196782569197060953",
+        "content_sha256": "87f317dc77a2425ad397adde6ab7fbe3e6867815eee2f1e12e7c077f107e89b7",
+        "blogger_published": "2025-06-22T11:32:00.000+02:00",
+        "blogger_updated": "2025-06-22T11:32:19.961+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "audit": {
+      "id": "tag:blogger.com,1999:blog-1143014762904556765.post-4196782569197060953",
+      "title": "[G] ESPAÑA · Encuesta Target Point 22/06/2025: PP 34,0% (147/148) · PSOE 26,3% (108/110) · VOX 15,8% (49/50) · SUMAR 7,4% (11/13) · PODEMOS 2,9% (2) · SALF 2,3% (0/1)",
+      "url": "https://www.electografica.com/2025/06/encuesta-target-point-250622.html",
+      "extracted": {
+        "instituto": "Target Point",
+        "estudio_id": "electografica-caa961069ecf59b00238",
+        "tipo": "estimacion_voto",
+        "ambito": "España",
+        "fecha_publicacion": "2025-06-22",
+        "trabajo_campo_inicio": "2025-06-18",
+        "trabajo_campo_fin": "2025-06-20",
+        "fecha_fin_campo": "2025-06-20",
+        "tipo_fecha": "publicacion",
+        "tamano_muestra": 1000,
+        "resultados": {
+          "PP": 34,
+          "PSOE": 26.3,
+          "VOX": 15.8,
+          "SUMAR": 7.4,
+          "PODEMOS": 2.9,
+          "SALF": 2.3
+        },
+        "fuente": "https://www.eldebate.com/espana/20250622/siniestro-total-psoe-sanchez-cae-minimo-siete-anos-feijoo-le-saca-40-escanos_309428.html",
+        "medio": "Siniestro total en el PSOE: Sánchez cae a su mínimo en siete años y Feijóo le saca 40 escaños (El Debate)",
+        "url_electografica": "https://www.electografica.com/2025/06/encuesta-target-point-250622.html",
+        "ingestion": {
+          "source": "electografica",
+          "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-4196782569197060953",
+          "content_sha256": "87f317dc77a2425ad397adde6ab7fbe3e6867815eee2f1e12e7c077f107e89b7",
+          "blogger_published": "2025-06-22T11:32:00+02:00",
+          "blogger_updated": "2025-06-22T11:32:19.961+02:00"
+        },
+        "source_id": "electografica"
+      },
+      "decision": "alta",
+      "estudio_id": "electografica-caa961069ecf59b00238"
+    }
+  },
+  {
+    "historico": {
+      "instituto": "Target Point",
+      "estudio_id": "electografica-9d12b3a29619f0f4d044",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-05-25",
+      "trabajo_campo_inicio": "2025-05-21",
+      "trabajo_campo_fin": "2025-05-23",
+      "fecha_fin_campo": "2025-05-23",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1002,
+      "resultados": {
+        "PP": 33.1,
+        "PSOE": 28.8,
+        "VOX": 13.9,
+        "SUMAR": 6.7,
+        "PODEMOS": 4.4
+      },
+      "fuente": "https://www.eldebate.com/espana/20250525/pp-vox-afianzan-holgada-mayoria-absoluta-sanchez-resiste-golpes-corrupcion_299941.html",
+      "medio": "El PP y Vox afianzan una holgada mayoría absoluta pero Sánchez resiste los golpes de la corrupción (El Debate)",
+      "url_electografica": "https://www.electografica.com/2025/05/encuesta-target-point-250525.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-5667881790243804217",
+        "content_sha256": "85eda632e9031b2f15be59ec292e43fb5cab7fb59d30427846b7323cc97cc798",
+        "blogger_published": "2025-05-25T10:20:00.000+02:00",
+        "blogger_updated": "2025-05-25T10:20:12.921+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "audit": {
+      "id": "tag:blogger.com,1999:blog-1143014762904556765.post-5667881790243804217",
+      "title": "[G] ESPAÑA · Encuesta Target Point 25/05/2025: PP 33,1% (142/144) · PSOE 28,8% (120/122) · VOX 13,9% (41/43) · SUMAR 6,7% (10/11) · PODEMOS 4,4% (4) · SALF 1,9%",
+      "url": "https://www.electografica.com/2025/05/encuesta-target-point-250525.html",
+      "extracted": {
+        "instituto": "Target Point",
+        "estudio_id": "electografica-9d12b3a29619f0f4d044",
+        "tipo": "estimacion_voto",
+        "ambito": "España",
+        "fecha_publicacion": "2025-05-25",
+        "trabajo_campo_inicio": "2025-05-21",
+        "trabajo_campo_fin": "2025-05-23",
+        "fecha_fin_campo": "2025-05-23",
+        "tipo_fecha": "publicacion",
+        "tamano_muestra": 1002,
+        "resultados": {
+          "PP": 33.1,
+          "PSOE": 28.8,
+          "VOX": 13.9,
+          "SUMAR": 6.7,
+          "PODEMOS": 4.4,
+          "SALF": 1.9
+        },
+        "fuente": "https://www.eldebate.com/espana/20250525/pp-vox-afianzan-holgada-mayoria-absoluta-sanchez-resiste-golpes-corrupcion_299941.html",
+        "medio": "El PP y Vox afianzan una holgada mayoría absoluta pero Sánchez resiste los golpes de la corrupción (El Debate)",
+        "url_electografica": "https://www.electografica.com/2025/05/encuesta-target-point-250525.html",
+        "ingestion": {
+          "source": "electografica",
+          "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-5667881790243804217",
+          "content_sha256": "85eda632e9031b2f15be59ec292e43fb5cab7fb59d30427846b7323cc97cc798",
+          "blogger_published": "2025-05-25T10:20:00+02:00",
+          "blogger_updated": "2025-05-25T10:20:12.921+02:00"
+        },
+        "source_id": "electografica"
+      },
+      "decision": "alta",
+      "estudio_id": "electografica-9d12b3a29619f0f4d044"
+    }
+  },
+  {
+    "historico": {
+      "instituto": "Target Point",
+      "estudio_id": "electografica-1ea37e8f1aa3da9dae1f",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-04-28",
+      "trabajo_campo_inicio": "2025-04-23",
+      "trabajo_campo_fin": "2025-04-25",
+      "fecha_fin_campo": "2025-04-25",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1016,
+      "resultados": {
+        "PP": 33.5,
+        "PSOE": 28.1,
+        "VOX": 14.3,
+        "SUMAR": 6.5,
+        "PODEMOS": 5.3
+      },
+      "fuente": "https://www.eldebate.com/espana/20250428/sanchez-sufre-caida-record-presentar-plan-rearme-pp-vox-vuelven-190-escanos_291361.html",
+      "medio": "Sánchez sufre una caída récord tras presentar su plan de rearme y PP y Vox vuelven a los 190 escaños (El Debate)",
+      "url_electografica": "https://www.electografica.com/2025/04/encuesta-target-point-250428.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-5970415339419194071",
+        "content_sha256": "a9067747f5a9ae8cfa97adff36e6bd6d1a0ae5f507c87c5c7336acf9f6dc8dee",
+        "blogger_published": "2025-04-28T22:27:00.004+02:00",
+        "blogger_updated": "2025-05-03T12:19:47.916+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "audit": {
+      "id": "tag:blogger.com,1999:blog-1143014762904556765.post-5970415339419194071",
+      "title": "[G] ESPAÑA · Encuesta Target Point 28/04/2025: PP 33,5% (144/146) · PSOE 28,1% (118/120) · VOX 14,3% (42/44) · SUMAR 6,5% (9/10) · PODEMOS 5,3% (4/5) · SALF 1,8%",
+      "url": "https://www.electografica.com/2025/04/encuesta-target-point-250428.html",
+      "extracted": {
+        "instituto": "Target Point",
+        "estudio_id": "electografica-1ea37e8f1aa3da9dae1f",
+        "tipo": "estimacion_voto",
+        "ambito": "España",
+        "fecha_publicacion": "2025-04-28",
+        "trabajo_campo_inicio": "2025-04-23",
+        "trabajo_campo_fin": "2025-04-25",
+        "fecha_fin_campo": "2025-04-25",
+        "tipo_fecha": "publicacion",
+        "tamano_muestra": 1016,
+        "resultados": {
+          "PP": 33.5,
+          "PSOE": 28.1,
+          "VOX": 14.3,
+          "SUMAR": 6.5,
+          "PODEMOS": 5.3,
+          "SALF": 1.8
+        },
+        "fuente": "https://www.eldebate.com/espana/20250428/sanchez-sufre-caida-record-presentar-plan-rearme-pp-vox-vuelven-190-escanos_291361.html",
+        "medio": "Sánchez sufre una caída récord tras presentar su plan de rearme y PP y Vox vuelven a los 190 escaños (El Debate)",
+        "url_electografica": "https://www.electografica.com/2025/04/encuesta-target-point-250428.html",
+        "ingestion": {
+          "source": "electografica",
+          "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-5970415339419194071",
+          "content_sha256": "a9067747f5a9ae8cfa97adff36e6bd6d1a0ae5f507c87c5c7336acf9f6dc8dee",
+          "blogger_published": "2025-04-28T22:27:00.004+02:00",
+          "blogger_updated": "2025-05-03T12:19:47.916+02:00"
+        },
+        "source_id": "electografica"
+      },
+      "decision": "alta",
+      "estudio_id": "electografica-1ea37e8f1aa3da9dae1f"
+    }
+  },
+  {
+    "historico": {
+      "instituto": "Target Point",
+      "estudio_id": "electografica-3afe9c91671598f3ef47",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-03-23",
+      "trabajo_campo_inicio": "2025-03-19",
+      "trabajo_campo_fin": "2025-03-21",
+      "fecha_fin_campo": "2025-03-21",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1000,
+      "resultados": {
+        "PP": 33.1,
+        "PSOE": 30.2,
+        "VOX": 14.1,
+        "SUMAR": 5.5,
+        "PODEMOS": 4.3
+      },
+      "fuente": "https://www.eldebate.com/espana/20250323/sanchez-podemos-reparten-botin-guerra-sumar-mientras-pp-vox-apenas-mueven_280911.html",
+      "medio": "Sánchez y Podemos se reparten el botín de guerra de Sumar mientras el PP y Vox apenas se mueven (El Debate)",
+      "url_electografica": "https://www.electografica.com/2025/03/encuesta-target-point-250323.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-3681400521246152368",
+        "content_sha256": "dacaee9e15b5eef78c083a4ac03ae9ad63b44c4b48eba81d9af82ebbaf28f938",
+        "blogger_published": "2025-03-23T08:50:00.001+01:00",
+        "blogger_updated": "2025-05-03T12:21:30.190+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "audit": {
+      "id": "tag:blogger.com,1999:blog-1143014762904556765.post-3681400521246152368",
+      "title": "[G] ESPAÑA · Encuesta Target Point 23/03/2025: PP 33,1% (141/143) · PSOE 30,2% (124/125) · VOX 14,1% (42/43) · SUMAR 5,5% (8/9) · PODEMOS 4,3% (3/5) · SALF 2,0% (0/1)",
+      "url": "https://www.electografica.com/2025/03/encuesta-target-point-250323.html",
+      "extracted": {
+        "instituto": "Target Point",
+        "estudio_id": "electografica-3afe9c91671598f3ef47",
+        "tipo": "estimacion_voto",
+        "ambito": "España",
+        "fecha_publicacion": "2025-03-23",
+        "trabajo_campo_inicio": "2025-03-19",
+        "trabajo_campo_fin": "2025-03-21",
+        "fecha_fin_campo": "2025-03-21",
+        "tipo_fecha": "publicacion",
+        "tamano_muestra": 1000,
+        "resultados": {
+          "PP": 33.1,
+          "PSOE": 30.2,
+          "VOX": 14.1,
+          "SUMAR": 5.5,
+          "PODEMOS": 4.3,
+          "SALF": 2
+        },
+        "fuente": "https://www.eldebate.com/espana/20250323/sanchez-podemos-reparten-botin-guerra-sumar-mientras-pp-vox-apenas-mueven_280911.html",
+        "medio": "Sánchez y Podemos se reparten el botín de guerra de Sumar mientras el PP y Vox apenas se mueven (El Debate)",
+        "url_electografica": "https://www.electografica.com/2025/03/encuesta-target-point-250323.html",
+        "ingestion": {
+          "source": "electografica",
+          "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-3681400521246152368",
+          "content_sha256": "dacaee9e15b5eef78c083a4ac03ae9ad63b44c4b48eba81d9af82ebbaf28f938",
+          "blogger_published": "2025-03-23T08:50:00.001+01:00",
+          "blogger_updated": "2025-05-03T12:21:30.19+02:00"
+        },
+        "source_id": "electografica"
+      },
+      "decision": "alta",
+      "estudio_id": "electografica-3afe9c91671598f3ef47"
+    }
+  },
+  {
+    "historico": {
+      "instituto": "Target Point",
+      "estudio_id": "electografica-f85652c2f04696f8c679",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-02-23",
+      "trabajo_campo_inicio": "2025-02-19",
+      "trabajo_campo_fin": "2025-02-21",
+      "fecha_fin_campo": "2025-02-21",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1007,
+      "resultados": {
+        "PP": 33.1,
+        "PSOE": 29.9,
+        "VOX": 14.2,
+        "SUMAR": 6.4,
+        "PODEMOS": 4.2
+      },
+      "fuente": "https://www.eldebate.com/espana/20250223/sanchez-recupera-terreno-costa-trump-pp-mantiene-vox-frena-buena-racha_272479.html",
+      "medio": "Sánchez recupera terreno a costa de Trump, el PP se mantiene y Vox frena su buena racha (El Debate)",
+      "url_electografica": "https://www.electografica.com/2025/02/encuesta-target-point-250223.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-2104845032472088622",
+        "content_sha256": "258a52fbdfaec8f9c047ab423c18a8ada38c1f39077cefd065ff6fa3c81d7420",
+        "blogger_published": "2025-02-23T07:57:00.000+01:00",
+        "blogger_updated": "2025-02-23T07:57:13.910+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "audit": {
+      "id": "tag:blogger.com,1999:blog-1143014762904556765.post-2104845032472088622",
+      "title": "[G] ESPAÑA · Encuesta Target Point 23/02/2025: PP 33,1% (143/145) · PSOE 29,9% (122/124) · VOX 14,2% (42/44) · SUMAR 6,4% (9/10) · PODEMOS 4,2% (3/4) · SALF 2,3% (0/1)",
+      "url": "https://www.electografica.com/2025/02/encuesta-target-point-250223.html",
+      "extracted": {
+        "instituto": "Target Point",
+        "estudio_id": "electografica-f85652c2f04696f8c679",
+        "tipo": "estimacion_voto",
+        "ambito": "España",
+        "fecha_publicacion": "2025-02-23",
+        "trabajo_campo_inicio": "2025-02-19",
+        "trabajo_campo_fin": "2025-02-21",
+        "fecha_fin_campo": "2025-02-21",
+        "tipo_fecha": "publicacion",
+        "tamano_muestra": 1007,
+        "resultados": {
+          "PP": 33.1,
+          "PSOE": 29.9,
+          "VOX": 14.2,
+          "SUMAR": 6.4,
+          "PODEMOS": 4.2,
+          "SALF": 2.3
+        },
+        "fuente": "https://www.eldebate.com/espana/20250223/sanchez-recupera-terreno-costa-trump-pp-mantiene-vox-frena-buena-racha_272479.html",
+        "medio": "Sánchez recupera terreno a costa de Trump, el PP se mantiene y Vox frena su buena racha (El Debate)",
+        "url_electografica": "https://www.electografica.com/2025/02/encuesta-target-point-250223.html",
+        "ingestion": {
+          "source": "electografica",
+          "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-2104845032472088622",
+          "content_sha256": "258a52fbdfaec8f9c047ab423c18a8ada38c1f39077cefd065ff6fa3c81d7420",
+          "blogger_published": "2025-02-23T07:57:00+01:00",
+          "blogger_updated": "2025-02-23T07:57:13.91+01:00"
+        },
+        "source_id": "electografica"
+      },
+      "decision": "alta",
+      "estudio_id": "electografica-f85652c2f04696f8c679"
+    }
+  },
+  {
+    "historico": {
+      "instituto": "Target Point",
+      "estudio_id": "electografica-b64d7918073d25a44479",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-01-26",
+      "trabajo_campo_inicio": "2025-01-22",
+      "trabajo_campo_fin": "2025-01-24",
+      "fecha_fin_campo": "2025-01-24",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1001,
+      "resultados": {
+        "PP": 33.2,
+        "PSOE": 28.9,
+        "VOX": 15.5,
+        "SUMAR": 5.9,
+        "PODEMOS": 5.2
+      },
+      "fuente": "https://www.eldebate.com/espana/20250126/pp-vox-logran-holgada-mayoria-194-escanos-sanchez-cae-casi-3-puntos-atrincherado-moncloa_264085.html",
+      "medio": "PP y Vox logran una holgada mayoría de 194 escaños y Sánchez cae casi 3 puntos atrincherado en Moncloa (El Debate)",
+      "url_electografica": "https://www.electografica.com/2025/01/encuesta-target-point-250126.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-2986545052503513771",
+        "content_sha256": "4009956e9bb0dbced628cea4288562d97b24fb7a2891af2d6a6fc609332342ca",
+        "blogger_published": "2025-01-26T02:11:00.000+01:00",
+        "blogger_updated": "2025-01-26T02:11:44.541+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "audit": {
+      "id": "tag:blogger.com,1999:blog-1143014762904556765.post-2986545052503513771",
+      "title": "[G] ESPAÑA · Encuesta Target Point 26/01/2025: PP 33,2% (143/145) · PSOE 28,9% (118/120) · VOX 15,5% (47/49) · SUMAR 5,9% (7/9) · PODEMOS 5,2% (4/5) · SALF 1,7%",
+      "url": "https://www.electografica.com/2025/01/encuesta-target-point-250126.html",
+      "extracted": {
+        "instituto": "Target Point",
+        "estudio_id": "electografica-b64d7918073d25a44479",
+        "tipo": "estimacion_voto",
+        "ambito": "España",
+        "fecha_publicacion": "2025-01-26",
+        "trabajo_campo_inicio": "2025-01-22",
+        "trabajo_campo_fin": "2025-01-24",
+        "fecha_fin_campo": "2025-01-24",
+        "tipo_fecha": "publicacion",
+        "tamano_muestra": 1001,
+        "resultados": {
+          "PP": 33.2,
+          "PSOE": 28.9,
+          "VOX": 15.5,
+          "SUMAR": 5.9,
+          "PODEMOS": 5.2,
+          "SALF": 1.7
+        },
+        "fuente": "https://www.eldebate.com/espana/20250126/pp-vox-logran-holgada-mayoria-194-escanos-sanchez-cae-casi-3-puntos-atrincherado-moncloa_264085.html",
+        "medio": "PP y Vox logran una holgada mayoría de 194 escaños y Sánchez cae casi 3 puntos atrincherado en Moncloa (El Debate)",
+        "url_electografica": "https://www.electografica.com/2025/01/encuesta-target-point-250126.html",
+        "ingestion": {
+          "source": "electografica",
+          "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-2986545052503513771",
+          "content_sha256": "4009956e9bb0dbced628cea4288562d97b24fb7a2891af2d6a6fc609332342ca",
+          "blogger_published": "2025-01-26T02:11:00+01:00",
+          "blogger_updated": "2025-01-26T02:11:44.541+01:00"
+        },
+        "source_id": "electografica"
+      },
+      "decision": "alta",
+      "estudio_id": "electografica-b64d7918073d25a44479"
+    }
+  },
+  {
+    "historico": {
+      "instituto": "Target Point",
+      "estudio_id": "electografica-b3c92a53b2e1f20f1ffd",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2025-01-01",
+      "trabajo_campo_inicio": "2024-12-26",
+      "trabajo_campo_fin": "2024-12-30",
+      "fecha_fin_campo": "2024-12-30",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1002,
+      "resultados": {
+        "PP": 32.7,
+        "PSOE": 28.5,
+        "VOX": 14.9,
+        "SUMAR": 6.9,
+        "PODEMOS": 5
+      },
+      "fuente": "https://www.eldebate.com/espana/20250101/sanchez-sufre-desgaste-32-puntos-mientras-suma-pp-vox-alcanza-190-escanos_257421.html",
+      "medio": "Sánchez sufre un desgaste de 3,2 puntos, mientras la suma del PP y Vox alcanza 190 escaños (El Debate)",
+      "url_electografica": "https://www.electografica.com/2025/01/encuesta-target-point-250101.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-7577841493352468160",
+        "content_sha256": "bb74e6cab50110e4adcaf77de944309cb965a6ab3c348b046dc7cae2e17a7a2c",
+        "blogger_published": "2025-01-01T10:42:00.000+01:00",
+        "blogger_updated": "2025-01-01T10:42:04.179+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "audit": {
+      "id": "tag:blogger.com,1999:blog-1143014762904556765.post-7577841493352468160",
+      "title": "[G] ESPAÑA · Encuesta Target Point 01/01/2025: PP 32,7% (142/144) · PSOE 28,5% (118/119) · VOX 14,9% (45/46) · SUMAR 6,9% (10/11) · PODEMOS 5,0% (4/6) · SALF 2,3% (0/1)",
+      "url": "https://www.electografica.com/2025/01/encuesta-target-point-250101.html",
+      "extracted": {
+        "instituto": "Target Point",
+        "estudio_id": "electografica-b3c92a53b2e1f20f1ffd",
+        "tipo": "estimacion_voto",
+        "ambito": "España",
+        "fecha_publicacion": "2025-01-01",
+        "trabajo_campo_inicio": "2024-12-26",
+        "trabajo_campo_fin": "2024-12-30",
+        "fecha_fin_campo": "2024-12-30",
+        "tipo_fecha": "publicacion",
+        "tamano_muestra": 1002,
+        "resultados": {
+          "PP": 32.7,
+          "PSOE": 28.5,
+          "VOX": 14.9,
+          "SUMAR": 6.9,
+          "PODEMOS": 5,
+          "SALF": 2.3
+        },
+        "fuente": "https://www.eldebate.com/espana/20250101/sanchez-sufre-desgaste-32-puntos-mientras-suma-pp-vox-alcanza-190-escanos_257421.html",
+        "medio": "Sánchez sufre un desgaste de 3,2 puntos, mientras la suma del PP y Vox alcanza 190 escaños (El Debate)",
+        "url_electografica": "https://www.electografica.com/2025/01/encuesta-target-point-250101.html",
+        "ingestion": {
+          "source": "electografica",
+          "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-7577841493352468160",
+          "content_sha256": "bb74e6cab50110e4adcaf77de944309cb965a6ab3c348b046dc7cae2e17a7a2c",
+          "blogger_published": "2025-01-01T10:42:00+01:00",
+          "blogger_updated": "2025-01-01T10:42:04.179+01:00"
+        },
+        "source_id": "electografica"
+      },
+      "decision": "alta",
+      "estudio_id": "electografica-b3c92a53b2e1f20f1ffd"
+    }
+  },
+  {
+    "historico": {
+      "instituto": "Target Point",
+      "estudio_id": "electografica-40f30757da05b8787f57",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2024-11-25",
+      "trabajo_campo_inicio": "2024-11-20",
+      "trabajo_campo_fin": "2024-11-22",
+      "fecha_fin_campo": "2024-11-22",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1303,
+      "resultados": {
+        "PP": 32.2,
+        "PSOE": 28.3,
+        "VOX": 14.6,
+        "SUMAR": 5.7,
+        "PODEMOS": 4.7
+      },
+      "fuente": "https://www.eldebate.com/espana/20241125/sanchez-cae-peor-registro-confesion-aldama-feijoo-resiente-dana_247167.html",
+      "medio": "Sánchez cae a su peor registro tras la confesión de Aldama y Feijóo se resiente por la DANA (El Debate)",
+      "url_electografica": "https://www.electografica.com/2024/11/encuesta-target-point-241125.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-4780244868771847166",
+        "content_sha256": "ae34a2d0bef162f53c826c159fb191cc0d657117a82451cbe290babaa85cfa7b",
+        "blogger_published": "2024-11-25T07:06:00.002+01:00",
+        "blogger_updated": "2024-12-20T11:16:39.755+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "audit": {
+      "id": "tag:blogger.com,1999:blog-1143014762904556765.post-4780244868771847166",
+      "title": "[G] ESPAÑA · Encuesta Target Point 25/11/2024: PP 32,2% (141/143) · PSOE 28,3% (118/120) · VOX 14,6% (42/44) · SUMAR 5,7% (7/9) · PODEMOS 4,7% (4/6) · SALF 2,9% (0/2)",
+      "url": "https://www.electografica.com/2024/11/encuesta-target-point-241125.html",
+      "extracted": {
+        "instituto": "Target Point",
+        "estudio_id": "electografica-40f30757da05b8787f57",
+        "tipo": "estimacion_voto",
+        "ambito": "España",
+        "fecha_publicacion": "2024-11-25",
+        "trabajo_campo_inicio": "2024-11-20",
+        "trabajo_campo_fin": "2024-11-22",
+        "fecha_fin_campo": "2024-11-22",
+        "tipo_fecha": "publicacion",
+        "tamano_muestra": 1303,
+        "resultados": {
+          "PP": 32.2,
+          "PSOE": 28.3,
+          "VOX": 14.6,
+          "SUMAR": 5.7,
+          "PODEMOS": 4.7,
+          "SALF": 2.9
+        },
+        "fuente": "https://www.eldebate.com/espana/20241125/sanchez-cae-peor-registro-confesion-aldama-feijoo-resiente-dana_247167.html",
+        "medio": "Sánchez cae a su peor registro tras la confesión de Aldama y Feijóo se resiente por la DANA (El Debate)",
+        "url_electografica": "https://www.electografica.com/2024/11/encuesta-target-point-241125.html",
+        "ingestion": {
+          "source": "electografica",
+          "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-4780244868771847166",
+          "content_sha256": "ae34a2d0bef162f53c826c159fb191cc0d657117a82451cbe290babaa85cfa7b",
+          "blogger_published": "2024-11-25T07:06:00.002+01:00",
+          "blogger_updated": "2024-12-20T11:16:39.755+01:00"
+        },
+        "source_id": "electografica"
+      },
+      "decision": "alta",
+      "estudio_id": "electografica-40f30757da05b8787f57"
+    }
+  },
+  {
+    "historico": {
+      "instituto": "Target Point",
+      "estudio_id": "electografica-d37298f14236b9586378",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2024-10-21",
+      "trabajo_campo_inicio": "2024-10-16",
+      "trabajo_campo_fin": "2024-10-18",
+      "fecha_fin_campo": "2024-10-18",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1020,
+      "resultados": {
+        "PP": 35.2,
+        "PSOE": 29.2,
+        "VOX": 10.6,
+        "SUMAR": 8.5,
+        "PODEMOS": 3.1
+      },
+      "fuente": "https://www.eldebate.com/espana/20240922/feijoo-sigue-creciendo-izquierda-pierde-25-puntos-casi-toda-opcion-gobernar_229220.html",
+      "medio": "Feijóo sigue creciendo y la izquierda pierde 2,5 puntos y casi toda opción de gobernar (El Debate)",
+      "url_electografica": "https://www.electografica.com/2024/10/encuesta-target-point-241021.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8548281258394292549",
+        "content_sha256": "45b25815c274e9fb502b32a3b00da5ee107bbb3904b55d8026c8a1394116e2a0",
+        "blogger_published": "2024-10-21T08:21:00.000+02:00",
+        "blogger_updated": "2024-10-21T08:21:28.454+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "audit": {
+      "id": "tag:blogger.com,1999:blog-1143014762904556765.post-8548281258394292549",
+      "title": "[G] ESPAÑA · Encuesta Target Point 21/10/2024: PP 35,2% (154/155) · PSOE 29,2% (123/124) · VOX 10,6% (24/25) · SUMAR 8,5% (13/14) · PODEMOS 3,1% (2/3) · SALF 3,1% (2)",
+      "url": "https://www.electografica.com/2024/10/encuesta-target-point-241021.html",
+      "extracted": {
+        "instituto": "Target Point",
+        "estudio_id": "electografica-d37298f14236b9586378",
+        "tipo": "estimacion_voto",
+        "ambito": "España",
+        "fecha_publicacion": "2024-10-21",
+        "trabajo_campo_inicio": "2024-10-16",
+        "trabajo_campo_fin": "2024-10-18",
+        "fecha_fin_campo": "2024-10-18",
+        "tipo_fecha": "publicacion",
+        "tamano_muestra": 1020,
+        "resultados": {
+          "PP": 35.2,
+          "PSOE": 29.2,
+          "VOX": 10.6,
+          "SUMAR": 8.5,
+          "PODEMOS": 3.1,
+          "SALF": 3.1
+        },
+        "fuente": "https://www.eldebate.com/espana/20240922/feijoo-sigue-creciendo-izquierda-pierde-25-puntos-casi-toda-opcion-gobernar_229220.html",
+        "medio": "Feijóo sigue creciendo y la izquierda pierde 2,5 puntos y casi toda opción de gobernar (El Debate)",
+        "url_electografica": "https://www.electografica.com/2024/10/encuesta-target-point-241021.html",
+        "ingestion": {
+          "source": "electografica",
+          "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8548281258394292549",
+          "content_sha256": "45b25815c274e9fb502b32a3b00da5ee107bbb3904b55d8026c8a1394116e2a0",
+          "blogger_published": "2024-10-21T08:21:00+02:00",
+          "blogger_updated": "2024-10-21T08:21:28.454+02:00"
+        },
+        "source_id": "electografica"
+      },
+      "decision": "alta",
+      "estudio_id": "electografica-d37298f14236b9586378"
+    }
+  },
+  {
+    "historico": {
+      "instituto": "Target Point",
+      "estudio_id": "electografica-4319c47170e76a75e724",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2024-06-30",
+      "trabajo_campo_inicio": "2024-06-25",
+      "trabajo_campo_fin": "2024-06-27",
+      "fecha_fin_campo": "2024-06-27",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1002,
+      "resultados": {
+        "PP": 34.9,
+        "PSOE": 29.6,
+        "VOX": 9.8,
+        "SUMAR": 5.5,
+        "PODEMOS": 4.4
+      },
+      "fuente": "https://www.eldebate.com/espana/20240630/feijoo-tiene-opciones-sumar-mayoria-absoluta-pesar-division-centro-derecha-tres_209125.html",
+      "medio": "Feijóo tiene opciones de sumar mayoría absoluta a pesar de la división del centro derecha en tres (El Debate)",
+      "url_electografica": "https://www.electografica.com/2024/06/encuesta-target-point-240630.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8753780288493112248",
+        "content_sha256": "7e691a63d889fe312ff946c87c81195205113d51d89a3a77030f2b933086fc67",
+        "blogger_published": "2024-06-30T12:33:00.005+02:00",
+        "blogger_updated": "2024-07-23T23:26:32.005+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "audit": {
+      "id": "tag:blogger.com,1999:blog-1143014762904556765.post-8753780288493112248",
+      "title": "[G] ESPAÑA · Encuesta Target Point 30/06/2024: PP 34,9% (149/150) · PSOE 29,6% (119/120) · VOX 9,8% (23/24) · SUMAR 5,5% (7/9) · PODEMOS 4,4% (4/6) · SALF 3,8% (3/4)",
+      "url": "https://www.electografica.com/2024/06/encuesta-target-point-240630.html",
+      "extracted": {
+        "instituto": "Target Point",
+        "estudio_id": "electografica-4319c47170e76a75e724",
+        "tipo": "estimacion_voto",
+        "ambito": "España",
+        "fecha_publicacion": "2024-06-30",
+        "trabajo_campo_inicio": "2024-06-25",
+        "trabajo_campo_fin": "2024-06-27",
+        "fecha_fin_campo": "2024-06-27",
+        "tipo_fecha": "publicacion",
+        "tamano_muestra": 1002,
+        "resultados": {
+          "PP": 34.9,
+          "PSOE": 29.6,
+          "VOX": 9.8,
+          "SUMAR": 5.5,
+          "PODEMOS": 4.4,
+          "SALF": 3.8
+        },
+        "fuente": "https://www.eldebate.com/espana/20240630/feijoo-tiene-opciones-sumar-mayoria-absoluta-pesar-division-centro-derecha-tres_209125.html",
+        "medio": "Feijóo tiene opciones de sumar mayoría absoluta a pesar de la división del centro derecha en tres (El Debate)",
+        "url_electografica": "https://www.electografica.com/2024/06/encuesta-target-point-240630.html",
+        "ingestion": {
+          "source": "electografica",
+          "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8753780288493112248",
+          "content_sha256": "7e691a63d889fe312ff946c87c81195205113d51d89a3a77030f2b933086fc67",
+          "blogger_published": "2024-06-30T12:33:00.005+02:00",
+          "blogger_updated": "2024-07-23T23:26:32.005+02:00"
+        },
+        "source_id": "electografica"
+      },
+      "decision": "alta",
+      "estudio_id": "electografica-4319c47170e76a75e724"
+    }
+  },
+  {
+    "historico": {
+      "instituto": "Target Point",
+      "estudio_id": "electografica-4fe2d8c92fbf29362687",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-03-29",
+      "trabajo_campo_inicio": "2026-03-24",
+      "trabajo_campo_fin": "2026-03-26",
+      "fecha_fin_campo": "2026-03-26",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1114,
+      "resultados": {
+        "PP": 31.7,
+        "PSOE": 27.6,
+        "VOX": 18.3,
+        "SUMAR": 6.9,
+        "PODEMOS": 3.3
+      },
+      "fuente": "https://www.eldebate.com/espana/20260329/vox-pierde-medio-millon-votos-mitad-tormenta-perfecta-pp-sube-psoe-recorta_401045.html",
+      "medio": "Vox pierde medio millón de votos en mitad de una tormenta perfecta, el PP sube y el PSOE recorta (El Debate)",
+      "url_electografica": "https://www.electografica.com/2026/03/encuesta-target-point-260329.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-4598461693751426545",
+        "content_sha256": "c870a1f72843b9224343e5d384020a79ebcdec3bce58e617013bbc839108c9dc",
+        "blogger_published": "2026-03-29T11:39:00.002+02:00",
+        "blogger_updated": "2026-04-01T11:38:16.232+02:00"
+      },
+      "source_id": "electografica"
+    },
+    "audit": {
+      "id": "tag:blogger.com,1999:blog-1143014762904556765.post-4598461693751426545",
+      "title": "[G] ESPAÑA · Encuesta Target Point 29/03/2026: PP 31,7% (131/133) · PSOE 27,6% (112/114) · VOX 18,3% (63/64) · SUMAR 6,9% (9/10) · PODEMOS 3,3% (2/3) · SALF 2,2%",
+      "url": "https://www.electografica.com/2026/03/encuesta-target-point-260329.html",
+      "extracted": {
+        "instituto": "Target Point",
+        "estudio_id": "electografica-4fe2d8c92fbf29362687",
+        "tipo": "estimacion_voto",
+        "ambito": "España",
+        "fecha_publicacion": "2026-03-29",
+        "trabajo_campo_inicio": "2026-03-24",
+        "trabajo_campo_fin": "2026-03-26",
+        "fecha_fin_campo": "2026-03-26",
+        "tipo_fecha": "publicacion",
+        "tamano_muestra": 1114,
+        "resultados": {
+          "PP": 31.7,
+          "PSOE": 27.6,
+          "VOX": 18.3,
+          "SUMAR": 6.9,
+          "PODEMOS": 3.3,
+          "SALF": 2.2
+        },
+        "fuente": "https://www.eldebate.com/espana/20260329/vox-pierde-medio-millon-votos-mitad-tormenta-perfecta-pp-sube-psoe-recorta_401045.html",
+        "medio": "Vox pierde medio millón de votos en mitad de una tormenta perfecta, el PP sube y el PSOE recorta (El Debate)",
+        "url_electografica": "https://www.electografica.com/2026/03/encuesta-target-point-260329.html",
+        "ingestion": {
+          "source": "electografica",
+          "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-4598461693751426545",
+          "content_sha256": "c870a1f72843b9224343e5d384020a79ebcdec3bce58e617013bbc839108c9dc",
+          "blogger_published": "2026-03-29T11:39:00.002+02:00",
+          "blogger_updated": "2026-04-01T11:38:16.232+02:00"
+        },
+        "source_id": "electografica"
+      },
+      "decision": "alta",
+      "estudio_id": "electografica-4fe2d8c92fbf29362687"
+    }
+  },
+  {
+    "historico": {
+      "instituto": "Target Point",
+      "estudio_id": "electografica-290c6a3265e015c9e822",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-02-22",
+      "trabajo_campo_inicio": "2026-02-17",
+      "trabajo_campo_fin": "2026-02-19",
+      "fecha_fin_campo": "2026-02-19",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1005,
+      "resultados": {
+        "PP": 30.5,
+        "PSOE": 25.8,
+        "VOX": 20.3,
+        "SUMAR": 6.7,
+        "PODEMOS": 3.7
+      },
+      "fuente": "https://www.eldebate.com/espana/20260222/sanchez-cae-nuevo-minimo-ante-derecha-imparable-tiene-vox-solo-55-puntos_387521.html",
+      "medio": "Sánchez cae a un nuevo mínimo ante una derecha imparable y ya tiene a Vox a solo 5,5 puntos (El Debate)",
+      "url_electografica": "https://www.electografica.com/2026/02/encuesta-target-point-260222.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-556887523924442576",
+        "content_sha256": "23f9952e04f0e427e26c2fd6f8c9fccb694caa5083f5e3ac2010defc75ca862b",
+        "blogger_published": "2026-02-22T08:18:00.000+01:00",
+        "blogger_updated": "2026-02-22T08:18:52.000+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "audit": {
+      "id": "tag:blogger.com,1999:blog-1143014762904556765.post-556887523924442576",
+      "title": "[G] ESPAÑA · Encuesta Target Point 22/02/2026: PP 30,5% (128/130) · PSOE 25,8% (105/107) · VOX 20,3% (72/73) · SUMAR 6,7% (9/10) · PODEMOS 3,7% (3/4) · SALF 2,4%",
+      "url": "https://www.electografica.com/2026/02/encuesta-target-point-260222.html",
+      "extracted": {
+        "instituto": "Target Point",
+        "estudio_id": "electografica-290c6a3265e015c9e822",
+        "tipo": "estimacion_voto",
+        "ambito": "España",
+        "fecha_publicacion": "2026-02-22",
+        "trabajo_campo_inicio": "2026-02-17",
+        "trabajo_campo_fin": "2026-02-19",
+        "fecha_fin_campo": "2026-02-19",
+        "tipo_fecha": "publicacion",
+        "tamano_muestra": 1005,
+        "resultados": {
+          "PP": 30.5,
+          "PSOE": 25.8,
+          "VOX": 20.3,
+          "SUMAR": 6.7,
+          "PODEMOS": 3.7,
+          "SALF": 2.4
+        },
+        "fuente": "https://www.eldebate.com/espana/20260222/sanchez-cae-nuevo-minimo-ante-derecha-imparable-tiene-vox-solo-55-puntos_387521.html",
+        "medio": "Sánchez cae a un nuevo mínimo ante una derecha imparable y ya tiene a Vox a solo 5,5 puntos (El Debate)",
+        "url_electografica": "https://www.electografica.com/2026/02/encuesta-target-point-260222.html",
+        "ingestion": {
+          "source": "electografica",
+          "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-556887523924442576",
+          "content_sha256": "23f9952e04f0e427e26c2fd6f8c9fccb694caa5083f5e3ac2010defc75ca862b",
+          "blogger_published": "2026-02-22T08:18:00+01:00",
+          "blogger_updated": "2026-02-22T08:18:52+01:00"
+        },
+        "source_id": "electografica"
+      },
+      "decision": "alta",
+      "estudio_id": "electografica-290c6a3265e015c9e822"
+    }
+  },
+  {
+    "historico": {
+      "instituto": "Target Point",
+      "estudio_id": "electografica-562e2cb5cc838ca459dd",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-01-18",
+      "trabajo_campo_inicio": "2026-01-13",
+      "trabajo_campo_fin": "2026-01-15",
+      "fecha_fin_campo": "2026-01-15",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 1000,
+      "resultados": {
+        "PP": 30,
+        "PSOE": 26.1,
+        "VOX": 19.2,
+        "SUMAR": 8,
+        "PODEMOS": 3.2
+      },
+      "fuente": "https://www.eldebate.com/espana/20260118/psoe-cae-medio-millon-votos-entrada-prision-abalos-pp-vox-escalan-198-escanos_375287.html",
+      "medio": "El PSOE cae medio millón de votos tras la entrada en prisión de Ábalos y el PP y Vox escalan a 198 escaños (El Debate)",
+      "url_electografica": "https://www.electografica.com/2026/01/encuesta-target-point-260118.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-877339417459480179",
+        "content_sha256": "ce4deb9a560ade52ba9d8f0f4a31d26b7cfcc95adb48f69e6aa91b2f2a668661",
+        "blogger_published": "2026-01-18T12:55:00.002+01:00",
+        "blogger_updated": "2026-01-18T14:08:20.626+01:00"
+      },
+      "source_id": "electografica"
+    },
+    "audit": {
+      "id": "tag:blogger.com,1999:blog-1143014762904556765.post-877339417459480179",
+      "title": "[G] ESPAÑA · Encuesta Target Point 18/01/2026: PP 30,0% (126/128) · PSOE 26,1% (106/108) · VOX 19,2% (68/70) · SUMAR 8,0% (12/13) · PODEMOS 3,2% (2/3) · SALF 1,8%",
+      "url": "https://www.electografica.com/2026/01/encuesta-target-point-260118.html",
+      "extracted": {
+        "instituto": "Target Point",
+        "estudio_id": "electografica-562e2cb5cc838ca459dd",
+        "tipo": "estimacion_voto",
+        "ambito": "España",
+        "fecha_publicacion": "2026-01-18",
+        "trabajo_campo_inicio": "2026-01-13",
+        "trabajo_campo_fin": "2026-01-15",
+        "fecha_fin_campo": "2026-01-15",
+        "tipo_fecha": "publicacion",
+        "tamano_muestra": 1000,
+        "resultados": {
+          "PP": 30,
+          "PSOE": 26.1,
+          "VOX": 19.2,
+          "SUMAR": 8,
+          "PODEMOS": 3.2,
+          "SALF": 1.8
+        },
+        "fuente": "https://www.eldebate.com/espana/20260118/psoe-cae-medio-millon-votos-entrada-prision-abalos-pp-vox-escalan-198-escanos_375287.html",
+        "medio": "El PSOE cae medio millón de votos tras la entrada en prisión de Ábalos y el PP y Vox escalan a 198 escaños (El Debate)",
+        "url_electografica": "https://www.electografica.com/2026/01/encuesta-target-point-260118.html",
+        "ingestion": {
+          "source": "electografica",
+          "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-877339417459480179",
+          "content_sha256": "ce4deb9a560ade52ba9d8f0f4a31d26b7cfcc95adb48f69e6aa91b2f2a668661",
+          "blogger_published": "2026-01-18T12:55:00.002+01:00",
+          "blogger_updated": "2026-01-18T14:08:20.626+01:00"
+        },
+        "source_id": "electografica"
+      },
+      "decision": "alta",
+      "estudio_id": "electografica-562e2cb5cc838ca459dd"
+    }
+  }
+]

@@ -1,3 +1,5 @@
+import {extraerEntrada} from './extraer-electografica.mjs';
+import {esHistoricoSigma, resolverElectografica, comprobarCuarentena} from './reconciliaciones-documentadas.mjs';
 import {promoverLote} from './lote-atomico.mjs';
 import {conservarReferencias, unirReferencias} from './referencias-historicas.mjs';
 import {readFile,writeFile,mkdir,rename} from 'node:fs/promises';
@@ -36,11 +38,23 @@ try {
 if(!/^\d{4}-\d{2}-\d{2}$/.test(asOf)||!Number.isFinite(Date.parse(asOf))||new Date(asOf).toISOString().slice(0,10)!==asOf)throw Error('AsOf inválido: use YYYY-MM-DD');
 const base=await leer('data/pipeline-test/wikipedia/radar.json',{encuestas:[]});
 if(!Array.isArray(base.encuestas)){issue('error','ESTRUCTURA_INVALIDA','Wikipedia sin encuestas');base.encuestas=[];}
+const heredadas=[];
+const snapshot=await leer('data/pipeline-test/electografica/snapshot.json',null);
 const previous=await leer('data/pipeline-test/electografica/radar.json',null,true);
 // Una salida previa solo puede enriquecer Wikipedia con su auditoría cruzada intacta.
 let previousAudit=[];
 if(previous)previousAudit=await leer('data/pipeline-test/electografica/audit.json',[],true);
-for(const poll of previous?.encuestas||[]){try{const existing=base.encuestas.find(p=>p.estudio_id===poll.estudio_id);if(!existing)base.encuestas.push(poll);else{const start=incidencias.length;for(const k of ['instituto','fecha_publicacion','trabajo_campo_inicio','trabajo_campo_fin','tamano_muestra'])if(JSON.stringify(existing[k])!==JSON.stringify(poll[k]))issue('error','RECONCILIACION_PREVIA','Conflicto entre históricos: '+poll.estudio_id+'.'+k,poll.estudio_id);for(const [k,v] of Object.entries(poll.resultados))if(Object.hasOwn(existing.resultados,k)&&existing.resultados[k]!==v)issue('error','RECONCILIACION_PREVIA','Conflicto entre históricos: '+poll.estudio_id+'.resultados.'+k,poll.estudio_id);if(incidencias.length!==start)continue;const extras=Object.keys(poll.resultados).filter(k=>!Object.hasOwn(existing.resultados,k));if(extras.length){const proofs=previousAudit.filter(a=>a.decision==='cruzada'&&a.estudio_id===poll.estudio_id);if(proofs.length!==1)throw Error('Enriquecimiento previo sin auditoría única: '+poll.estudio_id);const a=proofs[0],e=a.extracted;if(!e||e.ingestion?.source!=='electografica'||a.id!==e.ingestion.entry_id||a.url!==e.url_electografica||!e.ingestion.content_sha256||!poll.fuentes_adicionales?.some(r=>r.source==='electografica'&&r.url===a.url&&r.sha256===e.ingestion.content_sha256&&r.original===e.fuente&&r.medio===e.medio)||['instituto','trabajo_campo_inicio','trabajo_campo_fin','fecha_publicacion','fuente','tamano_muestra'].some(k=>existing[k]!==e[k])||Object.entries(e.resultados).some(([k,v])=>poll.resultados[k]!==v)||extras.some(k=>!Object.hasOwn(e.resultados,k)))throw Error('Origen previo no comprobable: '+poll.estudio_id);}existing.resultados={...poll.resultados,...existing.resultados};if(poll.fuentes_adicionales?.length){existing.fuentes_adicionales=unirReferencias(poll.fuentes_adicionales,existing.fuentes_adicionales||[]);}}}
+for(const poll of previous?.encuestas||[]){try{const existing=base.encuestas.find(p=>p.estudio_id===poll.estudio_id);if(!existing){
+ const prev=await readFile(new URL('data/pipeline-test/electografica/quarantine.json',root),'utf8').then(JSON.parse).catch(e=>{if(e.code==='ENOENT')return [];throw e;});
+ const proofs=[...prev,...(previous.reconciliaciones_anteriores||[])].filter(c=>c.reconciliacion?.historico?.estudio_id===poll.estudio_id);
+ if(proofs.length || esHistoricoSigma(poll)) {
+  if(!snapshot?.feed?.entry?.some(e=>e.id?.$t===poll.ingestion.entry_id)) {
+   const wiki=base.encuestas.filter(q=>q.estudio_id===proofs[0]?.reconciliacion?.wikipedia?.estudio_id);
+   if(proofs.length!==1||wiki.length!==1||!comprobarCuarentena(proofs[0],wiki[0],poll))throw Error('Reconciliación previa no comprobable');
+   base.encuestas[base.encuestas.indexOf(wiki[0])]=structuredClone(poll);heredadas.push(proofs[0]);
+  }
+ } else base.encuestas.push(poll);
+}else{const start=incidencias.length;for(const k of ['instituto','fecha_publicacion','trabajo_campo_inicio','trabajo_campo_fin','tamano_muestra'])if(JSON.stringify(existing[k])!==JSON.stringify(poll[k]))issue('error','RECONCILIACION_PREVIA','Conflicto entre históricos: '+poll.estudio_id+'.'+k,poll.estudio_id);for(const [k,v] of Object.entries(poll.resultados))if(Object.hasOwn(existing.resultados,k)&&existing.resultados[k]!==v)issue('error','RECONCILIACION_PREVIA','Conflicto entre históricos: '+poll.estudio_id+'.resultados.'+k,poll.estudio_id);if(incidencias.length!==start)continue;const extras=Object.keys(poll.resultados).filter(k=>!Object.hasOwn(existing.resultados,k));if(extras.length){const proofs=previousAudit.filter(a=>a.decision==='cruzada'&&a.estudio_id===poll.estudio_id);if(proofs.length!==1)throw Error('Enriquecimiento previo sin auditoría única: '+poll.estudio_id);const a=proofs[0],e=a.extracted;if(!e||e.ingestion?.source!=='electografica'||a.id!==e.ingestion.entry_id||a.url!==e.url_electografica||!e.ingestion.content_sha256||!poll.fuentes_adicionales?.some(r=>r.source==='electografica'&&r.url===a.url&&r.sha256===e.ingestion.content_sha256&&r.original===e.fuente&&r.medio===e.medio)||['instituto','trabajo_campo_inicio','trabajo_campo_fin','fecha_publicacion','fuente','tamano_muestra'].some(k=>existing[k]!==e[k])||Object.entries(e.resultados).some(([k,v])=>poll.resultados[k]!==v)||extras.some(k=>!Object.hasOwn(e.resultados,k)))throw Error('Origen previo no comprobable: '+poll.estudio_id);}existing.resultados={...poll.resultados,...existing.resultados};if(poll.fuentes_adicionales?.length){existing.fuentes_adicionales=unirReferencias(poll.fuentes_adicionales,existing.fuentes_adicionales||[]);}}}
 catch(e){issue('error','RECONCILIACION_PREVIA',e.message,poll?.estudio_id);}}
 // El histórico versionado conserva procedencia aunque una entrada ya no cruce.
 let historico;
@@ -53,7 +67,7 @@ if(historico)try{conservarReferencias(base.encuestas,historico.encuestas);}catch
 const initialIds=new Set(base.encuestas.map(p=>p.estudio_id));
 const before=await leer('data/pipeline-test/electografica/before.json',base,true);
 const rows=structuredClone(base.encuestas),quarantine=[],audit=[],entries=new Map(),manifest=[];
-const snapshot=await leer('data/pipeline-test/electografica/snapshot.json',null);
+
 if(snapshot?.complete!==true||!Number.isInteger(snapshot?.expected)||snapshot.expected<1||!Array.isArray(snapshot?.feed?.entry)||snapshot.feed.entry.length!==snapshot.expected)issue('error','SNAPSHOT_INCOMPLETO','Falta snapshot completo y no vacío');
 for(const [index,e] of (Array.isArray(snapshot?.feed?.entry)?snapshot.feed.entry:[]).entries()){
  if(typeof e?.id?.$t!=='string'||!e.id.$t){issue('error','ENTRADA_SIN_ID','Entrada '+index);cobertura.push({indice:index,id:null,decision:'error'});continue;}
@@ -65,31 +79,25 @@ if(!entries.size)issue('no_evaluable','FEED_NO_EVALUABLE','No hay entradas evalu
 for(const e of entries.values()){
  const record={id:e.id.$t};let candidate;const problemas=[];
  try{
- const title=e.title.$t,html=e.content?.$t||'',plain=text(html),url=e.link.find(l=>l.rel==='alternate')?.href;
- Object.assign(record,{title,url});
-  if(!/ESPAÑA/.test(title))throw Error('Ámbito regional');
-  if(/CIS|reestim|modelo|proyecci[oó]n/i.test(title))throw Error('CIS/modelo: se conserva canal CIS existente');
-  const m=title.match(/Encuesta (.*?) (\d{2})\/(\d{2})\/(20\d{2})/);if(!m)throw Error('Identidad no reconocida');
-  const pub=iso(m[2],m[3],m[4]);if(pub<'2023-07-23'||pub>asOf)throw Error('Fuera del periodo');
-  let institute=alias[m[1]]||m[1];
-  const ft=plain.match(/(?:Periodo de campo:|Fecha realización)\s*(.*?)(?:·|Método)/i);const dates=ft&&field(ft[1]);if(!dates)problemas.push({codigo:'CAMPO_INCOMPLETO',evidencia:'Campo incompleto: no se imputa'});
-  const source=html.match(/Fuente:\s*(?:<[^>]*>\s*)*<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/i);if(!source)problemas.push({codigo:'ORIGINAL_AUSENTE',evidencia:'Falta enlace original'});
-  const results={};
-  const segment=html.split(/<!--\s*(?:ESCAÑOS|EVOLUCIÓN|IDV|INTENCIÓN DIRECTA)/i)[0];
-  for(const c of segment.matchAll(/<!--\s*([^<>]+?)\s*-->([\s\S]*?)(?=<!--|$)/g)){
-   const key=party(c[1].trim());if(!['PP','PSOE','VOX','SUMAR','PODEMOS','ERC','JUNTS','EH_BILDU','PNV','BNG','CC','UPN','PACMA','SALF','ALIANCA_CAT','ADELANTE_ANDALUCIA','FA','FV'].includes(key))continue;
-   const v=c[2].match(/class="dato_encuesta"[^>]*>\s*(\d+(?:[,.]\d+)?)/)||c[2].match(/class="bar-fill-anim"\s+data-w="(\d+(?:\.\d+)?)/);
-   if(v)results[key]=Number(v[1].replace(',','.'));
-  }
-  if(!['PP','PSOE','VOX'].every(k=>Number.isFinite(results[k])))problemas.push({codigo:'PORCENTAJES_INCOMPLETOS',evidencia:'Formato de porcentajes no reconocido'});
-  if(Object.values(results).some(v=>v<0||v>100)||Object.values(results).reduce((a,b)=>a+b,0)>100.5)problemas.push({codigo:'PORCENTAJES_INVALIDOS',evidencia:'Porcentajes fuera de rango o suma inválida'});
-  if(problemas.length)throw Error(problemas.map(p=>p.evidencia).join('; '));
-  const sample=plain.match(/Muestra:?\s*([\d.]+)(?:\s|·)/);
-  const p=validate({instituto:institute,estudio_id:'electografica-'+hash(e.id.$t).slice(0,20),tipo:'estimacion_voto',ambito:'España',fecha_publicacion:pub,trabajo_campo_inicio:dates[0],trabajo_campo_fin:dates[1],fecha_fin_campo:dates[1],tipo_fecha:'publicacion',tamano_muestra:sample?Number(sample[1].replaceAll('.','')):null,resultados:results,fuente:source[1].replaceAll('&amp;','&'),medio:text(source[2]),url_electografica:url,ingestion:{source:'electografica',entry_id:e.id.$t,content_sha256:hash(html),blogger_published:e.published.$t,blogger_updated:e.updated.$t}}, {id:'electografica',allowHistoricalMetadata:true,allowedHosts:[new URL(source[1]).hostname]},asOf);
+ const title=e.title?.$t,url=e.link?.find(l=>l.rel==='alternate')?.href;Object.assign(record,{title,url});
+ const p=extraerEntrada(e,asOf);
   record.extracted=p;candidate=p;const matches=rows.filter(q=>canon(q.instituto)===canon(p.instituto)&&(q.trabajo_campo_fin===p.trabajo_campo_fin||q.fecha_publicacion===p.fecha_publicacion||(q.fuente===p.fuente&&Math.abs(Date.parse(q.trabajo_campo_fin)-Date.parse(p.trabajo_campo_fin))<=7*86400000)));
   if(matches.length){
    const exact=matches.length===1&&matches[0].trabajo_campo_fin===p.trabajo_campo_fin&&Object.keys(p.resultados).every(k=>!Object.hasOwn(matches[0].resultados,k)||matches[0].resultados[k]===p.resultados[k])?matches[0]:null;
-   if(!exact)throw Error('Conflicto con registro existente: '+matches.map(q=>q.estudio_id).join(','));
+   if(!exact){
+    const historicos=(historico?.encuestas||[]).filter(h=>h.estudio_id===p.estudio_id);
+    // La regla no autoriza reescribir otros registros ya versionados.
+    const versionado=(historico?.encuestas||[]).some(h=>h.estudio_id===matches[0]?.estudio_id);
+    const yaExtraido=audit.some(a=>a.estudio_id===matches[0]?.estudio_id)||quarantine.some(c=>c.reconciliacion?.historico?.estudio_id===matches[0]?.estudio_id);
+    const r=!versionado&&!yaExtraido&&historicos.length<=1&&matches.length===1?resolverElectografica(historicos[0]??null,matches[0],p,e):null;
+    if(r){
+      rows[rows.indexOf(matches[0])]=structuredClone(r.historico);
+      quarantine.push({...record,reason:'Versión incompatible reconocida; original Wikipedia conservado en reconciliacion.wikipedia',candidate:p,matches:[structuredClone(matches[0])],reconciliacion:r});
+      issue('cuarentena','RECONCILIACION_DOCUMENTADA',r.motivo,record.id);
+      continue;
+    }
+    throw Error('Conflicto con registro existente: '+matches.map(q=>q.estudio_id).join(','));
+   }
    if(exact.fecha_publicacion!==p.fecha_publicacion)throw Error('Discrepancia de publicación: '+exact.estudio_id);
    if(exact.url_electografica===url){audit.push({...record,decision:'alta',estudio_id:exact.estudio_id});continue;}
    if(Object.keys(p.resultados).some(k=>!Object.hasOwn(exact.resultados,k))&&['instituto','trabajo_campo_inicio','trabajo_campo_fin','fecha_publicacion','fuente','tamano_muestra'].some(k=>exact[k]!==p[k]))throw Error('Identidad no homologada para enriquecimiento');
@@ -97,9 +105,9 @@ for(const e of entries.values()){
    exact.resultados={...exact.resultados,...p.resultados};
    exact.fuentes_adicionales=referencias;audit.push({...record,decision:'cruzada',estudio_id:exact.estudio_id});
   }else{rows.push(p);audit.push({...record,decision:'alta',estudio_id:p.estudio_id});}
- }catch(error){const tipo=/^(Ámbito regional|CIS\/modelo|Fuera del periodo)/.test(error.message)?'exclusion_esperada':'cuarentena';if(problemas.length)for(const p of problemas)issue(tipo,p.codigo,p.evidencia,record.id);else issue(tipo,tipo==='cuarentena'?'CANDIDATO_RECHAZADO':'FUERA_DE_ALCANCE',error.message,record.id);quarantine.push({...record,reason:error.message,candidate,matches:candidate?rows.filter(q=>canon(q.instituto)===canon(candidate.instituto)&&(q.trabajo_campo_fin===candidate.trabajo_campo_fin||q.fecha_publicacion===candidate.fecha_publicacion||q.fuente===candidate.fuente)).map(q=>({estudio_id:q.estudio_id,trabajo_campo_inicio:q.trabajo_campo_inicio,trabajo_campo_fin:q.trabajo_campo_fin,fecha_publicacion:q.fecha_publicacion,resultados:q.resultados,fuente:q.fuente})):[]});}
+ }catch(error){if(error.problemas)problemas.push(...error.problemas);const tipo=/^(Ámbito regional|CIS\/modelo|Fuera del periodo)/.test(error.message)?'exclusion_esperada':'cuarentena';if(problemas.length)for(const p of problemas)issue(tipo,p.codigo,p.evidencia,record.id);else issue(tipo,tipo==='cuarentena'?'CANDIDATO_RECHAZADO':'FUERA_DE_ALCANCE',error.message,record.id);quarantine.push({...record,reason:error.message,candidate,matches:candidate?rows.filter(q=>canon(q.instituto)===canon(candidate.instituto)&&(q.trabajo_campo_fin===candidate.trabajo_campo_fin||q.fecha_publicacion===candidate.fecha_publicacion||q.fuente===candidate.fuente)).map(q=>({estudio_id:q.estudio_id,trabajo_campo_inicio:q.trabajo_campo_inicio,trabajo_campo_fin:q.trabajo_campo_fin,fecha_publicacion:q.fecha_publicacion,resultados:q.resultados,fuente:q.fuente})):[]});}
 }
-const output={...base,encuestas:rows,status:{...base.status,message:'Histórico local Wikipedia + Electográfica; conflictos en cuarentena.'}};
+const output={...base,reconciliaciones_anteriores:heredadas,encuestas:rows,status:{...base.status,message:'Histórico local Wikipedia + Electográfica; conflictos en cuarentena.'}};
 await save('intento-manifest.json',manifest);await save('intento-quarantine.json',quarantine);await save('intento-audit.json',audit);
 for(const e of entries.values())cobertura.push({id:e.id.$t,decision:audit.find(a=>a.id===e.id.$t)?.decision??incidencias.find(i=>i.estudio_id===e.id.$t)?.tipo??'no_evaluable'});
 
