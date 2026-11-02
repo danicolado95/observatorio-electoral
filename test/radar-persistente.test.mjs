@@ -1,0 +1,26 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {mkdtempSync,mkdirSync,writeFileSync,readFileSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import {join,resolve} from 'node:path';
+import {spawnSync} from 'node:child_process';
+const root=resolve('.');
+const put=(dir,p,v)=>{mkdirSync(join(dir,p,'..'),{recursive:true});writeFileSync(join(dir,p),JSON.stringify(v));};
+const get=(dir,p)=>JSON.parse(readFileSync(join(dir,p),'utf8'));
+function entry(id,date,value=30){return {id:{$t:id},title:{$t:`ESPAÑA: Encuesta NuevaCasa ${date.slice(8)}/${date.slice(5,7)}/${date.slice(0,4)}`},link:[{rel:'alternate',href:`https://www.electografica.com/${id}`}],published:{$t:date+'T09:00:00Z'},updated:{$t:date+'T09:00:00Z'},content:{$t:`Periodo de campo: ${date.slice(8)}/${date.slice(5,7)}/${date.slice(0,4)} · Método: web Fuente: <a href="https://example.org/${id}">Medio</a> <!-- PP --><span class="dato_encuesta">${value}</span><!-- PSOE --><span class="dato_encuesta">25</span><!-- VOX --><span class="dato_encuesta">15</span>`}};}
+function run(dir,script,args=[]){return spawnSync(process.execPath,[join(root,'scripts',script),...args],{cwd:dir,env:{...process.env,ELECTOGRAFICA_TEST_ROOT:dir},encoding:'utf8'});}
+const ok=r=>assert.equal(r.status,0,r.stderr+'\n'+r.stdout);
+test('día siguiente: encuesta nueva cambia serie, conserva histórico entre checkouts y no duplica; fallos no publican',()=>{
+ const dir=mkdtempSync(join(tmpdir(),'radar-diario-'));
+ const rows=Array.from({length:515},(_,i)=>({estudio_id:String(i),instituto:i<35?'CIS':'Casa '+i,tipo:'estimacion_voto',ambito:'España',fecha_publicacion:'2026-11-01',trabajo_campo_inicio:'2026-10-30',trabajo_campo_fin:'2026-10-31',fecha_fin_campo:'2026-10-31',tipo_fecha:'publicacion',tamano_muestra:1000,resultados:{PP:30,PSOE:25,VOX:15},fuente:'https://example.org/'+i}));
+ for(const p of ['data/radar.json','data/radar-desarrollo.json','data/pipeline-test/wikipedia/radar.json','data/pipeline-test/wikipedia/staging.json'])put(dir,p,{encuestas:rows});
+ put(dir,'data/cis-historico.json',{encuestas:rows.slice(0,35)});put(dir,'data/radar-cuarentena-base.json',[]);put(dir,'data/pipeline-test/wikipedia/diagnostico.json',{validado:true});
+ const snapshot=entries=>put(dir,'data/pipeline-test/electografica/snapshot.json',{complete:true,expected:entries.length,feed:{entry:entries}});
+ snapshot([entry('hoy','2026-11-02')]);ok(run(dir,'importar-electografica.mjs',['--as-of','2026-11-02']));
+ const state='published/data/radar.json';ok(run(dir,'radar-persistente.mjs',['promote',state]));const first=get(dir,state);assert.equal(first.encuestas.length,516);
+ ok(run(dir,'radar-persistente.mjs',['restore',state]));snapshot([entry('manana','2026-11-03')]);ok(run(dir,'importar-electografica.mjs',['--as-of','2026-11-03']));ok(run(dir,'radar-persistente.mjs',['promote',state]));
+ const next=get(dir,state);assert.equal(next.encuestas.length,517);assert(next.encuestas.some(p=>p.ingestion?.entry_id==='hoy'));assert(next.encuestas.some(p=>p.ingestion?.entry_id==='manana'));
+ ok(run(dir,'radar-persistente.mjs',['restore',state]));ok(run(dir,'importar-electografica.mjs',['--as-of','2026-11-03']));ok(run(dir,'radar-persistente.mjs',['promote',state]));assert.deepEqual(get(dir,state).encuestas,next.encuestas);
+ const before=readFileSync(join(dir,state));put(dir,'data/pipeline-test/electografica/diagnostico.json',{validado:false});assert.notEqual(run(dir,'radar-persistente.mjs',['promote',state]).status,0);assert.deepEqual(readFileSync(join(dir,state)),before);
+ put(dir,'data/pipeline-test/electografica/diagnostico.json',{validado:true});const bad=get(dir,'data/pipeline-test/electografica/radar.json');bad.encuestas.shift();put(dir,'data/pipeline-test/electografica/radar.json',bad);assert.notEqual(run(dir,'radar-persistente.mjs',['promote',state]).status,0);assert.deepEqual(readFileSync(join(dir,state)),before);
+});
