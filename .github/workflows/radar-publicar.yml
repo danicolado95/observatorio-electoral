@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
-          ref: 0c0219c722cd4093629bbb1a0ed79bd4786dd5c2
+          ref: 9bf47558dd60dc55fcd08c834cd0765e1ef4fe82
           path: engine
           persist-credentials: false
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
@@ -95,5 +95,6 @@ jobs:
             engine/data/pipeline-test/wikipedia/diagnostico.json
             engine/data/pipeline-test/electografica/diagnostico.json
             engine/data/pipeline-test/electografica/quarantine.json
+
 
 
