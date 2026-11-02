@@ -1,4 +1,4 @@
-param([string]$AsOf='2026-11-02',[string]$FixtureDirectory,[switch]$DownloadOnly)
+param([string]$AsOf=([datetime]::UtcNow.ToString('yyyy-MM-dd')),[string]$FixtureDirectory,[switch]$DownloadOnly)
 $ErrorActionPreference='Stop'
 $root=if($env:ELECTOGRAFICA_TEST_ROOT){$env:ELECTOGRAFICA_TEST_ROOT}else{Join-Path $PSScriptRoot '..'}
 $dest=Join-Path $root 'data/pipeline-test/electografica'
@@ -7,12 +7,12 @@ $run=Join-Path $dest ('downloads/'+[guid]::NewGuid().ToString())
 New-Item -ItemType Directory -Force $run | Out-Null
 $entries=@{}
 $manifest=@()
-$until=([datetime]::ParseExact($AsOf,'yyyy-MM-dd',$null)).AddDays(1).ToString('yyyy-MM-dd')
+$until=([datetime]::ParseExact($AsOf,'yyyy-MM-dd',[cultureinfo]::InvariantCulture)).AddDays(1).ToString('yyyy-MM-dd')
 foreach($category in @('Generales','Generales_CCAA')){
  $start=1;$total=$null;$ids=@{}
  do {
   $name="$category-$start.json";$file=Join-Path $run $name
-  $url="https://www.electografica.com/feeds/posts/default/-/${category}?alt=json&max-results=20&start-index=$start&published-min=2023-07-23T00:00:00%2B02:00&published-max=${until}T00:00:00%2B01:00"
+  $url="https://www.electografica.com/feeds/posts/default/-/${category}?alt=json&max-results=20&start-index=$start&published-min=2023-07-23T00:00:00%2B02:00&published-max=${until}T00:00:00Z"
   if($FixtureDirectory){Copy-Item -LiteralPath (Join-Path $FixtureDirectory $name) -Destination $file}
   else{Invoke-WebRequest $url -OutFile $file -TimeoutSec 45}
   $f=Get-Content $file -Raw | ConvertFrom-Json
@@ -32,4 +32,4 @@ $snapshot=@{complete=$true;expected=$entries.Count;period=@('2023-07-23',$AsOf);
 $temp=Join-Path $run 'snapshot.json'
 $snapshot | ConvertTo-Json -Depth 100 | Set-Content -LiteralPath $temp -Encoding utf8
 Move-Item -LiteralPath $temp -Destination (Join-Path $dest 'snapshot.json') -Force
-if(!$DownloadOnly){node (Join-Path $PSScriptRoot 'importar-electografica.mjs');if($LASTEXITCODE){throw 'Falló la normalización'}}
+if(!$DownloadOnly){node (Join-Path $PSScriptRoot 'importar-electografica.mjs') --as-of $AsOf;if($LASTEXITCODE){throw 'Falló la normalización'}}

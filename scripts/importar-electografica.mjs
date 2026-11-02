@@ -1,7 +1,11 @@
 import {readFile,writeFile,readdir,mkdir,rename} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {createRequire} from 'node:module';
+import {parseArgs} from 'node:util';
 import {validate} from './update.mjs';
+const {values}=parseArgs({options:{'as-of':{type:'string'}}});
+const asOf=values['as-of']??new Date().toISOString().slice(0,10);
+if(!/^\d{4}-\d{2}-\d{2}$/.test(asOf)||!Number.isFinite(Date.parse(asOf))||new Date(asOf).toISOString().slice(0,10)!==asOf)throw Error('AsOf inválido: use YYYY-MM-DD');
 const core=createRequire(import.meta.url)('../js/radar-core.js');
 const root=process.env.ELECTOGRAFICA_TEST_ROOT?new URL('file:///'+process.env.ELECTOGRAFICA_TEST_ROOT.replaceAll('\\','/')+'/'):new URL('../',import.meta.url),dir=new URL('data/pipeline-test/electografica/',root);
 const read=async p=>JSON.parse(await readFile(new URL(p,root),'utf8'));
@@ -31,7 +35,7 @@ for(const e of entries.values()){
   if(!/ESPAÑA/.test(title))throw Error('Ámbito regional');
   if(/CIS|reestim|modelo|proyecci[oó]n/i.test(title))throw Error('CIS/modelo: se conserva canal CIS existente');
   const m=title.match(/Encuesta (.*?) (\d{2})\/(\d{2})\/(20\d{2})/);if(!m)throw Error('Identidad no reconocida');
-  const pub=iso(m[2],m[3],m[4]);if(pub<'2023-07-23'||pub>'2026-11-02')throw Error('Fuera del periodo');
+  const pub=iso(m[2],m[3],m[4]);if(pub<'2023-07-23'||pub>asOf)throw Error('Fuera del periodo');
   let institute=alias[m[1]]||m[1];
   const ft=plain.match(/(?:Periodo de campo:|Fecha realización)\s*(.*?)(?:·|Método)/i);const dates=ft&&field(ft[1]);if(!dates)throw Error('Campo incompleto: no se imputa');
   const source=html.match(/Fuente:\s*(?:<[^>]*>\s*)*<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/i);if(!source)throw Error('Falta enlace original');
@@ -44,7 +48,7 @@ for(const e of entries.values()){
   }
   if(!['PP','PSOE','VOX'].every(k=>Number.isFinite(results[k])))throw Error('Formato de porcentajes no reconocido');
   const sample=plain.match(/Muestra:?\s*([\d.]+)(?:\s|·)/);
-  const p=validate({instituto:institute,estudio_id:'electografica-'+hash(e.id.$t).slice(0,20),tipo:'estimacion_voto',ambito:'España',fecha_publicacion:pub,trabajo_campo_inicio:dates[0],trabajo_campo_fin:dates[1],fecha_fin_campo:dates[1],tipo_fecha:'publicacion',tamano_muestra:sample?Number(sample[1].replaceAll('.','')):null,resultados:results,fuente:source[1].replaceAll('&amp;','&'),medio:text(source[2]),url_electografica:url,ingestion:{source:'electografica',entry_id:e.id.$t,content_sha256:hash(html),blogger_published:e.published.$t,blogger_updated:e.updated.$t}}, {id:'electografica',allowHistoricalMetadata:true,allowedHosts:[new URL(source[1]).hostname]},'2026-11-02');
+  const p=validate({instituto:institute,estudio_id:'electografica-'+hash(e.id.$t).slice(0,20),tipo:'estimacion_voto',ambito:'España',fecha_publicacion:pub,trabajo_campo_inicio:dates[0],trabajo_campo_fin:dates[1],fecha_fin_campo:dates[1],tipo_fecha:'publicacion',tamano_muestra:sample?Number(sample[1].replaceAll('.','')):null,resultados:results,fuente:source[1].replaceAll('&amp;','&'),medio:text(source[2]),url_electografica:url,ingestion:{source:'electografica',entry_id:e.id.$t,content_sha256:hash(html),blogger_published:e.published.$t,blogger_updated:e.updated.$t}}, {id:'electografica',allowHistoricalMetadata:true,allowedHosts:[new URL(source[1]).hostname]},asOf);
   record.extracted=p;candidate=p;const matches=rows.filter(q=>canon(q.instituto)===canon(p.instituto)&&(q.trabajo_campo_fin===p.trabajo_campo_fin||q.fecha_publicacion===p.fecha_publicacion||(q.fuente===p.fuente&&Math.abs(Date.parse(q.trabajo_campo_fin)-Date.parse(p.trabajo_campo_fin))<=7*86400000)));
   if(matches.length){
    const exact=matches.find(q=>q.trabajo_campo_fin===p.trabajo_campo_fin&&Object.keys(p.resultados).every(k=>q.resultados[k]===undefined||q.resultados[k]===p.resultados[k]));
@@ -56,6 +60,5 @@ for(const e of entries.values()){
 }
 const output={...base,encuestas:rows,status:{...base.status,message:'Histórico local Wikipedia + Electográfica; conflictos en cuarentena.'}};
 await save('manifest.json',manifest);await save('quarantine.json',quarantine);await save('audit.json',audit);await save('radar.json',output);
-const radarTarget=new URL('data/pipeline-test/wikipedia/radar.json',root),radarTemp=new URL('data/pipeline-test/wikipedia/radar.json.tmp',root);await writeFile(radarTemp,JSON.stringify(output,null,2)+'\n');await rename(radarTemp,radarTarget);
-const stats=data=>{const priv=core.select(data.encuestas,false);const series={};for(const cis of [false,true])for(const party of ['PP','PSOE','VOX','SUMAR']){const points=new Map(core.medianTrend(core.select(data.encuestas,cis),party,'2026-11-02').map(p=>[p.date,p]));let valid=0,max=0,run=0;for(let t=Date.parse('2023-07-23');t<=Date.parse('2026-11-02');t+=86400000){if(points.get(new Date(t).toISOString().slice(0,10))?.value!=null){valid++;run=0;}else{run++;max=Math.max(max,run);}}series[(cis?'ON_':'OFF_')+party]={valid_days:valid,max_gap_days:max};}return {private:priv.length,cis:data.encuestas.length-priv.length,institutes:new Set(priv.map(p=>p.instituto)).size,series};};
-const report={new_this_run:rows.filter(p=>!initialIds.has(p.estudio_id)).length,period:['2023-07-23','2026-11-02'],entries:entries.size,added:audit.filter(a=>a.decision==='alta').length,crosschecked:audit.filter(a=>a.decision==='cruzada').length,quarantine:quarantine.length,before:stats(before),after:stats(output)};await save('report.json',report);console.log(JSON.stringify(report,null,2));
+const stats=data=>{const priv=core.select(data.encuestas,false);const series={};for(const cis of [false,true])for(const party of ['PP','PSOE','VOX','SUMAR']){const points=new Map(core.medianTrend(core.select(data.encuestas,cis),party,asOf).map(p=>[p.date,p]));let valid=0,max=0,run=0;for(let t=Date.parse('2023-07-23');t<=Date.parse(asOf);t+=86400000){if(points.get(new Date(t).toISOString().slice(0,10))?.value!=null){valid++;run=0;}else{run++;max=Math.max(max,run);}}series[(cis?'ON_':'OFF_')+party]={valid_days:valid,max_gap_days:max};}return {private:priv.length,cis:data.encuestas.length-priv.length,institutes:new Set(priv.map(p=>p.instituto)).size,series};};
+const report={new_this_run:rows.filter(p=>!initialIds.has(p.estudio_id)).length,period:['2023-07-23',asOf],entries:entries.size,added:audit.filter(a=>a.decision==='alta').length,crosschecked:audit.filter(a=>a.decision==='cruzada').length,quarantine:quarantine.length,before:stats(before),after:stats(output)};await save('report.json',report);console.log(JSON.stringify(report,null,2));
