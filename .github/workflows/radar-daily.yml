@@ -3,6 +3,11 @@ on:
   push:
     branches: [desarrollo]
   workflow_dispatch:
+    inputs:
+      wikipedia_user_agent:
+        description: 'Identificación pública con contacto real (ej. AtlasElectoral-test/1.0 (https://github.com/usuario/repo))'
+        required: true
+        type: string
   schedule:
     - cron: '17 19 * * *'
       timezone: 'Europe/Madrid'
@@ -13,6 +18,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   update:
+    if: github.event_name != 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
@@ -41,3 +47,76 @@ jobs:
             data/pipeline-test/publicacion/cis-historico.json
           if-no-files-found: error
           retention-days: 30
+  integracion:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/desarrollo'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Comprobar herramientas
+        run: |
+          node --version
+          python3 --version
+          pwsh --version
+      - name: Instalar dependencias
+        run: npm ci
+      - name: Pruebas sin staging local
+        run: |
+          node --test test/*.test.mjs
+          for test_file in test/*_test.py; do python3 "$test_file"; done
+      - name: Preparar staging desde cero
+        run: |
+          test ! -e data/pipeline-test
+          mkdir -p data/pipeline-test
+          date -u +%F > data/pipeline-test/as-of.txt
+      - name: Descargar y combinar fuentes reales
+        shell: pwsh
+        env:
+          WIKIPEDIA_USER_AGENT: ${{ inputs.wikipedia_user_agent }}
+        run: |
+          $asOf = (Get-Content data/pipeline-test/as-of.txt -Raw).Trim()
+          ./scripts/actualizar-historico.ps1 -Python python3 -AsOf $asOf
+          if ($LASTEXITCODE) { throw 'Falló la integración' }
+      - name: Verificar histórico y preparar resumen
+        run: node scripts/validar-integracion-manual.mjs
+      - name: Pruebas con el resultado real
+        run: |
+          node --test test/integracion-manual.test.mjs test/electografica-preparacion.test.mjs
+      - name: Comprobar archivos versionados intactos
+        if: always()
+        run: |
+          git diff --exit-code
+          git diff --cached --exit-code
+      - name: Resumen de ejecución
+        if: always()
+        run: |
+          if test -f data/pipeline-test/integracion-resumen.md; then
+            cat data/pipeline-test/integracion-resumen.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'Integración incompleta: consultar el paso fallido. Los archivos parciales no están validados.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Descargar resultados y diagnóstico
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: atlas-integracion-manual-${{ github.run_id }}-${{ github.run_attempt }}
+          retention-days: 7
+          if-no-files-found: warn
+          path: |
+            data/pipeline-test/as-of.txt
+            data/pipeline-test/integracion-resumen.md
+            data/pipeline-test/integracion-validacion.json
+            data/pipeline-test/wikipedia/report.json
+            data/pipeline-test/wikipedia/runs/*.json
+            data/pipeline-test/electografica/radar.json
+            data/pipeline-test/electografica/report.json
+            data/pipeline-test/electografica/audit.json
+            data/pipeline-test/electografica/quarantine.json
+            data/pipeline-test/electografica/manifest.json
