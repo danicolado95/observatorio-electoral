@@ -24,3 +24,15 @@ test('día siguiente: encuesta nueva cambia serie, conserva histórico entre che
  const before=readFileSync(join(dir,state));put(dir,'data/pipeline-test/electografica/diagnostico.json',{validado:false});assert.notEqual(run(dir,'radar-persistente.mjs',['promote',state]).status,0);assert.deepEqual(readFileSync(join(dir,state)),before);
  put(dir,'data/pipeline-test/electografica/diagnostico.json',{validado:true});const bad=get(dir,'data/pipeline-test/electografica/radar.json');bad.encuestas.shift();put(dir,'data/pipeline-test/electografica/radar.json',bad);assert.notEqual(run(dir,'radar-persistente.mjs',['promote',state]).status,0);assert.deepEqual(readFileSync(join(dir,state)),before);
 });
+
+test('Wikipedia: una descarga nueva no reescribe la procedencia del mismo sondeo; un porcentaje distinto bloquea',()=>{
+ const dir=mkdtempSync(join(tmpdir(),'radar-wiki-hash-'));
+ const poll={estudio_id:'wiki-uno',instituto:'Casa',tipo:'estimacion_voto',ambito:'España',fecha_publicacion:'2026-11-01',trabajo_campo_inicio:'2026-10-30',trabajo_campo_fin:'2026-10-31',fecha_fin_campo:'2026-10-31',tipo_fecha:'publicacion',tamano_muestra:1000,resultados:{PP:30,PSOE:25,VOX:15},fuente:'https://example.org/uno',source_id:'wikipedia-staging',ingestion:{source:'wikipedia',sha256:'a'.repeat(64),row_id:'mw1'}};
+ put(dir,'data/radar.json',{encuestas:[]});put(dir,'data/historico-revisado.json',{approved:[],audit:[]});put(dir,'data/originales-huecos.json',{encuestas:[]});
+ put(dir,'data/pipeline-test/wikipedia/radar.json',{encuestas:[poll]});
+ const staging={encuestas:[{...poll,ingestion:{...poll.ingestion,sha256:'b'.repeat(64)}}],quarantine:[],report:{today:'2026-11-02'}};
+ put(dir,'data/pipeline-test/wikipedia/staging.json',staging);ok(run(dir,'preparar-radar-wikipedia.mjs'));
+ const result=get(dir,'data/pipeline-test/wikipedia/radar.json');assert.deepEqual(result.encuestas[0],poll);assert.deepEqual(get(dir,'data/pipeline-test/wikipedia/staging.json'),staging);
+ const before=readFileSync(join(dir,'data/pipeline-test/wikipedia/radar.json'));staging.encuestas[0].resultados={PP:31,PSOE:25,VOX:15};put(dir,'data/pipeline-test/wikipedia/staging.json',staging);
+ assert.notEqual(run(dir,'preparar-radar-wikipedia.mjs').status,0);assert.deepEqual(readFileSync(join(dir,'data/pipeline-test/wikipedia/radar.json')),before);
+});

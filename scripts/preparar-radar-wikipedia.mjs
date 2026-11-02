@@ -56,7 +56,9 @@ for(const p of accepted){
  if(conflict)continue;
  if(old && JSON.stringify(old.resultados)!==JSON.stringify(p.resultados)){issue('error','CONFLICTO_HISTORICO','Conflicto histórico: '+p.estudio_id,p.estudio_id);continue;}
  if(old?.fuentes_adicionales?.length)try{conservarReferencias([p],[old]);}catch(e){for(const i of e.informe?.incidencias||[])issue('error',i.codigo,i.evidencia,p.estudio_id);continue;}
- rows.set(p.estudio_id,p);
+ // El hash de descarga identifica una observación de la página, no una revisión del sondeo.
+ // Si identidad y resultados no cambiaron, la procedencia canónica anterior se conserva.
+ rows.set(p.estudio_id,old?{...old,...(p.fuentes_adicionales?{fuentes_adicionales:p.fuentes_adicionales}:{})}:p);
 }
 const fields=new Map();
 for(const p of rows.values()){
@@ -81,3 +83,4 @@ await writeFile(new URL('data/pipeline-test/wikipedia/diagnostico.json',root),JS
 if(incidencias.some(i=>i.tipo==='error'))process.exitCode=1;
 }}
 await preparar();
+
