@@ -53,7 +53,13 @@ for(const poll of previous?.encuestas||[]){try{const existing=base.encuestas.fin
    if(proofs.length!==1||wiki.length!==1||!comprobarCuarentena(proofs[0],wiki[0],poll))throw Error('Reconciliación previa no comprobable');
    base.encuestas[base.encuestas.indexOf(wiki[0])]=structuredClone(poll);heredadas.push(proofs[0]);
   }
- } else base.encuestas.push(poll);
+ } else {
+ const wiki=base.encuestas.filter(q=>q.ingestion?.source==='wikipedia'&&canon(q.instituto)===canon(poll.instituto)&&(q.trabajo_campo_fin===poll.trabajo_campo_fin||q.fecha_publicacion===poll.fecha_publicacion||(q.fuente===poll.fuente&&Math.abs(Date.parse(q.trabajo_campo_fin)-Date.parse(poll.trabajo_campo_fin))<=7*86400000)));
+ if(poll.ingestion?.source==='electografica'&&wiki.length){
+  if(wiki.length!==1||!snapshot?.feed?.entry?.some(e=>e.id?.$t===poll.ingestion.entry_id))throw Error('Alias nuevo de Wikipedia sin entrada única verificable');
+  // La entrada completa se cruza abajo: no añadir una segunda copia al radar.
+ }else base.encuestas.push(poll);
+}
 }else{const start=incidencias.length;for(const k of ['instituto','fecha_publicacion','trabajo_campo_inicio','trabajo_campo_fin','tamano_muestra'])if(JSON.stringify(existing[k])!==JSON.stringify(poll[k]))issue('error','RECONCILIACION_PREVIA','Conflicto entre históricos: '+poll.estudio_id+'.'+k,poll.estudio_id);for(const [k,v] of Object.entries(poll.resultados))if(Object.hasOwn(existing.resultados,k)&&existing.resultados[k]!==v)issue('error','RECONCILIACION_PREVIA','Conflicto entre históricos: '+poll.estudio_id+'.resultados.'+k,poll.estudio_id);if(incidencias.length!==start)continue;const extras=Object.keys(poll.resultados).filter(k=>!Object.hasOwn(existing.resultados,k));if(extras.length){const proofs=previousAudit.filter(a=>a.decision==='cruzada'&&a.estudio_id===poll.estudio_id);if(proofs.length!==1)throw Error('Enriquecimiento previo sin auditoría única: '+poll.estudio_id);const a=proofs[0],e=a.extracted;if(!e||e.ingestion?.source!=='electografica'||a.id!==e.ingestion.entry_id||a.url!==e.url_electografica||!e.ingestion.content_sha256||!poll.fuentes_adicionales?.some(r=>r.source==='electografica'&&r.url===a.url&&r.sha256===e.ingestion.content_sha256&&r.original===e.fuente&&r.medio===e.medio)||['instituto','trabajo_campo_inicio','trabajo_campo_fin','fecha_publicacion','fuente','tamano_muestra'].some(k=>existing[k]!==e[k])||Object.entries(e.resultados).some(([k,v])=>poll.resultados[k]!==v)||extras.some(k=>!Object.hasOwn(e.resultados,k)))throw Error('Origen previo no comprobable: '+poll.estudio_id);}existing.resultados={...poll.resultados,...existing.resultados};if(poll.fuentes_adicionales?.length){existing.fuentes_adicionales=unirReferencias(poll.fuentes_adicionales,existing.fuentes_adicionales||[]);}}}
 catch(e){issue('error','RECONCILIACION_PREVIA',e.message,poll?.estudio_id);}}
 // El histórico versionado conserva procedencia aunque una entrada ya no cruce.
@@ -85,7 +91,7 @@ for(const e of entries.values()){
   if(matches.length){
    const exact=matches.length===1&&matches[0].trabajo_campo_fin===p.trabajo_campo_fin&&Object.keys(p.resultados).every(k=>!Object.hasOwn(matches[0].resultados,k)||matches[0].resultados[k]===p.resultados[k])?matches[0]:null;
    if(!exact){
-    const historicos=(historico?.encuestas||[]).filter(h=>h.estudio_id===p.estudio_id);
+    const historicos=[...new Map([...(historico?.encuestas||[]),...(previous?.encuestas||[])].filter(h=>h.estudio_id===p.estudio_id).map(h=>[h.estudio_id,h])).values()];
     // La regla no autoriza reescribir otros registros ya versionados.
     const versionado=(historico?.encuestas||[]).some(h=>h.estudio_id===matches[0]?.estudio_id);
     const yaExtraido=audit.some(a=>a.estudio_id===matches[0]?.estudio_id)||quarantine.some(c=>c.reconciliacion?.historico?.estudio_id===matches[0]?.estudio_id);
