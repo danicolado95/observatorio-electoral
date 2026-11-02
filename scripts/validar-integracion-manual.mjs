@@ -1,8 +1,35 @@
 import assert from 'node:assert/strict';
+import {isDeepStrictEqual} from 'node:util';
 import {readFile, writeFile} from 'node:fs/promises';
 import {createRequire} from 'node:module';
 import {pathToFileURL} from 'node:url';
 const core = createRequire(import.meta.url)('../js/radar-core.js');
+
+// Solo una auditoría única puede autorizar el cambio de identidad.
+function resolverAlias(p, ids, auditoria, label) {
+  const matches = auditoria.filter(a => a.extracted?.estudio_id === p.estudio_id);
+  assert.equal(matches.length, 1, label + ': alias sin auditoría única para ' + p.estudio_id);
+  const a = matches[0], e = a.extracted, q = ids.get(a.estudio_id);
+  assert(a.decision === 'cruzada' && q && q.estudio_id !== p.estudio_id,
+    label + ': correspondencia de identidad inválida');
+  for (const key of ['instituto', 'trabajo_campo_inicio', 'trabajo_campo_fin', 'fecha_publicacion', 'fuente', 'url_electografica']) {
+    assert(typeof p[key] === 'string' && p[key].trim(), label + ': alias sin ' + key);
+  }
+  assert(p.resultados && Object.keys(p.resultados).length &&
+    Object.values(p.resultados).every(Number.isFinite), label + ': alias sin resultados completos');
+  assert(p.ingestion?.source === 'electografica' && p.source_id === 'electografica' &&
+    p.ingestion.entry_id && p.ingestion.content_sha256 &&
+    a.id === p.ingestion.entry_id && a.url === p.url_electografica,
+    label + ': alias sin origen comprobable');
+  for (const [key, value] of Object.entries(p)) {
+    if (key !== 'fuentes_adicionales') assert.deepEqual(e[key], value, label + ': auditoría distinta en ' + key);
+  }
+  // La procedencia Electográfica pasa a una referencia del registro canónico.
+  const ref = {source: 'electografica', url: p.url_electografica, original: p.fuente,
+    medio: p.medio, sha256: p.ingestion.content_sha256};
+  assert(q.fuentes_adicionales?.some(r => isDeepStrictEqual(r, ref)), label + ': origen del alias perdido');
+  return q;
+}
 
 // No se comparan solo cantidades: cada registro previo debe conservar sus campos.
 export function verificar({original, desarrollo, cis, wikipedia, combinado, reporte, auditoria, cuarentena}) {
@@ -12,12 +39,14 @@ export function verificar({original, desarrollo, cis, wikipedia, combinado, repo
   assert.equal(ids.size, rows.length, 'Identidades duplicadas');
   const conservar = (polls, label) => {
     for (const p of polls) {
-      const q = ids.get(p.estudio_id);
+      const mismoId = ids.has(p.estudio_id);
+      const q = mismoId ? ids.get(p.estudio_id) : resolverAlias(p, ids, auditoria, label);
       assert(q, `${label}: falta ${p.estudio_id}`);
       for (const [key, value] of Object.entries(p)) {
         // Electográfica puede añadir referencias, pero no quitar las existentes.
+        if (!mismoId && ['estudio_id', 'ingestion', 'source_id', 'url_electografica', 'medio'].includes(key)) continue;
         if (key === 'fuentes_adicionales') {
-          for (const ref of value) assert(q[key]?.some(r => JSON.stringify(r) === JSON.stringify(ref)), `${label}: referencia perdida`);
+          for (const ref of value) assert(q[key]?.some(r => isDeepStrictEqual(r, ref)), `${label}: referencia perdida`);
         } else assert.deepEqual(q[key], value, `${label}: cambió ${p.estudio_id}.${key}`);
       }
     }
