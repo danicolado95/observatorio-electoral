@@ -76,11 +76,11 @@ const sheet=document.createElement('style');sheet.textContent=`
 #radar-principal .radar-controls label{display:inline-flex;align-items:center;gap:5px;min-height:36px;padding:2px 9px;border:1px solid #e0e6e1;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;background:#fff}
 #radar-principal select{min-height:40px;border:1px solid #cad5cd;border-radius:6px;background:#fff;color:#24362d;padding:0 10px;font:inherit;font-size:13px}
 #radar-principal input{accent-color:#3e6551}#radar-principal :focus-visible{outline:2px solid #315e48;outline-offset:3px}
-#radar-grafico svg{display:block;min-width:700px;width:100%;font-family:inherit}#radar-grafico{overflow-x:auto}
+#radar-grafico svg{display:block;width:100%;height:auto;font-family:inherit}#radar-grafico{min-width:0}
 #radar-principal .radar-help{font-size:12px;color:#647469;margin:8px 0 14px;line-height:1.6}
 #radar-principal details{margin-top:14px;font-size:12px;color:#647469}#radar-principal summary{cursor:pointer;padding:8px 0}
 #radar-status{padding-top:12px;border-top:1px solid #e4e9e5;font-size:12px}
-@media(max-width:640px){#radar-principal{padding:16px}#radar-principal .radar-controls{gap:6px}#radar-principal .radar-controls label{min-height:40px}#radar-grafico{scrollbar-width:thin}}
+@media(max-width:640px){#radar-principal{padding:16px}#radar-principal .radar-controls{gap:6px}#radar-principal .radar-controls label{min-height:40px}}
 `;document.head.append(sheet);
 const controls=document.createElement('div');controls.className='radar-controls';controls.setAttribute('role','group');controls.setAttribute('aria-label','Periodo, CIS y partidos');
 const extra=document.createElement('details'),extraTitle=document.createElement('summary'),extraControls=document.createElement('div');extraTitle.textContent='Más partidos';extraControls.className='radar-controls';extra.append(extraTitle,extraControls);
@@ -103,9 +103,12 @@ function draw(){
 if(!data)return;
 const today=new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Madrid'}).format(new Date());
 const polls=RadarCore.select(data.encuestas,document.getElementById('radar-cis').checked);
-const svg=create('svg',{viewBox:'0 0 860 370',width:'100%',role:'group','aria-label':'Mediana móvil de 21 días · '+(range.value==='all'?'Desde 23J':'Último año')});
+const compact=box.clientWidth<600;
+const [chartWidth,left,right]=compact?[350,34,250]:[860,55,745];
+const plotWidth=right-left;
+const svg=create('svg',{viewBox:`0 0 ${chartWidth} 370`,preserveAspectRatio:'xMidYMid meet',width:'100%',role:'group','aria-label':'Mediana móvil de 21 días · '+(range.value==='all'?'Desde 23J':'Último año')});
 const end=Date.parse(today),start=RadarCore.chartStart(today,range.value);
-const x=d=>55+(Date.parse(d)-start)/(end-start)*690;
+const x=d=>left+(Date.parse(d)-start)/(end-start)*plotWidth;
 const visibleParties=parties.filter(p=>enabled.has(p));
 const trends=new Map(parties.map(p=>[p,RadarCore.medianTrend(polls,p,today)]));
 const visiblePolls=polls.filter(p=>Date.parse(RadarCore.fieldDate(p))>=start&&RadarCore.fieldDate(p)<=today&&RadarCore.availableDate(p)<=today);
@@ -125,10 +128,11 @@ cards.replaceChildren(...parties.map(party=>{
 const maxima=[...visiblePolls.flatMap(p=>visibleParties.map(k=>p.resultados[k])),...visibleParties.flatMap(party=>trends.get(party).filter(p=>Date.parse(p.date)>=start).map(p=>p.value))].filter(Number.isFinite);
 const ceiling=Math.max(10,Math.ceil(((maxima.length?Math.max(...maxima):0)+2)/5)*5),y=v=>300-v/ceiling*270;
 svg.setAttribute('data-ceiling',ceiling);
-for(let v=0;v<=ceiling;v+=ceiling>50?10:5)svg.append(create('line',{x1:55,x2:745,y1:y(v),y2:y(v),stroke:'#e8ede9','stroke-width':1}),create('text',{x:42,y:y(v)+4,'text-anchor':'end',fill:'#748078','font-size':11},v+'%'));
+for(let v=0;v<=ceiling;v+=ceiling>50?10:5)svg.append(create('line',{x1:left,x2:right,y1:y(v),y2:y(v),stroke:'#e8ede9','stroke-width':1}),create('text',{x:left-7,y:y(v)+4,'text-anchor':'end',fill:'#748078','font-size':11},v+'%'));
 const firstMonth=new Date(start);firstMonth.setUTCDate(1);firstMonth.setUTCMonth(firstMonth.getUTCMonth()+1);
 for(let d=firstMonth;d.getTime()<=end;d.setUTCMonth(d.getUTCMonth()+1)){
- if(range.value==='all'&&d.getUTCMonth()%3!==0)continue;
+ const step=compact?(range.value==='all'?12:3):(range.value==='all'?3:1);
+ if(d.getUTCMonth()%step!==0)continue;
  const date=d.toISOString().slice(0,10),label=new Intl.DateTimeFormat('es',{month:'short',timeZone:'UTC'}).format(d).replace('.','')+(d.getUTCMonth()===0||range.value==='all'?' '+d.getUTCFullYear():'');
  svg.append(create('text',{x:x(date),y:326,'text-anchor':'middle',fill:'#748078','font-size':11},label));
 }
@@ -147,18 +151,20 @@ for(const party of parties.filter(p=>enabled.has(p))){
 endLabels.sort((a,b)=>a.target-b.target);
 for(let i=0;i<endLabels.length;i++)endLabels[i].labelY=Math.max(endLabels[i].target,i?endLabels[i-1].labelY+16:36);
 if(endLabels.length&&endLabels.at(-1).labelY>295){endLabels.at(-1).labelY=295;for(let i=endLabels.length-2;i>=0;i--)endLabels[i].labelY=Math.min(endLabels[i].labelY,endLabels[i+1].labelY-16);}
-for(const item of endLabels){const {party,color,last,labelY}=item;svg.append(create('line',{x1:x(last.date),y1:y(last.value),x2:750,y2:labelY,stroke:color,'stroke-opacity':.45}),create('text',{x:754,y:labelY+4,fill:color,'font-size':10,'font-weight':600,'data-end-label':party},party+' '+last.value.toFixed(1).replace('.',',')+'%'));}
+for(const item of endLabels){const {party,color,last,labelY}=item;svg.append(create('line',{x1:x(last.date),y1:y(last.value),x2:right+5,y2:labelY,stroke:color,'stroke-opacity':.45}),create('text',{x:right+9,y:labelY+4,fill:color,'font-size':10,'font-weight':600,'data-end-label':party},party+' '+last.value.toFixed(1).replace('.',',')+'%'));}
 latest.textContent='Última mediana válida al extremo derecho (porcentaje de voto). Puede corresponder a una fecha anterior a hoy; consulta la fecha al explorar.';
-if(!meaningful)svg.append(create('text',{x:120,y:160,'font-size':16},'Sin base suficiente: se necesitan al menos 3 institutos.'));
+if(!meaningful)svg.append(create('text',{x:left,y:160,'font-size':compact?10:16},'Sin base suficiente: se necesitan al menos 3 institutos.'));
 // Transparent date surface sits below individual point targets.
-const surface=create('rect',{x:55,y:30,width:690,height:270,fill:'transparent','data-hover':'median',tabindex:0,role:'slider','aria-label':'Explorar medianas por fecha','aria-valuemin':0,'aria-valuemax':Math.round((end-start)/86400000),'aria-valuenow':Math.round((end-start)/86400000)});let keyboardDate=end;
-surface.addEventListener('pointermove',event=>{
- const rect=svg.getBoundingClientRect(),sx=(event.clientX-rect.left)*860/rect.width;
- const stamp=Math.max(start,Math.min(end,start+Math.round((sx-55)/690*(end-start)/86400000)*86400000));
+const surface=create('rect',{x:left,y:30,width:plotWidth,height:270,fill:'transparent','data-hover':'median',tabindex:0,role:'slider','aria-label':'Explorar medianas por fecha','aria-valuemin':0,'aria-valuemax':Math.round((end-start)/86400000),'aria-valuenow':Math.round((end-start)/86400000)});let keyboardDate=end;
+function exploreDate(event){
+ const sx=new DOMPoint(event.clientX,event.clientY).matrixTransform(svg.getScreenCTM().inverse()).x;
+ const stamp=Math.max(start,Math.min(end,start+Math.round((sx-left)/plotWidth*(end-start)/86400000)*86400000));
  const date=new Date(stamp).toISOString().slice(0,10);
  const values=[...seriesByParty].map(([party,series])=>{const p=series.get(date);return party+': '+(p?.value==null?'sin base suficiente':p.value.toFixed(1)+'%')+(p?' · n='+p.n+' institutos':' · sin serie en esta fecha');});
  showTip(event,date+' · mediana de 21 días\n'+values.join('\n'));
-});
+}
+surface.addEventListener('pointermove',exploreDate);
+surface.addEventListener('click',exploreDate);
 surface.addEventListener('keydown',event=>{if(event.key==='Escape'){tip.hidden=true;return;}if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();keyboardDate=event.key==='Home'?start:event.key==='End'?end:Math.max(start,Math.min(end,keyboardDate+(event.key==='ArrowLeft'?-86400000:86400000)));surface.setAttribute('aria-valuenow',Math.round((keyboardDate-start)/86400000));const date=new Date(keyboardDate).toISOString().slice(0,10);surface.setAttribute('aria-valuetext',date);const r=svg.getBoundingClientRect();showTip({clientX:r.left+55,clientY:r.top+40},date+' · mediana de 21 días\n'+[...seriesByParty].map(([party,rows])=>party+': '+(rows.get(date)?.value==null?'sin base suficiente':rows.get(date).value.toFixed(1)+'%')).join('\n'));});
 surface.addEventListener('blur',()=>tip.hidden=true);svg.append(surface);
 for(const p of polls.filter(p=>Date.parse(RadarCore.fieldDate(p))>=start && RadarCore.fieldDate(p)<=today && RadarCore.availableDate(p)<=today))for(const party of parties.filter(p=>enabled.has(p))){
@@ -202,6 +208,13 @@ async function refresh(){
  }finally{pending=false;}
 }
 cis.addEventListener('change',draw);
+let compactLayout;
+new ResizeObserver(()=>{
+ const next=box.clientWidth<600;
+ if(next===compactLayout)return;
+ compactLayout=next;
+ if(data)draw();
+}).observe(box);
 function refreshIfDue(){if(!document.hidden && Date.now()-lastAttempt>=interval)refresh();}
 document.addEventListener('visibilitychange',refreshIfDue);
 setInterval(refreshIfDue,30000);
