@@ -113,7 +113,7 @@ const visibleParties=parties.filter(p=>enabled.has(p));
 const trends=new Map(parties.map(p=>[p,RadarCore.medianTrend(polls,p,today)]));
 const visiblePolls=polls.filter(p=>Date.parse(RadarCore.fieldDate(p))>=start&&RadarCore.fieldDate(p)<=today&&RadarCore.availableDate(p)<=today);
 const cards=document.getElementById('poll-stats');
-const cardParties=cards.dataset.parties.split(/\s+/);
+const cardParties=['PP','PSOE','VOX','FA','PODEMOS','SALF'];
 cards.replaceChildren(...cardParties.map(party=>{
  const last=trends.get(party).findLast(point=>Number.isFinite(point.value));
  const card=document.createElement('div');card.className='panel';
