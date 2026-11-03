@@ -113,7 +113,8 @@ const visibleParties=parties.filter(p=>enabled.has(p));
 const trends=new Map(parties.map(p=>[p,RadarCore.medianTrend(polls,p,today)]));
 const visiblePolls=polls.filter(p=>Date.parse(RadarCore.fieldDate(p))>=start&&RadarCore.fieldDate(p)<=today&&RadarCore.availableDate(p)<=today);
 const cards=document.getElementById('poll-stats');
-cards.replaceChildren(...parties.map(party=>{
+const cardParties=cards.dataset.parties.split(/\s+/);
+cards.replaceChildren(...cardParties.map(party=>{
  const last=trends.get(party).findLast(point=>Number.isFinite(point.value));
  const card=document.createElement('div');card.className='panel';
  for(const [cls,value] of [['mini-label',party],['stat',last?last.value.toFixed(1).replace('.',',')+'%':'—'],['sub',last?'Mediana móvil · '+last.date:'Sin base suficiente']]){
