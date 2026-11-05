@@ -1,0 +1,20 @@
+# Dependencias y temporales locales
+node_modules/
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+.Renviron
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.cache/
+.DS_Store
+Thumbs.db
+# Microdatos: nunca publicar
+**/datos-originales/
+*.sav
+*.zsav
+*.por
