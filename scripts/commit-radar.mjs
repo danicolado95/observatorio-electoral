@@ -11,7 +11,12 @@ if(!paths){
  git('config','user.name','github-actions[bot]');
  git('config','user.email','41898282+github-actions[bot]@users.noreply.github.com');
  console.log(git('commit','-m','Actualizar histórico validado del radar de pruebas'));
- const auth=process.env.GH_TOKEN?['-c','http.https://github.com/.extraheader=AUTHORIZATION: basic '+Buffer.from('x-access-token:'+process.env.GH_TOKEN).toString('base64')]:[];
+ // La credencial va en el entorno del hijo, nunca en argumentos que Node
+ // pueda imprimir si Git falla.
+ const env={...process.env};
+ if(process.env.GH_TOKEN)Object.assign(env,{GIT_CONFIG_COUNT:'1',
+  GIT_CONFIG_KEY_0:'http.https://github.com/.extraheader',
+  GIT_CONFIG_VALUE_0:'AUTHORIZATION: basic '+Buffer.from('x-access-token:'+process.env.GH_TOKEN).toString('base64')});
  // Un push rechazado sigue siendo un fallo; nunca se fuerza la rama.
- console.log(git(...auth,'push','origin','HEAD:refs/heads/radar-pruebas'));
+ console.log(execFileSync('git',['push','origin','HEAD:refs/heads/radar-pruebas'],{encoding:'utf8',env}).trim());
 }
