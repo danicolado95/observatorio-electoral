@@ -30,12 +30,34 @@ export function resolverSigma(historico, wikipedia, candidato) {
 }
 export function comprobarReconciliacion(r) {
   if (!r) return false;
+  if (r.regla === 'sigma-puente-semantico-v1') {
+    const expected = resolverPuenteSigma(r.historico, r.wikipedia, r.candidato);
+    return !!expected && isDeepStrictEqual(r, expected);
+  }
   if (r.regla === 'electografica-sobre-wikipedia-v1') {
     const expected = resolverElectografica(r.original_historico,r.wikipedia,r.candidato,r.entrada);
     return !!expected && isDeepStrictEqual(r,expected);
   }
   const expected = resolverSigma(r.historico, r.wikipedia, r.candidato);
   return !!expected && isDeepStrictEqual(r, expected);
+}
+
+// El puente acredita originales y datos del estudio, no el HTML decorativo del
+// blog. Una revisión solo puede cambiar hash y fecha de actualización; todos
+// los campos extraídos, los resultados (incluidos ceros) y el origen son exactos.
+// El llamador vuelve a extraer la entrada completa y comprueba su hash real.
+function resolverPuenteSigma(h, w, p) {
+  try {
+    const current = normalizar(p), documented = normalizar(decision.candidato);
+    if (!/^[a-f0-9]{64}$/.test(current.ingestion.content_sha256) ||
+        !Number.isFinite(Date.parse(current.ingestion.blogger_updated)) ||
+        Date.parse(current.ingestion.blogger_updated) < Date.parse(documented.ingestion.blogger_updated)) return null;
+    const comparable = structuredClone(current);
+    for (const k of ['content_sha256', 'blogger_updated']) comparable.ingestion[k] = documented.ingestion[k];
+    if (!isDeepStrictEqual(comparable, documented)) return null;
+    const proof = resolverSigma(h, w, decision.candidato);
+    return proof && {...proof, regla: 'sigma-puente-semantico-v1', candidato: structuredClone(p)};
+  } catch { return null; }
 }
 
 const canon = s => String(s).normalize('NFD').replace(/[\u0300-\u036f.\s-]/g,'').toUpperCase();
@@ -62,7 +84,7 @@ export function resolverElectografica(h,w,p,entrada) {
     const puente=w.fuente!==p.fuente &&
       mismaIdentidad(w,decision.wikipedia) &&
       w.estudio_id===decision.wikipedia.estudio_id && w.fuente===decision.wikipedia.fuente
-      ? resolverSigma(h,decision.wikipedia,p) : null;
+      ? (resolverSigma(h,decision.wikipedia,p) ?? resolverPuenteSigma(h,decision.wikipedia,p)) : null;
     if(w.fuente!==p.fuente && !puente) return null;
     if(h && (!mismaIdentidad(h,p) || h.estudio_id!==p.estudio_id ||
       h.ingestion?.entry_id!==p.ingestion.entry_id || h.url_electografica!==p.url_electografica ||

@@ -232,6 +232,6 @@ async function main() {
   await writeFile(dir+'integracion-resumen.md', result.validado
     ? `Prueba de integración: validada.\n\nPrivadas: ${result.privadas}; CIS: ${result.cis}; Wikipedia: ${result.wikipedia}.\n\nEntradas Electográfica: ${result.entradas}; auditadas: ${result.auditadas}; cuarentena: ${result.cuarentena}.\n\n${result.preservacion}. Reconciliaciones documentadas: ${result.reconciliaciones.length}.\n\n${result.reconciliaciones.map(r => `${r.candidato.instituto}: ${r.motivo} Diferencias: ${JSON.stringify(r.diferencias ?? [])}`).join("\n\n")}\n\nUmbrales mínimos: 480 privadas y 35 CIS; se admiten nuevas encuestas.\n\nDatos solo de prueba. Revisar también el resultado de todos los pasos y la cuarentena antes de cualquier uso.\n`
     : 'Prueba de integración NO validada. Consultar integracion-validacion.json y el paso fallido.\n');
-  console.log(JSON.stringify(result));
+  console.log(JSON.stringify({validado:result.validado,privadas:result.privadas,cis:result.cis,entradas:result.entradas,auditadas:result.auditadas,cuarentena:result.cuarentena,incidencias:result.incidencias}));
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) await main();

@@ -5,6 +5,13 @@ import {pathToFileURL} from 'node:url';
 import {verificar} from './validar-integracion-manual.mjs';
 const files=['wikipedia/staging.json','wikipedia/radar.json','electografica/audit.json','electografica/quarantine.json'];
 const read=async p=>JSON.parse(await readFile(p,'utf8'));
+const stable=v=>Array.isArray(v)?v.map(stable):v&&typeof v==='object'?Object.fromEntries(Object.keys(v).sort().map(k=>[k,stable(v[k])])):v;
+export function difference(before=[],after=[]){
+ const old=new Map(before.map(p=>[p.estudio_id,p])),next=new Map(after.map(p=>[p.estudio_id,p]));
+ return {added:after.filter(p=>!old.has(p.estudio_id)).map(p=>p.estudio_id),
+  removed:before.filter(p=>!next.has(p.estudio_id)).map(p=>p.estudio_id),
+  modified:after.filter(p=>old.has(p.estudio_id)&&JSON.stringify(stable(p))!==JSON.stringify(stable(old.get(p.estudio_id)))).map(p=>({id:p.estudio_id,fields:Object.keys({...old.get(p.estudio_id),...p}).filter(k=>JSON.stringify(stable(p[k]))!==JSON.stringify(stable(old.get(p.estudio_id)[k])))}))};
+}
 export async function restore(statePath){
  const state=await read(statePath);
  assert.equal(state._pipeline?.version,1,'Estado persistente ausente o incompatible');
@@ -30,11 +37,12 @@ export async function promote(statePath){
  const pending=data.cuarentena.filter(q=>!lastQuarantine.has(JSON.stringify([q.id,q.title,q.reason]))&&!q.reconciliacion&&/^ESPAÑA:/.test(q.title||'')&&!/^(CIS\/modelo|Fuera del periodo|Ámbito regional)/.test(q.reason));
  assert.equal(pending.length,0,'Nuevas encuestas nacionales en cuarentena: '+pending.map(q=>q.title+': '+q.reason).join('; '));
  const stateFiles={};for(const name of files)stateFiles[name]=await read(dir+name);
- const changed=JSON.stringify(previous?.encuestas)!==JSON.stringify(combinado.encuestas);
+ const delta=difference(previous?.encuestas,combinado.encuestas);
+ const changed=!!(delta.added.length||delta.removed.length||delta.modified.length);
  const now=new Date().toISOString();
  const result={...combinado,status:{state:'ok',message:'Radar de pruebas actualizado automáticamente. Electográfica tiene prioridad; histórico validado.',lastAttempt:now,lastSuccess:now,lastDataChange:changed?now:previous.status.lastDataChange},_pipeline:{version:1,files:stateFiles}};
  await mkdir(dirname(statePath),{recursive:true});await writeFile(statePath+'.tmp',JSON.stringify(result)+'\n');await rename(statePath+'.tmp',statePath);
- const summary={validado:audit.validado,total:result.encuestas.length,privadas:audit.privadas,cis:audit.cis,newIds:result.encuestas.filter(p=>!previous?.encuestas.some(q=>q.estudio_id===p.estudio_id)).map(p=>p.estudio_id),dataChanged:changed,checkedAt:now};
+ const summary={validado:audit.validado,total:result.encuestas.length,privadas:audit.privadas,cis:audit.cis,newIds:delta.added,difference:delta,dataChanged:changed,checkedAt:now};
  await writeFile(dir+'publicacion-resumen.json',JSON.stringify(summary,null,2));console.log(JSON.stringify(summary));return result;
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){
