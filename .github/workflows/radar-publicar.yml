@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
-          ref: 9bf47558dd60dc55fcd08c834cd0765e1ef4fe82
+          ref: 5f4d9677d656c571ae6561d4671e80f21c23742f
           path: engine
           persist-credentials: false
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
@@ -46,6 +46,9 @@ jobs:
       - name: Restaurar histórico del último commit validado
         working-directory: engine
         run: |
+          echo "run=$GITHUB_RUN_ID attempt=$GITHUB_RUN_ATTEMPT event=$GITHUB_EVENT_NAME workflow_commit=$GITHUB_SHA"
+          echo "engine_commit=$(git rev-parse HEAD) published_commit=$(git -C ../published rev-parse HEAD)"
+          echo "started_utc=$(date -u +%FT%TZ) started_madrid=$(TZ=Europe/Madrid date +%FT%T%z)"
           if test -f ../published/data/radar.json; then
             node scripts/radar-persistente.mjs restore ../published/data/radar.json
           fi
@@ -71,16 +74,14 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          set -euo pipefail
-          test "$(git branch --show-current)" = radar-pruebas
-          git add -- data/radar.json
-          test "$(git diff --cached --name-only)" = data/radar.json || exit 1
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'Actualizar histórico validado del radar de pruebas'
-          # No force: si otra escritura mueve la rama, no se pisa el histórico.
-          auth=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
-          git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $auth" push origin HEAD:refs/heads/radar-pruebas
+          node ../engine/scripts/commit-radar.mjs
+      - name: Resumen de diagnóstico incluso si falla la validación
+        if: always()
+        working-directory: engine
+        run: |
+          if test -f data/pipeline-test/integracion-resumen.md; then
+            cat data/pipeline-test/integracion-resumen.md >> "$GITHUB_STEP_SUMMARY"
+          fi
       - name: Diagnóstico
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
@@ -95,6 +96,14 @@ jobs:
             engine/data/pipeline-test/wikipedia/diagnostico.json
             engine/data/pipeline-test/electografica/diagnostico.json
             engine/data/pipeline-test/electografica/quarantine.json
+            engine/data/pipeline-test/electografica/snapshot.json
+            engine/data/pipeline-test/electografica/report.json
+            engine/data/pipeline-test/electografica/audit.json
+            engine/data/pipeline-test/electografica/before.json
+            engine/data/pipeline-test/electografica/radar.json
+            engine/data/pipeline-test/electografica/intento-*.json
+            engine/data/pipeline-test/wikipedia/staging.json
+            engine/data/pipeline-test/wikipedia/radar.json
 
 
 
