@@ -12,6 +12,7 @@ const original=execFileSync('git',['show',base+':preview-radar/index.html'],{cwd
 const current=fs.readFileSync(path.join(root,'preview-radar/index.html'),'utf8');
 for(const id of ['inicio','encuestas','mapa','electorado','transferencias','abstencion']) {
  const re=new RegExp('<section[^>]+id="'+id+'"[\\s\\S]*?</section>');
+ assert.ok(current.match(re) && original.match(re), id+' section must exist');
  assert.equal(current.match(re)?.[0].replace(/\r\n/g,'\n'),original.match(re)?.[0].replace(/\r\n/g,'\n'),id+' section must remain unchanged');
 }
 for(const f of ['radar-portada.js','circunscripciones_2026.json','resultados_congreso_2023.json']) {
