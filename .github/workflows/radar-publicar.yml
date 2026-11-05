@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
-          ref: 8d96d3f5eae7c4f7707c2fb4eae53331979dcd67
+          ref: 5f4d9677d656c571ae6561d4671e80f21c23742f
           path: engine
           persist-credentials: false
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
