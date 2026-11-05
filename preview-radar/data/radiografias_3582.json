@@ -1,0 +1,3322 @@
+{
+  "metadata": {
+    "fuente": "CIS",
+    "estudio": 3582,
+    "universo": "Población representada por el estudio",
+    "criterio_partidos": "Intención directa de voto",
+    "variable_voto": "INTENCIONGR",
+    "ponderacion": "PESO",
+    "entrevistas": 5024,
+    "nota": "Porcentajes ponderados sobre respuestas válidas. Electorado general: conjunto de entrevistados. Los tamaños muestrales n son sin ponderar."
+  },
+  "edad": [
+    {
+      "partido": "Electorado general",
+      "categoria": "18-24",
+      "porcentaje": 8.4,
+      "n": 367,
+      "n_total": 5024,
+      "n_efectivo": 2410.9
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "25-34",
+      "porcentaje": 12.1,
+      "n": 640,
+      "n_total": 5024,
+      "n_efectivo": 2410.9
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "35-44",
+      "porcentaje": 15.11,
+      "n": 781,
+      "n_total": 5024,
+      "n_efectivo": 2410.9
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "45-54",
+      "porcentaje": 19.7,
+      "n": 1093,
+      "n_total": 5024,
+      "n_efectivo": 2410.9
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "55-64",
+      "porcentaje": 17.87,
+      "n": 1008,
+      "n_total": 5024,
+      "n_efectivo": 2410.9
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "65+",
+      "porcentaje": 26.81,
+      "n": 1135,
+      "n_total": 5024,
+      "n_efectivo": 2410.9
+    },
+    {
+      "partido": "PP",
+      "categoria": "18-24",
+      "porcentaje": 6.79,
+      "n": 49,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "25-34",
+      "porcentaje": 10.99,
+      "n": 72,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "35-44",
+      "porcentaje": 13.99,
+      "n": 106,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "45-54",
+      "porcentaje": 25.11,
+      "n": 220,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "55-64",
+      "porcentaje": 19.69,
+      "n": 197,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "65+",
+      "porcentaje": 23.43,
+      "n": 191,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "18-24",
+      "porcentaje": 6.33,
+      "n": 56,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "25-34",
+      "porcentaje": 7.18,
+      "n": 102,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "35-44",
+      "porcentaje": 10.02,
+      "n": 128,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "45-54",
+      "porcentaje": 16.87,
+      "n": 226,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "55-64",
+      "porcentaje": 20.4,
+      "n": 270,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "65+",
+      "porcentaje": 39.2,
+      "n": 376,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "18-24",
+      "porcentaje": 3.25,
+      "n": 4,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "25-34",
+      "porcentaje": 13.64,
+      "n": 23,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "35-44",
+      "porcentaje": 17.91,
+      "n": 18,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "45-54",
+      "porcentaje": 23.2,
+      "n": 29,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "55-64",
+      "porcentaje": 23.84,
+      "n": 17,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "65+",
+      "porcentaje": 18.16,
+      "n": 25,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "SALF",
+      "categoria": "18-24",
+      "porcentaje": 14.18,
+      "n": 6,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "25-34",
+      "porcentaje": 20.02,
+      "n": 18,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "35-44",
+      "porcentaje": 29.57,
+      "n": 17,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "45-54",
+      "porcentaje": 24.45,
+      "n": 13,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "55-64",
+      "porcentaje": 10.31,
+      "n": 7,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "65+",
+      "porcentaje": 1.48,
+      "n": 2,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "18-24",
+      "porcentaje": 12.12,
+      "n": 25,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "25-34",
+      "porcentaje": 15.47,
+      "n": 52,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "35-44",
+      "porcentaje": 23.11,
+      "n": 67,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "45-54",
+      "porcentaje": 18.46,
+      "n": 59,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "55-64",
+      "porcentaje": 19.79,
+      "n": 48,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "65+",
+      "porcentaje": 11.05,
+      "n": 43,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "VOX",
+      "categoria": "18-24",
+      "porcentaje": 11.26,
+      "n": 57,
+      "n_total": 526,
+      "n_efectivo": 260.9
+    },
+    {
+      "partido": "VOX",
+      "categoria": "25-34",
+      "porcentaje": 17.73,
+      "n": 80,
+      "n_total": 526,
+      "n_efectivo": 260.9
+    },
+    {
+      "partido": "VOX",
+      "categoria": "35-44",
+      "porcentaje": 21.2,
+      "n": 123,
+      "n_total": 526,
+      "n_efectivo": 260.9
+    },
+    {
+      "partido": "VOX",
+      "categoria": "45-54",
+      "porcentaje": 23.62,
+      "n": 123,
+      "n_total": 526,
+      "n_efectivo": 260.9
+    },
+    {
+      "partido": "VOX",
+      "categoria": "55-64",
+      "porcentaje": 14.65,
+      "n": 84,
+      "n_total": 526,
+      "n_efectivo": 260.9
+    },
+    {
+      "partido": "VOX",
+      "categoria": "65+",
+      "porcentaje": 11.55,
+      "n": 59,
+      "n_total": 526,
+      "n_efectivo": 260.9
+    }
+  ],
+  "sexo": [
+    {
+      "partido": "Electorado general",
+      "categoria": "Hombre",
+      "porcentaje": 48.33,
+      "n": 2537,
+      "n_total": 5024,
+      "n_efectivo": 2410.9
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Mujer",
+      "porcentaje": 51.67,
+      "n": 2487,
+      "n_total": 5024,
+      "n_efectivo": 2410.9
+    },
+    {
+      "partido": "PP",
+      "categoria": "Hombre",
+      "porcentaje": 53.34,
+      "n": 442,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "Mujer",
+      "porcentaje": 46.66,
+      "n": 393,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Hombre",
+      "porcentaje": 40.64,
+      "n": 529,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Mujer",
+      "porcentaje": 59.36,
+      "n": 629,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Hombre",
+      "porcentaje": 59.87,
+      "n": 70,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Mujer",
+      "porcentaje": 40.13,
+      "n": 46,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Hombre",
+      "porcentaje": 74.18,
+      "n": 46,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Mujer",
+      "porcentaje": 25.82,
+      "n": 17,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Hombre",
+      "porcentaje": 52.96,
+      "n": 151,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Mujer",
+      "porcentaje": 47.04,
+      "n": 143,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Hombre",
+      "porcentaje": 58.17,
+      "n": 306,
+      "n_total": 526,
+      "n_efectivo": 260.9
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Mujer",
+      "porcentaje": 41.83,
+      "n": 220,
+      "n_total": 526,
+      "n_efectivo": 260.9
+    }
+  ],
+  "estudios": [
+    {
+      "partido": "Electorado general",
+      "categoria": "Sin estudios",
+      "porcentaje": 2.42,
+      "n": 26,
+      "n_total": 5018,
+      "n_efectivo": 2422
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Primaria",
+      "porcentaje": 9.35,
+      "n": 91,
+      "n_total": 5018,
+      "n_efectivo": 2422
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Secundaria 1ª etapa",
+      "porcentaje": 28.13,
+      "n": 547,
+      "n_total": 5018,
+      "n_efectivo": 2422
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Secundaria 2ª etapa",
+      "porcentaje": 15.59,
+      "n": 734,
+      "n_total": 5018,
+      "n_efectivo": 2422
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Formación Profesional",
+      "porcentaje": 16.47,
+      "n": 1127,
+      "n_total": 5018,
+      "n_efectivo": 2422
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Estudios superiores",
+      "porcentaje": 27.63,
+      "n": 2488,
+      "n_total": 5018,
+      "n_efectivo": 2422
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Otros",
+      "porcentaje": 0.41,
+      "n": 5,
+      "n_total": 5018,
+      "n_efectivo": 2422
+    },
+    {
+      "partido": "PP",
+      "categoria": "Sin estudios",
+      "porcentaje": 0,
+      "n": 0,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "Primaria",
+      "porcentaje": 6.29,
+      "n": 9,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "Secundaria 1ª etapa",
+      "porcentaje": 28.55,
+      "n": 80,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "Secundaria 2ª etapa",
+      "porcentaje": 15.93,
+      "n": 117,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "Formación Profesional",
+      "porcentaje": 13.5,
+      "n": 149,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "Estudios superiores",
+      "porcentaje": 35.16,
+      "n": 479,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "Otros",
+      "porcentaje": 0.57,
+      "n": 1,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Sin estudios",
+      "porcentaje": 2.47,
+      "n": 6,
+      "n_total": 1157,
+      "n_efectivo": 541.1
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Primaria",
+      "porcentaje": 13.28,
+      "n": 33,
+      "n_total": 1157,
+      "n_efectivo": 541.1
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Secundaria 1ª etapa",
+      "porcentaje": 32.78,
+      "n": 168,
+      "n_total": 1157,
+      "n_efectivo": 541.1
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Secundaria 2ª etapa",
+      "porcentaje": 14.46,
+      "n": 180,
+      "n_total": 1157,
+      "n_efectivo": 541.1
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Formación Profesional",
+      "porcentaje": 13.62,
+      "n": 241,
+      "n_total": 1157,
+      "n_efectivo": 541.1
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Estudios superiores",
+      "porcentaje": 22.63,
+      "n": 527,
+      "n_total": 1157,
+      "n_efectivo": 541.1
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Otros",
+      "porcentaje": 0.77,
+      "n": 2,
+      "n_total": 1157,
+      "n_efectivo": 541.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Sin estudios",
+      "porcentaje": 3.02,
+      "n": 1,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Primaria",
+      "porcentaje": 6.47,
+      "n": 2,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Secundaria 1ª etapa",
+      "porcentaje": 27.39,
+      "n": 13,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Secundaria 2ª etapa",
+      "porcentaje": 14.25,
+      "n": 14,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Formación Profesional",
+      "porcentaje": 18.21,
+      "n": 26,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Estudios superiores",
+      "porcentaje": 30.66,
+      "n": 60,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Otros",
+      "porcentaje": 0,
+      "n": 0,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Sin estudios",
+      "porcentaje": 0,
+      "n": 0,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Primaria",
+      "porcentaje": 0,
+      "n": 0,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Secundaria 1ª etapa",
+      "porcentaje": 28.44,
+      "n": 6,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Secundaria 2ª etapa",
+      "porcentaje": 18.24,
+      "n": 9,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Formación Profesional",
+      "porcentaje": 25.37,
+      "n": 22,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Estudios superiores",
+      "porcentaje": 27.94,
+      "n": 26,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Otros",
+      "porcentaje": 0,
+      "n": 0,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Sin estudios",
+      "porcentaje": 0,
+      "n": 0,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Primaria",
+      "porcentaje": 4.14,
+      "n": 1,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Secundaria 1ª etapa",
+      "porcentaje": 14.3,
+      "n": 12,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Secundaria 2ª etapa",
+      "porcentaje": 18.9,
+      "n": 37,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Formación Profesional",
+      "porcentaje": 13.49,
+      "n": 49,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Estudios superiores",
+      "porcentaje": 49.16,
+      "n": 195,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Otros",
+      "porcentaje": 0,
+      "n": 0,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Sin estudios",
+      "porcentaje": 1.25,
+      "n": 2,
+      "n_total": 525,
+      "n_efectivo": 260.2
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Primaria",
+      "porcentaje": 8.51,
+      "n": 9,
+      "n_total": 525,
+      "n_efectivo": 260.2
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Secundaria 1ª etapa",
+      "porcentaje": 32.52,
+      "n": 67,
+      "n_total": 525,
+      "n_efectivo": 260.2
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Secundaria 2ª etapa",
+      "porcentaje": 15.64,
+      "n": 83,
+      "n_total": 525,
+      "n_efectivo": 260.2
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Formación Profesional",
+      "porcentaje": 21.2,
+      "n": 152,
+      "n_total": 525,
+      "n_efectivo": 260.2
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Estudios superiores",
+      "porcentaje": 20.87,
+      "n": 212,
+      "n_total": 525,
+      "n_efectivo": 260.2
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Otros",
+      "porcentaje": 0,
+      "n": 0,
+      "n_total": 525,
+      "n_efectivo": 260.2
+    }
+  ],
+  "ideologia": [
+    {
+      "partido": "Electorado general",
+      "categoria": "1",
+      "porcentaje": 19.58,
+      "n": 773,
+      "n_total": 4904,
+      "n_efectivo": 2378.2
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "2",
+      "porcentaje": 7.49,
+      "n": 413,
+      "n_total": 4904,
+      "n_efectivo": 2378.2
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "3",
+      "porcentaje": 12.01,
+      "n": 745,
+      "n_total": 4904,
+      "n_efectivo": 2378.2
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "4",
+      "porcentaje": 7.91,
+      "n": 468,
+      "n_total": 4904,
+      "n_efectivo": 2378.2
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "5",
+      "porcentaje": 22.76,
+      "n": 1001,
+      "n_total": 4904,
+      "n_efectivo": 2378.2
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "6",
+      "porcentaje": 7.48,
+      "n": 426,
+      "n_total": 4904,
+      "n_efectivo": 2378.2
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "7",
+      "porcentaje": 7.94,
+      "n": 411,
+      "n_total": 4904,
+      "n_efectivo": 2378.2
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "8",
+      "porcentaje": 6.36,
+      "n": 318,
+      "n_total": 4904,
+      "n_efectivo": 2378.2
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "9",
+      "porcentaje": 1.51,
+      "n": 70,
+      "n_total": 4904,
+      "n_efectivo": 2378.2
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "10",
+      "porcentaje": 6.97,
+      "n": 279,
+      "n_total": 4904,
+      "n_efectivo": 2378.2
+    },
+    {
+      "partido": "PP",
+      "categoria": "1",
+      "porcentaje": 0.88,
+      "n": 2,
+      "n_total": 828,
+      "n_efectivo": 395.1
+    },
+    {
+      "partido": "PP",
+      "categoria": "2",
+      "porcentaje": 0.11,
+      "n": 1,
+      "n_total": 828,
+      "n_efectivo": 395.1
+    },
+    {
+      "partido": "PP",
+      "categoria": "3",
+      "porcentaje": 0.98,
+      "n": 6,
+      "n_total": 828,
+      "n_efectivo": 395.1
+    },
+    {
+      "partido": "PP",
+      "categoria": "4",
+      "porcentaje": 2.14,
+      "n": 16,
+      "n_total": 828,
+      "n_efectivo": 395.1
+    },
+    {
+      "partido": "PP",
+      "categoria": "5",
+      "porcentaje": 25.57,
+      "n": 212,
+      "n_total": 828,
+      "n_efectivo": 395.1
+    },
+    {
+      "partido": "PP",
+      "categoria": "6",
+      "porcentaje": 20.3,
+      "n": 194,
+      "n_total": 828,
+      "n_efectivo": 395.1
+    },
+    {
+      "partido": "PP",
+      "categoria": "7",
+      "porcentaje": 20.11,
+      "n": 192,
+      "n_total": 828,
+      "n_efectivo": 395.1
+    },
+    {
+      "partido": "PP",
+      "categoria": "8",
+      "porcentaje": 13.97,
+      "n": 117,
+      "n_total": 828,
+      "n_efectivo": 395.1
+    },
+    {
+      "partido": "PP",
+      "categoria": "9",
+      "porcentaje": 3.96,
+      "n": 19,
+      "n_total": 828,
+      "n_efectivo": 395.1
+    },
+    {
+      "partido": "PP",
+      "categoria": "10",
+      "porcentaje": 11.99,
+      "n": 69,
+      "n_total": 828,
+      "n_efectivo": 395.1
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "1",
+      "porcentaje": 41.37,
+      "n": 360,
+      "n_total": 1148,
+      "n_efectivo": 547.6
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "2",
+      "porcentaje": 11.2,
+      "n": 144,
+      "n_total": 1148,
+      "n_efectivo": 547.6
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "3",
+      "porcentaje": 18.91,
+      "n": 304,
+      "n_total": 1148,
+      "n_efectivo": 547.6
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "4",
+      "porcentaje": 11.85,
+      "n": 170,
+      "n_total": 1148,
+      "n_efectivo": 547.6
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "5",
+      "porcentaje": 11.18,
+      "n": 108,
+      "n_total": 1148,
+      "n_efectivo": 547.6
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "6",
+      "porcentaje": 0.97,
+      "n": 15,
+      "n_total": 1148,
+      "n_efectivo": 547.6
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "7",
+      "porcentaje": 1.55,
+      "n": 18,
+      "n_total": 1148,
+      "n_efectivo": 547.6
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "8",
+      "porcentaje": 1.42,
+      "n": 16,
+      "n_total": 1148,
+      "n_efectivo": 547.6
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "9",
+      "porcentaje": 0.49,
+      "n": 4,
+      "n_total": 1148,
+      "n_efectivo": 547.6
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "10",
+      "porcentaje": 1.07,
+      "n": 9,
+      "n_total": 1148,
+      "n_efectivo": 547.6
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "1",
+      "porcentaje": 52.7,
+      "n": 57,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "2",
+      "porcentaje": 22.97,
+      "n": 25,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "3",
+      "porcentaje": 19.77,
+      "n": 27,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "4",
+      "porcentaje": 3.08,
+      "n": 4,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "5",
+      "porcentaje": 0.48,
+      "n": 1,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "6",
+      "porcentaje": 0,
+      "n": 0,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "7",
+      "porcentaje": 0,
+      "n": 0,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "8",
+      "porcentaje": 0,
+      "n": 0,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "9",
+      "porcentaje": 0.37,
+      "n": 1,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "10",
+      "porcentaje": 0.63,
+      "n": 1,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "SALF",
+      "categoria": "1",
+      "porcentaje": 0,
+      "n": 0,
+      "n_total": 61,
+      "n_efectivo": 39.1
+    },
+    {
+      "partido": "SALF",
+      "categoria": "2",
+      "porcentaje": 0,
+      "n": 0,
+      "n_total": 61,
+      "n_efectivo": 39.1
+    },
+    {
+      "partido": "SALF",
+      "categoria": "3",
+      "porcentaje": 0.73,
+      "n": 1,
+      "n_total": 61,
+      "n_efectivo": 39.1
+    },
+    {
+      "partido": "SALF",
+      "categoria": "4",
+      "porcentaje": 0,
+      "n": 0,
+      "n_total": 61,
+      "n_efectivo": 39.1
+    },
+    {
+      "partido": "SALF",
+      "categoria": "5",
+      "porcentaje": 32.2,
+      "n": 20,
+      "n_total": 61,
+      "n_efectivo": 39.1
+    },
+    {
+      "partido": "SALF",
+      "categoria": "6",
+      "porcentaje": 17.87,
+      "n": 9,
+      "n_total": 61,
+      "n_efectivo": 39.1
+    },
+    {
+      "partido": "SALF",
+      "categoria": "7",
+      "porcentaje": 17.78,
+      "n": 11,
+      "n_total": 61,
+      "n_efectivo": 39.1
+    },
+    {
+      "partido": "SALF",
+      "categoria": "8",
+      "porcentaje": 8.28,
+      "n": 7,
+      "n_total": 61,
+      "n_efectivo": 39.1
+    },
+    {
+      "partido": "SALF",
+      "categoria": "9",
+      "porcentaje": 4.61,
+      "n": 3,
+      "n_total": 61,
+      "n_efectivo": 39.1
+    },
+    {
+      "partido": "SALF",
+      "categoria": "10",
+      "porcentaje": 18.54,
+      "n": 10,
+      "n_total": 61,
+      "n_efectivo": 39.1
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "1",
+      "porcentaje": 35.07,
+      "n": 83,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "2",
+      "porcentaje": 26.11,
+      "n": 83,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "3",
+      "porcentaje": 28.63,
+      "n": 90,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "4",
+      "porcentaje": 6.38,
+      "n": 24,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "5",
+      "porcentaje": 1.8,
+      "n": 6,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "6",
+      "porcentaje": 0.43,
+      "n": 2,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "7",
+      "porcentaje": 0.21,
+      "n": 1,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "8",
+      "porcentaje": 1.03,
+      "n": 4,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "9",
+      "porcentaje": 0,
+      "n": 0,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "10",
+      "porcentaje": 0.34,
+      "n": 1,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "VOX",
+      "categoria": "1",
+      "porcentaje": 1.62,
+      "n": 5,
+      "n_total": 516,
+      "n_efectivo": 257.3
+    },
+    {
+      "partido": "VOX",
+      "categoria": "2",
+      "porcentaje": 0.69,
+      "n": 2,
+      "n_total": 516,
+      "n_efectivo": 257.3
+    },
+    {
+      "partido": "VOX",
+      "categoria": "3",
+      "porcentaje": 0.61,
+      "n": 4,
+      "n_total": 516,
+      "n_efectivo": 257.3
+    },
+    {
+      "partido": "VOX",
+      "categoria": "4",
+      "porcentaje": 1.14,
+      "n": 6,
+      "n_total": 516,
+      "n_efectivo": 257.3
+    },
+    {
+      "partido": "VOX",
+      "categoria": "5",
+      "porcentaje": 16.67,
+      "n": 72,
+      "n_total": 516,
+      "n_efectivo": 257.3
+    },
+    {
+      "partido": "VOX",
+      "categoria": "6",
+      "porcentaje": 9.16,
+      "n": 56,
+      "n_total": 516,
+      "n_efectivo": 257.3
+    },
+    {
+      "partido": "VOX",
+      "categoria": "7",
+      "porcentaje": 15.31,
+      "n": 77,
+      "n_total": 516,
+      "n_efectivo": 257.3
+    },
+    {
+      "partido": "VOX",
+      "categoria": "8",
+      "porcentaje": 19.75,
+      "n": 111,
+      "n_total": 516,
+      "n_efectivo": 257.3
+    },
+    {
+      "partido": "VOX",
+      "categoria": "9",
+      "porcentaje": 4.96,
+      "n": 35,
+      "n_total": 516,
+      "n_efectivo": 257.3
+    },
+    {
+      "partido": "VOX",
+      "categoria": "10",
+      "porcentaje": 30.09,
+      "n": 148,
+      "n_total": 516,
+      "n_efectivo": 257.3
+    }
+  ],
+  "situacion_laboral": [
+    {
+      "partido": "Electorado general",
+      "categoria": "Trabaja",
+      "porcentaje": 52.56,
+      "n": 3076,
+      "n_total": 5017,
+      "n_efectivo": 2406.2
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Jubilado/a",
+      "porcentaje": 23.63,
+      "n": 1090,
+      "n_total": 5017,
+      "n_efectivo": 2406.2
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Pensionista sin empleo previo",
+      "porcentaje": 2.67,
+      "n": 59,
+      "n_total": 5017,
+      "n_efectivo": 2406.2
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "En paro, trabajó antes",
+      "porcentaje": 8.6,
+      "n": 349,
+      "n_total": 5017,
+      "n_efectivo": 2406.2
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "En paro, primer empleo",
+      "porcentaje": 0.64,
+      "n": 23,
+      "n_total": 5017,
+      "n_efectivo": 2406.2
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Estudiante",
+      "porcentaje": 5.23,
+      "n": 214,
+      "n_total": 5017,
+      "n_efectivo": 2406.2
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Trabajo doméstico no remunerado",
+      "porcentaje": 3.91,
+      "n": 122,
+      "n_total": 5017,
+      "n_efectivo": 2406.2
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Otra situación",
+      "porcentaje": 2.76,
+      "n": 84,
+      "n_total": 5017,
+      "n_efectivo": 2406.2
+    },
+    {
+      "partido": "PP",
+      "categoria": "Trabaja",
+      "porcentaje": 58.48,
+      "n": 545,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "Jubilado/a",
+      "porcentaje": 21.46,
+      "n": 183,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "Pensionista sin empleo previo",
+      "porcentaje": 2.18,
+      "n": 11,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "En paro, trabajó antes",
+      "porcentaje": 8.36,
+      "n": 45,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "En paro, primer empleo",
+      "porcentaje": 0.16,
+      "n": 2,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "Estudiante",
+      "porcentaje": 4.6,
+      "n": 28,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "Trabajo doméstico no remunerado",
+      "porcentaje": 3.2,
+      "n": 17,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "Otra situación",
+      "porcentaje": 1.55,
+      "n": 4,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Trabaja",
+      "porcentaje": 42.25,
+      "n": 611,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Jubilado/a",
+      "porcentaje": 34.3,
+      "n": 356,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Pensionista sin empleo previo",
+      "porcentaje": 2.82,
+      "n": 13,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "En paro, trabajó antes",
+      "porcentaje": 9.2,
+      "n": 86,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "En paro, primer empleo",
+      "porcentaje": 0.86,
+      "n": 5,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Estudiante",
+      "porcentaje": 3.47,
+      "n": 32,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Trabajo doméstico no remunerado",
+      "porcentaje": 3.66,
+      "n": 31,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Otra situación",
+      "porcentaje": 3.43,
+      "n": 24,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Trabaja",
+      "porcentaje": 58.6,
+      "n": 74,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Jubilado/a",
+      "porcentaje": 18.72,
+      "n": 24,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Pensionista sin empleo previo",
+      "porcentaje": 0.51,
+      "n": 1,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "En paro, trabajó antes",
+      "porcentaje": 7.68,
+      "n": 6,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "En paro, primer empleo",
+      "porcentaje": 0.5,
+      "n": 1,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Estudiante",
+      "porcentaje": 2.24,
+      "n": 3,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Trabajo doméstico no remunerado",
+      "porcentaje": 1.88,
+      "n": 1,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Otra situación",
+      "porcentaje": 9.87,
+      "n": 6,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Trabaja",
+      "porcentaje": 68.51,
+      "n": 49,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Jubilado/a",
+      "porcentaje": 2.95,
+      "n": 3,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Pensionista sin empleo previo",
+      "porcentaje": 0,
+      "n": 0,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "En paro, trabajó antes",
+      "porcentaje": 12.25,
+      "n": 5,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "En paro, primer empleo",
+      "porcentaje": 0,
+      "n": 0,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Estudiante",
+      "porcentaje": 4.79,
+      "n": 2,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Trabajo doméstico no remunerado",
+      "porcentaje": 7.66,
+      "n": 3,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Otra situación",
+      "porcentaje": 3.84,
+      "n": 1,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Trabaja",
+      "porcentaje": 69.68,
+      "n": 207,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Jubilado/a",
+      "porcentaje": 11.18,
+      "n": 42,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Pensionista sin empleo previo",
+      "porcentaje": 1.36,
+      "n": 3,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "En paro, trabajó antes",
+      "porcentaje": 5.62,
+      "n": 18,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "En paro, primer empleo",
+      "porcentaje": 0.22,
+      "n": 1,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Estudiante",
+      "porcentaje": 9.53,
+      "n": 17,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Trabajo doméstico no remunerado",
+      "porcentaje": 0.3,
+      "n": 1,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Otra situación",
+      "porcentaje": 2.12,
+      "n": 5,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Trabaja",
+      "porcentaje": 63.11,
+      "n": 359,
+      "n_total": 525,
+      "n_efectivo": 260.2
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Jubilado/a",
+      "porcentaje": 11.56,
+      "n": 64,
+      "n_total": 525,
+      "n_efectivo": 260.2
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Pensionista sin empleo previo",
+      "porcentaje": 1.25,
+      "n": 3,
+      "n_total": 525,
+      "n_efectivo": 260.2
+    },
+    {
+      "partido": "VOX",
+      "categoria": "En paro, trabajó antes",
+      "porcentaje": 10.89,
+      "n": 41,
+      "n_total": 525,
+      "n_efectivo": 260.2
+    },
+    {
+      "partido": "VOX",
+      "categoria": "En paro, primer empleo",
+      "porcentaje": 0.18,
+      "n": 2,
+      "n_total": 525,
+      "n_efectivo": 260.2
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Estudiante",
+      "porcentaje": 5.11,
+      "n": 25,
+      "n_total": 525,
+      "n_efectivo": 260.2
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Trabajo doméstico no remunerado",
+      "porcentaje": 5.22,
+      "n": 20,
+      "n_total": 525,
+      "n_efectivo": 260.2
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Otra situación",
+      "porcentaje": 2.67,
+      "n": 11,
+      "n_total": 525,
+      "n_efectivo": 260.2
+    }
+  ],
+  "ingresos_hogar": [
+    {
+      "partido": "Electorado general",
+      "categoria": "Menos de 1.100 €",
+      "porcentaje": 9.15,
+      "n": 281,
+      "n_total": 4875,
+      "n_efectivo": 2358.8
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "1.100-1.800 €",
+      "porcentaje": 24.95,
+      "n": 811,
+      "n_total": 4875,
+      "n_efectivo": 2358.8
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "1.801-2.700 €",
+      "porcentaje": 23.3,
+      "n": 1129,
+      "n_total": 4875,
+      "n_efectivo": 2358.8
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "2.701-3.900 €",
+      "porcentaje": 20.38,
+      "n": 1124,
+      "n_total": 4875,
+      "n_efectivo": 2358.8
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "3.901-5.000 €",
+      "porcentaje": 13.83,
+      "n": 942,
+      "n_total": 4875,
+      "n_efectivo": 2358.8
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Más de 5.000 €",
+      "porcentaje": 8.39,
+      "n": 588,
+      "n_total": 4875,
+      "n_efectivo": 2358.8
+    },
+    {
+      "partido": "PP",
+      "categoria": "Menos de 1.100 €",
+      "porcentaje": 4.75,
+      "n": 29,
+      "n_total": 818,
+      "n_efectivo": 388
+    },
+    {
+      "partido": "PP",
+      "categoria": "1.100-1.800 €",
+      "porcentaje": 21.1,
+      "n": 104,
+      "n_total": 818,
+      "n_efectivo": 388
+    },
+    {
+      "partido": "PP",
+      "categoria": "1.801-2.700 €",
+      "porcentaje": 25.52,
+      "n": 191,
+      "n_total": 818,
+      "n_efectivo": 388
+    },
+    {
+      "partido": "PP",
+      "categoria": "2.701-3.900 €",
+      "porcentaje": 19.73,
+      "n": 172,
+      "n_total": 818,
+      "n_efectivo": 388
+    },
+    {
+      "partido": "PP",
+      "categoria": "3.901-5.000 €",
+      "porcentaje": 16.48,
+      "n": 177,
+      "n_total": 818,
+      "n_efectivo": 388
+    },
+    {
+      "partido": "PP",
+      "categoria": "Más de 5.000 €",
+      "porcentaje": 12.42,
+      "n": 145,
+      "n_total": 818,
+      "n_efectivo": 388
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Menos de 1.100 €",
+      "porcentaje": 9.95,
+      "n": 68,
+      "n_total": 1137,
+      "n_efectivo": 542.7
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "1.100-1.800 €",
+      "porcentaje": 26.53,
+      "n": 198,
+      "n_total": 1137,
+      "n_efectivo": 542.7
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "1.801-2.700 €",
+      "porcentaje": 23.71,
+      "n": 263,
+      "n_total": 1137,
+      "n_efectivo": 542.7
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "2.701-3.900 €",
+      "porcentaje": 20.54,
+      "n": 264,
+      "n_total": 1137,
+      "n_efectivo": 542.7
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "3.901-5.000 €",
+      "porcentaje": 12.39,
+      "n": 216,
+      "n_total": 1137,
+      "n_efectivo": 542.7
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Más de 5.000 €",
+      "porcentaje": 6.88,
+      "n": 128,
+      "n_total": 1137,
+      "n_efectivo": 542.7
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Menos de 1.100 €",
+      "porcentaje": 13.54,
+      "n": 7,
+      "n_total": 115,
+      "n_efectivo": 66.5
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "1.100-1.800 €",
+      "porcentaje": 13.01,
+      "n": 16,
+      "n_total": 115,
+      "n_efectivo": 66.5
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "1.801-2.700 €",
+      "porcentaje": 29.14,
+      "n": 37,
+      "n_total": 115,
+      "n_efectivo": 66.5
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "2.701-3.900 €",
+      "porcentaje": 25.44,
+      "n": 30,
+      "n_total": 115,
+      "n_efectivo": 66.5
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "3.901-5.000 €",
+      "porcentaje": 7.8,
+      "n": 11,
+      "n_total": 115,
+      "n_efectivo": 66.5
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Más de 5.000 €",
+      "porcentaje": 11.08,
+      "n": 14,
+      "n_total": 115,
+      "n_efectivo": 66.5
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Menos de 1.100 €",
+      "porcentaje": 11,
+      "n": 4,
+      "n_total": 62,
+      "n_efectivo": 36.7
+    },
+    {
+      "partido": "SALF",
+      "categoria": "1.100-1.800 €",
+      "porcentaje": 27.18,
+      "n": 14,
+      "n_total": 62,
+      "n_efectivo": 36.7
+    },
+    {
+      "partido": "SALF",
+      "categoria": "1.801-2.700 €",
+      "porcentaje": 19.24,
+      "n": 14,
+      "n_total": 62,
+      "n_efectivo": 36.7
+    },
+    {
+      "partido": "SALF",
+      "categoria": "2.701-3.900 €",
+      "porcentaje": 18.47,
+      "n": 12,
+      "n_total": 62,
+      "n_efectivo": 36.7
+    },
+    {
+      "partido": "SALF",
+      "categoria": "3.901-5.000 €",
+      "porcentaje": 18.96,
+      "n": 13,
+      "n_total": 62,
+      "n_efectivo": 36.7
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Más de 5.000 €",
+      "porcentaje": 5.15,
+      "n": 5,
+      "n_total": 62,
+      "n_efectivo": 36.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Menos de 1.100 €",
+      "porcentaje": 3.79,
+      "n": 12,
+      "n_total": 291,
+      "n_efectivo": 155.3
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "1.100-1.800 €",
+      "porcentaje": 18.18,
+      "n": 34,
+      "n_total": 291,
+      "n_efectivo": 155.3
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "1.801-2.700 €",
+      "porcentaje": 20.65,
+      "n": 59,
+      "n_total": 291,
+      "n_efectivo": 155.3
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "2.701-3.900 €",
+      "porcentaje": 25.37,
+      "n": 83,
+      "n_total": 291,
+      "n_efectivo": 155.3
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "3.901-5.000 €",
+      "porcentaje": 23.65,
+      "n": 74,
+      "n_total": 291,
+      "n_efectivo": 155.3
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Más de 5.000 €",
+      "porcentaje": 8.36,
+      "n": 29,
+      "n_total": 291,
+      "n_efectivo": 155.3
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Menos de 1.100 €",
+      "porcentaje": 8.15,
+      "n": 31,
+      "n_total": 512,
+      "n_efectivo": 253.7
+    },
+    {
+      "partido": "VOX",
+      "categoria": "1.100-1.800 €",
+      "porcentaje": 25.26,
+      "n": 90,
+      "n_total": 512,
+      "n_efectivo": 253.7
+    },
+    {
+      "partido": "VOX",
+      "categoria": "1.801-2.700 €",
+      "porcentaje": 26.16,
+      "n": 127,
+      "n_total": 512,
+      "n_efectivo": 253.7
+    },
+    {
+      "partido": "VOX",
+      "categoria": "2.701-3.900 €",
+      "porcentaje": 21.2,
+      "n": 118,
+      "n_total": 512,
+      "n_efectivo": 253.7
+    },
+    {
+      "partido": "VOX",
+      "categoria": "3.901-5.000 €",
+      "porcentaje": 11.09,
+      "n": 91,
+      "n_total": 512,
+      "n_efectivo": 253.7
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Más de 5.000 €",
+      "porcentaje": 8.15,
+      "n": 55,
+      "n_total": 512,
+      "n_efectivo": 253.7
+    }
+  ],
+  "clase_social": [
+    {
+      "partido": "Electorado general",
+      "categoria": "Alta y media-alta",
+      "porcentaje": 3.32,
+      "n": 240,
+      "n_total": 4925,
+      "n_efectivo": 2359.2
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Media-media",
+      "porcentaje": 38.46,
+      "n": 2226,
+      "n_total": 4925,
+      "n_efectivo": 2359.2
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Media-baja",
+      "porcentaje": 13.36,
+      "n": 669,
+      "n_total": 4925,
+      "n_efectivo": 2359.2
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Trabajadora/obrera",
+      "porcentaje": 17.24,
+      "n": 827,
+      "n_total": 4925,
+      "n_efectivo": 2359.2
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Baja/pobre",
+      "porcentaje": 21.15,
+      "n": 734,
+      "n_total": 4925,
+      "n_efectivo": 2359.2
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Otras",
+      "porcentaje": 6.48,
+      "n": 229,
+      "n_total": 4925,
+      "n_efectivo": 2359.2
+    },
+    {
+      "partido": "PP",
+      "categoria": "Alta y media-alta",
+      "porcentaje": 4.84,
+      "n": 55,
+      "n_total": 816,
+      "n_efectivo": 388.3
+    },
+    {
+      "partido": "PP",
+      "categoria": "Media-media",
+      "porcentaje": 55.49,
+      "n": 508,
+      "n_total": 816,
+      "n_efectivo": 388.3
+    },
+    {
+      "partido": "PP",
+      "categoria": "Media-baja",
+      "porcentaje": 12.15,
+      "n": 96,
+      "n_total": 816,
+      "n_efectivo": 388.3
+    },
+    {
+      "partido": "PP",
+      "categoria": "Trabajadora/obrera",
+      "porcentaje": 6.78,
+      "n": 46,
+      "n_total": 816,
+      "n_efectivo": 388.3
+    },
+    {
+      "partido": "PP",
+      "categoria": "Baja/pobre",
+      "porcentaje": 15.38,
+      "n": 81,
+      "n_total": 816,
+      "n_efectivo": 388.3
+    },
+    {
+      "partido": "PP",
+      "categoria": "Otras",
+      "porcentaje": 5.37,
+      "n": 30,
+      "n_total": 816,
+      "n_efectivo": 388.3
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Alta y media-alta",
+      "porcentaje": 1.81,
+      "n": 41,
+      "n_total": 1137,
+      "n_efectivo": 528.5
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Media-media",
+      "porcentaje": 37.48,
+      "n": 505,
+      "n_total": 1137,
+      "n_efectivo": 528.5
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Media-baja",
+      "porcentaje": 13.25,
+      "n": 153,
+      "n_total": 1137,
+      "n_efectivo": 528.5
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Trabajadora/obrera",
+      "porcentaje": 19.79,
+      "n": 231,
+      "n_total": 1137,
+      "n_efectivo": 528.5
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Baja/pobre",
+      "porcentaje": 20.97,
+      "n": 153,
+      "n_total": 1137,
+      "n_efectivo": 528.5
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Otras",
+      "porcentaje": 6.7,
+      "n": 54,
+      "n_total": 1137,
+      "n_efectivo": 528.5
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Alta y media-alta",
+      "porcentaje": 2.38,
+      "n": 5,
+      "n_total": 115,
+      "n_efectivo": 66.4
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Media-media",
+      "porcentaje": 18.48,
+      "n": 29,
+      "n_total": 115,
+      "n_efectivo": 66.4
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Media-baja",
+      "porcentaje": 13.52,
+      "n": 14,
+      "n_total": 115,
+      "n_efectivo": 66.4
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Trabajadora/obrera",
+      "porcentaje": 40.68,
+      "n": 45,
+      "n_total": 115,
+      "n_efectivo": 66.4
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Baja/pobre",
+      "porcentaje": 24.37,
+      "n": 21,
+      "n_total": 115,
+      "n_efectivo": 66.4
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Otras",
+      "porcentaje": 0.58,
+      "n": 1,
+      "n_total": 115,
+      "n_efectivo": 66.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Alta y media-alta",
+      "porcentaje": 0.89,
+      "n": 1,
+      "n_total": 62,
+      "n_efectivo": 36.7
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Media-media",
+      "porcentaje": 33.62,
+      "n": 23,
+      "n_total": 62,
+      "n_efectivo": 36.7
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Media-baja",
+      "porcentaje": 20.05,
+      "n": 10,
+      "n_total": 62,
+      "n_efectivo": 36.7
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Trabajadora/obrera",
+      "porcentaje": 10.19,
+      "n": 5,
+      "n_total": 62,
+      "n_efectivo": 36.7
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Baja/pobre",
+      "porcentaje": 33.45,
+      "n": 21,
+      "n_total": 62,
+      "n_efectivo": 36.7
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Otras",
+      "porcentaje": 1.8,
+      "n": 2,
+      "n_total": 62,
+      "n_efectivo": 36.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Alta y media-alta",
+      "porcentaje": 3.78,
+      "n": 11,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Media-media",
+      "porcentaje": 33.56,
+      "n": 106,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Media-baja",
+      "porcentaje": 8.09,
+      "n": 27,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Trabajadora/obrera",
+      "porcentaje": 38.3,
+      "n": 111,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Baja/pobre",
+      "porcentaje": 13.32,
+      "n": 32,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Otras",
+      "porcentaje": 2.94,
+      "n": 7,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Alta y media-alta",
+      "porcentaje": 3.99,
+      "n": 29,
+      "n_total": 514,
+      "n_efectivo": 254
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Media-media",
+      "porcentaje": 41.9,
+      "n": 261,
+      "n_total": 514,
+      "n_efectivo": 254
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Media-baja",
+      "porcentaje": 12.22,
+      "n": 63,
+      "n_total": 514,
+      "n_efectivo": 254
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Trabajadora/obrera",
+      "porcentaje": 11.81,
+      "n": 40,
+      "n_total": 514,
+      "n_efectivo": 254
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Baja/pobre",
+      "porcentaje": 24.16,
+      "n": 98,
+      "n_total": 514,
+      "n_efectivo": 254
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Otras",
+      "porcentaje": 5.91,
+      "n": 23,
+      "n_total": 514,
+      "n_efectivo": 254
+    }
+  ],
+  "religion": [
+    {
+      "partido": "Electorado general",
+      "categoria": "Católico/a practicante",
+      "porcentaje": 15.78,
+      "n": 733,
+      "n_total": 4969,
+      "n_efectivo": 2380.8
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Católico/a no practicante",
+      "porcentaje": 38.24,
+      "n": 1717,
+      "n_total": 4969,
+      "n_efectivo": 2380.8
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Otra religión",
+      "porcentaje": 2.63,
+      "n": 108,
+      "n_total": 4969,
+      "n_efectivo": 2380.8
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Agnóstico/a",
+      "porcentaje": 13.48,
+      "n": 799,
+      "n_total": 4969,
+      "n_efectivo": 2380.8
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Indiferente/no creyente",
+      "porcentaje": 12.39,
+      "n": 667,
+      "n_total": 4969,
+      "n_efectivo": 2380.8
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Ateo/a",
+      "porcentaje": 17.49,
+      "n": 945,
+      "n_total": 4969,
+      "n_efectivo": 2380.8
+    },
+    {
+      "partido": "PP",
+      "categoria": "Católico/a practicante",
+      "porcentaje": 29.96,
+      "n": 262,
+      "n_total": 828,
+      "n_efectivo": 394.3
+    },
+    {
+      "partido": "PP",
+      "categoria": "Católico/a no practicante",
+      "porcentaje": 48.97,
+      "n": 381,
+      "n_total": 828,
+      "n_efectivo": 394.3
+    },
+    {
+      "partido": "PP",
+      "categoria": "Otra religión",
+      "porcentaje": 2.18,
+      "n": 12,
+      "n_total": 828,
+      "n_efectivo": 394.3
+    },
+    {
+      "partido": "PP",
+      "categoria": "Agnóstico/a",
+      "porcentaje": 6.38,
+      "n": 63,
+      "n_total": 828,
+      "n_efectivo": 394.3
+    },
+    {
+      "partido": "PP",
+      "categoria": "Indiferente/no creyente",
+      "porcentaje": 7.12,
+      "n": 65,
+      "n_total": 828,
+      "n_efectivo": 394.3
+    },
+    {
+      "partido": "PP",
+      "categoria": "Ateo/a",
+      "porcentaje": 5.39,
+      "n": 45,
+      "n_total": 828,
+      "n_efectivo": 394.3
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Católico/a practicante",
+      "porcentaje": 10.65,
+      "n": 89,
+      "n_total": 1151,
+      "n_efectivo": 536.9
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Católico/a no practicante",
+      "porcentaje": 35.98,
+      "n": 371,
+      "n_total": 1151,
+      "n_efectivo": 536.9
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Otra religión",
+      "porcentaje": 2.68,
+      "n": 29,
+      "n_total": 1151,
+      "n_efectivo": 536.9
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Agnóstico/a",
+      "porcentaje": 14.71,
+      "n": 217,
+      "n_total": 1151,
+      "n_efectivo": 536.9
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Indiferente/no creyente",
+      "porcentaje": 15.27,
+      "n": 195,
+      "n_total": 1151,
+      "n_efectivo": 536.9
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Ateo/a",
+      "porcentaje": 20.71,
+      "n": 250,
+      "n_total": 1151,
+      "n_efectivo": 536.9
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Católico/a practicante",
+      "porcentaje": 3.22,
+      "n": 3,
+      "n_total": 114,
+      "n_efectivo": 65.6
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Católico/a no practicante",
+      "porcentaje": 10.65,
+      "n": 8,
+      "n_total": 114,
+      "n_efectivo": 65.6
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Otra religión",
+      "porcentaje": 4.19,
+      "n": 2,
+      "n_total": 114,
+      "n_efectivo": 65.6
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Agnóstico/a",
+      "porcentaje": 22.32,
+      "n": 27,
+      "n_total": 114,
+      "n_efectivo": 65.6
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Indiferente/no creyente",
+      "porcentaje": 12.94,
+      "n": 20,
+      "n_total": 114,
+      "n_efectivo": 65.6
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Ateo/a",
+      "porcentaje": 46.68,
+      "n": 54,
+      "n_total": 114,
+      "n_efectivo": 65.6
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Católico/a practicante",
+      "porcentaje": 12.21,
+      "n": 10,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Católico/a no practicante",
+      "porcentaje": 41.58,
+      "n": 20,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Otra religión",
+      "porcentaje": 3.79,
+      "n": 3,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Agnóstico/a",
+      "porcentaje": 28.43,
+      "n": 17,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Indiferente/no creyente",
+      "porcentaje": 9.04,
+      "n": 8,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Ateo/a",
+      "porcentaje": 4.96,
+      "n": 5,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Católico/a practicante",
+      "porcentaje": 3.26,
+      "n": 10,
+      "n_total": 293,
+      "n_efectivo": 156.8
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Católico/a no practicante",
+      "porcentaje": 16.62,
+      "n": 37,
+      "n_total": 293,
+      "n_efectivo": 156.8
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Otra religión",
+      "porcentaje": 0.83,
+      "n": 3,
+      "n_total": 293,
+      "n_efectivo": 156.8
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Agnóstico/a",
+      "porcentaje": 18.62,
+      "n": 63,
+      "n_total": 293,
+      "n_efectivo": 156.8
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Indiferente/no creyente",
+      "porcentaje": 19.86,
+      "n": 56,
+      "n_total": 293,
+      "n_efectivo": 156.8
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Ateo/a",
+      "porcentaje": 40.81,
+      "n": 124,
+      "n_total": 293,
+      "n_efectivo": 156.8
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Católico/a practicante",
+      "porcentaje": 21.16,
+      "n": 128,
+      "n_total": 521,
+      "n_efectivo": 258
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Católico/a no practicante",
+      "porcentaje": 53.28,
+      "n": 247,
+      "n_total": 521,
+      "n_efectivo": 258
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Otra religión",
+      "porcentaje": 2.19,
+      "n": 9,
+      "n_total": 521,
+      "n_efectivo": 258
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Agnóstico/a",
+      "porcentaje": 6.49,
+      "n": 46,
+      "n_total": 521,
+      "n_efectivo": 258
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Indiferente/no creyente",
+      "porcentaje": 10.19,
+      "n": 54,
+      "n_total": 521,
+      "n_efectivo": 258
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Ateo/a",
+      "porcentaje": 6.69,
+      "n": 37,
+      "n_total": 521,
+      "n_efectivo": 258
+    }
+  ],
+  "tamano_municipio": [
+    {
+      "partido": "Electorado general",
+      "categoria": "Hasta 2.000",
+      "porcentaje": 7.82,
+      "n": 219,
+      "n_total": 5024,
+      "n_efectivo": 2410.9
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "2.001-10.000",
+      "porcentaje": 15.65,
+      "n": 652,
+      "n_total": 5024,
+      "n_efectivo": 2410.9
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "10.001-50.000",
+      "porcentaje": 27.86,
+      "n": 1333,
+      "n_total": 5024,
+      "n_efectivo": 2410.9
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "50.001-100.000",
+      "porcentaje": 12.51,
+      "n": 642,
+      "n_total": 5024,
+      "n_efectivo": 2410.9
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "100.001-400.000",
+      "porcentaje": 20.83,
+      "n": 1249,
+      "n_total": 5024,
+      "n_efectivo": 2410.9
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "400.001-1.000.000",
+      "porcentaje": 6.76,
+      "n": 407,
+      "n_total": 5024,
+      "n_efectivo": 2410.9
+    },
+    {
+      "partido": "Electorado general",
+      "categoria": "Más de 1.000.000",
+      "porcentaje": 8.57,
+      "n": 522,
+      "n_total": 5024,
+      "n_efectivo": 2410.9
+    },
+    {
+      "partido": "PP",
+      "categoria": "Hasta 2.000",
+      "porcentaje": 4.95,
+      "n": 30,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "2.001-10.000",
+      "porcentaje": 14.97,
+      "n": 100,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "10.001-50.000",
+      "porcentaje": 28.09,
+      "n": 200,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "50.001-100.000",
+      "porcentaje": 12.35,
+      "n": 111,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "100.001-400.000",
+      "porcentaje": 21.83,
+      "n": 221,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "400.001-1.000.000",
+      "porcentaje": 10.19,
+      "n": 86,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PP",
+      "categoria": "Más de 1.000.000",
+      "porcentaje": 7.61,
+      "n": 87,
+      "n_total": 835,
+      "n_efectivo": 398
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Hasta 2.000",
+      "porcentaje": 10.18,
+      "n": 67,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "2.001-10.000",
+      "porcentaje": 16.22,
+      "n": 141,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "10.001-50.000",
+      "porcentaje": 27.33,
+      "n": 306,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "50.001-100.000",
+      "porcentaje": 12.45,
+      "n": 153,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "100.001-400.000",
+      "porcentaje": 21.08,
+      "n": 296,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "400.001-1.000.000",
+      "porcentaje": 5.64,
+      "n": 86,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "PSOE",
+      "categoria": "Más de 1.000.000",
+      "porcentaje": 7.09,
+      "n": 109,
+      "n_total": 1158,
+      "n_efectivo": 541.8
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Hasta 2.000",
+      "porcentaje": 3.88,
+      "n": 5,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "2.001-10.000",
+      "porcentaje": 22.52,
+      "n": 15,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "10.001-50.000",
+      "porcentaje": 30.08,
+      "n": 34,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "50.001-100.000",
+      "porcentaje": 11.81,
+      "n": 16,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "100.001-400.000",
+      "porcentaje": 14.61,
+      "n": 20,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "400.001-1.000.000",
+      "porcentaje": 8.09,
+      "n": 12,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "Podemos",
+      "categoria": "Más de 1.000.000",
+      "porcentaje": 9.02,
+      "n": 14,
+      "n_total": 116,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Hasta 2.000",
+      "porcentaje": 12.48,
+      "n": 3,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "2.001-10.000",
+      "porcentaje": 19.48,
+      "n": 10,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "10.001-50.000",
+      "porcentaje": 30.67,
+      "n": 18,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "50.001-100.000",
+      "porcentaje": 9.4,
+      "n": 8,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "100.001-400.000",
+      "porcentaje": 18.15,
+      "n": 15,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "400.001-1.000.000",
+      "porcentaje": 6.76,
+      "n": 6,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SALF",
+      "categoria": "Más de 1.000.000",
+      "porcentaje": 3.05,
+      "n": 3,
+      "n_total": 63,
+      "n_efectivo": 37.4
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Hasta 2.000",
+      "porcentaje": 9.96,
+      "n": 9,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "2.001-10.000",
+      "porcentaje": 12.47,
+      "n": 33,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "10.001-50.000",
+      "porcentaje": 23.71,
+      "n": 67,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "50.001-100.000",
+      "porcentaje": 12.54,
+      "n": 35,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "100.001-400.000",
+      "porcentaje": 19.64,
+      "n": 71,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "400.001-1.000.000",
+      "porcentaje": 8.48,
+      "n": 31,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "categoria": "Más de 1.000.000",
+      "porcentaje": 13.2,
+      "n": 48,
+      "n_total": 294,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Hasta 2.000",
+      "porcentaje": 7.58,
+      "n": 23,
+      "n_total": 526,
+      "n_efectivo": 260.9
+    },
+    {
+      "partido": "VOX",
+      "categoria": "2.001-10.000",
+      "porcentaje": 12.85,
+      "n": 65,
+      "n_total": 526,
+      "n_efectivo": 260.9
+    },
+    {
+      "partido": "VOX",
+      "categoria": "10.001-50.000",
+      "porcentaje": 32.53,
+      "n": 145,
+      "n_total": 526,
+      "n_efectivo": 260.9
+    },
+    {
+      "partido": "VOX",
+      "categoria": "50.001-100.000",
+      "porcentaje": 13.26,
+      "n": 76,
+      "n_total": 526,
+      "n_efectivo": 260.9
+    },
+    {
+      "partido": "VOX",
+      "categoria": "100.001-400.000",
+      "porcentaje": 20.09,
+      "n": 132,
+      "n_total": 526,
+      "n_efectivo": 260.9
+    },
+    {
+      "partido": "VOX",
+      "categoria": "400.001-1.000.000",
+      "porcentaje": 5.83,
+      "n": 42,
+      "n_total": 526,
+      "n_efectivo": 260.9
+    },
+    {
+      "partido": "VOX",
+      "categoria": "Más de 1.000.000",
+      "porcentaje": 7.88,
+      "n": 43,
+      "n_total": 526,
+      "n_efectivo": 260.9
+    }
+  ],
+  "medias_ideologicas": [
+    {
+      "partido": "Podemos",
+      "n": 116,
+      "media": 1.82,
+      "n_efectivo": 67.1
+    },
+    {
+      "partido": "SUMAR / Frente Amplio",
+      "n": 294,
+      "media": 2.23,
+      "n_efectivo": 157.7
+    },
+    {
+      "partido": "PSOE",
+      "n": 1148,
+      "media": 2.67,
+      "n_efectivo": 547.6
+    },
+    {
+      "partido": "Electorado general",
+      "n": 4904,
+      "media": 4.51,
+      "n_efectivo": 2378.2
+    },
+    {
+      "partido": "PP",
+      "n": 828,
+      "media": 6.7,
+      "n_efectivo": 395.1
+    },
+    {
+      "partido": "SALF",
+      "n": 61,
+      "media": 6.88,
+      "n_efectivo": 39.1
+    },
+    {
+      "partido": "VOX",
+      "n": 516,
+      "media": 7.58,
+      "n_efectivo": 257.3
+    }
+  ]
+}
