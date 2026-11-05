@@ -1,0 +1,323 @@
+[
+  {
+    "run": 41739390392,
+    "asOf": "2026-11-04",
+    "incidencias": [
+      {
+        "etapa": "integracion",
+        "fuente": "Histórico de desarrollo versionado",
+        "estudio_id": "electografica-f12a3f2541beed53f933",
+        "campo": "estudio_id",
+        "codigo": "ALIAS_NO_RESUELTO",
+        "esperado": "electografica-f12a3f2541beed53f933",
+        "observado": null,
+        "evidencia": "Histórico de desarrollo versionado: alias sin auditoría única para electografica-f12a3f2541beed53f933; candidatos en cuarentena: [{\"motivo\":\"Conflicto con registro existente: wiki-76e5efb3454a452aac3f\",\"candidato\":{\"instituto\":\"Sigma Dos\",\"estudio_id\":\"electografica-f12a3f2541beed53f933\",\"tipo\":\"estimacion_voto\",\"ambito\":\"España\",\"fecha_publicacion\":\"2026-11-01\",\"trabajo_campo_inicio\":\"2026-10-29\",\"trabajo_campo_fin\":\"2026-10-30\",\"fecha_fin_campo\":\"2026-10-30\",\"tipo_fecha\":\"publicacion\",\"tamano_muestra\":2505,\"resultados\":{\"PP\":31.1,\"PSOE\":24.6,\"VOX\":19.3,\"FA\":7.1,\"ERC\":3,\"PODEMOS\":1.9,\"ADELANTE_ANDALUCIA\":1.4,\"EH_BILDU\":1.3,\"JUNTS\":1.1,\"BNG\":1,\"PNV\":0.9,\"FV\":0.9,\"SALF\":0,\"CC\":0.4,\"UPN\":0},\"fuente\":\"https://www.sigmados.com/noticia?id=sa0OT7jgxEjay6E\",\"medio\":\"Sigma Dos\",\"url_electografica\":\"https://www.electografica.com/2026/11/encuesta-sigmados-261101.html\",\"ingestion\":{\"source\":\"electografica\",\"entry_id\":\"tag:blogger.com,1999:blog-1143014762904556765.post-8463029429478720189\",\"content_sha256\":\"cfa13527a355f3954de889c3f89b5078ef425eee07887ee8e70c1cdfcf288891\",\"blogger_published\":\"2026-11-01T22:02:41.631+00:00\",\"blogger_updated\":\"2026-11-03T20:08:24.93+00:00\"},\"source_id\":\"electografica\"},\"coincidencias\":[{\"estudio_id\":\"wiki-76e5efb3454a452aac3f\",\"trabajo_campo_inicio\":\"2026-10-29\",\"trabajo_campo_fin\":\"2026-10-30\",\"fecha_publicacion\":\"2026-11-01\",\"resultados\":{\"PP\":31.1,\"PSOE\":24.6,\"VOX\":19.3,\"FA\":7.5,\"FV\":0.9,\"ERC\":3,\"JUNTS\":1.1,\"EH_BILDU\":1.3,\"PNV\":0.9,\"BNG\":1,\"CC\":0.4,\"ADELANTE_ANDALUCIA\":1.4,\"PODEMOS\":1.9},\"fuente\":\"https://www.elmundo.es/espana/encuestas/2026/11/01/6ae77446e4d4d8f3698b458a.html\"}]}]\n\n0 !== 1\n",
+        "severidad": "critica"
+      },
+      {
+        "etapa": "integracion",
+        "fuente": "Histórico de desarrollo versionado",
+        "estudio_id": "electografica-f12a3f2541beed53f933",
+        "campo": "*",
+        "codigo": "DEPENDENCIA_NO_EVALUABLE",
+        "esperado": {
+          "instituto": "Sigma Dos",
+          "estudio_id": "electografica-f12a3f2541beed53f933",
+          "tipo": "estimacion_voto",
+          "ambito": "España",
+          "fecha_publicacion": "2026-11-01",
+          "trabajo_campo_inicio": "2026-10-29",
+          "trabajo_campo_fin": "2026-10-30",
+          "fecha_fin_campo": "2026-10-30",
+          "tipo_fecha": "publicacion",
+          "tamano_muestra": 2505,
+          "resultados": {
+            "PP": 31.1,
+            "PSOE": 24.6,
+            "VOX": 19.3,
+            "FA": 7.1,
+            "ERC": 3,
+            "PODEMOS": 1.9,
+            "ADELANTE_ANDALUCIA": 1.4,
+            "EH_BILDU": 1.3,
+            "JUNTS": 1.1,
+            "BNG": 1,
+            "PNV": 0.9,
+            "FV": 0.9,
+            "SALF": 0,
+            "CC": 0.4,
+            "UPN": 0
+          },
+          "fuente": "https://www.elmundo.es/espana/encuestas/2026/11/01/6ae77446e4d4d8f3698b458a.html",
+          "medio": "El Mundo",
+          "url_electografica": "https://www.electografica.com/2026/11/encuesta-sigmados-261101.html",
+          "ingestion": {
+            "source": "electografica",
+            "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8463029429478720189",
+            "content_sha256": "cfbb0679b60fc79582ff845805c385c49a789adb91b75596f1a9dcf64793d88e",
+            "blogger_published": "2026-11-01T23:02:41.631+01:00",
+            "blogger_updated": "2026-11-01T23:02:41.631+01:00"
+          },
+          "source_id": "electografica"
+        },
+        "observado": null,
+        "evidencia": "Comparación no evaluable: identidad no resuelta",
+        "severidad": "no-evaluable"
+      }
+    ],
+    "candidate": {
+      "instituto": "Sigma Dos",
+      "estudio_id": "electografica-f12a3f2541beed53f933",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-11-01",
+      "trabajo_campo_inicio": "2026-10-29",
+      "trabajo_campo_fin": "2026-10-30",
+      "fecha_fin_campo": "2026-10-30",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 2505,
+      "resultados": {
+        "PP": 31.1,
+        "PSOE": 24.6,
+        "VOX": 19.3,
+        "FA": 7.1,
+        "ERC": 3,
+        "PODEMOS": 1.9,
+        "ADELANTE_ANDALUCIA": 1.4,
+        "EH_BILDU": 1.3,
+        "JUNTS": 1.1,
+        "BNG": 1,
+        "PNV": 0.9,
+        "FV": 0.9,
+        "SALF": 0,
+        "CC": 0.4,
+        "UPN": 0
+      },
+      "fuente": "https://www.sigmados.com/noticia?id=sa0OT7jgxEjay6E",
+      "medio": "Sigma Dos",
+      "url_electografica": "https://www.electografica.com/2026/11/encuesta-sigmados-261101.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8463029429478720189",
+        "content_sha256": "cfa13527a355f3954de889c3f89b5078ef425eee07887ee8e70c1cdfcf288891",
+        "blogger_published": "2026-11-01T22:02:41.631+00:00",
+        "blogger_updated": "2026-11-03T20:08:24.93+00:00"
+      },
+      "source_id": "electografica"
+    }
+  },
+  {
+    "run": 41849891389,
+    "asOf": "2026-11-04",
+    "incidencias": [
+      {
+        "etapa": "integracion",
+        "fuente": "Histórico de desarrollo versionado",
+        "estudio_id": "electografica-f12a3f2541beed53f933",
+        "campo": "estudio_id",
+        "codigo": "ALIAS_NO_RESUELTO",
+        "esperado": "electografica-f12a3f2541beed53f933",
+        "observado": null,
+        "evidencia": "Histórico de desarrollo versionado: alias sin auditoría única para electografica-f12a3f2541beed53f933; candidatos en cuarentena: [{\"motivo\":\"Conflicto con registro existente: wiki-76e5efb3454a452aac3f\",\"candidato\":{\"instituto\":\"Sigma Dos\",\"estudio_id\":\"electografica-f12a3f2541beed53f933\",\"tipo\":\"estimacion_voto\",\"ambito\":\"España\",\"fecha_publicacion\":\"2026-11-01\",\"trabajo_campo_inicio\":\"2026-10-29\",\"trabajo_campo_fin\":\"2026-10-30\",\"fecha_fin_campo\":\"2026-10-30\",\"tipo_fecha\":\"publicacion\",\"tamano_muestra\":2505,\"resultados\":{\"PP\":31.1,\"PSOE\":24.6,\"VOX\":19.3,\"FA\":7.1,\"ERC\":3,\"PODEMOS\":1.9,\"ADELANTE_ANDALUCIA\":1.4,\"EH_BILDU\":1.3,\"JUNTS\":1.1,\"BNG\":1,\"PNV\":0.9,\"FV\":0.9,\"SALF\":0,\"CC\":0.4,\"UPN\":0},\"fuente\":\"https://www.sigmados.com/noticia?id=sa0OT7jgxEjay6E\",\"medio\":\"Sigma Dos\",\"url_electografica\":\"https://www.electografica.com/2026/11/encuesta-sigmados-261101.html\",\"ingestion\":{\"source\":\"electografica\",\"entry_id\":\"tag:blogger.com,1999:blog-1143014762904556765.post-8463029429478720189\",\"content_sha256\":\"cfa13527a355f3954de889c3f89b5078ef425eee07887ee8e70c1cdfcf288891\",\"blogger_published\":\"2026-11-01T22:02:41.631+00:00\",\"blogger_updated\":\"2026-11-03T20:08:24.93+00:00\"},\"source_id\":\"electografica\"},\"coincidencias\":[{\"estudio_id\":\"wiki-76e5efb3454a452aac3f\",\"trabajo_campo_inicio\":\"2026-10-29\",\"trabajo_campo_fin\":\"2026-10-30\",\"fecha_publicacion\":\"2026-11-01\",\"resultados\":{\"PP\":31.1,\"PSOE\":24.6,\"VOX\":19.3,\"FA\":7.5,\"FV\":0.9,\"ERC\":3,\"JUNTS\":1.1,\"EH_BILDU\":1.3,\"PNV\":0.9,\"BNG\":1,\"CC\":0.4,\"ADELANTE_ANDALUCIA\":1.4,\"PODEMOS\":1.9},\"fuente\":\"https://www.elmundo.es/espana/encuestas/2026/11/01/6ae77446e4d4d8f3698b458a.html\"}]}]\n\n0 !== 1\n",
+        "severidad": "critica"
+      },
+      {
+        "etapa": "integracion",
+        "fuente": "Histórico de desarrollo versionado",
+        "estudio_id": "electografica-f12a3f2541beed53f933",
+        "campo": "*",
+        "codigo": "DEPENDENCIA_NO_EVALUABLE",
+        "esperado": {
+          "instituto": "Sigma Dos",
+          "estudio_id": "electografica-f12a3f2541beed53f933",
+          "tipo": "estimacion_voto",
+          "ambito": "España",
+          "fecha_publicacion": "2026-11-01",
+          "trabajo_campo_inicio": "2026-10-29",
+          "trabajo_campo_fin": "2026-10-30",
+          "fecha_fin_campo": "2026-10-30",
+          "tipo_fecha": "publicacion",
+          "tamano_muestra": 2505,
+          "resultados": {
+            "PP": 31.1,
+            "PSOE": 24.6,
+            "VOX": 19.3,
+            "FA": 7.1,
+            "ERC": 3,
+            "PODEMOS": 1.9,
+            "ADELANTE_ANDALUCIA": 1.4,
+            "EH_BILDU": 1.3,
+            "JUNTS": 1.1,
+            "BNG": 1,
+            "PNV": 0.9,
+            "FV": 0.9,
+            "SALF": 0,
+            "CC": 0.4,
+            "UPN": 0
+          },
+          "fuente": "https://www.elmundo.es/espana/encuestas/2026/11/01/6ae77446e4d4d8f3698b458a.html",
+          "medio": "El Mundo",
+          "url_electografica": "https://www.electografica.com/2026/11/encuesta-sigmados-261101.html",
+          "ingestion": {
+            "source": "electografica",
+            "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8463029429478720189",
+            "content_sha256": "cfbb0679b60fc79582ff845805c385c49a789adb91b75596f1a9dcf64793d88e",
+            "blogger_published": "2026-11-01T23:02:41.631+01:00",
+            "blogger_updated": "2026-11-01T23:02:41.631+01:00"
+          },
+          "source_id": "electografica"
+        },
+        "observado": null,
+        "evidencia": "Comparación no evaluable: identidad no resuelta",
+        "severidad": "no-evaluable"
+      }
+    ],
+    "candidate": {
+      "instituto": "Sigma Dos",
+      "estudio_id": "electografica-f12a3f2541beed53f933",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-11-01",
+      "trabajo_campo_inicio": "2026-10-29",
+      "trabajo_campo_fin": "2026-10-30",
+      "fecha_fin_campo": "2026-10-30",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 2505,
+      "resultados": {
+        "PP": 31.1,
+        "PSOE": 24.6,
+        "VOX": 19.3,
+        "FA": 7.1,
+        "ERC": 3,
+        "PODEMOS": 1.9,
+        "ADELANTE_ANDALUCIA": 1.4,
+        "EH_BILDU": 1.3,
+        "JUNTS": 1.1,
+        "BNG": 1,
+        "PNV": 0.9,
+        "FV": 0.9,
+        "SALF": 0,
+        "CC": 0.4,
+        "UPN": 0
+      },
+      "fuente": "https://www.sigmados.com/noticia?id=sa0OT7jgxEjay6E",
+      "medio": "Sigma Dos",
+      "url_electografica": "https://www.electografica.com/2026/11/encuesta-sigmados-261101.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8463029429478720189",
+        "content_sha256": "cfa13527a355f3954de889c3f89b5078ef425eee07887ee8e70c1cdfcf288891",
+        "blogger_published": "2026-11-01T22:02:41.631+00:00",
+        "blogger_updated": "2026-11-03T20:08:24.93+00:00"
+      },
+      "source_id": "electografica"
+    }
+  },
+  {
+    "run": 41936077392,
+    "asOf": "2026-11-05",
+    "incidencias": [
+      {
+        "etapa": "integracion",
+        "fuente": "Histórico de desarrollo versionado",
+        "estudio_id": "electografica-f12a3f2541beed53f933",
+        "campo": "estudio_id",
+        "codigo": "ALIAS_NO_RESUELTO",
+        "esperado": "electografica-f12a3f2541beed53f933",
+        "observado": null,
+        "evidencia": "Histórico de desarrollo versionado: alias sin auditoría única para electografica-f12a3f2541beed53f933; candidatos en cuarentena: [{\"motivo\":\"Conflicto con registro existente: wiki-76e5efb3454a452aac3f\",\"candidato\":{\"instituto\":\"Sigma Dos\",\"estudio_id\":\"electografica-f12a3f2541beed53f933\",\"tipo\":\"estimacion_voto\",\"ambito\":\"España\",\"fecha_publicacion\":\"2026-11-01\",\"trabajo_campo_inicio\":\"2026-10-29\",\"trabajo_campo_fin\":\"2026-10-30\",\"fecha_fin_campo\":\"2026-10-30\",\"tipo_fecha\":\"publicacion\",\"tamano_muestra\":2505,\"resultados\":{\"PP\":31.1,\"PSOE\":24.6,\"VOX\":19.3,\"FA\":7.1,\"ERC\":3,\"PODEMOS\":1.9,\"ADELANTE_ANDALUCIA\":1.4,\"EH_BILDU\":1.3,\"JUNTS\":1.1,\"BNG\":1,\"PNV\":0.9,\"FV\":0.9,\"SALF\":0,\"CC\":0.4,\"UPN\":0},\"fuente\":\"https://www.sigmados.com/noticia?id=sa0OT7jgxEjay6E\",\"medio\":\"Sigma Dos\",\"url_electografica\":\"https://www.electografica.com/2026/11/encuesta-sigmados-261101.html\",\"ingestion\":{\"source\":\"electografica\",\"entry_id\":\"tag:blogger.com,1999:blog-1143014762904556765.post-8463029429478720189\",\"content_sha256\":\"cfa13527a355f3954de889c3f89b5078ef425eee07887ee8e70c1cdfcf288891\",\"blogger_published\":\"2026-11-01T22:02:41.631+00:00\",\"blogger_updated\":\"2026-11-03T20:08:24.93+00:00\"},\"source_id\":\"electografica\"},\"coincidencias\":[{\"estudio_id\":\"wiki-76e5efb3454a452aac3f\",\"trabajo_campo_inicio\":\"2026-10-29\",\"trabajo_campo_fin\":\"2026-10-30\",\"fecha_publicacion\":\"2026-11-01\",\"resultados\":{\"PP\":31.1,\"PSOE\":24.6,\"VOX\":19.3,\"FA\":7.5,\"FV\":0.9,\"ERC\":3,\"JUNTS\":1.1,\"EH_BILDU\":1.3,\"PNV\":0.9,\"BNG\":1,\"CC\":0.4,\"ADELANTE_ANDALUCIA\":1.4,\"PODEMOS\":1.9},\"fuente\":\"https://www.elmundo.es/espana/encuestas/2026/11/01/6ae77446e4d4d8f3698b458a.html\"}]}]\n\n0 !== 1\n",
+        "severidad": "critica"
+      },
+      {
+        "etapa": "integracion",
+        "fuente": "Histórico de desarrollo versionado",
+        "estudio_id": "electografica-f12a3f2541beed53f933",
+        "campo": "*",
+        "codigo": "DEPENDENCIA_NO_EVALUABLE",
+        "esperado": {
+          "instituto": "Sigma Dos",
+          "estudio_id": "electografica-f12a3f2541beed53f933",
+          "tipo": "estimacion_voto",
+          "ambito": "España",
+          "fecha_publicacion": "2026-11-01",
+          "trabajo_campo_inicio": "2026-10-29",
+          "trabajo_campo_fin": "2026-10-30",
+          "fecha_fin_campo": "2026-10-30",
+          "tipo_fecha": "publicacion",
+          "tamano_muestra": 2505,
+          "resultados": {
+            "PP": 31.1,
+            "PSOE": 24.6,
+            "VOX": 19.3,
+            "FA": 7.1,
+            "ERC": 3,
+            "PODEMOS": 1.9,
+            "ADELANTE_ANDALUCIA": 1.4,
+            "EH_BILDU": 1.3,
+            "JUNTS": 1.1,
+            "BNG": 1,
+            "PNV": 0.9,
+            "FV": 0.9,
+            "SALF": 0,
+            "CC": 0.4,
+            "UPN": 0
+          },
+          "fuente": "https://www.elmundo.es/espana/encuestas/2026/11/01/6ae77446e4d4d8f3698b458a.html",
+          "medio": "El Mundo",
+          "url_electografica": "https://www.electografica.com/2026/11/encuesta-sigmados-261101.html",
+          "ingestion": {
+            "source": "electografica",
+            "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8463029429478720189",
+            "content_sha256": "cfbb0679b60fc79582ff845805c385c49a789adb91b75596f1a9dcf64793d88e",
+            "blogger_published": "2026-11-01T23:02:41.631+01:00",
+            "blogger_updated": "2026-11-01T23:02:41.631+01:00"
+          },
+          "source_id": "electografica"
+        },
+        "observado": null,
+        "evidencia": "Comparación no evaluable: identidad no resuelta",
+        "severidad": "no-evaluable"
+      }
+    ],
+    "candidate": {
+      "instituto": "Sigma Dos",
+      "estudio_id": "electografica-f12a3f2541beed53f933",
+      "tipo": "estimacion_voto",
+      "ambito": "España",
+      "fecha_publicacion": "2026-11-01",
+      "trabajo_campo_inicio": "2026-10-29",
+      "trabajo_campo_fin": "2026-10-30",
+      "fecha_fin_campo": "2026-10-30",
+      "tipo_fecha": "publicacion",
+      "tamano_muestra": 2505,
+      "resultados": {
+        "PP": 31.1,
+        "PSOE": 24.6,
+        "VOX": 19.3,
+        "FA": 7.1,
+        "ERC": 3,
+        "PODEMOS": 1.9,
+        "ADELANTE_ANDALUCIA": 1.4,
+        "EH_BILDU": 1.3,
+        "JUNTS": 1.1,
+        "BNG": 1,
+        "PNV": 0.9,
+        "FV": 0.9,
+        "SALF": 0,
+        "CC": 0.4,
+        "UPN": 0
+      },
+      "fuente": "https://www.sigmados.com/noticia?id=sa0OT7jgxEjay6E",
+      "medio": "Sigma Dos",
+      "url_electografica": "https://www.electografica.com/2026/11/encuesta-sigmados-261101.html",
+      "ingestion": {
+        "source": "electografica",
+        "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-8463029429478720189",
+        "content_sha256": "cfa13527a355f3954de889c3f89b5078ef425eee07887ee8e70c1cdfcf288891",
+        "blogger_published": "2026-11-01T22:02:41.631+00:00",
+        "blogger_updated": "2026-11-03T20:08:24.93+00:00"
+      },
+      "source_id": "electografica"
+    }
+  }
+]
