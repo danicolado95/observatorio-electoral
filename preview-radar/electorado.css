@@ -72,27 +72,24 @@
 
 .social-card { margin-top: 18px; }
 .social-card h6 { margin: 0; font-size: 16px; }
-.social-card li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; }
 .social-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
 #social-distribution { max-width: 520px; }
 .social-list li { border-top: 1px solid var(--line); padding-top: 6px; overflow-wrap: anywhere; }
 .social-bar { display: grid; grid-template-columns: minmax(0, 1fr) minmax(108px, auto); gap: 8px; align-items: center; font-size: 12px; font-variant-numeric: tabular-nums; }
 .social-track { height: 6px; background: var(--soft); border-radius: 3px; }
 .social-track span { display: block; height: 100%; border-radius: inherit; background: var(--sage); }
-#social-topics { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 10px; margin-top: 14px; }
-#social .social-builder { margin-top: 22px; }
-#social .social-shortcut { min-height: 64px; padding: 12px; text-align: left; border: 1px solid #62756d; border-radius: 8px; background: white; color: #214638; font: inherit; cursor: pointer; }
-#social .social-shortcut[aria-pressed="true"] { background: #214638; color: white; }
 #social :is(button, select, summary, #social-question):focus-visible { outline: 3px solid #17578a; outline-offset: 3px; }
 .social-chart { margin-top: 18px; padding: clamp(10px, 3vw, 24px); background: #f4f8f5; border-radius: 12px; color: #172e25; }
 #social .social-chart h5 { font-size: clamp(17px, 3vw, 23px); margin-bottom: 12px; }
-#social #social-choice { width: min(100%, 340px); }
-.social-axis, .social-row-heading { display: flex; justify-content: space-between; gap: 8px; }
-.social-axis { font-size: 12px; margin-top: 14px; }
-#social-answer { --social-value-width: 108px; }
-.social-axis { margin-right: calc(var(--social-value-width) + 8px); }
-#social-comparison .social-bar { grid-template-columns: minmax(0, 1fr) var(--social-value-width); }
-#social-comparison .social-bar > span { text-align: right; font-weight: 700; }
-#social-comparison .social-track { height: 12px; background: #d8e4dc; }
-#social-comparison .social-track span { background: #28604b; }
 .social-cell { font-size: 13px; }
+
+#social-legend { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+#social-legend button { min-height: 44px; border: 1px solid #62756d; border-left: 5px solid var(--category-color); border-radius: 6px; padding: 5px 9px; background: white; color: #172e25; font: inherit; font-size: 13px; cursor: pointer; }
+#social-legend button[aria-pressed="true"] { background: #172e25; color: white; }
+.social-stack { display: flex; height: 18px; overflow: hidden; border-radius: 4px; background: #dbe5de; }
+.social-stack span { flex-shrink: 0; }
+.social-stack .social-muted { opacity: .2; }
+.social-values { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 145px), 1fr)); gap: 6px; padding: 0; list-style: none; }
+.social-values li { display: grid; align-content: start; gap: 2px; padding: 5px 8px; border-left: 4px solid var(--category-color); background: white; overflow-wrap: anywhere; font-size: 13px; }
+.social-values .social-highlight { outline: 2px solid var(--category-color); outline-offset: -2px; }
+.social-card + .social-card { border-top: 1px solid var(--line); padding-top: 14px; }

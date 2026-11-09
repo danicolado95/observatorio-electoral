@@ -6,7 +6,6 @@
   const overview = byId('social-overview');
   const group = byId('social-group');
   const category = byId('social-category');
-  const choice = byId('social-choice');
   const invert = byId('social-invert');
 
   const dimensions = {
@@ -57,16 +56,8 @@
     return line;
   }
 
-  const questions = [
-    ['Situacion_laboral', 'Edad', 'Trabaja', '¿Qué porcentaje de personas trabaja en cada grupo de edad?'],
-    ['Estudios', 'Edad', 'Superiores', '¿Qué porcentaje tiene estudios superiores en cada grupo de edad?'],
-    ['Ideologia', 'Edad', '1', '¿Qué porcentaje se sitúa en el 1 (izquierda) de la escala ideológica en cada grupo de edad?'],
-    ['Ingresos', 'Estudios', 'Menos de 1100', '¿Qué porcentaje vive en hogares con menos de 1.100 € netos según su nivel de estudios?']
-  ];
-
-  const defaults = {
-    Situacion_laboral: 'Trabaja', Estudios: 'Superiores', Ideologia: '1', Ingresos: 'Menos de 1100'
-  };
+  const colors = ['#254b76', '#a33b4a', '#32745c', '#945c24', '#67488a',
+    '#237786', '#713d23', '#556621', '#8f3d75', '#545967'];
   const groupNames = {
     Edad: 'la edad', Sexo: 'el sexo', Estudios: 'el nivel de estudios',
     Ideologia: 'la posición en la escala ideológica', Ingresos: 'los ingresos netos del hogar',
@@ -74,22 +65,8 @@
     Clase_social: 'la clase social declarada'
   };
 
-  function questionFor(c, g, value) {
-    const featured = questions.find(([dimension, groupedBy, answer]) =>
-      dimension === c && groupedBy === g && answer === value);
-    if (featured) return featured[3];
-    const answer = label(c, value);
-    const statement = {
-      Edad: value === '65+' ? 'tiene 65 años o más' : 'tiene entre ' + value.replace('-', ' y ') + ' años',
-      Sexo: 'figura como «' + answer + '» en la encuesta',
-      Estudios: 'tiene este nivel de estudios: «' + answer + '»',
-      Ideologia: 'se sitúa en el ' + answer + ' de la escala ideológica',
-      Ingresos: 'vive en hogares del tramo de ingresos «' + answer + '»',
-      Situacion_laboral: value === 'Trabaja' ? 'trabaja' : 'declara esta situación laboral: «' + answer + '»',
-      Municipio: 'vive en municipios del tramo «' + answer + ' habitantes»',
-      Clase_social: 'se identifica con la clase social «' + answer + '»'
-    };
-    return '¿Qué porcentaje ' + statement[c] + ' según ' + groupNames[g] + '?';
+  function questionFor(c, g) {
+    return '¿Cómo se distribuye ' + groupNames[c] + ' según ' + groupNames[g] + '?';
   }
 
   function estimate(row) {
@@ -99,7 +76,7 @@
     return [row.porcentaje, row.n_celda === 0 ? 'Sin casos observados' : ''];
   }
 
-  function distribution(dimension, rows, crossed) {
+  function distribution(dimension, rows) {
     const list = element('ul', '', 'social-list');
     const byCategory = new Map(rows.map(row => [row.categoria, row]));
     for (const key of dimensions[dimension][1]) {
@@ -108,10 +85,6 @@
       item.append(element('strong', label(dimension, key)));
       if (!row) {
         item.append(element('div', 'Dato no disponible', 'social-meta'));
-      } else if (crossed) {
-        const [value, note] = estimate(row);
-        item.append(element('span', (value === null ? 'Estimación oculta' : pct(value))
-          + ' · Referencia ' + pct(row.referencia_general) + (note ? ' · ' + note : ''), 'social-cell'));
       } else {
         item.append(bar(row.porcentaje, pct(row.porcentaje)));
         if (row.n < 30) item.append(element('div', 'Interpretar con cautela · ' + count(row.n) + ' casos', 'social-meta'));
@@ -134,7 +107,7 @@
     for (const option of category.options) option.textContent = groupNames[option.value];
     for (const option of group.options) option.textContent = groupNames[option.value];
     group.value = 'Edad';
-    category.value = 'Situacion_laboral';
+    category.value = 'Ideologia';
     byId('social-source').textContent = 'CIS ' + data.metadata.estudio + ' · ' + count(data.metadata.entrevistas)
       + ' entrevistas. Porcentajes ponderados con ' + data.metadata.ponderacion + '.';
 
@@ -143,73 +116,49 @@
       const { n_validos, n_excluidos } = rows[0];
       byId('social-overview-base').textContent = 'Entre quienes tienen un dato válido en esta dimensión · '
         + count(n_validos) + ' entrevistas válidas · ' + count(n_excluidos) + ' excluidas.';
-      byId('social-distribution').replaceChildren(distribution(overview.value, rows, false));
+      byId('social-distribution').replaceChildren(distribution(overview.value, rows));
     }
 
     const heading = byId('social-question');
-    const topics = questions.map(([c, g, value, title]) => {
-      const button = element('button', title, 'social-shortcut');
-      button.type = 'button';
-      button.setAttribute('aria-controls', 'social-answer');
-      button.addEventListener('click', () => {
-        group.value = g;
-        category.value = c;
-        showCross(value);
-        heading.focus();
-      });
-      byId('social-topics').append(button);
-      return button;
-    });
+    const legend = byId('social-legend');
+    const results = byId('social-results');
 
-    function showComparison() {
-      const rows = crosses.get(group.value + '/' + category.value);
-      heading.textContent = questionFor(category.value, group.value, choice.value);
-      questions.forEach(([c, g, value], index) => {
-        topics[index].setAttribute('aria-pressed', String(c === category.value && g === group.value && value === choice.value));
-      });
-      const selected = rows.filter(row => row.categoria === choice.value);
-      const byGroup = new Map(selected.map(row => [row.grupo, row]));
-      byId('social-comparison').replaceChildren(...dimensions[group.value][1].map(key => {
-        const row = byGroup.get(key);
-        const item = element('li');
-        const heading = element('div', '', 'social-row-heading');
-        heading.append(element('strong', label(group.value, key)));
-        item.append(heading);
-        if (!row) {
-          item.append(element('span', 'Dato no disponible', 'social-meta'));
-          return item;
-        }
-        const [value, note] = estimate(row);
-        heading.append(element('span', 'Base ' + count(row.n_grupo), 'social-meta'));
-        item.append(bar(value, value === null ? 'Estimación oculta' : pct(value)));
-        if (note) item.append(element('div', note, 'social-meta'));
-        return item;
-      }));
-      byId('social-reference').textContent = 'En el conjunto de respuestas válidas: ' + pct(selected[0].referencia_general);
-    }
-
-    choice.addEventListener('change', showComparison);
-
-    function showCross(answer) {
-      for (const option of group.options) option.disabled = option.value === category.value;
-      for (const option of category.options) option.disabled = option.value === group.value;
-      const rows = crosses.get(group.value + '/' + category.value);
-      const { n_validos_cruce, n_excluidos } = rows[0];
+    function showCross() {
       const c = category.value;
-      const previous = choice.dataset.dimension === c ? choice.value : '';
-      choice.replaceChildren(...dimensions[c][1].map(value => new Option(label(c, value), value)));
-      choice.value = answer || previous || defaults[c] || dimensions[c][1][0];
-      choice.dataset.dimension = c;
-      byId('social-universe').textContent = 'Fuente CIS ' + data.metadata.estudio + ' · '
+      const g = group.value;
+      for (const option of group.options) option.disabled = option.value === c;
+      for (const option of category.options) option.disabled = option.value === g;
+      const rows = crosses.get(g + '/' + c);
+      const { n_validos_cruce, n_excluidos } = rows[0];
+      heading.textContent = questionFor(c, g);
+      byId('social-universe').textContent = 'CIS ' + data.metadata.estudio + ' · '
         + count(n_validos_cruce) + ' entrevistas válidas · ' + count(n_excluidos)
-        + ' excluidas · Porcentaje ponderado dentro de cada grupo';
-      showComparison();
+        + ' excluidas · Porcentajes ponderados con ' + data.metadata.ponderacion + '.';
+
+      const keys = dimensions[c][1];
+      const buttons = keys.map((key, index) => {
+        const button = element('button', label(c, key));
+        button.type = 'button';
+        button.style.setProperty('--category-color', colors[index]);
+        button.setAttribute('aria-pressed', 'false');
+        button.addEventListener('click', () => {
+          const selected = button.getAttribute('aria-pressed') !== 'true';
+          buttons.forEach((other, i) => other.setAttribute('aria-pressed', String(selected && i === index)));
+          results.querySelectorAll('[data-category]').forEach(node => {
+            node.classList.toggle('social-highlight', selected && node.dataset.category === key);
+            node.classList.toggle('social-muted', selected && node.dataset.category !== key);
+          });
+        });
+        return button;
+      });
+      legend.replaceChildren(...buttons);
+
       const byGroup = Map.groupBy(rows, row => row.grupo);
-      const cards = dimensions[group.value][1].map(value => {
-        const cells = byGroup.get(value) ?? [];
+      results.replaceChildren(...dimensions[g][1].map(groupKey => {
+        const cells = byGroup.get(groupKey) ?? [];
         const card = element('section', '', 'social-card');
-        const title = element('h6', label(group.value, value));
-        card.append(title);
+        card.dataset.group = groupKey;
+        card.append(element('h6', label(g, groupKey)));
         if (cells.length) {
           const { n_grupo, n_efectivo, peso_grupo } = cells[0];
           card.append(element('p', 'Base ' + count(n_grupo) + ' · Base efectiva ' + count(n_efectivo)
@@ -217,15 +166,39 @@
         } else {
           card.append(element('p', 'Grupo sin datos disponibles', 'social-meta'));
         }
-        card.append(distribution(category.value, cells, true));
+        const lookup = new Map(cells.map(row => [row.categoria, row]));
+        const estimates = keys.map(key => lookup.has(key) ? estimate(lookup.get(key)) : [null, 'Dato no disponible']);
+        const complete = estimates.every(([value]) => value !== null)
+          && Math.abs(estimates.reduce((total, [value]) => total + value, 0) - 100) < 1e-8;
+        const stack = element('div', '', 'social-stack');
+        stack.setAttribute('aria-hidden', 'true');
+        const list = element('ul', '', 'social-values');
+        keys.forEach((key, index) => {
+          const [value, note] = estimates[index];
+          const item = element('li');
+          item.dataset.category = key;
+          item.style.setProperty('--category-color', colors[index]);
+          item.append(element('strong', label(c, key)),
+            element('span', value === null ? 'Estimación oculta' : pct(value), 'social-cell'));
+          if (note) item.append(element('span', note, 'social-meta'));
+          list.append(item);
+          if (complete && value > 0) {
+            const segment = element('span');
+            segment.dataset.category = key;
+            segment.style.backgroundColor = colors[index];
+            segment.style.width = value + '%';
+            stack.append(segment);
+          }
+        });
+        if (complete) card.append(stack);
+        card.append(list);
         return card;
-      });
-      byId('social-results').replaceChildren(...cards);
+      }));
     }
 
     overview.addEventListener('change', showOverview);
-    group.addEventListener('change', () => showCross());
-    category.addEventListener('change', () => showCross());
+    group.addEventListener('change', showCross);
+    category.addEventListener('change', showCross);
     invert.addEventListener('click', () => {
       [group.value, category.value] = [category.value, group.value];
       showCross();

@@ -92,33 +92,22 @@
    <div id="social-content" hidden>
     <section class="panel" aria-labelledby="social-cross-title">
      <h4 id="social-cross-title">Explora la sociedad</h4>
-     <p>Elige una pregunta para ver la respuesta del CIS.</p>
-     <div id="social-topics" role="group" aria-label="Preguntas para explorar"></div>
-     <div class="social-chart" id="social-answer">
-      <h5 id="social-question" tabindex="-1"></h5>
-      <p class="social-meta" id="social-universe"></p>
-      <div class="social-axis" aria-hidden="true"><span>0 %</span><span>50 %</span><span>100 %</span></div>
-      <ul id="social-comparison" class="social-list" aria-labelledby="social-question"></ul>
-      <p class="social-meta" id="social-reference" role="status"></p>
+     <p>Aquí podrás explorar cómo es la sociedad española. ¿Quieres saber cómo se relaciona la ideología con los estudios, la edad o el sexo? ¿O los ingresos del hogar con el nivel de estudios? ¡Construye tus propias preguntas!</p>
+     <div class="social-controls">
+      <div><label for="social-category">Quiero conocer…</label><select id="social-category"></select></div>
+      <div><label for="social-group">Y compararlo según…</label><select id="social-group"></select></div>
      </div>
-     <section class="social-builder" aria-labelledby="social-builder-title">
-      <h5 id="social-builder-title">Haz tu propia pregunta</h5>
-      <div class="social-controls">
-       <div><label for="social-category">Quiero conocer…</label><select id="social-category"></select></div>
-       <div><label for="social-group">Y compararlo según…</label><select id="social-group"></select></div>
-      </div>
-     </section>
-     <details class="el-method" id="social-advanced">
-      <summary>Opciones avanzadas</summary>
-      <div class="social-controls">
-       <div><label for="social-choice">Respuesta que quieres ver</label><select id="social-choice"></select></div>
-       <button type="button" class="btn light" id="social-invert">Invertir comparación</button>
-      </div>
-     </details>
-     <details class="el-method"><summary>Ver la composición completa por grupos</summary><div id="social-results"></div></details>
+     <button type="button" class="btn light" id="social-invert">Cambiar el sentido de la comparación</button>
+     <div class="social-chart" id="social-answer">
+      <h5 id="social-question" aria-live="polite"></h5>
+      <p class="social-meta" id="social-universe"></p>
+      <p class="social-meta">Cada barra representa el 100 % de las respuestas válidas de su grupo. Si falta alguna estimación, se muestran las categorías por separado. Usa la leyenda para destacar una categoría.</p>
+      <div id="social-legend" role="group" aria-label="Destacar una categoría"></div>
+      <div id="social-results"></div>
+     </div>
      <details class="el-method">
       <summary>¿Cómo se calcula?</summary>
-      <p>El porcentaje divide la suma de PESO de la categoría entre la suma de PESO del grupo y multiplica por 100. Se incluyen únicamente las entrevistas con respuesta válida en ambas variables. La referencia usa esas mismas entrevistas sin separar por grupos. Al invertir el cruce cambia el grupo que sirve de denominador.</p>
+      <p>El porcentaje divide la suma de PESO de la categoría entre la suma de PESO del grupo y multiplica por 100. Se incluyen únicamente las entrevistas con respuesta válida en ambas variables. Al invertir el cruce cambia el grupo que sirve de denominador.</p>
      <p>Los datos comparan grupos entrevistados en el mismo estudio. Las diferencias por edad describen esa muestra en el momento de la encuesta.</p>
      <p>Se excluyen las respuestas no válidas, incluido «no sabe» o «no contesta» cuando existen. La ideología conserva las posiciones del 1 (izquierda) al 10 (derecha). La clase social es la declarada por la persona entrevistada (CLASESUB).</p>
      <p>La base es el número de entrevistas sin ponderar. La base efectiva tiene en cuenta la dispersión de los pesos. En los cruces se ocultan las estimaciones si la base o la base efectiva del grupo es inferior a 30, o si la categoría tiene entre 1 y 9 casos. La base efectiva no recoge todo el diseño muestral. Entre las estimaciones visibles, se indica cuándo interpretar con cautela si hay menos de 30 casos en la categoría o la base efectiva es inferior a 100. Un 0 % observado indica que no hubo casos en la muestra del grupo.</p>
