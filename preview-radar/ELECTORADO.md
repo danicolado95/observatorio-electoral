@@ -32,18 +32,20 @@ válidas y una base efectiva de 631,7. La posición 9 tiene entre 1 y 9 casos.
 En `3d10b6c` el listado seguía mostrando las otras nueve posiciones;
 `acdbd14` retiró ese listado y ocultó toda la barra cuando faltaba una celda.
 
-Los grupos completos mantienen la barra al 100 % y los agregados ponderados.
-En grupos parciales, las categorías disponibles se presentan en intervalos
-de cinco puntos porcentuales con el denominador ponderado del grupo. Se aplica
-la reserva en los dos sentidos del cruce y se omiten los agregados y la suma
-de pesos en la interfaz. Así, el espacio de la barra, el total de porcentajes
-exactos y el cambio de selección no exponen el complemento reservado. Esta
-es una regla de presentación. El JSON y el análisis R siguen accesibles e
-íntegros y contienen las cifras originales.
+En cff57df la reserva del cruce inverso activó el listado para toda la fila.
+Ahora los grupos completos mantienen la barra al 100 % y los agregados
+ponderados. Las filas parciales mantienen su barra con límites inferiores
+de intervalos de cinco puntos, calculados con el denominador original.
+Una marca estrecha representa un límite inferior de 0 %. El tramo rayado
+es el complemento de esos límites publicados e incluye el redondeo y las
+celdas reservadas. La reserva sigue aplicándose a cada celda en ambos
+sentidos, y en filas parciales se omiten los agregados exactos. Esto evita
+mostrar el complemento exacto en la barra o al cambiar la selección.
+Es una regla de fiabilidad para la visualización. Las cifras originales
+siguen accesibles en el JSON y el análisis R.
 
-El detalle de las barras se abre junto a la barra con cursor, foco o toque.
-Escape lo cierra. El detalle visual muestra categoría, porcentaje y aviso,
-y el lector de pantalla dispone también del grupo y su base.
+El detalle de cada segmento muestra categoría y porcentaje o intervalo.
+Se abre junto al segmento con cursor, foco o toque. Escape lo cierra.
 
 ## Pruebas
 

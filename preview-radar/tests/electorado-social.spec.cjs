@@ -75,9 +75,10 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
     .find(other => other.grupo === row.categoria && other.categoria === row.grupo));
   await check('Edad','Ideologia');
   const age = page.locator('[data-group="45-54"]');
-  assert.match(await age.textContent(),/Base 1063/);
-  assert.match(await age.locator('[data-category="9"]').textContent(),/Oculta/);
-  assert.equal(await age.locator('.social-partial li').count(),10);
+  assert.equal(await page.locator('#social-results .social-stack').count(),6);
+  assert.equal(await age.locator('.social-stack [data-category="9"]').count(),0);
+  assert.equal(await age.locator('.social-stack').count(),1);
+  assert.equal(await page.locator('#social-results .social-partial, #social-results ul').count(),0);
   if (process.env.ATLAS_SCREENSHOT) {
    await page.setViewportSize({width:1280,height:900});
    await page.locator('#social-answer').screenshot({style:'header.top { position: static; }',path:process.env.ATLAS_SCREENSHOT});
@@ -94,6 +95,7 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
   await first.focus();
   const tooltip = first.locator('xpath=../..').locator('.social-detail');
   assert.ok(await tooltip.isVisible());
+  assert.ok((await tooltip.boundingBox()).width < 160);
   assert.ok((await first.getAttribute('aria-label')).includes(await tooltip.textContent()));
   const relativeTop = async () => (await tooltip.boundingBox()).y - (await first.boundingBox()).y;
   const before = await relativeTop();
@@ -102,7 +104,11 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
   await page.keyboard.press('Escape');
   assert.equal(await tooltip.isVisible(),false);
   await first.hover();
+  if (process.env.ATLAS_SCREENSHOT) {
+   await page.locator('#social-answer').screenshot({style:'header.top { position: static; }',path:process.env.ATLAS_SCREENSHOT.replace('ideologia-edad','edad-sexo')});
+  }
   assert.ok(await tooltip.isVisible());
+  assert.ok((await tooltip.boundingBox()).width < 160);
   await page.selectOption('#social-category','Ideologia');
   await page.selectOption('#social-group','Edad');
   await page.selectOption('#social-mode','split');
@@ -149,13 +155,17 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
     const card = page.locator('#social-results [data-group='+JSON.stringify(group)+']');
     const segments = card.locator('.social-stack button');
     if (cells.some(row => hidden(g,c,row))) {
-     assert.equal(await segments.count(),0);
+     assert.equal(await card.locator('.social-stack').count(),1);
+     assert.equal(await segments.count(),cells.filter(row => !hidden(g,c,row)).length);
      for (const row of cells) {
-      const item = card.locator('.social-partial [data-category='+JSON.stringify(row.categoria)+']');
-      const text = await item.locator('span').textContent();
-      const start = Math.min(95,Math.floor(row.porcentaje/5)*5);
-      assert.ok(text.startsWith(hidden(g,c,row) ? 'Oculta' : start+'–'+(start+5)+' %'));
-      assert.equal(await item.locator('[style]').count(),0);
+      const segment = segments.and(card.locator('[data-category='+JSON.stringify(row.categoria)+']'));
+      if (hidden(g,c,row)) {
+       assert.equal(await segment.count(),0);
+      } else {
+       const start = Math.min(95,Math.floor(row.porcentaje/5)*5);
+       assert.equal(await segment.evaluate(el=>parseFloat(el.style.width)),start);
+       assert.ok((await segment.getAttribute('aria-label')).endsWith(start+'–'+(start+5)+' %'));
+      }
      }
     } else {
      assert.equal(await segments.count(),cells.length);
@@ -176,7 +186,7 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
     const widths = await card.locator('.social-stack button').evaluateAll(buttons =>
      buttons.map(button=>parseFloat(button.style.width)));
     if (cells.some(row => hidden(g,c,row))) {
-     assert.deepEqual(widths,[]);
+     assert.deepEqual(widths.sort((a,b)=>a-b),cells.filter(row=>!hidden(g,c,row)).map(row=>Math.min(95,Math.floor(row.porcentaje/5)*5)).sort((a,b)=>a-b));
      assert.match(await card.textContent(),/Selección y resto no disponibles/);
      assert.doesNotMatch(await card.textContent(),/Selección [0-9]|Resto [0-9]/);
     }
@@ -194,6 +204,10 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
    await page.selectOption('#social-group',g);
    await page.selectOption('#social-category',c);
    await check(g,c);
+   const capture = {'Edad/Estudios':'estudios-edad','Estudios/Ingresos':'ingresos-estudios'}[g+'/'+c];
+   if (capture && process.env.ATLAS_SCREENSHOT) {
+    await page.locator('#social-answer').screenshot({style:'header.top { position: static; }',path:process.env.ATLAS_SCREENSHOT.replace('ideologia-edad',capture)});
+   }
    if (!(await legend.first().getAttribute('aria-pressed') === 'true')) await legend.first().click();
    await page.selectOption('#social-mode','split');
    await checkSplit(g,c);
@@ -225,6 +239,9 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
   await touchStack.locator('button').first().tap();
   assert.ok(await touchStack.locator('.social-detail').isVisible());
   assert.ok(await touch.locator('#social').evaluate(el=>el.scrollWidth<=el.clientWidth));
+  if (process.env.ATLAS_SCREENSHOT) {
+   await touch.locator('#social-answer').screenshot({style:'header.top { position: static; }',path:process.env.ATLAS_SCREENSHOT.replace('ideologia-edad','edad-sexo-movil')});
+  }
   await touch.close();
   assert.deepEqual(errors,[]);
   await page.goto(url.replace('#electorado','#social'));

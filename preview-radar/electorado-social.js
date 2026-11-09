@@ -222,56 +222,45 @@
         }
         byId('social-selection').textContent = selected.size + ' categorías seleccionadas · '
           + shown.length + ' de ' + groups.length + ' grupos visibles.';
-        results.replaceChildren(...shown.map(({ key, cells, estimates, complete, totals }) => {
+        results.replaceChildren(...shown.map(({ key, estimates, complete, totals }) => {
           const name = label(g, key);
           const card = element('section', '', 'social-card');
           card.dataset.group = key;
           card.append(element('h6', name));
-          const base = cells.find(Boolean);
-          const baseText = base ? 'Base ' + count(base.n_grupo) : '';
-          if (base) card.append(element('p', baseText, 'social-meta'));
-          if (!complete) {
-            const available = estimates.some(([value]) => value !== null);
-            const message = available
-              ? 'Distribución parcial · Intervalos de 5 puntos porcentuales'
-              : 'Sin estimaciones publicables';
-            card.append(element('p', message + (split ? ' · Selección y resto no disponibles' : ''), 'social-meta'));
-            const list = element('ul', '', 'social-list social-partial');
-            estimates.forEach(([value, note], i) => {
-              const item = element('li');
-              item.dataset.category = keys[i];
-              item.classList.toggle('social-muted', hasSelection && !selected.has(keys[i]));
-              item.append(element('strong', label(c, keys[i])));
-              const start = Math.min(95, Math.floor(value / 5) * 5);
-              const range = value === null ? 'Oculta' : start + '–' + (start + 5) + ' %';
-              item.append(element('span', [range, value === 0 ? '' : note].filter(Boolean).join(' · ')));
-              list.append(item);
-            });
-            card.append(list);
-            return card;
+          card.classList.toggle('social-incomplete', !complete);
+          if (split && !complete) {
+            card.append(element('small', 'Selección y resto no disponibles', 'social-meta'));
           }
-
-          const detail = element('p', '', 'social-detail');
+          const detail = element('div', '', 'social-detail');
           detail.hidden = true;
           const stack = element('div', '', 'social-stack');
           stack.setAttribute('role', 'group');
-          stack.setAttribute('aria-label', name);
-          const segments = split
-            ? totals.map((value, i) => [i === 0 ? 'Selección' : 'Resto', value, ['#245578', '#56605c'][i], '', false, i === 0 ? 'selected' : 'rest'])
-            : cells.map((row, i) => [label(c, row.categoria), row.porcentaje, palette[i],
-              estimate(row)[1], hasSelection && !selected.has(row.categoria), row.categoria]);
-          segments.forEach(([segmentName, value, color, note, muted, segmentKey]) => {
+          stack.setAttribute('aria-label', name + (complete ? '' : ' · Estimaciones parciales'));
+          const segments = split && complete
+            ? totals.map((value, i) => [i === 0 ? 'Selección' : 'Resto', value, ['#245578', '#56605c'][i], pct(value), false, i === 0 ? 'selected' : 'rest'])
+            : estimates.flatMap(([value], i) => {
+              if (value === null) return [];
+              const key = keys[i];
+              const lower = Math.min(95, Math.floor(value / 5) * 5);
+              const display = complete ? pct(value) : lower + '–' + (lower + 5) + ' %';
+              return [[label(c, key), complete ? value : lower, palette[i], display,
+                hasSelection && !selected.has(key), key]];
+            });
+          segments.forEach(([segmentName, value, color, display, muted, segmentKey]) => {
             const button = element('button', '', value === 0 ? 'social-zero' : '');
             button.type = 'button';
             button.dataset.category = segmentKey;
             button.style.width = value + '%';
             button.style.backgroundColor = color;
             button.classList.toggle('social-muted', muted);
-            const info = [name, segmentName, pct(value), baseText, note].filter(Boolean).join(' · ');
+            const info = segmentName + ' · ' + display;
             button.setAttribute('aria-label', info);
             const show = () => {
-              detail.textContent = [segmentName, pct(value), note].filter(Boolean).join(' · ');
+              detail.textContent = info;
               detail.hidden = false;
+              const center = button.offsetLeft + button.offsetWidth / 2;
+              const maxLeft = chart.clientWidth - detail.offsetWidth;
+              detail.style.left = Math.max(0, Math.min(maxLeft, center - detail.offsetWidth / 2)) + 'px';
             };
             const hide = () => { detail.hidden = true; };
             button.onfocus = button.onpointerenter = button.onclick = show;
@@ -287,10 +276,6 @@
           const chart = element('div', '', 'social-chart');
           chart.append(stack, detail);
           card.append(chart);
-          if (totals) card.append(element('p', 'Selección ' + pct(totals[0]) + ' · Resto ' + pct(totals[1]), 'social-meta'));
-          if (cells.some(row => row.nivel_informacion === 'Interpretar con cautela')) {
-            card.append(element('p', 'Algunas categorías deben interpretarse con cautela.', 'social-meta'));
-          }
           return card;
         }));
         if (!shown.length) results.append(element('p', 'Usa «Ver todos» para restaurar los grupos.'));
