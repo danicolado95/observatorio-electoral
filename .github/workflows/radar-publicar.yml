@@ -2,14 +2,17 @@ name: Actualizar radar de pruebas
 on:
   push:
     branches: [radar-automatico]
+  pull_request:
+    branches: [main]
+    paths: ['.github/workflows/radar-publicar.yml']
   workflow_dispatch:
   schedule:
-    # UTC: noviembre Madrid 07:17, 08:17, ... 15:17 y 19:17.
-    - cron: '17 6-14,18 * * *'
+    - cron: '17 7-15,19 * * *'
+      timezone: Europe/Madrid
 permissions:
   contents: read
 concurrency:
-  group: radar-pruebas-publicacion
+  group: radar-pruebas-publicacion-${{ github.event_name == 'pull_request' && github.ref || 'produccion' }}
   cancel-in-progress: false
 jobs:
   actualizar:
@@ -23,7 +26,7 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
-          ref: 5f4d9677d656c571ae6561d4671e80f21c23742f
+          ref: 6d209f45cda783b14acf46303817efe679656329
           path: engine
           persist-credentials: false
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
@@ -61,6 +64,12 @@ jobs:
           $asOf = (Get-Content data/pipeline-test/as-of.txt -Raw).Trim()
           ./scripts/actualizar-historico.ps1 -Python python3 -AsOf $asOf
           if ($LASTEXITCODE) { throw 'Falló la integración' }
+          if (Test-Path data/pipeline-test/wikipedia/fallback.json) {
+            'Wikipedia conserva el último histórico validado. Consultar el diagnóstico.' >> $env:GITHUB_STEP_SUMMARY
+            if ($env:GITHUB_EVENT_NAME -in @('workflow_dispatch','pull_request')) {
+              throw 'La validación completa requiere una captura nueva de Wikipedia'
+            }
+          }
       - name: Validar y preparar el archivo que consume el gráfico
         working-directory: engine
         run: |
@@ -70,6 +79,7 @@ jobs:
           cat data/pipeline-test/integracion-resumen.md >> "$GITHUB_STEP_SUMMARY"
           cat data/pipeline-test/publicacion-resumen.json >> "$GITHUB_STEP_SUMMARY"
       - name: Commit atómico exclusivo de los datos en radar-pruebas
+        if: github.event_name != 'pull_request'
         working-directory: published
         env:
           GH_TOKEN: ${{ github.token }}
@@ -102,6 +112,9 @@ jobs:
             engine/data/pipeline-test/electografica/before.json
             engine/data/pipeline-test/electografica/radar.json
             engine/data/pipeline-test/electografica/intento-*.json
+            engine/data/pipeline-test/wikipedia/intento-staging.json
+            engine/data/pipeline-test/wikipedia/diagnostico-extraccion.json
+            engine/data/pipeline-test/wikipedia/fallback.json
             engine/data/pipeline-test/wikipedia/staging.json
             engine/data/pipeline-test/wikipedia/radar.json
 
