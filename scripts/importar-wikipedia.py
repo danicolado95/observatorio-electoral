@@ -137,6 +137,8 @@ def parse(raw,today):
    if institute in ['EM-Analytics','Electomanía']: reasons.append('Electopanel: metodología de panel/modelo pendiente de acreditar como encuesta representativa')
    if '/' not in name and institute not in ['CIS','GAD3','Sigma Dos','40dB','IMOP','NC Report','SocioMétrica','Ipsos','DYM','Sondaxe','GESOP','Hamalgama','Gizaker','Invymark','Metroscopia','Simple Lógica','Key Data','Celeste-Tel','Target Point','Ateneo del Dato','Ipsos']: reasons.append('Instituto o estudio interno sin identidad privada acreditada')
    if not originals: reasons.append('Sin enlace original independiente de Electográfica')
+   if sample is None and start==end==pub and p['fuente'] and '/hemeroteca/portadas' in urlparse(p['fuente']).path:
+    reasons.append('Portada sin ficha técnica: fecha de campo y muestra sin acreditar')
    if pub is None: reasons.append('Publicación no acreditada')
    if not end or not start: reasons.append('Campo ausente o ambiguo')
    if end and end<'2023-07-23': reasons.append('Anterior al 23J')

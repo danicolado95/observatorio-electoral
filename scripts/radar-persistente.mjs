@@ -1,4 +1,5 @@
 import {esVarianteSW} from './revision-sw.mjs';
+import {corregir40dB} from './original-40db.mjs';
 import assert from 'node:assert/strict';
 import {readFile,writeFile,mkdir,rename} from 'node:fs/promises';
 import {dirname,resolve} from 'node:path';
@@ -19,10 +20,10 @@ export async function restore(statePath){
  assert(Array.isArray(state.encuestas)&&state.encuestas.length,'Histórico vacío');
  for(const name of files){
   const value=state._pipeline.files[name];assert(value,'Falta estado '+name);
-  const target='data/pipeline-test/'+name;await mkdir(dirname(target),{recursive:true});await writeFile(target,JSON.stringify(value));
+  const target='data/pipeline-test/'+name;await mkdir(dirname(target),{recursive:true});await writeFile(target,JSON.stringify(name==='wikipedia/radar.json'?corregir40dB(value):value));
  }
  const {_pipeline,...radar}=state;
- for(const name of ['electografica/radar.json','electografica/before.json'])await writeFile('data/pipeline-test/'+name,JSON.stringify(radar));
+ for(const name of ['electografica/radar.json','electografica/before.json'])await writeFile('data/pipeline-test/'+name,JSON.stringify(corregir40dB(radar)));
 }
 export async function promote(statePath){
  const dir='data/pipeline-test/';
@@ -34,7 +35,7 @@ export async function promote(statePath){
  const data={combinado,original:await read('data/radar.json'),desarrollo:await read('data/radar-desarrollo.json'),cis:await read('data/cis-historico.json'),wikipedia:await read(dir+'wikipedia/radar.json'),reporte:await read(dir+'electografica/report.json'),auditoria:await read(dir+'electografica/audit.json'),cuarentena:await read(dir+'electografica/quarantine.json')};
  const audit=verificar(data);
  let previous=null;try{previous=await read(statePath);}catch(e){if(e.code!=='ENOENT')throw e;}
- if(previous){assert.equal(previous._pipeline?.version,1);verificar({...data,original:previous});}
+ if(previous){assert.equal(previous._pipeline?.version,1);verificar({...data,original:corregir40dB(previous)});}
  if(fallback){
   assert.equal(fallback.estado,'restaurado');
   assert(previous,'Wikipedia falló y no hay histórico publicado');

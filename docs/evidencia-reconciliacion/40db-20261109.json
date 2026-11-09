@@ -1,0 +1,105 @@
+{
+  "anterior": {
+    "instituto": "40dB",
+    "estudio_id": "wiki-1dca3be7b1b5f4bafde4",
+    "tipo": "estimacion_voto",
+    "ambito": "España",
+    "fecha_publicacion": "2026-11-09",
+    "trabajo_campo_inicio": "2026-11-09",
+    "trabajo_campo_fin": "2026-11-09",
+    "tamano_muestra": null,
+    "resultados": {
+      "PP": 31.9,
+      "PSOE": 29.9,
+      "VOX": 18,
+      "PODEMOS": 1.2
+    },
+    "fuente": "https://elpais.com/hemeroteca/portadas-papel/el-pais/2026-11-09/",
+    "referencias": [
+      {
+        "url": "https://elpais.com/hemeroteca/portadas-papel/el-pais/2026-11-09/",
+        "fecha_publicacion": "2026-11-09",
+        "texto": "\"El PSOE remonta pero el PP y Vox mantienen la mayoría absoluta\". El País (in Spanish). 9 November 2026.",
+        "reference": "cite_note-1"
+      }
+    ],
+    "ingestion": {
+      "source": "wikipedia",
+      "revision": "https://en.wikipedia.org/w/index.php?title=Opinion_polling_for_the_2026_Spanish_general_election&oldid=1384580585",
+      "sha256": "64beac8008d0a729f5afd1033b34fff188270883d94bb25d8017217b28cdb6b5",
+      "table": 1,
+      "row": 2,
+      "row_id": "mweQ",
+      "raw_cells": [
+        "40dB/Prisa",
+        "9 Nov",
+        "?",
+        "?",
+        "31.9",
+        "29.9",
+        "18.0",
+        "5.0",
+        "5.0",
+        "–",
+        "–",
+        "–",
+        "–",
+        "–",
+        "–",
+        "–",
+        "1.2",
+        "–",
+        "2.0"
+      ],
+      "publication_basis": "fecha bibliográfica explícita de la referencia; no inferida del campo",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    "quarantine_reasons": [],
+    "missing": [
+      "tamano_muestra"
+    ],
+    "duplicates": [],
+    "fecha_fin_campo": "2026-11-09",
+    "tipo_fecha": "publicacion",
+    "source_id": "wikipedia-staging"
+  },
+  "original": {
+    "instituto": "40dB",
+    "estudio_id": "wiki-1dca3be7b1b5f4bafde4",
+    "tipo": "estimacion_voto",
+    "ambito": "España",
+    "fecha_publicacion": "2026-11-09",
+    "trabajo_campo_inicio": "2026-11-02",
+    "trabajo_campo_fin": "2026-11-04",
+    "tamano_muestra": 2000,
+    "resultados": {
+      "PP": 31.9,
+      "PSOE": 29.9,
+      "VOX": 18,
+      "PODEMOS": 1.2,
+      "FA": 5,
+      "SALF": 2
+    },
+    "fuente": "https://elpais.com/espana/elecciones-generales/2026-11-09/el-bloque-de-la-derecha-mantiene-su-ventaja-pero-el-psoe-se-acerca-al-pp.html",
+    "fecha_fin_campo": "2026-11-04",
+    "tipo_fecha": "publicacion",
+    "source_id": "wikipedia-staging",
+    "publicacion_verificada": true,
+    "verificacion": {
+      "estado": "verificado-original",
+      "fecha_revision": "2026-11-09",
+      "resolucion": "La fecha de publicación de la portada se había usado como campo. Se conserva el identificador y se documenta el cambio con la ficha y la estimación del informe original."
+    },
+    "evidencia_publica": [
+      {
+        "url": "https://elpais.com/espana/elecciones-generales/2026-11-09/el-bloque-de-la-derecha-mantiene-su-ventaja-pero-el-psoe-se-acerca-al-pp.html",
+        "localizacion": "Fecha de publicación y ficha técnica del artículo"
+      },
+      {
+        "url": "https://ep00.epimg.net/infografias/encuestas40db/2026/11-preelectoral/2026_11_preelectoral_informe.pdf",
+        "sha256": "db02222a3c775c7857dd0dab4ffb6209563b9009215f59ff76f0f3008180968b",
+        "localizacion": "Estimación nacional de voto, página 7 del PDF. FA es el agregado del escenario principal."
+      }
+    ]
+  }
+}

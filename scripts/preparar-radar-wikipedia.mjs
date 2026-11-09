@@ -1,6 +1,7 @@
 import {isDeepStrictEqual} from 'node:util';
 import {esVarianteSW,motivoSW} from './revision-sw.mjs';
 import {extraerEntrada} from './extraer-electografica.mjs';
+import {original40dB} from './original-40db.mjs';
 import {createHash} from 'node:crypto';
 import {conservarReferencias} from './referencias-historicas.mjs';
 // Construcción local: una marca no transmite aprobación a nuevas oleadas.
@@ -76,7 +77,8 @@ for(const p of staging.encuestas){
 for(const p of approved.values())candidates.set(p.estudio_id,p);
 // Revisiones manuales de originales: un escenario por estudio, sin heredar
 // porcentajes de tablas secundarias ni habilitar ninguna descarga automática.
-for(const p of originals.encuestas){try{
+const observed40dB=[...published.encuestas,...staging.encuestas,...staging.quarantine].some(p=>p.estudio_id===original40dB.estudio_id);
+for(const p of observed40dB?[...originals.encuestas,original40dB]:originals.encuestas){try{
  if(p.verificacion?.estado!=='verificado-original' || !p.evidencia_publica?.length || /electografica|electograph/.test(new URL(p.fuente).hostname)){issue('error','ORIGINAL_NO_VERIFICADO','Original sin verificar: '+p.estudio_id,p.estudio_id);continue;}
  blocked.delete(p.estudio_id);
  candidates.set(p.estudio_id,p);

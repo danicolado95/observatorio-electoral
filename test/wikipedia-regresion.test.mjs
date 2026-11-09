@@ -73,3 +73,16 @@ test('un alias secundario parcial no reemplaza una encuesta completa publicada',
  assert.deepEqual(f.read(name+'radar.json').encuestas.map(p=>p.estudio_id),['another']);
  assert.equal(f.read(name+'diagnostico.json').incidencias[0].codigo,'ALIAS_SECUNDARIO');
 });
+
+test('40dB: corrige solo la ficha publicada cotejada y la migración es idempotente',async()=>{
+ const {corregir40dB,original40dB}=await import('../scripts/original-40db.mjs');
+ const {anterior}=JSON.parse(fs.readFileSync(new URL('../docs/evidencia-reconciliacion/40db-20261109.json',import.meta.url)));
+ const unexpected={...anterior,resultados:{...anterior.resultados,PP:20}};
+ const updated=corregir40dB({encuestas:[anterior,unexpected]});
+ assert.deepEqual(updated.encuestas,[original40dB,unexpected]);
+ assert.deepEqual(corregir40dB(updated),updated);
+ assert.equal(original40dB.estudio_id,anterior.estudio_id);
+ assert.equal(original40dB.tamano_muestra,2000);
+ assert.equal(original40dB.resultados.FA,5);
+ assert.equal(original40dB.resultados.SALF,2);
+});
