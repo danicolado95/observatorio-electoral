@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { prepareHistory, latestTop, segments } from '../evolucion-cis.mjs';
+import { prepareHistory, latestTop, segments, shortLabel, nearestLine } from '../evolucion-cis.mjs';
 
 const rows = JSON.parse(readFileSync(new URL('../../analisis-cis/datos-procesados/evolucion-preocupaciones.json', import.meta.url), 'utf8'));
 const history = prepareHistory(rows);
@@ -41,4 +41,20 @@ test('distingue cero de ausencia y excluye la no respuesta del ranking', () => {
   assert.deepEqual(latestTop(sample, 'Espana'), ['1']);
   assert.deepEqual(segments(sample.timeline, sample.series.get('1').points.Espana)
     .map(run => run.map(point => point.value)), [[0], [4]]);
+});
+
+test('abrevia el top 5 y conserva el nombre oficial de otras series', () => {
+  assert.deepEqual(latestTop(history, 'Espana').map(id => shortLabel(history.series.get(id))),
+    ['Vivienda', 'Inmigración', 'Economía', 'Calidad del empleo', 'Política']);
+  assert.equal(shortLabel(history.series.get('1')), history.series.get('1').label);
+});
+
+test('distingue las líneas cerca de un cruce y conserva el índice del punto', () => {
+  const lines = [
+    { id: 'a', runs: [[{ x: 0, y: 0, index: 0 }, { x: 20, y: 20, index: 1 }]] },
+    { id: 'b', runs: [[{ x: 0, y: 20, index: 0 }, { x: 20, y: 0, index: 1 }]] },
+  ];
+  assert.deepEqual(nearestLine(lines, 14, 15), { id: 'a', index: 1 });
+  assert.deepEqual(nearestLine(lines, 14, 5), { id: 'b', index: 1 });
+  assert.equal(nearestLine(lines, 40, 40), null);
 });

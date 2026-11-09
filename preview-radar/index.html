@@ -60,15 +60,20 @@
       <label for="cis-history-search">Buscar por nombre o código CIS</label>
       <input type="search" id="cis-history-search" data-history="search">
       <p class="note" data-history="results" role="status"></p>
-      <fieldset data-history="choices" aria-label="Preocupaciones"></fieldset>
+      <div class="history-controls">
+        <select data-history="choices" aria-label="Resultados de búsqueda"></select>
+        <button type="button" class="btn" data-history="add">Añadir</button>
+      </div>
+      <div class="history-chips" data-history="chips" role="group" aria-label="Quitar preocupaciones seleccionadas"></div>
     </details>
     <p class="note" data-history="status" role="status"></p>
+    <button type="button" class="btn" data-history="clear" aria-disabled="true">Ver todas</button>
     <ul class="history-legend" data-history="legend" aria-label="Series seleccionadas"></ul>
     <p class="note"><span class="history-key"></span> España <span class="history-key dashed"></span> Personal</p>
     <svg data-history="chart" role="img" aria-label="Evolución temporal del porcentaje de menciones. Consulta los valores con el selector de barómetro."></svg>
     <label for="cis-history-date">Consultar un barómetro</label>
     <input id="cis-history-date" data-history="date" type="range" min="0" step="1" aria-describedby="cis-history-detail">
-    <div id="cis-history-detail" class="history-detail" data-history="detail"></div>
+    <div id="cis-history-detail" class="history-detail" data-history="detail" aria-live="polite"></div>
     <details>
       <summary>Cómo leer los datos</summary>
       <p>Porcentaje ponderado de personas que mencionaron cada problema entre sus respuestas. Cada persona puede mencionar varios problemas. Los huecos indican que no hay una estimación para ese estudio y perspectiva.</p>

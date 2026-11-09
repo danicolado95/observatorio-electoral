@@ -76,6 +76,35 @@ function searchable(text) {
   return text.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
 }
 
+const aliases = { 6: 'Sanidad', 7: 'Vivienda', 8: 'Economía', 9: 'Calidad del empleo', 18: 'Inmigración', 24: 'Política' };
+
+export function shortLabel(topic) {
+  return aliases[topic.id] ?? topic.label;
+}
+
+export function nearestLine(lines, x, y) {
+  let best = null;
+  let distance = 12 ** 2;
+  for (const line of lines) {
+    for (const run of line.runs) {
+      for (let i = 0; i < run.length; i++) {
+        const a = run[i];
+        const b = run[i + 1] ?? a;
+        const dx = b.x - a.x;
+        const dy = b.y - a.y;
+        const length = dx ** 2 + dy ** 2;
+        const t = length ? Math.max(0, Math.min(1, ((x - a.x) * dx + (y - a.y) * dy) / length)) : 0;
+        const candidate = (x - a.x - t * dx) ** 2 + (y - a.y - t * dy) ** 2;
+        if (candidate < distance) {
+          distance = candidate;
+          best = { id: line.id, index: (t < .5 ? a : b).index };
+        }
+      }
+    }
+  }
+  return best;
+}
+
 function mount(root, history) {
   const get = name => root.querySelector('[data-history="' + name + '"]');
   const mode = get('mode');
@@ -94,7 +123,13 @@ function mount(root, history) {
   let custom = null;
   let selected = [];
   let linePerspectives = [];
+  let highlighted = null;
+  let plotted = [];
+  let dots;
   let marker;
+  const chips = get('chips');
+  const clear = get('clear');
+  const add = get('add');
   let xFor;
   let chartWidth = 360;
   cursor.max = timeline.length - 1;
@@ -110,30 +145,40 @@ function mount(root, history) {
 
   for (const id of latestTop(history, 'both')) color(id);
   for (const topic of sorted) color(topic.id);
-  for (const topic of sorted) {
-    const label = element('label', '', choices);
-    const box = element('input', '', label);
-    box.type = 'checkbox';
-    box.value = topic.id;
-    const suffix = breaks.has(topic.code) ? ' · ruptura de serie' : notes[topic.code] ? ' · nota metodológica' : '';
-    element('span', topic.label + suffix, label);
-    label.dataset.search = searchable(topic.label + ' ' + topic.code);
-    box.addEventListener('change', () => {
-      custom ??= new Set(selected);
-      if (box.checked) custom.add(topic.id);
-      else custom.delete(topic.id);
-      update();
-    });
-  }
-
   function filter() {
     const query = searchable(search.value.trim());
-    let count = 0;
-    for (const label of choices.children) {
-      label.hidden = !label.dataset.search.includes(query);
-      if (!label.hidden) count++;
+    const matches = sorted.filter(topic => !selected.includes(topic.id) &&
+      searchable(topic.label + ' ' + shortLabel(topic) + ' ' + topic.code).includes(query));
+    choices.replaceChildren();
+    const placeholder = element('option', matches.length ? 'Elige una preocupación' : 'Sin coincidencias', choices);
+    placeholder.value = '';
+    placeholder.disabled = true;
+    placeholder.selected = true;
+    for (const topic of matches) {
+      const suffix = breaks.has(topic.code) ? ' · ruptura de serie' : notes[topic.code] ? ' · nota metodológica' : '';
+      element('option', topic.label + suffix, choices).value = topic.id;
     }
-    get('results').textContent = count ? count + ' preocupaciones encontradas' : 'No hay coincidencias.';
+    choices.disabled = !matches.length;
+    add.disabled = true;
+    get('results').textContent = matches.length + ' disponibles';
+  }
+
+  function paint() {
+    clear.setAttribute('aria-disabled', String(!highlighted));
+    for (const button of legend.querySelectorAll('button')) {
+      button.setAttribute('aria-pressed', String(button.value === highlighted));
+    }
+    for (const line of plotted) {
+      line.group.classList.toggle('is-highlighted', line.id === highlighted);
+      line.group.classList.toggle('is-muted', Boolean(highlighted && line.id !== highlighted));
+      if (line.id === highlighted) chart.insertBefore(line.group, dots);
+    }
+  }
+
+  function highlight(id, index = Number(cursor.value)) {
+    highlighted = highlighted === id ? null : id;
+    paint();
+    showStudy(index);
   }
 
   function showStudy(index) {
@@ -145,10 +190,17 @@ function mount(root, history) {
       marker.setAttribute('x1', xFor(study.time));
       marker.setAttribute('x2', xFor(study.time));
     }
+    dots.replaceChildren();
+    for (const line of plotted) {
+      if (highlighted && line.id !== highlighted) continue;
+      const point = line.runs.flat().find(point => point.index === index);
+      if (point) svgElement(dots, 'circle', { cx: point.x, cy: point.y, r: highlighted ? 5 : 3,
+        fill: line.perspective === 'Personal' ? '#fff' : color(line.id), stroke: color(line.id), 'stroke-width': 2 });
+    }
     detail.replaceChildren();
     element('strong', date + ' · Fuente: CIS, estudio ' + study.id, detail);
     const list = element('ul', '', detail);
-    for (const id of selected) {
+    for (const id of highlighted ? [highlighted] : selected) {
       const topic = series.get(id);
       for (const perspective of linePerspectives) {
         const row = topic.points[perspective].get(study.id);
@@ -188,25 +240,35 @@ function mount(root, history) {
       if (time <= end) svgElement(chart, 'text', { x: xFor(time), y: height - 10 }, String(year));
     }
     marker = svgElement(chart, 'line', { y1: top, y2: bottom, stroke: '#52605b', 'stroke-dasharray': '2 4' });
-    for (const { id, perspective, runs } of lines) {
-      for (const run of runs) {
+    const studyIndex = new Map(timeline.map((study, index) => [study.time, index]));
+    plotted = lines.map(({ id, perspective, runs }) => {
+      const group = svgElement(chart, 'g', { class: 'history-series' });
+      const projected = runs.map(run => run.map(point => ({
+        x: xFor(point.time), y: y(point.value), index: studyIndex.get(point.time),
+      })));
+      for (const run of projected) {
         if (run.length === 1) {
-          svgElement(chart, 'circle', { cx: xFor(run[0].time), cy: y(run[0].value), r: 3,
-            fill: perspective === 'Personal' ? '#fff' : color(id), stroke: color(id), 'stroke-width': 2 });
-          continue;
+          svgElement(group, 'circle', { cx: run[0].x, cy: run[0].y, r: 3,
+            fill: perspective === 'Personal' ? '#fff' : color(id), stroke: color(id) });
+        } else {
+          svgElement(group, 'polyline', { points: run.map(p => p.x + ',' + p.y).join(' '),
+            fill: 'none', stroke: color(id), 'stroke-linejoin': 'round',
+            'stroke-dasharray': perspective === 'Personal' ? '6 4' : 'none' });
         }
-        svgElement(chart, 'polyline', { points: run.map(p => xFor(p.time) + ',' + y(p.value)).join(' '),
-          fill: 'none', stroke: color(id), 'stroke-width': 2.5, 'stroke-linejoin': 'round',
-          'stroke-dasharray': perspective === 'Personal' ? '6 4' : 'none' });
       }
-    }
+      return { id, perspective, group, runs: projected };
+    });
+    dots = svgElement(chart, 'g', { 'pointer-events': 'none' });
+    paint();
     showStudy(Number(cursor.value));
   }
 
   function update() {
     selected = custom ? [...custom] : latestTop(history, mode.value);
     linePerspectives = mode.value === 'both' ? ['Espana', 'Personal'] : [mode.value];
-    for (const label of choices.children) label.firstChild.checked = selected.includes(label.firstChild.value);
+    if (!selected.includes(highlighted)) highlighted = null;
+    filter();
+    chips.replaceChildren();
     status.textContent = custom
       ? selected.length + ' preocupaciones seleccionadas. Selecciona alguna para ver su evolución.'
       : mode.value === 'both' ? 'Cinco primeras de cada perspectiva en el último CIS.'
@@ -215,28 +277,67 @@ function mount(root, history) {
     warnings.replaceChildren();
     for (const id of selected) {
       const topic = series.get(id);
-      const item = element('li', topic.label, legend);
-      item.style.setProperty('--history-color', color(id));
+      const item = element('li', '', legend);
+      const button = element('button', shortLabel(topic), item);
+      button.type = 'button';
+      button.value = id;
+      button.title = topic.label;
+      button.setAttribute('aria-label', shortLabel(topic) === topic.label ? topic.label : shortLabel(topic) + ' · ' + topic.label);
+      button.style.setProperty('--history-color', color(id));
+      button.addEventListener('click', () => highlight(id));
+      const chip = element('button', shortLabel(topic) + ' ×', chips);
+      chip.type = 'button';
+      chip.setAttribute('aria-label', 'Quitar ' + topic.label);
+      chip.addEventListener('click', () => {
+        const index = selected.indexOf(id);
+        custom ??= new Set(selected);
+        custom.delete(id);
+        update();
+        (chips.children[index] ?? chips.lastElementChild ?? search).focus();
+      });
       if (notes[topic.code]) element('li', notes[topic.code] + ' Interpretar la comparación con cautela.', warnings);
     }
     draw();
   }
 
+  function hit(event) {
+    const matrix = chart.getScreenCTM();
+    if (!matrix) return null;
+    const point = new DOMPoint(event.clientX, event.clientY).matrixTransform(matrix.inverse());
+    return nearestLine(plotted, point.x, point.y);
+  }
+
   chart.addEventListener('pointermove', event => {
-    const rect = chart.getBoundingClientRect();
-    const x = (event.clientX - rect.left) * chartWidth / rect.width;
-    const index = timeline.reduce((nearest, study, i) =>
-      Math.abs(xFor(study.time) - x) < Math.abs(xFor(timeline[nearest].time) - x) ? i : nearest, 0);
-    if (index !== Number(cursor.value)) showStudy(index);
+    const point = hit(event);
+    chart.classList.toggle('is-over-line', Boolean(point));
+    if (!highlighted && point && point.index !== Number(cursor.value)) showStudy(point.index);
   });
+  chart.addEventListener('click', event => {
+    const point = hit(event);
+    if (point) highlight(point.id, point.index);
+  });
+  clear.addEventListener('click', () => { if (highlighted) highlight(highlighted); });
   cursor.addEventListener('input', () => showStudy(Number(cursor.value)));
   mode.addEventListener('change', update);
   search.addEventListener('input', filter);
-  get('reset').addEventListener('click', () => { custom = null; update(); });
+  choices.addEventListener('change', () => { add.disabled = !choices.value; });
+  add.addEventListener('click', () => {
+    if (!choices.value) return;
+    custom ??= new Set(selected);
+    custom.add(choices.value);
+    search.value = '';
+    update();
+    search.focus();
+  });
+  get('reset').addEventListener('click', () => {
+    custom = null;
+    highlighted = null;
+    search.value = '';
+    update();
+  });
   new ResizeObserver(() => {
     if (chart.clientWidth >= 300 && chart.clientWidth !== chartWidth) draw();
   }).observe(chart);
-  filter();
   update();
 }
 
