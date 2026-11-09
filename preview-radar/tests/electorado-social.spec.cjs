@@ -42,6 +42,8 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
    assert.equal(r.n_validos_cruce,rev.n_validos_cruce);
    assert.equal(r.n_excluidos+r.n_validos_cruce,5024);
    close(r.peso_celda,rev.peso_celda);
+   close(r.porcentaje,100*r.peso_celda/r.peso_grupo);
+   close(r.peso_grupo,sum(byGroup.get(r.grupo),'peso_celda'));
    close(r.referencia_general,100*sum(categories.get(r.categoria),'peso_celda')/sum(rows,'peso_celda'));
    assert.equal(r.porcentaje===0,r.n_celda===0);
   }
@@ -62,15 +64,34 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
    assert.deepEqual((await page.locator('#social-distribution .social-bar > span').allTextContents()).sort(), overview.get(dim).map(r=>pct(r.porcentaje)).sort());
    assert.equal(await page.locator('#social-distribution li').count(),overview.get(dim).length);
   }
+  assert.equal(await page.locator('#social-advanced').getAttribute('open'),null);
+  assert.equal(await page.locator('#social-topics button').count(),8);
+  assert.match(await page.locator('#social-question').textContent(),/situación laboral según la edad/);
+  const income = page.getByRole('button',{name:'Ingresos por estudios',exact:true});
+  await income.focus();
+  await page.keyboard.press('Enter');
+  await check('Estudios','Ingresos');
+  await page.locator('#social-advanced summary').focus();
+  await page.keyboard.press('Enter');
+  assert.equal(await page.locator('#social-advanced').getAttribute('open'),'');
   async function check(g,c) {
    assert.equal(await page.inputValue('#social-group'),g);
    assert.equal(await page.inputValue('#social-category'),c);
    const rows=pairs.get(g+'/'+c);
    const lines=await page.locator('#social-results li').allTextContents();
    assert.equal(lines.length,rows.length);
-   const shown=await page.locator('#social-results .social-bar > span').allTextContents();
-   const expected=rows.flatMap(r=>['Grupo · '+(['Grupo muy pequeno','Celda muy pequena'].includes(r.nivel_informacion)?'Estimación oculta':pct(r.porcentaje)),'Referencia · '+pct(r.referencia_general)]);
-   assert.deepEqual(shown.sort(),expected.sort());
+   const result=r=>['Grupo muy pequeno','Celda muy pequena'].includes(r.nivel_informacion)?'Estimación oculta':pct(r.porcentaje);
+   const shown=await page.locator('#social-results .social-cell').allTextContents();
+   const expected=rows.map(r=>result(r)+' · Referencia '+pct(r.referencia_general));
+   assert.deepEqual(shown.map(text=>text.split(' · ').slice(0,2).join(' · ')).sort(),expected.sort());
+   const choices=await page.locator('#social-choice option').count();
+   await page.selectOption('#social-choice',{index:choices-1});
+   const selected=await page.inputValue('#social-choice');
+   const cells=rows.filter(r=>r.categoria===selected);
+   const bars=await page.locator('#social-comparison .social-bar > span').allTextContents();
+   assert.deepEqual(bars.sort(),cells.map(result).sort());
+   const bases=await page.locator('#social-comparison .social-row-heading .social-meta').allTextContents();
+   assert.deepEqual(bases.sort(),cells.map(r=>'Base '+fmt.format(r.n_grupo)).sort());
   }
   for(const g of dims) for(const c of dims) if(g!==c) {
    if(await page.inputValue('#social-category')===g) await page.click('#social-invert');
@@ -80,13 +101,21 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
    await page.click('#social-invert');
    await check(c,g);
   }
-  for(const width of [320,390]) {
+  for(const width of [320,390,768,1280]) {
    await page.setViewportSize({width,height:844});
    await page.selectOption('#social-group','Situacion_laboral');
    await page.selectOption('#social-category','Municipio');
    await check('Situacion_laboral','Municipio');
    assert.equal(await page.locator('#social').evaluate(el=>el.scrollWidth<=el.clientWidth),true);
   }
+  const composition = page.getByText('Ver la composición completa por grupos',{exact:true});
+  await composition.focus();
+  await page.keyboard.press('Enter');
+  assert.ok(await page.locator('#social-results li').first().isVisible());
+  await page.getByText('¿Cómo se calcula?',{exact:true}).click();
+  assert.ok(await page.getByText('El porcentaje divide la suma de PESO',{exact:false}).isVisible());
+  await page.setViewportSize({width:320,height:844});
+  assert.ok(await page.locator('#social').evaluate(el=>el.scrollWidth<=el.clientWidth));
   for(const id of ['encuestas','mapa','partidos','electorado']) {
    await page.locator('#nav button').filter({hasText:({encuestas:'Encuestas',mapa:'Mapa',partidos:'Partidos',electorado:'Electorado'})[id]}).click();
    assert.ok(await page.locator('#'+id).isVisible());

@@ -68,12 +68,29 @@
 .social-controls > div { flex: 1 1 180px; }
 .social-meta { color: var(--ink2); font-size: 12px; }
 #social-overview-base { margin: 12px 0; }
-.social-results { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 12px; }
-.social-card { border: 1px solid var(--line); border-radius: 10px; padding: 13px; min-width: 0; }
+
+.social-card { margin-top: 18px; }
+.social-card h6 { margin: 0; font-size: 16px; }
+.social-card li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; }
 .social-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
 #social-distribution { max-width: 520px; }
 .social-list li { border-top: 1px solid var(--line); padding-top: 6px; overflow-wrap: anywhere; }
 .social-bar { display: grid; grid-template-columns: minmax(0, 1fr) minmax(108px, auto); gap: 8px; align-items: center; font-size: 12px; font-variant-numeric: tabular-nums; }
 .social-track { height: 6px; background: var(--soft); border-radius: 3px; }
 .social-track span { display: block; height: 100%; border-radius: inherit; background: var(--sage); }
-.social-track .social-ref { background: #7b6956; }
+#social .social-topics { border: 0; padding: 0; margin: 16px 0 0; min-inline-size: 0; }
+#social .social-topics legend { font-weight: 700; margin-bottom: 8px; }
+#social-topics, #social-suggestions { display: flex; flex-wrap: wrap; gap: 8px; }
+#social .social-shortcut { min-height: 44px; padding: 8px 12px; border: 1px solid #62756d; border-radius: 8px; background: white; color: #214638; font: inherit; cursor: pointer; }
+#social .social-shortcut[aria-pressed="true"] { background: #214638; color: white; font-weight: 700; }
+#social :is(button, select, summary):focus-visible { outline: 3px solid #17578a; outline-offset: 3px; }
+.social-chart { margin-top: 18px; padding: clamp(10px, 3vw, 24px); background: #f4f8f5; border-radius: 12px; color: #172e25; }
+#social .social-chart h5 { font-size: clamp(17px, 3vw, 23px); margin-bottom: 12px; }
+#social #social-choice { width: min(100%, 340px); }
+.social-axis, .social-row-heading { display: flex; justify-content: space-between; gap: 8px; }
+.social-axis { font-size: 12px; margin-top: 14px; }
+#social-comparison .social-bar { display: flex; flex-direction: column; align-items: stretch; gap: 4px; }
+#social-comparison .social-bar > span { align-self: end; font-weight: 700; }
+#social-comparison .social-track { height: 12px; background: #d8e4dc; }
+#social-comparison .social-track span { background: #28604b; }
+.social-cell { font-size: 13px; }
