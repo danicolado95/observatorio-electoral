@@ -1,0 +1,2391 @@
+{
+  "metadata": {
+    "fuente": "CIS",
+    "estudio": 3582,
+    "entrevistas": 5024,
+    "ponderacion": "PESO",
+    "pregunta_nacional": ["PESPANNA1", "PESPANNA2", "PESPANNA3"],
+    "pregunta_personal": ["PPERSONAL1", "PPERSONAL2", "PPERSONAL3"],
+    "descripcion": "Comparacion de problemas nacionales y personales. Cada persona se cuenta una vez por problema y pregunta. Los porcentajes son ponderados y las preguntas permiten respuestas multiples."
+  },
+  "ranking_comparado": [
+    {
+      "codigo": 7,
+      "problema": "La vivienda",
+      "menciones_espana": 2926,
+      "menciones_personales": 1733,
+      "porcentaje_espana": 55.650873767274,
+      "porcentaje_personal": 33.7643323315224,
+      "diferencia_pp": 21.8865414357516
+    },
+    {
+      "codigo": 8,
+      "problema": "La crisis económica, los problemas de índole económica",
+      "menciones_espana": 1058,
+      "menciones_personales": 1511,
+      "porcentaje_espana": 20.2990704298634,
+      "porcentaje_personal": 30.2995964451447,
+      "diferencia_pp": -10.0005260152813
+    },
+    {
+      "codigo": 6,
+      "problema": "La sanidad",
+      "menciones_espana": 684,
+      "menciones_personales": 1186,
+      "porcentaje_espana": 14.3610832226896,
+      "porcentaje_personal": 24.0461322348357,
+      "diferencia_pp": -9.68504901214611
+    },
+    {
+      "codigo": 9,
+      "problema": "Los problemas relacionados con la calidad del empleo",
+      "menciones_espana": 992,
+      "menciones_personales": 989,
+      "porcentaje_espana": 19.4246169494799,
+      "porcentaje_personal": 18.841989191426,
+      "diferencia_pp": 0.582627758053903
+    },
+    {
+      "codigo": 18,
+      "problema": "La inmigración",
+      "menciones_espana": 1084,
+      "menciones_personales": 577,
+      "porcentaje_espana": 20.9426538188099,
+      "porcentaje_personal": 11.1702212221786,
+      "diferencia_pp": 9.77243259663135
+    },
+    {
+      "codigo": 22,
+      "problema": "La educación",
+      "menciones_espana": 446,
+      "menciones_personales": 569,
+      "porcentaje_espana": 8.69410306137172,
+      "porcentaje_personal": 9.96651525692226,
+      "diferencia_pp": -1.27241219555054
+    },
+    {
+      "codigo": 20,
+      "problema": "Los problemas relacionados con la juventud. Falta de apoyo y oportunidades para los/as jóvenes",
+      "menciones_espana": 360,
+      "menciones_personales": 432,
+      "porcentaje_espana": 7.18908470699732,
+      "porcentaje_personal": 9.43475455196839,
+      "diferencia_pp": -2.24566984497107
+    },
+    {
+      "codigo": 35,
+      "problema": "La subida de los impuestos",
+      "menciones_espana": 180,
+      "menciones_personales": 380,
+      "porcentaje_espana": 3.45835133036952,
+      "porcentaje_personal": 7.19463506690158,
+      "diferencia_pp": -3.73628373653207
+    },
+    {
+      "codigo": 3,
+      "problema": "La inseguridad ciudadana",
+      "menciones_espana": 238,
+      "menciones_personales": 393,
+      "porcentaje_espana": 4.33632531337544,
+      "porcentaje_personal": 6.71367791980624,
+      "diferencia_pp": -2.3773526064308
+    },
+    {
+      "codigo": 1,
+      "problema": "El paro",
+      "menciones_espana": 424,
+      "menciones_personales": 291,
+      "porcentaje_espana": 9.62384059455527,
+      "porcentaje_personal": 6.49299572943944,
+      "diferencia_pp": 3.13084486511583
+    },
+    {
+      "codigo": 16,
+      "problema": "Los problemas de índole social",
+      "menciones_espana": 220,
+      "menciones_personales": 269,
+      "porcentaje_espana": 4.92719949103966,
+      "porcentaje_personal": 6.09705214225053,
+      "diferencia_pp": -1.16985265121087
+    },
+    {
+      "codigo": 42,
+      "problema": "La subida de tarifas energéticas, crisis energética",
+      "menciones_espana": 87,
+      "menciones_personales": 259,
+      "porcentaje_espana": 2.01357781846326,
+      "porcentaje_personal": 5.38047589755167,
+      "diferencia_pp": -3.36689807908841
+    },
+    {
+      "codigo": 80,
+      "problema": "El cambio climático",
+      "menciones_espana": 223,
+      "menciones_personales": 315,
+      "porcentaje_espana": 4.01815384289135,
+      "porcentaje_personal": 4.80264531446827,
+      "diferencia_pp": -0.784491471576923
+    },
+    {
+      "codigo": 24,
+      "problema": "El Gobierno y partidos o políticos/as concretos/as",
+      "menciones_espana": 740,
+      "menciones_personales": 282,
+      "porcentaje_espana": 15.1277416874563,
+      "porcentaje_personal": 4.77798945534325,
+      "diferencia_pp": 10.349752232113
+    },
+    {
+      "codigo": 12,
+      "problema": "Las pensiones",
+      "menciones_espana": 65,
+      "menciones_personales": 189,
+      "porcentaje_espana": 1.43348688440002,
+      "porcentaje_personal": 4.02708059709564,
+      "diferencia_pp": -2.59359371269561
+    },
+    {
+      "codigo": 78,
+      "problema": "Preocupación sobre la salud propia, de familiares y/o allegados/as",
+      "menciones_espana": 0,
+      "menciones_personales": 190,
+      "porcentaje_espana": 0,
+      "porcentaje_personal": 3.91277443307691,
+      "diferencia_pp": -3.91277443307691
+    },
+    {
+      "codigo": 51,
+      "problema": "Los problemas políticos en general",
+      "menciones_espana": 517,
+      "menciones_personales": 233,
+      "porcentaje_espana": 10.1005252483623,
+      "porcentaje_personal": 3.71732752079448,
+      "diferencia_pp": 6.38319772756781
+    },
+    {
+      "codigo": 52,
+      "problema": "Los extremismos",
+      "menciones_espana": 449,
+      "menciones_personales": 209,
+      "porcentaje_espana": 7.67995109266085,
+      "porcentaje_personal": 3.31230491024845,
+      "diferencia_pp": 4.3676461824124
+    },
+    {
+      "codigo": 71,
+      "problema": "Crisis con Marruecos. Fronteras de Ceuta y Melilla",
+      "menciones_espana": 332,
+      "menciones_personales": 159,
+      "porcentaje_espana": 6.51595533010636,
+      "porcentaje_personal": 3.02441091677628,
+      "diferencia_pp": 3.49154441333007
+    },
+    {
+      "codigo": 21,
+      "problema": "La crisis de valores",
+      "menciones_espana": 158,
+      "menciones_personales": 117,
+      "porcentaje_espana": 3.64190273757903,
+      "porcentaje_personal": 2.94505002572125,
+      "diferencia_pp": 0.69685271185778
+    },
+    {
+      "codigo": 5,
+      "problema": "Las infraestructuras",
+      "menciones_espana": 41,
+      "menciones_personales": 149,
+      "porcentaje_espana": 1.08529470449507,
+      "porcentaje_personal": 2.80559855179735,
+      "diferencia_pp": -1.72030384730228
+    },
+    {
+      "codigo": 58,
+      "problema": "Las desigualdades, incluida la de género, diferencias de clases, la pobreza",
+      "menciones_espana": 210,
+      "menciones_personales": 151,
+      "porcentaje_espana": 3.78475230166916,
+      "porcentaje_personal": 2.78982028284949,
+      "diferencia_pp": 0.994932018819679
+    },
+    {
+      "codigo": 13,
+      "problema": "El mal comportamiento de los/as políticos/as",
+      "menciones_espana": 415,
+      "menciones_personales": 164,
+      "porcentaje_espana": 8.48950447443702,
+      "porcentaje_personal": 2.6576516534132,
+      "diferencia_pp": 5.83185282102382
+    },
+    {
+      "codigo": 14,
+      "problema": "Las guerras en general",
+      "menciones_espana": 67,
+      "menciones_personales": 103,
+      "porcentaje_espana": 1.68554488012559,
+      "porcentaje_personal": 2.26852355388727,
+      "diferencia_pp": -0.582978673761674
+    },
+    {
+      "codigo": 11,
+      "problema": "La corrupción y el fraude",
+      "menciones_espana": 396,
+      "menciones_personales": 145,
+      "porcentaje_espana": 6.66542332766168,
+      "porcentaje_personal": 2.06812122614216,
+      "diferencia_pp": 4.59730210151952
+    },
+    {
+      "codigo": 25,
+      "problema": "El funcionamiento de los servicios públicos",
+      "menciones_espana": 152,
+      "menciones_personales": 135,
+      "porcentaje_espana": 2.95343498040395,
+      "porcentaje_personal": 2.05434096733305,
+      "diferencia_pp": 0.899094013070899
+    },
+    {
+      "codigo": 65,
+      "problema": "Aumento de la crispación social, revueltas sociales",
+      "menciones_espana": 167,
+      "menciones_personales": 122,
+      "porcentaje_espana": 3.17900690150082,
+      "porcentaje_personal": 1.98534552517076,
+      "diferencia_pp": 1.19366137633006
+    },
+    {
+      "codigo": 29,
+      "problema": "Las preocupaciones y situaciones personales",
+      "menciones_espana": 3,
+      "menciones_personales": 71,
+      "porcentaje_espana": 0.080510572920092,
+      "porcentaje_personal": 1.91520856197384,
+      "diferencia_pp": -1.83469798905375
+    },
+    {
+      "codigo": 54,
+      "problema": "Las incertidumbres ante el futuro, la inseguridad y el miedo al futuro",
+      "menciones_espana": 33,
+      "menciones_personales": 92,
+      "porcentaje_espana": 0.514022841483594,
+      "porcentaje_personal": 1.69756697759225,
+      "diferencia_pp": -1.18354413610865
+    },
+    {
+      "codigo": 70,
+      "problema": "El funcionamiento de la democracia",
+      "menciones_espana": 133,
+      "menciones_personales": 109,
+      "porcentaje_espana": 2.13592956604627,
+      "porcentaje_personal": 1.51460195590463,
+      "diferencia_pp": 0.621327610141638
+    },
+    {
+      "codigo": 50,
+      "problema": "Lo que hacen los partidos políticos",
+      "menciones_espana": 251,
+      "menciones_personales": 79,
+      "porcentaje_espana": 5.83161635598647,
+      "porcentaje_personal": 1.40935152701965,
+      "diferencia_pp": 4.42226482896682
+    },
+    {
+      "codigo": 77,
+      "problema": "Papel de los medios de comunicación y redes: desinformación, manipulación informativa, difusión de bulos",
+      "menciones_espana": 106,
+      "menciones_personales": 63,
+      "porcentaje_espana": 1.98482820814042,
+      "porcentaje_personal": 1.28347967490349,
+      "diferencia_pp": 0.701348533236932
+    },
+    {
+      "codigo": 63,
+      "problema": "Problemas psicológicos (preocupaciones, soledad, tristeza, desamparo, etc.)",
+      "menciones_espana": 5,
+      "menciones_personales": 36,
+      "porcentaje_espana": 0.0962844628857803,
+      "porcentaje_personal": 1.1337467489267,
+      "diferencia_pp": -1.03746228604092
+    },
+    {
+      "codigo": 23,
+      "problema": "El medio ambiente",
+      "menciones_espana": 43,
+      "menciones_personales": 71,
+      "porcentaje_espana": 0.743930950154956,
+      "porcentaje_personal": 1.12912493228775,
+      "diferencia_pp": -0.385193982132793
+    },
+    {
+      "codigo": 48,
+      "problema": "Los problemas relacionados con los/as autónomos/as",
+      "menciones_espana": 29,
+      "menciones_personales": 56,
+      "porcentaje_espana": 0.76344130618207,
+      "porcentaje_personal": 0.975477594337592,
+      "diferencia_pp": -0.212036288155522
+    },
+    {
+      "codigo": 57,
+      "problema": "La España vaciada, la despoblación",
+      "menciones_espana": 13,
+      "menciones_personales": 31,
+      "porcentaje_espana": 0.247530526247984,
+      "porcentaje_personal": 0.937557201076649,
+      "diferencia_pp": -0.690026674828665
+    },
+    {
+      "codigo": 76,
+      "problema": "Política exterior y relaciones internacionales. Papel de España en el marco internacional",
+      "menciones_espana": 70,
+      "menciones_personales": 48,
+      "porcentaje_espana": 1.24718766587696,
+      "porcentaje_personal": 0.836761192284823,
+      "diferencia_pp": 0.410426473592141
+    },
+    {
+      "codigo": 15,
+      "problema": "La Administración de Justicia",
+      "menciones_espana": 68,
+      "menciones_personales": 54,
+      "porcentaje_espana": 1.25380351176178,
+      "porcentaje_personal": 0.816500437948974,
+      "diferencia_pp": 0.437303073812802
+    },
+    {
+      "codigo": 49,
+      "problema": "El modelo productivo español. La falta de inversión en industrias e I+D",
+      "menciones_espana": 69,
+      "menciones_personales": 52,
+      "porcentaje_espana": 0.935674437786908,
+      "porcentaje_personal": 0.747342177267715,
+      "diferencia_pp": 0.188332260519192
+    },
+    {
+      "codigo": 10,
+      "problema": "Los problemas de la agricultura, ganadería y pesca",
+      "menciones_espana": 17,
+      "menciones_personales": 23,
+      "porcentaje_espana": 0.440468281745297,
+      "porcentaje_personal": 0.696685514356629,
+      "diferencia_pp": -0.256217232611332
+    },
+    {
+      "codigo": 17,
+      "problema": "El racismo",
+      "menciones_espana": 54,
+      "menciones_personales": 37,
+      "porcentaje_espana": 1.11731183169753,
+      "porcentaje_personal": 0.647848915672354,
+      "diferencia_pp": 0.469462916025176
+    },
+    {
+      "codigo": 491,
+      "problema": "Los problemas derivados del turismo. Masificación",
+      "menciones_espana": 30,
+      "menciones_personales": 34,
+      "porcentaje_espana": 0.465022030967832,
+      "porcentaje_personal": 0.510330165243898,
+      "diferencia_pp": -0.0453081342760664
+    },
+    {
+      "codigo": 46,
+      "problema": "La falta de acuerdos, unidad y capacidad de colaboración. Situación e inestabilidad política",
+      "menciones_espana": 65,
+      "menciones_personales": 33,
+      "porcentaje_espana": 1.23867094363979,
+      "porcentaje_personal": 0.508775427527842,
+      "diferencia_pp": 0.729895516111944
+    },
+    {
+      "codigo": 55,
+      "problema": "Poca conciencia ciudadana (falta de civismo, de sentido espíritu cívico)",
+      "menciones_espana": 24,
+      "menciones_personales": 22,
+      "porcentaje_espana": 0.525834747805947,
+      "porcentaje_personal": 0.470924898937023,
+      "diferencia_pp": 0.0549098488689247
+    },
+    {
+      "codigo": 38,
+      "problema": "Las hipotecas",
+      "menciones_espana": 0,
+      "menciones_personales": 19,
+      "porcentaje_espana": 0,
+      "porcentaje_personal": 0.421822774697349,
+      "diferencia_pp": -0.421822774697349
+    },
+    {
+      "codigo": 81,
+      "problema": "La ocupación de viviendas",
+      "menciones_espana": 23,
+      "menciones_personales": 23,
+      "porcentaje_espana": 0.492159578717074,
+      "porcentaje_personal": 0.395165123585337,
+      "diferencia_pp": 0.0969944551317374
+    },
+    {
+      "codigo": 45,
+      "problema": "La independencia de Cataluña",
+      "menciones_espana": 11,
+      "menciones_personales": 11,
+      "porcentaje_espana": 0.187302602574607,
+      "porcentaje_personal": 0.327079912581105,
+      "diferencia_pp": -0.139777310006498
+    },
+    {
+      "codigo": 33,
+      "problema": "La falta de recursos para los servicios públicos. Los recortes",
+      "menciones_espana": 13,
+      "menciones_personales": 26,
+      "porcentaje_espana": 0.180566931813971,
+      "porcentaje_personal": 0.32659842358672,
+      "diferencia_pp": -0.146031491772749
+    },
+    {
+      "codigo": 27,
+      "problema": "Los problemas relacionados con la mujer",
+      "menciones_espana": 4,
+      "menciones_personales": 19,
+      "porcentaje_espana": 0.0649516511701686,
+      "porcentaje_personal": 0.320057816577426,
+      "diferencia_pp": -0.255106165407258
+    },
+    {
+      "codigo": 26,
+      "problema": "Los nacionalismos",
+      "menciones_espana": 22,
+      "menciones_personales": 16,
+      "porcentaje_espana": 0.299928431706766,
+      "porcentaje_personal": 0.319547466109629,
+      "diferencia_pp": -0.0196190344028623
+    },
+    {
+      "codigo": 30,
+      "problema": "Los estatutos de autonomía",
+      "menciones_espana": 49,
+      "menciones_personales": 22,
+      "porcentaje_espana": 0.773464796376045,
+      "porcentaje_personal": 0.318079312813812,
+      "diferencia_pp": 0.455385483562233
+    },
+    {
+      "codigo": 56,
+      "problema": "La falta de confianza en los/las políticos/as y las instituciones",
+      "menciones_espana": 54,
+      "menciones_personales": 20,
+      "porcentaje_espana": 0.987526363786575,
+      "porcentaje_personal": 0.302733368833211,
+      "diferencia_pp": 0.684792994953364
+    },
+    {
+      "codigo": 34,
+      "problema": "Los bancos",
+      "menciones_espana": 5,
+      "menciones_personales": 12,
+      "porcentaje_espana": 0.0474683657998602,
+      "porcentaje_personal": 0.299705501705232,
+      "diferencia_pp": -0.252237135905372
+    },
+    {
+      "codigo": 2,
+      "problema": "Las drogas",
+      "menciones_espana": 10,
+      "menciones_personales": 10,
+      "porcentaje_espana": 0.321829114866401,
+      "porcentaje_personal": 0.230304804647306,
+      "diferencia_pp": 0.0915243102190955
+    },
+    {
+      "codigo": 19,
+      "problema": "La violencia de género",
+      "menciones_espana": 25,
+      "menciones_personales": 17,
+      "porcentaje_espana": 0.315537910796323,
+      "porcentaje_personal": 0.229155719916184,
+      "diferencia_pp": 0.0863821908801395
+    },
+    {
+      "codigo": 36,
+      "problema": "Los desahucios",
+      "menciones_espana": 3,
+      "menciones_personales": 6,
+      "porcentaje_espana": 0.118766356406557,
+      "porcentaje_personal": 0.210441343421333,
+      "diferencia_pp": -0.0916749870147753
+    },
+    {
+      "codigo": 75,
+      "problema": "Guerra de Ucrania y Rusia",
+      "menciones_espana": 5,
+      "menciones_personales": 6,
+      "porcentaje_espana": 0.14690410349304,
+      "porcentaje_personal": 0.200500456754712,
+      "diferencia_pp": -0.0535963532616719
+    },
+    {
+      "codigo": 83,
+      "problema": "Uso, regulación y seguridad en tecnologías para los/as menores, adolescentes y jóvenes",
+      "menciones_espana": 6,
+      "menciones_personales": 6,
+      "porcentaje_espana": 0.0904042860060311,
+      "porcentaje_personal": 0.124861103412783,
+      "diferencia_pp": -0.0344568174067519
+    },
+    {
+      "codigo": 73,
+      "problema": "Catástrofes naturales: crisis de la DANA",
+      "menciones_espana": 2,
+      "menciones_personales": 4,
+      "porcentaje_espana": 0.0245929610174468,
+      "porcentaje_personal": 0.0931097008103623,
+      "diferencia_pp": -0.0685167397929155
+    },
+    {
+      "codigo": 32,
+      "problema": "La Reforma Laboral",
+      "menciones_espana": 5,
+      "menciones_personales": 4,
+      "porcentaje_espana": 0.0632430519441255,
+      "porcentaje_personal": 0.0769763362172003,
+      "diferencia_pp": -0.0137332842730748
+    },
+    {
+      "codigo": 47,
+      "problema": "La emigración",
+      "menciones_espana": 6,
+      "menciones_personales": 3,
+      "porcentaje_espana": 0.122892949970668,
+      "porcentaje_personal": 0.072712401848573,
+      "diferencia_pp": 0.0501805481220951
+    },
+    {
+      "codigo": 84,
+      "problema": "Los incendios",
+      "menciones_espana": 2,
+      "menciones_personales": 4,
+      "porcentaje_espana": 0.0368861572895404,
+      "porcentaje_personal": 0.0708923376217628,
+      "diferencia_pp": -0.0340061803322224
+    },
+    {
+      "codigo": 72,
+      "problema": "Aumento de odio, violencia y agresiones homófobas",
+      "menciones_espana": 2,
+      "menciones_personales": 3,
+      "porcentaje_espana": 0.0233463444106541,
+      "porcentaje_personal": 0.0583632734462604,
+      "diferencia_pp": -0.0350169290356062
+    },
+    {
+      "codigo": 37,
+      "problema": "El fraude fiscal",
+      "menciones_espana": 15,
+      "menciones_personales": 3,
+      "porcentaje_espana": 0.195104953583655,
+      "porcentaje_personal": 0.040838785834597,
+      "diferencia_pp": 0.154266167749058
+    },
+    {
+      "codigo": 82,
+      "problema": "Los problemas relacionados con el agua, la sequía",
+      "menciones_espana": 2,
+      "menciones_personales": 3,
+      "porcentaje_espana": 0.0211019170023523,
+      "porcentaje_personal": 0.0320085682827618,
+      "diferencia_pp": -0.0109066512804095
+    },
+    {
+      "codigo": 301,
+      "problema": "La ciberseguridad: uso, delitos y regulación de nuevas tecnologías",
+      "menciones_espana": 0,
+      "menciones_personales": 2,
+      "porcentaje_espana": 0,
+      "porcentaje_personal": 0.0195877843937188,
+      "diferencia_pp": -0.0195877843937188
+    },
+    {
+      "codigo": 39,
+      "problema": "La Monarquía",
+      "menciones_espana": 10,
+      "menciones_personales": 2,
+      "porcentaje_espana": 0.188412873600104,
+      "porcentaje_personal": 0.0144454660101184,
+      "diferencia_pp": 0.173967407589986
+    },
+    {
+      "codigo": 79,
+      "problema": "La bajada de impuestos a los/as más ricos/as",
+      "menciones_espana": 1,
+      "menciones_personales": 1,
+      "porcentaje_espana": 0.0067271118409344,
+      "porcentaje_personal": 0.00842854545978539,
+      "diferencia_pp": -0.001701433618851
+    },
+    {
+      "codigo": 4,
+      "problema": "El terrorismo, ETA",
+      "menciones_espana": 1,
+      "menciones_personales": 0,
+      "porcentaje_espana": 0.00729558334484624,
+      "porcentaje_personal": 0,
+      "diferencia_pp": 0.00729558334484624
+    },
+    {
+      "codigo": 28,
+      "problema": "El terrorismo internacional",
+      "menciones_espana": 1,
+      "menciones_personales": 0,
+      "porcentaje_espana": 0.0112953854705845,
+      "porcentaje_personal": 0,
+      "diferencia_pp": 0.0112953854705845
+    },
+    {
+      "codigo": 41,
+      "problema": "La Ley del aborto",
+      "menciones_espana": 1,
+      "menciones_personales": 0,
+      "porcentaje_espana": 0.0125660864793286,
+      "porcentaje_personal": 0,
+      "diferencia_pp": 0.0125660864793286
+    },
+    {
+      "codigo": 74,
+      "problema": "Desabastecimiento, falta de materias primas y suministros",
+      "menciones_espana": 1,
+      "menciones_personales": 0,
+      "porcentaje_espana": 0.00870939745278946,
+      "porcentaje_personal": 0,
+      "diferencia_pp": 0.00870939745278946
+    }
+  ],
+  "solapamientos": [
+    {
+      "problema": "El paro",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 2.6596480711948,
+      "n": 129
+    },
+    {
+      "problema": "El paro",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 6.96419252336047,
+      "n": 295
+    },
+    {
+      "problema": "El paro",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 3.83334765824464,
+      "n": 162
+    },
+    {
+      "problema": "El paro",
+      "situacion": "En ninguna",
+      "porcentaje": 86.5428117472001,
+      "n": 4438
+    },
+    {
+      "problema": "Las drogas",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.134783677972135,
+      "n": 3
+    },
+    {
+      "problema": "Las drogas",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.187045436894266,
+      "n": 7
+    },
+    {
+      "problema": "Las drogas",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.0955211266751704,
+      "n": 7
+    },
+    {
+      "problema": "Las drogas",
+      "situacion": "En ninguna",
+      "porcentaje": 99.5826497584584,
+      "n": 5007
+    },
+    {
+      "problema": "La inseguridad ciudadana",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 2.70483140447893,
+      "n": 162
+    },
+    {
+      "problema": "La inseguridad ciudadana",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 1.63149390889651,
+      "n": 76
+    },
+    {
+      "problema": "La inseguridad ciudadana",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 4.00884651532731,
+      "n": 231
+    },
+    {
+      "problema": "La inseguridad ciudadana",
+      "situacion": "En ninguna",
+      "porcentaje": 91.6548281712973,
+      "n": 4555
+    },
+    {
+      "problema": "El terrorismo, ETA",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0,
+      "n": 0
+    },
+    {
+      "problema": "El terrorismo, ETA",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.00729558334484624,
+      "n": 1
+    },
+    {
+      "problema": "El terrorismo, ETA",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0,
+      "n": 0
+    },
+    {
+      "problema": "El terrorismo, ETA",
+      "situacion": "En ninguna",
+      "porcentaje": 99.9927044166551,
+      "n": 5023
+    },
+    {
+      "problema": "Las infraestructuras",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.466421314816746,
+      "n": 20
+    },
+    {
+      "problema": "Las infraestructuras",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.618873389678321,
+      "n": 21
+    },
+    {
+      "problema": "Las infraestructuras",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 2.3391772369806,
+      "n": 129
+    },
+    {
+      "problema": "Las infraestructuras",
+      "situacion": "En ninguna",
+      "porcentaje": 96.5755280585243,
+      "n": 4854
+    },
+    {
+      "problema": "La sanidad",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 11.0397458655307,
+      "n": 526
+    },
+    {
+      "problema": "La sanidad",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 3.32133735715882,
+      "n": 158
+    },
+    {
+      "problema": "La sanidad",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 13.0063863693049,
+      "n": 660
+    },
+    {
+      "problema": "La sanidad",
+      "situacion": "En ninguna",
+      "porcentaje": 72.6325304080055,
+      "n": 3680
+    },
+    {
+      "problema": "La vivienda",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 26.2244083498966,
+      "n": 1391
+    },
+    {
+      "problema": "La vivienda",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 29.4264654173774,
+      "n": 1535
+    },
+    {
+      "problema": "La vivienda",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 7.53992398162585,
+      "n": 342
+    },
+    {
+      "problema": "La vivienda",
+      "situacion": "En ninguna",
+      "porcentaje": 36.8092022511002,
+      "n": 1756
+    },
+    {
+      "problema": "La crisis económica, los problemas de índole económica",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 13.6006154444476,
+      "n": 725
+    },
+    {
+      "problema": "La crisis económica, los problemas de índole económica",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 6.69845498541577,
+      "n": 333
+    },
+    {
+      "problema": "La crisis económica, los problemas de índole económica",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 16.6989810006971,
+      "n": 786
+    },
+    {
+      "problema": "La crisis económica, los problemas de índole económica",
+      "situacion": "En ninguna",
+      "porcentaje": 63.0019485694396,
+      "n": 3180
+    },
+    {
+      "problema": "Los problemas relacionados con la calidad del empleo",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 10.0373313604453,
+      "n": 517
+    },
+    {
+      "problema": "Los problemas relacionados con la calidad del empleo",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 9.3872855890346,
+      "n": 475
+    },
+    {
+      "problema": "Los problemas relacionados con la calidad del empleo",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 8.8046578309807,
+      "n": 472
+    },
+    {
+      "problema": "Los problemas relacionados con la calidad del empleo",
+      "situacion": "En ninguna",
+      "porcentaje": 71.7707252195394,
+      "n": 3560
+    },
+    {
+      "problema": "Los problemas de la agricultura, ganadería y pesca",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.120297009720662,
+      "n": 4
+    },
+    {
+      "problema": "Los problemas de la agricultura, ganadería y pesca",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.320171272024636,
+      "n": 13
+    },
+    {
+      "problema": "Los problemas de la agricultura, ganadería y pesca",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.576388504635968,
+      "n": 19
+    },
+    {
+      "problema": "Los problemas de la agricultura, ganadería y pesca",
+      "situacion": "En ninguna",
+      "porcentaje": 98.9831432136187,
+      "n": 4988
+    },
+    {
+      "problema": "La corrupción y el fraude",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 1.68610120990621,
+      "n": 111
+    },
+    {
+      "problema": "La corrupción y el fraude",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 4.97932211775548,
+      "n": 285
+    },
+    {
+      "problema": "La corrupción y el fraude",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.382020016235952,
+      "n": 34
+    },
+    {
+      "problema": "La corrupción y el fraude",
+      "situacion": "En ninguna",
+      "porcentaje": 92.9525566561024,
+      "n": 4594
+    },
+    {
+      "problema": "Las pensiones",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.496458345898441,
+      "n": 25
+    },
+    {
+      "problema": "Las pensiones",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.937028538501583,
+      "n": 40
+    },
+    {
+      "problema": "Las pensiones",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 3.5306222511972,
+      "n": 164
+    },
+    {
+      "problema": "Las pensiones",
+      "situacion": "En ninguna",
+      "porcentaje": 95.0358908644028,
+      "n": 4795
+    },
+    {
+      "problema": "El mal comportamiento de los/as políticos/as",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 1.35902766675372,
+      "n": 94
+    },
+    {
+      "problema": "El mal comportamiento de los/as políticos/as",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 7.1304768076833,
+      "n": 321
+    },
+    {
+      "problema": "El mal comportamiento de los/as políticos/as",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 1.29862398665949,
+      "n": 70
+    },
+    {
+      "problema": "El mal comportamiento de los/as políticos/as",
+      "situacion": "En ninguna",
+      "porcentaje": 90.2118715389035,
+      "n": 4539
+    },
+    {
+      "problema": "Las guerras en general",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.362193577313805,
+      "n": 16
+    },
+    {
+      "problema": "Las guerras en general",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 1.32335130281179,
+      "n": 51
+    },
+    {
+      "problema": "Las guerras en general",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 1.90632997657346,
+      "n": 87
+    },
+    {
+      "problema": "Las guerras en general",
+      "situacion": "En ninguna",
+      "porcentaje": 96.408125143301,
+      "n": 4870
+    },
+    {
+      "problema": "La Administración de Justicia",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.25201241450204,
+      "n": 14
+    },
+    {
+      "problema": "La Administración de Justicia",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 1.00179109725974,
+      "n": 54
+    },
+    {
+      "problema": "La Administración de Justicia",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.564488023446934,
+      "n": 40
+    },
+    {
+      "problema": "La Administración de Justicia",
+      "situacion": "En ninguna",
+      "porcentaje": 98.1817084647913,
+      "n": 4916
+    },
+    {
+      "problema": "Los problemas de índole social",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 1.18601666867924,
+      "n": 54
+    },
+    {
+      "problema": "Los problemas de índole social",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 3.74118282236042,
+      "n": 166
+    },
+    {
+      "problema": "Los problemas de índole social",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 4.91103547357129,
+      "n": 215
+    },
+    {
+      "problema": "Los problemas de índole social",
+      "situacion": "En ninguna",
+      "porcentaje": 90.1617650353891,
+      "n": 4589
+    },
+    {
+      "problema": "El racismo",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.360840073733063,
+      "n": 20
+    },
+    {
+      "problema": "El racismo",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.756471757964467,
+      "n": 34
+    },
+    {
+      "problema": "El racismo",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.287008841939291,
+      "n": 17
+    },
+    {
+      "problema": "El racismo",
+      "situacion": "En ninguna",
+      "porcentaje": 98.5956793263632,
+      "n": 4953
+    },
+    {
+      "problema": "La inmigración",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 8.27927172980283,
+      "n": 428
+    },
+    {
+      "problema": "La inmigración",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 12.6633820890071,
+      "n": 656
+    },
+    {
+      "problema": "La inmigración",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 2.89094949237575,
+      "n": 149
+    },
+    {
+      "problema": "La inmigración",
+      "situacion": "En ninguna",
+      "porcentaje": 76.1663966888143,
+      "n": 3791
+    },
+    {
+      "problema": "La violencia de género",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.090530480310471,
+      "n": 8
+    },
+    {
+      "problema": "La violencia de género",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.225007430485853,
+      "n": 17
+    },
+    {
+      "problema": "La violencia de género",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.138625239605713,
+      "n": 9
+    },
+    {
+      "problema": "La violencia de género",
+      "situacion": "En ninguna",
+      "porcentaje": 99.545836849598,
+      "n": 4990
+    },
+    {
+      "problema": "Los problemas relacionados con la juventud. Falta de apoyo y oportunidades para los/as jóvenes",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 2.87275681189341,
+      "n": 142
+    },
+    {
+      "problema": "Los problemas relacionados con la juventud. Falta de apoyo y oportunidades para los/as jóvenes",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 4.3163278951039,
+      "n": 218
+    },
+    {
+      "problema": "Los problemas relacionados con la juventud. Falta de apoyo y oportunidades para los/as jóvenes",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 6.56199774007498,
+      "n": 290
+    },
+    {
+      "problema": "Los problemas relacionados con la juventud. Falta de apoyo y oportunidades para los/as jóvenes",
+      "situacion": "En ninguna",
+      "porcentaje": 86.2489175529277,
+      "n": 4374
+    },
+    {
+      "problema": "La crisis de valores",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.736303758432827,
+      "n": 30
+    },
+    {
+      "problema": "La crisis de valores",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 2.9055989791462,
+      "n": 128
+    },
+    {
+      "problema": "La crisis de valores",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 2.20874626728842,
+      "n": 87
+    },
+    {
+      "problema": "La crisis de valores",
+      "situacion": "En ninguna",
+      "porcentaje": 94.1493509951326,
+      "n": 4779
+    },
+    {
+      "problema": "La educación",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 4.15956570751624,
+      "n": 223
+    },
+    {
+      "problema": "La educación",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 4.53453735385548,
+      "n": 223
+    },
+    {
+      "problema": "La educación",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 5.80694954940602,
+      "n": 346
+    },
+    {
+      "problema": "La educación",
+      "situacion": "En ninguna",
+      "porcentaje": 85.4989473892223,
+      "n": 4232
+    },
+    {
+      "problema": "El medio ambiente",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.290524169400981,
+      "n": 19
+    },
+    {
+      "problema": "El medio ambiente",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.453406780753974,
+      "n": 24
+    },
+    {
+      "problema": "El medio ambiente",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.838600762886768,
+      "n": 52
+    },
+    {
+      "problema": "El medio ambiente",
+      "situacion": "En ninguna",
+      "porcentaje": 98.4174682869583,
+      "n": 4929
+    },
+    {
+      "problema": "El Gobierno y partidos o políticos/as concretos/as",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 3.98414985205022,
+      "n": 237
+    },
+    {
+      "problema": "El Gobierno y partidos o políticos/as concretos/as",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 11.1435918354061,
+      "n": 503
+    },
+    {
+      "problema": "El Gobierno y partidos o políticos/as concretos/as",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.793839603293037,
+      "n": 45
+    },
+    {
+      "problema": "El Gobierno y partidos o políticos/as concretos/as",
+      "situacion": "En ninguna",
+      "porcentaje": 84.0784187092507,
+      "n": 4239
+    },
+    {
+      "problema": "El funcionamiento de los servicios públicos",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.527234827833439,
+      "n": 34
+    },
+    {
+      "problema": "El funcionamiento de los servicios públicos",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 2.42620015257051,
+      "n": 118
+    },
+    {
+      "problema": "El funcionamiento de los servicios públicos",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 1.52710613949961,
+      "n": 101
+    },
+    {
+      "problema": "El funcionamiento de los servicios públicos",
+      "situacion": "En ninguna",
+      "porcentaje": 95.5194588800965,
+      "n": 4771
+    },
+    {
+      "problema": "Los nacionalismos",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.0797269341557709,
+      "n": 4
+    },
+    {
+      "problema": "Los nacionalismos",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.220201497550995,
+      "n": 18
+    },
+    {
+      "problema": "Los nacionalismos",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.239820531953858,
+      "n": 12
+    },
+    {
+      "problema": "Los nacionalismos",
+      "situacion": "En ninguna",
+      "porcentaje": 99.4602510363394,
+      "n": 4990
+    },
+    {
+      "problema": "Los problemas relacionados con la mujer",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.0448907376571227,
+      "n": 2
+    },
+    {
+      "problema": "Los problemas relacionados con la mujer",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.020060913513046,
+      "n": 2
+    },
+    {
+      "problema": "Los problemas relacionados con la mujer",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.275167078920304,
+      "n": 17
+    },
+    {
+      "problema": "Los problemas relacionados con la mujer",
+      "situacion": "En ninguna",
+      "porcentaje": 99.6598812699095,
+      "n": 5003
+    },
+    {
+      "problema": "El terrorismo internacional",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0,
+      "n": 0
+    },
+    {
+      "problema": "El terrorismo internacional",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.0112953854705845,
+      "n": 1
+    },
+    {
+      "problema": "El terrorismo internacional",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0,
+      "n": 0
+    },
+    {
+      "problema": "El terrorismo internacional",
+      "situacion": "En ninguna",
+      "porcentaje": 99.9887046145294,
+      "n": 5023
+    },
+    {
+      "problema": "Las preocupaciones y situaciones personales",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0,
+      "n": 0
+    },
+    {
+      "problema": "Las preocupaciones y situaciones personales",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.080510572920092,
+      "n": 3
+    },
+    {
+      "problema": "Las preocupaciones y situaciones personales",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 1.91520856197384,
+      "n": 71
+    },
+    {
+      "problema": "Las preocupaciones y situaciones personales",
+      "situacion": "En ninguna",
+      "porcentaje": 98.0042808651061,
+      "n": 4950
+    },
+    {
+      "problema": "Los estatutos de autonomía",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.12803626357749,
+      "n": 8
+    },
+    {
+      "problema": "Los estatutos de autonomía",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.645428532798555,
+      "n": 41
+    },
+    {
+      "problema": "Los estatutos de autonomía",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.190043049236322,
+      "n": 14
+    },
+    {
+      "problema": "Los estatutos de autonomía",
+      "situacion": "En ninguna",
+      "porcentaje": 99.0364921543876,
+      "n": 4961
+    },
+    {
+      "problema": "La Reforma Laboral",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0,
+      "n": 0
+    },
+    {
+      "problema": "La Reforma Laboral",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.0632430519441255,
+      "n": 5
+    },
+    {
+      "problema": "La Reforma Laboral",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.0769763362172003,
+      "n": 4
+    },
+    {
+      "problema": "La Reforma Laboral",
+      "situacion": "En ninguna",
+      "porcentaje": 99.8597806118387,
+      "n": 5015
+    },
+    {
+      "problema": "La falta de recursos para los servicios públicos. Los recortes",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.0387303059183021,
+      "n": 3
+    },
+    {
+      "problema": "La falta de recursos para los servicios públicos. Los recortes",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.141836625895669,
+      "n": 10
+    },
+    {
+      "problema": "La falta de recursos para los servicios públicos. Los recortes",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.287868117668418,
+      "n": 23
+    },
+    {
+      "problema": "La falta de recursos para los servicios públicos. Los recortes",
+      "situacion": "En ninguna",
+      "porcentaje": 99.5315649505176,
+      "n": 4988
+    },
+    {
+      "problema": "Los bancos",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.0210891781451218,
+      "n": 2
+    },
+    {
+      "problema": "Los bancos",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.0263791876547384,
+      "n": 3
+    },
+    {
+      "problema": "Los bancos",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.278616323560111,
+      "n": 10
+    },
+    {
+      "problema": "Los bancos",
+      "situacion": "En ninguna",
+      "porcentaje": 99.67391531064,
+      "n": 5009
+    },
+    {
+      "problema": "La subida de los impuestos",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 1.69705642807981,
+      "n": 96
+    },
+    {
+      "problema": "La subida de los impuestos",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 1.76129490228971,
+      "n": 84
+    },
+    {
+      "problema": "La subida de los impuestos",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 5.49757863882177,
+      "n": 284
+    },
+    {
+      "problema": "La subida de los impuestos",
+      "situacion": "En ninguna",
+      "porcentaje": 91.0440700308087,
+      "n": 4560
+    },
+    {
+      "problema": "Los desahucios",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.0829321500617557,
+      "n": 1
+    },
+    {
+      "problema": "Los desahucios",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.0358342063448016,
+      "n": 2
+    },
+    {
+      "problema": "Los desahucios",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.127509193359577,
+      "n": 5
+    },
+    {
+      "problema": "Los desahucios",
+      "situacion": "En ninguna",
+      "porcentaje": 99.7537244502339,
+      "n": 5016
+    },
+    {
+      "problema": "El fraude fiscal",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.0299840852063307,
+      "n": 2
+    },
+    {
+      "problema": "El fraude fiscal",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.165120868377324,
+      "n": 13
+    },
+    {
+      "problema": "El fraude fiscal",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.0108547006282663,
+      "n": 1
+    },
+    {
+      "problema": "El fraude fiscal",
+      "situacion": "En ninguna",
+      "porcentaje": 99.7940403457881,
+      "n": 5008
+    },
+    {
+      "problema": "Las hipotecas",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0,
+      "n": 0
+    },
+    {
+      "problema": "Las hipotecas",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0,
+      "n": 0
+    },
+    {
+      "problema": "Las hipotecas",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.421822774697349,
+      "n": 19
+    },
+    {
+      "problema": "Las hipotecas",
+      "situacion": "En ninguna",
+      "porcentaje": 99.5781772253027,
+      "n": 5005
+    },
+    {
+      "problema": "La Monarquía",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.0144454660101184,
+      "n": 2
+    },
+    {
+      "problema": "La Monarquía",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.173967407589986,
+      "n": 8
+    },
+    {
+      "problema": "La Monarquía",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0,
+      "n": 0
+    },
+    {
+      "problema": "La Monarquía",
+      "situacion": "En ninguna",
+      "porcentaje": 99.8115871263999,
+      "n": 5014
+    },
+    {
+      "problema": "La Ley del aborto",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0,
+      "n": 0
+    },
+    {
+      "problema": "La Ley del aborto",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.0125660864793286,
+      "n": 1
+    },
+    {
+      "problema": "La Ley del aborto",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0,
+      "n": 0
+    },
+    {
+      "problema": "La Ley del aborto",
+      "situacion": "En ninguna",
+      "porcentaje": 99.9874339135207,
+      "n": 5023
+    },
+    {
+      "problema": "La subida de tarifas energéticas, crisis energética",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 1.22678877455802,
+      "n": 51
+    },
+    {
+      "problema": "La subida de tarifas energéticas, crisis energética",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.786789043905234,
+      "n": 36
+    },
+    {
+      "problema": "La subida de tarifas energéticas, crisis energética",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 4.15368712299365,
+      "n": 208
+    },
+    {
+      "problema": "La subida de tarifas energéticas, crisis energética",
+      "situacion": "En ninguna",
+      "porcentaje": 93.8327350585431,
+      "n": 4729
+    },
+    {
+      "problema": "La independencia de Cataluña",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.0432064218776752,
+      "n": 2
+    },
+    {
+      "problema": "La independencia de Cataluña",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.144096180696932,
+      "n": 9
+    },
+    {
+      "problema": "La independencia de Cataluña",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.28387349070343,
+      "n": 9
+    },
+    {
+      "problema": "La independencia de Cataluña",
+      "situacion": "En ninguna",
+      "porcentaje": 99.528823906722,
+      "n": 5004
+    },
+    {
+      "problema": "La falta de acuerdos, unidad y capacidad de colaboración. Situación e inestabilidad política",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.158383804304178,
+      "n": 10
+    },
+    {
+      "problema": "La falta de acuerdos, unidad y capacidad de colaboración. Situación e inestabilidad política",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 1.08028713933561,
+      "n": 55
+    },
+    {
+      "problema": "La falta de acuerdos, unidad y capacidad de colaboración. Situación e inestabilidad política",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.350391623223664,
+      "n": 23
+    },
+    {
+      "problema": "La falta de acuerdos, unidad y capacidad de colaboración. Situación e inestabilidad política",
+      "situacion": "En ninguna",
+      "porcentaje": 98.4109374331366,
+      "n": 4936
+    },
+    {
+      "problema": "La emigración",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.0291634241381834,
+      "n": 2
+    },
+    {
+      "problema": "La emigración",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.0937295258324847,
+      "n": 4
+    },
+    {
+      "problema": "La emigración",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.0435489777103896,
+      "n": 1
+    },
+    {
+      "problema": "La emigración",
+      "situacion": "En ninguna",
+      "porcentaje": 99.8335580723189,
+      "n": 5017
+    },
+    {
+      "problema": "Los problemas relacionados con los/as autónomos/as",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.183333055234791,
+      "n": 10
+    },
+    {
+      "problema": "Los problemas relacionados con los/as autónomos/as",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.580108250947279,
+      "n": 19
+    },
+    {
+      "problema": "Los problemas relacionados con los/as autónomos/as",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.792144539102801,
+      "n": 46
+    },
+    {
+      "problema": "Los problemas relacionados con los/as autónomos/as",
+      "situacion": "En ninguna",
+      "porcentaje": 98.4444141547151,
+      "n": 4949
+    },
+    {
+      "problema": "El modelo productivo español. La falta de inversión en industrias e I+D",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.147095584440786,
+      "n": 10
+    },
+    {
+      "problema": "El modelo productivo español. La falta de inversión en industrias e I+D",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.788578853346122,
+      "n": 59
+    },
+    {
+      "problema": "El modelo productivo español. La falta de inversión en industrias e I+D",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.600246592826929,
+      "n": 42
+    },
+    {
+      "problema": "El modelo productivo español. La falta de inversión en industrias e I+D",
+      "situacion": "En ninguna",
+      "porcentaje": 98.4640789693862,
+      "n": 4913
+    },
+    {
+      "problema": "Lo que hacen los partidos políticos",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.58595697877324,
+      "n": 29
+    },
+    {
+      "problema": "Lo que hacen los partidos políticos",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 5.24565937721323,
+      "n": 222
+    },
+    {
+      "problema": "Lo que hacen los partidos políticos",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.823394548246414,
+      "n": 50
+    },
+    {
+      "problema": "Lo que hacen los partidos políticos",
+      "situacion": "En ninguna",
+      "porcentaje": 93.3449890957671,
+      "n": 4723
+    },
+    {
+      "problema": "Los problemas políticos en general",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 1.96686482708824,
+      "n": 128
+    },
+    {
+      "problema": "Los problemas políticos en general",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 8.13366042127405,
+      "n": 389
+    },
+    {
+      "problema": "Los problemas políticos en general",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 1.75046269370624,
+      "n": 105
+    },
+    {
+      "problema": "Los problemas políticos en general",
+      "situacion": "En ninguna",
+      "porcentaje": 88.1490120579315,
+      "n": 4402
+    },
+    {
+      "problema": "Los extremismos",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 2.07379996984195,
+      "n": 145
+    },
+    {
+      "problema": "Los extremismos",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 5.6061511228189,
+      "n": 304
+    },
+    {
+      "problema": "Los extremismos",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 1.2385049404065,
+      "n": 64
+    },
+    {
+      "problema": "Los extremismos",
+      "situacion": "En ninguna",
+      "porcentaje": 91.0815439669327,
+      "n": 4511
+    },
+    {
+      "problema": "Las incertidumbres ante el futuro, la inseguridad y el miedo al futuro",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.049837395155448,
+      "n": 3
+    },
+    {
+      "problema": "Las incertidumbres ante el futuro, la inseguridad y el miedo al futuro",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.464185446328146,
+      "n": 30
+    },
+    {
+      "problema": "Las incertidumbres ante el futuro, la inseguridad y el miedo al futuro",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 1.6477295824368,
+      "n": 89
+    },
+    {
+      "problema": "Las incertidumbres ante el futuro, la inseguridad y el miedo al futuro",
+      "situacion": "En ninguna",
+      "porcentaje": 97.8382475760796,
+      "n": 4902
+    },
+    {
+      "problema": "Poca conciencia ciudadana (falta de civismo, de sentido espíritu cívico)",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.055852524303983,
+      "n": 3
+    },
+    {
+      "problema": "Poca conciencia ciudadana (falta de civismo, de sentido espíritu cívico)",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.469982223501964,
+      "n": 21
+    },
+    {
+      "problema": "Poca conciencia ciudadana (falta de civismo, de sentido espíritu cívico)",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.41507237463304,
+      "n": 19
+    },
+    {
+      "problema": "Poca conciencia ciudadana (falta de civismo, de sentido espíritu cívico)",
+      "situacion": "En ninguna",
+      "porcentaje": 99.059092877561,
+      "n": 4981
+    },
+    {
+      "problema": "La falta de confianza en los/las políticos/as y las instituciones",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.0991843443075211,
+      "n": 8
+    },
+    {
+      "problema": "La falta de confianza en los/las políticos/as y las instituciones",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.888342019479054,
+      "n": 46
+    },
+    {
+      "problema": "La falta de confianza en los/las políticos/as y las instituciones",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.20354902452569,
+      "n": 12
+    },
+    {
+      "problema": "La falta de confianza en los/las políticos/as y las instituciones",
+      "situacion": "En ninguna",
+      "porcentaje": 98.8089246116877,
+      "n": 4958
+    },
+    {
+      "problema": "La España vaciada, la despoblación",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.180301605303217,
+      "n": 7
+    },
+    {
+      "problema": "La España vaciada, la despoblación",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.0672289209447679,
+      "n": 6
+    },
+    {
+      "problema": "La España vaciada, la despoblación",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.757255595773433,
+      "n": 24
+    },
+    {
+      "problema": "La España vaciada, la despoblación",
+      "situacion": "En ninguna",
+      "porcentaje": 98.9952138779786,
+      "n": 4987
+    },
+    {
+      "problema": "Las desigualdades, incluida la de género, diferencias de clases, la pobreza",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.770348951515318,
+      "n": 49
+    },
+    {
+      "problema": "Las desigualdades, incluida la de género, diferencias de clases, la pobreza",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 3.01440335015385,
+      "n": 161
+    },
+    {
+      "problema": "Las desigualdades, incluida la de género, diferencias de clases, la pobreza",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 2.01947133133417,
+      "n": 102
+    },
+    {
+      "problema": "Las desigualdades, incluida la de género, diferencias de clases, la pobreza",
+      "situacion": "En ninguna",
+      "porcentaje": 94.1957763669967,
+      "n": 4712
+    },
+    {
+      "problema": "Problemas psicológicos (preocupaciones, soledad, tristeza, desamparo, etc.)",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.0264725395928808,
+      "n": 2
+    },
+    {
+      "problema": "Problemas psicológicos (preocupaciones, soledad, tristeza, desamparo, etc.)",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.0698119232928995,
+      "n": 3
+    },
+    {
+      "problema": "Problemas psicológicos (preocupaciones, soledad, tristeza, desamparo, etc.)",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 1.10727420933382,
+      "n": 34
+    },
+    {
+      "problema": "Problemas psicológicos (preocupaciones, soledad, tristeza, desamparo, etc.)",
+      "situacion": "En ninguna",
+      "porcentaje": 98.7964413277804,
+      "n": 4985
+    },
+    {
+      "problema": "Aumento de la crispación social, revueltas sociales",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.694303547099167,
+      "n": 49
+    },
+    {
+      "problema": "Aumento de la crispación social, revueltas sociales",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 2.48470335440166,
+      "n": 118
+    },
+    {
+      "problema": "Aumento de la crispación social, revueltas sociales",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 1.2910419780716,
+      "n": 73
+    },
+    {
+      "problema": "Aumento de la crispación social, revueltas sociales",
+      "situacion": "En ninguna",
+      "porcentaje": 95.5299511204276,
+      "n": 4784
+    },
+    {
+      "problema": "El funcionamiento de la democracia",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.506238802581815,
+      "n": 33
+    },
+    {
+      "problema": "El funcionamiento de la democracia",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 1.62969076346446,
+      "n": 100
+    },
+    {
+      "problema": "El funcionamiento de la democracia",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 1.00836315332282,
+      "n": 76
+    },
+    {
+      "problema": "El funcionamiento de la democracia",
+      "situacion": "En ninguna",
+      "porcentaje": 96.8557072806309,
+      "n": 4815
+    },
+    {
+      "problema": "Crisis con Marruecos. Fronteras de Ceuta y Melilla",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 1.66850486717798,
+      "n": 86
+    },
+    {
+      "problema": "Crisis con Marruecos. Fronteras de Ceuta y Melilla",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 4.84745046292838,
+      "n": 246
+    },
+    {
+      "problema": "Crisis con Marruecos. Fronteras de Ceuta y Melilla",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 1.35590604959831,
+      "n": 73
+    },
+    {
+      "problema": "Crisis con Marruecos. Fronteras de Ceuta y Melilla",
+      "situacion": "En ninguna",
+      "porcentaje": 92.1281386202953,
+      "n": 4619
+    },
+    {
+      "problema": "Aumento de odio, violencia y agresiones homófobas",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0,
+      "n": 0
+    },
+    {
+      "problema": "Aumento de odio, violencia y agresiones homófobas",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.0233463444106541,
+      "n": 2
+    },
+    {
+      "problema": "Aumento de odio, violencia y agresiones homófobas",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.0583632734462604,
+      "n": 3
+    },
+    {
+      "problema": "Aumento de odio, violencia y agresiones homófobas",
+      "situacion": "En ninguna",
+      "porcentaje": 99.9182903821431,
+      "n": 5019
+    },
+    {
+      "problema": "Catástrofes naturales: crisis de la DANA",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0,
+      "n": 0
+    },
+    {
+      "problema": "Catástrofes naturales: crisis de la DANA",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.0245929610174468,
+      "n": 2
+    },
+    {
+      "problema": "Catástrofes naturales: crisis de la DANA",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.0931097008103623,
+      "n": 4
+    },
+    {
+      "problema": "Catástrofes naturales: crisis de la DANA",
+      "situacion": "En ninguna",
+      "porcentaje": 99.8822973381722,
+      "n": 5018
+    },
+    {
+      "problema": "Desabastecimiento, falta de materias primas y suministros",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0,
+      "n": 0
+    },
+    {
+      "problema": "Desabastecimiento, falta de materias primas y suministros",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.00870939745278946,
+      "n": 1
+    },
+    {
+      "problema": "Desabastecimiento, falta de materias primas y suministros",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0,
+      "n": 0
+    },
+    {
+      "problema": "Desabastecimiento, falta de materias primas y suministros",
+      "situacion": "En ninguna",
+      "porcentaje": 99.9912906025472,
+      "n": 5023
+    },
+    {
+      "problema": "Guerra de Ucrania y Rusia",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.0976479186987342,
+      "n": 2
+    },
+    {
+      "problema": "Guerra de Ucrania y Rusia",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.0492561847943057,
+      "n": 3
+    },
+    {
+      "problema": "Guerra de Ucrania y Rusia",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.102852538055977,
+      "n": 4
+    },
+    {
+      "problema": "Guerra de Ucrania y Rusia",
+      "situacion": "En ninguna",
+      "porcentaje": 99.750243358451,
+      "n": 5015
+    },
+    {
+      "problema": "Política exterior y relaciones internacionales. Papel de España en el marco internacional",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.223104762731688,
+      "n": 13
+    },
+    {
+      "problema": "Política exterior y relaciones internacionales. Papel de España en el marco internacional",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 1.02408290314528,
+      "n": 57
+    },
+    {
+      "problema": "Política exterior y relaciones internacionales. Papel de España en el marco internacional",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.613656429553135,
+      "n": 35
+    },
+    {
+      "problema": "Política exterior y relaciones internacionales. Papel de España en el marco internacional",
+      "situacion": "En ninguna",
+      "porcentaje": 98.1391559045699,
+      "n": 4919
+    },
+    {
+      "problema": "Papel de los medios de comunicación y redes: desinformación, manipulación informativa, difusión de bulos",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.632957987748456,
+      "n": 33
+    },
+    {
+      "problema": "Papel de los medios de comunicación y redes: desinformación, manipulación informativa, difusión de bulos",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 1.35187022039196,
+      "n": 73
+    },
+    {
+      "problema": "Papel de los medios de comunicación y redes: desinformación, manipulación informativa, difusión de bulos",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.650521687155032,
+      "n": 30
+    },
+    {
+      "problema": "Papel de los medios de comunicación y redes: desinformación, manipulación informativa, difusión de bulos",
+      "situacion": "En ninguna",
+      "porcentaje": 97.3646501047045,
+      "n": 4888
+    },
+    {
+      "problema": "Preocupación sobre la salud propia, de familiares y/o allegados/as",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0,
+      "n": 0
+    },
+    {
+      "problema": "Preocupación sobre la salud propia, de familiares y/o allegados/as",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0,
+      "n": 0
+    },
+    {
+      "problema": "Preocupación sobre la salud propia, de familiares y/o allegados/as",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 3.91277443307691,
+      "n": 190
+    },
+    {
+      "problema": "Preocupación sobre la salud propia, de familiares y/o allegados/as",
+      "situacion": "En ninguna",
+      "porcentaje": 96.0872255669231,
+      "n": 4834
+    },
+    {
+      "problema": "La bajada de impuestos a los/as más ricos/as",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0,
+      "n": 0
+    },
+    {
+      "problema": "La bajada de impuestos a los/as más ricos/as",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.0067271118409344,
+      "n": 1
+    },
+    {
+      "problema": "La bajada de impuestos a los/as más ricos/as",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.00842854545978539,
+      "n": 1
+    },
+    {
+      "problema": "La bajada de impuestos a los/as más ricos/as",
+      "situacion": "En ninguna",
+      "porcentaje": 99.9848443426993,
+      "n": 5022
+    },
+    {
+      "problema": "El cambio climático",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 1.92813890015211,
+      "n": 121
+    },
+    {
+      "problema": "El cambio climático",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 2.09001494273924,
+      "n": 102
+    },
+    {
+      "problema": "El cambio climático",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 2.87450641431617,
+      "n": 194
+    },
+    {
+      "problema": "El cambio climático",
+      "situacion": "En ninguna",
+      "porcentaje": 93.1073397427925,
+      "n": 4607
+    },
+    {
+      "problema": "La ocupación de viviendas",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.113888966444423,
+      "n": 8
+    },
+    {
+      "problema": "La ocupación de viviendas",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.378270612272651,
+      "n": 15
+    },
+    {
+      "problema": "La ocupación de viviendas",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.281276157140914,
+      "n": 15
+    },
+    {
+      "problema": "La ocupación de viviendas",
+      "situacion": "En ninguna",
+      "porcentaje": 99.226564264142,
+      "n": 4986
+    },
+    {
+      "problema": "Los problemas relacionados con el agua, la sequía",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.0114550192752544,
+      "n": 1
+    },
+    {
+      "problema": "Los problemas relacionados con el agua, la sequía",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.00964689772709786,
+      "n": 1
+    },
+    {
+      "problema": "Los problemas relacionados con el agua, la sequía",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.0205535490075074,
+      "n": 2
+    },
+    {
+      "problema": "Los problemas relacionados con el agua, la sequía",
+      "situacion": "En ninguna",
+      "porcentaje": 99.9583445339901,
+      "n": 5020
+    },
+    {
+      "problema": "Uso, regulación y seguridad en tecnologías para los/as menores, adolescentes y jóvenes",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.013458801708686,
+      "n": 1
+    },
+    {
+      "problema": "Uso, regulación y seguridad en tecnologías para los/as menores, adolescentes y jóvenes",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.0769454842973451,
+      "n": 5
+    },
+    {
+      "problema": "Uso, regulación y seguridad en tecnologías para los/as menores, adolescentes y jóvenes",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.111402301704097,
+      "n": 5
+    },
+    {
+      "problema": "Uso, regulación y seguridad en tecnologías para los/as menores, adolescentes y jóvenes",
+      "situacion": "En ninguna",
+      "porcentaje": 99.7981934122899,
+      "n": 5013
+    },
+    {
+      "problema": "Los incendios",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.0144984118854828,
+      "n": 1
+    },
+    {
+      "problema": "Los incendios",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.0223877454040577,
+      "n": 1
+    },
+    {
+      "problema": "Los incendios",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.05639392573628,
+      "n": 3
+    },
+    {
+      "problema": "Los incendios",
+      "situacion": "En ninguna",
+      "porcentaje": 99.9067199169742,
+      "n": 5019
+    },
+    {
+      "problema": "La ciberseguridad: uso, delitos y regulación de nuevas tecnologías",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0,
+      "n": 0
+    },
+    {
+      "problema": "La ciberseguridad: uso, delitos y regulación de nuevas tecnologías",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0,
+      "n": 0
+    },
+    {
+      "problema": "La ciberseguridad: uso, delitos y regulación de nuevas tecnologías",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.0195877843937188,
+      "n": 2
+    },
+    {
+      "problema": "La ciberseguridad: uso, delitos y regulación de nuevas tecnologías",
+      "situacion": "En ninguna",
+      "porcentaje": 99.9804122156063,
+      "n": 5022
+    },
+    {
+      "problema": "Los problemas derivados del turismo. Masificación",
+      "situacion": "En ambas preguntas",
+      "porcentaje": 0.22784262239822,
+      "n": 12
+    },
+    {
+      "problema": "Los problemas derivados del turismo. Masificación",
+      "situacion": "Solo como problema de España",
+      "porcentaje": 0.237179408569612,
+      "n": 18
+    },
+    {
+      "problema": "Los problemas derivados del turismo. Masificación",
+      "situacion": "Solo como problema personal",
+      "porcentaje": 0.282487542845678,
+      "n": 22
+    },
+    {
+      "problema": "Los problemas derivados del turismo. Masificación",
+      "situacion": "En ninguna",
+      "porcentaje": 99.2524904261865,
+      "n": 4972
+    }
+  ]
+}
