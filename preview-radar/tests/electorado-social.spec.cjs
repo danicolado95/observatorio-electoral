@@ -71,7 +71,13 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
   const legend = page.locator('#social-legend button');
   assert.equal(await legend.count(),10);
   const suppressed = row => ['Grupo muy pequeno','Celda muy pequena'].includes(row.nivel_informacion);
+  const hidden = (g,c,row) => suppressed(row) || suppressed(pairs.get(c+'/'+g)
+    .find(other => other.grupo === row.categoria && other.categoria === row.grupo));
   await check('Edad','Ideologia');
+  const age = page.locator('[data-group="45-54"]');
+  assert.match(await age.textContent(),/Base 1063/);
+  assert.match(await age.locator('[data-category="9"]').textContent(),/Oculta/);
+  assert.equal(await age.locator('.social-partial li').count(),10);
   if (process.env.ATLAS_SCREENSHOT) {
    await page.setViewportSize({width:1280,height:900});
    await page.locator('#social-answer').screenshot({style:'header.top { position: static; }',path:process.env.ATLAS_SCREENSHOT});
@@ -82,9 +88,23 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
   assert.equal(await legend.last().getAttribute('aria-pressed'),'true');
   await legend.first().click();
   assert.equal(await page.locator('#social-legend [aria-pressed="true"]').count(),2);
+  await page.selectOption('#social-group','Sexo');
+  await page.selectOption('#social-category','Edad');
   const first = page.locator('#social-results .social-stack button').first();
   await first.focus();
-  assert.equal(await page.locator('#social-detail').textContent(),await first.getAttribute('aria-label'));
+  const tooltip = first.locator('xpath=../..').locator('.social-detail');
+  assert.ok(await tooltip.isVisible());
+  assert.ok((await first.getAttribute('aria-label')).includes(await tooltip.textContent()));
+  const relativeTop = async () => (await tooltip.boundingBox()).y - (await first.boundingBox()).y;
+  const before = await relativeTop();
+  await page.evaluate(() => window.scrollBy(0, 100));
+  assert.equal(await relativeTop(),before);
+  await page.keyboard.press('Escape');
+  assert.equal(await tooltip.isVisible(),false);
+  await first.hover();
+  assert.ok(await tooltip.isVisible());
+  await page.selectOption('#social-category','Ideologia');
+  await page.selectOption('#social-group','Edad');
   await page.selectOption('#social-mode','split');
   await legend.nth(1).click();
   await legend.nth(2).click();
@@ -97,9 +117,16 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
   }
 
   await page.selectOption('#social-order','desc');
+  await page.selectOption('#social-group','Sexo');
+  await page.selectOption('#social-category','Edad');
+  await legend.first().click();
+  await checkSplit('Sexo','Edad');
   const sorted = await page.locator('#social-results .social-stack').evaluateAll(stacks =>
    stacks.map(stack=>parseFloat(stack.firstElementChild.style.width)));
+  assert.equal(sorted.length,2);
   assert.deepEqual(sorted,[...sorted].sort((a,b)=>b-a));
+  await page.selectOption('#social-category','Ideologia');
+  await page.selectOption('#social-group','Edad');
   await page.getByText('Filtrar grupos',{exact:true}).click();
   await page.locator('#social-filters button').nth(1).click();
   assert.equal(await page.locator('[data-group="18-24"]').count(),0);
@@ -121,9 +148,15 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
    for (const [group,cells] of byGroup) {
     const card = page.locator('#social-results [data-group='+JSON.stringify(group)+']');
     const segments = card.locator('.social-stack button');
-    if (cells.some(suppressed)) {
+    if (cells.some(row => hidden(g,c,row))) {
      assert.equal(await segments.count(),0);
-     assert.match(await card.textContent(),/Distribución oculta/);
+     for (const row of cells) {
+      const item = card.locator('.social-partial [data-category='+JSON.stringify(row.categoria)+']');
+      const text = await item.locator('span').textContent();
+      const start = Math.min(95,Math.floor(row.porcentaje/5)*5);
+      assert.ok(text.startsWith(hidden(g,c,row) ? 'Oculta' : start+'–'+(start+5)+' %'));
+      assert.equal(await item.locator('[style]').count(),0);
+     }
     } else {
      assert.equal(await segments.count(),cells.length);
      for (const row of cells) {
@@ -142,7 +175,11 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
     const card = page.locator('#social-results [data-group='+JSON.stringify(group)+']');
     const widths = await card.locator('.social-stack button').evaluateAll(buttons =>
      buttons.map(button=>parseFloat(button.style.width)));
-    if (cells.some(suppressed)) assert.deepEqual(widths,[]);
+    if (cells.some(row => hidden(g,c,row))) {
+     assert.deepEqual(widths,[]);
+     assert.match(await card.textContent(),/Selección y resto no disponibles/);
+     assert.doesNotMatch(await card.textContent(),/Selección [0-9]|Resto [0-9]/);
+    }
     else {
      const selected = cells.filter(row=>keys.includes(row.categoria));
      const rest = cells.filter(row=>!keys.includes(row.categoria));
@@ -180,6 +217,15 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
    await page.locator('#nav button').filter({hasText:({encuestas:'Encuestas',mapa:'Mapa',partidos:'Partidos',electorado:'Electorado'})[id]}).click();
    assert.ok(await page.locator('#'+id).isVisible());
   }
+  const touch = await browser.newPage({viewport:{width:390,height:844},hasTouch:true,isMobile:true});
+  await touch.goto(url.replace('#electorado','#social'));
+  await touch.selectOption('#social-group','Sexo');
+  await touch.selectOption('#social-category','Edad');
+  const touchStack = touch.locator('#social-results .social-chart').first();
+  await touchStack.locator('button').first().tap();
+  assert.ok(await touchStack.locator('.social-detail').isVisible());
+  assert.ok(await touch.locator('#social').evaluate(el=>el.scrollWidth<=el.clientWidth));
+  await touch.close();
   assert.deepEqual(errors,[]);
   await page.goto(url.replace('#electorado','#social'));
   await page.reload();

@@ -33,7 +33,6 @@
     : labels[value] ?? value.replace(/-/g, '–');
   const number = new Intl.NumberFormat('es-ES', { maximumFractionDigits: 1 });
   const pct = value => value > 0 && value < 0.05 ? '<0,1 %' : number.format(value) + ' %';
-  const weightedBase = new Intl.NumberFormat('es-ES', { maximumFractionDigits: 10 });
   const count = value => number.format(value);
 
   function element(tag, text, className) {
@@ -187,11 +186,21 @@
       };
       filters.replaceChildren(reset, ...groupButtons);
 
+      const inverse = Map.groupBy(crosses.get(c + '/' + g), row => row.categoria);
       const byGroup = Map.groupBy(rows, row => row.grupo);
       const groups = dimensions[g][1].map(key => {
         const lookup = new Map((byGroup.get(key) ?? []).map(row => [row.categoria, row]));
         const cells = keys.map(categoryKey => lookup.get(categoryKey));
-        return { key, cells, complete: cells.every(row => row && estimate(row)[0] !== null) };
+        const reverse = new Map((inverse.get(key) ?? []).map(row => [row.grupo, row]));
+        const estimates = cells.map((row, i) => {
+          if (!row) return [null, 'Dato no disponible'];
+          const own = estimate(row);
+          const other = reverse.get(keys[i]);
+          if (own[0] === null) return own;
+          if (!other || estimate(other)[0] === null) return [null, 'Estimación reservada al invertir el cruce'];
+          return own;
+        });
+        return { key, cells, estimates, complete: estimates.every(([value]) => value !== null) };
       });
 
       function render() {
@@ -213,24 +222,37 @@
         }
         byId('social-selection').textContent = selected.size + ' categorías seleccionadas · '
           + shown.length + ' de ' + groups.length + ' grupos visibles.';
-        const detail = byId('social-detail');
-        detail.textContent = 'Pasa el cursor, pulsa o enfoca un segmento para ver sus datos.';
-        results.replaceChildren(...shown.map(({ key, cells, complete, totals }) => {
+        results.replaceChildren(...shown.map(({ key, cells, estimates, complete, totals }) => {
           const name = label(g, key);
           const card = element('section', '', 'social-card');
           card.dataset.group = key;
           card.append(element('h6', name));
           const base = cells.find(Boolean);
-          const baseText = base ? 'Base ' + count(base.n_grupo) + ' · Base efectiva ' + count(base.n_efectivo)
-            + ' · Suma de PESO ' + weightedBase.format(base.peso_grupo) : '';
+          const baseText = base ? 'Base ' + count(base.n_grupo) : '';
           if (base) card.append(element('p', baseText, 'social-meta'));
           if (!complete) {
-            const notes = new Set(cells.map(row => row ? estimate(row) : [null, 'Dato no disponible'])
-              .filter(([value]) => value === null).map(([, note]) => note));
-            card.append(element('p', 'Distribución oculta · ' + [...notes].join(' · '), 'social-meta'));
+            const available = estimates.some(([value]) => value !== null);
+            const message = available
+              ? 'Distribución parcial · Intervalos de 5 puntos porcentuales'
+              : 'Sin estimaciones publicables';
+            card.append(element('p', message + (split ? ' · Selección y resto no disponibles' : ''), 'social-meta'));
+            const list = element('ul', '', 'social-list social-partial');
+            estimates.forEach(([value, note], i) => {
+              const item = element('li');
+              item.dataset.category = keys[i];
+              item.classList.toggle('social-muted', hasSelection && !selected.has(keys[i]));
+              item.append(element('strong', label(c, keys[i])));
+              const start = Math.min(95, Math.floor(value / 5) * 5);
+              const range = value === null ? 'Oculta' : start + '–' + (start + 5) + ' %';
+              item.append(element('span', [range, value === 0 ? '' : note].filter(Boolean).join(' · ')));
+              list.append(item);
+            });
+            card.append(list);
             return card;
           }
 
+          const detail = element('p', '', 'social-detail');
+          detail.hidden = true;
           const stack = element('div', '', 'social-stack');
           stack.setAttribute('role', 'group');
           stack.setAttribute('aria-label', name);
@@ -247,11 +269,24 @@
             button.classList.toggle('social-muted', muted);
             const info = [name, segmentName, pct(value), baseText, note].filter(Boolean).join(' · ');
             button.setAttribute('aria-label', info);
-            button.title = info;
-            button.onfocus = button.onpointerenter = button.onclick = () => { detail.textContent = info; };
+            const show = () => {
+              detail.textContent = [segmentName, pct(value), note].filter(Boolean).join(' · ');
+              detail.hidden = false;
+            };
+            const hide = () => { detail.hidden = true; };
+            button.onfocus = button.onpointerenter = button.onclick = show;
+            button.onblur = hide;
+            button.onpointerleave = () => {
+              if (document.activeElement !== button) hide();
+            };
+            button.onkeydown = event => {
+              if (event.key === 'Escape') hide();
+            };
             stack.append(button);
           });
-          card.append(stack);
+          const chart = element('div', '', 'social-chart');
+          chart.append(stack, detail);
+          card.append(chart);
           if (totals) card.append(element('p', 'Selección ' + pct(totals[0]) + ' · Resto ' + pct(totals[1]), 'social-meta'));
           if (cells.some(row => row.nivel_informacion === 'Interpretar con cautela')) {
             card.append(element('p', 'Algunas categorías deben interpretarse con cautela.', 'social-meta'));

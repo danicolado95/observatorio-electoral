@@ -88,7 +88,11 @@
 #social-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
 #social-filters [aria-pressed="false"] { background: white; color: #172e25; border: 1px dashed #62756d; }
 #social-filters [aria-pressed="true"] { background: #172e25; color: white; }
-.social-detail { position: sticky; top: 120px; z-index: 2; min-height: 3.5em; padding: 6px 8px; background: white; font-size: 13px; overflow-wrap: anywhere; }
+.social-chart { position: relative; }
+.social-detail { position: absolute; inset: auto 0 calc(100% + 4px); z-index: 2; margin: 0; padding: 6px 8px; background: #fff; border: 1px solid #acbcb1; border-radius: 4px; font-size: 13px; overflow-wrap: anywhere; pointer-events: none; }
+.social-partial { margin-top: 6px; }
+.social-partial li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 8px; }
+.social-partial .social-muted { color: #52605a; }
 .social-stack { display: flex; height: 28px; border-radius: 4px; background: #dbe5de; }
 .social-stack button { min-width: 0; flex-shrink: 1; padding: 0; border: 0; cursor: pointer; }
 .social-stack button + button { box-shadow: inset 1px 0 white; }
