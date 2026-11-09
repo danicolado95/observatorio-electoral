@@ -57,16 +57,40 @@
     return line;
   }
 
-  const themes = {
-    Situacion_laboral: ['Trabajo', 'Edad', '¿Cómo cambia la situación laboral según la edad?'],
-    Edad: ['Edad', 'Situacion_laboral', '¿Qué edades tienen las personas en cada situación laboral?'],
-    Estudios: ['Estudios', 'Edad', '¿Cómo cambia el nivel de estudios según la edad?'],
-    Ideologia: ['Ideología', 'Edad', '¿Cómo se sitúan en la escala ideológica los distintos grupos de edad?'],
-    Ingresos: ['Ingresos', 'Estudios', '¿Cómo varían los ingresos del hogar según el nivel de estudios?'],
-    Sexo: ['Sexo', 'Situacion_laboral', '¿Cómo se distribuyen hombres y mujeres en cada situación laboral?'],
-    Municipio: ['Municipio', 'Ingresos', '¿En qué tamaño de municipio vive cada grupo de ingresos?'],
-    Clase_social: ['Clase social', 'Ingresos', '¿Cómo se identifica cada grupo de ingresos en términos de clase social?']
+  const questions = [
+    ['Situacion_laboral', 'Edad', 'Trabaja', '¿Qué porcentaje de personas trabaja en cada grupo de edad?'],
+    ['Estudios', 'Edad', 'Superiores', '¿Qué porcentaje tiene estudios superiores en cada grupo de edad?'],
+    ['Ideologia', 'Edad', '1', '¿Qué porcentaje se sitúa en el 1 (izquierda) de la escala ideológica en cada grupo de edad?'],
+    ['Ingresos', 'Estudios', 'Menos de 1100', '¿Qué porcentaje vive en hogares con menos de 1.100 € netos según su nivel de estudios?']
+  ];
+
+  const defaults = {
+    Situacion_laboral: 'Trabaja', Estudios: 'Superiores', Ideologia: '1', Ingresos: 'Menos de 1100'
   };
+  const groupNames = {
+    Edad: 'la edad', Sexo: 'el sexo', Estudios: 'el nivel de estudios',
+    Ideologia: 'la posición en la escala ideológica', Ingresos: 'los ingresos netos del hogar',
+    Situacion_laboral: 'la situación laboral', Municipio: 'el tamaño del municipio',
+    Clase_social: 'la clase social declarada'
+  };
+
+  function questionFor(c, g, value) {
+    const featured = questions.find(([dimension, groupedBy, answer]) =>
+      dimension === c && groupedBy === g && answer === value);
+    if (featured) return featured[3];
+    const answer = label(c, value);
+    const statement = {
+      Edad: value === '65+' ? 'tiene 65 años o más' : 'tiene entre ' + value.replace('-', ' y ') + ' años',
+      Sexo: 'figura como «' + answer + '» en la encuesta',
+      Estudios: 'tiene este nivel de estudios: «' + answer + '»',
+      Ideologia: 'se sitúa en el ' + answer + ' de la escala ideológica',
+      Ingresos: 'vive en hogares del tramo de ingresos «' + answer + '»',
+      Situacion_laboral: value === 'Trabaja' ? 'trabaja' : 'declara esta situación laboral: «' + answer + '»',
+      Municipio: 'vive en municipios del tramo «' + answer + ' habitantes»',
+      Clase_social: 'se identifica con la clase social «' + answer + '»'
+    };
+    return '¿Qué porcentaje ' + statement[c] + ' según ' + groupNames[g] + '?';
+  }
 
   function estimate(row) {
     if (row.nivel_informacion === 'Grupo muy pequeno') return [null, 'Base del grupo muy pequeña'];
@@ -107,6 +131,8 @@
     for (const select of [overview, group, category]) {
       select.replaceChildren(...options.map(([key, [name]]) => new Option(name, key)));
     }
+    for (const option of category.options) option.textContent = groupNames[option.value];
+    for (const option of group.options) option.textContent = groupNames[option.value];
     group.value = 'Edad';
     category.value = 'Situacion_laboral';
     byId('social-source').textContent = 'CIS ' + data.metadata.estudio + ' · ' + count(data.metadata.entrevistas)
@@ -120,28 +146,27 @@
       byId('social-distribution').replaceChildren(distribution(overview.value, rows, false));
     }
 
-    const topics = new Map();
-    function shortcut(container, text, c, g) {
-      const button = element('button', text, 'social-shortcut');
+    const heading = byId('social-question');
+    const topics = questions.map(([c, g, value, title]) => {
+      const button = element('button', title, 'social-shortcut');
       button.type = 'button';
+      button.setAttribute('aria-controls', 'social-answer');
       button.addEventListener('click', () => {
         group.value = g;
         category.value = c;
-        showCross();
+        showCross(value);
+        heading.focus();
       });
-      byId(container).append(button);
+      byId('social-topics').append(button);
       return button;
-    }
-
-    for (const [c, [name, g]] of Object.entries(themes)) {
-      topics.set(c, shortcut('social-topics', name, c, g));
-    }
-    shortcut('social-suggestions', 'Trabajo por edad', 'Situacion_laboral', 'Edad');
-    shortcut('social-suggestions', 'Ingresos por estudios', 'Ingresos', 'Estudios');
-    shortcut('social-suggestions', 'Estudios por sexo', 'Estudios', 'Sexo');
+    });
 
     function showComparison() {
       const rows = crosses.get(group.value + '/' + category.value);
+      heading.textContent = questionFor(category.value, group.value, choice.value);
+      questions.forEach(([c, g, value], index) => {
+        topics[index].setAttribute('aria-pressed', String(c === category.value && g === group.value && value === choice.value));
+      });
       const selected = rows.filter(row => row.categoria === choice.value);
       const byGroup = new Map(selected.map(row => [row.grupo, row]));
       byId('social-comparison').replaceChildren(...dimensions[group.value][1].map(key => {
@@ -160,27 +185,20 @@
         if (note) item.append(element('div', note, 'social-meta'));
         return item;
       }));
-      byId('social-reference').textContent = dimensions[category.value][0] + ' por '
-        + dimensions[group.value][0].toLocaleLowerCase('es') + ' · ' + label(category.value, choice.value)
-        + ' · Referencia del conjunto: ' + pct(selected[0].referencia_general);
+      byId('social-reference').textContent = 'En el conjunto de respuestas válidas: ' + pct(selected[0].referencia_general);
     }
 
     choice.addEventListener('change', showComparison);
 
-    function showCross() {
+    function showCross(answer) {
       for (const option of group.options) option.disabled = option.value === category.value;
       for (const option of category.options) option.disabled = option.value === group.value;
       const rows = crosses.get(group.value + '/' + category.value);
       const { n_validos_cruce, n_excluidos } = rows[0];
       const c = category.value;
-      const g = group.value;
-      for (const [key, button] of topics) button.setAttribute('aria-pressed', String(key === c));
-      const [, defaultGroup, question] = themes[c];
-      byId('social-question').textContent = g === defaultGroup ? question
-        : '¿Cómo se distribuye «' + dimensions[c][0] + '» en cada grupo de «' + dimensions[g][0] + '»?';
       const previous = choice.dataset.dimension === c ? choice.value : '';
       choice.replaceChildren(...dimensions[c][1].map(value => new Option(label(c, value), value)));
-      if (previous) choice.value = previous;
+      choice.value = answer || previous || defaults[c] || dimensions[c][1][0];
       choice.dataset.dimension = c;
       byId('social-universe').textContent = 'Fuente CIS ' + data.metadata.estudio + ' · '
         + count(n_validos_cruce) + ' entrevistas válidas · ' + count(n_excluidos)
@@ -206,8 +224,8 @@
     }
 
     overview.addEventListener('change', showOverview);
-    group.addEventListener('change', showCross);
-    category.addEventListener('change', showCross);
+    group.addEventListener('change', () => showCross());
+    category.addEventListener('change', () => showCross());
     invert.addEventListener('click', () => {
       [group.value, category.value] = [category.value, group.value];
       showCross();

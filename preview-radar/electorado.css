@@ -58,7 +58,8 @@
 .el-comparator .el-ranking button:focus-visible{outline-offset:-2px}
 @media(max-width:820px){.el-compare-controls{grid-template-columns:1fr}}
 
-#social { margin-top: 32px; }
+#social { margin-top: 32px; scroll-margin-top: 115px; }
+#social-question { scroll-margin-top: 125px; }
 #social .panel { margin-top: 16px; }
 #social h4 { margin: 0 0 8px; font-size: 20px; }
 #social h5 { margin: 0 0 4px; font-size: 16px; }
@@ -78,19 +79,20 @@
 .social-bar { display: grid; grid-template-columns: minmax(0, 1fr) minmax(108px, auto); gap: 8px; align-items: center; font-size: 12px; font-variant-numeric: tabular-nums; }
 .social-track { height: 6px; background: var(--soft); border-radius: 3px; }
 .social-track span { display: block; height: 100%; border-radius: inherit; background: var(--sage); }
-#social .social-topics { border: 0; padding: 0; margin: 16px 0 0; min-inline-size: 0; }
-#social .social-topics legend { font-weight: 700; margin-bottom: 8px; }
-#social-topics, #social-suggestions { display: flex; flex-wrap: wrap; gap: 8px; }
-#social .social-shortcut { min-height: 44px; padding: 8px 12px; border: 1px solid #62756d; border-radius: 8px; background: white; color: #214638; font: inherit; cursor: pointer; }
-#social .social-shortcut[aria-pressed="true"] { background: #214638; color: white; font-weight: 700; }
-#social :is(button, select, summary):focus-visible { outline: 3px solid #17578a; outline-offset: 3px; }
+#social-topics { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 10px; margin-top: 14px; }
+#social .social-builder { margin-top: 22px; }
+#social .social-shortcut { min-height: 64px; padding: 12px; text-align: left; border: 1px solid #62756d; border-radius: 8px; background: white; color: #214638; font: inherit; cursor: pointer; }
+#social .social-shortcut[aria-pressed="true"] { background: #214638; color: white; }
+#social :is(button, select, summary, #social-question):focus-visible { outline: 3px solid #17578a; outline-offset: 3px; }
 .social-chart { margin-top: 18px; padding: clamp(10px, 3vw, 24px); background: #f4f8f5; border-radius: 12px; color: #172e25; }
 #social .social-chart h5 { font-size: clamp(17px, 3vw, 23px); margin-bottom: 12px; }
 #social #social-choice { width: min(100%, 340px); }
 .social-axis, .social-row-heading { display: flex; justify-content: space-between; gap: 8px; }
 .social-axis { font-size: 12px; margin-top: 14px; }
-#social-comparison .social-bar { display: flex; flex-direction: column; align-items: stretch; gap: 4px; }
-#social-comparison .social-bar > span { align-self: end; font-weight: 700; }
+#social-answer { --social-value-width: 108px; }
+.social-axis { margin-right: calc(var(--social-value-width) + 8px); }
+#social-comparison .social-bar { grid-template-columns: minmax(0, 1fr) var(--social-value-width); }
+#social-comparison .social-bar > span { text-align: right; font-weight: 700; }
 #social-comparison .social-track { height: 12px; background: #d8e4dc; }
 #social-comparison .social-track span { background: #28604b; }
 .social-cell { font-size: 13px; }

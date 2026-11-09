@@ -90,42 +90,46 @@
    <h3 id="social-title">¿Cómo somos?</h3>
    <p id="social-status" role="status">Cargando el perfil social…</p>
    <div id="social-content" hidden>
-    <section class="panel" aria-labelledby="social-overview-title">
-     <h4 id="social-overview-title">Así somos</h4>
-     <p id="social-source"></p>
-     <label for="social-overview">Dimensión</label><select id="social-overview"></select>
-     <p class="social-meta" id="social-overview-base" role="status"></p>
-     <div id="social-distribution"></div>
-    </section>
     <section class="panel" aria-labelledby="social-cross-title">
      <h4 id="social-cross-title">Explora la sociedad</h4>
-     <p>Elige un tema y compara una categoría entre grupos.</p>
-     <fieldset class="social-topics"><legend>¿Qué te interesa explorar?</legend><div id="social-topics"></div></fieldset>
-     <p class="social-meta">Comparaciones sugeridas</p>
-     <div id="social-suggestions"></div>
-     <details class="el-method" id="social-advanced">
-      <summary>Exploración avanzada</summary>
-      <div class="social-controls">
-       <div><label for="social-category">Ver la distribución de</label><select id="social-category"></select></div>
-       <div><label for="social-group">Dentro de cada grupo de</label><select id="social-group"></select></div>
-       <button type="button" class="btn light" id="social-invert">Invertir comparación</button>
-      </div>
-     </details>
-     <div class="social-chart">
-      <h5 id="social-question"></h5>
-      <label for="social-choice">Categoría que quieres comparar</label><select id="social-choice"></select>
+     <p>Elige una pregunta para ver la respuesta del CIS.</p>
+     <div id="social-topics" role="group" aria-label="Preguntas para explorar"></div>
+     <div class="social-chart" id="social-answer">
+      <h5 id="social-question" tabindex="-1"></h5>
       <p class="social-meta" id="social-universe"></p>
-      <div class="social-axis" aria-hidden="true"><span>0 %</span><span>25 %</span><span>50 %</span><span>75 %</span><span>100 %</span></div>
+      <div class="social-axis" aria-hidden="true"><span>0 %</span><span>50 %</span><span>100 %</span></div>
       <ul id="social-comparison" class="social-list" aria-labelledby="social-question"></ul>
       <p class="social-meta" id="social-reference" role="status"></p>
      </div>
+     <section class="social-builder" aria-labelledby="social-builder-title">
+      <h5 id="social-builder-title">Haz tu propia pregunta</h5>
+      <div class="social-controls">
+       <div><label for="social-category">Quiero conocer…</label><select id="social-category"></select></div>
+       <div><label for="social-group">Y compararlo según…</label><select id="social-group"></select></div>
+      </div>
+     </section>
+     <details class="el-method" id="social-advanced">
+      <summary>Opciones avanzadas</summary>
+      <div class="social-controls">
+       <div><label for="social-choice">Respuesta que quieres ver</label><select id="social-choice"></select></div>
+       <button type="button" class="btn light" id="social-invert">Invertir comparación</button>
+      </div>
+     </details>
      <details class="el-method"><summary>Ver la composición completa por grupos</summary><div id="social-results"></div></details>
      <details class="el-method">
       <summary>¿Cómo se calcula?</summary>
       <p>El porcentaje divide la suma de PESO de la categoría entre la suma de PESO del grupo y multiplica por 100. Se incluyen únicamente las entrevistas con respuesta válida en ambas variables. La referencia usa esas mismas entrevistas sin separar por grupos. Al invertir el cruce cambia el grupo que sirve de denominador.</p>
+     <p>Los datos comparan grupos entrevistados en el mismo estudio. Las diferencias por edad describen esa muestra en el momento de la encuesta.</p>
      <p>Se excluyen las respuestas no válidas, incluido «no sabe» o «no contesta» cuando existen. La ideología conserva las posiciones del 1 (izquierda) al 10 (derecha). La clase social es la declarada por la persona entrevistada (CLASESUB).</p>
      <p>La base es el número de entrevistas sin ponderar. La base efectiva tiene en cuenta la dispersión de los pesos. En los cruces se ocultan las estimaciones si la base o la base efectiva del grupo es inferior a 30, o si la categoría tiene entre 1 y 9 casos. La base efectiva no recoge todo el diseño muestral. Entre las estimaciones visibles, se indica cuándo interpretar con cautela si hay menos de 30 casos en la categoría o la base efectiva es inferior a 100. Un 0 % observado indica que no hubo casos en la muestra del grupo.</p>
      <p><a href="../analisis-cis/resultados/electorado_social_3582.json">Datos del perfil social</a> · <a href="../analisis-cis/scripts/06_como_somos.R">Análisis en R</a></p>
+     </details>
+     <details class="el-method" id="social-overview-panel">
+      <summary>Ver el perfil general de la muestra</summary>
+      <p id="social-source"></p>
+      <label for="social-overview">Dimensión</label><select id="social-overview"></select>
+      <p class="social-meta" id="social-overview-base" role="status"></p>
+      <div id="social-distribution"></div>
      </details>
     </section>
    </div>
@@ -283,6 +287,6 @@ async function initAtlasGeo(){
  }catch(e){console.warn('Mapa geográfico no disponible',e);geoLoading=false;target.style.display='none';document.getElementById('tilemap').style.display='grid';status.textContent='Error de cartografía';document.getElementById('map-hint').textContent='Diagnóstico del mapa: '+e.message}
 }
 
-setupProfiles();renderMap();loadOfficialSeats();loadHistory();renderTransfer();renderAbstention();let initial=location.hash.slice(1);if(sectionData.some(([id])=>id===initial))show(initial);else show('inicio');window.addEventListener('hashchange',()=>{let id=location.hash.slice(1);if(sectionData.some(([key])=>key===id))show(id)});
+setupProfiles();renderMap();loadOfficialSeats();loadHistory();renderTransfer();renderAbstention();let initial=location.hash.slice(1);if(sectionData.some(([id])=>id===initial))show(initial);else if(initial==='social'){show('electorado');history.replaceState(null,'','#social');document.getElementById('social').scrollIntoView();}else show('inicio');window.addEventListener('hashchange',()=>{let id=location.hash.slice(1);if(sectionData.some(([key])=>key===id))show(id)});
 
 </script><script defer src="radar-portada.js?v=fa-tarjetas-20261103"></script><script defer src="electorado.js"></script><script defer src="electorado-comparador.js"></script><script defer src="electorado-social.js"></script></body></html>

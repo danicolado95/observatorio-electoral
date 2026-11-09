@@ -59,22 +59,39 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
   const url = 'http://127.0.0.1:'+server.address().port+'/preview-radar/#electorado';
   await page.goto(url);
   await page.locator('#social-content').waitFor();
+  await page.locator('#social-overview-panel summary').click();
   for(const dim of dims) {
    await page.selectOption('#social-overview',dim);
    assert.deepEqual((await page.locator('#social-distribution .social-bar > span').allTextContents()).sort(), overview.get(dim).map(r=>pct(r.porcentaje)).sort());
    assert.equal(await page.locator('#social-distribution li').count(),overview.get(dim).length);
   }
   assert.equal(await page.locator('#social-advanced').getAttribute('open'),null);
-  assert.equal(await page.locator('#social-topics button').count(),8);
-  assert.match(await page.locator('#social-question').textContent(),/situación laboral según la edad/);
-  const income = page.getByRole('button',{name:'Ingresos por estudios',exact:true});
-  await income.focus();
-  await page.keyboard.press('Enter');
-  await check('Estudios','Ingresos');
+  const cards = page.locator('#social-topics button');
+  const presets = [
+   ['Edad','Situacion_laboral','Trabaja',/trabaja en cada grupo/],
+   ['Edad','Estudios','Superiores',/estudios superiores/],
+   ['Edad','Ideologia','1',/escala ideológica/],
+   ['Estudios','Ingresos','Menos de 1100',/menos de 1.100 €/]
+  ];
+  assert.equal(await cards.count(),presets.length);
+  assert.equal(await cards.first().getAttribute('aria-pressed'),'true');
+  assert.equal(await page.locator('#social-answer').count(),1);
+  assert.match(await page.locator('#social-question').textContent(),presets[0][3]);
+  assert.equal(await page.locator('#social-comparison li').count(),6);
+  for (const [index,[g,c,answer,question]] of presets.entries()) {
+   await cards.nth(index).focus();
+   await page.keyboard.press('Enter');
+   assert.equal(await page.locator(':focus').getAttribute('id'),'social-question');
+   assert.equal(await cards.nth(index).getAttribute('aria-pressed'),'true');
+   assert.equal(await page.locator('#social-topics [aria-pressed=true]').count(),1);
+   assert.match(await page.locator('#social-question').textContent(),question);
+   assert.equal(await page.inputValue('#social-choice'),answer);
+   await check(g,c,false);
+  }
   await page.locator('#social-advanced summary').focus();
   await page.keyboard.press('Enter');
   assert.equal(await page.locator('#social-advanced').getAttribute('open'),'');
-  async function check(g,c) {
+  async function check(g,c,changeAnswer=true) {
    assert.equal(await page.inputValue('#social-group'),g);
    assert.equal(await page.inputValue('#social-category'),c);
    const rows=pairs.get(g+'/'+c);
@@ -85,7 +102,10 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
    const expected=rows.map(r=>result(r)+' · Referencia '+pct(r.referencia_general));
    assert.deepEqual(shown.map(text=>text.split(' · ').slice(0,2).join(' · ')).sort(),expected.sort());
    const choices=await page.locator('#social-choice option').count();
-   await page.selectOption('#social-choice',{index:choices-1});
+   if (changeAnswer) {
+    await page.selectOption('#social-choice',{index:choices-1});
+    assert.equal(await page.locator('#social-topics [aria-pressed=true]').count(),0);
+   }
    const selected=await page.inputValue('#social-choice');
    const cells=rows.filter(r=>r.categoria===selected);
    const bars=await page.locator('#social-comparison .social-bar > span').allTextContents();
@@ -121,6 +141,9 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
    assert.ok(await page.locator('#'+id).isVisible());
   }
   assert.deepEqual(errors,[]);
+  await page.goto(url.replace('#electorado','#social'));
+  await page.reload();
+  await page.locator('#social-answer').waitFor();
   const failed=await browser.newPage();
   await failed.route('**/electorado_social_3582.json',r=>r.fulfill({status:503}));
   await failed.goto(url);
