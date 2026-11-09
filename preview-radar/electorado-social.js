@@ -123,6 +123,13 @@
     const legend = byId('social-legend');
     const results = byId('social-results');
 
+    const ideologyColors = ['#721c31', '#9e3247', '#c25261', '#dc8189', '#747979',
+      '#81afd2', '#5f96c3', '#4279ac', '#285984', '#15395f'];
+    const mode = byId('social-mode');
+    const order = byId('social-order');
+    const selections = new Map(options.map(([key]) => [key, new Set()]));
+    const visibleGroups = new Map(options.map(([key, [, values]]) => [key, new Set(values)]));
+
     function showCross() {
       const c = category.value;
       const g = group.value;
@@ -136,65 +143,128 @@
         + ' excluidas · Porcentajes ponderados con ' + data.metadata.ponderacion + '.';
 
       const keys = dimensions[c][1];
-      const buttons = keys.map((key, index) => {
+      const selected = selections.get(c);
+      const visible = visibleGroups.get(g);
+      const palette = c === 'Ideologia' ? ideologyColors : colors;
+      byId('social-palette').textContent = c === 'Ideologia'
+        ? 'Escala ideológica: rojo (1–4), gris (5) y azul (6–10). Los tonos se oscurecen hacia los extremos.'
+        : '';
+
+      legend.replaceChildren(...keys.map((key, index) => {
         const button = element('button', label(c, key));
         button.type = 'button';
-        button.style.setProperty('--category-color', colors[index]);
-        button.setAttribute('aria-pressed', 'false');
-        button.addEventListener('click', () => {
-          const selected = button.getAttribute('aria-pressed') !== 'true';
-          buttons.forEach((other, i) => other.setAttribute('aria-pressed', String(selected && i === index)));
-          results.querySelectorAll('[data-category]').forEach(node => {
-            node.classList.toggle('social-highlight', selected && node.dataset.category === key);
-            node.classList.toggle('social-muted', selected && node.dataset.category !== key);
-          });
-        });
+        button.dataset.category = key;
+        button.style.setProperty('--category-color', palette[index]);
+        button.setAttribute('aria-pressed', String(selected.has(key)));
+        button.onclick = () => {
+          if (selected.has(key)) selected.delete(key);
+          else selected.add(key);
+          button.setAttribute('aria-pressed', String(selected.has(key)));
+          render();
+        };
+        return button;
+      }));
+
+      const filters = byId('social-filters');
+      const reset = element('button', 'Ver todos', 'btn light');
+      reset.type = 'button';
+      const groupButtons = dimensions[g][1].map(key => {
+        const button = element('button', label(g, key), 'btn light');
+        button.type = 'button';
+        button.setAttribute('aria-pressed', String(visible.has(key)));
+        button.onclick = () => {
+          if (visible.has(key)) visible.delete(key);
+          else visible.add(key);
+          button.setAttribute('aria-pressed', String(visible.has(key)));
+          render();
+        };
         return button;
       });
-      legend.replaceChildren(...buttons);
+      reset.onclick = () => {
+        dimensions[g][1].forEach(key => visible.add(key));
+        groupButtons.forEach(button => button.setAttribute('aria-pressed', 'true'));
+        render();
+      };
+      filters.replaceChildren(reset, ...groupButtons);
 
       const byGroup = Map.groupBy(rows, row => row.grupo);
-      results.replaceChildren(...dimensions[g][1].map(groupKey => {
-        const cells = byGroup.get(groupKey) ?? [];
-        const card = element('section', '', 'social-card');
-        card.dataset.group = groupKey;
-        card.append(element('h6', label(g, groupKey)));
-        if (cells.length) {
-          const { n_grupo, n_efectivo, peso_grupo } = cells[0];
-          card.append(element('p', 'Base ' + count(n_grupo) + ' · Base efectiva ' + count(n_efectivo)
-            + ' · Suma de PESO ' + weightedBase.format(peso_grupo), 'social-meta'));
-        } else {
-          card.append(element('p', 'Grupo sin datos disponibles', 'social-meta'));
-        }
-        const lookup = new Map(cells.map(row => [row.categoria, row]));
-        const estimates = keys.map(key => lookup.has(key) ? estimate(lookup.get(key)) : [null, 'Dato no disponible']);
-        const complete = estimates.every(([value]) => value !== null)
-          && Math.abs(estimates.reduce((total, [value]) => total + value, 0) - 100) < 1e-8;
-        const stack = element('div', '', 'social-stack');
-        stack.setAttribute('aria-hidden', 'true');
-        const list = element('ul', '', 'social-values');
-        keys.forEach((key, index) => {
-          const [value, note] = estimates[index];
-          const item = element('li');
-          item.dataset.category = key;
-          item.style.setProperty('--category-color', colors[index]);
-          item.append(element('strong', label(c, key)),
-            element('span', value === null ? 'Estimación oculta' : pct(value), 'social-cell'));
-          if (note) item.append(element('span', note, 'social-meta'));
-          list.append(item);
-          if (complete && value > 0) {
-            const segment = element('span');
-            segment.dataset.category = key;
-            segment.style.backgroundColor = colors[index];
-            segment.style.width = value + '%';
-            stack.append(segment);
-          }
+      const groups = dimensions[g][1].map(key => {
+        const lookup = new Map((byGroup.get(key) ?? []).map(row => [row.categoria, row]));
+        const cells = keys.map(categoryKey => lookup.get(categoryKey));
+        return { key, cells, complete: cells.every(row => row && estimate(row)[0] !== null) };
+      });
+
+      function render() {
+        const hasSelection = selected.size > 0;
+        const split = hasSelection && mode.value === 'split';
+        mode.options[1].disabled = !hasSelection;
+        order.disabled = !hasSelection;
+        const shown = groups.filter(({ key }) => visible.has(key)).map(entry => {
+          if (!entry.complete || !hasSelection) return entry;
+          const weights = [0, 0];
+          for (const row of entry.cells) weights[selected.has(row.categoria) ? 0 : 1] += row.peso_celda;
+          return { ...entry, totals: weights.map(weight => 100 * weight / entry.cells[0].peso_grupo) };
         });
-        if (complete) card.append(stack);
-        card.append(list);
-        return card;
-      }));
+        if (hasSelection && order.value !== 'natural') {
+          shown.sort((a, b) => {
+            if (!a.totals || !b.totals) return Number(!a.totals) - Number(!b.totals);
+            return (a.totals[0] - b.totals[0]) * (order.value === 'asc' ? 1 : -1);
+          });
+        }
+        byId('social-selection').textContent = selected.size + ' categorías seleccionadas · '
+          + shown.length + ' de ' + groups.length + ' grupos visibles.';
+        const detail = byId('social-detail');
+        detail.textContent = 'Pasa el cursor, pulsa o enfoca un segmento para ver sus datos.';
+        results.replaceChildren(...shown.map(({ key, cells, complete, totals }) => {
+          const name = label(g, key);
+          const card = element('section', '', 'social-card');
+          card.dataset.group = key;
+          card.append(element('h6', name));
+          const base = cells.find(Boolean);
+          const baseText = base ? 'Base ' + count(base.n_grupo) + ' · Base efectiva ' + count(base.n_efectivo)
+            + ' · Suma de PESO ' + weightedBase.format(base.peso_grupo) : '';
+          if (base) card.append(element('p', baseText, 'social-meta'));
+          if (!complete) {
+            const notes = new Set(cells.map(row => row ? estimate(row) : [null, 'Dato no disponible'])
+              .filter(([value]) => value === null).map(([, note]) => note));
+            card.append(element('p', 'Distribución oculta · ' + [...notes].join(' · '), 'social-meta'));
+            return card;
+          }
+
+          const stack = element('div', '', 'social-stack');
+          stack.setAttribute('role', 'group');
+          stack.setAttribute('aria-label', name);
+          const segments = split
+            ? totals.map((value, i) => [i === 0 ? 'Selección' : 'Resto', value, ['#245578', '#56605c'][i], '', false, i === 0 ? 'selected' : 'rest'])
+            : cells.map((row, i) => [label(c, row.categoria), row.porcentaje, palette[i],
+              estimate(row)[1], hasSelection && !selected.has(row.categoria), row.categoria]);
+          segments.forEach(([segmentName, value, color, note, muted, segmentKey]) => {
+            const button = element('button', '', value === 0 ? 'social-zero' : '');
+            button.type = 'button';
+            button.dataset.category = segmentKey;
+            button.style.width = value + '%';
+            button.style.backgroundColor = color;
+            button.classList.toggle('social-muted', muted);
+            const info = [name, segmentName, pct(value), baseText, note].filter(Boolean).join(' · ');
+            button.setAttribute('aria-label', info);
+            button.title = info;
+            button.onfocus = button.onpointerenter = button.onclick = () => { detail.textContent = info; };
+            stack.append(button);
+          });
+          card.append(stack);
+          if (totals) card.append(element('p', 'Selección ' + pct(totals[0]) + ' · Resto ' + pct(totals[1]), 'social-meta'));
+          if (cells.some(row => row.nivel_informacion === 'Interpretar con cautela')) {
+            card.append(element('p', 'Algunas categorías deben interpretarse con cautela.', 'social-meta'));
+          }
+          return card;
+        }));
+        if (!shown.length) results.append(element('p', 'Usa «Ver todos» para restaurar los grupos.'));
+      }
+
+      mode.onchange = order.onchange = render;
+      render();
     }
+
 
     overview.addEventListener('change', showOverview);
     group.addEventListener('change', showCross);

@@ -101,13 +101,25 @@
      <div class="social-chart" id="social-answer">
       <h5 id="social-question" aria-live="polite"></h5>
       <p class="social-meta" id="social-universe"></p>
-      <p class="social-meta">Cada barra representa el 100 % de las respuestas válidas de su grupo. Si falta alguna estimación, se muestran las categorías por separado. Usa la leyenda para destacar una categoría.</p>
-      <div id="social-legend" role="group" aria-label="Destacar una categoría"></div>
+      <p class="social-meta">Cada barra usa la base válida de su grupo. Pulsa las categorías de la leyenda para agruparlas. Los grupos con estimaciones ocultas se indican sin barra.</p>
+      <p class="social-meta" id="social-palette"></p>
+      <div id="social-legend" role="group" aria-label="Seleccionar categorías"></div>
+      <div class="social-controls">
+       <div><label for="social-mode">Vista</label><select id="social-mode"><option value="full">Distribución completa</option><option value="split">Selección vs. resto</option></select></div>
+       <div><label for="social-order">Orden de grupos</label><select id="social-order"><option value="natural">Orden natural</option><option value="desc">Mayor porcentaje seleccionado</option><option value="asc">Menor porcentaje seleccionado</option></select></div>
+      </div>
+      <details class="el-method">
+       <summary>Filtrar grupos</summary>
+       <div id="social-filters" role="group" aria-label="Grupos visibles"></div>
+      </details>
+      <p class="social-meta" id="social-selection" role="status"></p>
+      <p class="social-detail" id="social-detail" aria-live="polite"></p>
       <div id="social-results"></div>
      </div>
      <details class="el-method">
       <summary>¿Cómo se calcula?</summary>
       <p>El porcentaje divide la suma de PESO de la categoría entre la suma de PESO del grupo y multiplica por 100. Se incluyen únicamente las entrevistas con respuesta válida en ambas variables. Al invertir el cruce cambia el grupo que sirve de denominador.</p>
+      <p>«Selección» y «Resto» suman por separado el PESO de las categorías válidas y usan el mismo denominador. El redondeo se aplica al mostrar el resultado. Si se oculta alguna categoría, se omiten la barra y ambos agregados del grupo.</p>
      <p>Los datos comparan grupos entrevistados en el mismo estudio. Las diferencias por edad describen esa muestra en el momento de la encuesta.</p>
      <p>Se excluyen las respuestas no válidas, incluido «no sabe» o «no contesta» cuando existen. La ideología conserva las posiciones del 1 (izquierda) al 10 (derecha). La clase social es la declarada por la persona entrevistada (CLASESUB).</p>
      <p>La base es el número de entrevistas sin ponderar. La base efectiva tiene en cuenta la dispersión de los pesos. En los cruces se ocultan las estimaciones si la base o la base efectiva del grupo es inferior a 30, o si la categoría tiene entre 1 y 9 casos. La base efectiva no recoge todo el diseño muestral. Entre las estimaciones visibles, se indica cuándo interpretar con cautela si hay menos de 30 casos en la categoría o la base efectiva es inferior a 100. Un 0 % observado indica que no hubo casos en la muestra del grupo.</p>
