@@ -1,0 +1,2176 @@
+{
+  "estudio": "CIS 3582",
+  "fuente": "Microdatos del CIS",
+  "ponderacion": "PESO",
+  "variable_origen": "RECUERDO",
+  "variable_destino": "INTENCIONGR",
+  "partidos_destacados": ["PSOE", "PP", "VOX", "Sumar", "Podemos", "Se Acabó la Fiesta"],
+  "entrevistas": 5024,
+  "suma_pesos": 5023.99853,
+  "definiciones": {
+    "pct_destino": "Porcentaje dentro de cada origen",
+    "pct_origen": "Porcentaje dentro de cada destino"
+  },
+  "celdas": [
+    {
+      "origen": "BNG",
+      "destino": "BNG",
+      "n": 20,
+      "peso_total": 20.63486,
+      "peso_cuadrado": 34.9790754786,
+      "pct_destino": 71.6458590773506,
+      "pct_origen": 62.2272094126417
+    },
+    {
+      "origen": "BNG",
+      "destino": "Coalición de izquierdas",
+      "n": 1,
+      "peso_total": 0.48576,
+      "peso_cuadrado": 0.2359627776,
+      "pct_destino": 1.68659697741656,
+      "pct_origen": 1.17340447452249
+    },
+    {
+      "origen": "BNG",
+      "destino": "En blanco",
+      "n": 1,
+      "peso_total": 0.58462,
+      "peso_cuadrado": 0.3417805444,
+      "pct_destino": 2.02984668341829,
+      "pct_origen": 0.36093275514452
+    },
+    {
+      "origen": "BNG",
+      "destino": "No sabe todavía",
+      "n": 4,
+      "peso_total": 2.3411,
+      "peso_cuadrado": 1.3747041958,
+      "pct_destino": 8.12848358001874,
+      "pct_origen": 0.268849658676002
+    },
+    {
+      "origen": "BNG",
+      "destino": "Otro partido",
+      "n": 1,
+      "peso_total": 0.50459,
+      "peso_cuadrado": 0.2546110681,
+      "pct_destino": 1.751976220427,
+      "pct_origen": 0.267379324937018
+    },
+    {
+      "origen": "BNG",
+      "destino": "PP",
+      "n": 2,
+      "peso_total": 1.24221,
+      "peso_cuadrado": 0.8081793801,
+      "pct_destino": 4.3130509537974,
+      "pct_origen": 0.1683675236923
+    },
+    {
+      "origen": "BNG",
+      "destino": "PSOE",
+      "n": 1,
+      "peso_total": 0.50459,
+      "peso_cuadrado": 0.2546110681,
+      "pct_destino": 1.751976220427,
+      "pct_origen": 0.0397018840845038
+    },
+    {
+      "origen": "BNG",
+      "destino": "Podemos",
+      "n": 1,
+      "peso_total": 2.50346,
+      "peso_cuadrado": 6.2673119716,
+      "pct_destino": 8.69221028714439,
+      "pct_origen": 2.29935752894334
+    },
+    {
+      "origen": "CCa",
+      "destino": "CCa",
+      "n": 7,
+      "peso_total": 4.65103,
+      "peso_cuadrado": 3.1927087187,
+      "pct_destino": 30.0000258007588,
+      "pct_origen": 81.4387121174979
+    },
+    {
+      "origen": "CCa",
+      "destino": "N.C.",
+      "n": 1,
+      "peso_total": 1.37082,
+      "peso_cuadrado": 1.8791474724,
+      "pct_destino": 8.8420490446624,
+      "pct_origen": 1.05426882663007
+    },
+    {
+      "origen": "CCa",
+      "destino": "No sabe todavía",
+      "n": 2,
+      "peso_total": 1.68904,
+      "peso_cuadrado": 1.732096228,
+      "pct_destino": 10.8946284110216,
+      "pct_origen": 0.193967719230325
+    },
+    {
+      "origen": "CCa",
+      "destino": "Otro partido",
+      "n": 1,
+      "peso_total": 0.80142,
+      "peso_cuadrado": 0.6422740164,
+      "pct_destino": 5.16931102943738,
+      "pct_origen": 0.424667826534464
+    },
+    {
+      "origen": "CCa",
+      "destino": "PP",
+      "n": 3,
+      "peso_total": 2.03748,
+      "peso_cuadrado": 1.4473897586,
+      "pct_destino": 13.1421325101171,
+      "pct_origen": 0.276157382546097
+    },
+    {
+      "origen": "CCa",
+      "destino": "PSOE",
+      "n": 2,
+      "peso_total": 2.56879,
+      "peso_cuadrado": 3.3055515833,
+      "pct_destino": 16.5691827996661,
+      "pct_origen": 0.202116179110629
+    },
+    {
+      "origen": "CCa",
+      "destino": "Se Acabó la Fiesta",
+      "n": 2,
+      "peso_total": 2.00988,
+      "peso_cuadrado": 2.1890078864,
+      "pct_destino": 12.9641072743949,
+      "pct_origen": 3.597345966678
+    },
+    {
+      "origen": "CCa",
+      "destino": "VOX",
+      "n": 1,
+      "peso_total": 0.37496,
+      "peso_cuadrado": 0.1405950016,
+      "pct_destino": 2.41856312994165,
+      "pct_origen": 0.0642807363442694
+    },
+    {
+      "origen": "EAJ-PNV",
+      "destino": "EAJ-PNV",
+      "n": 19,
+      "peso_total": 14.87808,
+      "peso_cuadrado": 25.2203451046,
+      "pct_destino": 50.7947953197208,
+      "pct_origen": 76.8101501605064
+    },
+    {
+      "origen": "EAJ-PNV",
+      "destino": "EH Bildu",
+      "n": 4,
+      "peso_total": 5.00747,
+      "peso_cuadrado": 12.5904918501,
+      "pct_destino": 17.0958493111774,
+      "pct_origen": 10.5680751679031
+    },
+    {
+      "origen": "EAJ-PNV",
+      "destino": "No sabe todavía",
+      "n": 5,
+      "peso_total": 3.20457,
+      "peso_cuadrado": 2.1609357039,
+      "pct_destino": 10.9406238733572,
+      "pct_origen": 0.368009717954533
+    },
+    {
+      "origen": "EAJ-PNV",
+      "destino": "No votaría",
+      "n": 2,
+      "peso_total": 1.01496,
+      "peso_cuadrado": 0.5157668,
+      "pct_destino": 3.46514371865884,
+      "pct_origen": 0.392658353458673
+    },
+    {
+      "origen": "EAJ-PNV",
+      "destino": "Otro partido",
+      "n": 1,
+      "peso_total": 0.49166,
+      "peso_cuadrado": 0.2417295556,
+      "pct_destino": 1.67856128390854,
+      "pct_origen": 0.260527792660446
+    },
+    {
+      "origen": "EAJ-PNV",
+      "destino": "PP",
+      "n": 3,
+      "peso_total": 1.50369,
+      "peso_cuadrado": 0.7581653273,
+      "pct_destino": 5.13370177968601,
+      "pct_origen": 0.203808181950615
+    },
+    {
+      "origen": "EAJ-PNV",
+      "destino": "PSOE",
+      "n": 6,
+      "peso_total": 3.19013,
+      "peso_cuadrado": 1.7054086663,
+      "pct_destino": 10.8913247134913,
+      "pct_origen": 0.251004125080755
+    },
+    {
+      "origen": "EH Bildu",
+      "destino": "Coalición de izquierdas",
+      "n": 1,
+      "peso_total": 0.50372,
+      "peso_cuadrado": 0.2537338384,
+      "pct_destino": 1.04498419205205,
+      "pct_origen": 1.2167887473371
+    },
+    {
+      "origen": "EH Bildu",
+      "destino": "EH Bildu",
+      "n": 47,
+      "peso_total": 34.62737,
+      "peso_cuadrado": 33.7226624115,
+      "pct_destino": 71.8356512791576,
+      "pct_origen": 73.0797486608591
+    },
+    {
+      "origen": "EH Bildu",
+      "destino": "No sabe todavía",
+      "n": 4,
+      "peso_total": 4.93459,
+      "peso_cuadrado": 9.2838658647,
+      "pct_destino": 10.2369740019418,
+      "pct_origen": 0.566683540731286
+    },
+    {
+      "origen": "EH Bildu",
+      "destino": "Otro partido",
+      "n": 4,
+      "peso_total": 3.91544,
+      "peso_cuadrado": 6.3095399794,
+      "pct_destino": 8.1227128264279,
+      "pct_origen": 2.07476902838225
+    },
+    {
+      "origen": "EH Bildu",
+      "destino": "PSOE",
+      "n": 2,
+      "peso_total": 0.85284,
+      "peso_cuadrado": 0.3823620776,
+      "pct_destino": 1.76924545054726,
+      "pct_origen": 0.0671027067968612
+    },
+    {
+      "origen": "EH Bildu",
+      "destino": "Podemos",
+      "n": 3,
+      "peso_total": 1.98065,
+      "peso_cuadrado": 1.5680205341,
+      "pct_destino": 4.10892547444589,
+      "pct_origen": 1.81917126285287
+    },
+    {
+      "origen": "EH Bildu",
+      "destino": "Sumar",
+      "n": 1,
+      "peso_total": 0.81999,
+      "peso_cuadrado": 0.6723836001,
+      "pct_destino": 1.70109701350107,
+      "pct_origen": 0.359816407143724
+    },
+    {
+      "origen": "EH Bildu",
+      "destino": "Voto nulo",
+      "n": 1,
+      "peso_total": 0.569,
+      "peso_cuadrado": 0.323761,
+      "pct_destino": 1.18040976192649,
+      "pct_origen": 0.600071650031464
+    },
+    {
+      "origen": "ERC",
+      "destino": "ERC",
+      "n": 68,
+      "peso_total": 59.0044,
+      "peso_cuadrado": 81.7938470418,
+      "pct_destino": 58.9858312603192,
+      "pct_origen": 64.3298711906746
+    },
+    {
+      "origen": "ERC",
+      "destino": "En blanco",
+      "n": 2,
+      "peso_total": 0.94149,
+      "peso_cuadrado": 0.4538874681,
+      "pct_destino": 0.941193712219393,
+      "pct_origen": 0.581257192092324
+    },
+    {
+      "origen": "ERC",
+      "destino": "Junts",
+      "n": 2,
+      "peso_total": 2.58014,
+      "peso_cuadrado": 4.44454933,
+      "pct_destino": 2.57932802753693,
+      "pct_origen": 6.83604658433475
+    },
+    {
+      "origen": "ERC",
+      "destino": "No sabe todavía",
+      "n": 21,
+      "peso_total": 14.40407,
+      "peso_cuadrado": 18.0341928683,
+      "pct_destino": 14.3995370257443,
+      "pct_origen": 1.65414946095649
+    },
+    {
+      "origen": "ERC",
+      "destino": "Otro partido",
+      "n": 11,
+      "peso_total": 8.35755,
+      "peso_cuadrado": 8.4412593977,
+      "pct_destino": 8.35491987122454,
+      "pct_origen": 4.42861744609956
+    },
+    {
+      "origen": "ERC",
+      "destino": "PSOE",
+      "n": 10,
+      "peso_total": 13.61772,
+      "peso_cuadrado": 28.4117089572,
+      "pct_destino": 13.6134344908223,
+      "pct_origen": 1.07146225833891
+    },
+    {
+      "origen": "ERC",
+      "destino": "VOX",
+      "n": 2,
+      "peso_total": 1.12611,
+      "peso_cuadrado": 0.6413666445,
+      "pct_destino": 1.1257556121333,
+      "pct_origen": 0.193053072340103
+    },
+    {
+      "origen": "En blanco",
+      "destino": "ERC",
+      "n": 1,
+      "peso_total": 0.87849,
+      "peso_cuadrado": 0.7717446801,
+      "pct_destino": 0.988329923921918,
+      "pct_origen": 0.957778547740435
+    },
+    {
+      "origen": "En blanco",
+      "destino": "En blanco",
+      "n": 33,
+      "peso_total": 31.67638,
+      "peso_cuadrado": 47.7225057752,
+      "pct_destino": 35.6369614173431,
+      "pct_origen": 19.556366710692
+    },
+    {
+      "origen": "En blanco",
+      "destino": "Junts",
+      "n": 1,
+      "peso_total": 0.72498,
+      "peso_cuadrado": 0.5255960004,
+      "pct_destino": 0.815626163354064,
+      "pct_origen": 1.92082485939174
+    },
+    {
+      "origen": "En blanco",
+      "destino": "N.C.",
+      "n": 2,
+      "peso_total": 0.73901,
+      "peso_cuadrado": 0.2800357913,
+      "pct_destino": 0.831410371293397,
+      "pct_origen": 0.568357045832338
+    },
+    {
+      "origen": "En blanco",
+      "destino": "No sabe todavía",
+      "n": 24,
+      "peso_total": 19.68991,
+      "peso_cuadrado": 27.1673417035,
+      "pct_destino": 22.1517914288488,
+      "pct_origen": 2.26117021180693
+    },
+    {
+      "origen": "En blanco",
+      "destino": "No votaría",
+      "n": 8,
+      "peso_total": 9.25996,
+      "peso_cuadrado": 19.9239715676,
+      "pct_destino": 10.4177572451821,
+      "pct_origen": 3.58240782562187
+    },
+    {
+      "origen": "En blanco",
+      "destino": "Otro partido",
+      "n": 5,
+      "peso_total": 3.19787,
+      "peso_cuadrado": 2.1156284515,
+      "pct_destino": 3.59770812850708,
+      "pct_origen": 1.69453283227242
+    },
+    {
+      "origen": "En blanco",
+      "destino": "PP",
+      "n": 5,
+      "peso_total": 3.32635,
+      "peso_cuadrado": 2.3300838313,
+      "pct_destino": 3.74225232209549,
+      "pct_origen": 0.450849141798795
+    },
+    {
+      "origen": "En blanco",
+      "destino": "PSOE",
+      "n": 6,
+      "peso_total": 13.8021,
+      "peso_cuadrado": 63.2431955546,
+      "pct_destino": 15.5278130006747,
+      "pct_origen": 1.08596954819305
+    },
+    {
+      "origen": "En blanco",
+      "destino": "VOX",
+      "n": 1,
+      "peso_total": 0.84642,
+      "peso_cuadrado": 0.7164268164,
+      "pct_destino": 0.952250127156814,
+      "pct_origen": 0.145104813464147
+    },
+    {
+      "origen": "En blanco",
+      "destino": "Voto nulo",
+      "n": 2,
+      "peso_total": 4.74484,
+      "peso_cuadrado": 16.4959672936,
+      "pct_destino": 5.33809987162252,
+      "pct_origen": 5.00394370463145
+    },
+    {
+      "origen": "Junts",
+      "destino": "ERC",
+      "n": 2,
+      "peso_total": 1.06719,
+      "peso_cuadrado": 0.5831539605,
+      "pct_destino": 1.73763147148415,
+      "pct_origen": 1.16350975920399
+    },
+    {
+      "origen": "Junts",
+      "destino": "En blanco",
+      "n": 3,
+      "peso_total": 1.74679,
+      "peso_cuadrado": 1.0379008301,
+      "pct_destino": 2.84417702384186,
+      "pct_origen": 1.07843338811347
+    },
+    {
+      "origen": "Junts",
+      "destino": "Junts",
+      "n": 23,
+      "peso_total": 23.18996,
+      "peso_cuadrado": 34.0876556502,
+      "pct_destino": 37.758603733598,
+      "pct_origen": 61.4414903256643
+    },
+    {
+      "origen": "Junts",
+      "destino": "No sabe todavía",
+      "n": 17,
+      "peso_total": 19.12858,
+      "peso_cuadrado": 83.1092346008,
+      "pct_destino": 31.1457403206572,
+      "pct_origen": 2.19670761776797
+    },
+    {
+      "origen": "Junts",
+      "destino": "No votaría",
+      "n": 1,
+      "peso_total": 0.75749,
+      "peso_cuadrado": 0.5737911001,
+      "pct_destino": 1.23336843798623,
+      "pct_origen": 0.293050737133887
+    },
+    {
+      "origen": "Junts",
+      "destino": "Otro partido",
+      "n": 1,
+      "peso_total": 0.63367,
+      "peso_cuadrado": 0.4015376689,
+      "pct_destino": 1.0317609184263,
+      "pct_origen": 0.335778070974138
+    },
+    {
+      "origen": "Junts",
+      "destino": "PP",
+      "n": 1,
+      "peso_total": 0.54384,
+      "peso_cuadrado": 0.2957619456,
+      "pct_destino": 0.885496958790785,
+      "pct_origen": 0.0737113644913664
+    },
+    {
+      "origen": "Junts",
+      "destino": "PSOE",
+      "n": 9,
+      "peso_total": 8.656,
+      "peso_cuadrado": 13.1485621974,
+      "pct_destino": 14.0939645397415,
+      "pct_origen": 0.681066823828187
+    },
+    {
+      "origen": "Junts",
+      "destino": "Podemos",
+      "n": 1,
+      "peso_total": 0.73218,
+      "peso_cuadrado": 0.5360875524,
+      "pct_destino": 1.19215792013724,
+      "pct_origen": 0.672486716600919
+    },
+    {
+      "origen": "Junts",
+      "destino": "Se Acabó la Fiesta",
+      "n": 2,
+      "peso_total": 2.04153,
+      "peso_cuadrado": 2.5462500345,
+      "pct_destino": 3.32408172675815,
+      "pct_origen": 3.65399412470005
+    },
+    {
+      "origen": "Junts",
+      "destino": "VOX",
+      "n": 1,
+      "peso_total": 2.41162,
+      "peso_cuadrado": 5.8159110244,
+      "pct_destino": 3.92667360944218,
+      "pct_origen": 0.413432657837014
+    },
+    {
+      "origen": "Junts",
+      "destino": "Voto nulo",
+      "n": 1,
+      "peso_total": 0.50751,
+      "peso_cuadrado": 0.2575664001,
+      "pct_destino": 0.826343339136347,
+      "pct_origen": 0.535223836744233
+    },
+    {
+      "origen": "N.C.",
+      "destino": "Adelante Andalucía",
+      "n": 2,
+      "peso_total": 3.63566,
+      "peso_cuadrado": 8.2982073386,
+      "pct_destino": 1.38707889195759,
+      "pct_origen": 16.6773317993891
+    },
+    {
+      "origen": "N.C.",
+      "destino": "ERC",
+      "n": 1,
+      "peso_total": 0.61638,
+      "peso_cuadrado": 0.3799243044,
+      "pct_destino": 0.235161617814872,
+      "pct_origen": 0.672011680561246
+    },
+    {
+      "origen": "N.C.",
+      "destino": "En blanco",
+      "n": 12,
+      "peso_total": 19.66244,
+      "peso_cuadrado": 80.4100832532,
+      "pct_destino": 7.50162432361181,
+      "pct_origen": 12.1391992098522
+    },
+    {
+      "origen": "N.C.",
+      "destino": "N.C.",
+      "n": 69,
+      "peso_total": 80.46364,
+      "peso_cuadrado": 246.8446219702,
+      "pct_destino": 30.698529734374,
+      "pct_origen": 61.8828929612816
+    },
+    {
+      "origen": "N.C.",
+      "destino": "No sabe todavía",
+      "n": 89,
+      "peso_total": 81.40677,
+      "peso_cuadrado": 175.1170403037,
+      "pct_destino": 31.0583531819384,
+      "pct_origen": 9.3486746949792
+    },
+    {
+      "origen": "N.C.",
+      "destino": "No votaría",
+      "n": 8,
+      "peso_total": 10.67284,
+      "peso_cuadrado": 21.249714427,
+      "pct_destino": 4.07190746143495,
+      "pct_origen": 4.12900979460064
+    },
+    {
+      "origen": "N.C.",
+      "destino": "Otro partido",
+      "n": 12,
+      "peso_total": 17.53863,
+      "peso_cuadrado": 67.2976050343,
+      "pct_destino": 6.69134722907369,
+      "pct_origen": 9.29361867995825
+    },
+    {
+      "origen": "N.C.",
+      "destino": "PP",
+      "n": 17,
+      "peso_total": 14.98333,
+      "peso_cuadrado": 19.3584733085,
+      "pct_destino": 5.7164478455727,
+      "pct_origen": 2.03082101155565
+    },
+    {
+      "origen": "N.C.",
+      "destino": "PSOE",
+      "n": 6,
+      "peso_total": 10.56215,
+      "peso_cuadrado": 22.3052847887,
+      "pct_destino": 4.02967695513052,
+      "pct_origen": 0.831045512164612
+    },
+    {
+      "origen": "N.C.",
+      "destino": "Podemos",
+      "n": 2,
+      "peso_total": 1.02876,
+      "peso_cuadrado": 0.5294191016,
+      "pct_destino": 0.392493049649936,
+      "pct_origen": 0.944887096848264
+    },
+    {
+      "origen": "N.C.",
+      "destino": "Se Acabó la Fiesta",
+      "n": 3,
+      "peso_total": 1.91339,
+      "peso_cuadrado": 1.2280786795,
+      "pct_destino": 0.72999754682306,
+      "pct_origen": 3.42464515253747
+    },
+    {
+      "origen": "N.C.",
+      "destino": "Sumar",
+      "n": 4,
+      "peso_total": 2.64511,
+      "peso_cuadrado": 1.7579452935,
+      "pct_destino": 1.00916374135808,
+      "pct_origen": 1.16068973609426
+    },
+    {
+      "origen": "N.C.",
+      "destino": "VOX",
+      "n": 11,
+      "peso_total": 12.82299,
+      "peso_cuadrado": 21.9595744587,
+      "pct_destino": 4.89223380645693,
+      "pct_origen": 2.19829112261362
+    },
+    {
+      "origen": "N.C.",
+      "destino": "Voto nulo",
+      "n": 6,
+      "peso_total": 4.15701,
+      "peso_cuadrado": 3.5230619273,
+      "pct_destino": 1.58598461480353,
+      "pct_origen": 4.38401379595307
+    },
+    {
+      "origen": "N.R.",
+      "destino": "Adelante Andalucía",
+      "n": 1,
+      "peso_total": 0.48732,
+      "peso_cuadrado": 0.2374807824,
+      "pct_destino": 0.311435436038049,
+      "pct_origen": 2.23541181861843
+    },
+    {
+      "origen": "N.R.",
+      "destino": "BNG",
+      "n": 1,
+      "peso_total": 0.5773,
+      "peso_cuadrado": 0.33327529,
+      "pct_destino": 0.368939664337121,
+      "pct_origen": 1.74092617996527
+    },
+    {
+      "origen": "N.R.",
+      "destino": "Coalición de izquierdas",
+      "n": 2,
+      "peso_total": 2.82261,
+      "peso_cuadrado": 5.7260160581,
+      "pct_destino": 1.80386763546614,
+      "pct_origen": 6.81831193147217
+    },
+    {
+      "origen": "N.R.",
+      "destino": "EH Bildu",
+      "n": 1,
+      "peso_total": 1.10922,
+      "peso_cuadrado": 1.2303690084,
+      "pct_destino": 0.70887797414866,
+      "pct_origen": 2.34096666335324
+    },
+    {
+      "origen": "N.R.",
+      "destino": "ERC",
+      "n": 2,
+      "peso_total": 2.02163,
+      "peso_cuadrado": 2.5950484705,
+      "pct_destino": 1.29197902929821,
+      "pct_origen": 2.2040932116114
+    },
+    {
+      "origen": "N.R.",
+      "destino": "En blanco",
+      "n": 7,
+      "peso_total": 8.30571,
+      "peso_cuadrado": 18.7713412739,
+      "pct_destino": 5.30799559930967,
+      "pct_origen": 5.12778008575039
+    },
+    {
+      "origen": "N.R.",
+      "destino": "Junts",
+      "n": 1,
+      "peso_total": 0.62349,
+      "peso_cuadrado": 0.3887397801,
+      "pct_destino": 0.398458671951415,
+      "pct_origen": 1.65192845538105
+    },
+    {
+      "origen": "N.R.",
+      "destino": "N.C.",
+      "n": 3,
+      "peso_total": 10.49357,
+      "peso_cuadrado": 55.7666287337,
+      "pct_destino": 6.70620854581342,
+      "pct_origen": 8.07038395344427
+    },
+    {
+      "origen": "N.R.",
+      "destino": "No sabe todavía",
+      "n": 82,
+      "peso_total": 76.20527,
+      "peso_cuadrado": 121.9364022895,
+      "pct_destino": 48.7011029525718,
+      "pct_origen": 8.75133946811866
+    },
+    {
+      "origen": "N.R.",
+      "destino": "No votaría",
+      "n": 8,
+      "peso_total": 11.03389,
+      "peso_cuadrado": 34.3055352415,
+      "pct_destino": 7.05151510987826,
+      "pct_origen": 4.26868948494928
+    },
+    {
+      "origen": "N.R.",
+      "destino": "Otro partido",
+      "n": 10,
+      "peso_total": 6.77792,
+      "peso_cuadrado": 5.384228804,
+      "pct_destino": 4.33161879387469,
+      "pct_origen": 3.59158063789832
+    },
+    {
+      "origen": "N.R.",
+      "destino": "PACMA",
+      "n": 1,
+      "peso_total": 0.83655,
+      "peso_cuadrado": 0.6998159025,
+      "pct_destino": 0.534620606619121,
+      "pct_origen": 2.42859867635493
+    },
+    {
+      "origen": "N.R.",
+      "destino": "PP",
+      "n": 8,
+      "peso_total": 8.2777,
+      "peso_cuadrado": 18.1427380812,
+      "pct_destino": 5.29009502768645,
+      "pct_origen": 1.12194866477306
+    },
+    {
+      "origen": "N.R.",
+      "destino": "PSOE",
+      "n": 8,
+      "peso_total": 14.18404,
+      "peso_cuadrado": 59.350251651,
+      "pct_destino": 9.06470631654998,
+      "pct_origen": 1.11602114970563
+    },
+    {
+      "origen": "N.R.",
+      "destino": "Podemos",
+      "n": 1,
+      "peso_total": 0.79774,
+      "peso_cuadrado": 0.6363891076,
+      "pct_destino": 0.509817993813087,
+      "pct_origen": 0.732701730860195
+    },
+    {
+      "origen": "N.R.",
+      "destino": "Sumar",
+      "n": 3,
+      "peso_total": 1.79809,
+      "peso_cuadrado": 1.0788259301,
+      "pct_destino": 1.14911955837162,
+      "pct_origen": 0.789012406884302
+    },
+    {
+      "origen": "N.R.",
+      "destino": "VOX",
+      "n": 9,
+      "peso_total": 9.57493,
+      "peso_cuadrado": 13.6419857027,
+      "pct_destino": 6.119126035426,
+      "pct_origen": 1.64146455847246
+    },
+    {
+      "origen": "N.R.",
+      "destino": "Voto nulo",
+      "n": 1,
+      "peso_total": 0.54847,
+      "peso_cuadrado": 0.3008193409,
+      "pct_destino": 0.350515048846321,
+      "pct_origen": 0.578420558686744
+    },
+    {
+      "origen": "No tenía derecho a voto",
+      "destino": "N.C.",
+      "n": 4,
+      "peso_total": 3.44032,
+      "peso_cuadrado": 3.571586705,
+      "pct_destino": 8.5758870481252,
+      "pct_origen": 2.64587774443906
+    },
+    {
+      "origen": "No tenía derecho a voto",
+      "destino": "No sabe todavía",
+      "n": 9,
+      "peso_total": 8.38208,
+      "peso_cuadrado": 14.7934342192,
+      "pct_destino": 20.8945014732203,
+      "pct_origen": 0.962589956428578
+    },
+    {
+      "origen": "No tenía derecho a voto",
+      "destino": "Otro partido",
+      "n": 1,
+      "peso_total": 0.73842,
+      "peso_cuadrado": 0.5452640964,
+      "pct_destino": 1.8407027584866,
+      "pct_origen": 0.39128449061613
+    },
+    {
+      "origen": "No tenía derecho a voto",
+      "destino": "PP",
+      "n": 5,
+      "peso_total": 4.21977,
+      "peso_cuadrado": 4.1229173287,
+      "pct_destino": 10.5188676893624,
+      "pct_origen": 0.57194212367559
+    },
+    {
+      "origen": "No tenía derecho a voto",
+      "destino": "PSOE",
+      "n": 12,
+      "peso_total": 16.75186,
+      "peso_cuadrado": 43.0227579752,
+      "pct_destino": 41.7583420164422,
+      "pct_origen": 1.31806100778818
+    },
+    {
+      "origen": "No tenía derecho a voto",
+      "destino": "Se Acabó la Fiesta",
+      "n": 1,
+      "peso_total": 0.87575,
+      "peso_cuadrado": 0.7669380625,
+      "pct_destino": 2.1830332882975,
+      "pct_origen": 1.56744468839844
+    },
+    {
+      "origen": "No tenía derecho a voto",
+      "destino": "VOX",
+      "n": 8,
+      "peso_total": 5.06194,
+      "peso_cuadrado": 3.5458233642,
+      "pct_destino": 12.6181941460059,
+      "pct_origen": 0.867786511975973
+    },
+    {
+      "origen": "No tenía derecho a voto",
+      "destino": "Voto nulo",
+      "n": 1,
+      "peso_total": 0.64606,
+      "peso_cuadrado": 0.4173935236,
+      "pct_destino": 1.61047158005993,
+      "pct_origen": 0.68133970161569
+    },
+    {
+      "origen": "No tenía edad",
+      "destino": "Adelante Andalucía",
+      "n": 1,
+      "peso_total": 1.65045,
+      "peso_cuadrado": 2.7239852025,
+      "pct_destino": 0.850142287894148,
+      "pct_origen": 7.57086808675776
+    },
+    {
+      "origen": "No tenía edad",
+      "destino": "Coalición de izquierdas",
+      "n": 1,
+      "peso_total": 2.51021,
+      "peso_cuadrado": 6.3011542441,
+      "pct_destino": 1.29300231603185,
+      "pct_origen": 6.06367680745862
+    },
+    {
+      "origen": "No tenía edad",
+      "destino": "EAJ-PNV",
+      "n": 2,
+      "peso_total": 2.66349,
+      "peso_cuadrado": 3.5789701401,
+      "pct_destino": 1.37195642544953,
+      "pct_origen": 13.7506362952079
+    },
+    {
+      "origen": "No tenía edad",
+      "destino": "EH Bildu",
+      "n": 2,
+      "peso_total": 2.916,
+      "peso_cuadrado": 4.251528,
+      "pct_destino": 1.50202363688651,
+      "pct_origen": 6.15410720176164
+    },
+    {
+      "origen": "No tenía edad",
+      "destino": "ERC",
+      "n": 6,
+      "peso_total": 7.71226,
+      "peso_cuadrado": 10.7382279266,
+      "pct_destino": 3.97256406509408,
+      "pct_origen": 8.4083338257654
+    },
+    {
+      "origen": "No tenía edad",
+      "destino": "En blanco",
+      "n": 7,
+      "peso_total": 8.37899,
+      "peso_cuadrado": 10.8975808279,
+      "pct_destino": 4.31599486736477,
+      "pct_origen": 5.17302169961408
+    },
+    {
+      "origen": "No tenía edad",
+      "destino": "Junts",
+      "n": 4,
+      "peso_total": 5.38303,
+      "peso_cuadrado": 7.3294538779,
+      "pct_destino": 2.77278405283579,
+      "pct_origen": 14.2622663285215
+    },
+    {
+      "origen": "No tenía edad",
+      "destino": "N.C.",
+      "n": 4,
+      "peso_total": 3.34205,
+      "peso_cuadrado": 3.6010107751,
+      "pct_destino": 1.72148082841445,
+      "pct_origen": 2.57030035456078
+    },
+    {
+      "origen": "No tenía edad",
+      "destino": "No sabe todavía",
+      "n": 22,
+      "peso_total": 29.47307,
+      "peso_cuadrado": 43.3820661553,
+      "pct_destino": 15.1814978709227,
+      "pct_origen": 3.38465883970523
+    },
+    {
+      "origen": "No tenía edad",
+      "destino": "No votaría",
+      "n": 7,
+      "peso_total": 9.56272,
+      "peso_cuadrado": 14.2384463112,
+      "pct_destino": 4.92573095779401,
+      "pct_origen": 3.69953681897446
+    },
+    {
+      "origen": "No tenía edad",
+      "destino": "Otro partido",
+      "n": 1,
+      "peso_total": 0.54749,
+      "peso_cuadrado": 0.2997453001,
+      "pct_destino": 0.282010603895403,
+      "pct_origen": 0.290111787014741
+    },
+    {
+      "origen": "No tenía edad",
+      "destino": "PACMA",
+      "n": 2,
+      "peso_total": 2.74138,
+      "peso_cuadrado": 3.7936551322,
+      "pct_destino": 1.41207735174483,
+      "pct_origen": 7.95853426500016
+    },
+    {
+      "origen": "No tenía edad",
+      "destino": "PP",
+      "n": 19,
+      "peso_total": 27.2412,
+      "peso_cuadrado": 43.757277679,
+      "pct_destino": 14.0318677287904,
+      "pct_origen": 3.69223672841683
+    },
+    {
+      "origen": "No tenía edad",
+      "destino": "PSOE",
+      "n": 22,
+      "peso_total": 40.08232,
+      "peso_cuadrado": 101.0965130594,
+      "pct_destino": 20.6462935738165,
+      "pct_origen": 3.15373594894466
+    },
+    {
+      "origen": "No tenía edad",
+      "destino": "Se Acabó la Fiesta",
+      "n": 2,
+      "peso_total": 2.17244,
+      "peso_cuadrado": 2.5353944218,
+      "pct_destino": 1.11901791142583,
+      "pct_origen": 3.88830092933406
+    },
+    {
+      "origen": "No tenía edad",
+      "destino": "Sumar",
+      "n": 9,
+      "peso_total": 14.1129,
+      "peso_cuadrado": 22.7820537604,
+      "pct_destino": 7.26951625000534,
+      "pct_origen": 6.19282304952336
+    },
+    {
+      "origen": "No tenía edad",
+      "destino": "VOX",
+      "n": 19,
+      "peso_total": 27.36492,
+      "peso_cuadrado": 46.9739978006,
+      "pct_destino": 14.0955955629315,
+      "pct_origen": 4.69126628867619
+    },
+    {
+      "origen": "No tenía edad",
+      "destino": "Voto nulo",
+      "n": 2,
+      "peso_total": 6.28317,
+      "peso_cuadrado": 19.8668019357,
+      "pct_destino": 3.2364437087024,
+      "pct_origen": 6.62627801287908
+    },
+    {
+      "origen": "No votó",
+      "destino": "Adelante Andalucía",
+      "n": 2,
+      "peso_total": 1.04551,
+      "peso_cuadrado": 0.5473025741,
+      "pct_destino": 0.19024600328905,
+      "pct_origen": 4.79591523123154
+    },
+    {
+      "origen": "No votó",
+      "destino": "BNG",
+      "n": 1,
+      "peso_total": 3.65682,
+      "peso_cuadrado": 13.3723325124,
+      "pct_destino": 0.665412468314472,
+      "pct_origen": 11.027634979076
+    },
+    {
+      "origen": "No votó",
+      "destino": "Coalición de izquierdas",
+      "n": 2,
+      "peso_total": 3.73881,
+      "peso_cuadrado": 11.5066166393,
+      "pct_destino": 0.680331761109059,
+      "pct_origen": 9.03148959031091
+    },
+    {
+      "origen": "No votó",
+      "destino": "EAJ-PNV",
+      "n": 1,
+      "peso_total": 0.47878,
+      "peso_cuadrado": 0.2292302884,
+      "pct_destino": 0.0871211001852984,
+      "pct_origen": 2.47176811079435
+    },
+    {
+      "origen": "No votó",
+      "destino": "EH Bildu",
+      "n": 1,
+      "peso_total": 0.54566,
+      "peso_cuadrado": 0.2977448356,
+      "pct_destino": 0.0992909050651863,
+      "pct_origen": 1.15159469674666
+    },
+    {
+      "origen": "No votó",
+      "destino": "ERC",
+      "n": 5,
+      "peso_total": 3.72137,
+      "peso_cuadrado": 2.9430137379,
+      "pct_destino": 0.677158295243251,
+      "pct_origen": 4.05724408269283
+    },
+    {
+      "origen": "No votó",
+      "destino": "En blanco",
+      "n": 29,
+      "peso_total": 31.61366,
+      "peso_cuadrado": 59.5971785602,
+      "pct_destino": 5.75257287289352,
+      "pct_origen": 19.5176446307039
+    },
+    {
+      "origen": "No votó",
+      "destino": "Junts",
+      "n": 2,
+      "peso_total": 3.58737,
+      "peso_cuadrado": 9.4675253345,
+      "pct_destino": 0.652775013934863,
+      "pct_origen": 9.50468906154122
+    },
+    {
+      "origen": "No votó",
+      "destino": "N.C.",
+      "n": 6,
+      "peso_total": 8.72948,
+      "peso_cuadrado": 16.5332556078,
+      "pct_destino": 1.58845795907423,
+      "pct_origen": 6.71365944229778
+    },
+    {
+      "origen": "No votó",
+      "destino": "No sabe todavía",
+      "n": 74,
+      "peso_total": 74.53145,
+      "peso_cuadrado": 195.0618368215,
+      "pct_destino": 13.5620993408362,
+      "pct_origen": 8.55911959896097
+    },
+    {
+      "origen": "No votó",
+      "destino": "No votaría",
+      "n": 133,
+      "peso_total": 168.20114,
+      "peso_cuadrado": 434.0244321408,
+      "pct_destino": 30.6066844254593,
+      "pct_origen": 65.0721040063369
+    },
+    {
+      "origen": "No votó",
+      "destino": "Otro partido",
+      "n": 26,
+      "peso_total": 25.20898,
+      "peso_cuadrado": 40.978747053,
+      "pct_destino": 4.58714664804124,
+      "pct_origen": 13.3580928174375
+    },
+    {
+      "origen": "No votó",
+      "destino": "PACMA",
+      "n": 5,
+      "peso_total": 9.10253,
+      "peso_cuadrado": 34.3266881895,
+      "pct_destino": 1.65633992244806,
+      "pct_origen": 26.4256676940781
+    },
+    {
+      "origen": "No votó",
+      "destino": "PP",
+      "n": 40,
+      "peso_total": 43.04973,
+      "peso_cuadrado": 111.6262809707,
+      "pct_destino": 7.83353490179215,
+      "pct_origen": 5.83490427200079
+    },
+    {
+      "origen": "No votó",
+      "destino": "PSOE",
+      "n": 44,
+      "peso_total": 55.99757,
+      "peso_cuadrado": 139.4257538145,
+      "pct_destino": 10.1895858350459,
+      "pct_origen": 4.40597125023065
+    },
+    {
+      "origen": "No votó",
+      "destino": "Podemos",
+      "n": 6,
+      "peso_total": 6.1,
+      "peso_cuadrado": 9.6658517254,
+      "pct_destino": 1.1099851938893,
+      "pct_origen": 5.60267826390452
+    },
+    {
+      "origen": "No votó",
+      "destino": "Se Acabó la Fiesta",
+      "n": 10,
+      "peso_total": 11.19043,
+      "peso_cuadrado": 25.3972674361,
+      "pct_destino": 2.03626419889421,
+      "pct_origen": 20.0289809470677
+    },
+    {
+      "origen": "No votó",
+      "destino": "Sumar",
+      "n": 10,
+      "peso_total": 10.31014,
+      "peso_cuadrado": 16.2123160406,
+      "pct_destino": 1.87608241752883,
+      "pct_origen": 4.52414972371467
+    },
+    {
+      "origen": "No votó",
+      "destino": "VOX",
+      "n": 46,
+      "peso_total": 77.28177,
+      "peso_cuadrado": 243.3365240791,
+      "pct_destino": 14.0625607307473,
+      "pct_origen": 13.248690744582
+    },
+    {
+      "origen": "No votó",
+      "destino": "Voto nulo",
+      "n": 11,
+      "peso_total": 11.46568,
+      "peso_cuadrado": 15.7984038002,
+      "pct_destino": 2.08635000620864,
+      "pct_origen": 12.0917917685989
+    },
+    {
+      "origen": "Nulo",
+      "destino": "Coalición de izquierdas",
+      "n": 1,
+      "peso_total": 0.18638,
+      "peso_cuadrado": 0.0347375044,
+      "pct_destino": 0.483322420242595,
+      "pct_origen": 0.450220532694132
+    },
+    {
+      "origen": "Nulo",
+      "destino": "En blanco",
+      "n": 1,
+      "peso_total": 0.6709,
+      "peso_cuadrado": 0.45010681,
+      "pct_destino": 1.73978437461507,
+      "pct_origen": 0.414200310332282
+    },
+    {
+      "origen": "Nulo",
+      "destino": "No sabe todavía",
+      "n": 8,
+      "peso_total": 7.18865,
+      "peso_cuadrado": 10.5892437941,
+      "pct_destino": 18.6416767693794,
+      "pct_origen": 0.825537610030004
+    },
+    {
+      "origen": "Nulo",
+      "destino": "No votaría",
+      "n": 2,
+      "peso_total": 1.09297,
+      "peso_cuadrado": 0.5973766009,
+      "pct_destino": 2.83430038444334,
+      "pct_origen": 0.422838141975768
+    },
+    {
+      "origen": "Nulo",
+      "destino": "Otro partido",
+      "n": 1,
+      "peso_total": 0.62041,
+      "peso_cuadrado": 0.3849085681,
+      "pct_destino": 1.60885321784906,
+      "pct_origen": 0.32875167360466
+    },
+    {
+      "origen": "Nulo",
+      "destino": "PP",
+      "n": 3,
+      "peso_total": 2.63025,
+      "peso_cuadrado": 2.3385587939,
+      "pct_destino": 6.82078976200818,
+      "pct_origen": 0.356500655438027
+    },
+    {
+      "origen": "Nulo",
+      "destino": "Se Acabó la Fiesta",
+      "n": 1,
+      "peso_total": 0.66766,
+      "peso_cuadrado": 0.4457698756,
+      "pct_destino": 1.73138237525041,
+      "pct_origen": 1.19499871042661
+    },
+    {
+      "origen": "Nulo",
+      "destino": "Sumar",
+      "n": 1,
+      "peso_total": 0.569,
+      "peso_cuadrado": 0.323761,
+      "pct_destino": 1.47553630817704,
+      "pct_origen": 0.249680527402504
+    },
+    {
+      "origen": "Nulo",
+      "destino": "VOX",
+      "n": 1,
+      "peso_total": 0.54847,
+      "peso_cuadrado": 0.3008193409,
+      "pct_destino": 1.42229771343736,
+      "pct_origen": 0.0940261773595621
+    },
+    {
+      "origen": "Nulo",
+      "destino": "Voto nulo",
+      "n": 27,
+      "peso_total": 24.38756,
+      "peso_cuadrado": 50.372561038,
+      "pct_destino": 63.2420566745976,
+      "pct_origen": 25.7193029339918
+    },
+    {
+      "origen": "Otro partido",
+      "destino": "Adelante Andalucía",
+      "n": 2,
+      "peso_total": 1.47278,
+      "peso_cuadrado": 1.173903473,
+      "pct_destino": 1.83978695757215,
+      "pct_origen": 6.7558684606108
+    },
+    {
+      "origen": "Otro partido",
+      "destino": "EH Bildu",
+      "n": 1,
+      "peso_total": 0.26248,
+      "peso_cuadrado": 0.0688957504,
+      "pct_destino": 0.327888266152132,
+      "pct_origen": 0.553954066638682
+    },
+    {
+      "origen": "Otro partido",
+      "destino": "ERC",
+      "n": 3,
+      "peso_total": 2.57493,
+      "peso_cuadrado": 2.5460250341,
+      "pct_destino": 3.21658538998442,
+      "pct_origen": 2.80733157569611
+    },
+    {
+      "origen": "Otro partido",
+      "destino": "En blanco",
+      "n": 2,
+      "peso_total": 1.44226,
+      "peso_cuadrado": 1.1505727636,
+      "pct_destino": 1.80166157703663,
+      "pct_origen": 0.890422625696582
+    },
+    {
+      "origen": "Otro partido",
+      "destino": "N.C.",
+      "n": 1,
+      "peso_total": 0.33475,
+      "peso_cuadrado": 0.1120575625,
+      "pct_destino": 0.418167468357308,
+      "pct_origen": 0.257449183491935
+    },
+    {
+      "origen": "Otro partido",
+      "destino": "No sabe todavía",
+      "n": 25,
+      "peso_total": 21.89128,
+      "peso_cuadrado": 33.2816788784,
+      "pct_destino": 27.3464410357012,
+      "pct_origen": 2.51397341249019
+    },
+    {
+      "origen": "Otro partido",
+      "destino": "No votaría",
+      "n": 3,
+      "peso_total": 2.4386,
+      "peso_cuadrado": 2.2160870808,
+      "pct_destino": 3.04628286284132,
+      "pct_origen": 0.943423051888074
+    },
+    {
+      "origen": "Otro partido",
+      "destino": "Otro partido",
+      "n": 31,
+      "peso_total": 28.54315,
+      "peso_cuadrado": 37.3608561955,
+      "pct_destino": 35.6559126943776,
+      "pct_origen": 15.1248502320221
+    },
+    {
+      "origen": "Otro partido",
+      "destino": "PACMA",
+      "n": 1,
+      "peso_total": 1.04768,
+      "peso_cuadrado": 1.0976333824,
+      "pct_destino": 1.3087548715417,
+      "pct_origen": 3.04153279689622
+    },
+    {
+      "origen": "Otro partido",
+      "destino": "PP",
+      "n": 3,
+      "peso_total": 2.28928,
+      "peso_cuadrado": 1.919406796,
+      "pct_destino": 2.85975331429729,
+      "pct_origen": 0.310286026226087
+    },
+    {
+      "origen": "Otro partido",
+      "destino": "PSOE",
+      "n": 1,
+      "peso_total": 0.68768,
+      "peso_cuadrado": 0.4729037824,
+      "pct_destino": 0.859045271515919,
+      "pct_origen": 0.0541076748394371
+    },
+    {
+      "origen": "Otro partido",
+      "destino": "Podemos",
+      "n": 2,
+      "peso_total": 1.99666,
+      "peso_cuadrado": 2.2646448226,
+      "pct_destino": 2.49421436107633,
+      "pct_origen": 1.833875997116
+    },
+    {
+      "origen": "Otro partido",
+      "destino": "Se Acabó la Fiesta",
+      "n": 5,
+      "peso_total": 3.73845,
+      "peso_cuadrado": 3.3362011003,
+      "pct_destino": 4.67004681726775,
+      "pct_origen": 6.69119451366617
+    },
+    {
+      "origen": "Otro partido",
+      "destino": "Sumar",
+      "n": 4,
+      "peso_total": 3.2796,
+      "peso_cuadrado": 3.1451460806,
+      "pct_destino": 4.09685445623489,
+      "pct_origen": 1.43910765846969
+    },
+    {
+      "origen": "Otro partido",
+      "destino": "VOX",
+      "n": 8,
+      "peso_total": 6.40468,
+      "peso_cuadrado": 7.4283995444,
+      "pct_destino": 8.00068355859204,
+      "pct_origen": 1.09797724143753
+    },
+    {
+      "origen": "Otro partido",
+      "destino": "Voto nulo",
+      "n": 2,
+      "peso_total": 1.6474,
+      "peso_cuadrado": 1.3762812968,
+      "pct_destino": 2.05792109745132,
+      "pct_origen": 1.73736034492414
+    },
+    {
+      "origen": "PACMA",
+      "destino": "Coalición de izquierdas",
+      "n": 1,
+      "peso_total": 0.72843,
+      "peso_cuadrado": 0.5306102649,
+      "pct_destino": 3.26333841360977,
+      "pct_origen": 1.75959943465171
+    },
+    {
+      "origen": "PACMA",
+      "destino": "En blanco",
+      "n": 1,
+      "peso_total": 0.5117,
+      "peso_cuadrado": 0.26183689,
+      "pct_destino": 2.29239634040898,
+      "pct_origen": 0.315913398117497
+    },
+    {
+      "origen": "PACMA",
+      "destino": "N.C.",
+      "n": 1,
+      "peso_total": 4.04386,
+      "peso_cuadrado": 16.3528036996,
+      "pct_destino": 18.1163374342902,
+      "pct_origen": 3.11004766289977
+    },
+    {
+      "origen": "PACMA",
+      "destino": "No sabe todavía",
+      "n": 8,
+      "peso_total": 5.66878,
+      "peso_cuadrado": 4.4825938694,
+      "pct_destino": 25.3959166046192,
+      "pct_origen": 0.650997209905321
+    },
+    {
+      "origen": "PACMA",
+      "destino": "Otro partido",
+      "n": 1,
+      "peso_total": 1.05336,
+      "peso_cuadrado": 1.1095672896,
+      "pct_destino": 4.71901232975026,
+      "pct_origen": 0.558169376554544
+    },
+    {
+      "origen": "PACMA",
+      "destino": "PACMA",
+      "n": 10,
+      "peso_total": 8.10158,
+      "peso_cuadrado": 8.3954714744,
+      "pct_destino": 36.294767136077,
+      "pct_origen": 23.5197973395297
+    },
+    {
+      "origen": "PACMA",
+      "destino": "PSOE",
+      "n": 1,
+      "peso_total": 0.87244,
+      "peso_cuadrado": 0.7611515536,
+      "pct_destino": 3.90849768072389,
+      "pct_origen": 0.0686448636530341
+    },
+    {
+      "origen": "PACMA",
+      "destino": "Podemos",
+      "n": 1,
+      "peso_total": 0.66232,
+      "peso_cuadrado": 0.4386677824,
+      "pct_destino": 2.96716815356592,
+      "pct_origen": 0.608322273401515
+    },
+    {
+      "origen": "PACMA",
+      "destino": "Sumar",
+      "n": 1,
+      "peso_total": 0.67915,
+      "peso_cuadrado": 0.4612447225,
+      "pct_destino": 3.04256590695478,
+      "pct_origen": 0.298014991538507
+    },
+    {
+      "origen": "PP",
+      "destino": "BNG",
+      "n": 1,
+      "peso_total": 0.86348,
+      "peso_cuadrado": 0.7455977104,
+      "pct_destino": 0.104948606078856,
+      "pct_origen": 2.60394065109373
+    },
+    {
+      "origen": "PP",
+      "destino": "En blanco",
+      "n": 15,
+      "peso_total": 21.16127,
+      "peso_cuadrado": 84.8464141787,
+      "pct_destino": 2.57197131301052,
+      "pct_origen": 13.0645470279106
+    },
+    {
+      "origen": "PP",
+      "destino": "N.C.",
+      "n": 2,
+      "peso_total": 0.6295,
+      "peso_cuadrado": 0.2033350852,
+      "pct_destino": 0.0765103390080142,
+      "pct_origen": 0.484135208388867
+    },
+    {
+      "origen": "PP",
+      "destino": "No sabe todavía",
+      "n": 123,
+      "peso_total": 128.52683,
+      "peso_cuadrado": 270.1171633725,
+      "pct_destino": 15.6213365129872,
+      "pct_origen": 14.7598967904868
+    },
+    {
+      "origen": "PP",
+      "destino": "No votaría",
+      "n": 10,
+      "peso_total": 9.03672,
+      "peso_cuadrado": 12.088262655,
+      "pct_destino": 1.09833599796744,
+      "pct_origen": 3.49604279564422
+    },
+    {
+      "origen": "PP",
+      "destino": "Otro partido",
+      "n": 9,
+      "peso_total": 8.72689,
+      "peso_cuadrado": 17.4639914451,
+      "pct_destino": 1.06067881236799,
+      "pct_origen": 4.62432857765634
+    },
+    {
+      "origen": "PP",
+      "destino": "PACMA",
+      "n": 2,
+      "peso_total": 3.06098,
+      "peso_cuadrado": 6.3300972802,
+      "pct_destino": 0.372035929303815,
+      "pct_origen": 8.88636898732762
+    },
+    {
+      "origen": "PP",
+      "destino": "PP",
+      "n": 614,
+      "peso_total": 515.92469,
+      "peso_cuadrado": 814.4466788529,
+      "pct_destino": 62.7062318260598,
+      "pct_origen": 69.9277597725162
+    },
+    {
+      "origen": "PP",
+      "destino": "PSOE",
+      "n": 4,
+      "peso_total": 2.1358,
+      "peso_cuadrado": 1.2999847454,
+      "pct_destino": 0.259588216129177,
+      "pct_origen": 0.168047888439492
+    },
+    {
+      "origen": "PP",
+      "destino": "Podemos",
+      "n": 1,
+      "peso_total": 0.68437,
+      "peso_cuadrado": 0.4683622969,
+      "pct_destino": 0.0831793180411671,
+      "pct_origen": 0.628574577617759
+    },
+    {
+      "origen": "PP",
+      "destino": "Se Acabó la Fiesta",
+      "n": 11,
+      "peso_total": 6.71029,
+      "peso_cuadrado": 4.7768397865,
+      "pct_destino": 0.815578336365509,
+      "pct_origen": 12.0102865179711
+    },
+    {
+      "origen": "PP",
+      "destino": "Sumar",
+      "n": 1,
+      "peso_total": 0.5544,
+      "peso_cuadrado": 0.30735936,
+      "pct_destino": 0.0673825765624195,
+      "pct_origen": 0.243273962024513
+    },
+    {
+      "origen": "PP",
+      "destino": "UPN",
+      "n": 1,
+      "peso_total": 0.18517,
+      "peso_cuadrado": 0.0342879289,
+      "pct_destino": 0.0225058291884257,
+      "pct_origen": 10.5260465222038
+    },
+    {
+      "origen": "PP",
+      "destino": "VOX",
+      "n": 116,
+      "peso_total": 110.29024,
+      "peso_cuadrado": 182.8610302868,
+      "pct_destino": 13.4048350304611,
+      "pct_origen": 18.9074510315399
+    },
+    {
+      "origen": "PP",
+      "destino": "Voto nulo",
+      "n": 8,
+      "peso_total": 14.27399,
+      "peso_cuadrado": 38.0929849119,
+      "pct_destino": 1.73488135646863,
+      "pct_origen": 15.0534564707076
+    },
+    {
+      "origen": "PSOE",
+      "destino": "Adelante Andalucía",
+      "n": 4,
+      "peso_total": 2.97692,
+      "peso_cuadrado": 2.23484443,
+      "pct_destino": 0.1847700098683,
+      "pct_origen": 13.6555900662431
+    },
+    {
+      "origen": "PSOE",
+      "destino": "BNG",
+      "n": 8,
+      "peso_total": 6.15476,
+      "peso_cuadrado": 5.6528263486,
+      "pct_destino": 0.382010623710753,
+      "pct_origen": 18.5605106797211
+    },
+    {
+      "origen": "PSOE",
+      "destino": "CCa",
+      "n": 2,
+      "peso_total": 1.06005,
+      "peso_cuadrado": 0.5618946797,
+      "pct_destino": 0.0657946632630003,
+      "pct_origen": 18.5612878825021
+    },
+    {
+      "origen": "PSOE",
+      "destino": "Coalición de izquierdas",
+      "n": 14,
+      "peso_total": 11.6233,
+      "peso_cuadrado": 12.6398182836,
+      "pct_destino": 0.721429281170541,
+      "pct_origen": 28.0773061361933
+    },
+    {
+      "origen": "PSOE",
+      "destino": "EH Bildu",
+      "n": 1,
+      "peso_total": 0.59713,
+      "peso_cuadrado": 0.3565642369,
+      "pct_destino": 0.0370623718449464,
+      "pct_origen": 1.26022017605896
+    },
+    {
+      "origen": "PSOE",
+      "destino": "ERC",
+      "n": 8,
+      "peso_total": 6.58432,
+      "peso_cuadrado": 6.4680720158,
+      "pct_destino": 0.40867234301763,
+      "pct_origen": 7.17859104538276
+    },
+    {
+      "origen": "PSOE",
+      "destino": "En blanco",
+      "n": 37,
+      "peso_total": 26.92265,
+      "peso_cuadrado": 23.1643860067,
+      "pct_destino": 1.67102183000577,
+      "pct_origen": 16.6215083991167
+    },
+    {
+      "origen": "PSOE",
+      "destino": "Junts",
+      "n": 3,
+      "peso_total": 1.65419,
+      "peso_cuadrado": 0.9422926203,
+      "pct_destino": 0.102671453255056,
+      "pct_origen": 4.38275438516542
+    },
+    {
+      "origen": "PSOE",
+      "destino": "N.C.",
+      "n": 7,
+      "peso_total": 10.0826,
+      "peso_cuadrado": 23.0332417132,
+      "pct_destino": 0.625801869549103,
+      "pct_origen": 7.75431557124955
+    },
+    {
+      "origen": "PSOE",
+      "destino": "No sabe todavía",
+      "n": 245,
+      "peso_total": 233.40597,
+      "peso_cuadrado": 524.2273158127,
+      "pct_destino": 14.4869272201537,
+      "pct_origen": 26.8041157436424
+    },
+    {
+      "origen": "PSOE",
+      "destino": "No votaría",
+      "n": 28,
+      "peso_total": 27.29784,
+      "peso_cuadrado": 58.9951343378,
+      "pct_destino": 1.69430893883049,
+      "pct_origen": 10.5607362924433
+    },
+    {
+      "origen": "PSOE",
+      "destino": "Otro partido",
+      "n": 51,
+      "peso_total": 49.29491,
+      "peso_cuadrado": 88.9345180035,
+      "pct_destino": 3.05961228624113,
+      "pct_origen": 26.1210879300641
+    },
+    {
+      "origen": "PSOE",
+      "destino": "PACMA",
+      "n": 5,
+      "peso_total": 5.88692,
+      "peso_cuadrado": 10.6373283256,
+      "pct_destino": 0.365386462012379,
+      "pct_origen": 17.0903904366833
+    },
+    {
+      "origen": "PSOE",
+      "destino": "PP",
+      "n": 74,
+      "peso_total": 75.67804,
+      "peso_cuadrado": 294.0759307854,
+      "pct_destino": 4.69714745361433,
+      "pct_origen": 10.2573028656079
+    },
+    {
+      "origen": "PSOE",
+      "destino": "PSOE",
+      "n": 950,
+      "peso_total": 1025.11702,
+      "peso_cuadrado": 2423.4251477608,
+      "pct_destino": 63.6264602010003,
+      "pct_origen": 80.6577163659445
+    },
+    {
+      "origen": "PSOE",
+      "destino": "Podemos",
+      "n": 20,
+      "peso_total": 15.95474,
+      "peso_cuadrado": 16.9665305666,
+      "pct_destino": 0.990270973773616,
+      "pct_origen": 14.6539795088931
+    },
+    {
+      "origen": "PSOE",
+      "destino": "Se Acabó la Fiesta",
+      "n": 4,
+      "peso_total": 3.07566,
+      "peso_cuadrado": 3.0204073298,
+      "pct_destino": 0.190898555739333,
+      "pct_origen": 5.50491228126697
+    },
+    {
+      "origen": "PSOE",
+      "destino": "Sumar",
+      "n": 64,
+      "peso_total": 51.1548,
+      "peso_cuadrado": 122.8618563724,
+      "pct_destino": 3.17505102616493,
+      "pct_origen": 22.4470253834264
+    },
+    {
+      "origen": "PSOE",
+      "destino": "UPN",
+      "n": 1,
+      "peso_total": 0.59662,
+      "peso_cuadrado": 0.3559554244,
+      "pct_destino": 0.0370307174151891,
+      "pct_origen": 33.9150503649469
+    },
+    {
+      "origen": "PSOE",
+      "destino": "VOX",
+      "n": 31,
+      "peso_total": 32.61404,
+      "peso_cuadrado": 53.9684883678,
+      "pct_destino": 2.02427223191927,
+      "pct_origen": 5.59114173874935
+    },
+    {
+      "origen": "PSOE",
+      "destino": "Voto nulo",
+      "n": 15,
+      "peso_total": 23.41643,
+      "peso_cuadrado": 62.2174352625,
+      "pct_destino": 1.45339948745023,
+      "pct_origen": 24.6951419823309
+    },
+    {
+      "origen": "Sumar",
+      "destino": "Adelante Andalucía",
+      "n": 9,
+      "peso_total": 10.53137,
+      "peso_cuadrado": 16.7535500703,
+      "pct_destino": 2.24723021163103,
+      "pct_origen": 48.3090145371493
+    },
+    {
+      "origen": "Sumar",
+      "destino": "BNG",
+      "n": 2,
+      "peso_total": 1.27329,
+      "peso_cuadrado": 0.8244166925,
+      "pct_destino": 0.27170023996571,
+      "pct_origen": 3.83977809750212
+    },
+    {
+      "origen": "Sumar",
+      "destino": "Coalición de izquierdas",
+      "n": 22,
+      "peso_total": 18.79827,
+      "peso_cuadrado": 24.9836098919,
+      "pct_destino": 4.01125782024535,
+      "pct_origen": 45.4092023453596
+    },
+    {
+      "origen": "Sumar",
+      "destino": "EAJ-PNV",
+      "n": 2,
+      "peso_total": 1.34959,
+      "peso_cuadrado": 0.9207147853,
+      "pct_destino": 0.28798147072177,
+      "pct_origen": 6.96744543349128
+    },
+    {
+      "origen": "Sumar",
+      "destino": "EH Bildu",
+      "n": 4,
+      "peso_total": 2.31766,
+      "peso_cuadrado": 1.5790063036,
+      "pct_destino": 0.494552519974968,
+      "pct_origen": 4.89133336667863
+    },
+    {
+      "origen": "Sumar",
+      "destino": "ERC",
+      "n": 12,
+      "peso_total": 7.54065,
+      "peso_cuadrado": 4.8680770123,
+      "pct_destino": 1.60905717825274,
+      "pct_origen": 8.22123508067128
+    },
+    {
+      "origen": "Sumar",
+      "destino": "En blanco",
+      "n": 8,
+      "peso_total": 5.55973,
+      "peso_cuadrado": 4.3884265563,
+      "pct_destino": 1.18635972570629,
+      "pct_origen": 3.43246667366776
+    },
+    {
+      "origen": "Sumar",
+      "destino": "N.C.",
+      "n": 2,
+      "peso_total": 6.35606,
+      "peso_cuadrado": 32.234069242,
+      "pct_destino": 1.35628413577147,
+      "pct_origen": 4.88831204548395
+    },
+    {
+      "origen": "Sumar",
+      "destino": "No sabe todavía",
+      "n": 114,
+      "peso_total": 102.23209,
+      "peso_cuadrado": 173.0495419963,
+      "pct_destino": 21.8147345735819,
+      "pct_origen": 11.7402342925267
+    },
+    {
+      "origen": "Sumar",
+      "destino": "No votaría",
+      "n": 4,
+      "peso_total": 2.12616,
+      "peso_cuadrado": 1.135386993,
+      "pct_destino": 0.453689404774634,
+      "pct_origen": 0.822549149512978
+    },
+    {
+      "origen": "Sumar",
+      "destino": "Otro partido",
+      "n": 29,
+      "peso_total": 26.01146,
+      "peso_cuadrado": 31.0366939116,
+      "pct_destino": 5.55044013842759,
+      "pct_origen": 13.7833223318461
+    },
+    {
+      "origen": "Sumar",
+      "destino": "PACMA",
+      "n": 2,
+      "peso_total": 3.66817,
+      "peso_cuadrado": 10.1341248829,
+      "pct_destino": 0.782730304357231,
+      "pct_origen": 10.6491098041299
+    },
+    {
+      "origen": "Sumar",
+      "destino": "PP",
+      "n": 4,
+      "peso_total": 2.41935,
+      "peso_cuadrado": 1.4951493927,
+      "pct_destino": 0.516251580991793,
+      "pct_origen": 0.327915544428853
+    },
+    {
+      "origen": "Sumar",
+      "destino": "PSOE",
+      "n": 71,
+      "peso_total": 58.80073,
+      "peso_cuadrado": 77.0320562561,
+      "pct_destino": 12.5471592890535,
+      "pct_origen": 4.62652800599339
+    },
+    {
+      "origen": "Sumar",
+      "destino": "Podemos",
+      "n": 78,
+      "peso_total": 76.43562,
+      "peso_cuadrado": 137.4037827248,
+      "pct_destino": 16.3101699502296,
+      "pct_origen": 70.2039650429615
+    },
+    {
+      "origen": "Sumar",
+      "destino": "Sumar",
+      "n": 196,
+      "peso_total": 141.96804,
+      "peso_cuadrado": 159.8183399876,
+      "pct_destino": 30.2937669623271,
+      "pct_origen": 62.2964061537781
+    },
+    {
+      "origen": "Sumar",
+      "destino": "VOX",
+      "n": 1,
+      "peso_total": 0.36157,
+      "peso_cuadrado": 0.1307328649,
+      "pct_destino": 0.0771534024176753,
+      "pct_origen": 0.0619852406656643
+    },
+    {
+      "origen": "Sumar",
+      "destino": "Voto nulo",
+      "n": 2,
+      "peso_total": 0.88798,
+      "peso_cuadrado": 0.4601460004,
+      "pct_destino": 0.189481091569675,
+      "pct_origen": 0.936470340588646
+    },
+    {
+      "origen": "UPN",
+      "destino": "No sabe todavía",
+      "n": 1,
+      "peso_total": 0.27928,
+      "peso_cuadrado": 0.0779973184,
+      "pct_destino": 18.3842067499161,
+      "pct_origen": 0.0320722449596488
+    },
+    {
+      "origen": "UPN",
+      "destino": "UPN",
+      "n": 2,
+      "peso_total": 0.97737,
+      "peso_cuadrado": 0.5742721197,
+      "pct_destino": 64.3374826380889,
+      "pct_origen": 55.5589031128493
+    },
+    {
+      "origen": "UPN",
+      "destino": "VOX",
+      "n": 1,
+      "peso_total": 0.26248,
+      "peso_cuadrado": 0.0688957504,
+      "pct_destino": 17.278310611995,
+      "pct_origen": 0.0449978869096539
+    },
+    {
+      "origen": "VOX",
+      "destino": "En blanco",
+      "n": 3,
+      "peso_total": 2.79618,
+      "peso_cuadrado": 3.1609473122,
+      "pct_destino": 0.691329913712202,
+      "pct_origen": 1.72630589319559
+    },
+    {
+      "origen": "VOX",
+      "destino": "No sabe todavía",
+      "n": 21,
+      "peso_total": 36.20069,
+      "peso_cuadrado": 159.1822020385,
+      "pct_destino": 8.95028928539013,
+      "pct_origen": 4.15725221064276
+    },
+    {
+      "origen": "VOX",
+      "destino": "No votaría",
+      "n": 5,
+      "peso_total": 5.98896,
+      "peso_cuadrado": 9.7091933674,
+      "pct_destino": 1.48071554764923,
+      "pct_origen": 2.31695354745985
+    },
+    {
+      "origen": "VOX",
+      "destino": "Otro partido",
+      "n": 7,
+      "peso_total": 5.75309,
+      "peso_cuadrado": 6.1718250831,
+      "pct_destino": 1.42239884888617,
+      "pct_origen": 3.04852914346679
+    },
+    {
+      "origen": "VOX",
+      "destino": "PP",
+      "n": 34,
+      "peso_total": 32.42977,
+      "peso_cuadrado": 50.7017857015,
+      "pct_destino": 8.01796382772446,
+      "pct_origen": 4.39548874088184
+    },
+    {
+      "origen": "VOX",
+      "destino": "PSOE",
+      "n": 3,
+      "peso_total": 2.56346,
+      "peso_cuadrado": 2.5472439494,
+      "pct_destino": 0.633792023619611,
+      "pct_origen": 0.201696806863517
+    },
+    {
+      "origen": "VOX",
+      "destino": "Se Acabó la Fiesta",
+      "n": 22,
+      "peso_total": 21.47571,
+      "peso_cuadrado": 37.2792654413,
+      "pct_destino": 5.30967274682184,
+      "pct_origen": 38.4378961679535
+    },
+    {
+      "origen": "VOX",
+      "destino": "VOX",
+      "n": 270,
+      "peso_total": 295.96914,
+      "peso_cuadrado": 722.7142364032,
+      "pct_destino": 73.1756610867951,
+      "pct_origen": 50.7390501770326
+    },
+    {
+      "origen": "VOX",
+      "destino": "Voto nulo",
+      "n": 1,
+      "peso_total": 1.28691,
+      "peso_cuadrado": 1.6561373481,
+      "pct_destino": 0.318176719401244,
+      "pct_origen": 1.35718489831633
+    }
+  ]
+}
