@@ -193,8 +193,8 @@
       <label for="transfer-party">Selecciona un partido</label>
       <select id="transfer-party"></select>
       <div class="transfer-modes" role="group" aria-label="Perspectiva">
-        <button type="button" data-mode="destino" aria-pressed="true" aria-describedby="transfer-limited">¿Adónde fueron?</button>
-        <button type="button" data-mode="origen" aria-pressed="false">¿De dónde vienen?</button>
+        <button type="button" data-mode="destino" aria-pressed="true" aria-describedby="transfer-limited">¿Qué votan ahora?</button>
+        <button type="button" data-mode="origen" aria-pressed="false">¿Qué votaron en 2023?</button>
       </div>
       <p id="transfer-limited" class="note" hidden></p>
     </div>
@@ -202,10 +202,15 @@
       <h3 id="transfer-question"></h3>
       <p id="transfer-base" class="note">Cargando datos del CIS…</p>
     </div>
-    <ol class="transfer-chart" aria-labelledby="transfer-question"></ol>
+    <div class="transfer-stack" aria-hidden="true" hidden></div>
+    <ol id="transfer-chart" class="transfer-chart" aria-labelledby="transfer-question"></ol>
+    <button id="transfer-toggle" type="button" aria-controls="transfer-chart" aria-expanded="false" hidden></button>
+    <p class="note">Fuente · Microdatos CIS 3582, octubre de 2026.</p>
     <details>
       <summary>¿Cómo se calcula?</summary>
-      <p>En «¿Adónde fueron?», cada porcentaje divide el peso de ese destino por el peso total de quienes recuerdan haber votado al partido en 2023 (RECUERDO). En «¿De dónde vienen?», divide el peso de ese origen por el peso total de quienes declaran intención de votar al partido (INTENCIONGR).</p>
+      <p>En «¿Qué votan ahora?», cada porcentaje divide el peso de ese destino por el peso total de quienes recuerdan haber votado al partido en 2023 (RECUERDO). En «¿Qué votaron en 2023?», divide el peso de ese origen por el peso total de quienes declaran intención de votar al partido (INTENCIONGR).</p>
+      <p id="transfer-sample"></p>
+      <p>La vista resumida agrupa las categorías por debajo del 2 % tras sumar sus pesos. Los partidos destacados, la indecisión, la abstención y la falta de respuesta se muestran por separado cuando aparecen, al igual que las categorías de incorporación de 2023. Al desplegar se muestran todas las categorías observadas.</p>
       <p>El recuento n es el número de entrevistas. La base efectiva es el cuadrado de la suma de PESO dividido por la suma de PESO al cuadrado. Las bases y celdas con pocas entrevistas dan estimaciones menos precisas. La encuesta está sujeta a errores de recuerdo y refleja intenciones declaradas.</p>
       <p>Un cambio entre partidos es una transferencia. La intención de votar entre quienes no votaron en 2023 indica movilización declarada. Quienes entonces no tenían edad o derecho a voto se muestran por separado como incorporación.</p>
       <p>En intención de voto, Sumar / Frente Amplio corresponde al código 21, como en Radiografías. «Coalición de izquierdas» (29) se conserva por separado. En recuerdo se conserva la etiqueta Sumar.</p>

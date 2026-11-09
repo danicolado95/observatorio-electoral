@@ -28,3 +28,12 @@
   .transfer-row summary strong { grid-column: 2; grid-row: 1; }
   .transfer-track { grid-column: 1 / -1; grid-row: 2; height: 7px; }
 }
+
+#transferencias select, #transferencias button { min-height: 44px; }
+#transferencias .transfer-stack {
+  display: flex; height: 22px; margin: 16px 0 8px; border-radius: 5px; overflow: hidden;
+}
+#transferencias .transfer-stack[hidden] { display: none; }
+.transfer-segment { flex: 0 0 auto; }
+.transfer-segment + .transfer-segment { box-shadow: inset 1px 0 #fff8; }
+#transferencias .transfer-row summary { min-height: 44px; }
