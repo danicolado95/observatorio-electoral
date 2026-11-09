@@ -1,3 +1,5 @@
+import {isDeepStrictEqual} from 'node:util';
+import {esVarianteSW,motivoSW} from './revision-sw.mjs';
 import {createHash} from 'node:crypto';
 import {conservarReferencias} from './referencias-historicas.mjs';
 // Construcción local: una marca no transmite aprobación a nuevas oleadas.
@@ -6,9 +8,9 @@ import {validate,deduplicate} from './update.mjs';
 const root=process.env.ELECTOGRAFICA_TEST_ROOT?new URL('file:///'+process.env.ELECTOGRAFICA_TEST_ROOT.replaceAll('\\','/')+'/'):new URL('../',import.meta.url);
 const incidencias=[],fuentes=[];
 const issue=(tipo,codigo,evidencia,estudio_id=null)=>incidencias.push({tipo,codigo,evidencia,estudio_id,etapa:'preparacion',fuente:'wikipedia'});
-const read=async(p,fallback)=>{try{const raw=await readFile(new URL(p,root),'utf8'),v=JSON.parse(raw);fuentes.push({archivo:p,estado:'legible',sha256:createHash('sha256').update(raw).digest('hex'),registros:v.encuestas?.length??v.approved?.length??null});
+const read=async(p,fallback,{optional=false}={})=>{try{const raw=await readFile(new URL(p,root),'utf8'),v=JSON.parse(raw);fuentes.push({archivo:p,estado:'legible',sha256:createHash('sha256').update(raw).digest('hex'),registros:v.encuestas?.length??v.approved?.length??null});
 for(const [k,value] of Object.entries(fallback))if(Array.isArray(value)&&!Array.isArray(v?.[k]))throw Error('Estructura inválida: '+k);
-return v;}catch(e){fuentes.push({archivo:p,estado:'no_disponible'});if(!(e.code==='ENOENT'&&p==='data/pipeline-test/wikipedia/radar.json'))issue('error','LECTURA_INVALIDA',p+': '+e.message);return fallback;}};
+return v;}catch(e){fuentes.push({archivo:p,estado:'no_disponible'});if(!(e.code==='ENOENT'&&(optional||p==='data/pipeline-test/wikipedia/radar.json')))issue('error','LECTURA_INVALIDA',p+': '+e.message);return fallback;}};
 async function preparar(){try {
 const staging=await read('data/pipeline-test/wikipedia/staging.json',{encuestas:[],quarantine:[],report:{}});
 const original=await read('data/radar.json',{encuestas:[]});
@@ -24,11 +26,27 @@ review.approved=checked(review.approved,'revisados');original.encuestas=checked(
 const originals=await read('data/originales-huecos.json',{encuestas:[]});
 const blocked=new Set(review.audit.filter(a=>a.decision==='cuarentena').map(a=>a.estudio_id));
 const approved=new Map(review.approved.map(p=>[p.estudio_id,p]));
+const auditedFields=['resultados','trabajo_campo_fin','instituto','fuente','fecha_publicacion','tamano_muestra'];
 for(const p of [...staging.encuestas,...staging.quarantine]){
  const a=approved.get(p.estudio_id);
- if(a && (JSON.stringify(p.resultados)!==JSON.stringify(a.resultados)||p.trabajo_campo_fin!==a.trabajo_campo_fin||p.instituto!==a.instituto||p.fuente!==a.fuente||p.fecha_publicacion!==(Object.hasOwn(a,'fecha_publicacion_tabla_original')?a.fecha_publicacion_tabla_original:a.fecha_publicacion)||p.tamano_muestra!==(Object.hasOwn(a,'muestra_tabla_original')?a.muestra_tabla_original:a.tamano_muestra)))issue('error','REVISION_MODIFICADA','Revisión de registro auditado: '+p.estudio_id,p.estudio_id);
+ if(!a)continue;
+ const expected={...a};
+ for(const [field,original] of [['fecha_publicacion','fecha_publicacion_tabla_original'],['tamano_muestra','muestra_tabla_original']]){
+  if(Object.hasOwn(a,original))expected[field]=a[original];
+ }
+ const differences=Object.fromEntries(auditedFields.filter(k=>!isDeepStrictEqual(expected[k],p[k]))
+  .map(k=>[k,{auditado:expected[k],observado:p[k]}]));
+ if(Object.keys(differences).length){
+  issue('cuarentena','REVISION_MODIFICADA',JSON.stringify({revision:p.ingestion?.revision,sha256:p.ingestion?.sha256,differences}),p.estudio_id);
+ }
 }
-const candidates=new Map(staging.encuestas.filter(p=>!blocked.has(p.estudio_id)).map(p=>[p.estudio_id,p]));
+const published=await read('data/pipeline-test/electografica/before.json',{encuestas:[]},{optional:true});
+const candidates=new Map();
+for(const p of staging.encuestas){
+ if(esVarianteSW(p,published,'wikipedia')){
+  issue('cuarentena','REPUBLICACION_DOCUMENTADA',motivoSW,p.estudio_id);
+ }else if(!blocked.has(p.estudio_id))candidates.set(p.estudio_id,p);
+}
 for(const p of approved.values())candidates.set(p.estudio_id,p);
 // Revisiones manuales de originales: un escenario por estudio, sin heredar
 // porcentajes de tablas secundarias ni habilitar ninguna descarga automática.
@@ -54,7 +72,7 @@ for(const p of accepted){
  let conflict=false;
  if(old)for(const key of ['instituto','ambito','tipo','fecha_publicacion','trabajo_campo_inicio','trabajo_campo_fin','tamano_muestra','fuente'])if(old[key]!==p[key]){issue('error','METADATO_HISTORICO_MODIFICADO','Conflicto histórico: '+p.estudio_id+'.'+key,p.estudio_id);conflict=true;}
  if(conflict)continue;
- if(old && JSON.stringify(old.resultados)!==JSON.stringify(p.resultados)){issue('error','CONFLICTO_HISTORICO','Conflicto histórico: '+p.estudio_id,p.estudio_id);continue;}
+ if(old && !isDeepStrictEqual(old.resultados,p.resultados)){issue('error','CONFLICTO_HISTORICO','Conflicto histórico: '+p.estudio_id,p.estudio_id);continue;}
  if(old?.fuentes_adicionales?.length)try{conservarReferencias([p],[old]);}catch(e){for(const i of e.informe?.incidencias||[])issue('error',i.codigo,i.evidencia,p.estudio_id);continue;}
  // El hash de descarga identifica una observación de la página, no una revisión del sondeo.
  // Si identidad y resultados no cambiaron, la procedencia canónica anterior se conserva.

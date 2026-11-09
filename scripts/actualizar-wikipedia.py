@@ -9,13 +9,14 @@ ROOT=Path(__file__).resolve().parents[1]
 TARGET=ROOT/'data/pipeline-test/wikipedia'
 URL='https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election'
 
-def update(html=None, user_agent=None):
+def update(html=None, user_agent=None, as_of=None):
     TARGET.mkdir(parents=True,exist_ok=True)
     lock=TARGET/'daily.lock'
     fd=os.open(lock,os.O_CREAT|os.O_EXCL|os.O_WRONLY)
     os.close(fd)
     saved={name:(TARGET/name).read_bytes() if (TARGET/name).exists() else None for name in ['staging.json','report.json','radar.json']}
     try:
+        (TARGET/'intento-staging.json').unlink(missing_ok=True)
         if html:
             raw=Path(html).read_bytes()
         else:
@@ -29,22 +30,33 @@ def update(html=None, user_agent=None):
                     cache_headers={k:v for k,v in [('If-None-Match',response.headers.get('ETag')),('If-Modified-Since',response.headers.get('Last-Modified'))] if v}
             except HTTPError as e:
                 if e.code==304:
-                    print('Sin cambios HTTP; histórico conservado');return
+                    subprocess.run(['node',str(ROOT/'scripts/preparar-radar-wikipedia.mjs')],check=True,cwd=ROOT)
+                    print('Sin cambios HTTP; histórico conservado')
+                    return
                 raise
             if len(raw)>12000000: raise ValueError('Respuesta demasiado grande')
-        today=datetime.datetime.now(ZoneInfo('Europe/Madrid')).date().isoformat()
+        today=as_of or datetime.datetime.now(ZoneInfo('Europe/Madrid')).date().isoformat()
         with tempfile.TemporaryDirectory() as temp:
             source=Path(temp)/'original.html';source.write_bytes(raw)
             subprocess.run([sys.executable,str(ROOT/'scripts/importar-wikipedia.py'),'--html',str(source),'--today',today],check=True,stdout=subprocess.DEVNULL)
         staging=json.loads((TARGET/'staging.json').read_text(encoding='utf8'))
+        (TARGET/'intento-staging.json').write_bytes((TARGET/'staging.json').read_bytes())
         if saved['staging.json']:
+            reviewed = {p['estudio_id'] for p in json.loads(
+                (ROOT/'data/historico-revisado.json').read_text(encoding='utf8')
+            )['approved']}
             previous=json.loads(saved['staging.json'])
             rows={p['estudio_id']:p for p in previous['encuestas']}
             for poll in staging['encuestas']:
                 prior=rows.get(poll['estudio_id'])
                 keys=['instituto','fecha_publicacion','trabajo_campo_inicio','trabajo_campo_fin','tamano_muestra','resultados']
-                if prior and any(prior.get(k)!=poll.get(k) for k in keys): raise ValueError('Conflicto histórico: '+poll['estudio_id'])
-                rows[poll['estudio_id']]=poll
+                if prior and any(prior.get(k)!=poll.get(k) for k in keys):
+                    if poll['estudio_id'] not in reviewed:
+                        raise ValueError('Conflicto histórico: '+poll['estudio_id'])
+                    poll['quarantine_reasons'].append('Variante de un estudio auditado: se conserva la versión anterior')
+                    staging['quarantine'].append(poll)
+                    continue
+                rows[poll['estudio_id']]=prior or poll
             staging['encuestas']=sorted(rows.values(),key=lambda p:(p['fecha_publicacion'],p['estudio_id']))
             staging['report']['historical_usable']=len(rows)
             (TARGET/'staging.json').write_text(json.dumps(staging,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
@@ -64,5 +76,5 @@ def update(html=None, user_agent=None):
         lock.unlink(missing_ok=True)
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--html');args=parser.parse_args()
-    update(args.html,os.environ.get('WIKIPEDIA_USER_AGENT'))
+    parser=argparse.ArgumentParser();parser.add_argument('--html');parser.add_argument('--as-of',type=lambda value: datetime.date.fromisoformat(value).isoformat());args=parser.parse_args()
+    update(args.html,os.environ.get('WIKIPEDIA_USER_AGENT'),args.as_of)

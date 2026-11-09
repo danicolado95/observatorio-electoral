@@ -1,3 +1,4 @@
+import {esVarianteSW} from './revision-sw.mjs';
 import assert from 'node:assert/strict';
 import {readFile,writeFile,mkdir,rename} from 'node:fs/promises';
 import {dirname,resolve} from 'node:path';
@@ -25,24 +26,34 @@ export async function restore(statePath){
 }
 export async function promote(statePath){
  const dir='data/pipeline-test/';
- for(const source of ['wikipedia','electografica'])assert.equal((await read(dir+source+'/diagnostico.json')).validado,true,'Fuente no validada: '+source);
+ assert.equal((await read(dir+'electografica/diagnostico.json')).validado,true,'Electográfica no validada');
+ let fallback=null;
+ try{fallback=await read(dir+'wikipedia/fallback.json');}catch(e){if(e.code!=='ENOENT')throw e;}
+ if(!fallback)assert.equal((await read(dir+'wikipedia/diagnostico.json')).validado,true,'Wikipedia no validada');
  const combinado=await read(dir+'electografica/radar.json');
  const data={combinado,original:await read('data/radar.json'),desarrollo:await read('data/radar-desarrollo.json'),cis:await read('data/cis-historico.json'),wikipedia:await read(dir+'wikipedia/radar.json'),reporte:await read(dir+'electografica/report.json'),auditoria:await read(dir+'electografica/audit.json'),cuarentena:await read(dir+'electografica/quarantine.json')};
  const audit=verificar(data);
  let previous=null;try{previous=await read(statePath);}catch(e){if(e.code!=='ENOENT')throw e;}
  if(previous){assert.equal(previous._pipeline?.version,1);verificar({...data,original:previous});}
+ if(fallback){
+  assert.equal(fallback.estado,'restaurado');
+  assert(previous,'Wikipedia falló y no hay histórico publicado');
+  for(const name of ['wikipedia/radar.json','wikipedia/staging.json']){
+   assert.deepEqual(await read(dir+name),previous._pipeline.files[name],'Estado restaurado de Wikipedia distinto: '+name);
+  }
+ }
  const known=previous?._pipeline?.files['electografica/quarantine.json']??await read('data/radar-cuarentena-base.json');
  const lastQuarantine=new Set(known.map(e=>JSON.stringify([e.id,e.title,e.reason])));
  // An unrecognised new national poll must fail visibly rather than silently disappear.
- const pending=data.cuarentena.filter(q=>!lastQuarantine.has(JSON.stringify([q.id,q.title,q.reason]))&&!q.reconciliacion&&/^ESPAÑA:/.test(q.title||'')&&!/^(CIS\/modelo|Fuera del periodo|Ámbito regional)/.test(q.reason));
+ const pending=data.cuarentena.filter(q=>!lastQuarantine.has(JSON.stringify([q.id,q.title,q.reason]))&&!q.reconciliacion&&!esVarianteSW(q.candidate,previous,'electografica')&&/^ESPAÑA:/.test(q.title||'')&&!/^(CIS\/modelo|Fuera del periodo|Ámbito regional)/.test(q.reason));
  assert.equal(pending.length,0,'Nuevas encuestas nacionales en cuarentena: '+pending.map(q=>q.title+': '+q.reason).join('; '));
  const stateFiles={};for(const name of files)stateFiles[name]=await read(dir+name);
  const delta=difference(previous?.encuestas,combinado.encuestas);
  const changed=!!(delta.added.length||delta.removed.length||delta.modified.length);
  const now=new Date().toISOString();
- const result={...combinado,status:{state:'ok',message:'Radar de pruebas actualizado automáticamente. Electográfica tiene prioridad; histórico validado.',lastAttempt:now,lastSuccess:now,lastDataChange:changed?now:previous.status.lastDataChange},_pipeline:{version:1,files:stateFiles}};
+ const result={...combinado,status:{state:fallback?'degraded':'ok',message:fallback?'Electográfica actualizada; Wikipedia conserva su última versión validada.':'Radar de pruebas actualizado automáticamente. Electográfica tiene prioridad; histórico validado.',lastAttempt:now,lastSuccess:now,lastDataChange:changed?now:previous.status.lastDataChange},_pipeline:{version:1,files:stateFiles}};
  await mkdir(dirname(statePath),{recursive:true});await writeFile(statePath+'.tmp',JSON.stringify(result)+'\n');await rename(statePath+'.tmp',statePath);
- const summary={validado:audit.validado,total:result.encuestas.length,privadas:audit.privadas,cis:audit.cis,newIds:delta.added,difference:delta,dataChanged:changed,checkedAt:now};
+ const summary={validado:audit.validado,total:result.encuestas.length,privadas:audit.privadas,cis:audit.cis,newIds:delta.added,difference:delta,dataChanged:changed,checkedAt:now,wikipedia:fallback??{estado:'validado'}};
  await writeFile(dir+'publicacion-resumen.json',JSON.stringify(summary,null,2));console.log(JSON.stringify(summary));return result;
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){

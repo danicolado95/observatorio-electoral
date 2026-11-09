@@ -1,0 +1,138 @@
+{
+  "motivo": "Dos capturas del mismo sondeo discrepan en inicio, muestra y enlace original. Se conserva el registro publicado hasta verificar una corrección explícita.",
+  "historico": {
+    "instituto": "SW Demoscopia",
+    "estudio_id": "electografica-f5bcdf87e5fb0e98a9a1",
+    "tipo": "estimacion_voto",
+    "ambito": "España",
+    "fecha_publicacion": "2026-11-07",
+    "trabajo_campo_inicio": "2026-10-27",
+    "trabajo_campo_fin": "2026-11-06",
+    "fecha_fin_campo": "2026-11-06",
+    "tipo_fecha": "publicacion",
+    "tamano_muestra": 4000,
+    "resultados": {
+      "PSOE": 30.8,
+      "PP": 28.8,
+      "VOX": 17.2,
+      "FA": 7.7,
+      "PODEMOS": 1.8
+    },
+    "fuente": "https://x.com/la_septima_tv/status/2119161794967048507",
+    "medio": "La Séptima",
+    "url_electografica": "https://www.electografica.com/2026/11/encuesta-sw-demoscopia-261107.html",
+    "ingestion": {
+      "source": "electografica",
+      "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-9130556855663188541",
+      "content_sha256": "9dd190c51596cb4a4419e8746d0576dbc8d363be3ae5039b1a739fa92dccc3ec",
+      "blogger_published": "2026-11-07T20:27:06.494+00:00",
+      "blogger_updated": "2026-11-07T20:27:06.494+00:00"
+    },
+    "source_id": "electografica"
+  },
+  "electografica": {
+    "instituto": "SW Demoscopia",
+    "estudio_id": "electografica-f5bcdf87e5fb0e98a9a1",
+    "tipo": "estimacion_voto",
+    "ambito": "España",
+    "fecha_publicacion": "2026-11-07",
+    "trabajo_campo_inicio": "2026-10-26",
+    "trabajo_campo_fin": "2026-11-06",
+    "fecha_fin_campo": "2026-11-06",
+    "tipo_fecha": "publicacion",
+    "tamano_muestra": 4500,
+    "resultados": {
+      "PSOE": 30.8,
+      "PP": 28.8,
+      "VOX": 17.2,
+      "FA": 7.7,
+      "ERC": 2.5,
+      "SALF": 2.1,
+      "PODEMOS": 1.8,
+      "ADELANTE_ANDALUCIA": 1.5,
+      "EH_BILDU": 1.3,
+      "JUNTS": 1.2,
+      "BNG": 0.9,
+      "PNV": 0.8,
+      "CC": 0.4
+    },
+    "fuente": "https://media.licdn.com/dms/document/media/v2/D4E1FAQFZ9M82yro8Iw/feedshare-document-pdf-analyzed/B4EaG33yQBJgAY-/0/1794086218465?e=1795046400&v=beta&t=uNJl1bSK3Zmv5CVdrgdgbmkjbm9Bt4Fz_MHtKH6S8dw",
+    "medio": "SW Demoscopia",
+    "url_electografica": "https://www.electografica.com/2026/11/encuesta-sw-demoscopia-261107.html",
+    "ingestion": {
+      "source": "electografica",
+      "entry_id": "tag:blogger.com,1999:blog-1143014762904556765.post-9130556855663188541",
+      "content_sha256": "03115fee47be071f3f9bae9d5da115d8c3b35b67d9b127201182465c7f88d4a7",
+      "blogger_published": "2026-11-07T21:27:06.494+01:00",
+      "blogger_updated": "2026-11-07T23:24:08.096+01:00"
+    },
+    "source_id": "electografica"
+  },
+  "wikipedia": {
+    "instituto": "SW Demoscopia",
+    "estudio_id": "wiki-09ba7717d8ad2164c9f6",
+    "tipo": "estimacion_voto",
+    "ambito": "España",
+    "fecha_publicacion": "2026-11-07",
+    "trabajo_campo_inicio": "2026-10-26",
+    "trabajo_campo_fin": "2026-11-06",
+    "tamano_muestra": 4500,
+    "resultados": {
+      "PP": 28.8,
+      "PSOE": 30.8,
+      "VOX": 17.2,
+      "ERC": 2.5,
+      "JUNTS": 1.2,
+      "EH_BILDU": 1.3,
+      "PNV": 0.8,
+      "BNG": 0.9,
+      "CC": 0.4,
+      "ADELANTE_ANDALUCIA": 1.5,
+      "PODEMOS": 1.8,
+      "SALF": 2.1
+    },
+    "fuente": "https://media.licdn.com/dms/document/media/v2/D4E1FAQFZ9M82yro8Iw/feedshare-document-pdf-analyzed/B4EaG33yQBJgAY-/0/1794086218465?e=1795046400&v=beta&t=uNJl1bSK3Zmv5CVdrgdgbmkjbm9Bt4Fz_MHtKH6S8dw",
+    "referencias": [
+      {
+        "url": "https://media.licdn.com/dms/document/media/v2/D4E1FAQFZ9M82yro8Iw/feedshare-document-pdf-analyzed/B4EaG33yQBJgAY-/0/1794086218465?e=1795046400&v=beta&t=uNJl1bSK3Zmv5CVdrgdgbmkjbm9Bt4Fz_MHtKH6S8dw",
+        "fecha_publicacion": "2026-11-07",
+        "texto": "\"Barómetro Electoral. Nº 3. Datos al 6 de noviembre de 2026. Elecciones Generales 29 de noviembre de 2026\". La Séptima (in Spanish). 7 November 2026.",
+        "reference": "cite_note-SW6Nov26-4"
+      }
+    ],
+    "ingestion": {
+      "source": "wikipedia",
+      "revision": "https://en.wikipedia.org/w/index.php?title=Opinion_polling_for_the_2026_Spanish_general_election&action=edit&oldid=1384497705",
+      "sha256": "9f82682249ea302eec56e80ffd436e88545b5d7759eddc951c224e95722ea464",
+      "table": 1,
+      "row": 4,
+      "row_id": "mw6A",
+      "raw_cells": [
+        "SW Demoscopia/La Séptima",
+        "26 Oct–6 Nov",
+        "4,500",
+        "?",
+        "28.8",
+        "30.8",
+        "17.2",
+        "7.7",
+        "7.7",
+        "2.5",
+        "1.2",
+        "1.3",
+        "0.8",
+        "0.9",
+        "0.4",
+        "1.5",
+        "1.8",
+        "2.1",
+        "2.0"
+      ],
+      "publication_basis": "fecha bibliográfica explícita de la referencia; no inferida del campo",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    "quarantine_reasons": [],
+    "missing": [],
+    "duplicates": []
+  }
+}

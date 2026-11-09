@@ -1,3 +1,4 @@
+import {esVarianteSW,motivoSW} from './revision-sw.mjs';
 import {extraerEntrada} from './extraer-electografica.mjs';
 import {esHistoricoSigma, resolverElectografica, comprobarCuarentena} from './reconciliaciones-documentadas.mjs';
 import {promoverLote} from './lote-atomico.mjs';
@@ -87,6 +88,11 @@ for(const e of entries.values()){
  try{
  const title=e.title?.$t,url=e.link?.find(l=>l.rel==='alternate')?.href;Object.assign(record,{title,url});
  const p=extraerEntrada(e,asOf);
+ if(esVarianteSW(p,previous,'electografica')){
+  quarantine.push({...record,reason:motivoSW,candidate:p});
+  issue('cuarentena','REPUBLICACION_DOCUMENTADA',motivoSW,record.id);
+  continue;
+ }
   record.extracted=p;candidate=p;const matches=rows.filter(q=>canon(q.instituto)===canon(p.instituto)&&(q.trabajo_campo_fin===p.trabajo_campo_fin||q.fecha_publicacion===p.fecha_publicacion||(q.fuente===p.fuente&&Math.abs(Date.parse(q.trabajo_campo_fin)-Date.parse(p.trabajo_campo_fin))<=7*86400000)));
   if(matches.length){
    const exact=matches.length===1&&matches[0].trabajo_campo_fin===p.trabajo_campo_fin&&Object.keys(p.resultados).every(k=>!Object.hasOwn(matches[0].resultados,k)||matches[0].resultados[k]===p.resultados[k])?matches[0]:null;

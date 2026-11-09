@@ -37,3 +37,27 @@ test('JSON ilegible deja la causa visible además del informe',t=>{
  const r=f.run();assert.notEqual(r.status,0);assert.match(r.stderr,/LECTURA_INVALIDA.*staging.json/);
  assert.equal(f.read('data/pipeline-test/wikipedia/diagnostico.json').validado,false);
 });
+
+test('8N: los resultados auditados sobreviven tres capturas y conservan procedencia',t=>{
+ const f=fixture(t);
+ const incident=JSON.parse(fs.readFileSync(new URL('./fixtures/wikipedia-20261108.json',import.meta.url)));
+ f.put('data/historico-revisado.json',{approved:incident.auditadas,audit:[]});
+ const name='data/pipeline-test/wikipedia/';
+ let before;
+ for(const [index,observed] of [incident.observadas,incident.observadas.toReversed(),[]].entries()){
+  f.put(name+'staging.json',{encuestas:[f.poll],quarantine:observed,report:{today:'2026-11-09'}});
+  const run=f.run();assert.equal(run.status,0,run.stderr);
+  const rows=f.read(name+'radar.json').encuestas;
+  if(index===0)before=rows;
+  assert.deepEqual(rows,before);
+  assert.equal(rows.length,4);
+  const diagnostics=f.read(name+'diagnostico.json').incidencias.filter(i=>i.codigo==='REVISION_MODIFICADA');
+  assert.equal(diagnostics.length,observed.length);
+  for(const i of diagnostics){
+   const delta=JSON.parse(i.evidencia).differences.resultados;
+   assert.equal(i.tipo,'cuarentena');
+   assert.equal(delta.observado.ADELANTE_ANDALUCIA,0.1);
+   assert.equal(delta.auditado.ADELANTE_ANDALUCIA,undefined);
+  }
+ }
+});
