@@ -70,13 +70,10 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
   assert.match(await page.locator('#social-question').textContent(),/escala ideológica según la edad/);
   const legend = page.locator('#social-legend button');
   assert.equal(await legend.count(),10);
-  const suppressed = row => ['Grupo muy pequeno','Celda muy pequena'].includes(row.nivel_informacion);
-  const hidden = (g,c,row) => suppressed(row) || suppressed(pairs.get(c+'/'+g)
-    .find(other => other.grupo === row.categoria && other.categoria === row.grupo));
   await check('Edad','Ideologia');
   const age = page.locator('[data-group="45-54"]');
   assert.equal(await page.locator('#social-results .social-stack').count(),6);
-  assert.equal(await age.locator('.social-stack [data-category="9"]').count(),0);
+  assert.equal(await age.locator('.social-stack [data-category="9"]').count(),1);
   assert.equal(await age.locator('.social-stack').count(),1);
   assert.equal(await page.locator('#social-results .social-partial, #social-results ul').count(),0);
   if (process.env.ATLAS_SCREENSHOT) {
@@ -122,6 +119,10 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
    await page.locator('#social-answer').screenshot({style:'header.top { position: static; }',path:process.env.ATLAS_SCREENSHOT.replace('.png','-seleccion.png')});
   }
 
+  for (const index of [0, 2, 3, 4, 7]) await legend.nth(index).click();
+  await checkSplit('Edad','Ideologia');
+  for (const index of [0, 2, 3, 4, 7]) await legend.nth(index).click();
+
   await page.selectOption('#social-order','desc');
   await page.selectOption('#social-group','Sexo');
   await page.selectOption('#social-category','Edad');
@@ -154,26 +155,11 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
    for (const [group,cells] of byGroup) {
     const card = page.locator('#social-results [data-group='+JSON.stringify(group)+']');
     const segments = card.locator('.social-stack button');
-    if (cells.some(row => hidden(g,c,row))) {
-     assert.equal(await card.locator('.social-stack').count(),1);
-     assert.equal(await segments.count(),cells.filter(row => !hidden(g,c,row)).length);
-     for (const row of cells) {
-      const segment = segments.and(card.locator('[data-category='+JSON.stringify(row.categoria)+']'));
-      if (hidden(g,c,row)) {
-       assert.equal(await segment.count(),0);
-      } else {
-       const start = Math.min(95,Math.floor(row.porcentaje/5)*5);
-       assert.equal(await segment.evaluate(el=>parseFloat(el.style.width)),start);
-       assert.ok((await segment.getAttribute('aria-label')).endsWith(start+'–'+(start+5)+' %'));
-      }
-     }
-    } else {
-     assert.equal(await segments.count(),cells.length);
-     for (const row of cells) {
-      const segment = segments.and(card.locator('[data-category='+JSON.stringify(row.categoria)+']'));
-      closeWidth(await segment.evaluate(el=>parseFloat(el.style.width)),row.porcentaje);
-      assert.ok((await segment.getAttribute('aria-label')).includes(pct(row.porcentaje)));
-     }
+    assert.equal(await segments.count(),cells.length);
+    for (const row of cells) {
+     const segment = segments.and(card.locator('[data-category='+JSON.stringify(row.categoria)+']'));
+     closeWidth(await segment.evaluate(el=>parseFloat(el.style.width)),row.porcentaje);
+     assert.ok((await segment.getAttribute('aria-label')).includes(pct(row.porcentaje)));
     }
    }
   }
@@ -185,18 +171,11 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
     const card = page.locator('#social-results [data-group='+JSON.stringify(group)+']');
     const widths = await card.locator('.social-stack button').evaluateAll(buttons =>
      buttons.map(button=>parseFloat(button.style.width)));
-    if (cells.some(row => hidden(g,c,row))) {
-     assert.deepEqual(widths.sort((a,b)=>a-b),cells.filter(row=>!hidden(g,c,row)).map(row=>Math.min(95,Math.floor(row.porcentaje/5)*5)).sort((a,b)=>a-b));
-     assert.match(await card.textContent(),/Selección y resto no disponibles/);
-     assert.doesNotMatch(await card.textContent(),/Selección [0-9]|Resto [0-9]/);
-    }
-    else {
-     const selected = cells.filter(row=>keys.includes(row.categoria));
-     const rest = cells.filter(row=>!keys.includes(row.categoria));
-     assert.equal(widths.length,2);
-     closeWidth(widths[0],100*sum(selected,'peso_celda')/cells[0].peso_grupo);
-     closeWidth(widths[1],100*sum(rest,'peso_celda')/cells[0].peso_grupo);
-    }
+    const selected = cells.filter(row=>keys.includes(row.categoria));
+    const rest = cells.filter(row=>!keys.includes(row.categoria));
+    assert.equal(widths.length,2);
+    closeWidth(widths[0],100*sum(selected,'peso_celda')/cells[0].peso_grupo);
+    closeWidth(widths[1],100*sum(rest,'peso_celda')/cells[0].peso_grupo);
    }
   }
   for(const g of dims) for(const c of dims) if(g!==c) {

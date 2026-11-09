@@ -32,7 +32,7 @@
     ? incomeLabels[dimensions.Ingresos[1].indexOf(value)]
     : labels[value] ?? value.replace(/-/g, '–');
   const number = new Intl.NumberFormat('es-ES', { maximumFractionDigits: 1 });
-  const pct = value => value > 0 && value < 0.05 ? '<0,1 %' : number.format(value) + ' %';
+  const pct = value => number.format(value) + ' %';
   const count = value => number.format(value);
 
   function element(tag, text, className) {
@@ -66,13 +66,6 @@
 
   function questionFor(c, g) {
     return '¿Cómo se distribuye ' + groupNames[c] + ' según ' + groupNames[g] + '?';
-  }
-
-  function estimate(row) {
-    if (row.nivel_informacion === 'Grupo muy pequeno') return [null, 'Base del grupo muy pequeña'];
-    if (row.nivel_informacion === 'Celda muy pequena') return [null, 'Menos de 10 casos'];
-    if (row.nivel_informacion === 'Interpretar con cautela') return [row.porcentaje, 'Interpretar con cautela'];
-    return [row.porcentaje, row.n_celda === 0 ? 'Sin casos observados' : ''];
   }
 
   function distribution(dimension, rows) {
@@ -186,21 +179,11 @@
       };
       filters.replaceChildren(reset, ...groupButtons);
 
-      const inverse = Map.groupBy(crosses.get(c + '/' + g), row => row.categoria);
       const byGroup = Map.groupBy(rows, row => row.grupo);
       const groups = dimensions[g][1].map(key => {
         const lookup = new Map((byGroup.get(key) ?? []).map(row => [row.categoria, row]));
         const cells = keys.map(categoryKey => lookup.get(categoryKey));
-        const reverse = new Map((inverse.get(key) ?? []).map(row => [row.grupo, row]));
-        const estimates = cells.map((row, i) => {
-          if (!row) return [null, 'Dato no disponible'];
-          const own = estimate(row);
-          const other = reverse.get(keys[i]);
-          if (own[0] === null) return own;
-          if (!other || estimate(other)[0] === null) return [null, 'Estimación reservada al invertir el cruce'];
-          return own;
-        });
-        return { key, cells, estimates, complete: estimates.every(([value]) => value !== null) };
+        return { key, cells, complete: cells.every(row => Number.isFinite(row?.porcentaje)) };
       });
 
       function render() {
@@ -222,12 +205,11 @@
         }
         byId('social-selection').textContent = selected.size + ' categorías seleccionadas · '
           + shown.length + ' de ' + groups.length + ' grupos visibles.';
-        results.replaceChildren(...shown.map(({ key, estimates, complete, totals }) => {
+        results.replaceChildren(...shown.map(({ key, cells, complete, totals }) => {
           const name = label(g, key);
           const card = element('section', '', 'social-card');
           card.dataset.group = key;
           card.append(element('h6', name));
-          card.classList.toggle('social-incomplete', !complete);
           if (split && !complete) {
             card.append(element('small', 'Selección y resto no disponibles', 'social-meta'));
           }
@@ -238,12 +220,10 @@
           stack.setAttribute('aria-label', name + (complete ? '' : ' · Estimaciones parciales'));
           const segments = split && complete
             ? totals.map((value, i) => [i === 0 ? 'Selección' : 'Resto', value, ['#245578', '#56605c'][i], pct(value), false, i === 0 ? 'selected' : 'rest'])
-            : estimates.flatMap(([value], i) => {
-              if (value === null) return [];
+            : cells.flatMap((row, i) => {
+              if (!Number.isFinite(row?.porcentaje)) return [];
               const key = keys[i];
-              const lower = Math.min(95, Math.floor(value / 5) * 5);
-              const display = complete ? pct(value) : lower + '–' + (lower + 5) + ' %';
-              return [[label(c, key), complete ? value : lower, palette[i], display,
+              return [[label(c, key), row.porcentaje, palette[i], pct(row.porcentaje),
                 hasSelection && !selected.has(key), key]];
             });
           segments.forEach(([segmentName, value, color, display, muted, segmentKey]) => {
@@ -253,6 +233,7 @@
             button.style.width = value + '%';
             button.style.backgroundColor = color;
             button.classList.toggle('social-muted', muted);
+            if (split && complete) button.append(element('span', display, 'social-segment-value'));
             const info = segmentName + ' · ' + display;
             button.setAttribute('aria-label', info);
             const show = () => {
