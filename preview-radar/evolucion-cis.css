@@ -1,0 +1,29 @@
+.cis-history { margin-top: 17px; }
+.cis-history .history-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 16px 0; }
+.cis-history select, .cis-history input[type="search"] { font: inherit; max-width: 100%; padding: 6px; }
+.cis-history details { margin: 12px 0; }
+.cis-history summary { cursor: pointer; font-weight: 650; margin-bottom: 8px; }
+.cis-history input[type="search"] { display: block; width: min(100%, 360px); }
+.cis-history .history-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; list-style: none; padding: 0; font-size: .875rem; }
+.cis-history .history-legend button::before { content: ''; display: inline-block; width: 1rem; border-top: 3px solid var(--history-color); vertical-align: middle; margin-right: 6px; }
+.cis-history .history-key { display: inline-block; width: 1.5rem; border-top: 2px solid currentColor; margin: 0 4px 0 10px; vertical-align: middle; }
+.cis-history .history-key.dashed { border-top-style: dashed; }
+.cis-history svg { display: block; width: 100%; }
+.cis-history svg text { font: 11px system-ui, sans-serif; fill: #364840; }
+.cis-history input[type="range"] { display: block; width: 100%; margin: 6px 0 12px; }
+.cis-history .history-detail { padding: 12px; background: #edf4f0; color: #21382d; border-radius: 8px; font-size: .875rem; }
+.cis-history .history-detail ul, .cis-history .history-warnings { padding-left: 1.25rem; }
+.cis-history :focus-visible { outline: 2px solid #075d82; outline-offset: 3px; }
+
+.cis-history [data-history="choices"] { width: min(100%, 360px); }
+.cis-history .history-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.cis-history .history-chips button, .cis-history .history-legend button {
+  font: inherit; color: #21382d; background: #fff; border: 1px solid #a5b4ae;
+  border-radius: 999px; padding: 5px 10px; cursor: pointer; overflow-wrap: anywhere;
+}
+.cis-history .history-legend button[aria-pressed="true"] { background: #edf4f0; border-color: #21382d; font-weight: 700; }
+.cis-history [data-history="clear"][aria-disabled="true"] { opacity: .55; }
+.cis-history .history-series { stroke-width: 2.5; }
+.cis-history .history-series.is-muted { opacity: .22; }
+.cis-history .history-series.is-highlighted { stroke-width: 4.5; }
+.cis-history svg.is-over-line { cursor: pointer; }
