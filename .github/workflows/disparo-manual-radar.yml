@@ -1,0 +1,22 @@
+name: Solicitar actualización manual final del Radar 9N
+on:
+  push:
+    branches: [disparo-manual-40db-20261109]
+permissions: {}
+jobs:
+  solicitar:
+    if: github.repository == 'danicolado95/observatorio-electoral' && github.run_attempt == 1
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: write
+      contents: read
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Verificar CI y lanzar workflow_dispatch sobre main
+        run: |
+          set -euo pipefail
+          test "$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/main" --jq .object.sha)" = d9b701da3bc438f44e51a10b97e33e14b660a808
+          test "$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/42586743593" --jq '.conclusion + ":" + .head_sha')" = success:3b0b67778eb0537fc6b88d082beed125ab5afaf1
+          gh workflow run radar-publicar.yml --repo "$GITHUB_REPOSITORY" --ref main
