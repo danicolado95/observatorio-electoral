@@ -1,5 +1,6 @@
 import {isDeepStrictEqual} from 'node:util';
 import {esVarianteSW,motivoSW} from './revision-sw.mjs';
+import {extraerEntrada} from './extraer-electografica.mjs';
 import {createHash} from 'node:crypto';
 import {conservarReferencias} from './referencias-historicas.mjs';
 // Construcción local: una marca no transmite aprobación a nuevas oleadas.
@@ -43,14 +44,23 @@ for(const p of [...staging.encuestas,...staging.quarantine]){
 const published=await read('data/pipeline-test/electografica/before.json',{encuestas:[]},{optional:true});
 const previousWiki=await read('data/pipeline-test/wikipedia/radar.json',{encuestas:[]});
 const previousWikiIds=new Set(previousWiki.encuestas.map(p=>p.estudio_id));
+const snapshot=await read('data/pipeline-test/electografica/snapshot.json',{}, {optional:true});
+const downloaded=[];
+if(snapshot.complete===true && snapshot.expected===snapshot.feed?.entry?.length){
+ for(const entry of snapshot.feed.entry){
+  try{downloaded.push(extraerEntrada(entry,staging.report.today));}catch{/* Electográfica audita sus propias exclusiones. */}
+ }
+}
+const sameSurvey=(a,b)=>['instituto','tipo','ambito','fecha_publicacion','trabajo_campo_inicio','trabajo_campo_fin','tamano_muestra'].every(k=>a[k]===b[k]);
 const secondaryAlias=p=>{
  if(previousWikiIds.has(p.estudio_id)||approved.has(p.estudio_id))return null;
- const matches=published.encuestas.filter(q=>q.ingestion?.source==='electografica'&&
-   ['instituto','tipo','ambito','fecha_publicacion','trabajo_campo_inicio','trabajo_campo_fin','tamano_muestra'].every(k=>q[k]===p[k]));
+ const historical=published.encuestas.filter(q=>q.ingestion?.source==='electografica'&&sameSurvey(p,q));
+ const fresh=downloaded.filter(q=>sameSurvey(p,q));
+ const matches=historical.length?historical:fresh;
  if(matches.length!==1 || !p.tamano_muestra)return null;
  const [q]=matches;
  const results=Object.entries(p.resultados);
- return results.length>=3&&results.every(([k,v])=>q.resultados[k]===v)?q:null;
+ return results.length>=3&&results.length<Object.keys(q.resultados).length&&results.every(([k,v])=>q.resultados[k]===v)?q:null;
 };
 const candidates=new Map();
 for(const p of staging.encuestas){

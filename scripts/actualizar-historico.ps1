@@ -7,6 +7,7 @@ foreach($name in $names){$path=Join-Path $root "data/pipeline-test/$name";if(Tes
 $fallback=Join-Path $root 'data/pipeline-test/wikipedia/fallback.json'
 if(Test-Path -LiteralPath $fallback){Remove-Item -LiteralPath $fallback}
 try{
+ & (Join-Path $PSScriptRoot 'descargar-electografica.ps1') -FixtureDirectory $ElectograficaFixtureDirectory -AsOf $AsOf -DownloadOnly
  try {
   $wikiArgs=@('--as-of',$AsOf)
   if($WikipediaHtml){$wikiArgs+=@('--html',$WikipediaHtml)}
@@ -22,7 +23,8 @@ try{
   @{estado='restaurado';motivo=$_.Exception.Message} | ConvertTo-Json | Set-Content -LiteralPath $fallback -Encoding utf8
   Write-Warning 'Wikipedia no actualizada. Se continúa con su último histórico validado.'
  }
- & (Join-Path $PSScriptRoot 'descargar-electografica.ps1') -FixtureDirectory $ElectograficaFixtureDirectory -AsOf $AsOf
+ & node (Join-Path $PSScriptRoot 'importar-electografica.mjs') --as-of $AsOf
+ if($LASTEXITCODE){throw 'Falló la normalización'}
 }catch{
  foreach($path in $saved.Keys){if($null -ne $saved[$path]){[IO.File]::WriteAllBytes("$path.restore",$saved[$path]);Move-Item -LiteralPath "$path.restore" -Destination $path -Force}elseif(Test-Path -LiteralPath $path){Remove-Item -LiteralPath $path}}
  throw
