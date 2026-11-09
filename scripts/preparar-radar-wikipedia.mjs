@@ -41,8 +41,24 @@ for(const p of [...staging.encuestas,...staging.quarantine]){
  }
 }
 const published=await read('data/pipeline-test/electografica/before.json',{encuestas:[]},{optional:true});
+const previousWiki=await read('data/pipeline-test/wikipedia/radar.json',{encuestas:[]});
+const previousWikiIds=new Set(previousWiki.encuestas.map(p=>p.estudio_id));
+const secondaryAlias=p=>{
+ if(previousWikiIds.has(p.estudio_id)||approved.has(p.estudio_id))return null;
+ const matches=published.encuestas.filter(q=>q.ingestion?.source==='electografica'&&
+   ['instituto','tipo','ambito','fecha_publicacion','trabajo_campo_inicio','trabajo_campo_fin','tamano_muestra'].every(k=>q[k]===p[k]));
+ if(matches.length!==1 || !p.tamano_muestra)return null;
+ const [q]=matches;
+ const results=Object.entries(p.resultados);
+ return results.length>=3&&results.every(([k,v])=>q.resultados[k]===v)?q:null;
+};
 const candidates=new Map();
 for(const p of staging.encuestas){
+ const alias=secondaryAlias(p);
+ if(alias){
+  issue('cuarentena','ALIAS_SECUNDARIO',JSON.stringify({conservado:alias.estudio_id,fuente:p.fuente,revision:p.ingestion?.revision}),p.estudio_id);
+  continue;
+ }
  if(esVarianteSW(p,published,'wikipedia')){
   issue('cuarentena','REPUBLICACION_DOCUMENTADA',motivoSW,p.estudio_id);
  }else if(!blocked.has(p.estudio_id))candidates.set(p.estudio_id,p);
@@ -65,7 +81,7 @@ for(const raw of candidates.values()){
 if(!accepted.length)issue('error','STAGING_VACIO','Staging vacío');
 for(const p of staging.quarantine)issue('cuarentena','STAGING_CUARENTENA',JSON.stringify(p.quarantine_reasons),p.estudio_id);
 const target=new URL('data/pipeline-test/wikipedia/radar.json',root);
-let previous=[];try{previous=(await read('data/pipeline-test/wikipedia/radar.json',{encuestas:[]})).encuestas;}catch(e){if(e.code!=='ENOENT')throw e;}
+const previous=previousWiki.encuestas;
 const rows=new Map([...original.encuestas,...previous].filter(p=>!blocked.has(p.estudio_id)).map(p=>[p.estudio_id,p]));
 for(const p of accepted){
  const old=rows.get(p.estudio_id);

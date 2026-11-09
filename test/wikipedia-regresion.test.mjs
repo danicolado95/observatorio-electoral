@@ -61,3 +61,15 @@ test('8N: los resultados auditados sobreviven tres capturas y conservan proceden
   }
  }
 });
+
+test('un alias secundario parcial no reemplaza una encuesta completa publicada',t=>{
+ const f=fixture(t),p={...f.poll,resultados:{PP:30,PSOE:25,VOX:15}};
+ const published={...p,estudio_id:'electo',resultados:{...p.resultados,BNG:1},fuente:'https://example.org/original',ingestion:{source:'electografica'}};
+ f.put('data/pipeline-test/electografica/before.json',{encuestas:[published]});
+ const name='data/pipeline-test/wikipedia/';
+ const another={...p,estudio_id:'another',instituto:'Otra casa'};
+ f.put(name+'staging.json',{encuestas:[p,another],quarantine:[],report:{today:'2026-11-09'}});
+ const run=f.run();assert.equal(run.status,0,run.stderr);
+ assert.deepEqual(f.read(name+'radar.json').encuestas.map(p=>p.estudio_id),['another']);
+ assert.equal(f.read(name+'diagnostico.json').incidencias[0].codigo,'ALIAS_SECUNDARIO');
+});
