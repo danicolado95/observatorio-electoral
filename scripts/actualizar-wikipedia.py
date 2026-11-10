@@ -9,6 +9,14 @@ ROOT=Path(__file__).resolve().parents[1]
 TARGET=ROOT/'data/pipeline-test/wikipedia'
 URL='https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election'
 
+def variante_gad3(prior, poll):
+    # Observación exacta de ambas capturas del 9N. Solo se archiva la variante.
+    evidence = json.loads((ROOT/'docs/evidencia-reconciliacion/gad3-20261109.json').read_text(encoding='utf8'))
+    return all(
+        all(row.get(key) == value for key, value in expected.items())
+        for row, expected in ((prior, evidence['anterior']), (poll, evidence['variante']))
+    )
+
 def update(html=None, user_agent=None, as_of=None):
     TARGET.mkdir(parents=True,exist_ok=True)
     lock=TARGET/'daily.lock'
@@ -51,7 +59,7 @@ def update(html=None, user_agent=None, as_of=None):
                 prior=rows.get(poll['estudio_id'])
                 keys=['instituto','fecha_publicacion','trabajo_campo_inicio','trabajo_campo_fin','tamano_muestra','resultados']
                 if prior and any(prior.get(k)!=poll.get(k) for k in keys):
-                    if poll['estudio_id'] not in reviewed:
+                    if poll['estudio_id'] not in reviewed and not variante_gad3(prior, poll):
                         raise ValueError('Conflicto histórico: '+poll['estudio_id'])
                     poll['quarantine_reasons'].append('Variante de un estudio auditado: se conserva la versión anterior')
                     staging['quarantine'].append(poll)

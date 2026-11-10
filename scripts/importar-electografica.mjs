@@ -1,3 +1,4 @@
+import {conservarRevision} from './revisiones-electografica.mjs';
 import {esVarianteSW,motivoSW} from './revision-sw.mjs';
 import {extraerEntrada} from './extraer-electografica.mjs';
 import {esHistoricoSigma, resolverElectografica, comprobarCuarentena} from './reconciliaciones-documentadas.mjs';
@@ -43,11 +44,15 @@ const heredadas=[];
 const snapshot=await leer('data/pipeline-test/electografica/snapshot.json',null);
 const previous=await leer('data/pipeline-test/electografica/radar.json',null,true);
 // Una salida previa solo puede enriquecer Wikipedia con su auditoría cruzada intacta.
-let previousAudit=[];
-if(previous)previousAudit=await leer('data/pipeline-test/electografica/audit.json',[],true);
+let previousAudit=[], previousQuarantine=[];
+if(previous) {
+ previousAudit=await leer('data/pipeline-test/electografica/audit.json',[],true);
+ previousQuarantine=await readFile(new URL('data/pipeline-test/electografica/quarantine.json',root),'utf8')
+  .then(JSON.parse).catch(e=>{if(e.code==='ENOENT')return [];throw e;});
+}
 for(const poll of previous?.encuestas||[]){try{const existing=base.encuestas.find(p=>p.estudio_id===poll.estudio_id);if(!existing){
- const prev=await readFile(new URL('data/pipeline-test/electografica/quarantine.json',root),'utf8').then(JSON.parse).catch(e=>{if(e.code==='ENOENT')return [];throw e;});
- const proofs=[...prev,...(previous.reconciliaciones_anteriores||[])].filter(c=>c.reconciliacion?.historico?.estudio_id===poll.estudio_id);
+
+ const proofs=[...previousQuarantine,...(previous.reconciliaciones_anteriores||[])].filter(c=>c.reconciliacion?.historico?.estudio_id===poll.estudio_id);
  if(proofs.length || esHistoricoSigma(poll)) {
   if(!snapshot?.feed?.entry?.some(e=>e.id?.$t===poll.ingestion.entry_id)) {
    const wiki=base.encuestas.filter(q=>q.estudio_id===proofs[0]?.reconciliacion?.wikipedia?.estudio_id);
@@ -94,6 +99,15 @@ for(const e of entries.values()){
   continue;
  }
   record.extracted=p;candidate=p;const matches=rows.filter(q=>canon(q.instituto)===canon(p.instituto)&&(q.trabajo_campo_fin===p.trabajo_campo_fin||q.fecha_publicacion===p.fecha_publicacion||(q.fuente===p.fuente&&Math.abs(Date.parse(q.trabajo_campo_fin)-Date.parse(p.trabajo_campo_fin))<=7*86400000)));
+  const revision=conservarRevision(p,matches,previous,previousAudit,previousQuarantine);
+  if(revision){
+   rows[rows.indexOf(matches[0])]=structuredClone(revision.canonical);
+   const prueba={candidato:p,entrada:e};
+   if(revision.audit) audit.push({...revision.audit,revision_no_promovida:prueba});
+   else quarantine.push({...revision.quarantine,revision_no_promovida:prueba});
+   issue('cuarentena','REVISION_ELECTOGRAFICA_CONSERVADA','Revisión externa archivada; conserva la encuesta previamente auditada',record.id);
+   continue;
+  }
   if(matches.length){
    const exact=matches.length===1&&matches[0].trabajo_campo_fin===p.trabajo_campo_fin&&Object.keys(p.resultados).every(k=>!Object.hasOwn(matches[0].resultados,k)||matches[0].resultados[k]===p.resultados[k])?matches[0]:null;
    if(!exact){

@@ -1,0 +1,45 @@
+{
+  "anterior": {
+    "estudio_id": "wiki-bb24e6056c66c3fa9f72",
+    "instituto": "GAD3",
+    "ambito": "España",
+    "tipo": "estimacion_voto",
+    "fecha_publicacion": "2026-11-09",
+    "trabajo_campo_inicio": "2026-11-03",
+    "trabajo_campo_fin": "2026-11-05",
+    "tamano_muestra": 1502,
+    "fuente": "https://x.com/abc_es/status/2119566963483750605",
+    "resultados": {
+      "PP": 31.9,
+      "PSOE": 25.9,
+      "VOX": 18.6
+    }
+  },
+  "variante": {
+    "estudio_id": "wiki-bb24e6056c66c3fa9f72",
+    "instituto": "GAD3",
+    "ambito": "España",
+    "tipo": "estimacion_voto",
+    "fecha_publicacion": "2026-11-09",
+    "trabajo_campo_inicio": "2026-11-03",
+    "trabajo_campo_fin": "2026-11-05",
+    "tamano_muestra": 1502,
+    "fuente": "https://www.abc.es/espana/accidente-urda-apenas-altera-bloques-29n-derecha-20261108023004-nt.html",
+    "resultados": {
+      "PP": 31.9,
+      "PSOE": 25.9,
+      "VOX": 18.6,
+      "FA": 6,
+      "FV": 1.5,
+      "ERC": 2.7,
+      "JUNTS": 1.4,
+      "EH_BILDU": 1.5,
+      "PNV": 0.9,
+      "BNG": 0.9,
+      "CC": 0.4,
+      "ADELANTE_ANDALUCIA": 1.6,
+      "PODEMOS": 1.4,
+      "SALF": 1.3
+    }
+  }
+}
