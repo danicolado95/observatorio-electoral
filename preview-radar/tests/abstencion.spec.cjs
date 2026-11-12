@@ -134,9 +134,13 @@ async function checkBrowser() {
     }
     assert.deepEqual(errors, []);
     if (process.env.ATLAS_SCREENSHOTS) {
-      await page.locator('#abstencion').screenshot({ path: process.env.ATLAS_SCREENSHOTS + '/abstencion-escritorio.png' });
+      await page.evaluate(() => {
+        document.activeElement.blur();
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      });
+      await page.screenshot({ fullPage: true, path: process.env.ATLAS_SCREENSHOTS + '/abstencion-escritorio.png' });
       await page.setViewportSize({ width: 390, height: 844 });
-      await page.locator('#abstencion').screenshot({ path: process.env.ATLAS_SCREENSHOTS + '/abstencion-movil.png' });
+      await page.screenshot({ fullPage: true, path: process.env.ATLAS_SCREENSHOTS + '/abstencion-movil.png' });
     }
   } finally {
     await browser?.close();
