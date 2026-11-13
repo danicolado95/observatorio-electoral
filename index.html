@@ -141,7 +141,7 @@ body:has(#inicio.active) .demo{display:none}
 </main><footer class="wrap footer"><div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap"><div><b style="color:var(--ink)">✳ atlas electoral</b><br>Una forma más clara de explorar la política.</div><div>Prototipo de diseño · Octubre de 2026<br>Todos los porcentajes y perfiles son inventados salvo cifras expresamente estructurales.</div></div></footer><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
 <script>
 const parties=[{id:'PP',c:'#247ac3'},{id:'PSOE',c:'#e4484f'},{id:'Vox',c:'#609b56'},{id:'Sumar',c:'#d259a1'},{id:'Podemos',c:'#8253b8'},{id:'Otros',c:'#a99d86'}]; const color=n=>parties.find(p=>p.id===n)?.c||'#a99d86';const sectionData=[['inicio','Inicio','01'],['encuestas','Encuestas','02'],['mapa','Mapa','03'],['partidos','Partidos','04'],['electorado','Electorado','05'],['transferencias','Transferencias','06'],['abstencion','Abstención','07']];
-document.getElementById('nav').innerHTML=sectionData.map(([id,n])=>`<button type="button" data-go="${id}" onclick="show('${id}')">${n}</button>`).join('');function show(id){if(!document.getElementById(id))return;document.querySelectorAll('.page').forEach(e=>e.classList.toggle('active',e.id===id));document.querySelectorAll('.nav button').forEach(e=>e.classList.toggle('active',e.dataset.go===id));history.replaceState(null,'','#'+id);window.scrollTo({top:0,behavior:'instant'});if(id==='mapa')setTimeout(()=>{if(!geoLoaded&&!geoLoading)initAtlasGeo();else if(geoMap&&geoLayer){geoMap.invalidateSize(true);geoMap.fitBounds(geoLayer.getBounds(),{padding:[12,12],animate:false});if(canaryMap&&canaryLayer){canaryMap.invalidateSize(true);canaryMap.fitBounds(canaryLayer.getBounds(),{padding:[8,8],animate:false})}}},160)}
+document.getElementById('nav').innerHTML=sectionData.map(([id,n])=>`<button type="button" data-go="${id}" onclick="show('${id}')">${n}</button>`).join('');function show(id){if(!document.getElementById(id))return;document.querySelectorAll('.page').forEach(e=>e.classList.toggle('active',e.id===id));document.querySelectorAll('.nav button').forEach(e=>e.classList.toggle('active',e.dataset.go===id));history.replaceState(null,'','#'+id);window.scrollTo({top:0,behavior:'instant'});if(id==='mapa')setTimeout(()=>{if(!document.getElementById('mapa').classList.contains('active'))return;if(!geoLoaded&&!geoLoading)initAtlasGeo();else if(geoMap&&geoLayer){geoMap.invalidateSize({pan:false});geoMap.fitBounds(geoLayer.getBounds(),{padding:[12,12],animate:false});if(canaryMap&&canaryLayer){canaryMap.invalidateSize({pan:false});canaryMap.fitBounds(canaryLayer.getBounds(),{padding:[8,8],animate:false})}}},160)}
 const electionDate = document.querySelector('#inicio .inicio-fecha');
 const electionHeading = document.getElementById('inicio-convocatoria');
 const electionCountdown = document.getElementById('inicio-cuenta');
@@ -239,6 +239,10 @@ async function initAtlasGeo(){
   let data=null;const attempts=[];
   for(const u of geoURLs){try{const r=await fetch(u,{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);data=await r.json();if(!Array.isArray(data.features)||!data.features.length)throw Error('GeoJSON sin provincias');break}catch(err){attempts.push(err.message)}}
   if(!data)throw Error('No se pudo descargar la cartografía: '+attempts.join(' / '));
+  if (!document.getElementById('mapa').classList.contains('active')) {
+    geoLoading = false;
+    return;
+  }
   const mainFeatures=data.features.filter(f=>!isCanaryFeature(f));
   const canaryFeatures=data.features.filter(isCanaryFeature);
   if(!canaryFeatures.length)throw Error('No se han identificado las Islas Canarias en el GeoJSON');
@@ -251,7 +255,7 @@ async function initAtlasGeo(){
   canaryLayer=L.geoJSON({type:'FeatureCollection',features:canaryFeatures},options).addTo(canaryMap);
   const matched=new Set();[geoLayer,canaryLayer].forEach(group=>group.eachLayer(l=>{if(l.atlasProvince)matched.add(l.atlasProvince)}));
   if(matched.size<48)throw Error('Solo '+matched.size+' provincias identificadas');
-  const fitting=()=>{geoMap.invalidateSize(true);canaryMap.invalidateSize(true);geoMap.fitBounds(geoLayer.getBounds(),{padding:[4,5],animate:false});canaryMap.fitBounds(canaryLayer.getBounds(),{padding:[6,7],animate:false})};
+  const fitting=()=>{if(!target.clientWidth||!pane.clientWidth)return;geoMap.invalidateSize({pan:false});canaryMap.invalidateSize({pan:false});geoMap.fitBounds(geoLayer.getBounds(),{padding:[4,5],animate:false});canaryMap.fitBounds(canaryLayer.getBounds(),{padding:[6,7],animate:false})};
   fitting();window.atlasDrawGeo();target.style.display='block';document.getElementById('tilemap').style.display='none';
   const missing=provinceNames.filter(p=>!matched.has(p));
   status.textContent=missing.length?'Geografía: '+matched.size+'/52 · faltan '+missing.join(', '):'Geografía: 52/52 circunscripciones';
