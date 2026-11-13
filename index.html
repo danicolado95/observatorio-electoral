@@ -406,6 +406,19 @@ async function initAtlasGeo(){
  }catch(e){console.warn('Mapa geográfico no disponible',e);geoLoading=false;target.style.display='none';document.getElementById('tilemap').style.display='grid';status.textContent='Error de cartografía';document.getElementById('map-hint').textContent='Diagnóstico del mapa: '+e.message}
 }
 
-setupTransfer();renderMap();loadOfficialSeats();loadHistory();renderTransfer();renderAbstention();let initial=location.hash.slice(1);if(sectionData.some(([id])=>id===initial))show(initial);else show('inicio');window.addEventListener('hashchange',()=>{let id=location.hash.slice(1);if(sectionData.some(([key])=>key===id))show(id)});
+setupTransfer();renderMap();loadOfficialSeats();loadHistory();renderTransfer();renderAbstention();function showLocation(defaultSection){
+  const id=location.hash.slice(1);
+  if(id==='social'){
+    show('electorado');
+    history.replaceState(null,'','#social');
+    document.getElementById('social').scrollIntoView();
+  }else if(sectionData.some(([key])=>key===id)){
+    show(id);
+  }else if(defaultSection){
+    show(defaultSection);
+  }
+}
+showLocation('inicio');
+window.addEventListener('hashchange',()=>showLocation());
 
 </script><script defer src="./preview-radar/radar-portada.js?v=publicacion-20261113"></script><script defer src="./radiografias-cis.js"></script><script defer src="./preview-radar/electorado.js"></script><script defer src="./preview-radar/electorado-comparador.js"></script><script defer src="./preview-radar/electorado-social.js"></script></body></html>
