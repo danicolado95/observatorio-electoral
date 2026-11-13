@@ -64,7 +64,7 @@ body:has(#inicio.active) .demo{display:none}
   <div class="inicio-hero">
     <div>
       <h1 id="inicio-titulo">Los números cuentan. <span>Las personas también.</span></h1>
-      <p class="lead">El Atlas Electoral reúne herramientas para explorar cómo vota España y cómo se convierten los votos en representación.</p>
+      <p class="lead">Atlas Electoral es una guía interactiva para entender cómo vota España. Compara sondeos, explora los resultados de tu circunscripción y descubre cómo se convierten los votos en escaños.</p>
       <div class="action-row">
         <a class="btn" href="#encuestas">Ver encuestas <span aria-hidden="true">→</span></a>
         <a class="btn light" href="#mapa">Explorar el mapa <span aria-hidden="true">→</span></a>
@@ -120,7 +120,9 @@ body:has(#inicio.active) .demo{display:none}
   </div>
   <div class="inicio-fuentes">
     <h2>Fuentes y metodología</h2>
-    <p>El BOE documenta la convocatoria y el reparto de escaños. Para interpretar un sondeo, fíjate en la muestra y en las fechas del trabajo de campo. Las simulaciones sirven para explorar cómo funciona una visualización.</p>
+    <p><strong>Resultados y escaños.</strong> El Mapa muestra los votos escrutados y los escaños obtenidos el 23J de 2023, a partir de los datos del Ministerio del Interior. Los porcentajes se calculan sobre votos válidos. Para el 29N de 2026, el decreto de convocatoria fija cuántos diputados elige cada circunscripción. <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-18907">Resultados del 23J en el BOE</a> y <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2023-19537">corrección oficial</a>.</p>
+    <p><strong>Encuestas y Radar.</strong> Para comparar sondeos, consulta quién los realiza, las fechas de campo, el tamaño de la muestra y la ficha técnica de origen. La intención directa recoge lo que declara cada persona entrevistada. La estimación de voto aplica un modelo a las respuestas. El Radar público aún muestra cifras y medias simuladas para ilustrar sus gráficos.</p>
+    <p><strong>Perfiles del CIS.</strong> Las radiografías pendientes de publicación usan las respuestas individuales del barómetro de octubre de 2026 (estudio 3582). Agrupan por intención directa y calculan porcentajes con el peso del CIS sobre las respuestas válidas de cada pregunta. Cuando corresponde, se informa de la base válida y del tamaño efectivo (<em>n</em> efectivo), que indica cuánto se reduce la muestra equivalente por la desigualdad de los pesos. <a href="https://www.cis.es/es/estudios/barometro-de-octubre-2026">Ficha y microdatos del CIS</a>.</p>
   </div>
 </section>
 <section class="page" id="encuestas"><div class="section-intro"><div class="eyebrow">01 / RADAR DEMOSCÓPICO</div><h2>¿Cómo va la cosa?</h2><p>La fotografía de las encuestas es móvil. Compara partidos, explora tendencias y descubre cómo cambian las conclusiones según la selección de sondeos.</p></div><div class="grid four" id="poll-stats"></div><div class="split" style="margin-top:18px"><div class="panel"><div class="panel-heading"><div><h3>La tendencia del voto</h3><div class="sub">Evolución simulada de la estimación, en %</div></div><span class="tag gold">Datos ficticios</span></div><div class="controls" id="poll-select"></div><svg id="trend" class="chart-svg" viewBox="0 0 700 300" role="img" aria-label="Gráfico de tendencias simuladas"></svg><div class="legend" id="trend-legend"></div></div><div class="panel"><h3>Lo que hay detrás</h3><label for="poll-period">Periodo</label><select id="poll-period" onchange="renderPolls()"><option value="full">Últimos seis meses</option><option value="short">Últimos tres meses</option></select><div style="height:14px"></div><label class="toggle"><input type="checkbox" id="with-cis" onchange="renderPolls()"> Incluir CIS en la media ilustrativa</label><div class="divider"></div><div class="insight" id="poll-insight"></div><p class="note">La media ilustrativa reacciona al selector, pero no aplica aún una metodología real. La web definitiva conservará muestra, trabajo de campo, pesos y efectos de encuestadora.</p></div></div><div class="panel" style="margin-top:17px"><div class="panel-heading"><h3>La foto de hoy, comparada</h3><span class="tag">SIMULACIÓN</span></div><div id="poll-bars"></div></div></section>
@@ -141,7 +143,7 @@ body:has(#inicio.active) .demo{display:none}
 </main><footer class="wrap footer"><div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap"><div><b style="color:var(--ink)">✳ atlas electoral</b><br>Una forma más clara de explorar la política.</div><div>Prototipo de diseño · Octubre de 2026<br>Todos los porcentajes y perfiles son inventados salvo cifras expresamente estructurales.</div></div></footer><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
 <script>
 const parties=[{id:'PP',c:'#247ac3'},{id:'PSOE',c:'#e4484f'},{id:'Vox',c:'#609b56'},{id:'Sumar',c:'#d259a1'},{id:'Podemos',c:'#8253b8'},{id:'Otros',c:'#a99d86'}]; const color=n=>parties.find(p=>p.id===n)?.c||'#a99d86';const sectionData=[['inicio','Inicio','01'],['encuestas','Encuestas','02'],['mapa','Mapa','03'],['partidos','Partidos','04'],['electorado','Electorado','05'],['transferencias','Transferencias','06'],['abstencion','Abstención','07']];
-document.getElementById('nav').innerHTML=sectionData.map(([id,n])=>`<button type="button" data-go="${id}" onclick="show('${id}')">${n}</button>`).join('');function show(id){if(!document.getElementById(id))return;document.querySelectorAll('.page').forEach(e=>e.classList.toggle('active',e.id===id));document.querySelectorAll('.nav button').forEach(e=>e.classList.toggle('active',e.dataset.go===id));history.replaceState(null,'','#'+id);window.scrollTo({top:0,behavior:'instant'});if(id==='mapa')setTimeout(()=>{if(!document.getElementById('mapa').classList.contains('active'))return;if(!geoLoaded&&!geoLoading)initAtlasGeo();else if(geoMap&&geoLayer){geoMap.invalidateSize({pan:false});geoMap.fitBounds(geoLayer.getBounds(),{padding:[12,12],animate:false});if(canaryMap&&canaryLayer){canaryMap.invalidateSize({pan:false});canaryMap.fitBounds(canaryLayer.getBounds(),{padding:[8,8],animate:false})}}},160)}
+document.getElementById('nav').innerHTML=sectionData.map(([id,n])=>`<button type="button" data-go="${id}" onclick="show('${id}')">${n}</button>`).join('');function show(id){if(!document.getElementById(id))return;document.querySelectorAll('.page').forEach(e=>e.classList.toggle('active',e.id===id));document.querySelectorAll('.nav button').forEach(e=>e.classList.toggle('active',e.dataset.go===id));history.replaceState(null,'','#'+id);window.scrollTo({top:0,behavior:'instant'});if(id==='mapa')setTimeout(()=>{if(!geoLoaded&&!geoLoading)initAtlasGeo();else if(geoMap&&geoLayer){geoMap.invalidateSize(true);geoMap.fitBounds(geoLayer.getBounds(),{padding:[12,12],animate:false});if(canaryMap&&canaryLayer){canaryMap.invalidateSize(true);canaryMap.fitBounds(canaryLayer.getBounds(),{padding:[8,8],animate:false})}}},160)}
 const electionDate = document.querySelector('#inicio .inicio-fecha');
 const electionHeading = document.getElementById('inicio-convocatoria');
 const electionCountdown = document.getElementById('inicio-cuenta');
@@ -239,10 +241,6 @@ async function initAtlasGeo(){
   let data=null;const attempts=[];
   for(const u of geoURLs){try{const r=await fetch(u,{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);data=await r.json();if(!Array.isArray(data.features)||!data.features.length)throw Error('GeoJSON sin provincias');break}catch(err){attempts.push(err.message)}}
   if(!data)throw Error('No se pudo descargar la cartografía: '+attempts.join(' / '));
-  if (!document.getElementById('mapa').classList.contains('active')) {
-    geoLoading = false;
-    return;
-  }
   const mainFeatures=data.features.filter(f=>!isCanaryFeature(f));
   const canaryFeatures=data.features.filter(isCanaryFeature);
   if(!canaryFeatures.length)throw Error('No se han identificado las Islas Canarias en el GeoJSON');
@@ -255,7 +253,7 @@ async function initAtlasGeo(){
   canaryLayer=L.geoJSON({type:'FeatureCollection',features:canaryFeatures},options).addTo(canaryMap);
   const matched=new Set();[geoLayer,canaryLayer].forEach(group=>group.eachLayer(l=>{if(l.atlasProvince)matched.add(l.atlasProvince)}));
   if(matched.size<48)throw Error('Solo '+matched.size+' provincias identificadas');
-  const fitting=()=>{if(!target.clientWidth||!pane.clientWidth)return;geoMap.invalidateSize({pan:false});canaryMap.invalidateSize({pan:false});geoMap.fitBounds(geoLayer.getBounds(),{padding:[4,5],animate:false});canaryMap.fitBounds(canaryLayer.getBounds(),{padding:[6,7],animate:false})};
+  const fitting=()=>{geoMap.invalidateSize(true);canaryMap.invalidateSize(true);geoMap.fitBounds(geoLayer.getBounds(),{padding:[4,5],animate:false});canaryMap.fitBounds(canaryLayer.getBounds(),{padding:[6,7],animate:false})};
   fitting();window.atlasDrawGeo();target.style.display='block';document.getElementById('tilemap').style.display='none';
   const missing=provinceNames.filter(p=>!matched.has(p));
   status.textContent=missing.length?'Geografía: '+matched.size+'/52 · faltan '+missing.join(', '):'Geografía: 52/52 circunscripciones';
