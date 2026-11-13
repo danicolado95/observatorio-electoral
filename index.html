@@ -65,6 +65,7 @@ body:has(#inicio.active) .demo{display:none}
 <link rel="stylesheet" href="./preview-radar/evolucion-cis.css">
 <link rel="stylesheet" href="./preview-radar/electorado.css">
 <link rel="stylesheet" href="./preview-radar/transferencias.css">
+<link rel="stylesheet" href="./preview-radar/abstencion.css">
 </head><body><header class="top"><div class="wrap top-inner"><div class="brand"><span class="brand-mark">✳</span>atlas <em>electoral</em></div><nav id="nav" class="nav" aria-label="Secciones"></nav><div class="status">ESPAÑA · 2026</div></div></header><div class="demo"><div class="wrap"><span class="dot"></span><span><b>Prototipo visual:</b> El Radar utiliza encuestas reales. Algunas secciones incluyen ejemplos simulados.</span></div></div><main class="wrap">
 <section class="page active" id="inicio" aria-labelledby="inicio-titulo">
   <div class="inicio-hero">
@@ -119,7 +120,7 @@ body:has(#inicio.active) .demo{display:none}
       </a>
       <a class="inicio-tarjeta" href="#abstencion">
         <h3>Abstención</h3>
-        <p>Explora la participación y los motivos para abstenerse.</p>
+        <p>Explora la disposición a votar y cómo varía entre grupos.</p>
         <span aria-hidden="true">→</span>
       </a>
     </div>
@@ -319,7 +320,91 @@ body:has(#inicio.active) .demo{display:none}
     </details>
   </div>
 </section>
-<section class="page" id="abstencion"><div class="section-intro"><div class="eyebrow">06 / PARTICIPACIÓN Y ABSTENCIÓN</div><h2>El voto que no llega a la urna.</h2><p>No votar también cambia el resultado agregado. Explora cuánto participa la población y qué ocurre en escenarios diferentes, sin convertirlos en pronósticos.</p></div><div class="grid two"><div class="panel"><div class="panel-heading"><div><h3>¿Qué pasa si cambia la participación?</h3><div class="sub">Ejercicio didáctico, no estimación de asistencia a las urnas</div></div><span class="tag gold">Simulación</span></div><label for="turnout">Participación hipotética: <b id="turnout-label">70 %</b></label><input type="range" id="turnout" min="55" max="85" value="70" step="1" oninput="renderAbstention()" style="width:100%;accent-color:var(--sage);margin:10px 0 18px"><div class="donut" id="turnout-donut"><div class="donut-center"><b id="turnout-value">70 %</b><small>Participación</small></div></div><div class="legend" style="justify-content:center;margin-top:20px"><span style="--c:var(--sage)">Participación</span><span style="--c:#dedfd9">Abstención</span></div></div><div class="panel"><h3>De cada 100 personas</h3><div class="stat" id="votes-out">70</div><p class="sub">acudirían a votar en este escenario hipotético.</p><div class="stat" id="abs-out">30</div><p class="sub">no acudirían a votar.</p><div class="divider"></div><div class="insight">Mover la participación no implica automáticamente saber qué partido gana o pierde. Para estimar cambios en votos por partido hacen falta supuestos explícitos sobre <b>quiénes se movilizan o se abstienen</b>.</div></div></div><div class="panel" style="margin-top:17px"><div class="panel-heading"><h3>Tres preguntas para investigar</h3><span class="tag">Futura ampliación</span></div><div class="teaser"><div><strong>¿Dónde se participa menos?</strong><div class="sub">Mapa histórico por municipio o provincia</div></div><span>↗</span></div><div class="teaser"><div><strong>¿Quién declara que no votará?</strong><div class="sub">Perfil sociodemográfico de abstención potencial</div></div><span>↗</span></div><div class="teaser"><div><strong>¿Qué antiguos votantes se desmovilizan?</strong><div class="sub">Cruce de recuerdo de voto e intención actual</div></div><span>↗</span></div></div></section>
+<section class="page" id="abstencion" aria-labelledby="abstencion-title">
+  <div class="section-intro">
+    <div class="eyebrow">07 / PARTICIPACIÓN Y ABSTENCIÓN · CIS 3582</div>
+    <h2 id="abstencion-title">Abstención</h2>
+    <p>¿Qué disposición a votar declara la gente? Las respuestas del CIS de octubre de 2026 describen lo que las personas dicen en la encuesta. La participación que finalmente se observe puede ser distinta.</p>
+  </div>
+  <p id="abs-status" role="status" class="note">Cargando datos del CIS…</p>
+  <noscript><p class="note">Activa JavaScript para consultar los gráficos.</p></noscript>
+  <div id="abs-content" class="abs-panels" hidden>
+    <article class="panel" aria-labelledby="abs-distribution-title">
+      <h3 id="abs-distribution-title">¿Cuántas ganas tenemos de votar?</h3>
+      <p class="sub">Probabilidad declarada de votar en unas elecciones generales, en una escala de 0 a 10.</p>
+      <div class="abs-overview">
+        <div>
+          <h4>Distribución completa</h4>
+          <p class="note" id="abs-general-base"></p>
+          <ul id="abs-distribution" class="abs-list abs-scores" aria-label="Distribución ponderada de 0 a 10"></ul>
+        </div>
+        <div>
+          <h4>Según la participación recordada en 2023</h4>
+          <p class="note">Cada barra reparte el 100 % de las respuestas válidas de su grupo entre los cuatro tramos.</p>
+          <div id="abs-comparison"></div>
+          <details id="abs-ineligible">
+            <summary>Quienes no tenían edad o derecho a voto en 2023</summary>
+            <div id="abs-ineligible-data"></div>
+            <p class="note">El JSON recoge su motivo por separado. Para estos dos grupos solo están disponibles los recuentos, sin distribución de disposición ni cruce de intención.</p>
+          </details>
+        </div>
+      </div>
+    </article>
+
+    <article class="panel" aria-labelledby="abs-social-title">
+      <h3 id="abs-social-title">¿Quiénes tienen menos disposición a votar?</h3>
+      <p class="sub">Porcentaje ponderado dentro de cada grupo con respuesta válida en la escala 0–10.</p>
+      <div class="abs-controls">
+        <div><label for="abs-variable">Variable</label><select id="abs-variable" aria-controls="abs-social"></select></div>
+        <div class="abs-switch" role="group" aria-label="Tramo de disposición">
+          <button type="button" data-abs-rate="baja" aria-pressed="true" aria-controls="abs-social">0–3 · Baja</button>
+          <button type="button" data-abs-rate="maxima" aria-pressed="false" aria-controls="abs-social">10/10 · Máxima</button>
+        </div>
+      </div>
+      <ul id="abs-social" class="abs-list" aria-label="Disposición por grupo"></ul>
+      <details>
+        <summary>Categorías y exclusiones de la variable</summary>
+        <div id="abs-social-method"></div>
+      </details>
+    </article>
+
+    <article class="panel" aria-labelledby="abs-matrix-title">
+      <h3 id="abs-matrix-title">¿Quiénes podrían movilizarse o desmovilizarse?</h3>
+      <p class="sub">La matriz cruza el recuerdo de participación en 2023 con la disposición actual. Cada fila suma el 100 % antes de redondear. Selecciona una celda para ver la intención de voto dentro de ella.</p>
+      <div id="abs-matrix"></div>
+      <p class="note"><a href="#abs-ineligible" id="abs-ineligible-link">Ver aparte a quienes no tenían edad o derecho a voto</a>.</p>
+      <div id="abs-intention" class="abs-detail" aria-labelledby="abs-intention-title">
+        <div aria-live="polite" aria-atomic="true">
+          <h4 id="abs-intention-title"></h4>
+          <p id="abs-intention-base" class="note"></p>
+        </div>
+        <ul id="abs-intention-rows" class="abs-list" aria-label="Desglose ponderado de intención de voto"></ul>
+      </div>
+      <p class="note abs-matrix-note">La disposición y la intención se declararon en la misma encuesta. El cruce describe esas respuestas, sin estimar quién acabará votando.</p>
+    </article>
+
+    <article class="panel" aria-labelledby="abs-parties-title">
+      <h3 id="abs-parties-title">¿Qué electorados están más movilizados?</h3>
+      <p class="sub">Cada porcentaje usa la base válida de su partido y de la pregunta elegida. Se muestran los dos extremos de la escala.</p>
+      <div class="abs-switch" role="group" aria-label="Pregunta que define el electorado">
+        <button type="button" data-abs-party="por_recuerdo" aria-pressed="true" aria-controls="abs-parties">Recuerdo de voto de 2023</button>
+        <button type="button" data-abs-party="por_intencion" aria-pressed="false" aria-controls="abs-parties">Intención de voto actual</button>
+      </div>
+      <ul id="abs-parties" class="abs-list abs-party-list" aria-label="Disposición por electorado"></ul>
+      <p class="note" id="abs-party-method"></p>
+    </article>
+
+    <details class="panel abs-method">
+      <summary>Fuente y metodología</summary>
+      <p id="abs-source"></p>
+      <p>Los porcentajes se ponderan con PESO. La base <b>n</b> cuenta entrevistas y <b>n efectivo</b> es la aproximación de Kish, calculada como el cuadrado de la suma de pesos dividido por la suma de los pesos al cuadrado. Resume la dispersión de los pesos. La inferencia requiere incorporar el diseño muestral.</p>
+      <p>«Base pequeña» señala grupos con n o n efectivo por debajo de 100. Los porcentajes se redondean y los valores positivos inferiores al 0,1 % se muestran como «&lt;0,1 %». Un 0 % indica que el agregado contiene cero casos.</p>
+      <p id="abs-exclusions"></p>
+      <p>En el desglose, «Declara un partido» agrupa cualquier partido, incluido «Otro partido». Blanco, nulo, «No votaría», «No sabe todavía» y «No contesta» tienen categorías propias. En electorados solo se muestran los partidos seleccionados para cada pregunta.</p>
+      <p><a href="./analisis-cis/resultados/abstencion_3582.json">Datos agregados</a> · <a href="./analisis-cis/scripts/08_abstencion.R">Análisis en R</a></p>
+    </details>
+  </div>
+</section>
 </main><footer class="wrap footer"><div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap"><div><b style="color:var(--ink)">✳ atlas electoral</b><br>Una forma más clara de explorar la política.</div><div>Prototipo de diseño · Octubre de 2026<br>Consulta las fuentes y avisos de cada sección.</div></div></footer><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
 <script>
 const parties=[{id:'PP',c:'#247ac3'},{id:'PSOE',c:'#e4484f'},{id:'Vox',c:'#609b56'},{id:'Sumar',c:'#d259a1'},{id:'Podemos',c:'#8253b8'},{id:'Otros',c:'#a99d86'}]; const color=n=>parties.find(p=>p.id===n)?.c||'#a99d86';const sectionData=[['inicio','Inicio','01'],['encuestas','Encuestas','02'],['mapa','Mapa','03'],['partidos','Partidos','04'],['electorado','Electorado','05'],['transferencias','Transferencias','06'],['abstencion','Abstención','07']];
@@ -387,7 +472,7 @@ document.getElementById('province-select').value=selectedProvince;
 document.getElementById('province-select').addEventListener('change',e=>selectProvince(e.target.value));
 async function loadHistory(){try{const r=await fetch('./resultados_congreso_2023.json',{cache:'no-cache'});if(!r.ok)throw Error('HTTP '+r.status);const d=await r.json();if(!Array.isArray(d.circunscripciones)||d.circunscripciones.length!==52||d.circunscripciones.reduce((s,p)=>s+p.escanos_2023,0)!==350)throw Error('No cuadran circunscripciones y escaños');const lookup=Object.fromEntries(d.circunscripciones.map(x=>[x.nombre,x]));let missing=provinceNames.filter(p=>!lookup[historyAliases[p]||p]);if(missing.length)throw Error('Faltan: '+missing.join(', '));history2023=lookup;document.getElementById('history-status').textContent='✓ Resultados de 2023 cargados: 52 circunscripciones · 350 diputados';document.getElementById('history-status').style.color='#25675b';renderMap();}catch(e){console.warn('Resultados 2023:',e);document.getElementById('history-status').textContent='⚠ No se han podido cargar los resultados de 2023. Revisa el nombre y la ubicación del JSON.'}}
 const profileDemo={edad:['18–29','30–44','45–59','60+'],genero:['Mujeres','Hombres'],estudios:['Básicos','Secundarios','Superiores'],temas:['Vivienda','Economía','Sanidad','Inmigración','Política']};const demoProfile={PP:{edad:[10,17,28,45],genero:[49,51],estudios:[23,39,38],temas:[25,59,43,32,25]},PSOE:{edad:[16,21,28,35],genero:[53,47],estudios:[25,40,35],temas:[45,47,57,15,29]},Vox:{edad:[22,28,27,23],genero:[38,62],estudios:[21,49,30],temas:[27,49,21,65,34]},Sumar:{edad:[29,31,25,15],genero:[55,45],estudios:[13,28,59],temas:[68,43,42,18,36]},Podemos:{edad:[30,28,26,16],genero:[54,46],estudios:[17,29,54],temas:[71,44,39,18,40]},TOTAL:{edad:[19,24,28,29],genero:[51,49],estudios:[25,39,36],temas:[45,51,42,32,30]}};
-function renderAbstention(){let v=+document.getElementById('turnout').value;document.getElementById('turnout-label').textContent=v+' %';document.getElementById('turnout-value').textContent=v+' %';document.getElementById('votes-out').textContent=v;document.getElementById('abs-out').textContent=100-v;document.getElementById('turnout-donut').style.background=`conic-gradient(var(--sage) 0 ${v}%,#dedfd9 ${v}% 100%)`}function renderHorizontal(id,rows,max=100){document.getElementById(id).innerHTML=rows.map(([name,v])=>`<div class="bar-row" style="grid-template-columns:100px 1fr 48px"><span class="name">${name}</span><div class="track"><div class="bar" style="--c:var(--sage);width:${v/max*100}%"></div></div><span class="value">${v}%</span></div>`).join('')}
+function renderHorizontal(id,rows,max=100){document.getElementById(id).innerHTML=rows.map(([name,v])=>`<div class="bar-row" style="grid-template-columns:100px 1fr 48px"><span class="name">${name}</span><div class="track"><div class="bar" style="--c:var(--sage);width:${v/max*100}%"></div></div><span class="value">${v}%</span></div>`).join('')}
 // Geographical mode: geometry-only GeoJSON from independent open-data repository.
 // The official voting figures are still read exclusively from the two local JSON files.
 let geoMap=null,geoLayer=null,canaryMap=null,canaryLayer=null,geoLoaded=false,geoLoading=false,unmatchedGeo=[];
@@ -441,7 +526,7 @@ async function initAtlasGeo(){
  }catch(e){console.warn('Mapa geográfico no disponible',e);geoLoading=false;target.style.display='none';document.getElementById('tilemap').style.display='grid';status.textContent='Error de cartografía';document.getElementById('map-hint').textContent='Diagnóstico del mapa: '+e.message}
 }
 
-renderMap();loadOfficialSeats();loadHistory();renderAbstention();function showLocation(defaultSection){
+renderMap();loadOfficialSeats();loadHistory();function showLocation(defaultSection){
   const id=location.hash.slice(1);
   if(id==='social'){
     show('electorado');
@@ -456,4 +541,4 @@ renderMap();loadOfficialSeats();loadHistory();renderAbstention();function showLo
 showLocation('inicio');
 window.addEventListener('hashchange',()=>showLocation());
 
-</script><script defer src="./preview-radar/radar-portada.js?v=publicacion-20261113"></script><script defer src="./radiografias-cis.js"></script><script defer src="./preview-radar/electorado.js"></script><script defer src="./preview-radar/electorado-comparador.js"></script><script defer src="./preview-radar/electorado-social.js"></script><script type="module" src="./preview-radar/transferencias.js"></script></body></html>
+</script><script defer src="./preview-radar/radar-portada.js?v=publicacion-20261113"></script><script defer src="./radiografias-cis.js"></script><script defer src="./preview-radar/electorado.js"></script><script defer src="./preview-radar/electorado-comparador.js"></script><script defer src="./preview-radar/electorado-social.js"></script><script type="module" src="./preview-radar/transferencias.js"></script><script type="module" src="./preview-radar/abstencion.js"></script></body></html>
