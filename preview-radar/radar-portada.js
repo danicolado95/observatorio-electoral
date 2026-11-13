@@ -67,8 +67,10 @@ const box=document.getElementById('radar-grafico'),status=document.getElementByI
 const create=(tag,attrs={},text='')=>{const n=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const [k,v]of Object.entries(attrs))n.setAttribute(k,v);n.textContent=text;return n;};
 let data;
 const colors={PP:'#347cbd',PSOE:'#e54440',VOX:'#69a554',SUMAR:'#d36a9d',PODEMOS:'#8541b5',ERC:'#cf9d14',JUNTS:'#00a992',EH_BILDU:'#438d74',PNV:'#65894a',BNG:'#7a9cc7',CC:'#b89d00',UPN:'#65738a',SALF:'#785a46',ALIANCA_CAT:'#164c81',ADELANTE_ANDALUCIA:'#24a77e',FA:'#f07901',FV:'#e84d00'};
-const parties=['PP','PSOE','VOX','SUMAR','PODEMOS','FA','SALF'];
-const enabled=new Set(['PP','PSOE','VOX','SUMAR','PODEMOS','FA','SALF']);
+const primaryParties=['PP','PSOE','VOX','SUMAR','PODEMOS','FA','SALF'];
+const enabled=new Set(primaryParties);
+let parties=primaryParties;
+const partyLabels={EH_BILDU:'EH Bildu',ALIANCA_CAT:'Aliança Catalana',ADELANTE_ANDALUCIA:'Adelante Andalucía'};
 
 
 const sheet=document.createElement('style');sheet.textContent=`
@@ -84,7 +86,36 @@ const sheet=document.createElement('style');sheet.textContent=`
 `;document.head.append(sheet);
 const controls=document.createElement('div');controls.className='radar-controls';controls.setAttribute('role','group');controls.setAttribute('aria-label','Periodo, CIS y partidos');
 const extra=document.createElement('details'),extraTitle=document.createElement('summary'),extraControls=document.createElement('div');extraTitle.textContent='Más partidos';extraControls.className='radar-controls';extra.append(extraTitle,extraControls);
-for(const party of parties){const label=document.createElement('label'),input=document.createElement('input');input.type='checkbox';input.checked=enabled.has(party);input.setAttribute('aria-label',party);input.addEventListener('change',()=>{input.checked?enabled.add(party):enabled.delete(party);draw();});label.style.color=colors[party]||'#68786c';label.append(input,document.createTextNode(' '+party));(enabled.has(party)?controls:extraControls).append(label);}
+extraControls.setAttribute('role','group');
+extraControls.setAttribute('aria-label','Más partidos');
+extra.hidden=true;
+function partyControl(party){
+ const label=document.createElement('label'),input=document.createElement('input');
+ input.type='checkbox';
+ input.checked=enabled.has(party);
+ input.addEventListener('change',()=>{
+  if(input.checked)enabled.add(party);
+  else enabled.delete(party);
+  draw();
+ });
+ label.style.color=colors[party]||'#68786c';
+ label.append(input,document.createTextNode(' '+(partyLabels[party]||party.replaceAll('_',' '))));
+ return label;
+}
+controls.append(...primaryParties.map(partyControl));
+function updateParties(polls){
+ const available=new Set();
+ for(const poll of polls){
+  for(const [party,value] of Object.entries(poll.resultados)){
+   if(Number.isFinite(value)&&!primaryParties.includes(party))available.add(party);
+  }
+ }
+ const next=[...primaryParties,...[...available].sort((a,b)=>a.localeCompare(b,'es'))];
+ if(next.length===parties.length&&next.every((party,index)=>party===parties[index]))return;
+ parties=next;
+ extraControls.replaceChildren(...parties.slice(primaryParties.length).map(partyControl));
+ extra.hidden=!available.size;
+}
 box.before(controls,extra);
 const range=document.createElement('select');range.id='radar-range';range.setAttribute('aria-label','Periodo del gráfico');
 for(const [value,text] of [['year','Último año'],['all','Desde 23J']]){const option=document.createElement('option');option.value=value;option.textContent=text;range.append(option);}controls.prepend(range);range.addEventListener('change',draw);
@@ -198,6 +229,7 @@ async function refresh(){
   const next=await response.json();
   if(!Array.isArray(next.encuestas)||!next.encuestas.length||!next.encuestas.every(p=>p && typeof p.instituto==='string' && p.instituto.trim() && p.resultados && typeof p.resultados==='object' && /^\d{4}-\d{2}-\d{2}$/.test(RadarCore.fieldDate(p))))throw Error('Formato inválido');
   data=next;
+  updateParties(data.encuestas);
   draw();
   attribution.textContent='Datos derivados de Wikipedia y Electográfica. ';
   for(const [title,url] of [['Revisión de Wikipedia',data.attribution?.revision],['Historial',data.attribution?.history],['CC BY-SA 4.0',data.attribution?.license]]){
