@@ -51,7 +51,7 @@ async function run() {
   const page = await browser.newPage({viewport: {width: 1280, height: 900}});
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
-  const url = 'http://127.0.0.1:' + server.address().port + '/preview-radar/#electorado';
+  const url = 'http://127.0.0.1:' + server.address().port + '/index.html#electorado';
   await page.goto(url);
   await page.locator('#el-compare-content').waitFor();
   await page.locator('#el-content').waitFor();

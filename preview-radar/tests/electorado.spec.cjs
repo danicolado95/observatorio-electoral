@@ -12,7 +12,7 @@ const dimensions=[...new Set(data.comparaciones.map(r=>r.dimension))];
  try{
   browser=await chromium.launch({channel:'msedge',headless:true});
   const page=await browser.newPage({viewport:{width:1280,height:1000}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
-  const url=`http://127.0.0.1:${server.address().port}/preview-radar/#electorado`;
+  const url=`http://127.0.0.1:${server.address().port}/index.html#electorado`;
   await page.goto(url);await page.waitForFunction(()=>!document.getElementById('el-content').hidden);
   assert.equal(await page.locator('#el-problem option').count(),69);
   assert.equal(await page.locator('#el-top button').count(),5);
