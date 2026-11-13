@@ -35,7 +35,7 @@ const dimensions=[...new Set(data.comparaciones.map(r=>r.dimension))];
   await page.locator('#el-search').fill('zzzz-no-existe');assert.equal(await page.locator('#el-detail').isVisible(),false);assert.equal(await page.locator('#el-problem').isDisabled(),true);
   await page.locator('#el-top button').first().click();assert.equal(await page.locator('#el-search').inputValue(),'');assert.equal(await page.locator('#el-problem option').count(),69);
   for(const dim of dimensions){await page.selectOption('#el-dimension',dim);if(dim==='Partido'){assert.equal(await page.locator('#el-vote').isVisible(),true);assert.ok((await page.locator('.el-bar').evaluateAll(b=>b.map(x=>x.style.background))).includes('rgb(36, 122, 195)'));}}
-  for(const link of ['../analisis-cis/resultados/electorado_3582.json','../analisis-cis/scripts/04_preocupaciones_electorado.R','electorado.js','electorado.css'])assert.equal((await page.request.get(new URL(link,url).href)).status(),200);
+  for(const link of ['./analisis-cis/resultados/electorado_3582.json','./analisis-cis/scripts/04_preocupaciones_electorado.R','./preview-radar/electorado.js','./preview-radar/electorado.css'])assert.equal((await page.request.get(new URL(link,url).href)).status(),200);
   const out=process.env.QA_OUTPUT;if(out)fs.mkdirSync(out,{recursive:true});
   await page.selectOption('#el-dimension','Partido');
   await page.evaluate(()=>window.scrollTo(0,0));await page.mouse.move(0,0);if(out)await page.screenshot({path:path.join(out,'electorado-desktop.png'),fullPage:true});
