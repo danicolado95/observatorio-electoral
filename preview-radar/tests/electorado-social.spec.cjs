@@ -202,7 +202,7 @@ const pct = n => n>0&&n<.05 ? '<0,1 %' : fmt.format(n)+' %';
    await check('Situacion_laboral','Municipio');
    assert.equal(await page.locator('#social').evaluate(el=>el.scrollWidth<=el.clientWidth),true);
   }
-  await page.getByText('¿Cómo se calcula?',{exact:true}).click();
+  await page.locator('#social-content').getByText('¿Cómo se calcula?',{exact:true}).click();
   assert.ok(await page.getByText('El porcentaje divide la suma de PESO',{exact:false}).isVisible());
   await page.setViewportSize({width:320,height:844});
   assert.ok(await page.locator('#social').evaluate(el=>el.scrollWidth<=el.clientWidth));

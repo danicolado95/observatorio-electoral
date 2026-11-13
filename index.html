@@ -64,6 +64,7 @@ body:has(#inicio.active) .demo{display:none}
 </style>
 <link rel="stylesheet" href="./preview-radar/evolucion-cis.css">
 <link rel="stylesheet" href="./preview-radar/electorado.css">
+<link rel="stylesheet" href="./preview-radar/transferencias.css">
 </head><body><header class="top"><div class="wrap top-inner"><div class="brand"><span class="brand-mark">✳</span>atlas <em>electoral</em></div><nav id="nav" class="nav" aria-label="Secciones"></nav><div class="status">ESPAÑA · 2026</div></div></header><div class="demo"><div class="wrap"><span class="dot"></span><span><b>Prototipo visual:</b> El Radar utiliza encuestas reales. Algunas secciones incluyen ejemplos simulados.</span></div></div><main class="wrap">
 <section class="page active" id="inicio" aria-labelledby="inicio-titulo">
   <div class="inicio-hero">
@@ -282,7 +283,42 @@ body:has(#inicio.active) .demo{display:none}
 </section>
 <script type="module" src="./preview-radar/evolucion-cis.mjs"></script>
 </section>
-<section class="page" id="transferencias"><div class="section-intro"><div class="eyebrow">05 / MOVILIDAD ELECTORAL</div><h2>Los votos no se quedan quietos.</h2><p>Del voto recordado a la intención actual: quién repite, quién cambia y quién duda. Un flujo para entender movimientos, no para confundir declaraciones con resultados.</p></div><div class="split"><div class="panel"><div class="picker"><div><label>¿A quién votó en 2023?</label><select id="transfer-from" onchange="renderTransfer()"></select></div></div><div class="panel-heading"><div><h3>De 100 antiguos votantes…</h3><div class="sub" id="transfer-sub"></div></div><span class="tag gold">Ejemplo ficticio</span></div><div class="flow-graph" id="flowgraph"></div><div id="transfer-bars" style="margin-top:22px"></div></div><div class="panel"><h3>Cómo leer los cambios</h3><div class="insight" id="transfer-insight"></div><div class="divider"></div><div class="mini-label">Tres piezas distintas</div><ul class="naked-list"><li>Fidelidad electoral</li><li>Transferencias entre partidos</li><li>Indecisión y abstención declarada</li></ul><p class="note">Los microdatos de encuestas permiten observar respuestas individuales, pero pueden contener errores de recuerdo, sesgos de respuesta e incertidumbre muestral.</p></div></div></section>
+<section class="page" id="transferencias" aria-labelledby="transfer-title">
+  <div class="section-intro">
+    <div class="eyebrow">06 / MOVILIDAD ELECTORAL · CIS 3582</div>
+    <h2 id="transfer-title">Transferencias electorales</h2>
+    <p>Explora cómo cambian las preferencias desde las elecciones generales de 2023, del voto recordado a la intención declarada en octubre de 2026.</p>
+  </div>
+  <div class="panel">
+    <div class="transfer-controls" hidden>
+      <label for="transfer-party">Selecciona un partido</label>
+      <select id="transfer-party"></select>
+      <div class="transfer-modes" role="group" aria-label="Perspectiva">
+        <button type="button" data-mode="destino" aria-pressed="true" aria-describedby="transfer-limited">¿Qué votan ahora?</button>
+        <button type="button" data-mode="origen" aria-pressed="false">¿Qué votaron en 2023?</button>
+      </div>
+      <p id="transfer-limited" class="note" hidden></p>
+    </div>
+    <div role="status">
+      <h3 id="transfer-question"></h3>
+      <p id="transfer-base" class="note">Cargando datos del CIS…</p>
+    </div>
+    <div class="transfer-stack" aria-hidden="true" hidden></div>
+    <ol id="transfer-chart" class="transfer-chart" aria-labelledby="transfer-question"></ol>
+    <button id="transfer-toggle" type="button" aria-controls="transfer-chart" aria-expanded="false" hidden></button>
+    <p class="note">Fuente · Microdatos CIS 3582, octubre de 2026.</p>
+    <details>
+      <summary>¿Cómo se calcula?</summary>
+      <p>En «¿Qué votan ahora?», cada porcentaje divide el peso de ese destino por el peso total de quienes recuerdan haber votado al partido en 2023 (RECUERDO). En «¿Qué votaron en 2023?», divide el peso de ese origen por el peso total de quienes declaran intención de votar al partido (INTENCIONGR).</p>
+      <p id="transfer-sample"></p>
+      <p>La vista resumida agrupa las categorías por debajo del 2 % tras sumar sus pesos. Los partidos destacados, la indecisión, la abstención y la falta de respuesta se muestran por separado cuando aparecen, al igual que las categorías de incorporación de 2023. Al desplegar se muestran todas las categorías observadas.</p>
+      <p>El recuento n es el número de entrevistas. La base efectiva es el cuadrado de la suma de PESO dividido por la suma de PESO al cuadrado. Las bases y celdas con pocas entrevistas dan estimaciones menos precisas. La encuesta está sujeta a errores de recuerdo y refleja intenciones declaradas.</p>
+      <p>Un cambio entre partidos es una transferencia. La intención de votar entre quienes no votaron en 2023 indica movilización declarada. Quienes entonces no tenían edad o derecho a voto se muestran por separado como incorporación.</p>
+      <p>En intención de voto, Sumar / Frente Amplio corresponde al código 21, como en Radiografías. «Coalición de izquierdas» (29) se conserva por separado. En recuerdo se conserva la etiqueta Sumar.</p>
+      <p>Fuente: microdatos CIS 3582, 5.024 entrevistas. <a href="./preview-radar/data/transferencias_3582.json">Consultar datos agregados</a>.</p>
+    </details>
+  </div>
+</section>
 <section class="page" id="abstencion"><div class="section-intro"><div class="eyebrow">06 / PARTICIPACIÓN Y ABSTENCIÓN</div><h2>El voto que no llega a la urna.</h2><p>No votar también cambia el resultado agregado. Explora cuánto participa la población y qué ocurre en escenarios diferentes, sin convertirlos en pronósticos.</p></div><div class="grid two"><div class="panel"><div class="panel-heading"><div><h3>¿Qué pasa si cambia la participación?</h3><div class="sub">Ejercicio didáctico, no estimación de asistencia a las urnas</div></div><span class="tag gold">Simulación</span></div><label for="turnout">Participación hipotética: <b id="turnout-label">70 %</b></label><input type="range" id="turnout" min="55" max="85" value="70" step="1" oninput="renderAbstention()" style="width:100%;accent-color:var(--sage);margin:10px 0 18px"><div class="donut" id="turnout-donut"><div class="donut-center"><b id="turnout-value">70 %</b><small>Participación</small></div></div><div class="legend" style="justify-content:center;margin-top:20px"><span style="--c:var(--sage)">Participación</span><span style="--c:#dedfd9">Abstención</span></div></div><div class="panel"><h3>De cada 100 personas</h3><div class="stat" id="votes-out">70</div><p class="sub">acudirían a votar en este escenario hipotético.</p><div class="stat" id="abs-out">30</div><p class="sub">no acudirían a votar.</p><div class="divider"></div><div class="insight">Mover la participación no implica automáticamente saber qué partido gana o pierde. Para estimar cambios en votos por partido hacen falta supuestos explícitos sobre <b>quiénes se movilizan o se abstienen</b>.</div></div></div><div class="panel" style="margin-top:17px"><div class="panel-heading"><h3>Tres preguntas para investigar</h3><span class="tag">Futura ampliación</span></div><div class="teaser"><div><strong>¿Dónde se participa menos?</strong><div class="sub">Mapa histórico por municipio o provincia</div></div><span>↗</span></div><div class="teaser"><div><strong>¿Quién declara que no votará?</strong><div class="sub">Perfil sociodemográfico de abstención potencial</div></div><span>↗</span></div><div class="teaser"><div><strong>¿Qué antiguos votantes se desmovilizan?</strong><div class="sub">Cruce de recuerdo de voto e intención actual</div></div><span>↗</span></div></div></section>
 </main><footer class="wrap footer"><div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap"><div><b style="color:var(--ink)">✳ atlas electoral</b><br>Una forma más clara de explorar la política.</div><div>Prototipo de diseño · Octubre de 2026<br>Consulta las fuentes y avisos de cada sección.</div></div></footer><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
 <script>
@@ -350,8 +386,7 @@ document.getElementById('province-select').innerHTML=provinceNames.map(n=>`<opti
 document.getElementById('province-select').value=selectedProvince;
 document.getElementById('province-select').addEventListener('change',e=>selectProvince(e.target.value));
 async function loadHistory(){try{const r=await fetch('./resultados_congreso_2023.json',{cache:'no-cache'});if(!r.ok)throw Error('HTTP '+r.status);const d=await r.json();if(!Array.isArray(d.circunscripciones)||d.circunscripciones.length!==52||d.circunscripciones.reduce((s,p)=>s+p.escanos_2023,0)!==350)throw Error('No cuadran circunscripciones y escaños');const lookup=Object.fromEntries(d.circunscripciones.map(x=>[x.nombre,x]));let missing=provinceNames.filter(p=>!lookup[historyAliases[p]||p]);if(missing.length)throw Error('Faltan: '+missing.join(', '));history2023=lookup;document.getElementById('history-status').textContent='✓ Resultados de 2023 cargados: 52 circunscripciones · 350 diputados';document.getElementById('history-status').style.color='#25675b';renderMap();}catch(e){console.warn('Resultados 2023:',e);document.getElementById('history-status').textContent='⚠ No se han podido cargar los resultados de 2023. Revisa el nombre y la ubicación del JSON.'}}
-const profileDemo={edad:['18–29','30–44','45–59','60+'],genero:['Mujeres','Hombres'],estudios:['Básicos','Secundarios','Superiores'],temas:['Vivienda','Economía','Sanidad','Inmigración','Política']};const demoProfile={PP:{edad:[10,17,28,45],genero:[49,51],estudios:[23,39,38],temas:[25,59,43,32,25]},PSOE:{edad:[16,21,28,35],genero:[53,47],estudios:[25,40,35],temas:[45,47,57,15,29]},Vox:{edad:[22,28,27,23],genero:[38,62],estudios:[21,49,30],temas:[27,49,21,65,34]},Sumar:{edad:[29,31,25,15],genero:[55,45],estudios:[13,28,59],temas:[68,43,42,18,36]},Podemos:{edad:[30,28,26,16],genero:[54,46],estudios:[17,29,54],temas:[71,44,39,18,40]},TOTAL:{edad:[19,24,28,29],genero:[51,49],estudios:[25,39,36],temas:[45,51,42,32,30]}};function setupTransfer(){const el=document.getElementById('transfer-from');el.innerHTML=['PP','PSOE','Vox','Sumar','Abstención'].map(n=>`<option value="${n}">${n}</option>`).join('');el.value='PSOE'}
-const transferBase={PSOE:[['PSOE',61],['PP',8],['Vox',3],['Sumar',8],['Abstención',12],['Indecisión',8]],PP:[['PP',67],['Vox',14],['PSOE',4],['Sumar',1],['Abstención',8],['Indecisión',6]],Vox:[['Vox',74],['PP',10],['PSOE',2],['Abstención',8],['Indecisión',6]],Sumar:[['Sumar',49],['PSOE',20],['Podemos',8],['Abstención',13],['Indecisión',10]],Abstención:[['Abstención',53],['PP',12],['PSOE',12],['Vox',8],['Sumar',5],['Indecisión',10]]};function transferColor(n){return n==='Abstención'?'#a8b3ac':n==='Indecisión'?'#d1aa78':color(n)}function renderTransfer(){let p=document.getElementById('transfer-from').value,rows=transferBase[p];document.getElementById('transfer-sub').textContent='Origen: '+p+' · respuestas ficticias';document.getElementById('flowgraph').innerHTML=rows.map(([n,v])=>`<div title="${n}: ${v}%" style="width:${v}%;background:${transferColor(n)}">${v>=12?v+'%':''}</div>`).join('');document.getElementById('transfer-bars').innerHTML=rows.map(([n,v])=>`<div class="flow-row"><span style="font-weight:700">${n}</span><div class="track"><div class="bar" style="--c:${transferColor(n)};width:${v}%"></div></div><b>${v}%</b></div>`).join('');document.getElementById('transfer-insight').innerHTML=`En la <b>simulación</b>, ${rows[0][1]} de cada 100 personas del grupo elegido permanecen en <b>${rows[0][0]}</b>. Estos porcentajes no describen transferencias reales.`}
+const profileDemo={edad:['18–29','30–44','45–59','60+'],genero:['Mujeres','Hombres'],estudios:['Básicos','Secundarios','Superiores'],temas:['Vivienda','Economía','Sanidad','Inmigración','Política']};const demoProfile={PP:{edad:[10,17,28,45],genero:[49,51],estudios:[23,39,38],temas:[25,59,43,32,25]},PSOE:{edad:[16,21,28,35],genero:[53,47],estudios:[25,40,35],temas:[45,47,57,15,29]},Vox:{edad:[22,28,27,23],genero:[38,62],estudios:[21,49,30],temas:[27,49,21,65,34]},Sumar:{edad:[29,31,25,15],genero:[55,45],estudios:[13,28,59],temas:[68,43,42,18,36]},Podemos:{edad:[30,28,26,16],genero:[54,46],estudios:[17,29,54],temas:[71,44,39,18,40]},TOTAL:{edad:[19,24,28,29],genero:[51,49],estudios:[25,39,36],temas:[45,51,42,32,30]}};
 function renderAbstention(){let v=+document.getElementById('turnout').value;document.getElementById('turnout-label').textContent=v+' %';document.getElementById('turnout-value').textContent=v+' %';document.getElementById('votes-out').textContent=v;document.getElementById('abs-out').textContent=100-v;document.getElementById('turnout-donut').style.background=`conic-gradient(var(--sage) 0 ${v}%,#dedfd9 ${v}% 100%)`}function renderHorizontal(id,rows,max=100){document.getElementById(id).innerHTML=rows.map(([name,v])=>`<div class="bar-row" style="grid-template-columns:100px 1fr 48px"><span class="name">${name}</span><div class="track"><div class="bar" style="--c:var(--sage);width:${v/max*100}%"></div></div><span class="value">${v}%</span></div>`).join('')}
 // Geographical mode: geometry-only GeoJSON from independent open-data repository.
 // The official voting figures are still read exclusively from the two local JSON files.
@@ -406,7 +441,7 @@ async function initAtlasGeo(){
  }catch(e){console.warn('Mapa geográfico no disponible',e);geoLoading=false;target.style.display='none';document.getElementById('tilemap').style.display='grid';status.textContent='Error de cartografía';document.getElementById('map-hint').textContent='Diagnóstico del mapa: '+e.message}
 }
 
-setupTransfer();renderMap();loadOfficialSeats();loadHistory();renderTransfer();renderAbstention();function showLocation(defaultSection){
+renderMap();loadOfficialSeats();loadHistory();renderAbstention();function showLocation(defaultSection){
   const id=location.hash.slice(1);
   if(id==='social'){
     show('electorado');
@@ -421,4 +456,4 @@ setupTransfer();renderMap();loadOfficialSeats();loadHistory();renderTransfer();r
 showLocation('inicio');
 window.addEventListener('hashchange',()=>showLocation());
 
-</script><script defer src="./preview-radar/radar-portada.js?v=publicacion-20261113"></script><script defer src="./radiografias-cis.js"></script><script defer src="./preview-radar/electorado.js"></script><script defer src="./preview-radar/electorado-comparador.js"></script><script defer src="./preview-radar/electorado-social.js"></script></body></html>
+</script><script defer src="./preview-radar/radar-portada.js?v=publicacion-20261113"></script><script defer src="./radiografias-cis.js"></script><script defer src="./preview-radar/electorado.js"></script><script defer src="./preview-radar/electorado-comparador.js"></script><script defer src="./preview-radar/electorado-social.js"></script><script type="module" src="./preview-radar/transferencias.js"></script></body></html>
